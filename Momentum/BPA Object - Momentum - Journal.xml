@@ -1,0 +1,673 @@
+﻿<process name="Momentum - Journal" version="1.0" bpversion="7.3.0.9110" narrative="" byrefcollection="true" processrunningmessage="" disableversioning="false" type="object" runmode="Exclusive" preferredid="9e71a89e-d7f3-42b2-b288-f7bcbcf88384">
+  <appdef>
+    <element name="Application Root">
+      <id>6ce9541c-9efb-4ad2-8bb2-772319d18d94</id>
+      <type>Application</type>
+      <basetype>Application</basetype>
+      <datatype>unknown</datatype>
+      <diagnose>False</diagnose>
+    </element>
+  </appdef>
+  <view>
+    <camerax>0</camerax>
+    <cameray>42</cameray>
+    <zoom version="2">1.25</zoom>
+  </view>
+  <preconditions />
+  <endpoint narrative="" />
+  <subsheet subsheetid="79edeb9d-4cca-42ec-8738-3740a00d230c" type="CleanUp" published="True">
+    <name>Clean Up</name>
+    <view>
+      <camerax>0</camerax>
+      <cameray>0</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <subsheet subsheetid="35a552a1-a927-400a-ac00-7650f56291c3" type="Normal" published="True">
+    <name>Hent journalnotater</name>
+    <view>
+      <camerax>0</camerax>
+      <cameray>157</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <subsheet subsheetid="b2e6dddd-8ec4-4c6e-8e75-4592f2c39568" type="Normal" published="True">
+    <name>Opret journalnotat</name>
+    <view>
+      <camerax>0</camerax>
+      <cameray>-25</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <stage stageid="90e86f73-00e1-4b8e-a101-8f515bb9d36f" name="Start" type="Start">
+    <loginhibit />
+    <display x="15" y="-105" />
+    <onsuccess>1b740980-7bcb-4a4d-8f28-37ea2190bf6f</onsuccess>
+  </stage>
+  <stage stageid="1b740980-7bcb-4a4d-8f28-37ea2190bf6f" name="End" type="End">
+    <loginhibit />
+    <display x="15" y="90" />
+  </stage>
+  <stage stageid="ba16e4cf-07fd-4391-bbd8-027a18e92cf7" name="Stage1" type="ProcessInfo">
+    <display x="-195" y="-105" w="150" h="90" />
+    <references>
+      <reference>System.dll</reference>
+      <reference>System.Data.dll</reference>
+      <reference>System.Xml.dll</reference>
+      <reference>System.Drawing.dll</reference>
+      <reference>System.Core.dll</reference>
+      <reference>Newtonsoft.Json.dll</reference>
+    </references>
+    <imports>
+      <import>System</import>
+      <import>System.Drawing</import>
+      <import>System.Data</import>
+      <import>System.Linq</import>
+      <import>Newtonsoft.Json</import>
+      <import>Newtonsoft.Json.Linq</import>
+    </imports>
+    <language>csharp</language>
+    <globalcode><![CDATA[]]></globalcode>
+    <code><![CDATA[]]></code>
+  </stage>
+  <stage stageid="ff03fa3d-d515-4b19-9901-7e89de5e6396" name="Clean Up" type="SubSheetInfo">
+    <subsheetid>79edeb9d-4cca-42ec-8738-3740a00d230c</subsheetid>
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="7d903d7e-7e04-46d3-a658-71101180a7cf" name="Start" type="Start">
+    <subsheetid>79edeb9d-4cca-42ec-8738-3740a00d230c</subsheetid>
+    <loginhibit />
+    <display x="15" y="-105" />
+    <onsuccess>a95f6dd6-e7cd-4cb4-9d79-42c062071152</onsuccess>
+  </stage>
+  <stage stageid="a95f6dd6-e7cd-4cb4-9d79-42c062071152" name="End" type="End">
+    <subsheetid>79edeb9d-4cca-42ec-8738-3740a00d230c</subsheetid>
+    <loginhibit />
+    <display x="15" y="90" />
+  </stage>
+  <stage stageid="26a5f227-f207-47fd-9fb4-ea7051d1c3bf" name="Hent journalnotater" type="SubSheetInfo">
+    <subsheetid>35a552a1-a927-400a-ac00-7650f56291c3</subsheetid>
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="f1f8a0d0-c9e6-45b0-b5e2-787a548c6fee" name="Start" type="Start">
+    <subsheetid>35a552a1-a927-400a-ac00-7650f56291c3</subsheetid>
+    <loginhibit />
+    <display x="-15" y="-105" />
+    <inputs>
+      <input type="collection" name="Borger" stage="Borger" />
+    </inputs>
+    <onsuccess>26c0c607-71b6-4150-b6ac-74f5432383af</onsuccess>
+  </stage>
+  <stage stageid="02c08f2b-b36e-4313-bca8-8fb7a887248d" name="End" type="End">
+    <subsheetid>35a552a1-a927-400a-ac00-7650f56291c3</subsheetid>
+    <loginhibit />
+    <display x="-15" y="75" />
+    <outputs>
+      <output type="collection" name="Journalnotater" stage="Journaler" />
+      <output type="number" name="Antal" stage="Antal" />
+      <output type="flag" name="Succes" stage="Succes" />
+    </outputs>
+  </stage>
+  <stage stageid="713f0c6f-2c19-4731-a71c-900d46dcaa6c" name="" type="Note">
+    <subsheetid>79edeb9d-4cca-42ec-8738-3740a00d230c</subsheetid>
+    <narrative>Clean Up Page
+
+This is an optional page where you might choose to perform some finalisation (or "cleanup") tasks as your business object is closed down.
+
+The cleanup action will be called automatically immediately after closing your business object at the end of a business process.
+
+You will not be able to call this action from a business process, nor will it be called at any other time than before the disposal of the business object.</narrative>
+    <display x="-180" y="60" w="180" h="230" />
+  </stage>
+  <stage stageid="b091d437-5a99-4af7-8c09-786a52e36009" name="Input" type="Block">
+    <subsheetid>35a552a1-a927-400a-ac00-7650f56291c3</subsheetid>
+    <display x="-270" y="-45" w="150" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="339966" />
+  </stage>
+  <stage stageid="b131ee93-e915-4765-887b-e9a5aead2f00" name="Variabler" type="Block">
+    <subsheetid>35a552a1-a927-400a-ac00-7650f56291c3</subsheetid>
+    <display x="-270" y="105" w="150" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="666699" />
+  </stage>
+  <stage stageid="8e66f9bc-ef9c-4702-8ed5-f54b272f4ad3" name="Konstanter" type="Block">
+    <subsheetid>35a552a1-a927-400a-ac00-7650f56291c3</subsheetid>
+    <display x="-270" y="30" w="150" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="008080" />
+  </stage>
+  <stage stageid="f6226b0b-41f1-4375-a41c-f6b6329d3065" name="Output" type="Block">
+    <subsheetid>35a552a1-a927-400a-ac00-7650f56291c3</subsheetid>
+    <display x="-270" y="180" w="150" h="150" />
+    <font family="Segoe UI" size="10" style="Regular" color="800080" />
+  </stage>
+  <stage stageid="7228cebe-c976-4ed2-b63c-51eb2f41b1f6" name="Input" type="Block">
+    <display x="-270" y="-45" w="150" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="339966" />
+  </stage>
+  <stage stageid="4a07b0e8-976a-49b6-8b1b-d22d69193e48" name="Variabler" type="Block">
+    <display x="-270" y="105" w="150" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="666699" />
+  </stage>
+  <stage stageid="b7ae884a-b043-40c5-a5b9-188ae0f8f059" name="Konstanter" type="Block">
+    <display x="-270" y="30" w="150" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="008080" />
+  </stage>
+  <stage stageid="d9d42595-8c81-4b3c-93ea-5b47423c1119" name="Output" type="Block">
+    <display x="-270" y="180" w="150" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="800080" />
+  </stage>
+  <stage stageid="0e664218-fd5a-42c9-b129-8a50f0d87c2e" name="Borger" type="Collection">
+    <subsheetid>35a552a1-a927-400a-ac00-7650f56291c3</subsheetid>
+    <display x="-195" y="-15" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="a331f0bd-a05e-4ac3-932d-ae1feb1f7d31" name="Start Momentum" type="Action">
+    <subsheetid>35a552a1-a927-400a-ac00-7650f56291c3</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="150" y="-165" />
+    <inputs>
+      <input type="text" name="Credentials" friendlyname="Credentials" expr="&quot;KMD Momentum - edu&quot;" />
+    </inputs>
+    <onsuccess>7e10b536-52cf-463b-b43f-ea8d16d31814</onsuccess>
+    <resource object="Momentum - Core" action="Start" />
+  </stage>
+  <stage stageid="7e10b536-52cf-463b-b43f-ea8d16d31814" name="Hent test-borger" type="Action">
+    <subsheetid>35a552a1-a927-400a-ac00-7650f56291c3</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="150" y="-120" />
+    <inputs>
+      <input type="text" name="Cpr" friendlyname="Cpr" expr="&quot;xxxxxxxxxx&quot;" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="Borger" friendlyname="Borger" stage="Borger" />
+      <output type="number" name="Antal" friendlyname="Antal" stage="" />
+      <output type="flag" name="Succes" friendlyname="Succes" stage="" />
+    </outputs>
+    <onsuccess>54a0015c-6404-4712-b387-fe0a76259cd7</onsuccess>
+    <resource object="Momentum - Borger" action="Hent borger" />
+  </stage>
+  <stage stageid="26c0c607-71b6-4150-b6ac-74f5432383af" name="Anchor1" type="Anchor">
+    <subsheetid>35a552a1-a927-400a-ac00-7650f56291c3</subsheetid>
+    <loginhibit />
+    <display x="-15" y="-75" w="10" h="10" />
+    <onsuccess>f4813e7f-d066-4c8a-a218-3b9dea22316c</onsuccess>
+  </stage>
+  <stage stageid="54a0015c-6404-4712-b387-fe0a76259cd7" name="Anchor2" type="Anchor">
+    <subsheetid>35a552a1-a927-400a-ac00-7650f56291c3</subsheetid>
+    <loginhibit />
+    <display x="150" y="-75" w="10" h="10" />
+    <onsuccess>26c0c607-71b6-4150-b6ac-74f5432383af</onsuccess>
+  </stage>
+  <stage stageid="f4813e7f-d066-4c8a-a218-3b9dea22316c" name="Hent journaler" type="Action">
+    <subsheetid>35a552a1-a927-400a-ac00-7650f56291c3</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="-15" y="-30" />
+    <inputs>
+      <input type="text" name="Url" friendlyname="Url" expr="&quot;/journals/&quot; &amp; [Borger.id]" />
+    </inputs>
+    <outputs>
+      <output type="number" name="Statuskode" friendlyname="Statuskode" narrative="Http statuskoden for kaldet" stage="Statuskode" />
+      <output type="collection" name="Data" friendlyname="Data" stage="Journaler" />
+      <output type="number" name="Antal" friendlyname="Antal" stage="Antal" />
+      <output type="text" name="Json" friendlyname="Json" narrative="Det rå json output" stage="" />
+    </outputs>
+    <onsuccess>9adb6aaf-2ef7-4697-aaea-523e3f02397f</onsuccess>
+    <resource object="Momentum - Core" action="Get" />
+  </stage>
+  <stage stageid="21fd1872-4db5-41a4-875d-6f4d13fcf991" name="Statuskode" type="Data">
+    <subsheetid>35a552a1-a927-400a-ac00-7650f56291c3</subsheetid>
+    <display x="-195" y="135" w="120" h="30" />
+    <datatype>number</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="8e14578a-4b6a-4618-a952-e78dd757b6c3" name="Journaler" type="Collection">
+    <subsheetid>35a552a1-a927-400a-ac00-7650f56291c3</subsheetid>
+    <display x="-195" y="210" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="9adb6aaf-2ef7-4697-aaea-523e3f02397f" name="Sæt succes" type="Calculation">
+    <subsheetid>35a552a1-a927-400a-ac00-7650f56291c3</subsheetid>
+    <loginhibit />
+    <display x="-15" y="15" />
+    <onsuccess>02c08f2b-b36e-4313-bca8-8fb7a887248d</onsuccess>
+    <calculation expression="[Statuskode] = 200" stage="Succes" />
+  </stage>
+  <stage stageid="61bdceba-b90f-46fd-9d87-03e6c8246f57" name="Succes" type="Data">
+    <subsheetid>35a552a1-a927-400a-ac00-7650f56291c3</subsheetid>
+    <display x="-195" y="300" w="120" h="30" />
+    <datatype>flag</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="6ca170cb-daa0-4736-8c2c-4f49153e638f" name="Debug" type="Block">
+    <subsheetid>35a552a1-a927-400a-ac00-7650f56291c3</subsheetid>
+    <loginhibit />
+    <display x="105" y="-195" w="90" h="105" />
+    <font family="Segoe UI" size="10" style="Regular" color="FFFF99" />
+  </stage>
+  <stage stageid="bcb6bb37-c0ab-414a-aeb9-05ff1a2ff811" name="Hent journalnotater" type="Block">
+    <subsheetid>35a552a1-a927-400a-ac00-7650f56291c3</subsheetid>
+    <loginhibit />
+    <display x="-90" y="-60" w="210" h="105" />
+    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
+  </stage>
+  <stage stageid="629cf01e-fb76-46d0-aec0-9c27a4537d34" name="Antal" type="Data">
+    <subsheetid>35a552a1-a927-400a-ac00-7650f56291c3</subsheetid>
+    <display x="-195" y="255" w="120" h="30" />
+    <datatype>number</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="54d50885-39bc-4674-8178-721105755726" name="Opret journalnotat" type="SubSheetInfo">
+    <subsheetid>b2e6dddd-8ec4-4c6e-8e75-4592f2c39568</subsheetid>
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="b75ebda7-c368-4866-bbaf-f9ba86d5d900" name="Start" type="Start">
+    <subsheetid>b2e6dddd-8ec4-4c6e-8e75-4592f2c39568</subsheetid>
+    <loginhibit />
+    <display x="15" y="-105" />
+    <inputs>
+      <input type="collection" name="Reference" stage="Reference" />
+      <input type="collection" name="Sag" stage="Sag" />
+      <input type="datetime" name="Hændelsesdato" stage="Hændelsesdato" />
+      <input type="text" name="Titel" stage="Titel" />
+      <input type="text" name="Tekst" stage="Tekst" />
+      <input type="text" name="Journaltype" stage="Journaltype" />
+      <input type="text" name="KLE nummer" narrative="15.12.17" stage="KLE nummer" />
+      <input type="text" name="Handlingsfacet" narrative="G01" stage="Handlingsfacet" />
+    </inputs>
+    <onsuccess>1633d375-a5c9-40be-a94e-63853c7a74ea</onsuccess>
+  </stage>
+  <stage stageid="ea8cce47-53ed-485c-95fe-b6d5f93c7f8b" name="End" type="End">
+    <subsheetid>b2e6dddd-8ec4-4c6e-8e75-4592f2c39568</subsheetid>
+    <loginhibit />
+    <display x="15" y="285" />
+    <outputs>
+      <output type="collection" name="Journalnotat" stage="Journalnotat" />
+      <output type="flag" name="Succes" stage="Succes" />
+    </outputs>
+  </stage>
+  <stage stageid="be484cf3-587f-44ad-9850-b3e5695e531b" name="Debug" type="Block">
+    <subsheetid>b2e6dddd-8ec4-4c6e-8e75-4592f2c39568</subsheetid>
+    <loginhibit />
+    <display x="120" y="-270" w="90" h="195" />
+    <font family="Segoe UI" size="10" style="Regular" color="FFFF99" />
+  </stage>
+  <stage stageid="d0064256-cb73-408c-a32c-95b0418ba1e4" name="Start Momemtum (produktion)" type="Action">
+    <subsheetid>b2e6dddd-8ec4-4c6e-8e75-4592f2c39568</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="165" y="-240" />
+    <inputs>
+      <input type="text" name="Credentials" friendlyname="Credentials" expr="&quot;KMD Momentum - produktion&quot;" />
+    </inputs>
+    <onsuccess>f4856f07-20e9-4fa2-baa7-e1dea1f95f13</onsuccess>
+    <resource object="Momentum - Core" action="Start" />
+  </stage>
+  <stage stageid="f4856f07-20e9-4fa2-baa7-e1dea1f95f13" name="Momentum - Borger::Hent borger" type="Action">
+    <subsheetid>b2e6dddd-8ec4-4c6e-8e75-4592f2c39568</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="165" y="-195" />
+    <inputs>
+      <input type="text" name="Cpr" friendlyname="Cpr" expr="&quot;xxxxxxxxxx&quot;" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="Borger" friendlyname="Borger" stage="Reference" />
+      <output type="number" name="Antal" friendlyname="Antal" stage="" />
+      <output type="flag" name="Succes" friendlyname="Succes" stage="" />
+    </outputs>
+    <onsuccess>7e87fcf0-b292-43c8-b07b-b14b31eb191f</onsuccess>
+    <resource object="Momentum - Borger" action="Hent borger" />
+  </stage>
+  <stage stageid="d002dc36-83b4-4a59-ae40-b13af6ad3b49" name="Input" type="Block">
+    <subsheetid>b2e6dddd-8ec4-4c6e-8e75-4592f2c39568</subsheetid>
+    <display x="-270" y="-45" w="150" h="375" />
+    <font family="Segoe UI" size="10" style="Regular" color="339966" />
+  </stage>
+  <stage stageid="df3c4eb6-4a6c-42f2-b89d-d576887b0bde" name="Variabler" type="Block">
+    <subsheetid>b2e6dddd-8ec4-4c6e-8e75-4592f2c39568</subsheetid>
+    <display x="-270" y="465" w="150" h="150" />
+    <font family="Segoe UI" size="10" style="Regular" color="666699" />
+  </stage>
+  <stage stageid="5c43f130-eec0-402d-ab68-50b53d3d5e19" name="Konstanter" type="Block">
+    <subsheetid>b2e6dddd-8ec4-4c6e-8e75-4592f2c39568</subsheetid>
+    <display x="-270" y="345" w="150" h="105" />
+    <font family="Segoe UI" size="10" style="Regular" color="008080" />
+  </stage>
+  <stage stageid="abcee27f-734e-499c-a8e1-7cf0d5a539b1" name="Output" type="Block">
+    <subsheetid>b2e6dddd-8ec4-4c6e-8e75-4592f2c39568</subsheetid>
+    <display x="-270" y="630" w="150" h="105" />
+    <font family="Segoe UI" size="10" style="Regular" color="800080" />
+  </stage>
+  <stage stageid="d0a5ee54-40f1-4f48-aa40-9d8b72cd0445" name="Statuskode" type="Data">
+    <subsheetid>b2e6dddd-8ec4-4c6e-8e75-4592f2c39568</subsheetid>
+    <display x="-195" y="495" w="120" h="30" />
+    <datatype>number</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="9b879fec-ea7b-44a7-a7ef-2b7c5ca719dd" name="Succes" type="Data">
+    <subsheetid>b2e6dddd-8ec4-4c6e-8e75-4592f2c39568</subsheetid>
+    <display x="-195" y="705" w="120" h="30" />
+    <datatype>flag</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="0a53f0fa-2643-412f-a973-08ea0a31d03a" name="Antal" type="Data">
+    <subsheetid>b2e6dddd-8ec4-4c6e-8e75-4592f2c39568</subsheetid>
+    <display x="-195" y="585" w="120" h="30" />
+    <datatype>number</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="1633d375-a5c9-40be-a94e-63853c7a74ea" name="Anchor3" type="Anchor">
+    <subsheetid>b2e6dddd-8ec4-4c6e-8e75-4592f2c39568</subsheetid>
+    <loginhibit />
+    <display x="15" y="-60" w="10" h="10" />
+    <onsuccess>22dbcffd-0b5b-4bba-83b8-fbbc62c9eb95</onsuccess>
+  </stage>
+  <stage stageid="2563aeff-2874-4f5e-b392-a7c55f49c812" name="Anchor4" type="Anchor">
+    <subsheetid>b2e6dddd-8ec4-4c6e-8e75-4592f2c39568</subsheetid>
+    <loginhibit />
+    <display x="165" y="-60" w="10" h="10" />
+    <onsuccess>1633d375-a5c9-40be-a94e-63853c7a74ea</onsuccess>
+  </stage>
+  <stage stageid="be9de8e2-2a5f-480d-9aa0-26bb05e956a3" name="Reference" type="Collection">
+    <subsheetid>b2e6dddd-8ec4-4c6e-8e75-4592f2c39568</subsheetid>
+    <display x="-195" y="-15" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="e2d42819-9e7c-47a4-b338-03f176a0143c" name="Titel" type="Data">
+    <subsheetid>b2e6dddd-8ec4-4c6e-8e75-4592f2c39568</subsheetid>
+    <display x="-195" y="120" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="54ea998b-d0fd-4d0b-9c26-240d6a7a23ed" name="Tekst" type="Data">
+    <subsheetid>b2e6dddd-8ec4-4c6e-8e75-4592f2c39568</subsheetid>
+    <display x="-195" y="165" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="a1337a98-e107-489a-9f39-2505f3075d1c" name="Hændelsesdato" type="Data">
+    <subsheetid>b2e6dddd-8ec4-4c6e-8e75-4592f2c39568</subsheetid>
+    <display x="-195" y="75" w="120" h="30" />
+    <datatype>datetime</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="69c3e16f-e5e8-45a0-85ce-dc910e7ded5e" name="KLE nummer" type="Data">
+    <subsheetid>b2e6dddd-8ec4-4c6e-8e75-4592f2c39568</subsheetid>
+    <display x="-195" y="255" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="7d687376-7a95-45d9-b140-68d691d52137" name="Handlingsfacet" type="Data">
+    <subsheetid>b2e6dddd-8ec4-4c6e-8e75-4592f2c39568</subsheetid>
+    <display x="-195" y="300" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="9829358e-3594-4b78-b725-7574969effce" name="Journaltype" type="Data">
+    <subsheetid>b2e6dddd-8ec4-4c6e-8e75-4592f2c39568</subsheetid>
+    <display x="-195" y="210" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="2e5b7216-1bc4-4e51-8ed0-627061b2d848" name="Skabelon" type="Data">
+    <subsheetid>b2e6dddd-8ec4-4c6e-8e75-4592f2c39568</subsheetid>
+    <loginhibit />
+    <display x="-195" y="375" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue xml:space="preserve">{
+    "createdAt": "1970-01-01T00:00:00.000Z",
+    "updatedAt": "1970-01-01T00:00:00.000Z",
+    "title": "test",
+    "referenceId": "",
+    "occurredAt": "",
+    "body": "",
+    "attachments": [],
+    "journalTypeId": "",
+    "isApproved": true,
+    "caseId": "",
+    "caseTagCode": "",
+    "caseActionFacetTagCode": ""
+}</initialvalue>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="0b186fe6-63a8-4ad7-b279-0e320297f575" name="Sag" type="Collection">
+    <subsheetid>b2e6dddd-8ec4-4c6e-8e75-4592f2c39568</subsheetid>
+    <display x="-195" y="30" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="549625b6-2bb3-419b-bff0-a2258a1516f6" name="Journaltyper" type="Collection">
+    <subsheetid>b2e6dddd-8ec4-4c6e-8e75-4592f2c39568</subsheetid>
+    <loginhibit />
+    <display x="-195" y="420" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+    <collectioninfo>
+      <field name="Id" type="text" />
+      <field name="Navn" type="text" />
+    </collectioninfo>
+    <initialvalue>
+      <row>
+        <field name="Id" type="text" value="fb60c76f-d4b2-44c2-b297-70912a7fbb9c" />
+        <field name="Navn" type="text" value="Fremmøderapport" />
+      </row>
+      <row>
+        <field name="Id" type="text" value="b5e8e093-c31d-40f1-93e5-4e488a72f904" />
+        <field name="Navn" type="text" value="Sagshændelse" />
+      </row>
+      <row>
+        <field name="Id" type="text" value="582FB102-548F-EE11-827B-00155DDBB303" />
+        <field name="Navn" type="text" value="A-kasseunderretning" />
+      </row>
+      <row>
+        <field name="Id" type="text" value="44654224-4BC5-E311-8456-00155D177806" />
+        <field name="Navn" type="text" value="Resultatbaseret styring" />
+      </row>
+      <row>
+        <field name="Id" type="text" value="3805612F-AFAA-4955-8865-E9A922B20567" />
+        <field name="Navn" type="text" value="Besked fra a-kasse" />
+      </row>
+    </initialvalue>
+  </stage>
+  <stage stageid="891deef1-956f-4607-acb2-1bc4ca187447" name="Sæt debug" type="MultipleCalculation">
+    <subsheetid>b2e6dddd-8ec4-4c6e-8e75-4592f2c39568</subsheetid>
+    <loginhibit />
+    <display x="165" y="-105" />
+    <onsuccess>2563aeff-2874-4f5e-b392-a7c55f49c812</onsuccess>
+    <steps>
+      <calculation expression="&quot;Fremmøderapport&quot;" stage="Journaltype" />
+      <calculation expression="&quot;15.17.06&quot;" stage="KLE nummer" />
+      <calculation expression="&quot;G01&quot;" stage="Handlingsfacet" />
+      <calculation expression="&quot;RPA Udfører test efter aftale kl: &quot; &amp; Now()" stage="Titel" />
+      <calculation expression="&quot;&lt;p&gt;Dette er en test uden konsekvens for borgeren. Udført af RPA efter aftale.&lt;/p&gt;&quot;" stage="Tekst" />
+      <calculation expression="Now()" stage="Hændelsesdato" />
+    </steps>
+  </stage>
+  <stage stageid="7e87fcf0-b292-43c8-b07b-b14b31eb191f" name="Hent sag" type="Action">
+    <subsheetid>b2e6dddd-8ec4-4c6e-8e75-4592f2c39568</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="165" y="-150" />
+    <inputs>
+      <input type="collection" name="Borger" friendlyname="Borger" expr="[Reference]" />
+      <input type="flag" name="Kun aktive?" friendlyname="Kun aktive?" narrative="Default er true" expr="True" />
+    </inputs>
+    <outputs>
+      <output type="number" name="Antal" friendlyname="Antal" stage="" />
+      <output type="flag" name="Succes" friendlyname="Succes" stage="" />
+      <output type="collection" name="Sager" friendlyname="Sager" stage="Sag" />
+    </outputs>
+    <onsuccess>891deef1-956f-4607-acb2-1bc4ca187447</onsuccess>
+    <resource object="Momentum - Borger" action="Hent sager" />
+  </stage>
+  <stage stageid="22dbcffd-0b5b-4bba-83b8-fbbc62c9eb95" name="Vælg journaltype" type="Action">
+    <subsheetid>b2e6dddd-8ec4-4c6e-8e75-4592f2c39568</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="15" y="-15" />
+    <inputs>
+      <input type="collection" name="Collection In" friendlyname="Collection In" narrative="Input collection" expr="[Journaltyper]" />
+      <input type="text" name="Filter" friendlyname="Filter" narrative="The filter to apply" expr="&quot;[Navn]='&quot; &amp; [Journaltype] &amp; &quot;'&quot;" />
+    </inputs>
+    <outputs>
+      <output type="number" name="Count" friendlyname="Count" narrative="The amount of rows in the filtered collection" stage="Antal" />
+      <output type="collection" name="Collection Out" friendlyname="Collection Out" narrative="The filtered collection" stage="Journaltyper" />
+    </outputs>
+    <onsuccess>af9ecd7b-ab13-4495-a99b-0795e2f414b2</onsuccess>
+    <resource object="Utility - Odk Linq" action="Filter" />
+  </stage>
+  <stage stageid="af9ecd7b-ab13-4495-a99b-0795e2f414b2" name="Fik vi journaltypen?" type="Decision">
+    <subsheetid>b2e6dddd-8ec4-4c6e-8e75-4592f2c39568</subsheetid>
+    <loginhibit />
+    <display x="15" y="30" />
+    <decision expression="[Antal] = 1" />
+    <ontrue>b76f8c34-c8b5-4eab-9812-7f4cda424a23</ontrue>
+    <onfalse>bf4e3fdd-1fe3-4ea2-b482-cb868f82f75f</onfalse>
+  </stage>
+  <stage stageid="bf4e3fdd-1fe3-4ea2-b482-cb868f82f75f" name="Exception1" type="Exception">
+    <subsheetid>b2e6dddd-8ec4-4c6e-8e75-4592f2c39568</subsheetid>
+    <display x="210" y="30" />
+    <exception localized="yes" type="Business Exception" detail="&quot;Ukendt journaltype: &quot; &amp; [Journaltype]" />
+  </stage>
+  <stage stageid="cb738937-013a-41ef-9028-c06cceca5a8e" name="Validering" type="Block">
+    <subsheetid>b2e6dddd-8ec4-4c6e-8e75-4592f2c39568</subsheetid>
+    <loginhibit />
+    <display x="-90" y="-45" w="255" h="105" />
+    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
+  </stage>
+  <stage stageid="18b9c41c-612b-4d16-9994-8031106e5df4" name="Dan json" type="Block">
+    <subsheetid>b2e6dddd-8ec4-4c6e-8e75-4592f2c39568</subsheetid>
+    <loginhibit />
+    <display x="-90" y="75" w="255" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
+  </stage>
+  <stage stageid="b76f8c34-c8b5-4eab-9812-7f4cda424a23" name="Lav json" type="Code">
+    <subsheetid>b2e6dddd-8ec4-4c6e-8e75-4592f2c39568</subsheetid>
+    <loginhibit />
+    <display x="15" y="105" />
+    <inputs>
+      <input type="text" name="template" expr="[Skabelon]" />
+      <input type="text" name="referenceid" expr="[Reference.id]" />
+      <input type="text" name="caseid" expr="[Sag.id]" />
+      <input type="text" name="title" expr="[Titel]" />
+      <input type="text" name="text" expr="[Tekst]" />
+      <input type="datetime" name="occuredAt" expr="[Hændelsesdato]" />
+      <input type="text" name="caseTagCode" expr="&quot;KLE_&quot; &amp; [KLE nummer]" />
+      <input type="text" name="journalTypeId" expr="[Journaltyper.Id]" />
+      <input type="text" name="caseActionFacetTagCode" expr="&quot;KLE_ACTION_FACETS_&quot; &amp; [Handlingsfacet]" />
+    </inputs>
+    <outputs>
+      <output type="text" name="result" stage="Json" />
+    </outputs>
+    <onsuccess>798d781a-4952-4764-8d0d-adadc8f37c7f</onsuccess>
+    <code><![CDATA[var json = JObject.Parse(template);
+
+/*
+{
+    "createdAt": "1970-01-01T00:00:00.000Z",
+    "updatedAt": "1970-01-01T00:00:00.000Z",
+    "title": "test",
+    "referenceId": "5f12f060-9827-43f8-ae3f-4fd96c690aa8",
+    "occurredAt": "2024-05-21T13:21:00.000Z",
+    "body": "<p>test</p>",
+    "attachments": [],
+    "journalTypeId": "566890eb-e8c3-431d-99b5-983b8462dac7",
+    "isApproved": true,
+    "caseId": "7da30f7b-ca04-459f-ab03-6c9ed09e98f3",
+    "caseTagCode": "KLE_15.17.06",
+    "caseActionFacetTagCode": "KLE_ACTION_FACETS_G01"
+}*/
+
+
+json["referenceId"] = referenceid;
+json["caseId"] = caseid;
+json["title"] = title;
+json["body"] = text;
+json["occurredAt"] = occuredAt;
+json["caseTagCode"] = caseTagCode;
+json["caseActionFacetTagCode"] = caseActionFacetTagCode;
+json["journalTypeId"] = journalTypeId;
+
+
+result = json.ToString();]]></code>
+  </stage>
+  <stage stageid="4c116315-524d-43df-b6e1-4cd030114722" name="Json" type="Data">
+    <subsheetid>b2e6dddd-8ec4-4c6e-8e75-4592f2c39568</subsheetid>
+    <display x="-195" y="540" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="8252d05c-5c31-4d7c-9500-0b6bba27a882" name="Opret notat" type="Block">
+    <subsheetid>b2e6dddd-8ec4-4c6e-8e75-4592f2c39568</subsheetid>
+    <loginhibit />
+    <display x="-90" y="150" w="255" h="105" />
+    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
+  </stage>
+  <stage stageid="798d781a-4952-4764-8d0d-adadc8f37c7f" name="Kald opret" type="Action">
+    <subsheetid>b2e6dddd-8ec4-4c6e-8e75-4592f2c39568</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="15" y="180" />
+    <inputs>
+      <input type="text" name="Url" friendlyname="Url" expr="&quot;/journals/note&quot;" />
+      <input type="text" name="Body" friendlyname="Body" expr="[Json]" />
+    </inputs>
+    <outputs>
+      <output type="number" name="Statuskode" friendlyname="Statuskode" narrative="Http statuskoden for kaldet" stage="Statuskode" />
+      <output type="collection" name="Data" friendlyname="Data" stage="Journalnotat" />
+      <output type="number" name="Antal" friendlyname="Antal" stage="" />
+      <output type="text" name="Json" friendlyname="Json" narrative="Det rå json output" stage="" />
+    </outputs>
+    <onsuccess>e10a9a68-7dcb-4d95-8e7b-94bbacc7f8b0</onsuccess>
+    <resource object="Momentum - Core" action="Post" />
+  </stage>
+  <stage stageid="69cd3b73-6082-4c6f-b2be-58a73b65a264" name="Journalnotat" type="Collection">
+    <subsheetid>b2e6dddd-8ec4-4c6e-8e75-4592f2c39568</subsheetid>
+    <display x="-195" y="660" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="e10a9a68-7dcb-4d95-8e7b-94bbacc7f8b0" name="Sæt status" type="Calculation">
+    <subsheetid>b2e6dddd-8ec4-4c6e-8e75-4592f2c39568</subsheetid>
+    <loginhibit />
+    <display x="15" y="225" />
+    <onsuccess>ea8cce47-53ed-485c-95fe-b6d5f93c7f8b</onsuccess>
+    <calculation expression="[Statuskode] = 200" stage="Succes" />
+  </stage>
+  <stage stageid="10a59dd6-ce4d-47c3-8ef4-25940c90f869" name="Note1" type="Note">
+    <subsheetid>b2e6dddd-8ec4-4c6e-8e75-4592f2c39568</subsheetid>
+    <loginhibit />
+    <narrative>Denne funktion virker KUN i prod. Det skyldes nøgler som er forskellige.</narrative>
+    <display x="15" y="-195" w="150" h="90" />
+  </stage>
+</process>

@@ -1,0 +1,2248 @@
+﻿<process name="Utility - Odk Linq" version="1.0" bpversion="6.10.5.64603" narrative="This object provides several collection manipulation functions. It's an extension to Utility Collection Manipulation" byrefcollection="true" type="object" runmode="Exclusive" preferredid="8d1b2508-b15b-4ab1-86b3-d34b60999a67">
+  <appdef>
+    <element name="Application Root">
+      <id>29bedf0d-3285-4670-8f7d-273bcbe5ad24</id>
+      <type>Application</type>
+      <basetype>Application</basetype>
+      <datatype>unknown</datatype>
+      <diagnose>False</diagnose>
+    </element>
+  </appdef>
+  <view>
+    <camerax>0</camerax>
+    <cameray>0</cameray>
+    <zoom version="2">1.25</zoom>
+  </view>
+  <preconditions />
+  <endpoint narrative="" />
+  <subsheet subsheetid="cbed8540-c3f3-4661-a4b2-79cc4d45dc8c" type="CleanUp" published="True">
+    <name>Clean Up</name>
+    <view>
+      <camerax>0</camerax>
+      <cameray>0</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <subsheet subsheetid="07115acf-6dab-4133-b4ba-052919bfbca9" type="Normal" published="True">
+    <name>Filter</name>
+    <view>
+      <camerax>0</camerax>
+      <cameray>-42</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <subsheet subsheetid="1de01796-a016-484d-be4b-375ff8c44d20" type="Normal" published="True">
+    <name>Count</name>
+    <view>
+      <camerax>0</camerax>
+      <cameray>-63</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <subsheet subsheetid="6f60eba7-cb7d-497f-b59a-918ccb039e33" type="Normal" published="True">
+    <name>Distinct field</name>
+    <view>
+      <camerax>0</camerax>
+      <cameray>126</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <subsheet subsheetid="786646f3-856c-4b7d-98d6-7ab7dfe9e04f" type="Normal" published="True">
+    <name>Regex filter</name>
+    <view>
+      <camerax>0</camerax>
+      <cameray>141</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <subsheet subsheetid="5264d12d-76a1-44ac-8567-1ccdc860dc97" type="Normal" published="True">
+    <name>Remove Duplicate</name>
+    <view>
+      <camerax>0</camerax>
+      <cameray>70</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <subsheet subsheetid="fdfc0eae-afa2-415e-9775-aa42e52e6f85" type="Normal" published="False">
+    <name>Test Regex filter</name>
+    <view>
+      <camerax>0</camerax>
+      <cameray>0</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <subsheet subsheetid="becc3e99-bf38-47ab-903d-b8c70a6e867e" type="Normal" published="False">
+    <name>Test: Distinct field</name>
+    <view>
+      <camerax>0</camerax>
+      <cameray>0</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <subsheet subsheetid="342c043a-d363-4b2a-acdf-d0bba2d81bb4" type="Normal" published="True">
+    <name>Statistics: Average</name>
+    <view>
+      <camerax>0</camerax>
+      <cameray>126</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <subsheet subsheetid="0cf0c123-1d07-44a6-8967-f71a8f7caffb" type="Normal" published="True">
+    <name>Statistics: Sum</name>
+    <view>
+      <camerax>0</camerax>
+      <cameray>21</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <subsheet subsheetid="e02a8377-a3f6-49d0-b365-4e497c270e59" type="Normal" published="True">
+    <name>Statistics: Standard deviation</name>
+    <view>
+      <camerax>-13</camerax>
+      <cameray>231</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <subsheet subsheetid="1a380187-60c0-48cb-a5f7-7bb6782529af" type="Normal" published="False">
+    <name>Test: Statistics: Standard deviation</name>
+    <view>
+      <camerax>0</camerax>
+      <cameray>0</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <subsheet subsheetid="2a9835eb-0546-4c58-acbc-a7eab1205df9" type="Normal" published="False">
+    <name>Test: Statistics - Average</name>
+    <view>
+      <camerax>0</camerax>
+      <cameray>0</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <subsheet subsheetid="e3c8f0df-f8bb-44df-8be4-4b39dc1806c6" type="Normal" published="False">
+    <name>Test: Statistics - Sum</name>
+    <view>
+      <camerax>0</camerax>
+      <cameray>0</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <stage stageid="d6a072a9-7cdf-49b6-869f-b6e539571fe2" name="Start" type="Start">
+    <loginhibit />
+    <display x="15" y="-105" />
+    <onsuccess>2df80651-df43-4cd7-87dc-af7da34134c8</onsuccess>
+  </stage>
+  <stage stageid="2df80651-df43-4cd7-87dc-af7da34134c8" name="End" type="End">
+    <loginhibit />
+    <display x="15" y="90" />
+  </stage>
+  <stage stageid="0e301d89-199d-4e43-afcd-43aec5bba564" name="Stage1" type="ProcessInfo">
+    <display x="-195" y="-105" w="150" h="90" />
+    <references>
+      <reference>System.dll</reference>
+      <reference>System.Data.dll</reference>
+      <reference>System.Xml.dll</reference>
+      <reference>System.Drawing.dll</reference>
+    </references>
+    <imports>
+      <import>System</import>
+      <import>System.Drawing</import>
+      <import>System.Data</import>
+      <import>System.Collections</import>
+    </imports>
+    <language>csharp</language>
+    <globalcode><![CDATA[]]></globalcode>
+    <code><![CDATA[]]></code>
+  </stage>
+  <stage stageid="c95e5186-4a1b-421c-9eba-b1e7771a7d71" name="Clean Up" type="SubSheetInfo">
+    <subsheetid>cbed8540-c3f3-4661-a4b2-79cc4d45dc8c</subsheetid>
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="9a7f52d8-5ea3-495b-b876-d4c71e237442" name="Start" type="Start">
+    <subsheetid>cbed8540-c3f3-4661-a4b2-79cc4d45dc8c</subsheetid>
+    <loginhibit />
+    <display x="15" y="-105" />
+    <onsuccess>07523ccf-747c-47d1-a066-8268e95bb6e5</onsuccess>
+  </stage>
+  <stage stageid="07523ccf-747c-47d1-a066-8268e95bb6e5" name="End" type="End">
+    <subsheetid>cbed8540-c3f3-4661-a4b2-79cc4d45dc8c</subsheetid>
+    <loginhibit />
+    <display x="15" y="90" />
+  </stage>
+  <stage stageid="62d82576-a5ca-4d3a-917d-0525d7ced72b" name="Filter" type="SubSheetInfo">
+    <subsheetid>07115acf-6dab-4133-b4ba-052919bfbca9</subsheetid>
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="a349416f-19d2-42ac-92a5-c6fc1b065b3a" name="Start" type="Start">
+    <subsheetid>07115acf-6dab-4133-b4ba-052919bfbca9</subsheetid>
+    <loginhibit />
+    <display x="15" y="-240" />
+    <inputs>
+      <input type="collection" name="Collection In" narrative="Input collection" stage="Collection In" />
+      <input type="text" name="Filter" narrative="The filter to apply" stage="Filter" />
+    </inputs>
+    <onsuccess>adc1d344-de2e-43d7-b017-2b4b9ebd2f61</onsuccess>
+  </stage>
+  <stage stageid="75ea6984-f9b3-4847-a0bd-e24630bdbe75" name="End" type="End">
+    <subsheetid>07115acf-6dab-4133-b4ba-052919bfbca9</subsheetid>
+    <loginhibit />
+    <display x="15" y="120" />
+    <outputs>
+      <output type="collection" name="Collection Out" narrative="The filtered collection" stage="Collection Out" />
+      <output type="number" name="Count" narrative="The amount of rows in the filtered collection" stage="Count" />
+    </outputs>
+  </stage>
+  <stage stageid="b1e8dc25-71ef-4f1b-a7ba-1b5751596967" name="Note1" type="Note">
+    <subsheetid>cbed8540-c3f3-4661-a4b2-79cc4d45dc8c</subsheetid>
+    <narrative>Clean Up Page
+
+This is an optional page where you might choose to perform some finalisation (or "cleanup") tasks as your business object is closed down.
+
+The cleanup action will be called automatically immediately after closing your business object at the end of a business process.
+
+You will not be able to call this action from a business process, nor will it be called at any other time than before the disposal of the business object.</narrative>
+    <display x="-180" y="60" w="180" h="230" />
+  </stage>
+  <stage stageid="6bd10c44-2b19-4d9a-b4e6-901de7046e4b" name="Note2" type="Note">
+    <narrative>Initialise Page
+
+This is an optional page where you might choose to perform some initialisation tasks after your business object is loaded.
+
+The initialise action will be called automatically immediately after loading your business object.
+
+You will not be able to call this action from a business process, nor will it be called at any other time than after the creation of the object.</narrative>
+    <display x="-180" y="60" w="180" h="230" />
+  </stage>
+  <stage stageid="4da37b93-86a7-449a-aa79-fbcd4dc9660f" name="Filter" type="Action">
+    <subsheetid>07115acf-6dab-4133-b4ba-052919bfbca9</subsheetid>
+    <loginhibit />
+    <display x="15" y="0" />
+    <inputs>
+      <input type="collection" name="Collection In" narrative="The collection to filter." expr="[Collection In]" />
+      <input type="text" name="Filter" narrative="The filter query." expr="[Filter]" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="Collection Out" narrative="The filtered collection." stage="Collection Out" />
+    </outputs>
+    <onsuccess>6c7b2077-4984-49f3-a67b-7f58f9e362a4</onsuccess>
+    <resource object="Utility - Collection Manipulation" action="Filter Collection" />
+  </stage>
+  <stage stageid="20c23031-91a3-4150-a2ab-f2e74bb71939" name="Collection In" type="Collection">
+    <subsheetid>07115acf-6dab-4133-b4ba-052919bfbca9</subsheetid>
+    <display x="-195" y="-15" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="09b9cc44-937b-44ad-881f-c3904f4f8a35" name="Filter" type="Data">
+    <subsheetid>07115acf-6dab-4133-b4ba-052919bfbca9</subsheetid>
+    <display x="-195" y="30" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="c5d8f35e-542f-400e-ae9a-9a056cf58cc4" name="Input" type="Block">
+    <subsheetid>07115acf-6dab-4133-b4ba-052919bfbca9</subsheetid>
+    <loginhibit />
+    <display x="-270" y="-45" w="150" h="105" />
+    <font family="Segoe UI" size="10" style="Regular" color="339966" />
+  </stage>
+  <stage stageid="04373e78-4636-4fb7-a6c9-870a1e70ad80" name="Output" type="Block">
+    <subsheetid>07115acf-6dab-4133-b4ba-052919bfbca9</subsheetid>
+    <loginhibit />
+    <display x="-270" y="75" w="150" h="105" />
+    <font family="Segoe UI" size="10" style="Regular" color="800080" />
+  </stage>
+  <stage stageid="5bc1be79-f367-40a3-a72f-d6955905395f" name="Collection Out" type="Collection">
+    <subsheetid>07115acf-6dab-4133-b4ba-052919bfbca9</subsheetid>
+    <display x="-195" y="105" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="dd193f45-fb70-4655-beb9-444f862d9c10" name="Count" type="Data">
+    <subsheetid>07115acf-6dab-4133-b4ba-052919bfbca9</subsheetid>
+    <loginhibit />
+    <display x="-195" y="150" w="120" h="30" />
+    <datatype>number</datatype>
+    <initialvalue>0</initialvalue>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="10a78dcf-f793-4173-bbe7-21c464d26b9f" name="Has filter?" type="Decision">
+    <subsheetid>07115acf-6dab-4133-b4ba-052919bfbca9</subsheetid>
+    <loginhibit />
+    <display x="15" y="-60" />
+    <decision expression="Trim([Filter]) &lt;&gt; &quot;&quot;" />
+    <ontrue>4da37b93-86a7-449a-aa79-fbcd4dc9660f</ontrue>
+    <onfalse>2f868223-b509-4f4f-8dd3-e801c71b114d</onfalse>
+  </stage>
+  <stage stageid="2f868223-b509-4f4f-8dd3-e801c71b114d" name="Filter" type="Action">
+    <subsheetid>07115acf-6dab-4133-b4ba-052919bfbca9</subsheetid>
+    <loginhibit />
+    <display x="105" y="-60" />
+    <inputs>
+      <input type="collection" name="Collection In" narrative="The collection to filter." expr="[Collection In]" />
+      <input type="text" name="Filter" narrative="The filter query." expr="&quot;1=1&quot;" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="Collection Out" narrative="The filtered collection." stage="Collection Out" />
+    </outputs>
+    <onsuccess>d100233a-0cfc-418b-8087-81ddc48ecb7c</onsuccess>
+    <resource object="Utility - Collection Manipulation" action="Filter Collection" />
+  </stage>
+  <stage stageid="6c7b2077-4984-49f3-a67b-7f58f9e362a4" name="Count rows" type="Action">
+    <subsheetid>07115acf-6dab-4133-b4ba-052919bfbca9</subsheetid>
+    <loginhibit />
+    <display x="15" y="60" />
+    <inputs>
+      <input type="text" name="Collection Name" narrative="The name of the collection to act upon" expr="&quot;Collection Out&quot;" />
+    </inputs>
+    <outputs>
+      <output type="number" name="Count" narrative="The number of rows counted in the collection" stage="Count" />
+    </outputs>
+    <onsuccess>75ea6984-f9b3-4847-a0bd-e24630bdbe75</onsuccess>
+    <resource object="Blueprism.AutomateProcessCore.clsCollectionActions" action="Count Rows" />
+  </stage>
+  <stage stageid="d100233a-0cfc-418b-8087-81ddc48ecb7c" name="Anchor1" type="Anchor">
+    <subsheetid>07115acf-6dab-4133-b4ba-052919bfbca9</subsheetid>
+    <loginhibit />
+    <display x="105" y="60" w="10" h="10" />
+    <onsuccess>6c7b2077-4984-49f3-a67b-7f58f9e362a4</onsuccess>
+  </stage>
+  <stage stageid="6f2941c2-758f-4faa-a0b9-7faf20e6a2e8" name="Statistics: Average" type="SubSheetInfo">
+    <subsheetid>342c043a-d363-4b2a-acdf-d0bba2d81bb4</subsheetid>
+    <narrative>Calculates the average value of a specific field. If the collection is empty a value of 0 is returned</narrative>
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="df99462a-c130-45dc-8287-7db035e92d24" name="Start" type="Start">
+    <subsheetid>342c043a-d363-4b2a-acdf-d0bba2d81bb4</subsheetid>
+    <loginhibit />
+    <display x="15" y="-105" />
+    <inputs>
+      <input type="collection" name="Collection In" narrative="The collection to average" stage="Collection In" />
+      <input type="text" name="Filter" narrative="The filter to apply to the collection, may be blank" stage="Filter" />
+      <input type="text" name="Field" narrative="The field to average, must be a number" stage="Field" />
+    </inputs>
+    <onsuccess>e78f0695-dbc9-49f1-97a2-dd4fc669167a</onsuccess>
+  </stage>
+  <stage stageid="69876b98-638b-4809-a95d-18db9465a502" name="Field" type="Data">
+    <subsheetid>342c043a-d363-4b2a-acdf-d0bba2d81bb4</subsheetid>
+    <display x="-195" y="75" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="888e57cd-4c95-4258-ac01-fc63e25de556" name="Collection In" type="Collection">
+    <subsheetid>342c043a-d363-4b2a-acdf-d0bba2d81bb4</subsheetid>
+    <display x="-195" y="-15" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="f38833f1-4a7f-4318-abd1-be2ada5deea0" name="Filter" type="Data">
+    <subsheetid>342c043a-d363-4b2a-acdf-d0bba2d81bb4</subsheetid>
+    <display x="-195" y="30" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="e8ed4e01-7ae7-4e03-8001-a51542b030fa" name="Input" type="Block">
+    <subsheetid>342c043a-d363-4b2a-acdf-d0bba2d81bb4</subsheetid>
+    <loginhibit />
+    <display x="-270" y="-45" w="150" h="150" />
+    <font family="Segoe UI" size="10" style="Regular" color="339966" />
+  </stage>
+  <stage stageid="536f527c-e437-49d8-9e22-7b1439a58f41" name="Output" type="Block">
+    <subsheetid>342c043a-d363-4b2a-acdf-d0bba2d81bb4</subsheetid>
+    <loginhibit />
+    <display x="-270" y="285" w="150" h="105" />
+    <font family="Segoe UI" size="10" style="Regular" color="800080" />
+  </stage>
+  <stage stageid="4d1da656-d120-42a7-954a-96915022fea0" name="Collection Out" type="Collection">
+    <subsheetid>342c043a-d363-4b2a-acdf-d0bba2d81bb4</subsheetid>
+    <display x="-195" y="240" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="f57cc671-76ee-489c-8bbe-65151d0fc14c" name="Count" type="Data">
+    <subsheetid>342c043a-d363-4b2a-acdf-d0bba2d81bb4</subsheetid>
+    <loginhibit />
+    <display x="-195" y="360" w="120" h="30" />
+    <datatype>number</datatype>
+    <initialvalue>0</initialvalue>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="e78f0695-dbc9-49f1-97a2-dd4fc669167a" name="Filter" type="SubSheet">
+    <subsheetid>342c043a-d363-4b2a-acdf-d0bba2d81bb4</subsheetid>
+    <loginhibit />
+    <display x="15" y="-45" />
+    <inputs>
+      <input type="collection" name="Collection In" narrative="Input collection" expr="[Collection In]" />
+      <input type="text" name="Filter" narrative="The filter to apply" expr="[Filter]" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="Collection Out" narrative="The filtered collection" stage="Collection Out" />
+      <output type="number" name="Count" narrative="The amount of rows in the filtered collection" stage="Count" />
+    </outputs>
+    <onsuccess>88f48265-ee03-417a-9005-b8859cbf8e60</onsuccess>
+    <processid>07115acf-6dab-4133-b4ba-052919bfbca9</processid>
+  </stage>
+  <stage stageid="565c5d4c-786d-4563-9ec9-8e5f5a23c197" name="End" type="End">
+    <subsheetid>342c043a-d363-4b2a-acdf-d0bba2d81bb4</subsheetid>
+    <display x="210" y="60" />
+    <outputs>
+      <output type="number" name="Average" narrative="The calculated average" stage="Sum" />
+      <output type="number" name="Count" narrative="The count of items left after filtering" stage="Count" />
+    </outputs>
+  </stage>
+  <stage stageid="0b18103f-538b-4db5-bafb-44fc3fd8b0ee" name="Get field value" type="Action">
+    <subsheetid>342c043a-d363-4b2a-acdf-d0bba2d81bb4</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="15" y="120" />
+    <inputs>
+      <input type="collection" name="Collection" narrative="The collection to read." expr="[Collection Out]" />
+      <input type="text" name="Field Name" narrative="The field within the collection to read." expr="[Field]" />
+      <input type="number" name="Row Index" narrative="The row index within the collection to read from. The index is from 0 to N-1 (where N is the total number of rows in the collection)." expr="[Position]" />
+    </inputs>
+    <outputs>
+      <output type="text" name="Value Read" narrative="The value of the requested field as text." stage="Value" />
+    </outputs>
+    <onsuccess>acdc9466-3e04-4cb0-a9a4-b2a86d641767</onsuccess>
+    <resource object="Utility - Collection Manipulation" action="Read Collection Field" />
+  </stage>
+  <stage stageid="190bf54b-9e80-4b97-9071-eda5a3d52920" name="Are we done?" type="Decision">
+    <subsheetid>342c043a-d363-4b2a-acdf-d0bba2d81bb4</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="15" y="60" />
+    <decision expression="[Position] = [Count]" />
+    <ontrue>135965db-3c6b-47e4-bfa9-ddd7d1218c2d</ontrue>
+    <onfalse>0b18103f-538b-4db5-bafb-44fc3fd8b0ee</onfalse>
+  </stage>
+  <stage stageid="acdc9466-3e04-4cb0-a9a4-b2a86d641767" name="Set average" type="MultipleCalculation">
+    <subsheetid>342c043a-d363-4b2a-acdf-d0bba2d81bb4</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="15" y="165" />
+    <onsuccess>e0c24036-4b07-4363-a123-8c5a39a272de</onsuccess>
+    <steps>
+      <calculation expression="ToNumber([Value]) + [Sum]" stage="Sum" />
+      <calculation expression="[Position] + 1" stage="Position" />
+    </steps>
+  </stage>
+  <stage stageid="e0c24036-4b07-4363-a123-8c5a39a272de" name="Anchor4" type="Anchor">
+    <subsheetid>342c043a-d363-4b2a-acdf-d0bba2d81bb4</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="15" y="210" w="10" h="10" />
+    <onsuccess>043471b6-274f-4b40-82dc-5639407637bf</onsuccess>
+  </stage>
+  <stage stageid="b4327b1d-fe3c-4dee-b2ae-f5fda9b41565" name="Anchor5" type="Anchor">
+    <subsheetid>342c043a-d363-4b2a-acdf-d0bba2d81bb4</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="-60" y="60" w="10" h="10" />
+    <onsuccess>190bf54b-9e80-4b97-9071-eda5a3d52920</onsuccess>
+  </stage>
+  <stage stageid="043471b6-274f-4b40-82dc-5639407637bf" name="Anchor6" type="Anchor">
+    <subsheetid>342c043a-d363-4b2a-acdf-d0bba2d81bb4</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="-60" y="210" w="10" h="10" />
+    <onsuccess>b4327b1d-fe3c-4dee-b2ae-f5fda9b41565</onsuccess>
+  </stage>
+  <stage stageid="135965db-3c6b-47e4-bfa9-ddd7d1218c2d" name="Calculate average" type="Calculation">
+    <subsheetid>342c043a-d363-4b2a-acdf-d0bba2d81bb4</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="120" y="60" />
+    <onsuccess>565c5d4c-786d-4563-9ec9-8e5f5a23c197</onsuccess>
+    <calculation expression="[Sum] / [Count]" stage="Sum" />
+  </stage>
+  <stage stageid="88f48265-ee03-417a-9005-b8859cbf8e60" name="No rows?" type="Decision">
+    <subsheetid>342c043a-d363-4b2a-acdf-d0bba2d81bb4</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="15" y="15" />
+    <decision expression="[Count] = 0" />
+    <ontrue>c07e78fd-541c-4579-84db-7ebd2d996b85</ontrue>
+    <onfalse>190bf54b-9e80-4b97-9071-eda5a3d52920</onfalse>
+  </stage>
+  <stage stageid="c07e78fd-541c-4579-84db-7ebd2d996b85" name="End10" type="End">
+    <subsheetid>342c043a-d363-4b2a-acdf-d0bba2d81bb4</subsheetid>
+    <display x="120" y="15" />
+    <outputs>
+      <output type="number" name="Average" narrative="The calculated average" stage="Sum" />
+      <output type="number" name="Count" narrative="The count of items left after filtering" stage="Count" />
+    </outputs>
+  </stage>
+  <stage stageid="1fbe246f-06bc-4fa8-80ba-5182fc589a4b" name="Sum" type="Data">
+    <subsheetid>342c043a-d363-4b2a-acdf-d0bba2d81bb4</subsheetid>
+    <display x="-195" y="315" w="120" h="30" />
+    <datatype>number</datatype>
+    <initialvalue>0</initialvalue>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="d21fa169-7366-4730-ab0f-86870e867bf4" name="Variables" type="Block">
+    <subsheetid>342c043a-d363-4b2a-acdf-d0bba2d81bb4</subsheetid>
+    <loginhibit />
+    <display x="-270" y="120" w="150" h="150" />
+    <font family="Segoe UI" size="10" style="Regular" color="333399" />
+  </stage>
+  <stage stageid="757ae718-b827-4291-a432-147573fa06b7" name="Value" type="Data">
+    <subsheetid>342c043a-d363-4b2a-acdf-d0bba2d81bb4</subsheetid>
+    <display x="-195" y="195" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="9dcd7dd9-777b-4bd1-87ba-53e9e429fbc3" name="Position" type="Data">
+    <subsheetid>342c043a-d363-4b2a-acdf-d0bba2d81bb4</subsheetid>
+    <display x="-195" y="150" w="120" h="30" />
+    <datatype>number</datatype>
+    <initialvalue>0</initialvalue>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="b1b59bed-0a74-43c6-8a16-2753422b13b7" name="Test: Statistics - Average" type="SubSheetInfo">
+    <subsheetid>2a9835eb-0546-4c58-acbc-a7eab1205df9</subsheetid>
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="81cc1050-9380-4543-b865-db0134077d45" name="Start" type="Start">
+    <subsheetid>2a9835eb-0546-4c58-acbc-a7eab1205df9</subsheetid>
+    <loginhibit />
+    <display x="15" y="-105" />
+    <onsuccess>0ad04077-3259-456c-a5f9-7fab2e14d57c</onsuccess>
+  </stage>
+  <stage stageid="b767b773-7362-4d1e-bfde-e88ca8883c53" name="End" type="End">
+    <subsheetid>2a9835eb-0546-4c58-acbc-a7eab1205df9</subsheetid>
+    <loginhibit />
+    <display x="15" y="195" />
+  </stage>
+  <stage stageid="9cc1107a-f447-4d1b-a528-f9acad90b011" name="Testdata" type="Collection">
+    <subsheetid>2a9835eb-0546-4c58-acbc-a7eab1205df9</subsheetid>
+    <loginhibit />
+    <display x="-195" y="-15" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+    <collectioninfo>
+      <field name="Data" type="collection" description="The test data">
+        <field name="Value" type="number" />
+      </field>
+      <field name="Filter" type="text" description="The applied filter" />
+      <field name="Expected average" type="number" description="What average should we get" />
+      <field name="Expected count" type="number" description="The number we should get" />
+    </collectioninfo>
+    <initialvalue>
+      <row>
+        <field name="Data" type="collection">
+          <row>
+            <field name="Value" type="number" value="1" />
+          </row>
+          <row>
+            <field name="Value" type="number" value="3" />
+          </row>
+        </field>
+        <field name="Filter" type="text" value="" />
+        <field name="Expected average" type="number" value="2" />
+        <field name="Expected count" type="number" value="2" />
+      </row>
+    </initialvalue>
+  </stage>
+  <stage stageid="6e1d4240-684e-4fa6-bf6a-f522cf5af76b" name="Konstanter" type="Block">
+    <subsheetid>2a9835eb-0546-4c58-acbc-a7eab1205df9</subsheetid>
+    <loginhibit />
+    <display x="-270" y="-45" w="150" h="105" />
+    <font family="Segoe UI" size="10" style="Regular" color="008080" />
+  </stage>
+  <stage stageid="d18350e0-7962-45b9-b3ad-a3cdb2fb1d50" name="Variables" type="Block">
+    <subsheetid>2a9835eb-0546-4c58-acbc-a7eab1205df9</subsheetid>
+    <loginhibit />
+    <display x="-270" y="75" w="150" h="150" />
+    <font family="Segoe UI" size="10" style="Regular" color="333399" />
+  </stage>
+  <stage stageid="90ece46a-8d5b-40da-9cbb-895ff35ab172" name="Average" type="Data">
+    <subsheetid>2a9835eb-0546-4c58-acbc-a7eab1205df9</subsheetid>
+    <display x="-195" y="150" w="120" h="30" />
+    <datatype>number</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="476621e1-7274-4a26-9795-fbe151eeea4b" name="Count" type="Data">
+    <subsheetid>2a9835eb-0546-4c58-acbc-a7eab1205df9</subsheetid>
+    <display x="-195" y="105" w="120" h="30" />
+    <datatype>number</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="0ad04077-3259-456c-a5f9-7fab2e14d57c" name="Loop tests" type="LoopStart">
+    <subsheetid>2a9835eb-0546-4c58-acbc-a7eab1205df9</subsheetid>
+    <loginhibit />
+    <display x="15" y="-45" />
+    <onsuccess>a2fde63f-1ccc-4e01-874c-6a4512291d47</onsuccess>
+    <groupid>92db13e8-d2da-4677-96d6-3232a550600f</groupid>
+    <looptype>ForEach</looptype>
+    <loopdata>Testdata</loopdata>
+  </stage>
+  <stage stageid="9bf7b258-c7fd-4fb0-9a4a-f4cf8810c5e4" name="Loop tests" type="LoopEnd">
+    <subsheetid>2a9835eb-0546-4c58-acbc-a7eab1205df9</subsheetid>
+    <loginhibit />
+    <display x="15" y="135" />
+    <onsuccess>b767b773-7362-4d1e-bfde-e88ca8883c53</onsuccess>
+    <groupid>92db13e8-d2da-4677-96d6-3232a550600f</groupid>
+  </stage>
+  <stage stageid="a2fde63f-1ccc-4e01-874c-6a4512291d47" name="Statistics: Average" type="SubSheet">
+    <subsheetid>2a9835eb-0546-4c58-acbc-a7eab1205df9</subsheetid>
+    <loginhibit />
+    <display x="15" y="15" />
+    <inputs>
+      <input type="collection" name="Collection In" narrative="The collection to average" expr="[Testdata.Data]" />
+      <input type="text" name="Filter" narrative="The filter to apply to the collection, may be blank" expr="&quot;&quot;" />
+      <input type="text" name="Field" narrative="The field to average, must be a number" expr="&quot;Value&quot;" />
+    </inputs>
+    <outputs>
+      <output type="number" name="Average" narrative="The calculated average" stage="Average" />
+      <output type="number" name="Count" narrative="The amount of items left after filtering" stage="Count" />
+    </outputs>
+    <onsuccess>18c3deaf-20c7-4160-9650-0b888240d9fe</onsuccess>
+    <processid>342c043a-d363-4b2a-acdf-d0bba2d81bb4</processid>
+  </stage>
+  <stage stageid="18c3deaf-20c7-4160-9650-0b888240d9fe" name="Ok?" type="Decision">
+    <subsheetid>2a9835eb-0546-4c58-acbc-a7eab1205df9</subsheetid>
+    <loginhibit />
+    <display x="15" y="75" />
+    <decision expression="[Testdata.Expected average] = [Average] AND [Count] = [Testdata.Expected count]" />
+    <ontrue>9bf7b258-c7fd-4fb0-9a4a-f4cf8810c5e4</ontrue>
+    <onfalse>43feb792-4b3c-46c7-a2a7-9dc3ff7805d3</onfalse>
+  </stage>
+  <stage stageid="43feb792-4b3c-46c7-a2a7-9dc3ff7805d3" name="Invalid test" type="Exception">
+    <subsheetid>2a9835eb-0546-4c58-acbc-a7eab1205df9</subsheetid>
+    <display x="135" y="75" />
+    <exception type="Business Exception" detail="&quot;Invalid test&quot;" />
+  </stage>
+  <stage stageid="532ddff9-f9d7-403c-8e27-08c8538b934b" name="Statistics: Average" type="SubSheetInfo">
+    <subsheetid>0cf0c123-1d07-44a6-8967-f71a8f7caffb</subsheetid>
+    <narrative>Calculates the summed value of a specific field. If the collection is empty a value of 0 is returned</narrative>
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="52391d02-439c-4df6-8fa8-1ddfca2b6ac4" name="Start" type="Start">
+    <subsheetid>0cf0c123-1d07-44a6-8967-f71a8f7caffb</subsheetid>
+    <display x="15" y="-105" />
+    <inputs>
+      <input type="collection" name="Collection In" narrative="The collection to average" stage="Collection In" />
+      <input type="text" name="Filter" narrative="The filter to apply to the collection, may be blank" stage="Filter" />
+      <input type="text" name="Field" narrative="The field to average, must be a number" stage="Field" />
+    </inputs>
+    <onsuccess>561a31af-fbef-4fee-b65c-3e0e6f68a6fa</onsuccess>
+  </stage>
+  <stage stageid="ebb6973d-e386-4c9e-9796-251d82d3ba90" name="Field" type="Data">
+    <subsheetid>0cf0c123-1d07-44a6-8967-f71a8f7caffb</subsheetid>
+    <display x="-195" y="75" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="5e7306b9-82a5-4049-92c6-8f4f54ddb0b2" name="Collection In" type="Collection">
+    <subsheetid>0cf0c123-1d07-44a6-8967-f71a8f7caffb</subsheetid>
+    <display x="-195" y="-15" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="a38c8d37-4ea7-48a9-a194-e641798942fb" name="Filter" type="Data">
+    <subsheetid>0cf0c123-1d07-44a6-8967-f71a8f7caffb</subsheetid>
+    <display x="-195" y="30" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="14ab5e23-d6cb-4b56-9d6d-29d6b2698a81" name="Input" type="Block">
+    <subsheetid>0cf0c123-1d07-44a6-8967-f71a8f7caffb</subsheetid>
+    <loginhibit />
+    <display x="-270" y="-45" w="150" h="150" />
+    <font family="Segoe UI" size="10" style="Regular" color="339966" />
+  </stage>
+  <stage stageid="ee6a4850-db6d-4d69-a7f1-eba11bd4190c" name="Output" type="Block">
+    <subsheetid>0cf0c123-1d07-44a6-8967-f71a8f7caffb</subsheetid>
+    <loginhibit />
+    <display x="-270" y="285" w="150" h="105" />
+    <font family="Segoe UI" size="10" style="Regular" color="800080" />
+  </stage>
+  <stage stageid="57521117-7daf-4920-b19c-229259725017" name="Collection Out" type="Collection">
+    <subsheetid>0cf0c123-1d07-44a6-8967-f71a8f7caffb</subsheetid>
+    <display x="-195" y="240" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="f346fe25-6a28-4309-b8a1-71757a8c7d27" name="Count" type="Data">
+    <subsheetid>0cf0c123-1d07-44a6-8967-f71a8f7caffb</subsheetid>
+    <loginhibit />
+    <display x="-195" y="360" w="120" h="30" />
+    <datatype>number</datatype>
+    <initialvalue>0</initialvalue>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="561a31af-fbef-4fee-b65c-3e0e6f68a6fa" name="Filter" type="SubSheet">
+    <subsheetid>0cf0c123-1d07-44a6-8967-f71a8f7caffb</subsheetid>
+    <loginhibit />
+    <display x="15" y="-45" />
+    <inputs>
+      <input type="collection" name="Collection In" narrative="Input collection" expr="[Collection In]" />
+      <input type="text" name="Filter" narrative="The filter to apply" expr="[Filter]" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="Collection Out" narrative="The filtered collection" stage="Collection Out" />
+      <output type="number" name="Count" narrative="The amount of rows in the filtered collection" stage="Count" />
+    </outputs>
+    <onsuccess>553f5f33-1eba-4a64-929c-4e54cec69830</onsuccess>
+    <processid>07115acf-6dab-4133-b4ba-052919bfbca9</processid>
+  </stage>
+  <stage stageid="bdcf3666-bf57-490b-a28f-b576865c9a0a" name="End" type="End">
+    <subsheetid>0cf0c123-1d07-44a6-8967-f71a8f7caffb</subsheetid>
+    <display x="120" y="60" />
+    <outputs>
+      <output type="number" name="Sum" narrative="The calculated average" stage="Sum" />
+      <output type="number" name="Count" narrative="The count of items left after filtering" stage="Count" />
+    </outputs>
+  </stage>
+  <stage stageid="d67c2e32-5612-4a92-9f53-a04373307525" name="Get field value" type="Action">
+    <subsheetid>0cf0c123-1d07-44a6-8967-f71a8f7caffb</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="15" y="120" />
+    <inputs>
+      <input type="collection" name="Collection" narrative="The collection to read." expr="[Collection Out]" />
+      <input type="text" name="Field Name" narrative="The field within the collection to read." expr="[Field]" />
+      <input type="number" name="Row Index" narrative="The row index within the collection to read from. The index is from 0 to N-1 (where N is the total number of rows in the collection)." expr="[Position]" />
+    </inputs>
+    <outputs>
+      <output type="text" name="Value Read" narrative="The value of the requested field as text." stage="Value" />
+    </outputs>
+    <onsuccess>d79860bc-c82a-4d85-9994-91571f429a64</onsuccess>
+    <resource object="Utility - Collection Manipulation" action="Read Collection Field" />
+  </stage>
+  <stage stageid="00db1ad3-7c89-44f4-9798-df43d05c2318" name="Are we done?" type="Decision">
+    <subsheetid>0cf0c123-1d07-44a6-8967-f71a8f7caffb</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="15" y="60" />
+    <decision expression="[Position] = [Count]" />
+    <ontrue>bdcf3666-bf57-490b-a28f-b576865c9a0a</ontrue>
+    <onfalse>d67c2e32-5612-4a92-9f53-a04373307525</onfalse>
+  </stage>
+  <stage stageid="d79860bc-c82a-4d85-9994-91571f429a64" name="Set average" type="MultipleCalculation">
+    <subsheetid>0cf0c123-1d07-44a6-8967-f71a8f7caffb</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="15" y="165" />
+    <onsuccess>00cb3cec-c4ca-495f-89df-93eda2d826cc</onsuccess>
+    <steps>
+      <calculation expression="ToNumber([Value]) + [Sum]" stage="Sum" />
+      <calculation expression="[Position] + 1" stage="Position" />
+    </steps>
+  </stage>
+  <stage stageid="00cb3cec-c4ca-495f-89df-93eda2d826cc" name="Anchor4" type="Anchor">
+    <subsheetid>0cf0c123-1d07-44a6-8967-f71a8f7caffb</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="15" y="210" w="10" h="10" />
+    <onsuccess>9efda16d-92a3-47f2-8ab3-f1173321d99b</onsuccess>
+  </stage>
+  <stage stageid="6dd092e0-893d-4731-9def-8c093bac347f" name="Anchor5" type="Anchor">
+    <subsheetid>0cf0c123-1d07-44a6-8967-f71a8f7caffb</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="-60" y="60" w="10" h="10" />
+    <onsuccess>00db1ad3-7c89-44f4-9798-df43d05c2318</onsuccess>
+  </stage>
+  <stage stageid="9efda16d-92a3-47f2-8ab3-f1173321d99b" name="Anchor6" type="Anchor">
+    <subsheetid>0cf0c123-1d07-44a6-8967-f71a8f7caffb</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="-60" y="210" w="10" h="10" />
+    <onsuccess>6dd092e0-893d-4731-9def-8c093bac347f</onsuccess>
+  </stage>
+  <stage stageid="553f5f33-1eba-4a64-929c-4e54cec69830" name="No rows?" type="Decision">
+    <subsheetid>0cf0c123-1d07-44a6-8967-f71a8f7caffb</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="15" y="15" />
+    <decision expression="[Count] = 0" />
+    <ontrue>232bbeeb-ee46-4f9e-a71c-978fd2f1d079</ontrue>
+    <onfalse>00db1ad3-7c89-44f4-9798-df43d05c2318</onfalse>
+  </stage>
+  <stage stageid="232bbeeb-ee46-4f9e-a71c-978fd2f1d079" name="End10" type="End">
+    <subsheetid>0cf0c123-1d07-44a6-8967-f71a8f7caffb</subsheetid>
+    <display x="120" y="15" />
+    <outputs>
+      <output type="number" name="Sum" narrative="The calculated average" stage="Sum" />
+      <output type="number" name="Count" narrative="The count of items left after filtering" stage="Count" />
+    </outputs>
+  </stage>
+  <stage stageid="efe1393b-6b0c-449c-b208-c736a068c21c" name="Sum" type="Data">
+    <subsheetid>0cf0c123-1d07-44a6-8967-f71a8f7caffb</subsheetid>
+    <display x="-195" y="315" w="120" h="30" />
+    <datatype>number</datatype>
+    <initialvalue>0</initialvalue>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="68593764-c87c-4173-8a81-1eb3e0768bc3" name="Variables" type="Block">
+    <subsheetid>0cf0c123-1d07-44a6-8967-f71a8f7caffb</subsheetid>
+    <loginhibit />
+    <display x="-270" y="120" w="150" h="150" />
+    <font family="Segoe UI" size="10" style="Regular" color="333399" />
+  </stage>
+  <stage stageid="63827777-f52a-4d15-9f2e-109f1b35da19" name="Value" type="Data">
+    <subsheetid>0cf0c123-1d07-44a6-8967-f71a8f7caffb</subsheetid>
+    <display x="-195" y="195" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="628666a9-df26-4bea-b594-a7ea816ec925" name="Position" type="Data">
+    <subsheetid>0cf0c123-1d07-44a6-8967-f71a8f7caffb</subsheetid>
+    <display x="-195" y="150" w="120" h="30" />
+    <datatype>number</datatype>
+    <initialvalue>0</initialvalue>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="beeb10c5-e3f0-44f8-a94e-582eb8f92d50" name="Test: Statistics - Average" type="SubSheetInfo">
+    <subsheetid>e3c8f0df-f8bb-44df-8be4-4b39dc1806c6</subsheetid>
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="bdc7e7d6-87de-438d-ac6e-510c3d1852cc" name="Start" type="Start">
+    <subsheetid>e3c8f0df-f8bb-44df-8be4-4b39dc1806c6</subsheetid>
+    <loginhibit />
+    <display x="15" y="-105" />
+    <onsuccess>4902cd0c-e725-408a-859f-45e3dd1c6a5b</onsuccess>
+  </stage>
+  <stage stageid="580c7d8c-78e5-4136-ad33-81fd54486a75" name="End" type="End">
+    <subsheetid>e3c8f0df-f8bb-44df-8be4-4b39dc1806c6</subsheetid>
+    <loginhibit />
+    <display x="15" y="195" />
+  </stage>
+  <stage stageid="4755a9e8-9e6c-4674-9772-d1ac11325794" name="Testdata" type="Collection">
+    <subsheetid>e3c8f0df-f8bb-44df-8be4-4b39dc1806c6</subsheetid>
+    <loginhibit />
+    <display x="-195" y="-15" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+    <collectioninfo>
+      <field name="Data" type="collection" description="The test data">
+        <field name="Value" type="number" />
+      </field>
+      <field name="Filter" type="text" description="The applied filter" />
+      <field name="Expected sum" type="number" description="What average should we get" />
+      <field name="Expected count" type="number" description="The number we should get" />
+    </collectioninfo>
+    <initialvalue>
+      <row>
+        <field name="Data" type="collection">
+          <row>
+            <field name="Value" type="number" value="1" />
+          </row>
+          <row>
+            <field name="Value" type="number" value="3" />
+          </row>
+        </field>
+        <field name="Filter" type="text" value="" />
+        <field name="Expected sum" type="number" value="4" />
+        <field name="Expected count" type="number" value="2" />
+      </row>
+    </initialvalue>
+  </stage>
+  <stage stageid="7eb88e29-3926-4dce-a9f2-a5d75b66ce49" name="Konstanter" type="Block">
+    <subsheetid>e3c8f0df-f8bb-44df-8be4-4b39dc1806c6</subsheetid>
+    <loginhibit />
+    <display x="-270" y="-45" w="150" h="105" />
+    <font family="Segoe UI" size="10" style="Regular" color="008080" />
+  </stage>
+  <stage stageid="83bfe64d-5a4a-4ad5-9cde-3fcb8210528e" name="Variables" type="Block">
+    <subsheetid>e3c8f0df-f8bb-44df-8be4-4b39dc1806c6</subsheetid>
+    <loginhibit />
+    <display x="-270" y="75" w="150" h="150" />
+    <font family="Segoe UI" size="10" style="Regular" color="333399" />
+  </stage>
+  <stage stageid="0b51d6a1-e727-4d2e-81c1-72edb4cb9219" name="Sum" type="Data">
+    <subsheetid>e3c8f0df-f8bb-44df-8be4-4b39dc1806c6</subsheetid>
+    <display x="-195" y="150" w="120" h="30" />
+    <datatype>number</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="7bf105e2-5424-4bf0-aabc-12b15b3f68d7" name="Count" type="Data">
+    <subsheetid>e3c8f0df-f8bb-44df-8be4-4b39dc1806c6</subsheetid>
+    <display x="-195" y="105" w="120" h="30" />
+    <datatype>number</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="4902cd0c-e725-408a-859f-45e3dd1c6a5b" name="Loop tests" type="LoopStart">
+    <subsheetid>e3c8f0df-f8bb-44df-8be4-4b39dc1806c6</subsheetid>
+    <loginhibit />
+    <display x="15" y="-45" />
+    <onsuccess>0f431edb-b996-4b40-a17e-e799657b612a</onsuccess>
+    <groupid>3844f3a7-34f2-43a0-9ff8-e9544d541d06</groupid>
+    <looptype>ForEach</looptype>
+    <loopdata>Testdata</loopdata>
+  </stage>
+  <stage stageid="3aa55dcb-0d5f-4219-8315-a08db212956b" name="Loop tests" type="LoopEnd">
+    <subsheetid>e3c8f0df-f8bb-44df-8be4-4b39dc1806c6</subsheetid>
+    <loginhibit />
+    <display x="15" y="135" />
+    <onsuccess>580c7d8c-78e5-4136-ad33-81fd54486a75</onsuccess>
+    <groupid>3844f3a7-34f2-43a0-9ff8-e9544d541d06</groupid>
+  </stage>
+  <stage stageid="0f431edb-b996-4b40-a17e-e799657b612a" name="Statistics: Average" type="SubSheet">
+    <subsheetid>e3c8f0df-f8bb-44df-8be4-4b39dc1806c6</subsheetid>
+    <loginhibit />
+    <display x="15" y="15" />
+    <inputs>
+      <input type="collection" name="Collection In" narrative="The collection to average" expr="[Testdata.Data]" />
+      <input type="text" name="Filter" narrative="The filter to apply to the collection, may be blank" expr="&quot;&quot;" />
+      <input type="text" name="Field" narrative="The field to average, must be a number" expr="&quot;Value&quot;" />
+    </inputs>
+    <outputs>
+      <output type="number" name="Average" narrative="The calculated average" stage="Sum" />
+      <output type="number" name="Count" narrative="The count of items left after filtering" stage="Count" />
+    </outputs>
+    <onsuccess>03b565bc-b4c4-4ed3-8d0d-3c6fef102e38</onsuccess>
+    <processid>0cf0c123-1d07-44a6-8967-f71a8f7caffb</processid>
+  </stage>
+  <stage stageid="03b565bc-b4c4-4ed3-8d0d-3c6fef102e38" name="Ok?" type="Decision">
+    <subsheetid>e3c8f0df-f8bb-44df-8be4-4b39dc1806c6</subsheetid>
+    <loginhibit />
+    <display x="15" y="75" />
+    <decision expression="[Testdata.Expected sum] = [Sum] AND [Count] = [Testdata.Expected count]" />
+    <ontrue>3aa55dcb-0d5f-4219-8315-a08db212956b</ontrue>
+    <onfalse>f912f3d5-8011-460f-9882-f99585701445</onfalse>
+  </stage>
+  <stage stageid="f912f3d5-8011-460f-9882-f99585701445" name="Invalid test" type="Exception">
+    <subsheetid>e3c8f0df-f8bb-44df-8be4-4b39dc1806c6</subsheetid>
+    <display x="135" y="75" />
+    <exception type="Business Exception" detail="&quot;Invalid test&quot;" />
+  </stage>
+  <stage stageid="a69b4253-e944-41c7-bb41-760728bf7e0b" name="Filter" type="SubSheetInfo">
+    <subsheetid>1de01796-a016-484d-be4b-375ff8c44d20</subsheetid>
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="0b31c443-50f2-40ff-901e-7020c9a95c5a" name="Start" type="Start">
+    <subsheetid>1de01796-a016-484d-be4b-375ff8c44d20</subsheetid>
+    <loginhibit />
+    <display x="15" y="-240" />
+    <inputs>
+      <input type="collection" name="Collection In" narrative="Input collection" stage="Collection In" />
+      <input type="text" name="Filter" narrative="The filter to apply" stage="Filter" />
+    </inputs>
+    <onsuccess>560e303a-9c22-488f-acc0-ac0c0201ec7b</onsuccess>
+  </stage>
+  <stage stageid="e60ac8ce-f230-4366-a77a-622afa4157ec" name="End" type="End">
+    <subsheetid>1de01796-a016-484d-be4b-375ff8c44d20</subsheetid>
+    <loginhibit />
+    <display x="15" y="120" />
+    <outputs>
+      <output type="number" name="Count" narrative="The amount of rows in the filtered collection" stage="Count" />
+    </outputs>
+  </stage>
+  <stage stageid="996b2b26-4c53-4824-aaf5-3444de669b77" name="Filter" type="Action">
+    <subsheetid>1de01796-a016-484d-be4b-375ff8c44d20</subsheetid>
+    <loginhibit />
+    <display x="15" y="0" />
+    <inputs>
+      <input type="collection" name="Collection In" narrative="The collection to filter." expr="[Collection In]" />
+      <input type="text" name="Filter" narrative="The filter query." expr="[Filter]" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="Collection Out" narrative="The filtered collection." stage="Collection Out" />
+    </outputs>
+    <onsuccess>59bd4549-a6d6-42bc-88a3-055de4be8174</onsuccess>
+    <resource object="Utility - Collection Manipulation" action="Filter Collection" />
+  </stage>
+  <stage stageid="4d4f1bd0-a418-4c81-88f3-106f033a1056" name="Collection In" type="Collection">
+    <subsheetid>1de01796-a016-484d-be4b-375ff8c44d20</subsheetid>
+    <display x="-195" y="-15" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="057bb135-a2c0-4a1b-ad41-2721256d5732" name="Filter" type="Data">
+    <subsheetid>1de01796-a016-484d-be4b-375ff8c44d20</subsheetid>
+    <display x="-195" y="30" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="713b7d90-8506-4700-8aea-919a494f8def" name="Input" type="Block">
+    <subsheetid>1de01796-a016-484d-be4b-375ff8c44d20</subsheetid>
+    <loginhibit />
+    <display x="-270" y="-45" w="150" h="105" />
+    <font family="Segoe UI" size="10" style="Regular" color="339966" />
+  </stage>
+  <stage stageid="64d5cfd5-8713-49db-afa5-9a8a3ed5a2e3" name="Output" type="Block">
+    <subsheetid>1de01796-a016-484d-be4b-375ff8c44d20</subsheetid>
+    <loginhibit />
+    <display x="-270" y="75" w="150" h="105" />
+    <font family="Segoe UI" size="10" style="Regular" color="800080" />
+  </stage>
+  <stage stageid="6f673dd3-0fad-42ff-927d-7c01cccc29b3" name="Collection Out" type="Collection">
+    <subsheetid>1de01796-a016-484d-be4b-375ff8c44d20</subsheetid>
+    <display x="-195" y="105" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="c2a208fb-5df6-4bb6-be66-1c548b70654f" name="Count" type="Data">
+    <subsheetid>1de01796-a016-484d-be4b-375ff8c44d20</subsheetid>
+    <loginhibit />
+    <display x="-195" y="150" w="120" h="30" />
+    <datatype>number</datatype>
+    <initialvalue>0</initialvalue>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="a02ac4ca-92eb-4724-b657-a6f48fa6fda8" name="Has filter?" type="Decision">
+    <subsheetid>1de01796-a016-484d-be4b-375ff8c44d20</subsheetid>
+    <loginhibit />
+    <display x="15" y="-60" />
+    <decision expression="Trim([Filter]) &lt;&gt; &quot;&quot;" />
+    <ontrue>996b2b26-4c53-4824-aaf5-3444de669b77</ontrue>
+    <onfalse>eaf6c4c7-e743-4c48-98a2-41b96b8d5dff</onfalse>
+  </stage>
+  <stage stageid="eaf6c4c7-e743-4c48-98a2-41b96b8d5dff" name="Filter" type="Action">
+    <subsheetid>1de01796-a016-484d-be4b-375ff8c44d20</subsheetid>
+    <loginhibit />
+    <display x="105" y="-60" />
+    <inputs>
+      <input type="collection" name="Collection In" narrative="The collection to filter." expr="[Collection In]" />
+      <input type="text" name="Filter" narrative="The filter query." expr="&quot;1=1&quot;" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="Collection Out" narrative="The filtered collection." stage="Collection Out" />
+    </outputs>
+    <onsuccess>79e15443-5438-4d62-91aa-06f820a644ea</onsuccess>
+    <resource object="Utility - Collection Manipulation" action="Filter Collection" />
+  </stage>
+  <stage stageid="59bd4549-a6d6-42bc-88a3-055de4be8174" name="Count rows" type="Action">
+    <subsheetid>1de01796-a016-484d-be4b-375ff8c44d20</subsheetid>
+    <loginhibit />
+    <display x="15" y="60" />
+    <inputs>
+      <input type="text" name="Collection Name" narrative="The name of the collection to act upon" expr="&quot;Collection Out&quot;" />
+    </inputs>
+    <outputs>
+      <output type="number" name="Count" narrative="The number of rows counted in the collection" stage="Count" />
+    </outputs>
+    <onsuccess>e60ac8ce-f230-4366-a77a-622afa4157ec</onsuccess>
+    <resource object="Blueprism.AutomateProcessCore.clsCollectionActions" action="Count Rows" />
+  </stage>
+  <stage stageid="79e15443-5438-4d62-91aa-06f820a644ea" name="Anchor1" type="Anchor">
+    <subsheetid>1de01796-a016-484d-be4b-375ff8c44d20</subsheetid>
+    <loginhibit />
+    <display x="105" y="60" w="10" h="10" />
+    <onsuccess>59bd4549-a6d6-42bc-88a3-055de4be8174</onsuccess>
+  </stage>
+  <stage stageid="c483484c-4394-4228-ac86-16c66998c284" name="Distinct field" type="SubSheetInfo">
+    <subsheetid>6f60eba7-cb7d-497f-b59a-918ccb039e33</subsheetid>
+    <narrative>Returns a collection of distinct values for the field specified in the field input parameter. All other fields are ignored.</narrative>
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="d89081c1-71ef-44d1-a148-1755e31f85c8" name="Start" type="Start">
+    <subsheetid>6f60eba7-cb7d-497f-b59a-918ccb039e33</subsheetid>
+    <loginhibit />
+    <display x="15" y="-105" />
+    <inputs>
+      <input type="collection" name="Collection In" narrative="The collection to average" stage="Collection In" />
+      <input type="text" name="Filter" narrative="The filter to apply to the collection, may be blank" stage="Filter" />
+      <input type="text" name="Field" narrative="The field to take the distinct value of" stage="Field" />
+    </inputs>
+    <onsuccess>f8d3680e-b838-43c3-b90f-01b1117bb9ec</onsuccess>
+  </stage>
+  <stage stageid="15b5aec4-e424-4991-8c26-8864bc6171ff" name="Field" type="Data">
+    <subsheetid>6f60eba7-cb7d-497f-b59a-918ccb039e33</subsheetid>
+    <display x="-195" y="75" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="adf98150-f845-4b88-97af-9e6bda6cefad" name="Collection In" type="Collection">
+    <subsheetid>6f60eba7-cb7d-497f-b59a-918ccb039e33</subsheetid>
+    <display x="-195" y="-15" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="14cd86a1-75b8-46b5-bc8a-84a90ff8e162" name="Filter" type="Data">
+    <subsheetid>6f60eba7-cb7d-497f-b59a-918ccb039e33</subsheetid>
+    <display x="-195" y="30" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="03872f5a-7786-4324-a090-082c7e65793f" name="Input" type="Block">
+    <subsheetid>6f60eba7-cb7d-497f-b59a-918ccb039e33</subsheetid>
+    <loginhibit />
+    <display x="-270" y="-45" w="150" h="150" />
+    <font family="Segoe UI" size="10" style="Regular" color="339966" />
+  </stage>
+  <stage stageid="5afa1d80-5c41-4768-80bd-32efbc5f2d65" name="Output" type="Block">
+    <subsheetid>6f60eba7-cb7d-497f-b59a-918ccb039e33</subsheetid>
+    <loginhibit />
+    <display x="-270" y="285" w="150" h="105" />
+    <font family="Segoe UI" size="10" style="Regular" color="800080" />
+  </stage>
+  <stage stageid="7e70f127-fa3f-4208-8e5b-6769a86c9d45" name="Collection Out" type="Collection">
+    <subsheetid>6f60eba7-cb7d-497f-b59a-918ccb039e33</subsheetid>
+    <display x="-195" y="315" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="00c467b1-d676-4d9f-bcf7-fd2c6ba5303b" name="Count" type="Data">
+    <subsheetid>6f60eba7-cb7d-497f-b59a-918ccb039e33</subsheetid>
+    <loginhibit />
+    <display x="-195" y="360" w="120" h="30" />
+    <datatype>number</datatype>
+    <initialvalue>0</initialvalue>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="3b8e0a2c-284b-4d09-8dad-f614b5310e1c" name="End" type="End">
+    <subsheetid>6f60eba7-cb7d-497f-b59a-918ccb039e33</subsheetid>
+    <display x="15" y="180" />
+    <outputs>
+      <output type="collection" name="Collection Out" narrative="The collection with the distincted field" stage="Collection Out" />
+      <output type="number" name="Count" narrative="The count of items left after filtering" stage="Count" />
+    </outputs>
+  </stage>
+  <stage stageid="e5811f36-cfeb-40c6-9be3-579d2888e2a8" name="Variables" type="Block">
+    <subsheetid>6f60eba7-cb7d-497f-b59a-918ccb039e33</subsheetid>
+    <loginhibit />
+    <display x="-270" y="120" w="150" h="150" />
+    <font family="Segoe UI" size="10" style="Regular" color="333399" />
+  </stage>
+  <stage stageid="f8d3680e-b838-43c3-b90f-01b1117bb9ec" name="Filter" type="SubSheet">
+    <subsheetid>6f60eba7-cb7d-497f-b59a-918ccb039e33</subsheetid>
+    <loginhibit />
+    <display x="15" y="-45" />
+    <inputs>
+      <input type="collection" name="Collection In" narrative="Input collection" expr="[Collection In]" />
+      <input type="text" name="Filter" narrative="The filter to apply" expr="[Filter]" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="Collection Out" narrative="The filtered collection" stage="Collection In" />
+      <output type="number" name="Count" narrative="The amount of rows in the filtered collection" stage="Count" />
+    </outputs>
+    <onsuccess>baaa646e-09ca-4520-a385-09520bf59eb7</onsuccess>
+    <processid>07115acf-6dab-4133-b4ba-052919bfbca9</processid>
+  </stage>
+  <stage stageid="baaa646e-09ca-4520-a385-09520bf59eb7" name="Distinct" type="Code">
+    <subsheetid>6f60eba7-cb7d-497f-b59a-918ccb039e33</subsheetid>
+    <loginhibit />
+    <display x="15" y="30" />
+    <inputs>
+      <input type="collection" name="collection" expr="[Collection In]" />
+      <input type="text" name="field" expr="[Field]" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="Collection Out" stage="Collection Out" />
+    </outputs>
+    <onsuccess>19051725-2abc-4ba1-a573-62d7504c5a59</onsuccess>
+    <code><![CDATA[
+Collection_Out = collection.DefaultView.ToTable(true,field);]]></code>
+  </stage>
+  <stage stageid="19051725-2abc-4ba1-a573-62d7504c5a59" name="Count Distinct values" type="Action">
+    <subsheetid>6f60eba7-cb7d-497f-b59a-918ccb039e33</subsheetid>
+    <loginhibit />
+    <display x="15" y="105" />
+    <inputs>
+      <input type="text" name="Collection Name" narrative="The name of the collection to act upon" expr="&quot;Collection Out&quot;" />
+    </inputs>
+    <outputs>
+      <output type="number" name="Count" narrative="The number of rows counted in the collection" stage="Count" />
+    </outputs>
+    <onsuccess>3b8e0a2c-284b-4d09-8dad-f614b5310e1c</onsuccess>
+    <resource object="Blueprism.AutomateProcessCore.clsCollectionActions" action="Count Rows" />
+  </stage>
+  <stage stageid="f4b9b3da-8e5b-4a70-8b8d-d363eb670553" name="Test: Distinct field" type="SubSheetInfo">
+    <subsheetid>becc3e99-bf38-47ab-903d-b8c70a6e867e</subsheetid>
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="8c1cedae-1ecc-4210-abde-20c4c293d3ea" name="Start" type="Start">
+    <subsheetid>becc3e99-bf38-47ab-903d-b8c70a6e867e</subsheetid>
+    <loginhibit />
+    <display x="15" y="-105" />
+    <onsuccess>85cb03c6-375e-41a4-899a-a9b38febeeb5</onsuccess>
+  </stage>
+  <stage stageid="a5eb48ce-00f6-49a3-8035-e8dc74d12960" name="End" type="End">
+    <subsheetid>becc3e99-bf38-47ab-903d-b8c70a6e867e</subsheetid>
+    <loginhibit />
+    <display x="15" y="90" />
+  </stage>
+  <stage stageid="d34b4869-b7ba-452a-9dd3-731ff825360f" name="Input" type="Block">
+    <subsheetid>becc3e99-bf38-47ab-903d-b8c70a6e867e</subsheetid>
+    <display x="-270" y="-45" w="150" h="45" />
+    <font family="Segoe UI" size="10" style="Regular" color="339966" />
+  </stage>
+  <stage stageid="ae5c9486-86f5-4ba3-823b-56a14ed6df68" name="Variabler" type="Block">
+    <subsheetid>becc3e99-bf38-47ab-903d-b8c70a6e867e</subsheetid>
+    <display x="-270" y="90" w="150" h="105" />
+    <font family="Segoe UI" size="10" style="Regular" color="666699" />
+  </stage>
+  <stage stageid="d4befad9-898d-48b4-a41a-01abc1cc4f6f" name="Konstanter" type="Block">
+    <subsheetid>becc3e99-bf38-47ab-903d-b8c70a6e867e</subsheetid>
+    <display x="-270" y="15" w="150" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="008080" />
+  </stage>
+  <stage stageid="7e5c8732-468b-42ca-b589-8c92c3b4e072" name="Output" type="Block">
+    <subsheetid>becc3e99-bf38-47ab-903d-b8c70a6e867e</subsheetid>
+    <display x="-270" y="210" w="150" h="45" />
+    <font family="Segoe UI" size="10" style="Regular" color="800080" />
+  </stage>
+  <stage stageid="5471393a-a6bd-4114-8341-96cb09cb7521" name="Testdata" type="Collection">
+    <subsheetid>becc3e99-bf38-47ab-903d-b8c70a6e867e</subsheetid>
+    <loginhibit />
+    <display x="-195" y="45" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+    <collectioninfo>
+      <field name="Navn" type="text" />
+      <field name="Fødselsdag" type="date" />
+      <field name="Adresse" type="text" />
+    </collectioninfo>
+    <initialvalue>
+      <row>
+        <field name="Navn" type="text" value="Peter" />
+        <field name="Fødselsdag" type="date" value="2019/07/16" />
+        <field name="Adresse" type="text" value="Æblehaven" />
+      </row>
+      <row>
+        <field name="Navn" type="text" value="Dorte" />
+        <field name="Fødselsdag" type="date" value="2019/07/03" />
+        <field name="Adresse" type="text" value="Pærehaven" />
+      </row>
+      <row>
+        <field name="Navn" type="text" value="Marianne" />
+        <field name="Fødselsdag" type="date" value="2019/07/03" />
+        <field name="Adresse" type="text" value="Æblehaven" />
+      </row>
+    </initialvalue>
+  </stage>
+  <stage stageid="a52265c0-1c18-474f-a936-879eedfd1ee8" name="Resultat" type="Collection">
+    <subsheetid>becc3e99-bf38-47ab-903d-b8c70a6e867e</subsheetid>
+    <loginhibit />
+    <display x="-195" y="120" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="85cb03c6-375e-41a4-899a-a9b38febeeb5" name="DiDistinct fieldtinct field" type="SubSheet">
+    <subsheetid>becc3e99-bf38-47ab-903d-b8c70a6e867e</subsheetid>
+    <loginhibit />
+    <display x="15" y="-45" />
+    <inputs>
+      <input type="collection" name="Collection In" narrative="The collection to average" expr="[Testdata]" />
+      <input type="text" name="Filter" narrative="The filter to apply to the collection, may be blank" expr="&quot;&quot;" />
+      <input type="text" name="Field" narrative="The field to take the distinct value of" expr="&quot;Navn&quot;" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="Collection Out" narrative="The collection with the distincted field" stage="Resultat" />
+      <output type="number" name="Count" narrative="The count of items left after filtering" stage="Antal" />
+    </outputs>
+    <onsuccess>26249660-0a83-4888-99d7-f1d96838068a</onsuccess>
+    <processid>6f60eba7-cb7d-497f-b59a-918ccb039e33</processid>
+  </stage>
+  <stage stageid="0b34f77b-e7f8-403a-9d7b-4ef8eb09bca6" name="Antal" type="Data">
+    <subsheetid>becc3e99-bf38-47ab-903d-b8c70a6e867e</subsheetid>
+    <display x="-195" y="165" w="120" h="30" />
+    <datatype>number</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="26249660-0a83-4888-99d7-f1d96838068a" name="DiDistinct fieldtinct field" type="SubSheet">
+    <subsheetid>becc3e99-bf38-47ab-903d-b8c70a6e867e</subsheetid>
+    <loginhibit />
+    <display x="15" y="15" />
+    <inputs>
+      <input type="collection" name="Collection In" narrative="The collection to average" expr="[Testdata]" />
+      <input type="text" name="Filter" narrative="The filter to apply to the collection, may be blank" expr="&quot;&quot;" />
+      <input type="text" name="Field" narrative="The field to take the distinct value of" expr="&quot;Adresse&quot;" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="Collection Out" narrative="The collection with the distincted field" stage="Resultat" />
+      <output type="number" name="Count" narrative="The count of items left after filtering" stage="Antal" />
+    </outputs>
+    <onsuccess>a5eb48ce-00f6-49a3-8035-e8dc74d12960</onsuccess>
+    <processid>6f60eba7-cb7d-497f-b59a-918ccb039e33</processid>
+  </stage>
+  <stage stageid="511f6265-77aa-410f-acc6-3efb83f58174" name="Statistics: Average" type="SubSheetInfo">
+    <subsheetid>e02a8377-a3f6-49d0-b365-4e497c270e59</subsheetid>
+    <narrative>Calculates the summed value of a specific field. If the collection is empty a value of 0 is returned</narrative>
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="2bc40b7c-7627-4cd4-9658-84b75c4215ac" name="Start" type="Start">
+    <subsheetid>e02a8377-a3f6-49d0-b365-4e497c270e59</subsheetid>
+    <loginhibit />
+    <display x="15" y="-105" />
+    <inputs>
+      <input type="collection" name="Collection In" narrative="The collection to find the standard deviation" stage="Collection In" />
+      <input type="text" name="Filter" narrative="The filter to apply to the collection, may be blank" stage="Filter" />
+      <input type="text" name="Field" narrative="The field to use, must be a number" stage="Field" />
+    </inputs>
+    <onsuccess>2bafb377-181b-4651-8ea0-6d5b47b0e1c7</onsuccess>
+  </stage>
+  <stage stageid="e5bc9e1d-7b0d-4e5d-8c9b-0bdb92430fd5" name="Field" type="Data">
+    <subsheetid>e02a8377-a3f6-49d0-b365-4e497c270e59</subsheetid>
+    <display x="-195" y="75" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="be44842e-72b7-4d41-9ebc-0e5cdad6745a" name="Collection In" type="Collection">
+    <subsheetid>e02a8377-a3f6-49d0-b365-4e497c270e59</subsheetid>
+    <display x="-195" y="-15" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="25f1bfb4-a7f0-4c18-bbac-89a4f8f6d2e9" name="Filter" type="Data">
+    <subsheetid>e02a8377-a3f6-49d0-b365-4e497c270e59</subsheetid>
+    <display x="-195" y="30" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="5098fc51-1573-47ac-a368-f5c8d4b778ad" name="Input" type="Block">
+    <subsheetid>e02a8377-a3f6-49d0-b365-4e497c270e59</subsheetid>
+    <loginhibit />
+    <display x="-270" y="-45" w="150" h="150" />
+    <font family="Segoe UI" size="10" style="Regular" color="339966" />
+  </stage>
+  <stage stageid="342f0ea9-9536-4d4a-bb9e-ec907fcfae63" name="Output" type="Block">
+    <subsheetid>e02a8377-a3f6-49d0-b365-4e497c270e59</subsheetid>
+    <loginhibit />
+    <display x="-270" y="330" w="150" h="105" />
+    <font family="Segoe UI" size="10" style="Regular" color="800080" />
+  </stage>
+  <stage stageid="e6e5197a-a555-4e9f-8769-066e95ae9ce1" name="Collection Out" type="Collection">
+    <subsheetid>e02a8377-a3f6-49d0-b365-4e497c270e59</subsheetid>
+    <display x="-195" y="285" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+    <collectioninfo>
+      <field name="Value" type="number" />
+    </collectioninfo>
+  </stage>
+  <stage stageid="3bda785b-3aa3-4510-b1da-d7eece72d1e7" name="Count" type="Data">
+    <subsheetid>e02a8377-a3f6-49d0-b365-4e497c270e59</subsheetid>
+    <loginhibit />
+    <display x="-195" y="405" w="120" h="30" />
+    <datatype>number</datatype>
+    <initialvalue>0</initialvalue>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="2bafb377-181b-4651-8ea0-6d5b47b0e1c7" name="Filter" type="SubSheet">
+    <subsheetid>e02a8377-a3f6-49d0-b365-4e497c270e59</subsheetid>
+    <loginhibit />
+    <display x="15" y="-45" />
+    <inputs>
+      <input type="collection" name="Collection In" narrative="Input collection" expr="[Collection In]" />
+      <input type="text" name="Filter" narrative="The filter to apply" expr="[Filter]" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="Collection Out" narrative="The filtered collection" stage="Collection In" />
+      <output type="number" name="Count" narrative="The amount of rows in the filtered collection" stage="Count" />
+    </outputs>
+    <onsuccess>5b462d5d-248d-4ebb-b8ab-787a50ac4f3f</onsuccess>
+    <processid>07115acf-6dab-4133-b4ba-052919bfbca9</processid>
+  </stage>
+  <stage stageid="5b462d5d-248d-4ebb-b8ab-787a50ac4f3f" name="No rows?" type="Decision">
+    <subsheetid>e02a8377-a3f6-49d0-b365-4e497c270e59</subsheetid>
+    <display x="15" y="15" />
+    <decision expression="[Count] = 0" />
+    <ontrue>e281c2fe-8c3d-43c2-b122-1a078405730e</ontrue>
+    <onfalse>039c2039-b728-4ab4-be20-c079dc22398b</onfalse>
+  </stage>
+  <stage stageid="e281c2fe-8c3d-43c2-b122-1a078405730e" name="End10" type="End">
+    <subsheetid>e02a8377-a3f6-49d0-b365-4e497c270e59</subsheetid>
+    <display x="120" y="15" />
+    <outputs>
+      <output type="number" name="Standard deviation" narrative="The calculated deviation" stage="Standard deviation" />
+      <output type="number" name="Count" narrative="The count of items left after filtering" stage="Count" />
+    </outputs>
+  </stage>
+  <stage stageid="47457a24-1c60-4f84-9de6-fb5085b0f69d" name="Standard deviation" type="Data">
+    <subsheetid>e02a8377-a3f6-49d0-b365-4e497c270e59</subsheetid>
+    <display x="-195" y="360" w="120" h="30" />
+    <datatype>number</datatype>
+    <initialvalue>0</initialvalue>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="0dc57ce4-ce57-4fbb-81c1-b4bd0e542f4d" name="Variables" type="Block">
+    <subsheetid>e02a8377-a3f6-49d0-b365-4e497c270e59</subsheetid>
+    <loginhibit />
+    <display x="-270" y="120" w="150" h="195" />
+    <font family="Segoe UI" size="10" style="Regular" color="333399" />
+  </stage>
+  <stage stageid="e2259166-bb1e-48f1-b7aa-1ab6893ef132" name="Mean" type="Data">
+    <subsheetid>e02a8377-a3f6-49d0-b365-4e497c270e59</subsheetid>
+    <display x="-195" y="150" w="120" h="30" />
+    <datatype>number</datatype>
+    <initialvalue>0</initialvalue>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="039c2039-b728-4ab4-be20-c079dc22398b" name="Statistics: Average" type="SubSheet">
+    <subsheetid>e02a8377-a3f6-49d0-b365-4e497c270e59</subsheetid>
+    <loginhibit />
+    <display x="15" y="75" />
+    <inputs>
+      <input type="collection" name="Collection In" narrative="The collection to average" expr="[Collection In]" />
+      <input type="text" name="Filter" narrative="The filter to apply to the collection, may be blank" expr="" />
+      <input type="text" name="Field" narrative="The field to average, must be a number" expr="[Field]" />
+    </inputs>
+    <outputs>
+      <output type="number" name="Average" narrative="The calculated average" stage="Mean" />
+      <output type="number" name="Count" narrative="The count of items left after filtering" stage="" />
+    </outputs>
+    <onsuccess>95866823-70b8-430b-a766-f67c3a756f5c</onsuccess>
+    <processid>342c043a-d363-4b2a-acdf-d0bba2d81bb4</processid>
+  </stage>
+  <stage stageid="95866823-70b8-430b-a766-f67c3a756f5c" name="Loop Collection in" type="LoopStart">
+    <subsheetid>e02a8377-a3f6-49d0-b365-4e497c270e59</subsheetid>
+    <loginhibit />
+    <display x="15" y="135" />
+    <onsuccess>c8c57143-0f7e-4c8e-a0c9-2631da8cc4e0</onsuccess>
+    <groupid>58e81f2a-0a83-4f89-9f95-46833d5d7ab3</groupid>
+    <looptype>ForEach</looptype>
+    <loopdata>Collection In</loopdata>
+  </stage>
+  <stage stageid="ffea7a4d-9237-478a-b995-1316051a2018" name="Loop Collection in" type="LoopEnd">
+    <subsheetid>e02a8377-a3f6-49d0-b365-4e497c270e59</subsheetid>
+    <loginhibit />
+    <display x="15" y="315" />
+    <onsuccess>32a8e0fe-cca4-4884-bdfa-059f366e0733</onsuccess>
+    <groupid>58e81f2a-0a83-4f89-9f95-46833d5d7ab3</groupid>
+  </stage>
+  <stage stageid="c8c57143-0f7e-4c8e-a0c9-2631da8cc4e0" name="Get field value" type="Action">
+    <subsheetid>e02a8377-a3f6-49d0-b365-4e497c270e59</subsheetid>
+    <display x="15" y="180" />
+    <inputs>
+      <input type="collection" name="Collection" narrative="The collection to read." expr="[Collection In]" />
+      <input type="text" name="Field Name" narrative="The field within the collection to read." expr="[Field]" />
+      <input type="number" name="Row Index" narrative="The row index within the collection to read from. The index is from 0 to N-1 (where N is the total number of rows in the collection)." expr="[Position]" />
+    </inputs>
+    <outputs>
+      <output type="text" name="Value Read" narrative="The value of the requested field as text." stage="Value" />
+    </outputs>
+    <onsuccess>dd6edcee-5949-4bf8-bd8d-85bf0ca9ddfb</onsuccess>
+    <resource object="Utility - Collection Manipulation" action="Read Collection Field" />
+  </stage>
+  <stage stageid="a3efe03d-5ea9-4c43-96b9-95a1f0d0d4e7" name="Set mean deviation values" type="MultipleCalculation">
+    <subsheetid>e02a8377-a3f6-49d0-b365-4e497c270e59</subsheetid>
+    <display x="15" y="270" />
+    <onsuccess>ffea7a4d-9237-478a-b995-1316051a2018</onsuccess>
+    <steps>
+      <calculation expression="(ToNumber([Value]) - [Mean])^2" stage="Collection Out.Value" />
+      <calculation expression="[Position] + 1" stage="Position" />
+    </steps>
+  </stage>
+  <stage stageid="c9585129-cc21-4814-bd37-27e4cd0ed98a" name="Value" type="Data">
+    <subsheetid>e02a8377-a3f6-49d0-b365-4e497c270e59</subsheetid>
+    <loginhibit />
+    <display x="-195" y="195" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="5510e4a6-8fd4-47e5-99a7-312649385e5c" name="Position" type="Data">
+    <subsheetid>e02a8377-a3f6-49d0-b365-4e497c270e59</subsheetid>
+    <display x="-195" y="240" w="120" h="30" />
+    <datatype>number</datatype>
+    <initialvalue>0</initialvalue>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="dd6edcee-5949-4bf8-bd8d-85bf0ca9ddfb" name="Ny række" type="Action">
+    <subsheetid>e02a8377-a3f6-49d0-b365-4e497c270e59</subsheetid>
+    <loginhibit />
+    <display x="15" y="225" />
+    <inputs>
+      <input type="text" name="Collection Name" narrative="The name of the collection to act upon" expr="&quot;Collection Out&quot;" />
+    </inputs>
+    <onsuccess>a3efe03d-5ea9-4c43-96b9-95a1f0d0d4e7</onsuccess>
+    <resource object="Blueprism.AutomateProcessCore.clsCollectionActions" action="Add Row" />
+  </stage>
+  <stage stageid="32a8e0fe-cca4-4884-bdfa-059f366e0733" name="Statistics: Average" type="SubSheet">
+    <subsheetid>e02a8377-a3f6-49d0-b365-4e497c270e59</subsheetid>
+    <loginhibit />
+    <display x="15" y="360" />
+    <inputs>
+      <input type="collection" name="Collection In" narrative="The collection to average" expr="[Collection Out]" />
+      <input type="text" name="Filter" narrative="The filter to apply to the collection, may be blank" expr="&quot;&quot;" />
+      <input type="text" name="Field" narrative="The field to average, must be a number" expr="&quot;Value&quot;" />
+    </inputs>
+    <outputs>
+      <output type="number" name="Average" narrative="The calculated average" stage="Standard deviation" />
+      <output type="number" name="Count" narrative="The count of items left after filtering" stage="Count" />
+    </outputs>
+    <onsuccess>942f66a3-2ce0-411b-980e-1cf2bcf59c45</onsuccess>
+    <processid>342c043a-d363-4b2a-acdf-d0bba2d81bb4</processid>
+  </stage>
+  <stage stageid="54f0f10b-e567-425d-8c92-b138462daecd" name="End1" type="End">
+    <subsheetid>e02a8377-a3f6-49d0-b365-4e497c270e59</subsheetid>
+    <loginhibit />
+    <display x="15" y="540" />
+    <outputs>
+      <output type="number" name="Standard deviation" narrative="The calculated deviation" stage="Standard deviation" />
+      <output type="number" name="Count" narrative="The count of items left after filtering" stage="Count" />
+    </outputs>
+  </stage>
+  <stage stageid="cd17da71-e627-4a4c-8470-73b71591d72e" name="Test: Statistics: Standard deviation" type="SubSheetInfo">
+    <subsheetid>1a380187-60c0-48cb-a5f7-7bb6782529af</subsheetid>
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="325dd7f5-d985-4d43-8d3c-8851693167ac" name="Start" type="Start">
+    <subsheetid>1a380187-60c0-48cb-a5f7-7bb6782529af</subsheetid>
+    <loginhibit />
+    <display x="15" y="-105" />
+    <onsuccess>39a6a495-7a27-443b-b3fd-b72c8401e1d5</onsuccess>
+  </stage>
+  <stage stageid="373bfec8-c836-49bf-b06a-5535405a6289" name="End" type="End">
+    <subsheetid>1a380187-60c0-48cb-a5f7-7bb6782529af</subsheetid>
+    <loginhibit />
+    <display x="15" y="90" />
+  </stage>
+  <stage stageid="f0e17f05-2a18-4bc0-b47b-c68e6bdfb65b" name="Testdata" type="Collection">
+    <subsheetid>1a380187-60c0-48cb-a5f7-7bb6782529af</subsheetid>
+    <loginhibit />
+    <narrative>9, 2, 5, 4, 12, 7, 8, 11, 9, 3, 7, 4, 12, 5, 4, 10, 9, 6, 9, 4</narrative>
+    <display x="-195" y="-15" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+    <collectioninfo>
+      <field name="Value" type="number" />
+    </collectioninfo>
+    <initialvalue>
+      <row>
+        <field name="Value" type="number" value="9" />
+      </row>
+      <row>
+        <field name="Value" type="number" value="2" />
+      </row>
+      <row>
+        <field name="Value" type="number" value="5" />
+      </row>
+      <row>
+        <field name="Value" type="number" value="4" />
+      </row>
+      <row>
+        <field name="Value" type="number" value="12" />
+      </row>
+      <row>
+        <field name="Value" type="number" value="7" />
+      </row>
+      <row>
+        <field name="Value" type="number" value="8" />
+      </row>
+      <row>
+        <field name="Value" type="number" value="11" />
+      </row>
+      <row>
+        <field name="Value" type="number" value="9" />
+      </row>
+      <row>
+        <field name="Value" type="number" value="3" />
+      </row>
+      <row>
+        <field name="Value" type="number" value="7" />
+      </row>
+      <row>
+        <field name="Value" type="number" value="4" />
+      </row>
+      <row>
+        <field name="Value" type="number" value="12" />
+      </row>
+      <row>
+        <field name="Value" type="number" value="5" />
+      </row>
+      <row>
+        <field name="Value" type="number" value="4" />
+      </row>
+      <row>
+        <field name="Value" type="number" value="10" />
+      </row>
+      <row>
+        <field name="Value" type="number" value="9" />
+      </row>
+      <row>
+        <field name="Value" type="number" value="6" />
+      </row>
+      <row>
+        <field name="Value" type="number" value="9" />
+      </row>
+      <row>
+        <field name="Value" type="number" value="4" />
+      </row>
+    </initialvalue>
+  </stage>
+  <stage stageid="39a6a495-7a27-443b-b3fd-b72c8401e1d5" name="Statistics: Standard deviation" type="SubSheet">
+    <subsheetid>1a380187-60c0-48cb-a5f7-7bb6782529af</subsheetid>
+    <loginhibit />
+    <display x="15" y="-45" />
+    <inputs>
+      <input type="collection" name="Collection In" narrative="The collection to find the standard deviation" expr="[Testdata]" />
+      <input type="text" name="Filter" narrative="The filter to apply to the collection, may be blank" expr="" />
+      <input type="text" name="Field" narrative="The field to use, must be a number" expr="&quot;Value&quot;" />
+    </inputs>
+    <outputs>
+      <output type="number" name="Standard deviation" narrative="The calculated deviation" stage="Standard deviation" />
+      <output type="number" name="Count" narrative="The count of items left after filtering" stage="Count" />
+    </outputs>
+    <onsuccess>373bfec8-c836-49bf-b06a-5535405a6289</onsuccess>
+    <processid>e02a8377-a3f6-49d0-b365-4e497c270e59</processid>
+  </stage>
+  <stage stageid="113a7434-88b6-438e-a34f-a9b249f51cc8" name="Standard deviation" type="Data">
+    <subsheetid>1a380187-60c0-48cb-a5f7-7bb6782529af</subsheetid>
+    <display x="-195" y="75" w="120" h="30" />
+    <datatype>number</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="700e69af-5b68-477a-9cc4-d08c020618f4" name="Count" type="Data">
+    <subsheetid>1a380187-60c0-48cb-a5f7-7bb6782529af</subsheetid>
+    <display x="-195" y="30" w="120" h="30" />
+    <datatype>number</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="942f66a3-2ce0-411b-980e-1cf2bcf59c45" name="Squareroot" type="Calculation">
+    <subsheetid>e02a8377-a3f6-49d0-b365-4e497c270e59</subsheetid>
+    <loginhibit />
+    <display x="15" y="405" />
+    <onsuccess>54f0f10b-e567-425d-8c92-b138462daecd</onsuccess>
+    <calculation expression="Sqrt([Standard deviation])" stage="Standard deviation" />
+  </stage>
+  <stage stageid="648a8dc1-f79a-4ed5-b9f7-1f01bc17d4d3" name="Variables" type="Block">
+    <subsheetid>1a380187-60c0-48cb-a5f7-7bb6782529af</subsheetid>
+    <loginhibit />
+    <display x="-270" y="-45" w="150" h="195" />
+    <font family="Segoe UI" size="10" style="Regular" color="333399" />
+  </stage>
+  <stage stageid="68247790-c946-4f93-b881-bf31f853a46c" name="Distinct field" type="SubSheetInfo">
+    <subsheetid>786646f3-856c-4b7d-98d6-7ab7dfe9e04f</subsheetid>
+    <narrative>Returns a collection of distinct values for the field specified in the field input parameter. All other fields are ignored.</narrative>
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="1cf63276-558e-4fb0-af90-9109c072b9f3" name="Start" type="Start">
+    <subsheetid>786646f3-856c-4b7d-98d6-7ab7dfe9e04f</subsheetid>
+    <loginhibit />
+    <display x="15" y="-105" />
+    <inputs>
+      <input type="collection" name="Collection In" narrative="The collection to average" stage="Collection In" />
+      <input type="text" name="Filter" narrative="The filter to apply to the collection, may be blank" stage="Filter" />
+      <input type="text" name="Field" narrative="The field to take the distinct value of" stage="Field" />
+      <input type="text" name="Regex" narrative="The regular expression to filter by" stage="Regex" />
+    </inputs>
+    <onsuccess>35a9084d-7232-4c47-ae39-a8a8577807d2</onsuccess>
+  </stage>
+  <stage stageid="1978f435-dd6a-4409-bafb-31b7ba508454" name="Field" type="Data">
+    <subsheetid>786646f3-856c-4b7d-98d6-7ab7dfe9e04f</subsheetid>
+    <display x="-195" y="75" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="a2bdc825-6530-4b36-8680-c43071dbdff4" name="Collection In" type="Collection">
+    <subsheetid>786646f3-856c-4b7d-98d6-7ab7dfe9e04f</subsheetid>
+    <display x="-195" y="-15" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="b8fffa09-968d-4304-b06d-847a7f9723af" name="Filter" type="Data">
+    <subsheetid>786646f3-856c-4b7d-98d6-7ab7dfe9e04f</subsheetid>
+    <display x="-195" y="30" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="14d18916-bd5e-4d6f-9e78-cefe44b226a0" name="Input" type="Block">
+    <subsheetid>786646f3-856c-4b7d-98d6-7ab7dfe9e04f</subsheetid>
+    <loginhibit />
+    <display x="-270" y="-45" w="150" h="195" />
+    <font family="Segoe UI" size="10" style="Regular" color="339966" />
+  </stage>
+  <stage stageid="c320f886-71c6-466a-a0be-18b7aef4ae3d" name="Output" type="Block">
+    <subsheetid>786646f3-856c-4b7d-98d6-7ab7dfe9e04f</subsheetid>
+    <loginhibit />
+    <display x="-270" y="435" w="150" h="195" />
+    <font family="Segoe UI" size="10" style="Regular" color="800080" />
+  </stage>
+  <stage stageid="7c9451a6-8467-4b9e-a617-25779c9a1eca" name="Collection Out" type="Collection">
+    <subsheetid>786646f3-856c-4b7d-98d6-7ab7dfe9e04f</subsheetid>
+    <display x="-195" y="465" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="0c076906-ad18-488e-beca-4c4aff022304" name="Count" type="Data">
+    <subsheetid>786646f3-856c-4b7d-98d6-7ab7dfe9e04f</subsheetid>
+    <loginhibit />
+    <display x="-195" y="555" w="120" h="30" />
+    <datatype>number</datatype>
+    <initialvalue>0</initialvalue>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="84ee8da7-6778-4f39-b5d1-c97a857f43dd" name="End" type="End">
+    <subsheetid>786646f3-856c-4b7d-98d6-7ab7dfe9e04f</subsheetid>
+    <display x="15" y="465" />
+    <outputs>
+      <output type="collection" name="Collection Out" narrative="The collection with the distincted field" stage="Collection Out" />
+      <output type="number" name="Count" narrative="The count of items left after filtering" stage="Count" />
+      <output type="collection" name="Matches" narrative="The matches that were" stage="Matches Out" />
+    </outputs>
+  </stage>
+  <stage stageid="595149af-d898-4fc3-8704-7535160ee561" name="Variables" type="Block">
+    <subsheetid>786646f3-856c-4b7d-98d6-7ab7dfe9e04f</subsheetid>
+    <loginhibit />
+    <display x="-270" y="165" w="150" h="240" />
+    <font family="Segoe UI" size="10" style="Regular" color="333399" />
+  </stage>
+  <stage stageid="35a9084d-7232-4c47-ae39-a8a8577807d2" name="Filter" type="SubSheet">
+    <subsheetid>786646f3-856c-4b7d-98d6-7ab7dfe9e04f</subsheetid>
+    <loginhibit />
+    <display x="15" y="-45" />
+    <inputs>
+      <input type="collection" name="Collection In" narrative="Input collection" expr="[Collection In]" />
+      <input type="text" name="Filter" narrative="The filter to apply" expr="[Filter]" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="Collection Out" narrative="The filtered collection" stage="Collection In" />
+      <output type="number" name="Count" narrative="The amount of rows in the filtered collection" stage="Count" />
+    </outputs>
+    <onsuccess>caa5a05c-2a3f-447b-be26-e1b3c21c86ac</onsuccess>
+    <processid>07115acf-6dab-4133-b4ba-052919bfbca9</processid>
+  </stage>
+  <stage stageid="93447757-ba53-4e4b-9f88-abe73ac6a4c9" name="Regex" type="Data">
+    <subsheetid>786646f3-856c-4b7d-98d6-7ab7dfe9e04f</subsheetid>
+    <display x="-195" y="120" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="b5c495bf-8c4d-41cd-aa10-8d871cdc8aa6" name="Match" type="Action">
+    <subsheetid>786646f3-856c-4b7d-98d6-7ab7dfe9e04f</subsheetid>
+    <loginhibit />
+    <display x="15" y="90" />
+    <inputs>
+      <input type="text" name="Target String" narrative="The string to match from" expr="[Felt]" />
+      <input type="text" name="Regex Pattern" narrative="The expression to use as a match template" expr="[Regex]" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="Matches" stage="Matches" />
+      <output type="flag" name="Success" stage="Success" />
+    </outputs>
+    <onsuccess>f79609e9-9876-46b0-b1cb-3e49f27acc90</onsuccess>
+    <resource object="Utility - Odk" action="String: Regex match" />
+  </stage>
+  <stage stageid="caa5a05c-2a3f-447b-be26-e1b3c21c86ac" name="Loop collection" type="LoopStart">
+    <subsheetid>786646f3-856c-4b7d-98d6-7ab7dfe9e04f</subsheetid>
+    <loginhibit />
+    <display x="15" y="0" />
+    <onsuccess>e684a229-3c7a-4f43-b7eb-688561280f90</onsuccess>
+    <groupid>a137175f-2a62-4884-be58-3a3f6559f240</groupid>
+    <looptype>ForEach</looptype>
+    <loopdata>Collection In</loopdata>
+  </stage>
+  <stage stageid="feb33096-cf74-49e7-ae69-3adfed813765" name="Loop collection" type="LoopEnd">
+    <subsheetid>786646f3-856c-4b7d-98d6-7ab7dfe9e04f</subsheetid>
+    <loginhibit />
+    <display x="15" y="375" />
+    <onsuccess>a5394971-1f26-4044-9c2c-c77807e8292b</onsuccess>
+    <groupid>a137175f-2a62-4884-be58-3a3f6559f240</groupid>
+  </stage>
+  <stage stageid="e684a229-3c7a-4f43-b7eb-688561280f90" name="Hent felt" type="Action">
+    <subsheetid>786646f3-856c-4b7d-98d6-7ab7dfe9e04f</subsheetid>
+    <loginhibit />
+    <display x="15" y="45" />
+    <inputs>
+      <input type="collection" name="Collection" narrative="The collection to read." expr="[Collection In]" />
+      <input type="text" name="Field Name" narrative="The field within the collection to read." expr="[Field]" />
+      <input type="number" name="Row Index" narrative="The row index within the collection to read from. The index is from 0 to N-1 (where N is the total number of rows in the collection)." expr="[Position]" />
+    </inputs>
+    <outputs>
+      <output type="text" name="Value Read" narrative="The value of the requested field as text." stage="Felt" />
+    </outputs>
+    <onsuccess>b5c495bf-8c4d-41cd-aa10-8d871cdc8aa6</onsuccess>
+    <resource object="Utility - Collection Manipulation" action="Read Collection Field" />
+  </stage>
+  <stage stageid="f769e77a-a1f2-47fb-b7f9-5ed058f88880" name="Felt" type="Data">
+    <subsheetid>786646f3-856c-4b7d-98d6-7ab7dfe9e04f</subsheetid>
+    <display x="-195" y="195" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="6b78c9a4-78ea-44d2-94b9-b0bd74efb5bf" name="Position" type="Data">
+    <subsheetid>786646f3-856c-4b7d-98d6-7ab7dfe9e04f</subsheetid>
+    <loginhibit />
+    <display x="-195" y="240" w="120" h="30" />
+    <datatype>number</datatype>
+    <initialvalue>0</initialvalue>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="2244d707-c30b-40bd-ad14-c734ed8bd715" name="Success" type="Data">
+    <subsheetid>786646f3-856c-4b7d-98d6-7ab7dfe9e04f</subsheetid>
+    <display x="-195" y="330" w="120" h="30" />
+    <datatype>flag</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="9e548c14-a8f0-4992-aa88-dbac9885a116" name="Matches" type="Collection">
+    <subsheetid>786646f3-856c-4b7d-98d6-7ab7dfe9e04f</subsheetid>
+    <display x="-195" y="285" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="c47b035e-840f-4aa8-81f7-9264cccdb943" name="Matches Out" type="Collection">
+    <subsheetid>786646f3-856c-4b7d-98d6-7ab7dfe9e04f</subsheetid>
+    <display x="-195" y="510" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="f79609e9-9876-46b0-b1cb-3e49f27acc90" name="Har vi match?" type="Decision">
+    <subsheetid>786646f3-856c-4b7d-98d6-7ab7dfe9e04f</subsheetid>
+    <loginhibit />
+    <display x="15" y="135" />
+    <decision expression="[Success]" />
+    <ontrue>a90c3b0d-af18-4b0d-a658-86f4d0e8df5f</ontrue>
+    <onfalse>2bf27197-5392-434a-b90d-5275d627c734</onfalse>
+  </stage>
+  <stage stageid="eee74236-7cf6-444a-b277-cfad54510248" name="Position++" type="Calculation">
+    <subsheetid>786646f3-856c-4b7d-98d6-7ab7dfe9e04f</subsheetid>
+    <loginhibit />
+    <display x="15" y="330" />
+    <onsuccess>feb33096-cf74-49e7-ae69-3adfed813765</onsuccess>
+    <calculation expression="[Position] + 1" stage="Position" />
+  </stage>
+  <stage stageid="2bf27197-5392-434a-b90d-5275d627c734" name="Anchor2" type="Anchor">
+    <subsheetid>786646f3-856c-4b7d-98d6-7ab7dfe9e04f</subsheetid>
+    <loginhibit />
+    <display x="165" y="135" w="10" h="10" />
+    <onsuccess>78c3956a-6967-47dd-9cac-fb2ce1997f16</onsuccess>
+  </stage>
+  <stage stageid="78c3956a-6967-47dd-9cac-fb2ce1997f16" name="Anchor3" type="Anchor">
+    <subsheetid>786646f3-856c-4b7d-98d6-7ab7dfe9e04f</subsheetid>
+    <loginhibit />
+    <display x="165" y="330" w="10" h="10" />
+    <onsuccess>eee74236-7cf6-444a-b277-cfad54510248</onsuccess>
+  </stage>
+  <stage stageid="a90c3b0d-af18-4b0d-a658-86f4d0e8df5f" name="Tilføj match række til out" type="Action">
+    <subsheetid>786646f3-856c-4b7d-98d6-7ab7dfe9e04f</subsheetid>
+    <loginhibit />
+    <display x="15" y="180" />
+    <inputs>
+      <input type="collection" name="Main Collection" narrative="The collection to append to." expr="[Matches Out]" />
+      <input type="collection" name="Collection to Append" narrative="The collection to append." expr="[Matches]" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="Combined Collection" narrative="The combined collection." stage="Matches Out" />
+    </outputs>
+    <onsuccess>c9c66f3c-5db9-4e17-abb3-d0b748995742</onsuccess>
+    <resource object="Utility - Collection Manipulation" action="Append Rows to Collection" />
+  </stage>
+  <stage stageid="c9c66f3c-5db9-4e17-abb3-d0b748995742" name="Kopier række til tmp" type="Action">
+    <subsheetid>786646f3-856c-4b7d-98d6-7ab7dfe9e04f</subsheetid>
+    <loginhibit />
+    <display x="15" y="225" />
+    <inputs>
+      <input type="number" name="Start Row" narrative="The row index to start copying from. The index is from 0 to N-1 (where N is the total number of rows in the collection)." expr="[Position]" />
+      <input type="number" name="Number of Rows to Copy" narrative="The number of rows to copy." expr="1" />
+      <input type="collection" name="Source Collection" narrative="The collection to copy." expr="[Collection In]" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="Output Collection" narrative="The copied collection." stage="Collection tmp" />
+    </outputs>
+    <onsuccess>710e7ef0-9b2d-464b-a5bb-a611d6d34bb4</onsuccess>
+    <resource object="Utility - Collection Manipulation" action="Copy Rows" />
+  </stage>
+  <stage stageid="aa43483b-d013-462e-9da4-36b2b8eb028c" name="Collection tmp" type="Collection">
+    <subsheetid>786646f3-856c-4b7d-98d6-7ab7dfe9e04f</subsheetid>
+    <display x="-195" y="375" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="710e7ef0-9b2d-464b-a5bb-a611d6d34bb4" name="Tilføj tmp række til out" type="Action">
+    <subsheetid>786646f3-856c-4b7d-98d6-7ab7dfe9e04f</subsheetid>
+    <loginhibit />
+    <display x="15" y="270" />
+    <inputs>
+      <input type="collection" name="Main Collection" narrative="The collection to append to." expr="[Collection Out]" />
+      <input type="collection" name="Collection to Append" narrative="The collection to append." expr="[Collection tmp]" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="Combined Collection" narrative="The combined collection." stage="Collection Out" />
+    </outputs>
+    <onsuccess>eee74236-7cf6-444a-b277-cfad54510248</onsuccess>
+    <resource object="Utility - Collection Manipulation" action="Append Rows to Collection" />
+  </stage>
+  <stage stageid="6b236584-28e5-45aa-a334-c3ce15211ccd" name="Test Regex filter" type="SubSheetInfo">
+    <subsheetid>fdfc0eae-afa2-415e-9775-aa42e52e6f85</subsheetid>
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="5fc839ff-f58f-40eb-864b-feb4d051f424" name="Start" type="Start">
+    <subsheetid>fdfc0eae-afa2-415e-9775-aa42e52e6f85</subsheetid>
+    <loginhibit />
+    <display x="15" y="-105" />
+    <onsuccess>94901c3b-2c25-45d1-8cc4-cd528b3ae118</onsuccess>
+  </stage>
+  <stage stageid="89ad91c2-b652-42c1-987e-50104a4e91c9" name="End" type="End">
+    <subsheetid>fdfc0eae-afa2-415e-9775-aa42e52e6f85</subsheetid>
+    <loginhibit />
+    <display x="15" y="90" />
+  </stage>
+  <stage stageid="d5a96158-3eaa-468b-9475-e4da7c19b58f" name="Konstanter" type="Block">
+    <subsheetid>fdfc0eae-afa2-415e-9775-aa42e52e6f85</subsheetid>
+    <display x="-270" y="-30" w="150" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="008080" />
+  </stage>
+  <stage stageid="9bc700aa-88de-4a60-91d7-175473c8270e" name="Testdata" type="Collection">
+    <subsheetid>fdfc0eae-afa2-415e-9775-aa42e52e6f85</subsheetid>
+    <loginhibit />
+    <display x="-195" y="0" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+    <collectioninfo>
+      <field name="Navn" type="text" />
+      <field name="Fødselsdag" type="date" />
+      <field name="Adresse" type="text" />
+    </collectioninfo>
+    <initialvalue>
+      <row>
+        <field name="Navn" type="text" value="Peter" />
+        <field name="Fødselsdag" type="date" value="2019/07/16" />
+        <field name="Adresse" type="text" value="Æblehaven 4" />
+      </row>
+      <row>
+        <field name="Navn" type="text" value="Dorte" />
+        <field name="Fødselsdag" type="date" value="2019/07/03" />
+        <field name="Adresse" type="text" value="Pærehaven 20" />
+      </row>
+      <row>
+        <field name="Navn" type="text" value="Marianne" />
+        <field name="Fødselsdag" type="date" value="2019/07/03" />
+        <field name="Adresse" type="text" value="Æblehaven 10" />
+      </row>
+    </initialvalue>
+  </stage>
+  <stage stageid="94901c3b-2c25-45d1-8cc4-cd528b3ae118" name="Regex filter" type="SubSheet">
+    <subsheetid>fdfc0eae-afa2-415e-9775-aa42e52e6f85</subsheetid>
+    <loginhibit />
+    <display x="15" y="-30" />
+    <inputs>
+      <input type="collection" name="Collection In" narrative="The collection to average" expr="[Testdata]" />
+      <input type="text" name="Filter" narrative="The filter to apply to the collection, may be blank" expr="&quot;&quot;" />
+      <input type="text" name="Field" narrative="The field to take the distinct value of" expr="&quot;Adresse&quot;" />
+      <input type="text" name="Regex" narrative="The regular expression to filter by" expr="&quot;^Æblehaven&quot;" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="Collection Out" narrative="The collection with the distincted field" stage="Collection Out" />
+      <output type="number" name="Count" narrative="The count of items left after filtering" stage="Count" />
+      <output type="collection" name="Matches" narrative="The matches that were" stage="Matches" />
+    </outputs>
+    <onsuccess>89ad91c2-b652-42c1-987e-50104a4e91c9</onsuccess>
+    <processid>786646f3-856c-4b7d-98d6-7ab7dfe9e04f</processid>
+  </stage>
+  <stage stageid="a5394971-1f26-4044-9c2c-c77807e8292b" name="Count" type="Action">
+    <subsheetid>786646f3-856c-4b7d-98d6-7ab7dfe9e04f</subsheetid>
+    <loginhibit />
+    <display x="15" y="420" />
+    <inputs>
+      <input type="text" name="Collection Name" narrative="The name of the collection to act upon" expr="&quot;Collection Out&quot;" />
+    </inputs>
+    <outputs>
+      <output type="number" name="Count" narrative="The number of rows counted in the collection" stage="Count" />
+    </outputs>
+    <onsuccess>84ee8da7-6778-4f39-b5d1-c97a857f43dd</onsuccess>
+    <resource object="Blueprism.AutomateProcessCore.clsCollectionActions" action="Count Rows" />
+  </stage>
+  <stage stageid="047c5886-3d4e-4cf0-8256-ff8649d15272" name="Variabler" type="Block">
+    <subsheetid>fdfc0eae-afa2-415e-9775-aa42e52e6f85</subsheetid>
+    <display x="-270" y="45" w="150" h="150" />
+    <font family="Segoe UI" size="10" style="Regular" color="666699" />
+  </stage>
+  <stage stageid="aaf4c0c8-e4b9-4dc7-bc22-93bb94b0f165" name="Collection Out" type="Collection">
+    <subsheetid>fdfc0eae-afa2-415e-9775-aa42e52e6f85</subsheetid>
+    <display x="-195" y="75" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="4ee9f5bf-7641-47ba-8567-0d5c0f7f8ccc" name="Count" type="Data">
+    <subsheetid>fdfc0eae-afa2-415e-9775-aa42e52e6f85</subsheetid>
+    <display x="-195" y="165" w="120" h="30" />
+    <datatype>number</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="cce29f9f-1973-455c-b5f5-70ea01f78867" name="Matches" type="Collection">
+    <subsheetid>fdfc0eae-afa2-415e-9775-aa42e52e6f85</subsheetid>
+    <display x="-195" y="120" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="30236844-956a-4f47-a009-7ab5ca07aaa3" name="Remove Duplicate" type="SubSheetInfo">
+    <subsheetid>5264d12d-76a1-44ac-8567-1ccdc860dc97</subsheetid>
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="36a2d025-c9b2-4223-aab3-08017bff2738" name="Start" type="Start">
+    <subsheetid>5264d12d-76a1-44ac-8567-1ccdc860dc97</subsheetid>
+    <loginhibit />
+    <display x="60" y="-105" />
+    <inputs>
+      <input type="collection" name="Collection" narrative="Hvad der skal kigges i gennem" stage="Collection In" />
+      <input type="text" name="Filter" narrative="Filter køres FØRST" stage="Filter" />
+      <input type="collection" name="Fields" narrative="Felter der ikke må være flere sæt af" stage="Fields" />
+    </inputs>
+    <onsuccess>24243b70-7514-4aec-9faa-e3c3260d222c</onsuccess>
+  </stage>
+  <stage stageid="972239ed-d8e1-432b-b5fa-37b422a96287" name="Input" type="Block">
+    <subsheetid>5264d12d-76a1-44ac-8567-1ccdc860dc97</subsheetid>
+    <loginhibit />
+    <display x="-270" y="-45" w="150" h="150" />
+    <font family="Segoe UI" size="10" style="Regular" color="339966" />
+  </stage>
+  <stage stageid="bbf38ce4-a1f4-4818-a0e1-837610734353" name="Output" type="Block">
+    <subsheetid>5264d12d-76a1-44ac-8567-1ccdc860dc97</subsheetid>
+    <loginhibit />
+    <display x="-270" y="195" w="150" h="105" />
+    <font family="Segoe UI" size="10" style="Regular" color="800080" />
+  </stage>
+  <stage stageid="abdb9777-0cf6-464c-b8c0-d8d77f5ae1e8" name="Variables" type="Block">
+    <subsheetid>5264d12d-76a1-44ac-8567-1ccdc860dc97</subsheetid>
+    <loginhibit />
+    <display x="-270" y="120" w="150" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="333399" />
+  </stage>
+  <stage stageid="02303596-788b-4573-a097-6650ec8f7b66" name="End" type="End">
+    <subsheetid>5264d12d-76a1-44ac-8567-1ccdc860dc97</subsheetid>
+    <loginhibit />
+    <display x="60" y="75" />
+    <outputs>
+      <output type="collection" name="Data" stage="Collection Out" />
+      <output type="number" name="Antal" stage="Count" />
+    </outputs>
+  </stage>
+  <stage stageid="3c38ea68-a1a2-4796-bb9e-72860c600b33" name="Fields" type="Collection">
+    <subsheetid>5264d12d-76a1-44ac-8567-1ccdc860dc97</subsheetid>
+    <display x="-195" y="75" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+    <collectioninfo>
+      <field name="Name" type="text" />
+    </collectioninfo>
+  </stage>
+  <stage stageid="e8b557f8-bdd4-4137-9fb9-4d37bf00bdf6" name="Note3" type="Note">
+    <subsheetid>5264d12d-76a1-44ac-8567-1ccdc860dc97</subsheetid>
+    <loginhibit />
+    <narrative>Collection In er den data der skal tjekkes.
+Filter køres FØRST. Derefter kører duplicate tjek.
+Fields er en collection med navne på de felter der skal tjekkes på.
+
+Hvis Fields er tom tjekkes på ALLE felter (hele rækken).</narrative>
+    <display x="360" y="-60" w="330" h="120" />
+  </stage>
+  <stage stageid="24243b70-7514-4aec-9faa-e3c3260d222c" name="Filter" type="SubSheet">
+    <subsheetid>5264d12d-76a1-44ac-8567-1ccdc860dc97</subsheetid>
+    <loginhibit />
+    <display x="60" y="-45" />
+    <inputs>
+      <input type="collection" name="Collection In" narrative="Input collection" expr="[Collection In]" />
+      <input type="text" name="Filter" narrative="The filter to apply" expr="[Filter]" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="Collection Out" narrative="The filtered collection" stage="Collection In" />
+      <output type="number" name="Count" narrative="The amount of rows in the filtered collection" stage="Count" />
+    </outputs>
+    <onsuccess>67fe4a33-4d18-42d1-b4ed-e6b5ec680767</onsuccess>
+    <processid>07115acf-6dab-4133-b4ba-052919bfbca9</processid>
+  </stage>
+  <stage stageid="31b19b4e-d3de-480f-be6d-dbe11323e984" name="Filter" type="Data">
+    <subsheetid>5264d12d-76a1-44ac-8567-1ccdc860dc97</subsheetid>
+    <display x="-195" y="30" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="67fe4a33-4d18-42d1-b4ed-e6b5ec680767" name="Remove duplicate" type="Code">
+    <subsheetid>5264d12d-76a1-44ac-8567-1ccdc860dc97</subsheetid>
+    <loginhibit />
+    <display x="60" y="15" />
+    <inputs>
+      <input type="collection" name="dataTable" expr="[Collection In]" />
+      <input type="collection" name="fields" expr="[Fields]" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="cleaned" stage="Collection Out" />
+      <output type="number" name="count" stage="Count" />
+    </outputs>
+    <onsuccess>02303596-788b-4573-a097-6650ec8f7b66</onsuccess>
+    <code><![CDATA[			Hashtable hTable = new Hashtable();
+            ArrayList duplicateList = new ArrayList();
+
+            if (fields == null || fields.Rows.Count == 0)
+            {
+                fields = new DataTable();
+                fields.Columns.Add("Name", typeof(String));
+
+                foreach (DataColumn dColumn in dataTable.Columns)
+                {
+                    fields.Rows.Add(dColumn.ColumnName);
+                }
+            }
+
+            foreach (DataRow drow in dataTable.Rows)
+            {
+                string fieldstring = "";
+
+                foreach (DataRow row in fields.Rows)
+                {
+                    fieldstring += drow[row[0].ToString()].ToString();
+                }
+				
+                if (hTable.Contains(fieldstring)) 
+				{
+					duplicateList.Add(drow);
+				}                    
+                else
+				{
+					hTable.Add(fieldstring, string.Empty);
+				}                    
+            }
+            foreach (DataRow drow in duplicateList)
+            {
+                dataTable.Rows.Remove(drow);
+            }
+			
+			cleaned = dataTable;
+			count = cleaned.Rows.Count;]]></code>
+  </stage>
+  <stage stageid="e1d8a666-8364-40f7-a503-59fb4f4c455f" name="Collection Out" type="Collection">
+    <subsheetid>5264d12d-76a1-44ac-8567-1ccdc860dc97</subsheetid>
+    <display x="-195" y="225" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="f5b031e1-b1cf-4c99-98e9-e7c6c77bb44c" name="Count" type="Data">
+    <subsheetid>5264d12d-76a1-44ac-8567-1ccdc860dc97</subsheetid>
+    <display x="-195" y="270" w="120" h="30" />
+    <datatype>number</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="adc1d344-de2e-43d7-b017-2b4b9ebd2f61" name="Count rows Collection In" type="Action">
+    <subsheetid>07115acf-6dab-4133-b4ba-052919bfbca9</subsheetid>
+    <loginhibit />
+    <display x="15" y="-180" />
+    <inputs>
+      <input type="text" name="Collection Name" narrative="The name of the collection to act upon" expr="&quot;Collection In&quot;" />
+    </inputs>
+    <outputs>
+      <output type="number" name="Count" narrative="The number of rows counted in the collection" stage="Count" />
+    </outputs>
+    <onsuccess>6800235d-7531-4321-8ea0-047854d8d3bd</onsuccess>
+    <resource object="Blueprism.AutomateProcessCore.clsCollectionActions" action="Count Rows" />
+  </stage>
+  <stage stageid="6800235d-7531-4321-8ea0-047854d8d3bd" name="Count&gt;0" type="Decision">
+    <subsheetid>07115acf-6dab-4133-b4ba-052919bfbca9</subsheetid>
+    <loginhibit />
+    <display x="15" y="-120" />
+    <decision expression="[Count]&gt;0" />
+    <ontrue>10a78dcf-f793-4173-bbe7-21c464d26b9f</ontrue>
+    <onfalse>c5505774-bc89-4d72-b17f-5cea405aadf6</onfalse>
+  </stage>
+  <stage stageid="c5505774-bc89-4d72-b17f-5cea405aadf6" name="End2" type="End">
+    <subsheetid>07115acf-6dab-4133-b4ba-052919bfbca9</subsheetid>
+    <loginhibit />
+    <display x="105" y="-120" />
+    <outputs>
+      <output type="collection" name="Collection Out" narrative="The filtered collection" stage="Collection Out" />
+      <output type="number" name="Count" narrative="The amount of rows in the filtered collection" stage="Count" />
+    </outputs>
+  </stage>
+  <stage stageid="fb8c6f40-f3a4-4828-814c-15edc875681b" name="Collection In" type="Collection">
+    <subsheetid>5264d12d-76a1-44ac-8567-1ccdc860dc97</subsheetid>
+    <loginhibit />
+    <display x="-195" y="-15" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="560e303a-9c22-488f-acc0-ac0c0201ec7b" name="Count rows Collection In" type="Action">
+    <subsheetid>1de01796-a016-484d-be4b-375ff8c44d20</subsheetid>
+    <loginhibit />
+    <display x="15" y="-180" />
+    <inputs>
+      <input type="text" name="Collection Name" narrative="The name of the collection to act upon" expr="&quot;Collection In&quot;" />
+    </inputs>
+    <outputs>
+      <output type="number" name="Count" narrative="The number of rows counted in the collection" stage="Count" />
+    </outputs>
+    <onsuccess>937ebefd-0242-4d46-b866-beacfc34d762</onsuccess>
+    <resource object="Blueprism.AutomateProcessCore.clsCollectionActions" action="Count Rows" />
+  </stage>
+  <stage stageid="937ebefd-0242-4d46-b866-beacfc34d762" name="Count&gt;0" type="Decision">
+    <subsheetid>1de01796-a016-484d-be4b-375ff8c44d20</subsheetid>
+    <loginhibit />
+    <display x="15" y="-120" />
+    <decision expression="[Count]&gt;0" />
+    <ontrue>a02ac4ca-92eb-4724-b657-a6f48fa6fda8</ontrue>
+    <onfalse>8f78332a-47d9-42c6-9ec1-68802ee35246</onfalse>
+  </stage>
+  <stage stageid="8f78332a-47d9-42c6-9ec1-68802ee35246" name="End2" type="End">
+    <subsheetid>1de01796-a016-484d-be4b-375ff8c44d20</subsheetid>
+    <loginhibit />
+    <display x="105" y="-120" />
+    <outputs>
+      <output type="number" name="Count" narrative="The amount of rows in the filtered collection" stage="Count" />
+    </outputs>
+  </stage>
+</process>

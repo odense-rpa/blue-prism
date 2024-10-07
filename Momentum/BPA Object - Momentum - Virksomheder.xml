@@ -1,0 +1,2891 @@
+﻿<process name="Momentum - Virksomheder" version="1.0" bpversion="7.3.0.9110" narrative="Alt hvad der har med virksomheder i momentum at gøre" byrefcollection="true" processrunningmessage="" disableversioning="false" type="object" runmode="Exclusive" preferredid="3339e077-7bdc-48bf-9f91-66e30d77ce29">
+  <appdef>
+    <element name="Application Root">
+      <id>63702fa7-83fb-487a-930b-7a4d7ca1819e</id>
+      <type>Application</type>
+      <basetype>Application</basetype>
+      <datatype>unknown</datatype>
+      <diagnose>False</diagnose>
+    </element>
+  </appdef>
+  <view>
+    <camerax>0</camerax>
+    <cameray>0</cameray>
+    <zoom version="2">1.25</zoom>
+  </view>
+  <preconditions />
+  <endpoint narrative="" />
+  <subsheet subsheetid="a5f2b3ef-985c-481d-883c-0387fc535153" type="CleanUp" published="True">
+    <name>Clean Up</name>
+    <view>
+      <camerax>0</camerax>
+      <cameray>0</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <subsheet subsheetid="63591284-298c-492b-8b08-88710ae50832" type="Normal" published="True">
+    <name>Hent virksomhed</name>
+    <view>
+      <camerax>-97</camerax>
+      <cameray>84</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <subsheet subsheetid="01725241-9faf-4a7c-bfdc-435f3fd425f0" type="Normal" published="True">
+    <name>Hent virksomheder</name>
+    <view>
+      <camerax>-97</camerax>
+      <cameray>189</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <subsheet subsheetid="69d06f87-3f4d-4847-9074-6c83493fa2c1" type="Normal" published="True">
+    <name>Hent markeringer</name>
+    <view>
+      <camerax>-97</camerax>
+      <cameray>108</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <subsheet subsheetid="5b71d654-6db8-4ee9-a2e0-0f7ff7dbd230" type="Normal" published="True">
+    <name>Hent opgaver</name>
+    <view>
+      <camerax>-97</camerax>
+      <cameray>150</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <subsheet subsheetid="566b3da3-5d14-40f3-b11e-85e4ced08055" type="Normal" published="True">
+    <name>Opret opgave</name>
+    <view>
+      <camerax>-97</camerax>
+      <cameray>171</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <subsheet subsheetid="e6f7813a-1744-41dc-a22b-a52c9297e74a" type="Normal" published="True">
+    <name>Ændre status på opgave</name>
+    <view>
+      <camerax>4</camerax>
+      <cameray>177</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <subsheet subsheetid="028d3cb7-4c1a-4db4-90e7-2ff219ce4081" type="Normal" published="True">
+    <name>Hent kontaktinfo på virksomhed</name>
+    <view>
+      <camerax>34</camerax>
+      <cameray>108</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <subsheet subsheetid="16b558b7-8b0a-42aa-a3f1-82f3c72b5b05" type="Normal" published="True">
+    <name>Fjern sagsbehandler</name>
+    <view>
+      <camerax>34</camerax>
+      <cameray>129</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <subsheet subsheetid="12a1ebd8-4210-4c59-9274-ee2542c86bfc" type="Normal" published="True">
+    <name>Opdater markering</name>
+    <view>
+      <camerax>-17</camerax>
+      <cameray>129</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <subsheet subsheetid="1f9baf0c-8381-48f2-8fdb-609a7d51cb76" type="Normal" published="True">
+    <name>Søg i virksomheder</name>
+    <view>
+      <camerax>176</camerax>
+      <cameray>126</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <subsheet subsheetid="5cd5a393-52dd-4907-931b-1e9677c9b493" type="Normal" published="True">
+    <name>Søg i kurser</name>
+    <view>
+      <camerax>-35</camerax>
+      <cameray>147</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <stage stageid="2dc5215d-d15b-4071-b942-8a5760fdbe21" name="Start" type="Start">
+    <loginhibit />
+    <display x="15" y="-105" />
+    <onsuccess>6c4d844d-412b-4c77-9c36-0152e465b782</onsuccess>
+  </stage>
+  <stage stageid="6c4d844d-412b-4c77-9c36-0152e465b782" name="End" type="End">
+    <loginhibit />
+    <display x="15" y="90" />
+  </stage>
+  <stage stageid="3b749ffa-d60c-4e45-b2a0-051e41fff1ae" name="Stage1" type="ProcessInfo">
+    <display x="-195" y="-105" w="150" h="90" />
+    <references>
+      <reference>System.dll</reference>
+      <reference>System.Data.dll</reference>
+      <reference>System.Xml.dll</reference>
+      <reference>System.Drawing.dll</reference>
+      <reference>Newtonsoft.Json.dll</reference>
+      <reference>System.Linq.dll</reference>
+      <reference>System.Core.dll</reference>
+    </references>
+    <imports>
+      <import>System</import>
+      <import>System.Drawing</import>
+      <import>System.Data</import>
+      <import>Newtonsoft.Json</import>
+      <import>System.Collections.Generic</import>
+      <import>Newtonsoft.Json.Linq</import>
+      <import>System.Net</import>
+      <import>System.IO</import>
+    </imports>
+    <language>csharp</language>
+    <globalcode><![CDATA[]]></globalcode>
+    <code><![CDATA[]]></code>
+  </stage>
+  <stage stageid="de976c76-5798-4ffc-a78c-2351222aff86" name="Clean Up" type="SubSheetInfo">
+    <subsheetid>a5f2b3ef-985c-481d-883c-0387fc535153</subsheetid>
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="7ded4270-b269-46e2-a7d1-487fd9a62d2d" name="Start" type="Start">
+    <subsheetid>a5f2b3ef-985c-481d-883c-0387fc535153</subsheetid>
+    <loginhibit />
+    <display x="15" y="-105" />
+    <onsuccess>22f12e3d-1f5d-4a8b-8436-102777774f54</onsuccess>
+  </stage>
+  <stage stageid="22f12e3d-1f5d-4a8b-8436-102777774f54" name="End" type="End">
+    <subsheetid>a5f2b3ef-985c-481d-883c-0387fc535153</subsheetid>
+    <loginhibit />
+    <display x="15" y="90" />
+  </stage>
+  <stage stageid="057c2008-7242-4ed4-8d37-432394b1e1d8" name="Hent virksomhed" type="SubSheetInfo">
+    <subsheetid>63591284-298c-492b-8b08-88710ae50832</subsheetid>
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="ec356eb4-560f-479f-8629-d733ec5a1229" name="Start" type="Start">
+    <subsheetid>63591284-298c-492b-8b08-88710ae50832</subsheetid>
+    <loginhibit />
+    <display x="0" y="-105" />
+    <inputs>
+      <input type="text" name="Cvr" narrative="Cvr skal angives" stage="Cvr" />
+      <input type="text" name="P-nummer" narrative="P-nummer er valgfri" stage="P-nummer" />
+    </inputs>
+    <onsuccess>1cd66379-83a2-49a9-8b96-250720658d5f</onsuccess>
+  </stage>
+  <stage stageid="9556f3b7-a4ce-411a-92f0-683e6226f7df" name="End" type="End">
+    <subsheetid>63591284-298c-492b-8b08-88710ae50832</subsheetid>
+    <loginhibit />
+    <display x="0" y="180" />
+    <outputs>
+      <output type="collection" name="Virksomhed" stage="Virksomhed" />
+      <output type="number" name="Antal" stage="Antal" />
+      <output type="flag" name="Succes" stage="Succes" />
+    </outputs>
+  </stage>
+  <stage stageid="88987e67-8636-445c-82d2-c801960a41c6" name="Note2" type="Note">
+    <subsheetid>a5f2b3ef-985c-481d-883c-0387fc535153</subsheetid>
+    <narrative>Clean Up Page
+
+This is an optional page where you might choose to perform some finalisation (or "cleanup") tasks as your business object is closed down.
+
+The cleanup action will be called automatically immediately after closing your business object at the end of a business process.
+
+You will not be able to call this action from a business process, nor will it be called at any other time than before the disposal of the business object.</narrative>
+    <display x="-180" y="60" w="180" h="230" />
+  </stage>
+  <stage stageid="1bedde0f-6b7e-4e20-bbde-599f1d64a43b" name="Note3" type="Note">
+    <narrative>Initialise Page
+
+This is an optional page where you might choose to perform some initialisation tasks after your business object is loaded.
+
+The initialise action will be called automatically immediately after loading your business object.
+
+You will not be able to call this action from a business process, nor will it be called at any other time than after the creation of the object.</narrative>
+    <display x="-180" y="60" w="180" h="230" />
+  </stage>
+  <stage stageid="91b4aef1-c87a-4382-a91a-a63f51d3210a" name="Input" type="Block">
+    <subsheetid>63591284-298c-492b-8b08-88710ae50832</subsheetid>
+    <display x="-270" y="-45" w="150" h="105" />
+    <font family="Segoe UI" size="10" style="Regular" color="339966" />
+  </stage>
+  <stage stageid="5a9f8674-b0fe-4773-88d0-bab0e8de0f8b" name="Variabler" type="Block">
+    <subsheetid>63591284-298c-492b-8b08-88710ae50832</subsheetid>
+    <display x="-270" y="135" w="150" h="105" />
+    <font family="Segoe UI" size="10" style="Regular" color="666699" />
+  </stage>
+  <stage stageid="3c46b2fd-11e2-4e73-843f-c27b23fe3103" name="Konstanter" type="Block">
+    <subsheetid>63591284-298c-492b-8b08-88710ae50832</subsheetid>
+    <display x="-270" y="75" w="150" h="45" />
+    <font family="Segoe UI" size="10" style="Regular" color="008080" />
+  </stage>
+  <stage stageid="42e9d012-5650-4545-a71b-5c64e00e10c8" name="Output" type="Block">
+    <subsheetid>63591284-298c-492b-8b08-88710ae50832</subsheetid>
+    <display x="-270" y="255" w="150" h="150" />
+    <font family="Segoe UI" size="10" style="Regular" color="800080" />
+  </stage>
+  <stage stageid="06ad7c15-ad2f-4256-9932-10d170f01ea1" name="Start Momemtum (produktion)" type="Action">
+    <subsheetid>63591284-298c-492b-8b08-88710ae50832</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="105" y="-180" />
+    <inputs>
+      <input type="text" name="Credentials" friendlyname="Credentials" expr="&quot;KMD Momentum - produktion&quot;" />
+    </inputs>
+    <onsuccess>4bddc820-58e5-4683-ad87-8dc427b4db9d</onsuccess>
+    <resource object="Momentum - Core" action="Start" />
+  </stage>
+  <stage stageid="2d60c525-5740-4c33-9d5c-c2ecc8e198b6" name="Hent virksomhed" type="Action">
+    <subsheetid>63591284-298c-492b-8b08-88710ae50832</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="0" y="60" />
+    <inputs>
+      <input type="text" name="Url" friendlyname="Url" expr="[Url]" />
+    </inputs>
+    <outputs>
+      <output type="number" name="Statuskode" friendlyname="Statuskode" narrative="Http statuskoden for kaldet" stage="Statuskode" />
+      <output type="collection" name="Data" friendlyname="Data" stage="Virksomhed" />
+      <output type="number" name="Antal" friendlyname="Antal" stage="Antal" />
+      <output type="text" name="Json" friendlyname="Json" narrative="Det rå json output" stage="" />
+    </outputs>
+    <onsuccess>e3a3931c-5dc8-4c0a-93b7-5c5559fefb23</onsuccess>
+    <resource object="Momentum - Core" action="Get" />
+  </stage>
+  <stage stageid="1cd66379-83a2-49a9-8b96-250720658d5f" name="Anchor1" type="Anchor">
+    <subsheetid>63591284-298c-492b-8b08-88710ae50832</subsheetid>
+    <loginhibit />
+    <display x="0" y="-75" w="10" h="10" />
+    <onsuccess>a9940052-1d33-4b86-9d69-ccfc1d8ffc94</onsuccess>
+  </stage>
+  <stage stageid="49362227-1a23-4747-b2a8-1879d192fe80" name="Anchor2" type="Anchor">
+    <subsheetid>63591284-298c-492b-8b08-88710ae50832</subsheetid>
+    <loginhibit />
+    <display x="105" y="-75" w="10" h="10" />
+    <onsuccess>1cd66379-83a2-49a9-8b96-250720658d5f</onsuccess>
+  </stage>
+  <stage stageid="437bac87-f8e4-4144-acaf-ea314f8d2b74" name="Virksomhed" type="Collection">
+    <subsheetid>63591284-298c-492b-8b08-88710ae50832</subsheetid>
+    <display x="-195" y="285" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="46b66249-a1a3-4e10-8908-1c545e87599e" name="Antal" type="Data">
+    <subsheetid>63591284-298c-492b-8b08-88710ae50832</subsheetid>
+    <display x="-195" y="330" w="120" h="30" />
+    <datatype>number</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="56e10dc3-7516-4239-a5a5-e902702b0627" name="Cvr" type="Data">
+    <subsheetid>63591284-298c-492b-8b08-88710ae50832</subsheetid>
+    <display x="-195" y="-15" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="0f8d6bc9-4f88-42f5-871f-8e154f26fb7b" name="Statuskode" type="Data">
+    <subsheetid>63591284-298c-492b-8b08-88710ae50832</subsheetid>
+    <display x="-195" y="210" w="120" h="30" />
+    <datatype>number</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="4bddc820-58e5-4683-ad87-8dc427b4db9d" name="KP's malerfirma" type="Calculation">
+    <subsheetid>63591284-298c-492b-8b08-88710ae50832</subsheetid>
+    <loginhibit />
+    <display x="105" y="-135" />
+    <onsuccess>49362227-1a23-4747-b2a8-1879d192fe80</onsuccess>
+    <calculation expression="&quot;34839263&quot;&#xA;" stage="Cvr" />
+  </stage>
+  <stage stageid="f8368de1-03e2-4df0-a16e-5d79bf63a479" name="Debug" type="Block">
+    <subsheetid>63591284-298c-492b-8b08-88710ae50832</subsheetid>
+    <loginhibit />
+    <display x="60" y="-210" w="90" h="105" />
+    <font family="Segoe UI" size="10" style="Regular" color="FFFF99" />
+  </stage>
+  <stage stageid="13db2ac0-5c89-40ce-a582-11eae05f19d0" name="Hent virksom på cvr" type="Block">
+    <subsheetid>63591284-298c-492b-8b08-88710ae50832</subsheetid>
+    <loginhibit />
+    <display x="-90" y="-60" w="195" h="210" />
+    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
+  </stage>
+  <stage stageid="9ad6c45b-e7dc-4958-9f57-6796f58b750e" name="Succes" type="Data">
+    <subsheetid>63591284-298c-492b-8b08-88710ae50832</subsheetid>
+    <display x="-195" y="375" w="120" h="30" />
+    <datatype>flag</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="e3a3931c-5dc8-4c0a-93b7-5c5559fefb23" name="Sæt succes" type="Calculation">
+    <subsheetid>63591284-298c-492b-8b08-88710ae50832</subsheetid>
+    <loginhibit />
+    <display x="0" y="105" />
+    <onsuccess>9556f3b7-a4ce-411a-92f0-683e6226f7df</onsuccess>
+    <calculation expression="[Statuskode] = 200" stage="Succes" />
+  </stage>
+  <stage stageid="e9eb5585-a26b-4faa-a4c5-69b3945cfeb3" name="Falck Føtex food" type="Calculation">
+    <subsheetid>63591284-298c-492b-8b08-88710ae50832</subsheetid>
+    <loginhibit />
+    <display x="210" y="-135" />
+    <onsuccess>a812cc0a-6d09-4e0b-aa08-cacf359c40d6</onsuccess>
+    <calculation expression="&quot;35954716&quot;&#xA;" stage="Cvr" />
+  </stage>
+  <stage stageid="d3d9387a-5cef-4148-95bc-2d81c28a8ef9" name="Søg i virksomheder" type="SubSheetInfo">
+    <subsheetid>1f9baf0c-8381-48f2-8fdb-609a7d51cb76</subsheetid>
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="29f35078-d3a5-4d9a-94a8-899d629482df" name="Start" type="Start">
+    <subsheetid>1f9baf0c-8381-48f2-8fdb-609a7d51cb76</subsheetid>
+    <loginhibit />
+    <display x="0" y="-135" />
+    <inputs>
+      <input type="text" name="Søgeværdi" narrative="Hvad vil du søge efter?" stage="Søgeværdi" />
+    </inputs>
+    <onsuccess>bd51ce53-7bf6-4bbb-9c64-d31e1552c31c</onsuccess>
+  </stage>
+  <stage stageid="261cff93-96a8-49ab-a0fb-d6a53a0fc4aa" name="End" type="End">
+    <subsheetid>1f9baf0c-8381-48f2-8fdb-609a7d51cb76</subsheetid>
+    <loginhibit />
+    <display x="0" y="300" />
+    <outputs>
+      <output type="collection" name="Resultat" stage="Resultat" />
+      <output type="number" name="Antal" stage="Antal" />
+      <output type="flag" name="Succes" stage="Succes" />
+    </outputs>
+  </stage>
+  <stage stageid="645880ad-83ea-4147-a87b-44254e1fa431" name="Input" type="Block">
+    <subsheetid>1f9baf0c-8381-48f2-8fdb-609a7d51cb76</subsheetid>
+    <display x="-270" y="-45" w="150" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="339966" />
+  </stage>
+  <stage stageid="e9da12f7-330e-4c64-a1f9-dfb07daaf488" name="Variabler" type="Block">
+    <subsheetid>1f9baf0c-8381-48f2-8fdb-609a7d51cb76</subsheetid>
+    <display x="-270" y="90" w="150" h="105" />
+    <font family="Segoe UI" size="10" style="Regular" color="666699" />
+  </stage>
+  <stage stageid="0584cc06-3aa5-47ba-9e9c-1b19ecf109ba" name="Konstanter" type="Block">
+    <subsheetid>1f9baf0c-8381-48f2-8fdb-609a7d51cb76</subsheetid>
+    <display x="-270" y="30" w="150" h="45" />
+    <font family="Segoe UI" size="10" style="Regular" color="008080" />
+  </stage>
+  <stage stageid="ce89ae73-cd8d-47c3-aae2-e9312f1c866f" name="Output" type="Block">
+    <subsheetid>1f9baf0c-8381-48f2-8fdb-609a7d51cb76</subsheetid>
+    <display x="-270" y="210" w="150" h="150" />
+    <font family="Segoe UI" size="10" style="Regular" color="800080" />
+  </stage>
+  <stage stageid="a695edc5-b9a2-4370-bfd4-05223f672b4b" name="Start Momemtum (produktion)" type="Action">
+    <subsheetid>1f9baf0c-8381-48f2-8fdb-609a7d51cb76</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="120" y="-180" />
+    <inputs>
+      <input type="text" name="Credentials" friendlyname="Credentials" expr="&quot;KMD Momentum - produktion&quot;" />
+    </inputs>
+    <onsuccess>e9ed6f1a-9692-415d-8688-59184be95b63</onsuccess>
+    <resource object="Momentum - Core" action="Start" />
+  </stage>
+  <stage stageid="0f93c580-914e-4936-9f4c-ce958b6ca253" name="Søg i virksomhedser" type="Action">
+    <subsheetid>1f9baf0c-8381-48f2-8fdb-609a7d51cb76</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="0" y="30" />
+    <inputs>
+      <input type="text" name="Url" friendlyname="Url" expr="&quot;/search/&quot;" />
+      <input type="text" name="Body" friendlyname="Body" expr="[Body]" />
+    </inputs>
+    <outputs>
+      <output type="number" name="Statuskode" friendlyname="Statuskode" narrative="Http statuskoden for kaldet" stage="Statuskode" />
+      <output type="collection" name="Data" friendlyname="Data" stage="Resultat" />
+      <output type="number" name="Antal" friendlyname="Antal" stage="Antal" />
+      <output type="text" name="Json" friendlyname="Json" narrative="Det rå json output" stage="" />
+    </outputs>
+    <onsuccess>8fdf58e1-f2a1-45e6-bfa3-19848e735fd6</onsuccess>
+    <resource object="Momentum - Core" action="Post" />
+  </stage>
+  <stage stageid="bd51ce53-7bf6-4bbb-9c64-d31e1552c31c" name="Anchor1" type="Anchor">
+    <subsheetid>1f9baf0c-8381-48f2-8fdb-609a7d51cb76</subsheetid>
+    <loginhibit />
+    <display x="0" y="-75" w="10" h="10" />
+    <onsuccess>9abc4698-9dd1-4f95-b7b4-75199f123368</onsuccess>
+  </stage>
+  <stage stageid="ceba0a19-db2a-497e-b746-ac69f58bb41e" name="Anchor2" type="Anchor">
+    <subsheetid>1f9baf0c-8381-48f2-8fdb-609a7d51cb76</subsheetid>
+    <loginhibit />
+    <display x="120" y="-75" w="10" h="10" />
+    <onsuccess>bd51ce53-7bf6-4bbb-9c64-d31e1552c31c</onsuccess>
+  </stage>
+  <stage stageid="795b9cf7-524e-43d6-85ec-1773d9508a17" name="Antal" type="Data">
+    <subsheetid>1f9baf0c-8381-48f2-8fdb-609a7d51cb76</subsheetid>
+    <display x="-195" y="285" w="120" h="30" />
+    <datatype>number</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="1a23ae51-6be0-4d41-bb60-27170e35f296" name="Søgeværdi" type="Data">
+    <subsheetid>1f9baf0c-8381-48f2-8fdb-609a7d51cb76</subsheetid>
+    <display x="-195" y="-15" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="2c08cfdc-98d7-446a-8b50-c9abe11caae0" name="Statuskode" type="Data">
+    <subsheetid>1f9baf0c-8381-48f2-8fdb-609a7d51cb76</subsheetid>
+    <display x="-195" y="165" w="120" h="30" />
+    <datatype>number</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="e9ed6f1a-9692-415d-8688-59184be95b63" name="KP's malerfirma" type="Calculation">
+    <subsheetid>1f9baf0c-8381-48f2-8fdb-609a7d51cb76</subsheetid>
+    <loginhibit />
+    <display x="120" y="-135" />
+    <onsuccess>ceba0a19-db2a-497e-b746-ac69f58bb41e</onsuccess>
+    <calculation expression="34839263" stage="Søgeværdi" />
+  </stage>
+  <stage stageid="6491b1e3-a714-4270-91f7-f65208faeb58" name="Debug" type="Block">
+    <subsheetid>1f9baf0c-8381-48f2-8fdb-609a7d51cb76</subsheetid>
+    <loginhibit />
+    <display x="75" y="-210" w="90" h="105" />
+    <font family="Segoe UI" size="10" style="Regular" color="FFFF99" />
+  </stage>
+  <stage stageid="fa129880-ec07-49ff-a848-63a4e2e7a17d" name="Søg på cvr" type="Block">
+    <subsheetid>1f9baf0c-8381-48f2-8fdb-609a7d51cb76</subsheetid>
+    <loginhibit />
+    <display x="-90" y="-45" w="195" h="105" />
+    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
+  </stage>
+  <stage stageid="ac20a99f-9bc0-40ca-adc9-9666de2b15ad" name="Succes" type="Data">
+    <subsheetid>1f9baf0c-8381-48f2-8fdb-609a7d51cb76</subsheetid>
+    <display x="-195" y="330" w="120" h="30" />
+    <datatype>flag</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="95160b1a-785b-4e6b-9d64-7ea66d6d49c5" name="Falck malerfirma" type="Calculation">
+    <subsheetid>1f9baf0c-8381-48f2-8fdb-609a7d51cb76</subsheetid>
+    <loginhibit />
+    <display x="225" y="-135" />
+    <onsuccess>fcb0e817-b214-4812-b875-6a1b78cc9c20</onsuccess>
+    <calculation expression="&quot;16165948&quot;" stage="Søgeværdi" />
+  </stage>
+  <stage stageid="a9dea4d1-afd1-4e0c-9dfc-42d4f6331cd9" name="Body" type="Data">
+    <subsheetid>1f9baf0c-8381-48f2-8fdb-609a7d51cb76</subsheetid>
+    <loginhibit />
+    <display x="-195" y="120" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue xml:space="preserve">{
+ "term":"{{SØGEVÆRDI}}",
+ "size":200,
+ "skip":0,
+ "allowedCategories":["Company"],
+ "isActive":true
+}</initialvalue>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="94ed60f4-cf03-4f62-bf4f-0b77d35fe930" name="Formartér resultat" type="Block">
+    <subsheetid>1f9baf0c-8381-48f2-8fdb-609a7d51cb76</subsheetid>
+    <loginhibit />
+    <display x="-90" y="195" w="195" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
+  </stage>
+  <stage stageid="74ebe2da-696e-43aa-aaae-c2c4f6e672c8" name="Sæt resultater ordentligt" type="MultipleCalculation">
+    <subsheetid>1f9baf0c-8381-48f2-8fdb-609a7d51cb76</subsheetid>
+    <loginhibit />
+    <display x="0" y="225" />
+    <onsuccess>261cff93-96a8-49ab-a0fb-d6a53a0fc4aa</onsuccess>
+    <steps>
+      <calculation expression="[Resultat.totalCount]" stage="Antal" />
+      <calculation expression="[Resultat.results]" stage="Resultat" />
+    </steps>
+  </stage>
+  <stage stageid="a0e2ba6d-5849-482b-b1d3-2c22e73aa8bb" name="Start Momemtum (produktion)" type="Action">
+    <subsheetid>1f9baf0c-8381-48f2-8fdb-609a7d51cb76</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="225" y="-180" />
+    <inputs>
+      <input type="text" name="Credentials" friendlyname="Credentials" expr="&quot;KMD Momentum - produktion&quot;" />
+    </inputs>
+    <onsuccess>95160b1a-785b-4e6b-9d64-7ea66d6d49c5</onsuccess>
+    <resource object="Momentum - Core" action="Start" />
+  </stage>
+  <stage stageid="23f70716-4ae1-4705-a8ab-60c131ded7e8" name="Debug" type="Block">
+    <subsheetid>1f9baf0c-8381-48f2-8fdb-609a7d51cb76</subsheetid>
+    <loginhibit />
+    <display x="180" y="-210" w="90" h="105" />
+    <font family="Segoe UI" size="10" style="Regular" color="FFFF99" />
+  </stage>
+  <stage stageid="fcb0e817-b214-4812-b875-6a1b78cc9c20" name="Anchor3" type="Anchor">
+    <subsheetid>1f9baf0c-8381-48f2-8fdb-609a7d51cb76</subsheetid>
+    <loginhibit />
+    <display x="225" y="-75" w="10" h="10" />
+    <onsuccess>ceba0a19-db2a-497e-b746-ac69f58bb41e</onsuccess>
+  </stage>
+  <stage stageid="9abc4698-9dd1-4f95-b7b4-75199f123368" name="Sæt søgeværdi i body" type="Calculation">
+    <subsheetid>1f9baf0c-8381-48f2-8fdb-609a7d51cb76</subsheetid>
+    <loginhibit />
+    <display x="0" y="-15" />
+    <onsuccess>0f93c580-914e-4936-9f4c-ce958b6ca253</onsuccess>
+    <calculation expression="Replace([Body], &quot;{{SØGEVÆRDI}}&quot;, [Søgeværdi])" stage="Body" />
+  </stage>
+  <stage stageid="3790b356-7dc3-47ac-9336-6bd0f63eb039" name="Resultat" type="Collection">
+    <subsheetid>1f9baf0c-8381-48f2-8fdb-609a7d51cb76</subsheetid>
+    <display x="-195" y="240" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="8fdf58e1-f2a1-45e6-bfa3-19848e735fd6" name="Sæt succes" type="Calculation">
+    <subsheetid>1f9baf0c-8381-48f2-8fdb-609a7d51cb76</subsheetid>
+    <loginhibit />
+    <display x="0" y="105" />
+    <onsuccess>d8599ac1-a5a6-40a9-b96a-c52d6d62706f</onsuccess>
+    <calculation expression="[Statuskode] = 200" stage="Succes" />
+  </stage>
+  <stage stageid="d8599ac1-a5a6-40a9-b96a-c52d6d62706f" name="Succes?" type="Decision">
+    <subsheetid>1f9baf0c-8381-48f2-8fdb-609a7d51cb76</subsheetid>
+    <loginhibit />
+    <display x="0" y="150" />
+    <decision expression="[Succes]" />
+    <ontrue>74ebe2da-696e-43aa-aaae-c2c4f6e672c8</ontrue>
+    <onfalse>f4340de7-67d7-444c-b4fc-85b2fddda1c0</onfalse>
+  </stage>
+  <stage stageid="f4340de7-67d7-444c-b4fc-85b2fddda1c0" name="End1" type="End">
+    <subsheetid>1f9baf0c-8381-48f2-8fdb-609a7d51cb76</subsheetid>
+    <loginhibit />
+    <display x="180" y="150" />
+    <outputs>
+      <output type="collection" name="Resultat" stage="Resultat" />
+      <output type="number" name="Antal" stage="Antal" />
+      <output type="flag" name="Succes" stage="Succes" />
+    </outputs>
+  </stage>
+  <stage stageid="26012b00-dfe5-448f-92a2-a96f3633ee05" name="Alt godt?" type="Block">
+    <subsheetid>1f9baf0c-8381-48f2-8fdb-609a7d51cb76</subsheetid>
+    <loginhibit />
+    <display x="-90" y="75" w="195" h="105" />
+    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
+  </stage>
+  <stage stageid="93d720b6-ee58-45de-8f35-338f533ee42e" name="Søg i kurser" type="SubSheetInfo">
+    <subsheetid>5cd5a393-52dd-4907-931b-1e9677c9b493</subsheetid>
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="88b2bee4-9b36-4be4-9713-2f76994613dd" name="Start" type="Start">
+    <subsheetid>5cd5a393-52dd-4907-931b-1e9677c9b493</subsheetid>
+    <loginhibit />
+    <display x="0" y="-135" />
+    <inputs>
+      <input type="text" name="Søgeværdi" narrative="Hvad vil du søge efter?" stage="Søgeværdi" />
+    </inputs>
+    <onsuccess>78fea2e0-f469-4153-abd3-0906b4a98c39</onsuccess>
+  </stage>
+  <stage stageid="5149cf3f-3059-4054-90b4-7220235c5d6b" name="End" type="End">
+    <subsheetid>5cd5a393-52dd-4907-931b-1e9677c9b493</subsheetid>
+    <loginhibit />
+    <display x="0" y="300" />
+    <outputs>
+      <output type="collection" name="Kursus" stage="Kursus" />
+      <output type="number" name="Antal" stage="Antal" />
+      <output type="flag" name="Succes" stage="Succes" />
+    </outputs>
+  </stage>
+  <stage stageid="4fe60d6e-07db-4bef-a838-1beabe9b43fa" name="Input" type="Block">
+    <subsheetid>5cd5a393-52dd-4907-931b-1e9677c9b493</subsheetid>
+    <display x="-270" y="-45" w="150" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="339966" />
+  </stage>
+  <stage stageid="6224a63d-2561-4a70-8f7a-998bc48b876f" name="Variabler" type="Block">
+    <subsheetid>5cd5a393-52dd-4907-931b-1e9677c9b493</subsheetid>
+    <display x="-270" y="90" w="150" h="105" />
+    <font family="Segoe UI" size="10" style="Regular" color="666699" />
+  </stage>
+  <stage stageid="f94457df-ed30-4861-a6e6-e0419681b988" name="Konstanter" type="Block">
+    <subsheetid>5cd5a393-52dd-4907-931b-1e9677c9b493</subsheetid>
+    <display x="-270" y="30" w="150" h="45" />
+    <font family="Segoe UI" size="10" style="Regular" color="008080" />
+  </stage>
+  <stage stageid="dde5e071-de18-4925-a645-965e5a3c3570" name="Output" type="Block">
+    <subsheetid>5cd5a393-52dd-4907-931b-1e9677c9b493</subsheetid>
+    <display x="-270" y="210" w="150" h="150" />
+    <font family="Segoe UI" size="10" style="Regular" color="800080" />
+  </stage>
+  <stage stageid="808d2682-2e2b-44a7-accb-4686fffe4224" name="Start Momemtum (produktion)" type="Action">
+    <subsheetid>5cd5a393-52dd-4907-931b-1e9677c9b493</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="120" y="-180" />
+    <inputs>
+      <input type="text" name="Credentials" friendlyname="Credentials" expr="&quot;KMD Momentum - produktion&quot;" />
+    </inputs>
+    <onsuccess>46c83273-1a53-4c1a-bda6-3981971ad78a</onsuccess>
+    <resource object="Momentum - Core" action="Start" />
+  </stage>
+  <stage stageid="ab3a7a88-e2ce-442e-beec-ac1d35efabc7" name="Søg i kurser" type="Action">
+    <subsheetid>5cd5a393-52dd-4907-931b-1e9677c9b493</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="0" y="30" />
+    <inputs>
+      <input type="text" name="Url" friendlyname="Url" expr="&quot;/coursesearch&quot;" />
+      <input type="text" name="Body" friendlyname="Body" expr="[Body]" />
+    </inputs>
+    <outputs>
+      <output type="number" name="Statuskode" friendlyname="Statuskode" narrative="Http statuskoden for kaldet" stage="Statuskode" />
+      <output type="collection" name="Data" friendlyname="Data" stage="Kursus" />
+      <output type="number" name="Antal" friendlyname="Antal" stage="Antal" />
+      <output type="text" name="Json" friendlyname="Json" narrative="Det rå json output" stage="" />
+    </outputs>
+    <onsuccess>bd06f3dd-1aa6-4194-ac9e-f40e98872220</onsuccess>
+    <resource object="Momentum - Core" action="Post" />
+  </stage>
+  <stage stageid="78fea2e0-f469-4153-abd3-0906b4a98c39" name="Anchor1" type="Anchor">
+    <subsheetid>5cd5a393-52dd-4907-931b-1e9677c9b493</subsheetid>
+    <loginhibit />
+    <display x="0" y="-75" w="10" h="10" />
+    <onsuccess>4e3764e4-e6df-4453-a11f-c003276e55e4</onsuccess>
+  </stage>
+  <stage stageid="a68e3cf5-4d02-425e-8dee-4e2de40a7883" name="Anchor2" type="Anchor">
+    <subsheetid>5cd5a393-52dd-4907-931b-1e9677c9b493</subsheetid>
+    <loginhibit />
+    <display x="120" y="-75" w="10" h="10" />
+    <onsuccess>78fea2e0-f469-4153-abd3-0906b4a98c39</onsuccess>
+  </stage>
+  <stage stageid="d8234fd6-a0e4-4582-9ba0-68462556ea84" name="Antal" type="Data">
+    <subsheetid>5cd5a393-52dd-4907-931b-1e9677c9b493</subsheetid>
+    <display x="-195" y="285" w="120" h="30" />
+    <datatype>number</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="a62332cd-ee69-4e0a-86cc-04c6d76d8cd9" name="Søgeværdi" type="Data">
+    <subsheetid>5cd5a393-52dd-4907-931b-1e9677c9b493</subsheetid>
+    <display x="-195" y="-15" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="1f716e22-2071-4bf0-b5f2-5aa0f77d92b0" name="Statuskode" type="Data">
+    <subsheetid>5cd5a393-52dd-4907-931b-1e9677c9b493</subsheetid>
+    <display x="-195" y="165" w="120" h="30" />
+    <datatype>number</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="46c83273-1a53-4c1a-bda6-3981971ad78a" name="Tværfaglig indsats - Quick Care" type="Calculation">
+    <subsheetid>5cd5a393-52dd-4907-931b-1e9677c9b493</subsheetid>
+    <loginhibit />
+    <display x="120" y="-135" />
+    <onsuccess>a68e3cf5-4d02-425e-8dee-4e2de40a7883</onsuccess>
+    <calculation expression="3379766" stage="Søgeværdi" />
+  </stage>
+  <stage stageid="84f4364f-9c7a-4d38-bc5e-2ae9e7336958" name="Debug" type="Block">
+    <subsheetid>5cd5a393-52dd-4907-931b-1e9677c9b493</subsheetid>
+    <loginhibit />
+    <display x="75" y="-210" w="90" h="105" />
+    <font family="Segoe UI" size="10" style="Regular" color="FFFF99" />
+  </stage>
+  <stage stageid="dfa83c32-20a0-4d67-850c-180052afe6bb" name="Søg på kursus" type="Block">
+    <subsheetid>5cd5a393-52dd-4907-931b-1e9677c9b493</subsheetid>
+    <loginhibit />
+    <display x="-90" y="-45" w="195" h="105" />
+    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
+  </stage>
+  <stage stageid="ba17e04e-4c3d-4286-844a-3fc5c5d172c9" name="Succes" type="Data">
+    <subsheetid>5cd5a393-52dd-4907-931b-1e9677c9b493</subsheetid>
+    <display x="-195" y="330" w="120" h="30" />
+    <datatype>flag</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="ef5b84f6-5dcc-4ad1-a5fb-2d104bea9444" name="Body" type="Data">
+    <subsheetid>5cd5a393-52dd-4907-931b-1e9677c9b493</subsheetid>
+    <loginhibit />
+    <display x="-195" y="120" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue xml:space="preserve">{
+ "term":"{{SØGEVÆRDI}}",
+ "size":200,
+ "skip":0,
+ "allowedCategories":["Company"],
+ "isActive":true
+}</initialvalue>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="224383f8-d969-437e-9f54-f87e10192aa1" name="Formartér resultat" type="Block">
+    <subsheetid>5cd5a393-52dd-4907-931b-1e9677c9b493</subsheetid>
+    <loginhibit />
+    <display x="-90" y="195" w="195" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
+  </stage>
+  <stage stageid="79fcc9b2-b023-4917-8ac5-fcbf98ef5e5b" name="Sæt output ordentligt" type="MultipleCalculation">
+    <subsheetid>5cd5a393-52dd-4907-931b-1e9677c9b493</subsheetid>
+    <loginhibit />
+    <display x="0" y="225" />
+    <onsuccess>5149cf3f-3059-4054-90b4-7220235c5d6b</onsuccess>
+    <steps>
+      <calculation expression="[Kursus.totalSearchCount]" stage="Antal" />
+      <calculation expression="[Kursus.data]" stage="Kursus" />
+    </steps>
+  </stage>
+  <stage stageid="4e3764e4-e6df-4453-a11f-c003276e55e4" name="Sæt søgeværdi i body" type="Calculation">
+    <subsheetid>5cd5a393-52dd-4907-931b-1e9677c9b493</subsheetid>
+    <loginhibit />
+    <display x="0" y="-15" />
+    <onsuccess>ab3a7a88-e2ce-442e-beec-ac1d35efabc7</onsuccess>
+    <calculation expression="Replace([Body], &quot;{{SØGEVÆRDI}}&quot;, [Søgeværdi])" stage="Body" />
+  </stage>
+  <stage stageid="3351c5e2-1a8a-4fd0-8c16-4b8bc41b974f" name="Kursus" type="Collection">
+    <subsheetid>5cd5a393-52dd-4907-931b-1e9677c9b493</subsheetid>
+    <display x="-195" y="240" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="bd06f3dd-1aa6-4194-ac9e-f40e98872220" name="Sæt succes" type="Calculation">
+    <subsheetid>5cd5a393-52dd-4907-931b-1e9677c9b493</subsheetid>
+    <loginhibit />
+    <display x="0" y="105" />
+    <onsuccess>171af29d-f873-430b-ba96-dd11e9413440</onsuccess>
+    <calculation expression="[Statuskode] = 200" stage="Succes" />
+  </stage>
+  <stage stageid="171af29d-f873-430b-ba96-dd11e9413440" name="Succes?" type="Decision">
+    <subsheetid>5cd5a393-52dd-4907-931b-1e9677c9b493</subsheetid>
+    <loginhibit />
+    <display x="0" y="150" />
+    <decision expression="[Succes]" />
+    <ontrue>79fcc9b2-b023-4917-8ac5-fcbf98ef5e5b</ontrue>
+    <onfalse>64e543ba-2566-4248-9634-f4cdffb7596c</onfalse>
+  </stage>
+  <stage stageid="64e543ba-2566-4248-9634-f4cdffb7596c" name="End1" type="End">
+    <subsheetid>5cd5a393-52dd-4907-931b-1e9677c9b493</subsheetid>
+    <loginhibit />
+    <display x="180" y="150" />
+    <outputs>
+      <output type="collection" name="Kursus" stage="Kursus" />
+      <output type="number" name="Antal" stage="Antal" />
+      <output type="flag" name="Succes" stage="Succes" />
+    </outputs>
+  </stage>
+  <stage stageid="587abe12-f92a-452a-8d24-641aef67ca05" name="Alt godt?" type="Block">
+    <subsheetid>5cd5a393-52dd-4907-931b-1e9677c9b493</subsheetid>
+    <loginhibit />
+    <display x="-90" y="75" w="195" h="105" />
+    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
+  </stage>
+  <stage stageid="a812cc0a-6d09-4e0b-aa08-cacf359c40d6" name="Anchor2" type="Anchor">
+    <subsheetid>63591284-298c-492b-8b08-88710ae50832</subsheetid>
+    <loginhibit />
+    <display x="210" y="-75" w="10" h="10" />
+    <onsuccess>49362227-1a23-4747-b2a8-1879d192fe80</onsuccess>
+  </stage>
+  <stage stageid="8d2f2506-fa3a-4d24-9a8f-adcd662a690e" name="Start Momemtum (test)" type="Action">
+    <subsheetid>63591284-298c-492b-8b08-88710ae50832</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="210" y="-180" />
+    <inputs>
+      <input type="text" name="Credentials" friendlyname="Credentials" expr="&quot;KMD Momentum - edu&quot;" />
+    </inputs>
+    <onsuccess>e9eb5585-a26b-4faa-a4c5-69b3945cfeb3</onsuccess>
+    <resource object="Momentum - Core" action="Start" />
+  </stage>
+  <stage stageid="9efa70e5-0a20-4dfc-800f-2be1d89775b8" name="Debug" type="Block">
+    <subsheetid>63591284-298c-492b-8b08-88710ae50832</subsheetid>
+    <loginhibit />
+    <display x="165" y="-210" w="90" h="105" />
+    <font family="Segoe UI" size="10" style="Regular" color="FFFF99" />
+  </stage>
+  <stage stageid="92d9f8c3-6d63-4bee-b13f-f51cb7f46486" name="Hent virksomheder" type="SubSheetInfo">
+    <subsheetid>01725241-9faf-4a7c-bfdc-435f3fd425f0</subsheetid>
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="4250f9de-b008-4eb5-b7f1-16d907842715" name="Start" type="Start">
+    <subsheetid>01725241-9faf-4a7c-bfdc-435f3fd425f0</subsheetid>
+    <loginhibit />
+    <display x="0" y="-105" />
+    <inputs>
+      <input type="text" name="Målgruppe" stage="Målgruppe" />
+    </inputs>
+    <onsuccess>a7d3f6f8-1045-4267-be9f-deadd192ab1a</onsuccess>
+  </stage>
+  <stage stageid="b5a25429-5575-4dbe-8733-cda45fd17fca" name="End" type="End">
+    <subsheetid>01725241-9faf-4a7c-bfdc-435f3fd425f0</subsheetid>
+    <loginhibit />
+    <display x="0" y="465" />
+    <outputs>
+      <output type="collection" name="Virksomheder" stage="Virksomheder" />
+      <output type="number" name="Antal" stage="Antal" />
+      <output type="flag" name="Succes" stage="Succes" />
+    </outputs>
+  </stage>
+  <stage stageid="5df465a9-281c-4518-9736-0895376c8317" name="Input" type="Block">
+    <subsheetid>01725241-9faf-4a7c-bfdc-435f3fd425f0</subsheetid>
+    <display x="-270" y="-45" w="150" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="339966" />
+  </stage>
+  <stage stageid="3002f7e2-59dd-4b2e-b7aa-19c1a791b719" name="Variabler" type="Block">
+    <subsheetid>01725241-9faf-4a7c-bfdc-435f3fd425f0</subsheetid>
+    <display x="-270" y="90" w="150" h="195" />
+    <font family="Segoe UI" size="10" style="Regular" color="666699" />
+  </stage>
+  <stage stageid="ca37d4fc-3f4b-42f6-bf6d-d9fbd140679d" name="Konstanter" type="Block">
+    <subsheetid>01725241-9faf-4a7c-bfdc-435f3fd425f0</subsheetid>
+    <display x="-270" y="30" w="150" h="45" />
+    <font family="Segoe UI" size="10" style="Regular" color="008080" />
+  </stage>
+  <stage stageid="07327730-0b50-4f13-aff1-42bcf504d19c" name="Output" type="Block">
+    <subsheetid>01725241-9faf-4a7c-bfdc-435f3fd425f0</subsheetid>
+    <display x="-270" y="300" w="150" h="150" />
+    <font family="Segoe UI" size="10" style="Regular" color="800080" />
+  </stage>
+  <stage stageid="92489cda-da3d-4f39-963b-85e82667411e" name="Start Momemtum (test)" type="Action">
+    <subsheetid>01725241-9faf-4a7c-bfdc-435f3fd425f0</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="105" y="-135" />
+    <inputs>
+      <input type="text" name="Credentials" friendlyname="Credentials" expr="&quot;KMD Momentum - edu&quot;" />
+    </inputs>
+    <onsuccess>5663bd1c-ef15-4ef3-9bbf-bd98798c11e9</onsuccess>
+    <resource object="Momentum - Core" action="Start" />
+  </stage>
+  <stage stageid="9b445036-54e4-4735-9ec3-34ace982e6d1" name="Hent virksomheder" type="Action">
+    <subsheetid>01725241-9faf-4a7c-bfdc-435f3fd425f0</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="0" y="225" />
+    <inputs>
+      <input type="text" name="Url" friendlyname="Url" expr="&quot;punits/searchproductionunits&quot;" />
+      <input type="text" name="Body" friendlyname="Body" expr="[Body]" />
+    </inputs>
+    <outputs>
+      <output type="number" name="Statuskode" friendlyname="Statuskode" narrative="Http statuskoden for kaldet" stage="Statuskode" />
+      <output type="collection" name="Data" friendlyname="Data" stage="Resultat" />
+      <output type="number" name="Antal" friendlyname="Antal" stage="Antal" />
+      <output type="text" name="Json" friendlyname="Json" narrative="Det rå json output" stage="" />
+    </outputs>
+    <onsuccess>b418d91e-7fb6-45d2-9794-6dab5f1c09ff</onsuccess>
+    <resource object="Momentum - Core" action="Post" />
+  </stage>
+  <stage stageid="a7d3f6f8-1045-4267-be9f-deadd192ab1a" name="Anchor1" type="Anchor">
+    <subsheetid>01725241-9faf-4a7c-bfdc-435f3fd425f0</subsheetid>
+    <loginhibit />
+    <display x="0" y="-75" w="10" h="10" />
+    <onsuccess>72b8e28d-4606-4456-b9d0-81cae68e3b62</onsuccess>
+  </stage>
+  <stage stageid="5663bd1c-ef15-4ef3-9bbf-bd98798c11e9" name="Anchor2" type="Anchor">
+    <subsheetid>01725241-9faf-4a7c-bfdc-435f3fd425f0</subsheetid>
+    <loginhibit />
+    <display x="105" y="-75" w="10" h="10" />
+    <onsuccess>a7d3f6f8-1045-4267-be9f-deadd192ab1a</onsuccess>
+  </stage>
+  <stage stageid="25192a2b-d8e4-4813-84e2-e367f4837e79" name="Antal" type="Data">
+    <subsheetid>01725241-9faf-4a7c-bfdc-435f3fd425f0</subsheetid>
+    <display x="-195" y="375" w="120" h="30" />
+    <datatype>number</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="5d59bfc1-5746-4250-bc1d-a31e9740fc85" name="Statuskode" type="Data">
+    <subsheetid>01725241-9faf-4a7c-bfdc-435f3fd425f0</subsheetid>
+    <display x="-195" y="120" w="120" h="30" />
+    <datatype>number</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="b05ecca5-b53b-44b3-9a32-71dd653fad8e" name="Debug" type="Block">
+    <subsheetid>01725241-9faf-4a7c-bfdc-435f3fd425f0</subsheetid>
+    <loginhibit />
+    <display x="60" y="-165" w="90" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="FFFF99" />
+  </stage>
+  <stage stageid="2e648193-c8ef-494a-8bd3-b5617a7e3896" name="Hent virksom" type="Block">
+    <subsheetid>01725241-9faf-4a7c-bfdc-435f3fd425f0</subsheetid>
+    <loginhibit />
+    <display x="-90" y="195" w="195" h="240" />
+    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
+  </stage>
+  <stage stageid="ad5f8f29-5c85-40f4-93c4-cf5d66ee89bd" name="Succes" type="Data">
+    <subsheetid>01725241-9faf-4a7c-bfdc-435f3fd425f0</subsheetid>
+    <display x="-195" y="420" w="120" h="30" />
+    <datatype>flag</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="b418d91e-7fb6-45d2-9794-6dab5f1c09ff" name="Sæt succes" type="Calculation">
+    <subsheetid>01725241-9faf-4a7c-bfdc-435f3fd425f0</subsheetid>
+    <loginhibit />
+    <display x="0" y="270" />
+    <onsuccess>b1cfecf5-5e4d-41a6-b836-8d5bbc31f332</onsuccess>
+    <calculation expression="[Statuskode] = 200" stage="Succes" />
+  </stage>
+  <stage stageid="903b4720-b4a7-4147-8f2c-688c3b431bd1" name="Anchor2" type="Anchor">
+    <subsheetid>01725241-9faf-4a7c-bfdc-435f3fd425f0</subsheetid>
+    <loginhibit />
+    <display x="210" y="-75" w="10" h="10" />
+    <onsuccess>5663bd1c-ef15-4ef3-9bbf-bd98798c11e9</onsuccess>
+  </stage>
+  <stage stageid="a776cfa8-d520-42d9-8f85-c5646e6faf87" name="Start Momemtum (produktion)" type="Action">
+    <subsheetid>01725241-9faf-4a7c-bfdc-435f3fd425f0</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="210" y="-135" />
+    <inputs>
+      <input type="text" name="Credentials" friendlyname="Credentials" expr="&quot;KMD Momentum - produktion&quot;" />
+    </inputs>
+    <onsuccess>903b4720-b4a7-4147-8f2c-688c3b431bd1</onsuccess>
+    <resource object="Momentum - Core" action="Start" />
+  </stage>
+  <stage stageid="f8cc85b8-8527-4ce6-9e62-6f5ec5c1cb4b" name="Debug" type="Block">
+    <subsheetid>01725241-9faf-4a7c-bfdc-435f3fd425f0</subsheetid>
+    <loginhibit />
+    <display x="165" y="-165" w="90" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="FFFF99" />
+  </stage>
+  <stage stageid="41f30d35-f10f-4a04-a951-4537859c2b7e" name="Målgruppe" type="Data">
+    <subsheetid>01725241-9faf-4a7c-bfdc-435f3fd425f0</subsheetid>
+    <display x="-195" y="-15" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="72b8e28d-4606-4456-b9d0-81cae68e3b62" name="Hent tags/målgrupper" type="Action">
+    <subsheetid>01725241-9faf-4a7c-bfdc-435f3fd425f0</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="0" y="-15" w="90" h="30" />
+    <inputs>
+      <input type="text" name="Url" friendlyname="Url" expr="&quot;/tags&quot;" />
+    </inputs>
+    <outputs>
+      <output type="number" name="Statuskode" friendlyname="Statuskode" narrative="Http statuskoden for kaldet" stage="Statuskode" />
+      <output type="collection" name="Data" friendlyname="Data" stage="Målgrupper" />
+      <output type="number" name="Antal" friendlyname="Antal" stage="Antal" />
+      <output type="text" name="Json" friendlyname="Json" narrative="Det rå json output" stage="" />
+    </outputs>
+    <onsuccess>dcfcc8cd-84c9-4d1f-87b2-c8de34a28a6e</onsuccess>
+    <resource object="Momentum - Core" action="Get" />
+  </stage>
+  <stage stageid="2de008f1-950a-472b-bd8c-546754b4f6ab" name="Målgrupper" type="Collection">
+    <subsheetid>01725241-9faf-4a7c-bfdc-435f3fd425f0</subsheetid>
+    <display x="-195" y="165" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="96223cb2-0837-4be0-b457-124992558555" name="Find målgruppe" type="Action">
+    <subsheetid>01725241-9faf-4a7c-bfdc-435f3fd425f0</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="0" y="75" w="90" h="30" />
+    <inputs>
+      <input type="collection" name="Collection In" friendlyname="Collection In" narrative="Input collection" expr="[Målgrupper]" />
+      <input type="text" name="Filter" friendlyname="Filter" narrative="The filter to apply" expr="&quot;[title] = '&quot;&amp;[Målgruppe]&amp;&quot;'&quot;" />
+    </inputs>
+    <outputs>
+      <output type="number" name="Count" friendlyname="Count" narrative="The amount of rows in the filtered collection" stage="Antal" />
+      <output type="collection" name="Collection Out" friendlyname="Collection Out" narrative="The filtered collection" stage="Målgrupper" />
+    </outputs>
+    <onsuccess>f812d3a8-e26c-494e-a018-fe2857a6ae52</onsuccess>
+    <resource object="Utility - Odk Linq" action="Filter" />
+  </stage>
+  <stage stageid="f812d3a8-e26c-494e-a018-fe2857a6ae52" name="Målgruppe fundet?" type="Decision">
+    <subsheetid>01725241-9faf-4a7c-bfdc-435f3fd425f0</subsheetid>
+    <loginhibit />
+    <display x="0" y="120" />
+    <decision expression="[Antal] = 1" />
+    <ontrue>6b70e60d-0e2e-4f77-805e-ace7afbda299</ontrue>
+    <onfalse>aadbba21-d0a5-4971-b965-e2e55ceef2e2</onfalse>
+  </stage>
+  <stage stageid="dcfcc8cd-84c9-4d1f-87b2-c8de34a28a6e" name="Succes?" type="Decision">
+    <subsheetid>01725241-9faf-4a7c-bfdc-435f3fd425f0</subsheetid>
+    <loginhibit />
+    <display x="0" y="30" />
+    <decision expression="[Statuskode] = 200" />
+    <ontrue>96223cb2-0837-4be0-b457-124992558555</ontrue>
+    <onfalse>f5820077-b18e-4f0c-bab1-d8982584a047</onfalse>
+  </stage>
+  <stage stageid="aadbba21-d0a5-4971-b965-e2e55ceef2e2" name="Sæt ikke succes" type="Calculation">
+    <subsheetid>01725241-9faf-4a7c-bfdc-435f3fd425f0</subsheetid>
+    <loginhibit />
+    <display x="150" y="120" />
+    <onsuccess>21dbaf62-18cb-413f-a785-9f10e3f61403</onsuccess>
+    <calculation expression="False" stage="Succes" />
+  </stage>
+  <stage stageid="f5820077-b18e-4f0c-bab1-d8982584a047" name="Sæt ikke succes" type="Calculation">
+    <subsheetid>01725241-9faf-4a7c-bfdc-435f3fd425f0</subsheetid>
+    <loginhibit />
+    <display x="150" y="30" />
+    <onsuccess>91542b51-5d2a-4bba-bf03-af5a6efabad9</onsuccess>
+    <calculation expression="False" stage="Succes" />
+  </stage>
+  <stage stageid="a1bc07e5-f91c-4de3-9115-fc8d5d47eaa7" name="Body" type="Data">
+    <subsheetid>01725241-9faf-4a7c-bfdc-435f3fd425f0</subsheetid>
+    <loginhibit />
+    <display x="-195" y="210" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue xml:space="preserve">{"sort":[{"fieldName":"industry","ascending":false}],"paging":{"pageNumber":0,"pageSize":5000},"columns":[],"searchFields":[],"filters":[{"customFilter":"active","fieldName":"tags/id","values":[null,null,null,null,"{{MÅLGRUPPEID}}"]}],"term":"*"}</initialvalue>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="578e85fb-b5b7-4370-bf67-af0f72c5c539" name="Virksomheder" type="Collection">
+    <subsheetid>01725241-9faf-4a7c-bfdc-435f3fd425f0</subsheetid>
+    <display x="-195" y="330" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="6b70e60d-0e2e-4f77-805e-ace7afbda299" name="Sæt målgruppe id i body" type="Calculation">
+    <subsheetid>01725241-9faf-4a7c-bfdc-435f3fd425f0</subsheetid>
+    <loginhibit />
+    <display x="0" y="165" />
+    <onsuccess>9b445036-54e4-4735-9ec3-34ace982e6d1</onsuccess>
+    <calculation expression="Replace([Body], &quot;{{MÅLGRUPPEID}}&quot;, [Målgrupper.id])" stage="Body" />
+  </stage>
+  <stage stageid="e17e25f6-fb4a-45e2-92e6-26c4c187c92f" name="Resultat" type="Collection">
+    <subsheetid>01725241-9faf-4a7c-bfdc-435f3fd425f0</subsheetid>
+    <display x="-195" y="255" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="e388403b-e494-4d35-b34d-3533b04df491" name="Træk resultat ud i virksomheder" type="Calculation">
+    <subsheetid>01725241-9faf-4a7c-bfdc-435f3fd425f0</subsheetid>
+    <loginhibit />
+    <display x="0" y="360" />
+    <onsuccess>6b2c957e-d408-4464-a51b-90d6b71a761e</onsuccess>
+    <calculation expression="[Resultat.data]" stage="Virksomheder" />
+  </stage>
+  <stage stageid="91542b51-5d2a-4bba-bf03-af5a6efabad9" name="End2" type="End">
+    <subsheetid>01725241-9faf-4a7c-bfdc-435f3fd425f0</subsheetid>
+    <loginhibit />
+    <display x="240" y="30" />
+    <outputs>
+      <output type="collection" name="Virksomheder" stage="Virksomheder" />
+      <output type="number" name="Antal" stage="Antal" />
+      <output type="flag" name="Succes" stage="Succes" />
+    </outputs>
+  </stage>
+  <stage stageid="21dbaf62-18cb-413f-a785-9f10e3f61403" name="End3" type="End">
+    <subsheetid>01725241-9faf-4a7c-bfdc-435f3fd425f0</subsheetid>
+    <loginhibit />
+    <display x="240" y="120" />
+    <outputs>
+      <output type="collection" name="Virksomheder" stage="Virksomheder" />
+      <output type="number" name="Antal" stage="Antal" />
+      <output type="flag" name="Succes" stage="Succes" />
+    </outputs>
+  </stage>
+  <stage stageid="b1cfecf5-5e4d-41a6-b836-8d5bbc31f332" name="Succes?" type="Decision">
+    <subsheetid>01725241-9faf-4a7c-bfdc-435f3fd425f0</subsheetid>
+    <loginhibit />
+    <display x="0" y="315" />
+    <decision expression="[Succes]" />
+    <ontrue>e388403b-e494-4d35-b34d-3533b04df491</ontrue>
+    <onfalse>3ad44daf-f42c-4234-8653-906b8e94ede6</onfalse>
+  </stage>
+  <stage stageid="3ad44daf-f42c-4234-8653-906b8e94ede6" name="End4" type="End">
+    <subsheetid>01725241-9faf-4a7c-bfdc-435f3fd425f0</subsheetid>
+    <loginhibit />
+    <display x="240" y="315" />
+    <outputs>
+      <output type="collection" name="Virksomheder" stage="Virksomheder" />
+      <output type="number" name="Antal" stage="Antal" />
+      <output type="flag" name="Succes" stage="Succes" />
+    </outputs>
+  </stage>
+  <stage stageid="6b2c957e-d408-4464-a51b-90d6b71a761e" name="Tæl virksomheder" type="Action">
+    <subsheetid>01725241-9faf-4a7c-bfdc-435f3fd425f0</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="0" y="405" />
+    <inputs>
+      <input type="text" name="Collection Name" friendlyname="Collection Name" narrative="The name of the collection to act upon" expr="&quot;Virksomheder&quot;" />
+    </inputs>
+    <outputs>
+      <output type="number" name="Count" friendlyname="Count" narrative="The number of rows counted in the collection" stage="Antal" />
+    </outputs>
+    <onsuccess>b5a25429-5575-4dbe-8733-cda45fd17fca</onsuccess>
+    <resource object="Blueprism.AutomateProcessCore.clsCollectionActions" action="Count Rows" />
+  </stage>
+  <stage stageid="e6eb3c2d-e03e-442a-856e-537851acc8fe" name="Hent markeringer" type="SubSheetInfo">
+    <subsheetid>69d06f87-3f4d-4847-9074-6c83493fa2c1</subsheetid>
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="d8a58b3b-4a45-4276-b018-7b15bd0d36cb" name="Start" type="Start">
+    <subsheetid>69d06f87-3f4d-4847-9074-6c83493fa2c1</subsheetid>
+    <loginhibit />
+    <display x="0" y="-90" />
+    <inputs>
+      <input type="collection" name="Virksomhed" stage="Virksomhed" />
+    </inputs>
+    <onsuccess>77edacdf-7d19-4b4e-a780-e2e6f2633f1a</onsuccess>
+  </stage>
+  <stage stageid="6990aa85-1516-4d68-840a-0482537057f7" name="End" type="End">
+    <subsheetid>69d06f87-3f4d-4847-9074-6c83493fa2c1</subsheetid>
+    <loginhibit />
+    <display x="0" y="180" />
+    <outputs>
+      <output type="collection" name="Markeringer" stage="Markeringer" />
+      <output type="number" name="Antal" stage="Antal" />
+      <output type="flag" name="Succes" stage="Succes" />
+    </outputs>
+  </stage>
+  <stage stageid="3ef55fe9-ab06-4950-8996-08d85c7dc27d" name="Input" type="Block">
+    <subsheetid>69d06f87-3f4d-4847-9074-6c83493fa2c1</subsheetid>
+    <display x="-270" y="-45" w="150" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="339966" />
+  </stage>
+  <stage stageid="e2e47643-d50e-4648-8c3a-0fac69c22e8c" name="Variabler" type="Block">
+    <subsheetid>69d06f87-3f4d-4847-9074-6c83493fa2c1</subsheetid>
+    <display x="-270" y="90" w="150" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="666699" />
+  </stage>
+  <stage stageid="1ffcdfd7-dacc-4b56-99a8-ee631a441e61" name="Konstanter" type="Block">
+    <subsheetid>69d06f87-3f4d-4847-9074-6c83493fa2c1</subsheetid>
+    <display x="-270" y="30" w="150" h="45" />
+    <font family="Segoe UI" size="10" style="Regular" color="008080" />
+  </stage>
+  <stage stageid="cae2d090-54e8-4151-a3e4-150236e4e67c" name="Output" type="Block">
+    <subsheetid>69d06f87-3f4d-4847-9074-6c83493fa2c1</subsheetid>
+    <display x="-270" y="165" w="150" h="150" />
+    <font family="Segoe UI" size="10" style="Regular" color="800080" />
+  </stage>
+  <stage stageid="170bcf81-23ca-4e59-9434-42c6d9c51662" name="Start Momemtum (test)" type="Action">
+    <subsheetid>69d06f87-3f4d-4847-9074-6c83493fa2c1</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="105" y="-135" />
+    <inputs>
+      <input type="text" name="Credentials" friendlyname="Credentials" expr="&quot;KMD Momentum - edu&quot;" />
+    </inputs>
+    <onsuccess>d04b3b0c-79fd-43eb-bba7-4680c990b573</onsuccess>
+    <resource object="Momentum - Core" action="Start" />
+  </stage>
+  <stage stageid="77edacdf-7d19-4b4e-a780-e2e6f2633f1a" name="Anchor1" type="Anchor">
+    <subsheetid>69d06f87-3f4d-4847-9074-6c83493fa2c1</subsheetid>
+    <loginhibit />
+    <display x="0" y="-30" w="10" h="10" />
+    <onsuccess>a1795b2c-318a-49e6-b024-3ffbeae07c96</onsuccess>
+  </stage>
+  <stage stageid="d0e65099-9aad-4a4f-ab64-759701b947ee" name="Anchor2" type="Anchor">
+    <subsheetid>69d06f87-3f4d-4847-9074-6c83493fa2c1</subsheetid>
+    <loginhibit />
+    <display x="105" y="-30" w="10" h="10" />
+    <onsuccess>77edacdf-7d19-4b4e-a780-e2e6f2633f1a</onsuccess>
+  </stage>
+  <stage stageid="afccb750-6a40-404a-b139-557ae40aed1a" name="Statuskode" type="Data">
+    <subsheetid>69d06f87-3f4d-4847-9074-6c83493fa2c1</subsheetid>
+    <display x="-195" y="120" w="120" h="30" />
+    <datatype>number</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="b3bea0a8-c30a-42b9-9c20-78b1b53e9a23" name="Debug" type="Block">
+    <subsheetid>69d06f87-3f4d-4847-9074-6c83493fa2c1</subsheetid>
+    <loginhibit />
+    <display x="60" y="-165" w="90" h="120" />
+    <font family="Segoe UI" size="10" style="Regular" color="FFFF99" />
+  </stage>
+  <stage stageid="808e121c-66d9-4b46-918b-e120cdfc26bf" name="Anchor2" type="Anchor">
+    <subsheetid>69d06f87-3f4d-4847-9074-6c83493fa2c1</subsheetid>
+    <loginhibit />
+    <display x="210" y="-30" w="10" h="10" />
+    <onsuccess>d0e65099-9aad-4a4f-ab64-759701b947ee</onsuccess>
+  </stage>
+  <stage stageid="cc66d5d0-3da7-4b77-a1df-ead2444fd44f" name="Start Momemtum (produktion)" type="Action">
+    <subsheetid>69d06f87-3f4d-4847-9074-6c83493fa2c1</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="210" y="-135" />
+    <inputs>
+      <input type="text" name="Credentials" friendlyname="Credentials" expr="&quot;KMD Momentum - produktion&quot;" />
+    </inputs>
+    <onsuccess>808e121c-66d9-4b46-918b-e120cdfc26bf</onsuccess>
+    <resource object="Momentum - Core" action="Start" />
+  </stage>
+  <stage stageid="f36b2735-8567-41c0-9fe2-a6585284590f" name="Debug" type="Block">
+    <subsheetid>69d06f87-3f4d-4847-9074-6c83493fa2c1</subsheetid>
+    <loginhibit />
+    <display x="165" y="-165" w="90" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="FFFF99" />
+  </stage>
+  <stage stageid="a23ebb39-4325-48e7-832f-d9aef234d395" name="Virksomhed" type="Collection">
+    <subsheetid>69d06f87-3f4d-4847-9074-6c83493fa2c1</subsheetid>
+    <display x="-195" y="-15" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="d04b3b0c-79fd-43eb-bba7-4680c990b573" name="Hent virksomhed" type="Action">
+    <subsheetid>69d06f87-3f4d-4847-9074-6c83493fa2c1</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="105" y="-90" />
+    <inputs>
+      <input type="text" name="Cvr" friendlyname="Cvr" narrative="Cvr skal angives" expr="&quot;35954716&quot;" />
+      <input type="text" name="P-nummer" friendlyname="P-nummer" narrative="P-nummer er valgfri" expr="&quot;1026608623&quot;" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="Virksomhed" friendlyname="Virksomhed" stage="Virksomhed" />
+      <output type="number" name="Antal" friendlyname="Antal" stage="" />
+      <output type="flag" name="Succes" friendlyname="Succes" stage="" />
+    </outputs>
+    <onsuccess>d0e65099-9aad-4a4f-ab64-759701b947ee</onsuccess>
+    <resource object="Momentum - Virksomheder" action="Hent virksomhed" />
+  </stage>
+  <stage stageid="a1795b2c-318a-49e6-b024-3ffbeae07c96" name="Hent markeringer" type="Action">
+    <subsheetid>69d06f87-3f4d-4847-9074-6c83493fa2c1</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="0" y="45" />
+    <inputs>
+      <input type="text" name="Url" friendlyname="Url" expr="&quot;tagassignments?referenceId=&quot;&amp;[Virksomhed.id]" />
+    </inputs>
+    <outputs>
+      <output type="number" name="Statuskode" friendlyname="Statuskode" narrative="Http statuskoden for kaldet" stage="Statuskode" />
+      <output type="collection" name="Data" friendlyname="Data" stage="Markeringer" />
+      <output type="number" name="Antal" friendlyname="Antal" stage="Antal" />
+      <output type="text" name="Json" friendlyname="Json" narrative="Det rå json output" stage="" />
+    </outputs>
+    <onsuccess>2083ea18-9a73-4334-9df2-bfaed6f4c926</onsuccess>
+    <resource object="Momentum - Core" action="Get" />
+  </stage>
+  <stage stageid="870ff37d-55d6-491f-8630-810f3a910f51" name="Markeringer" type="Collection">
+    <subsheetid>69d06f87-3f4d-4847-9074-6c83493fa2c1</subsheetid>
+    <display x="-195" y="195" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="c303be81-4b8c-4aba-986c-56fe25353fa2" name="P-nummer" type="Data">
+    <subsheetid>63591284-298c-492b-8b08-88710ae50832</subsheetid>
+    <display x="-195" y="30" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="ed252e6d-e516-4d2f-8bd7-bccf655d53f2" name="Url" type="Data">
+    <subsheetid>63591284-298c-492b-8b08-88710ae50832</subsheetid>
+    <loginhibit />
+    <display x="-195" y="165" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="a9940052-1d33-4b86-9d69-ccfc1d8ffc94" name="Har vi P-nummer?" type="Decision">
+    <subsheetid>63591284-298c-492b-8b08-88710ae50832</subsheetid>
+    <loginhibit />
+    <display x="0" y="-30" />
+    <decision expression="[P-nummer] &lt;&gt; &quot;&quot;" />
+    <ontrue>540ce844-771e-4221-bc8e-89c96ae20261</ontrue>
+    <onfalse>566ba9c4-6286-45b6-a9c6-e0446e5b56e7</onfalse>
+  </stage>
+  <stage stageid="540ce844-771e-4221-bc8e-89c96ae20261" name="Sæt url med P-nummer" type="Calculation">
+    <subsheetid>63591284-298c-492b-8b08-88710ae50832</subsheetid>
+    <loginhibit />
+    <display x="45" y="15" />
+    <onsuccess>2d60c525-5740-4c33-9d5c-c2ecc8e198b6</onsuccess>
+    <calculation expression="&quot;/companies/&quot; &amp; [Cvr] &amp; &quot;/productionunits/&quot; &amp; [P-nummer]" stage="Url" />
+  </stage>
+  <stage stageid="566ba9c4-6286-45b6-a9c6-e0446e5b56e7" name="Sæt url" type="Calculation">
+    <subsheetid>63591284-298c-492b-8b08-88710ae50832</subsheetid>
+    <loginhibit />
+    <display x="-45" y="15" />
+    <onsuccess>2d60c525-5740-4c33-9d5c-c2ecc8e198b6</onsuccess>
+    <calculation expression="&quot;/companies/&quot; &amp; [Cvr]" stage="Url" />
+  </stage>
+  <stage stageid="a36e074b-21ba-45f8-9d8f-a953a74ec408" name="Antal" type="Data">
+    <subsheetid>69d06f87-3f4d-4847-9074-6c83493fa2c1</subsheetid>
+    <display x="-195" y="240" w="120" h="30" />
+    <datatype>number</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="bc3d09aa-0d27-4d9f-abad-7a480a59d520" name="Succes" type="Data">
+    <subsheetid>69d06f87-3f4d-4847-9074-6c83493fa2c1</subsheetid>
+    <display x="-195" y="285" w="120" h="30" />
+    <datatype>flag</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="2083ea18-9a73-4334-9df2-bfaed6f4c926" name="Sæt succes" type="Calculation">
+    <subsheetid>69d06f87-3f4d-4847-9074-6c83493fa2c1</subsheetid>
+    <loginhibit />
+    <display x="0" y="90" />
+    <onsuccess>6990aa85-1516-4d68-840a-0482537057f7</onsuccess>
+    <calculation expression="[Statuskode] = 200" stage="Succes" />
+  </stage>
+  <stage stageid="1a504183-a45a-4562-9785-0922668d95cc" name="Hent markeringer" type="Block">
+    <subsheetid>69d06f87-3f4d-4847-9074-6c83493fa2c1</subsheetid>
+    <loginhibit />
+    <display x="-75" y="0" w="165" h="120" />
+    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
+  </stage>
+  <stage stageid="c1c31c70-4ea0-4986-a01b-3a56334e3f57" name="Hent kontaktinfo på virksomhed" type="SubSheetInfo">
+    <subsheetid>028d3cb7-4c1a-4db4-90e7-2ff219ce4081</subsheetid>
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="663042f9-fd6d-4134-8182-43ff88e576d5" name="Start" type="Start">
+    <subsheetid>028d3cb7-4c1a-4db4-90e7-2ff219ce4081</subsheetid>
+    <loginhibit />
+    <display x="0" y="-90" />
+    <inputs>
+      <input type="collection" name="Virksomhed" stage="Virksomhed" />
+    </inputs>
+    <onsuccess>14ac07e8-4734-4277-91e9-30d10aa15d20</onsuccess>
+  </stage>
+  <stage stageid="bf6ff04c-a400-40a9-a41b-0ded373674b2" name="End" type="End">
+    <subsheetid>028d3cb7-4c1a-4db4-90e7-2ff219ce4081</subsheetid>
+    <loginhibit />
+    <display x="0" y="180" />
+    <outputs>
+      <output type="collection" name="Virksomhedsinfo" stage="Virksomhedsinfo" />
+      <output type="number" name="Antal" stage="Antal" />
+      <output type="flag" name="Succes" stage="Succes" />
+    </outputs>
+  </stage>
+  <stage stageid="0a866779-15ce-4f21-a909-21585f6c9e60" name="Input" type="Block">
+    <subsheetid>028d3cb7-4c1a-4db4-90e7-2ff219ce4081</subsheetid>
+    <display x="-270" y="-45" w="150" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="339966" />
+  </stage>
+  <stage stageid="c673266d-585b-4ec6-981d-557f73f6c140" name="Variabler" type="Block">
+    <subsheetid>028d3cb7-4c1a-4db4-90e7-2ff219ce4081</subsheetid>
+    <display x="-270" y="90" w="150" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="666699" />
+  </stage>
+  <stage stageid="e8c09346-c28b-4cc8-8308-e37d85791da8" name="Konstanter" type="Block">
+    <subsheetid>028d3cb7-4c1a-4db4-90e7-2ff219ce4081</subsheetid>
+    <display x="-270" y="30" w="150" h="45" />
+    <font family="Segoe UI" size="10" style="Regular" color="008080" />
+  </stage>
+  <stage stageid="15cd8901-6dde-4b06-a9cd-2bca4c5043ae" name="Output" type="Block">
+    <subsheetid>028d3cb7-4c1a-4db4-90e7-2ff219ce4081</subsheetid>
+    <display x="-270" y="165" w="150" h="150" />
+    <font family="Segoe UI" size="10" style="Regular" color="800080" />
+  </stage>
+  <stage stageid="4eab81d3-d3fb-424f-a795-c35bc224468d" name="Start Momemtum (test)" type="Action">
+    <subsheetid>028d3cb7-4c1a-4db4-90e7-2ff219ce4081</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="105" y="-135" />
+    <inputs>
+      <input type="text" name="Credentials" friendlyname="Credentials" expr="&quot;KMD Momentum - edu&quot;" />
+    </inputs>
+    <onsuccess>49d22d36-7175-42c6-b563-7aacbd1f2c7a</onsuccess>
+    <resource object="Momentum - Core" action="Start" />
+  </stage>
+  <stage stageid="14ac07e8-4734-4277-91e9-30d10aa15d20" name="Anchor1" type="Anchor">
+    <subsheetid>028d3cb7-4c1a-4db4-90e7-2ff219ce4081</subsheetid>
+    <loginhibit />
+    <display x="0" y="-30" w="10" h="10" />
+    <onsuccess>2ade3b76-cf0b-4834-9a41-ee5fd0e0df42</onsuccess>
+  </stage>
+  <stage stageid="1dc745a4-5886-492a-96d0-244b3d19d59e" name="Anchor2" type="Anchor">
+    <subsheetid>028d3cb7-4c1a-4db4-90e7-2ff219ce4081</subsheetid>
+    <loginhibit />
+    <display x="105" y="-30" w="10" h="10" />
+    <onsuccess>14ac07e8-4734-4277-91e9-30d10aa15d20</onsuccess>
+  </stage>
+  <stage stageid="c30663f8-1974-4c99-93de-3ac3eabfeebb" name="Statuskode" type="Data">
+    <subsheetid>028d3cb7-4c1a-4db4-90e7-2ff219ce4081</subsheetid>
+    <display x="-195" y="120" w="120" h="30" />
+    <datatype>number</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="f9eb1db2-9118-42f3-9907-4bac11cb29ff" name="Debug" type="Block">
+    <subsheetid>028d3cb7-4c1a-4db4-90e7-2ff219ce4081</subsheetid>
+    <loginhibit />
+    <display x="60" y="-165" w="90" h="120" />
+    <font family="Segoe UI" size="10" style="Regular" color="FFFF99" />
+  </stage>
+  <stage stageid="e606747f-ac48-4d9f-a7d7-384cec308bd4" name="Anchor2" type="Anchor">
+    <subsheetid>028d3cb7-4c1a-4db4-90e7-2ff219ce4081</subsheetid>
+    <loginhibit />
+    <display x="210" y="-30" w="10" h="10" />
+    <onsuccess>1dc745a4-5886-492a-96d0-244b3d19d59e</onsuccess>
+  </stage>
+  <stage stageid="372b4b81-9746-4653-a0b3-c42f27aa9b1f" name="Start Momemtum (produktion)" type="Action">
+    <subsheetid>028d3cb7-4c1a-4db4-90e7-2ff219ce4081</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="210" y="-135" />
+    <inputs>
+      <input type="text" name="Credentials" friendlyname="Credentials" expr="&quot;KMD Momentum - produktion&quot;" />
+    </inputs>
+    <onsuccess>e606747f-ac48-4d9f-a7d7-384cec308bd4</onsuccess>
+    <resource object="Momentum - Core" action="Start" />
+  </stage>
+  <stage stageid="14e0e99c-ce1d-4378-a74e-17e4daa4cb6c" name="Debug" type="Block">
+    <subsheetid>028d3cb7-4c1a-4db4-90e7-2ff219ce4081</subsheetid>
+    <loginhibit />
+    <display x="165" y="-165" w="90" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="FFFF99" />
+  </stage>
+  <stage stageid="19c95dc1-9fcd-4171-84d4-21c8d9c8a628" name="Virksomhed" type="Collection">
+    <subsheetid>028d3cb7-4c1a-4db4-90e7-2ff219ce4081</subsheetid>
+    <display x="-195" y="-15" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="49d22d36-7175-42c6-b563-7aacbd1f2c7a" name="Hent virksomhed" type="Action">
+    <subsheetid>028d3cb7-4c1a-4db4-90e7-2ff219ce4081</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="105" y="-90" />
+    <inputs>
+      <input type="text" name="Cvr" friendlyname="Cvr" narrative="Cvr skal angives" expr="&quot;35954716&quot;" />
+      <input type="text" name="P-nummer" friendlyname="P-nummer" narrative="P-nummer er valgfri" expr="&quot;1026608623&quot;" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="Virksomhed" friendlyname="Virksomhed" stage="Virksomhed" />
+      <output type="number" name="Antal" friendlyname="Antal" stage="" />
+      <output type="flag" name="Succes" friendlyname="Succes" stage="" />
+    </outputs>
+    <onsuccess>1dc745a4-5886-492a-96d0-244b3d19d59e</onsuccess>
+    <resource object="Momentum - Virksomheder" action="Hent virksomhed" />
+  </stage>
+  <stage stageid="2ade3b76-cf0b-4834-9a41-ee5fd0e0df42" name="Hent virksomhedsinfo" type="Action">
+    <subsheetid>028d3cb7-4c1a-4db4-90e7-2ff219ce4081</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="0" y="45" w="90" h="30" />
+    <inputs>
+      <input type="text" name="Url" friendlyname="Url" expr="&quot;/punits/&quot;&amp;[Virksomhed.id]" />
+    </inputs>
+    <outputs>
+      <output type="number" name="Statuskode" friendlyname="Statuskode" narrative="Http statuskoden for kaldet" stage="Statuskode" />
+      <output type="collection" name="Data" friendlyname="Data" stage="Virksomhedsinfo" />
+      <output type="number" name="Antal" friendlyname="Antal" stage="Antal" />
+      <output type="text" name="Json" friendlyname="Json" narrative="Det rå json output" stage="" />
+    </outputs>
+    <onsuccess>ef209dd7-dc65-4178-8aea-851e81b9c888</onsuccess>
+    <resource object="Momentum - Core" action="Get" />
+  </stage>
+  <stage stageid="5d1f9f61-15d0-44cb-9d1e-ddba9a32ddee" name="Virksomhedsinfo" type="Collection">
+    <subsheetid>028d3cb7-4c1a-4db4-90e7-2ff219ce4081</subsheetid>
+    <display x="-195" y="195" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="48469ee3-9252-4d50-b3a5-98399e996d37" name="Antal" type="Data">
+    <subsheetid>028d3cb7-4c1a-4db4-90e7-2ff219ce4081</subsheetid>
+    <display x="-195" y="240" w="120" h="30" />
+    <datatype>number</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="999ee080-01d5-4a3f-810c-32895ec86f83" name="Succes" type="Data">
+    <subsheetid>028d3cb7-4c1a-4db4-90e7-2ff219ce4081</subsheetid>
+    <display x="-195" y="285" w="120" h="30" />
+    <datatype>flag</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="ef209dd7-dc65-4178-8aea-851e81b9c888" name="Sæt succes" type="Calculation">
+    <subsheetid>028d3cb7-4c1a-4db4-90e7-2ff219ce4081</subsheetid>
+    <loginhibit />
+    <display x="0" y="90" />
+    <onsuccess>bf6ff04c-a400-40a9-a41b-0ded373674b2</onsuccess>
+    <calculation expression="[Statuskode] = 200" stage="Succes" />
+  </stage>
+  <stage stageid="a31b219f-de20-493d-85b6-0dd9e6bcd024" name="Hent sagsbehandlere på virksomhed" type="Block">
+    <subsheetid>028d3cb7-4c1a-4db4-90e7-2ff219ce4081</subsheetid>
+    <loginhibit />
+    <display x="-75" y="0" w="165" h="120" />
+    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
+  </stage>
+  <stage stageid="1af5d52a-931c-448d-9069-5fe1f097a7a2" name="Data1" type="Data">
+    <subsheetid>028d3cb7-4c1a-4db4-90e7-2ff219ce4081</subsheetid>
+    <loginhibit />
+    <display x="-435" y="105" />
+    <datatype>text</datatype>
+    <initialvalue xml:space="preserve">{
+  "term": "string",
+  "filters": [
+    {
+      "fieldName": "string",
+      "subFieldName": "string",
+      "mainFieldName": "string",
+      "values": [
+        "string"
+      ],
+      "customFilter": "string"
+    }
+  ],
+  "columns": [
+    "string"
+  ],
+  "sort": [
+    {
+      "fieldName": "string",
+      "ascending": true
+    }
+  ],
+  "paging": {
+    "pageNumber": 0,
+    "pageSize": 0
+  },
+  "searchFields": [
+    "string"
+  ],
+  "select": [
+    "string"
+  ],
+  "impersonateCaseworkerId": "00000000-0000-0000-0000-000000000000"
+}</initialvalue>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="5914b5ad-de72-444e-9d8d-90bac93483b0" name="Hent opgaver" type="SubSheetInfo">
+    <subsheetid>5b71d654-6db8-4ee9-a2e0-0f7ff7dbd230</subsheetid>
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="25b57ef9-3156-4f6b-8ff5-b696180fff8f" name="Start" type="Start">
+    <subsheetid>5b71d654-6db8-4ee9-a2e0-0f7ff7dbd230</subsheetid>
+    <loginhibit />
+    <display x="0" y="-90" />
+    <inputs>
+      <input type="collection" name="Virksomhed" stage="Virksomhed" />
+    </inputs>
+    <onsuccess>75f2f35e-71e1-4268-9980-946bf75c0995</onsuccess>
+  </stage>
+  <stage stageid="6bbac24e-a46a-4160-bd6d-c9cf91610c32" name="End" type="End">
+    <subsheetid>5b71d654-6db8-4ee9-a2e0-0f7ff7dbd230</subsheetid>
+    <loginhibit />
+    <display x="0" y="255" />
+    <outputs>
+      <output type="collection" name="Opgaver" stage="Opgaver" />
+      <output type="number" name="Antal" stage="Antal" />
+      <output type="flag" name="Succes" stage="Succes" />
+    </outputs>
+  </stage>
+  <stage stageid="1f5d1664-20c7-476b-b7c3-b384ee530844" name="Input" type="Block">
+    <subsheetid>5b71d654-6db8-4ee9-a2e0-0f7ff7dbd230</subsheetid>
+    <display x="-270" y="-45" w="150" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="339966" />
+  </stage>
+  <stage stageid="90fe82b3-bdf4-4ec2-bec4-800ed1ce8db0" name="Variabler" type="Block">
+    <subsheetid>5b71d654-6db8-4ee9-a2e0-0f7ff7dbd230</subsheetid>
+    <display x="-270" y="90" w="150" h="105" />
+    <font family="Segoe UI" size="10" style="Regular" color="666699" />
+  </stage>
+  <stage stageid="85d5072a-c6b2-4999-9665-99f92de45633" name="Konstanter" type="Block">
+    <subsheetid>5b71d654-6db8-4ee9-a2e0-0f7ff7dbd230</subsheetid>
+    <display x="-270" y="30" w="150" h="45" />
+    <font family="Segoe UI" size="10" style="Regular" color="008080" />
+  </stage>
+  <stage stageid="9db76732-16cf-448f-9fa4-a4cfbabb5a1a" name="Output" type="Block">
+    <subsheetid>5b71d654-6db8-4ee9-a2e0-0f7ff7dbd230</subsheetid>
+    <display x="-270" y="210" w="150" h="150" />
+    <font family="Segoe UI" size="10" style="Regular" color="800080" />
+  </stage>
+  <stage stageid="21947d10-be23-4baf-9e32-5c9b319acf82" name="Start Momemtum (test)" type="Action">
+    <subsheetid>5b71d654-6db8-4ee9-a2e0-0f7ff7dbd230</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="105" y="-135" />
+    <inputs>
+      <input type="text" name="Credentials" friendlyname="Credentials" expr="&quot;KMD Momentum - edu&quot;" />
+    </inputs>
+    <onsuccess>d1bce6cb-b97c-4d6a-8210-6d7ee309aa1d</onsuccess>
+    <resource object="Momentum - Core" action="Start" />
+  </stage>
+  <stage stageid="75f2f35e-71e1-4268-9980-946bf75c0995" name="Anchor1" type="Anchor">
+    <subsheetid>5b71d654-6db8-4ee9-a2e0-0f7ff7dbd230</subsheetid>
+    <loginhibit />
+    <display x="0" y="-30" w="10" h="10" />
+    <onsuccess>d5c2d687-890e-45fe-91f9-e0013e793344</onsuccess>
+  </stage>
+  <stage stageid="9e7d795c-b4a1-4925-a15a-08bf63daa16c" name="Anchor2" type="Anchor">
+    <subsheetid>5b71d654-6db8-4ee9-a2e0-0f7ff7dbd230</subsheetid>
+    <loginhibit />
+    <display x="105" y="-30" w="10" h="10" />
+    <onsuccess>75f2f35e-71e1-4268-9980-946bf75c0995</onsuccess>
+  </stage>
+  <stage stageid="e3729db8-4d43-4060-9e76-6a1a1724ad0a" name="Statuskode" type="Data">
+    <subsheetid>5b71d654-6db8-4ee9-a2e0-0f7ff7dbd230</subsheetid>
+    <display x="-195" y="120" w="120" h="30" />
+    <datatype>number</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="fbc5b600-55a9-4679-b2c8-bbdd472dec3f" name="Debug" type="Block">
+    <subsheetid>5b71d654-6db8-4ee9-a2e0-0f7ff7dbd230</subsheetid>
+    <loginhibit />
+    <display x="60" y="-165" w="90" h="120" />
+    <font family="Segoe UI" size="10" style="Regular" color="FFFF99" />
+  </stage>
+  <stage stageid="9f08a7f3-241f-478b-9313-761a359991b8" name="Anchor2" type="Anchor">
+    <subsheetid>5b71d654-6db8-4ee9-a2e0-0f7ff7dbd230</subsheetid>
+    <loginhibit />
+    <display x="210" y="-30" w="10" h="10" />
+    <onsuccess>9e7d795c-b4a1-4925-a15a-08bf63daa16c</onsuccess>
+  </stage>
+  <stage stageid="dc372ea4-1489-489f-a375-e7e0635ddd32" name="Start Momemtum (produktion)" type="Action">
+    <subsheetid>5b71d654-6db8-4ee9-a2e0-0f7ff7dbd230</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="210" y="-135" />
+    <inputs>
+      <input type="text" name="Credentials" friendlyname="Credentials" expr="&quot;KMD Momentum - produktion&quot;" />
+    </inputs>
+    <onsuccess>3cca9c09-6107-4e3c-ace4-0144b2d5f491</onsuccess>
+    <resource object="Momentum - Core" action="Start" />
+  </stage>
+  <stage stageid="e983b4d5-b474-45a5-819c-36be651d89ae" name="Debug" type="Block">
+    <subsheetid>5b71d654-6db8-4ee9-a2e0-0f7ff7dbd230</subsheetid>
+    <loginhibit />
+    <display x="165" y="-165" w="90" h="120" />
+    <font family="Segoe UI" size="10" style="Regular" color="FFFF99" />
+  </stage>
+  <stage stageid="16543a79-137c-4127-95ff-ff9b7ef224d0" name="Virksomhed" type="Collection">
+    <subsheetid>5b71d654-6db8-4ee9-a2e0-0f7ff7dbd230</subsheetid>
+    <display x="-195" y="-15" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="d1bce6cb-b97c-4d6a-8210-6d7ee309aa1d" name="Hent virksomhed" type="Action">
+    <subsheetid>5b71d654-6db8-4ee9-a2e0-0f7ff7dbd230</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="105" y="-90" />
+    <inputs>
+      <input type="text" name="Cvr" friendlyname="Cvr" narrative="Cvr skal angives" expr="&quot;34815100&quot;" />
+      <input type="text" name="P-nummer" friendlyname="P-nummer" narrative="P-nummer er valgfri" expr="&quot;1018162853&quot;" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="Virksomhed" friendlyname="Virksomhed" stage="Virksomhed" />
+      <output type="number" name="Antal" friendlyname="Antal" stage="" />
+      <output type="flag" name="Succes" friendlyname="Succes" stage="" />
+    </outputs>
+    <onsuccess>9e7d795c-b4a1-4925-a15a-08bf63daa16c</onsuccess>
+    <resource object="Momentum - Virksomheder" action="Hent virksomhed" />
+  </stage>
+  <stage stageid="aa80a90c-7ca0-4c49-b839-c093f68e27f3" name="Hent opgaver" type="Action">
+    <subsheetid>5b71d654-6db8-4ee9-a2e0-0f7ff7dbd230</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="0" y="90" />
+    <inputs>
+      <input type="text" name="Url" friendlyname="Url" expr="&quot;tasks/company&quot;" />
+      <input type="text" name="Body" friendlyname="Body" expr="[Body]" />
+    </inputs>
+    <outputs>
+      <output type="number" name="Statuskode" friendlyname="Statuskode" narrative="Http statuskoden for kaldet" stage="Statuskode" />
+      <output type="collection" name="Data" friendlyname="Data" stage="Opgaver" />
+      <output type="number" name="Antal" friendlyname="Antal" stage="Antal" />
+      <output type="text" name="Json" friendlyname="Json" narrative="Det rå json output" stage="" />
+    </outputs>
+    <onsuccess>d47956dd-b207-4d68-935d-a9b668cdddad</onsuccess>
+    <resource object="Momentum - Core" action="Post" />
+  </stage>
+  <stage stageid="91a0cf85-81d3-4c7b-813d-edc35c7a9362" name="Antal" type="Data">
+    <subsheetid>5b71d654-6db8-4ee9-a2e0-0f7ff7dbd230</subsheetid>
+    <display x="-195" y="285" w="120" h="30" />
+    <datatype>number</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="070d67ad-efde-4987-b535-8c4f08bbf2d1" name="Succes" type="Data">
+    <subsheetid>5b71d654-6db8-4ee9-a2e0-0f7ff7dbd230</subsheetid>
+    <display x="-195" y="330" w="120" h="30" />
+    <datatype>flag</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="d47956dd-b207-4d68-935d-a9b668cdddad" name="Sæt succes" type="Calculation">
+    <subsheetid>5b71d654-6db8-4ee9-a2e0-0f7ff7dbd230</subsheetid>
+    <loginhibit />
+    <display x="0" y="135" />
+    <onsuccess>491254e4-a9ef-4f1b-baf9-6d2b02848a24</onsuccess>
+    <calculation expression="[Statuskode] = 200" stage="Succes" />
+  </stage>
+  <stage stageid="18e40c6d-ed8c-4bea-b304-041a676756c0" name="Hent opgaver" type="Block">
+    <subsheetid>5b71d654-6db8-4ee9-a2e0-0f7ff7dbd230</subsheetid>
+    <loginhibit />
+    <display x="-75" y="60" w="165" h="150" />
+    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
+  </stage>
+  <stage stageid="98df9fa6-9e8b-4571-9a68-87d0b8634883" name="Opgaver" type="Collection">
+    <subsheetid>5b71d654-6db8-4ee9-a2e0-0f7ff7dbd230</subsheetid>
+    <display x="-195" y="240" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="3cca9c09-6107-4e3c-ace4-0144b2d5f491" name="Hent virksomhed" type="Action">
+    <subsheetid>5b71d654-6db8-4ee9-a2e0-0f7ff7dbd230</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="210" y="-90" />
+    <inputs>
+      <input type="text" name="Cvr" friendlyname="Cvr" narrative="Cvr skal angives" expr="&quot;33501404&quot;" />
+      <input type="text" name="P-nummer" friendlyname="P-nummer" narrative="P-nummer er valgfri" expr="&quot;1016667648&quot;" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="Virksomhed" friendlyname="Virksomhed" stage="Virksomhed" />
+      <output type="number" name="Antal" friendlyname="Antal" stage="" />
+      <output type="flag" name="Succes" friendlyname="Succes" stage="" />
+    </outputs>
+    <onsuccess>9f08a7f3-241f-478b-9313-761a359991b8</onsuccess>
+    <resource object="Momentum - Virksomheder" action="Hent virksomhed" />
+  </stage>
+  <stage stageid="d32cb456-f0b8-4a8d-910e-a2727239a063" name="Body" type="Data">
+    <subsheetid>5b71d654-6db8-4ee9-a2e0-0f7ff7dbd230</subsheetid>
+    <loginhibit />
+    <display x="-195" y="165" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue xml:space="preserve">{"columns":[],"filters":[{"fieldName":"productionUnitId","values":["{{VIRKSOMHEDSID}}"]}],"sort":[{"fieldName":"deadline","ascending":true}],"paging":{"pageNumber":0,"pageSize":50}}</initialvalue>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="d5c2d687-890e-45fe-91f9-e0013e793344" name="Klargør body" type="Calculation">
+    <subsheetid>5b71d654-6db8-4ee9-a2e0-0f7ff7dbd230</subsheetid>
+    <loginhibit />
+    <display x="0" y="30" />
+    <onsuccess>aa80a90c-7ca0-4c49-b839-c093f68e27f3</onsuccess>
+    <calculation expression="Replace([Body], &quot;{{VIRKSOMHEDSID}}&quot;, [Virksomhed.id])" stage="Body" />
+  </stage>
+  <stage stageid="491254e4-a9ef-4f1b-baf9-6d2b02848a24" name="Træk opgaver ud" type="Calculation">
+    <subsheetid>5b71d654-6db8-4ee9-a2e0-0f7ff7dbd230</subsheetid>
+    <loginhibit />
+    <display x="0" y="180" />
+    <onsuccess>6bbac24e-a46a-4160-bd6d-c9cf91610c32</onsuccess>
+    <calculation expression="[Opgaver.data]" stage="Opgaver" />
+  </stage>
+  <stage stageid="83625e43-d18b-496a-a715-cf0dbeb5b226" name="Ændre status på opgave" type="SubSheetInfo">
+    <subsheetid>e6f7813a-1744-41dc-a22b-a52c9297e74a</subsheetid>
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="0b8d317b-9bdf-4b30-8721-7ee6991d055e" name="Start" type="Start">
+    <subsheetid>e6f7813a-1744-41dc-a22b-a52c9297e74a</subsheetid>
+    <loginhibit />
+    <display x="0" y="-135" />
+    <inputs>
+      <input type="collection" name="Opgave" stage="Opgave" />
+      <input type="text" name="Status" narrative="Status kan være &quot;Gennemført&quot;, &quot;Aflyst&quot; eller &quot;Igang&quot;" stage="Status" />
+    </inputs>
+    <onsuccess>58c7a2f7-98b0-438d-89eb-13500ae8df30</onsuccess>
+  </stage>
+  <stage stageid="ed78a8b2-edaf-48ce-ad07-57b124767413" name="End" type="End">
+    <subsheetid>e6f7813a-1744-41dc-a22b-a52c9297e74a</subsheetid>
+    <loginhibit />
+    <display x="0" y="525" />
+    <outputs>
+      <output type="flag" name="Succes" stage="Succes" />
+    </outputs>
+  </stage>
+  <stage stageid="b0a4caad-6b43-4634-8e5b-96435a41cdf3" name="Input" type="Block">
+    <subsheetid>e6f7813a-1744-41dc-a22b-a52c9297e74a</subsheetid>
+    <display x="-270" y="-45" w="150" h="105" />
+    <font family="Segoe UI" size="10" style="Regular" color="339966" />
+  </stage>
+  <stage stageid="5beb2270-4c90-4872-b73c-8dbcc3685c31" name="Variabler" type="Block">
+    <subsheetid>e6f7813a-1744-41dc-a22b-a52c9297e74a</subsheetid>
+    <display x="-270" y="135" w="150" h="150" />
+    <font family="Segoe UI" size="10" style="Regular" color="666699" />
+  </stage>
+  <stage stageid="204391c5-00c7-44dc-aa98-c3c2790c79ae" name="Konstanter" type="Block">
+    <subsheetid>e6f7813a-1744-41dc-a22b-a52c9297e74a</subsheetid>
+    <display x="-270" y="75" w="150" h="45" />
+    <font family="Segoe UI" size="10" style="Regular" color="008080" />
+  </stage>
+  <stage stageid="d0c77adf-0250-437d-85b4-f430514d8371" name="Output" type="Block">
+    <subsheetid>e6f7813a-1744-41dc-a22b-a52c9297e74a</subsheetid>
+    <display x="-270" y="300" w="150" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="800080" />
+  </stage>
+  <stage stageid="c60d5028-2600-4faa-830b-ebfd3e13dcec" name="Start Momemtum (test)" type="Action">
+    <subsheetid>e6f7813a-1744-41dc-a22b-a52c9297e74a</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="105" y="-300" />
+    <inputs>
+      <input type="text" name="Credentials" friendlyname="Credentials" expr="&quot;KMD Momentum - edu&quot;" />
+    </inputs>
+    <onsuccess>6b4bb2f3-195b-4551-827b-68883a030d7d</onsuccess>
+    <resource object="Momentum - Core" action="Start" />
+  </stage>
+  <stage stageid="58c7a2f7-98b0-438d-89eb-13500ae8df30" name="Anchor1" type="Anchor">
+    <subsheetid>e6f7813a-1744-41dc-a22b-a52c9297e74a</subsheetid>
+    <loginhibit />
+    <display x="0" y="-90" w="10" h="10" />
+    <onsuccess>ac324e02-4227-4680-aae1-17e7d34b334e</onsuccess>
+  </stage>
+  <stage stageid="25160681-458a-4bec-bb23-2eaa73b0926f" name="Anchor2" type="Anchor">
+    <subsheetid>e6f7813a-1744-41dc-a22b-a52c9297e74a</subsheetid>
+    <loginhibit />
+    <display x="105" y="-90" w="10" h="10" />
+    <onsuccess>58c7a2f7-98b0-438d-89eb-13500ae8df30</onsuccess>
+  </stage>
+  <stage stageid="8ed8ae7e-0cb6-4364-83fb-a2221c45d23e" name="Statuskode" type="Data">
+    <subsheetid>e6f7813a-1744-41dc-a22b-a52c9297e74a</subsheetid>
+    <display x="-195" y="165" w="120" h="30" />
+    <datatype>number</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="c5ea37b4-8bf5-4e7c-af76-9e79a6c2e13e" name="Debug" type="Block">
+    <subsheetid>e6f7813a-1744-41dc-a22b-a52c9297e74a</subsheetid>
+    <loginhibit />
+    <display x="60" y="-330" w="90" h="195" />
+    <font family="Segoe UI" size="10" style="Regular" color="FFFF99" />
+  </stage>
+  <stage stageid="e169cb6f-9da7-4933-9a2c-814fb434cd94" name="Anchor2" type="Anchor">
+    <subsheetid>e6f7813a-1744-41dc-a22b-a52c9297e74a</subsheetid>
+    <loginhibit />
+    <display x="210" y="-90" w="10" h="10" />
+    <onsuccess>25160681-458a-4bec-bb23-2eaa73b0926f</onsuccess>
+  </stage>
+  <stage stageid="ac8c2f79-afad-4946-bd08-b0ac4966a561" name="Start Momemtum (produktion)" type="Action">
+    <subsheetid>e6f7813a-1744-41dc-a22b-a52c9297e74a</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="210" y="-300" />
+    <inputs>
+      <input type="text" name="Credentials" friendlyname="Credentials" expr="&quot;KMD Momentum - produktion&quot;" />
+    </inputs>
+    <onsuccess>53babf12-1714-4f37-a213-03cd106b81a8</onsuccess>
+    <resource object="Momentum - Core" action="Start" />
+  </stage>
+  <stage stageid="31f8219a-d84d-4b4e-84ec-903ad927b14f" name="Debug" type="Block">
+    <subsheetid>e6f7813a-1744-41dc-a22b-a52c9297e74a</subsheetid>
+    <loginhibit />
+    <display x="165" y="-330" w="90" h="120" />
+    <font family="Segoe UI" size="10" style="Regular" color="FFFF99" />
+  </stage>
+  <stage stageid="46a697f3-cd43-425b-82ee-d5efd1e6412c" name="Virksomhed" type="Collection">
+    <subsheetid>e6f7813a-1744-41dc-a22b-a52c9297e74a</subsheetid>
+    <display x="-15" y="-300" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="6b4bb2f3-195b-4551-827b-68883a030d7d" name="Hent virksomhed" type="Action">
+    <subsheetid>e6f7813a-1744-41dc-a22b-a52c9297e74a</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="105" y="-255" />
+    <inputs>
+      <input type="text" name="Cvr" friendlyname="Cvr" narrative="Cvr skal angives" expr="&quot;31075939&quot;" />
+      <input type="text" name="P-nummer" friendlyname="P-nummer" narrative="P-nummer er valgfri" expr="&quot;1029887728&quot;" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="Virksomhed" friendlyname="Virksomhed" stage="Virksomhed" />
+      <output type="number" name="Antal" friendlyname="Antal" stage="" />
+      <output type="flag" name="Succes" friendlyname="Succes" stage="" />
+    </outputs>
+    <onsuccess>ea6f4581-e4e8-4eff-9a1b-d9af3d573c17</onsuccess>
+    <resource object="Momentum - Virksomheder" action="Hent virksomhed" />
+  </stage>
+  <stage stageid="6908465f-1ec8-4530-b2ea-7cbe2ae23b3c" name="Opdater status" type="Action">
+    <subsheetid>e6f7813a-1744-41dc-a22b-a52c9297e74a</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="0" y="420" />
+    <inputs>
+      <input type="text" name="Url" friendlyname="Url" expr="&quot;tasks/&quot;&amp;[Opgave.id]&amp;&quot;/company&quot;" />
+      <input type="text" name="Body" friendlyname="Body" expr="[Body]" />
+    </inputs>
+    <outputs>
+      <output type="number" name="Statuskode" friendlyname="Statuskode" narrative="Http statuskoden for kaldet" stage="Statuskode" />
+      <output type="collection" name="Data" friendlyname="Data" stage="" />
+      <output type="number" name="Antal" friendlyname="Antal" stage="" />
+      <output type="text" name="Json" friendlyname="Json" narrative="Det rå json output" stage="" />
+    </outputs>
+    <onsuccess>98b88a75-bca0-4b55-a8ee-138d881cfc8f</onsuccess>
+    <resource object="Momentum - Core" action="Put" />
+  </stage>
+  <stage stageid="a838e43b-377f-4ab9-ba8c-08a7e64d16a3" name="Succes" type="Data">
+    <subsheetid>e6f7813a-1744-41dc-a22b-a52c9297e74a</subsheetid>
+    <display x="-195" y="330" w="120" h="30" />
+    <datatype>flag</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="98b88a75-bca0-4b55-a8ee-138d881cfc8f" name="Sæt succes" type="Calculation">
+    <subsheetid>e6f7813a-1744-41dc-a22b-a52c9297e74a</subsheetid>
+    <loginhibit />
+    <display x="0" y="465" />
+    <onsuccess>ed78a8b2-edaf-48ce-ad07-57b124767413</onsuccess>
+    <calculation expression="[Statuskode] = 200" stage="Succes" />
+  </stage>
+  <stage stageid="3b362948-8960-48d5-8e29-ccdc2f528a92" name="Afslut opgave" type="Block">
+    <subsheetid>e6f7813a-1744-41dc-a22b-a52c9297e74a</subsheetid>
+    <loginhibit />
+    <display x="-75" y="390" w="165" h="105" />
+    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
+  </stage>
+  <stage stageid="53babf12-1714-4f37-a213-03cd106b81a8" name="Hent virksomhed" type="Action">
+    <subsheetid>e6f7813a-1744-41dc-a22b-a52c9297e74a</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="210" y="-255" />
+    <inputs>
+      <input type="text" name="Cvr" friendlyname="Cvr" narrative="Cvr skal angives" expr="&quot;33501404&quot;" />
+      <input type="text" name="P-nummer" friendlyname="P-nummer" narrative="P-nummer er valgfri" expr="&quot;1016667648&quot;" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="Virksomhed" friendlyname="Virksomhed" stage="Virksomhed" />
+      <output type="number" name="Antal" friendlyname="Antal" stage="" />
+      <output type="flag" name="Succes" friendlyname="Succes" stage="" />
+    </outputs>
+    <onsuccess>e169cb6f-9da7-4933-9a2c-814fb434cd94</onsuccess>
+    <resource object="Momentum - Virksomheder" action="Hent virksomhed" />
+  </stage>
+  <stage stageid="34532a26-61bb-4eea-88ce-f3d886c6755c" name="Body" type="Data">
+    <subsheetid>e6f7813a-1744-41dc-a22b-a52c9297e74a</subsheetid>
+    <loginhibit />
+    <display x="-195" y="210" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue xml:space="preserve">{
+  "id": "{{OPGAVEID}}",
+    "assignees": [
+    {{BRUGERE}}
+  ],
+  "action": {{ACTION}}
+}</initialvalue>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="ea6f4581-e4e8-4eff-9a1b-d9af3d573c17" name="Momentum - Virksomheder::Hent opgaver" type="Action">
+    <subsheetid>e6f7813a-1744-41dc-a22b-a52c9297e74a</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="105" y="-210" />
+    <inputs>
+      <input type="collection" name="Virksomhed" friendlyname="Virksomhed" expr="[Virksomhed]" />
+    </inputs>
+    <outputs>
+      <output type="number" name="Antal" friendlyname="Antal" stage="" />
+      <output type="flag" name="Succes" friendlyname="Succes" stage="" />
+      <output type="collection" name="Opgaver" friendlyname="Opgaver" stage="Opgaver" />
+    </outputs>
+    <onsuccess>11cbcb55-15e8-49ce-9f25-27f7ac974f08</onsuccess>
+    <resource object="Momentum - Virksomheder" action="Hent opgaver" />
+  </stage>
+  <stage stageid="a0675be9-f426-4615-b066-789fd0f9363a" name="Opgaver" type="Collection">
+    <subsheetid>e6f7813a-1744-41dc-a22b-a52c9297e74a</subsheetid>
+    <display x="-15" y="-255" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="11cbcb55-15e8-49ce-9f25-27f7ac974f08" name="Find" type="Action">
+    <subsheetid>e6f7813a-1744-41dc-a22b-a52c9297e74a</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="105" y="-165" />
+    <inputs>
+      <input type="collection" name="Collection In" friendlyname="Collection In" narrative="Input collection" expr="[Opgaver]" />
+      <input type="text" name="Filter" friendlyname="Filter" narrative="The filter to apply" expr="&quot;[id] = '8d405d0c-a488-46f8-89b0-ff0036d05b40'&quot;" />
+    </inputs>
+    <outputs>
+      <output type="number" name="Count" friendlyname="Count" narrative="The amount of rows in the filtered collection" stage="" />
+      <output type="collection" name="Collection Out" friendlyname="Collection Out" narrative="The filtered collection" stage="Opgave" />
+    </outputs>
+    <onsuccess>25160681-458a-4bec-bb23-2eaa73b0926f</onsuccess>
+    <resource object="Utility - Odk Linq" action="Filter" />
+  </stage>
+  <stage stageid="33a17d18-3956-4e54-8ae4-05a279d45713" name="Opgave" type="Collection">
+    <subsheetid>e6f7813a-1744-41dc-a22b-a52c9297e74a</subsheetid>
+    <display x="-195" y="-15" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="d3d88c6e-dee1-449a-b8c3-400c7a4f7782" name="Note1" type="Note">
+    <subsheetid>e6f7813a-1744-41dc-a22b-a52c9297e74a</subsheetid>
+    <loginhibit />
+    <narrative>0=gennemført
+1=aflyst
+3=igang</narrative>
+    <display x="345" y="-120" w="120" h="60" />
+  </stage>
+  <stage stageid="456bde21-f0c5-4222-9101-df500999b74c" name="Status" type="Data">
+    <subsheetid>e6f7813a-1744-41dc-a22b-a52c9297e74a</subsheetid>
+    <loginhibit />
+    <display x="-195" y="30" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="f473cc30-3e77-411f-a7b9-70dfdd0a4a64" name="Færdigør Body" type="MultipleCalculation">
+    <subsheetid>e6f7813a-1744-41dc-a22b-a52c9297e74a</subsheetid>
+    <loginhibit />
+    <display x="0" y="345" />
+    <onsuccess>6908465f-1ec8-4530-b2ea-7cbe2ae23b3c</onsuccess>
+    <steps>
+      <calculation expression="Replace([Body], &quot;{{OPGAVEID}}&quot;, [Opgave.id])" stage="Body" />
+      <calculation expression="Replace([Body], &quot;,&quot;&amp;NewLine()&amp;&quot;{{BRUGERE}}&quot;, &quot;&quot;)" stage="Body" />
+      <calculation expression="Replace([Body], &quot;{{ACTION}}&quot;, [Statuskode])" stage="Body" />
+    </steps>
+  </stage>
+  <stage stageid="5bc5beb8-ee81-4a07-b65f-7c32ff9b3cc0" name="Loop: Brugere" type="LoopStart">
+    <subsheetid>e6f7813a-1744-41dc-a22b-a52c9297e74a</subsheetid>
+    <loginhibit />
+    <display x="0" y="210" />
+    <onsuccess>1498b495-9a0d-4821-8ca9-ebfa68785f7c</onsuccess>
+    <groupid>15e80540-0e1f-47a6-b2d2-5dab31a04a0f</groupid>
+    <looptype>ForEach</looptype>
+    <loopdata>Brugere</loopdata>
+  </stage>
+  <stage stageid="ccd9859c-20ba-4d43-811e-1239bd3f3a06" name="Loop: Brugere" type="LoopEnd">
+    <subsheetid>e6f7813a-1744-41dc-a22b-a52c9297e74a</subsheetid>
+    <loginhibit />
+    <display x="0" y="300" />
+    <onsuccess>f473cc30-3e77-411f-a7b9-70dfdd0a4a64</onsuccess>
+    <groupid>15e80540-0e1f-47a6-b2d2-5dab31a04a0f</groupid>
+  </stage>
+  <stage stageid="ec16f802-c774-4306-a1df-176096769bd7" name="Hiv brugere ud fra opgave" type="Calculation">
+    <subsheetid>e6f7813a-1744-41dc-a22b-a52c9297e74a</subsheetid>
+    <loginhibit />
+    <display x="0" y="135" />
+    <onsuccess>5bc5beb8-ee81-4a07-b65f-7c32ff9b3cc0</onsuccess>
+    <calculation expression="[Opgave.assignees]" stage="Brugere" />
+  </stage>
+  <stage stageid="64dff8c1-2ba1-488b-828d-8916dd327708" name="Brugere" type="Collection">
+    <subsheetid>e6f7813a-1744-41dc-a22b-a52c9297e74a</subsheetid>
+    <loginhibit />
+    <display x="-195" y="255" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="1498b495-9a0d-4821-8ca9-ebfa68785f7c" name="Indsæt bruger i body" type="Calculation">
+    <subsheetid>e6f7813a-1744-41dc-a22b-a52c9297e74a</subsheetid>
+    <loginhibit />
+    <display x="0" y="255" />
+    <onsuccess>ccd9859c-20ba-4d43-811e-1239bd3f3a06</onsuccess>
+    <calculation expression="Replace([Body], &quot;{{BRUGERE}}&quot;, Chr(34)&amp;[Brugere.caseworkerId]&amp;Chr(34)&amp;&quot;,&quot;&amp;NewLine()&amp;&quot;{{BRUGERE}}&quot;)&#xA;" stage="Body" />
+  </stage>
+  <stage stageid="ac324e02-4227-4680-aae1-17e7d34b334e" name="Status" type="ChoiceStart">
+    <subsheetid>e6f7813a-1744-41dc-a22b-a52c9297e74a</subsheetid>
+    <loginhibit />
+    <display x="0" y="0" />
+    <groupid>0e8d58d2-4362-4799-a062-94c5e5ea1dbc</groupid>
+    <choices>
+      <choice expression="Trim(Lower([Status])) = &quot;gennemført&quot;">
+        <name>Gennemført?</name>
+        <distance>45</distance>
+        <ontrue>5507d9c8-54f8-46aa-902f-731d3fe09d6c</ontrue>
+      </choice>
+      <choice expression="Trim(Lower([Status])) = &quot;aflyst&quot;">
+        <name>Aflyst?</name>
+        <distance>105</distance>
+        <ontrue>aebfb7dd-ebb1-4e50-82a1-a30a0978b109</ontrue>
+      </choice>
+      <choice expression="Trim(Lower([Status])) = &quot;igang&quot;">
+        <name>Igang?</name>
+        <distance>165</distance>
+        <ontrue>74d185a8-a13a-4aad-b739-8daf7a948d51</ontrue>
+      </choice>
+    </choices>
+  </stage>
+  <stage stageid="1ac413a5-9ee3-464a-9334-95fc408bda2c" name="Ikke godkendt status" type="ChoiceEnd">
+    <subsheetid>e6f7813a-1744-41dc-a22b-a52c9297e74a</subsheetid>
+    <loginhibit />
+    <display x="270" y="0" />
+    <onsuccess>9259170a-038f-4407-95df-90d6e2c5db06</onsuccess>
+    <groupid>0e8d58d2-4362-4799-a062-94c5e5ea1dbc</groupid>
+  </stage>
+  <stage stageid="5507d9c8-54f8-46aa-902f-731d3fe09d6c" name="Sæt statuskode 0" type="Calculation">
+    <subsheetid>e6f7813a-1744-41dc-a22b-a52c9297e74a</subsheetid>
+    <loginhibit />
+    <display x="45" y="45" />
+    <onsuccess>299e9951-57e6-4e21-a124-8ed56fe83e27</onsuccess>
+    <calculation expression="0" stage="Statuskode" />
+  </stage>
+  <stage stageid="155436d5-7223-4a5d-a595-3100e5382d93" name="Anchor4" type="Anchor">
+    <subsheetid>e6f7813a-1744-41dc-a22b-a52c9297e74a</subsheetid>
+    <loginhibit />
+    <display x="0" y="90" w="10" h="10" />
+    <onsuccess>ec16f802-c774-4306-a1df-176096769bd7</onsuccess>
+  </stage>
+  <stage stageid="aebfb7dd-ebb1-4e50-82a1-a30a0978b109" name="Sæt statuskode 1" type="Calculation">
+    <subsheetid>e6f7813a-1744-41dc-a22b-a52c9297e74a</subsheetid>
+    <loginhibit />
+    <display x="105" y="45" />
+    <onsuccess>3f53c37b-b957-46af-ab19-98c884826f84</onsuccess>
+    <calculation expression="1" stage="Statuskode" />
+  </stage>
+  <stage stageid="74d185a8-a13a-4aad-b739-8daf7a948d51" name="Sæt statuskode 3" type="Calculation">
+    <subsheetid>e6f7813a-1744-41dc-a22b-a52c9297e74a</subsheetid>
+    <loginhibit />
+    <display x="165" y="45" />
+    <onsuccess>746a9ee6-e91f-45a5-ac0d-68fc2f3e3f56</onsuccess>
+    <calculation expression="3" stage="Statuskode" />
+  </stage>
+  <stage stageid="299e9951-57e6-4e21-a124-8ed56fe83e27" name="Anchor5" type="Anchor">
+    <subsheetid>e6f7813a-1744-41dc-a22b-a52c9297e74a</subsheetid>
+    <loginhibit />
+    <display x="45" y="90" w="10" h="10" />
+    <onsuccess>155436d5-7223-4a5d-a595-3100e5382d93</onsuccess>
+  </stage>
+  <stage stageid="3f53c37b-b957-46af-ab19-98c884826f84" name="Anchor6" type="Anchor">
+    <subsheetid>e6f7813a-1744-41dc-a22b-a52c9297e74a</subsheetid>
+    <loginhibit />
+    <display x="105" y="90" w="10" h="10" />
+    <onsuccess>299e9951-57e6-4e21-a124-8ed56fe83e27</onsuccess>
+  </stage>
+  <stage stageid="746a9ee6-e91f-45a5-ac0d-68fc2f3e3f56" name="Anchor7" type="Anchor">
+    <subsheetid>e6f7813a-1744-41dc-a22b-a52c9297e74a</subsheetid>
+    <loginhibit />
+    <display x="165" y="90" w="10" h="10" />
+    <onsuccess>3f53c37b-b957-46af-ab19-98c884826f84</onsuccess>
+  </stage>
+  <stage stageid="9259170a-038f-4407-95df-90d6e2c5db06" name="Forkert status givet" type="Exception">
+    <subsheetid>e6f7813a-1744-41dc-a22b-a52c9297e74a</subsheetid>
+    <display x="405" y="0" />
+    <exception localized="yes" type="Input" detail="&quot;Den givne status er ikke valid. Status kan være Godkendt, aflyst eller igang&quot;" />
+  </stage>
+  <stage stageid="bd2bbd2e-0bae-4e7d-a1a7-e60aa0a92830" name="Klargør JSON" type="Block">
+    <subsheetid>e6f7813a-1744-41dc-a22b-a52c9297e74a</subsheetid>
+    <loginhibit />
+    <display x="-75" y="180" w="165" h="195" />
+    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
+  </stage>
+  <stage stageid="7fb17b67-a44a-4e99-8dec-e31ea0df7131" name="Gør info klar" type="Block">
+    <subsheetid>e6f7813a-1744-41dc-a22b-a52c9297e74a</subsheetid>
+    <loginhibit />
+    <display x="-75" y="-45" w="405" h="210" />
+    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
+  </stage>
+  <stage stageid="02c49f4d-3ac0-4224-9fc1-2825b92d67aa" name="Opret opgave" type="SubSheetInfo">
+    <subsheetid>566b3da3-5d14-40f3-b11e-85e4ced08055</subsheetid>
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="5cf0fca5-041e-4f65-b8a2-41649df29de9" name="Start" type="Start">
+    <subsheetid>566b3da3-5d14-40f3-b11e-85e4ced08055</subsheetid>
+    <loginhibit />
+    <display x="0" y="-90" />
+    <inputs>
+      <input type="collection" name="Virksomhed" stage="Virksomhed" />
+      <input type="text" name="Brugerid" stage="Brugerid" />
+      <input type="text" name="Opgavetitel" stage="Opgavetitel" />
+      <input type="text" name="Opgavebeskrivelse" stage="Opgavebeskrivelse" />
+      <input type="date" name="Deadline" stage="Deadline" />
+    </inputs>
+    <onsuccess>5b4e7848-315b-4fc6-8a87-c23b567ac34c</onsuccess>
+  </stage>
+  <stage stageid="bd991162-1a8a-4124-8804-3f1a7f07420f" name="End" type="End">
+    <subsheetid>566b3da3-5d14-40f3-b11e-85e4ced08055</subsheetid>
+    <loginhibit />
+    <display x="0" y="210" />
+    <outputs>
+      <output type="collection" name="Opgave" stage="Opgave" />
+      <output type="number" name="Antal" stage="Antal" />
+      <output type="flag" name="Succes" stage="Succes" />
+    </outputs>
+  </stage>
+  <stage stageid="fab31536-81dc-4b2c-bcf6-f4296fbda2a9" name="Input" type="Block">
+    <subsheetid>566b3da3-5d14-40f3-b11e-85e4ced08055</subsheetid>
+    <display x="-270" y="-45" w="150" h="240" />
+    <font family="Segoe UI" size="10" style="Regular" color="339966" />
+  </stage>
+  <stage stageid="90bcad99-cace-4dd0-accc-e40c4f989ad1" name="Variabler" type="Block">
+    <subsheetid>566b3da3-5d14-40f3-b11e-85e4ced08055</subsheetid>
+    <display x="-270" y="270" w="150" h="105" />
+    <font family="Segoe UI" size="10" style="Regular" color="666699" />
+  </stage>
+  <stage stageid="65a40f3d-01e4-4d4d-82ce-cc249aeab05c" name="Konstanter" type="Block">
+    <subsheetid>566b3da3-5d14-40f3-b11e-85e4ced08055</subsheetid>
+    <display x="-270" y="210" w="150" h="45" />
+    <font family="Segoe UI" size="10" style="Regular" color="008080" />
+  </stage>
+  <stage stageid="11867a9e-7669-4da9-8768-1feef97033b5" name="Output" type="Block">
+    <subsheetid>566b3da3-5d14-40f3-b11e-85e4ced08055</subsheetid>
+    <display x="-270" y="390" w="150" h="150" />
+    <font family="Segoe UI" size="10" style="Regular" color="800080" />
+  </stage>
+  <stage stageid="01d6242f-962f-4fcb-876c-8ef5b40d91c5" name="Start Momemtum (test)" type="Action">
+    <subsheetid>566b3da3-5d14-40f3-b11e-85e4ced08055</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="105" y="-135" />
+    <inputs>
+      <input type="text" name="Credentials" friendlyname="Credentials" expr="&quot;KMD Momentum - edu&quot;" />
+    </inputs>
+    <onsuccess>38ae22c8-77eb-421a-afe7-2f6dc8179898</onsuccess>
+    <resource object="Momentum - Core" action="Start" />
+  </stage>
+  <stage stageid="5b4e7848-315b-4fc6-8a87-c23b567ac34c" name="Anchor1" type="Anchor">
+    <subsheetid>566b3da3-5d14-40f3-b11e-85e4ced08055</subsheetid>
+    <loginhibit />
+    <display x="0" y="-30" w="10" h="10" />
+    <onsuccess>85b8a09b-06cd-4c2d-8a78-509cd4b4fc36</onsuccess>
+  </stage>
+  <stage stageid="f71ef9b9-9ecd-483d-8884-fe16656dfcce" name="Anchor2" type="Anchor">
+    <subsheetid>566b3da3-5d14-40f3-b11e-85e4ced08055</subsheetid>
+    <loginhibit />
+    <display x="105" y="-30" w="10" h="10" />
+    <onsuccess>5b4e7848-315b-4fc6-8a87-c23b567ac34c</onsuccess>
+  </stage>
+  <stage stageid="109a637c-477b-4952-b0ff-679d58eb2ded" name="Statuskode" type="Data">
+    <subsheetid>566b3da3-5d14-40f3-b11e-85e4ced08055</subsheetid>
+    <display x="-195" y="300" w="120" h="30" />
+    <datatype>number</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="7dfa60c2-e2fe-4add-8966-ba7db17c2469" name="Debug" type="Block">
+    <subsheetid>566b3da3-5d14-40f3-b11e-85e4ced08055</subsheetid>
+    <loginhibit />
+    <display x="60" y="-165" w="90" h="120" />
+    <font family="Segoe UI" size="10" style="Regular" color="FFFF99" />
+  </stage>
+  <stage stageid="f7f421c0-acfc-421d-b287-d96af0d75f3b" name="Anchor2" type="Anchor">
+    <subsheetid>566b3da3-5d14-40f3-b11e-85e4ced08055</subsheetid>
+    <loginhibit />
+    <display x="210" y="-30" w="10" h="10" />
+    <onsuccess>f71ef9b9-9ecd-483d-8884-fe16656dfcce</onsuccess>
+  </stage>
+  <stage stageid="3e85a0ef-c861-492c-8ded-b6c1be184047" name="Start Momemtum (produktion)" type="Action">
+    <subsheetid>566b3da3-5d14-40f3-b11e-85e4ced08055</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="210" y="-135" />
+    <inputs>
+      <input type="text" name="Credentials" friendlyname="Credentials" expr="&quot;KMD Momentum - produktion&quot;" />
+    </inputs>
+    <onsuccess>33954fd3-8142-4508-a783-2f80903dfa50</onsuccess>
+    <resource object="Momentum - Core" action="Start" />
+  </stage>
+  <stage stageid="b7d143cc-1c0b-4315-a9cf-07053786fd7b" name="Debug" type="Block">
+    <subsheetid>566b3da3-5d14-40f3-b11e-85e4ced08055</subsheetid>
+    <loginhibit />
+    <display x="165" y="-165" w="90" h="120" />
+    <font family="Segoe UI" size="10" style="Regular" color="FFFF99" />
+  </stage>
+  <stage stageid="d39b97c4-2e09-419d-b7b2-2288e5a325cf" name="Virksomhed" type="Collection">
+    <subsheetid>566b3da3-5d14-40f3-b11e-85e4ced08055</subsheetid>
+    <display x="-195" y="-15" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="38ae22c8-77eb-421a-afe7-2f6dc8179898" name="Hent virksomhed" type="Action">
+    <subsheetid>566b3da3-5d14-40f3-b11e-85e4ced08055</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="105" y="-90" />
+    <inputs>
+      <input type="text" name="Cvr" friendlyname="Cvr" narrative="Cvr skal angives" expr="&quot;12476779&quot;" />
+      <input type="text" name="P-nummer" friendlyname="P-nummer" narrative="P-nummer er valgfri" expr="&quot;1000392303&quot;" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="Virksomhed" friendlyname="Virksomhed" stage="Virksomhed" />
+      <output type="number" name="Antal" friendlyname="Antal" stage="" />
+      <output type="flag" name="Succes" friendlyname="Succes" stage="" />
+    </outputs>
+    <onsuccess>f71ef9b9-9ecd-483d-8884-fe16656dfcce</onsuccess>
+    <resource object="Momentum - Virksomheder" action="Hent virksomhed" />
+  </stage>
+  <stage stageid="0d67fb6a-fc2c-4dd6-a12f-38c05964b372" name="Opret opgave" type="Action">
+    <subsheetid>566b3da3-5d14-40f3-b11e-85e4ced08055</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="0" y="90" />
+    <inputs>
+      <input type="text" name="Url" friendlyname="Url" expr="&quot;tasks&quot;" />
+      <input type="text" name="Body" friendlyname="Body" expr="[Body]" />
+    </inputs>
+    <outputs>
+      <output type="number" name="Statuskode" friendlyname="Statuskode" narrative="Http statuskoden for kaldet" stage="Statuskode" />
+      <output type="collection" name="Data" friendlyname="Data" stage="Opgave" />
+      <output type="number" name="Antal" friendlyname="Antal" stage="Antal" />
+      <output type="text" name="Json" friendlyname="Json" narrative="Det rå json output" stage="" />
+    </outputs>
+    <onsuccess>59a4e5f0-a916-4c17-8ca7-c2505293270d</onsuccess>
+    <resource object="Momentum - Core" action="Post" />
+  </stage>
+  <stage stageid="1e12f155-641b-4461-b321-5004447b17f0" name="Antal" type="Data">
+    <subsheetid>566b3da3-5d14-40f3-b11e-85e4ced08055</subsheetid>
+    <display x="-195" y="465" w="120" h="30" />
+    <datatype>number</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="ae88a3fa-6473-4333-9c6c-cff77d432f59" name="Succes" type="Data">
+    <subsheetid>566b3da3-5d14-40f3-b11e-85e4ced08055</subsheetid>
+    <display x="-195" y="510" w="120" h="30" />
+    <datatype>flag</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="59a4e5f0-a916-4c17-8ca7-c2505293270d" name="Sæt succes" type="Calculation">
+    <subsheetid>566b3da3-5d14-40f3-b11e-85e4ced08055</subsheetid>
+    <loginhibit />
+    <display x="0" y="135" />
+    <onsuccess>bd991162-1a8a-4124-8804-3f1a7f07420f</onsuccess>
+    <calculation expression="[Statuskode] = 200" stage="Succes" />
+  </stage>
+  <stage stageid="031d272c-2397-4be5-b667-6b99b7d9e3f8" name="Opret opgave" type="Block">
+    <subsheetid>566b3da3-5d14-40f3-b11e-85e4ced08055</subsheetid>
+    <loginhibit />
+    <display x="-75" y="60" w="165" h="120" />
+    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
+  </stage>
+  <stage stageid="33954fd3-8142-4508-a783-2f80903dfa50" name="Hent virksomhed" type="Action">
+    <subsheetid>566b3da3-5d14-40f3-b11e-85e4ced08055</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="210" y="-90" />
+    <inputs>
+      <input type="text" name="Cvr" friendlyname="Cvr" narrative="Cvr skal angives" expr="&quot;33501404&quot;" />
+      <input type="text" name="P-nummer" friendlyname="P-nummer" narrative="P-nummer er valgfri" expr="&quot;1016667648&quot;" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="Virksomhed" friendlyname="Virksomhed" stage="Virksomhed" />
+      <output type="number" name="Antal" friendlyname="Antal" stage="" />
+      <output type="flag" name="Succes" friendlyname="Succes" stage="" />
+    </outputs>
+    <onsuccess>f7f421c0-acfc-421d-b287-d96af0d75f3b</onsuccess>
+    <resource object="Momentum - Virksomheder" action="Hent virksomhed" />
+  </stage>
+  <stage stageid="9f318c36-0d62-4def-9c0c-5df7a11a8894" name="Body" type="Data">
+    <subsheetid>566b3da3-5d14-40f3-b11e-85e4ced08055</subsheetid>
+    <loginhibit />
+    <display x="-195" y="345" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue xml:space="preserve">{"title":"{{TITEL}}","description":"{{BESKRIVELSE}}","deadline":"{{DEADLINE}}T22:00:00.000Z","assignedActorsId":["{{BRUGERID}}"],"taskType":null,"reference":{"id":"{{VIRKSOMHEDSID}}","type":"PRODUCTIONUNIT"}}</initialvalue>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="b00a3b16-c946-48fb-89f7-fafc44194c26" name="Brugerid" type="Data">
+    <subsheetid>566b3da3-5d14-40f3-b11e-85e4ced08055</subsheetid>
+    <display x="-195" y="30" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="70fc0767-a7c2-4ef2-ac35-833cb757f508" name="Opgavetitel" type="Data">
+    <subsheetid>566b3da3-5d14-40f3-b11e-85e4ced08055</subsheetid>
+    <display x="-195" y="75" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="8811e846-b97b-434f-a464-9cfea6fcf0c9" name="Opgavebeskrivelse" type="Data">
+    <subsheetid>566b3da3-5d14-40f3-b11e-85e4ced08055</subsheetid>
+    <display x="-195" y="120" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="bb13e77f-477a-43e5-a874-b77549065303" name="Deadline" type="Data">
+    <subsheetid>566b3da3-5d14-40f3-b11e-85e4ced08055</subsheetid>
+    <display x="-195" y="165" w="120" h="30" />
+    <datatype>date</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="85b8a09b-06cd-4c2d-8a78-509cd4b4fc36" name="Klargør body" type="MultipleCalculation">
+    <subsheetid>566b3da3-5d14-40f3-b11e-85e4ced08055</subsheetid>
+    <loginhibit />
+    <display x="0" y="30" />
+    <onsuccess>0d67fb6a-fc2c-4dd6-a12f-38c05964b372</onsuccess>
+    <steps>
+      <calculation expression="Replace([Body], &quot;{{TITEL}}&quot;, [Opgavetitel])" stage="Body" />
+      <calculation expression="Replace([Body], &quot;{{BESKRIVELSE}}&quot;, [Opgavebeskrivelse])" stage="Body" />
+      <calculation expression="Replace([Body], &quot;{{DEADLINE}}&quot;, FormatDate([Deadline], &quot;yyyy-MM-dd&quot;))" stage="Body" />
+      <calculation expression="Replace([Body], &quot;{{BRUGERID}}&quot;, [Brugerid])" stage="Body" />
+      <calculation expression="Replace([Body], &quot;{{VIRKSOMHEDSID}}&quot;, [Virksomhed.id])" stage="Body" />
+    </steps>
+  </stage>
+  <stage stageid="11721602-62cc-46af-b8d5-730841c3604c" name="Opgave" type="Collection">
+    <subsheetid>566b3da3-5d14-40f3-b11e-85e4ced08055</subsheetid>
+    <display x="-195" y="420" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="68b4b814-3873-46c7-854f-1de6bb625c04" name="Opdater markering" type="SubSheetInfo">
+    <subsheetid>12a1ebd8-4210-4c59-9274-ee2542c86bfc</subsheetid>
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="ffc0d95b-4fcb-461b-92c9-da962141fdc3" name="Start" type="Start">
+    <subsheetid>12a1ebd8-4210-4c59-9274-ee2542c86bfc</subsheetid>
+    <loginhibit />
+    <display x="0" y="-90" />
+    <inputs>
+      <input type="collection" name="Markering" stage="Markering" />
+      <input type="date" name="Slutdato" stage="Slutdato" />
+    </inputs>
+    <onsuccess>338f6d2c-a5c2-4e31-9ade-d3c44a63ef3c</onsuccess>
+  </stage>
+  <stage stageid="76044f0b-858e-44c9-9e5e-634ccaca6eff" name="End" type="End">
+    <subsheetid>12a1ebd8-4210-4c59-9274-ee2542c86bfc</subsheetid>
+    <loginhibit />
+    <display x="0" y="240" />
+    <outputs>
+      <output type="collection" name="Markering" stage="Markering ud" />
+      <output type="number" name="Antal" stage="Antal" />
+      <output type="flag" name="Succes" stage="Succes" />
+    </outputs>
+  </stage>
+  <stage stageid="dec8df14-07ed-4d4c-aca2-49280358566a" name="Input" type="Block">
+    <subsheetid>12a1ebd8-4210-4c59-9274-ee2542c86bfc</subsheetid>
+    <display x="-270" y="-45" w="150" h="105" />
+    <font family="Segoe UI" size="10" style="Regular" color="339966" />
+  </stage>
+  <stage stageid="e43d2d5e-c8f6-4284-901b-b9a59de63208" name="Variabler" type="Block">
+    <subsheetid>12a1ebd8-4210-4c59-9274-ee2542c86bfc</subsheetid>
+    <display x="-270" y="135" w="150" h="105" />
+    <font family="Segoe UI" size="10" style="Regular" color="666699" />
+  </stage>
+  <stage stageid="a34adc55-bf2b-4a4c-831f-a07c84f5bf33" name="Konstanter" type="Block">
+    <subsheetid>12a1ebd8-4210-4c59-9274-ee2542c86bfc</subsheetid>
+    <display x="-270" y="75" w="150" h="45" />
+    <font family="Segoe UI" size="10" style="Regular" color="008080" />
+  </stage>
+  <stage stageid="49d98500-fa7a-4bf4-b9dd-e3e0930840c9" name="Output" type="Block">
+    <subsheetid>12a1ebd8-4210-4c59-9274-ee2542c86bfc</subsheetid>
+    <display x="-270" y="255" w="150" h="150" />
+    <font family="Segoe UI" size="10" style="Regular" color="800080" />
+  </stage>
+  <stage stageid="fa1973fd-3abd-4e10-8e44-e4fd222d6214" name="Start Momemtum (test)" type="Action">
+    <subsheetid>12a1ebd8-4210-4c59-9274-ee2542c86bfc</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="105" y="-135" />
+    <inputs>
+      <input type="text" name="Credentials" friendlyname="Credentials" expr="&quot;KMD Momentum - edu&quot;" />
+    </inputs>
+    <onsuccess>e626e266-cf6b-4d72-ac1e-b5e4618775a3</onsuccess>
+    <resource object="Momentum - Core" action="Start" />
+  </stage>
+  <stage stageid="338f6d2c-a5c2-4e31-9ade-d3c44a63ef3c" name="Anchor1" type="Anchor">
+    <subsheetid>12a1ebd8-4210-4c59-9274-ee2542c86bfc</subsheetid>
+    <loginhibit />
+    <display x="0" y="45" w="10" h="10" />
+    <onsuccess>b5dd5cd2-26d4-47e8-87ba-cb046c8cbb15</onsuccess>
+  </stage>
+  <stage stageid="0ff3e7a4-1bb5-4a22-9d7c-099cdbebff96" name="Anchor2" type="Anchor">
+    <subsheetid>12a1ebd8-4210-4c59-9274-ee2542c86bfc</subsheetid>
+    <loginhibit />
+    <display x="105" y="45" w="10" h="10" />
+    <onsuccess>338f6d2c-a5c2-4e31-9ade-d3c44a63ef3c</onsuccess>
+  </stage>
+  <stage stageid="47e136fa-3822-4acb-90b3-57c865ede501" name="Statuskode" type="Data">
+    <subsheetid>12a1ebd8-4210-4c59-9274-ee2542c86bfc</subsheetid>
+    <display x="-195" y="165" w="120" h="30" />
+    <datatype>number</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="76004a66-e48f-4789-a774-babfdc7d25f6" name="Debug" type="Block">
+    <subsheetid>12a1ebd8-4210-4c59-9274-ee2542c86bfc</subsheetid>
+    <loginhibit />
+    <display x="60" y="-165" w="90" h="195" />
+    <font family="Segoe UI" size="10" style="Regular" color="FFFF99" />
+  </stage>
+  <stage stageid="7ef133ea-9626-4e10-873d-464eddabc3b2" name="Markering" type="Collection">
+    <subsheetid>12a1ebd8-4210-4c59-9274-ee2542c86bfc</subsheetid>
+    <display x="-195" y="-15" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="e626e266-cf6b-4d72-ac1e-b5e4618775a3" name="Hent virksomhed" type="Action">
+    <subsheetid>12a1ebd8-4210-4c59-9274-ee2542c86bfc</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="105" y="-90" />
+    <inputs>
+      <input type="text" name="Cvr" friendlyname="Cvr" narrative="Cvr skal angives" expr="&quot;40223584&quot;" />
+      <input type="text" name="P-nummer" friendlyname="P-nummer" narrative="P-nummer er valgfri" expr="&quot;1024366037&quot;" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="Virksomhed" friendlyname="Virksomhed" stage="Virksomhed" />
+      <output type="number" name="Antal" friendlyname="Antal" stage="" />
+      <output type="flag" name="Succes" friendlyname="Succes" stage="" />
+    </outputs>
+    <onsuccess>8516cbae-4f27-4d06-b61c-2fcc1a4e0277</onsuccess>
+    <resource object="Momentum - Virksomheder" action="Hent virksomhed" />
+  </stage>
+  <stage stageid="648b4945-399d-47f9-9e30-2c613c21dabf" name="Opdater markering" type="Action">
+    <subsheetid>12a1ebd8-4210-4c59-9274-ee2542c86bfc</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="0" y="135" />
+    <inputs>
+      <input type="text" name="Url" friendlyname="Url" expr="&quot;/tagassignments/&quot;&amp;[Markering.id]" />
+      <input type="text" name="Body" friendlyname="Body" expr="[Body]" />
+    </inputs>
+    <outputs>
+      <output type="number" name="Statuskode" friendlyname="Statuskode" narrative="Http statuskoden for kaldet" stage="Statuskode" />
+      <output type="collection" name="Data" friendlyname="Data" stage="Markering ud" />
+      <output type="number" name="Antal" friendlyname="Antal" stage="Antal" />
+      <output type="text" name="Json" friendlyname="Json" narrative="Det rå json output" stage="" />
+    </outputs>
+    <onsuccess>4ac52a98-a6cb-4012-a955-3a845dc5411c</onsuccess>
+    <resource object="Momentum - Core" action="Put" />
+  </stage>
+  <stage stageid="e5501719-00fe-4096-a681-b02adf542a58" name="Antal" type="Data">
+    <subsheetid>12a1ebd8-4210-4c59-9274-ee2542c86bfc</subsheetid>
+    <display x="-195" y="330" w="120" h="30" />
+    <datatype>number</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="b1aa1e6a-aba5-42db-9a11-894385bf9f8d" name="Succes" type="Data">
+    <subsheetid>12a1ebd8-4210-4c59-9274-ee2542c86bfc</subsheetid>
+    <display x="-195" y="375" w="120" h="30" />
+    <datatype>flag</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="4ac52a98-a6cb-4012-a955-3a845dc5411c" name="Sæt succes" type="Calculation">
+    <subsheetid>12a1ebd8-4210-4c59-9274-ee2542c86bfc</subsheetid>
+    <loginhibit />
+    <display x="0" y="180" />
+    <onsuccess>76044f0b-858e-44c9-9e5e-634ccaca6eff</onsuccess>
+    <calculation expression="[Statuskode] = 200" stage="Succes" />
+  </stage>
+  <stage stageid="101451bd-5e86-40de-ab41-b7e42c96e7c7" name="Ændre slutdato på markering" type="Block">
+    <subsheetid>12a1ebd8-4210-4c59-9274-ee2542c86bfc</subsheetid>
+    <loginhibit />
+    <display x="-75" y="105" w="165" h="105" />
+    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
+  </stage>
+  <stage stageid="db8dd6af-892c-48a4-83b3-d4749f3c0133" name="Markering ud" type="Collection">
+    <subsheetid>12a1ebd8-4210-4c59-9274-ee2542c86bfc</subsheetid>
+    <display x="-195" y="285" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="9107d9e2-ae41-47cb-ae7c-3d8d34fd88cc" name="Body" type="Data">
+    <subsheetid>12a1ebd8-4210-4c59-9274-ee2542c86bfc</subsheetid>
+    <loginhibit />
+    <display x="-195" y="210" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue xml:space="preserve">{"id":"{{TAGASSID}}","end":"{{TAGEND}}","tagId":"{{TAGID}}"}</initialvalue>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="8516cbae-4f27-4d06-b61c-2fcc1a4e0277" name="Hent markeringer" type="Action">
+    <subsheetid>12a1ebd8-4210-4c59-9274-ee2542c86bfc</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="105" y="-45" />
+    <inputs>
+      <input type="collection" name="Virksomhed" friendlyname="Virksomhed" expr="[Virksomhed]" />
+    </inputs>
+    <outputs>
+      <output type="number" name="Antal" friendlyname="Antal" stage="" />
+      <output type="flag" name="Succes" friendlyname="Succes" stage="" />
+      <output type="collection" name="Markeringer" friendlyname="Markeringer" stage="Markeringer" />
+    </outputs>
+    <onsuccess>54e52ec7-284a-4923-9c11-2b7f5aed517f</onsuccess>
+    <resource object="Momentum - Virksomheder" action="Hent markeringer" />
+  </stage>
+  <stage stageid="e84757df-fe39-4ce9-a638-c0401718aba3" name="Markeringer" type="Collection">
+    <subsheetid>12a1ebd8-4210-4c59-9274-ee2542c86bfc</subsheetid>
+    <display x="195" y="-45" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="c6d1a908-a631-49fd-9912-dd0c5b0bd380" name="Virksomhed" type="Collection">
+    <subsheetid>12a1ebd8-4210-4c59-9274-ee2542c86bfc</subsheetid>
+    <display x="195" y="-90" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="54e52ec7-284a-4923-9c11-2b7f5aed517f" name="Find markering" type="Action">
+    <subsheetid>12a1ebd8-4210-4c59-9274-ee2542c86bfc</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="105" y="0" />
+    <inputs>
+      <input type="collection" name="Collection In" friendlyname="Collection In" narrative="Input collection" expr="[Markeringer]" />
+      <input type="text" name="Filter" friendlyname="Filter" narrative="The filter to apply" expr="&quot;[id] = '09dd7a2d-10ab-4a9c-acb9-e30fa6df8309'&quot;" />
+    </inputs>
+    <outputs>
+      <output type="number" name="Count" friendlyname="Count" narrative="The amount of rows in the filtered collection" stage="" />
+      <output type="collection" name="Collection Out" friendlyname="Collection Out" narrative="The filtered collection" stage="Markering" />
+    </outputs>
+    <onsuccess>0ff3e7a4-1bb5-4a22-9d7c-099cdbebff96</onsuccess>
+    <resource object="Utility - Odk Linq" action="Filter" />
+  </stage>
+  <stage stageid="b5dd5cd2-26d4-47e8-87ba-cb046c8cbb15" name="Klargør body" type="MultipleCalculation">
+    <subsheetid>12a1ebd8-4210-4c59-9274-ee2542c86bfc</subsheetid>
+    <loginhibit />
+    <display x="0" y="75" />
+    <onsuccess>648b4945-399d-47f9-9e30-2c613c21dabf</onsuccess>
+    <steps>
+      <calculation expression="Replace([Body], &quot;{{TAGASSID}}&quot;, [Markering.id])" stage="Body" />
+      <calculation expression="Replace([Body], &quot;{{TAGEND}}&quot;, FormatDateTime([Slutdato], &quot;yyyy-MM-ddT22:00:00Z&quot;))" stage="Body" />
+      <calculation expression="Replace([Body], &quot;{{TAGID}}&quot;, [Markering.tag.id])" stage="Body" />
+    </steps>
+  </stage>
+  <stage stageid="5716b44c-cd1a-4faa-9134-93b70ae338de" name="Slutdato" type="Data">
+    <subsheetid>12a1ebd8-4210-4c59-9274-ee2542c86bfc</subsheetid>
+    <display x="-195" y="30" w="120" h="30" />
+    <datatype>date</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="b438dfbf-1eb9-4818-984c-a2d3bd904df9" name="Fjern sagsbehandler" type="SubSheetInfo">
+    <subsheetid>16b558b7-8b0a-42aa-a3f1-82f3c72b5b05</subsheetid>
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="c7757c49-776e-4640-b8ff-9b5d8e0953b9" name="Start" type="Start">
+    <subsheetid>16b558b7-8b0a-42aa-a3f1-82f3c72b5b05</subsheetid>
+    <loginhibit />
+    <display x="0" y="-60" />
+    <inputs>
+      <input type="collection" name="Virksomhed" stage="Virksomhed" />
+      <input type="text" name="Sagsbehandler ID" stage="Caseworkerid" />
+    </inputs>
+    <onsuccess>3d647848-102f-4504-ae12-0d190ece2c53</onsuccess>
+  </stage>
+  <stage stageid="759ada8d-b803-4872-9a6c-5225c9c1cca8" name="End" type="End">
+    <subsheetid>16b558b7-8b0a-42aa-a3f1-82f3c72b5b05</subsheetid>
+    <loginhibit />
+    <display x="0" y="300" />
+    <outputs>
+      <output type="flag" name="Succes" stage="Succes" />
+    </outputs>
+  </stage>
+  <stage stageid="f0e32d6a-7793-4dcc-919d-2dd532ed3088" name="Input" type="Block">
+    <subsheetid>16b558b7-8b0a-42aa-a3f1-82f3c72b5b05</subsheetid>
+    <display x="-270" y="-45" w="150" h="105" />
+    <font family="Segoe UI" size="10" style="Regular" color="339966" />
+  </stage>
+  <stage stageid="6229b62b-ee52-4883-bce8-418c1e03aef0" name="Variabler" type="Block">
+    <subsheetid>16b558b7-8b0a-42aa-a3f1-82f3c72b5b05</subsheetid>
+    <display x="-270" y="135" w="150" h="150" />
+    <font family="Segoe UI" size="10" style="Regular" color="666699" />
+  </stage>
+  <stage stageid="56d4747f-cf6a-4c6a-9c5e-e673026fb896" name="Konstanter" type="Block">
+    <subsheetid>16b558b7-8b0a-42aa-a3f1-82f3c72b5b05</subsheetid>
+    <display x="-270" y="75" w="150" h="45" />
+    <font family="Segoe UI" size="10" style="Regular" color="008080" />
+  </stage>
+  <stage stageid="3432657a-6f28-4afa-9a6f-01ad31c64bd5" name="Output" type="Block">
+    <subsheetid>16b558b7-8b0a-42aa-a3f1-82f3c72b5b05</subsheetid>
+    <display x="-270" y="300" w="150" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="800080" />
+  </stage>
+  <stage stageid="9cd8663e-ea7a-4484-8b9f-ef5e8606c4cd" name="Start Momemtum (test)" type="Action">
+    <subsheetid>16b558b7-8b0a-42aa-a3f1-82f3c72b5b05</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="105" y="-120" />
+    <inputs>
+      <input type="text" name="Credentials" friendlyname="Credentials" expr="&quot;KMD Momentum - edu&quot;" />
+    </inputs>
+    <onsuccess>8a2c18e5-aa75-4d1e-822c-e6bc4df2f361</onsuccess>
+    <resource object="Momentum - Core" action="Start" />
+  </stage>
+  <stage stageid="3d647848-102f-4504-ae12-0d190ece2c53" name="Anchor1" type="Anchor">
+    <subsheetid>16b558b7-8b0a-42aa-a3f1-82f3c72b5b05</subsheetid>
+    <loginhibit />
+    <display x="0" y="-15" w="10" h="10" />
+    <onsuccess>2bf37c83-d6e7-4ae2-b65e-60a1073afe2b</onsuccess>
+  </stage>
+  <stage stageid="f5e6187e-2c9e-44da-9164-0cb7ac3ce793" name="Statuskode" type="Data">
+    <subsheetid>16b558b7-8b0a-42aa-a3f1-82f3c72b5b05</subsheetid>
+    <display x="-195" y="255" w="120" h="30" />
+    <datatype>number</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="5b7c83d6-08fb-401a-aba9-8a1bc6160bfd" name="Debug" type="Block">
+    <subsheetid>16b558b7-8b0a-42aa-a3f1-82f3c72b5b05</subsheetid>
+    <loginhibit />
+    <display x="60" y="-150" w="90" h="105" />
+    <font family="Segoe UI" size="10" style="Regular" color="FFFF99" />
+  </stage>
+  <stage stageid="351556f8-5235-45db-91bb-21bf1a2c757f" name="Anchor2" type="Anchor">
+    <subsheetid>16b558b7-8b0a-42aa-a3f1-82f3c72b5b05</subsheetid>
+    <loginhibit />
+    <display x="210" y="-15" w="10" h="10" />
+    <onsuccess>ca553571-24a8-4263-9cdf-4cff4e3c60bd</onsuccess>
+  </stage>
+  <stage stageid="30fcdf45-bbc2-48d8-a420-d599f505708a" name="Start Momemtum (produktion)" type="Action">
+    <subsheetid>16b558b7-8b0a-42aa-a3f1-82f3c72b5b05</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="210" y="-120" />
+    <inputs>
+      <input type="text" name="Credentials" friendlyname="Credentials" expr="&quot;KMD Momentum - produktion&quot;" />
+    </inputs>
+    <onsuccess>351556f8-5235-45db-91bb-21bf1a2c757f</onsuccess>
+    <resource object="Momentum - Core" action="Start" />
+  </stage>
+  <stage stageid="c5a933e8-ea48-4280-9e4f-ca280ab62ebd" name="Debug" type="Block">
+    <subsheetid>16b558b7-8b0a-42aa-a3f1-82f3c72b5b05</subsheetid>
+    <loginhibit />
+    <display x="165" y="-150" w="90" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="FFFF99" />
+  </stage>
+  <stage stageid="bcebd237-3035-4e9b-bab1-058aa19c105e" name="Virksomhed" type="Collection">
+    <subsheetid>16b558b7-8b0a-42aa-a3f1-82f3c72b5b05</subsheetid>
+    <display x="-195" y="-15" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="8a2c18e5-aa75-4d1e-822c-e6bc4df2f361" name="Hent virksomhed" type="Action">
+    <subsheetid>16b558b7-8b0a-42aa-a3f1-82f3c72b5b05</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="105" y="-75" />
+    <inputs>
+      <input type="text" name="Cvr" friendlyname="Cvr" narrative="Cvr skal angives" expr="&quot;40223584&quot;" />
+      <input type="text" name="P-nummer" friendlyname="P-nummer" narrative="P-nummer er valgfri" expr="&quot;1024366037&quot;" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="Virksomhed" friendlyname="Virksomhed" stage="Virksomhed" />
+      <output type="number" name="Antal" friendlyname="Antal" stage="" />
+      <output type="flag" name="Succes" friendlyname="Succes" stage="" />
+    </outputs>
+    <onsuccess>ca553571-24a8-4263-9cdf-4cff4e3c60bd</onsuccess>
+    <resource object="Momentum - Virksomheder" action="Hent virksomhed" />
+  </stage>
+  <stage stageid="eeebd8bc-0403-4a81-8fc2-a82ed4462bd1" name="Virksomhedsinfo" type="Collection">
+    <subsheetid>16b558b7-8b0a-42aa-a3f1-82f3c72b5b05</subsheetid>
+    <display x="-195" y="165" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="abc9a9df-0a45-49c9-b3a2-b19a1e3989ba" name="Succes" type="Data">
+    <subsheetid>16b558b7-8b0a-42aa-a3f1-82f3c72b5b05</subsheetid>
+    <display x="-195" y="330" w="120" h="30" />
+    <datatype>flag</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="d5cc1997-b580-4eac-9508-fc1fecaba980" name="Opdater sagsbehandlere" type="Block">
+    <subsheetid>16b558b7-8b0a-42aa-a3f1-82f3c72b5b05</subsheetid>
+    <loginhibit />
+    <display x="-75" y="15" w="165" h="210" />
+    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
+  </stage>
+  <stage stageid="ca553571-24a8-4263-9cdf-4cff4e3c60bd" name="Anchor8" type="Anchor">
+    <subsheetid>16b558b7-8b0a-42aa-a3f1-82f3c72b5b05</subsheetid>
+    <loginhibit />
+    <display x="105" y="-15" w="10" h="10" />
+    <onsuccess>3d647848-102f-4504-ae12-0d190ece2c53</onsuccess>
+  </stage>
+  <stage stageid="2bf37c83-d6e7-4ae2-b65e-60a1073afe2b" name="Hent virksomhedsinfo" type="Action">
+    <subsheetid>16b558b7-8b0a-42aa-a3f1-82f3c72b5b05</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="0" y="60" w="90" h="30" />
+    <inputs>
+      <input type="text" name="Url" friendlyname="Url" expr="&quot;/punits/&quot;&amp;[Virksomhed.id]" />
+    </inputs>
+    <outputs>
+      <output type="number" name="Statuskode" friendlyname="Statuskode" narrative="Http statuskoden for kaldet" stage="Statuskode" />
+      <output type="collection" name="Data" friendlyname="Data" stage="Virksomhedsinfo" />
+      <output type="number" name="Antal" friendlyname="Antal" stage="" />
+      <output type="text" name="Json" friendlyname="Json" narrative="Det rå json output" stage="Json" />
+    </outputs>
+    <onsuccess>c629774d-e085-4074-bb04-1060539d4667</onsuccess>
+    <resource object="Momentum - Core" action="Get" />
+  </stage>
+  <stage stageid="a49b2915-9a96-4025-aa38-3461afdfadb4" name="Json" type="Data">
+    <subsheetid>16b558b7-8b0a-42aa-a3f1-82f3c72b5b05</subsheetid>
+    <display x="-195" y="210" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="0e49adfc-54fe-4726-88d2-1f8cf9adab4b" name="Find sagsbehandlere og fjern sagsbehandleren fra Json " type="Code">
+    <subsheetid>16b558b7-8b0a-42aa-a3f1-82f3c72b5b05</subsheetid>
+    <loginhibit />
+    <display x="0" y="150" w="120" h="30" />
+    <inputs>
+      <input type="text" name="CompanyJson" expr="[Json]" />
+      <input type="text" name="CaseworkerId" expr="[Caseworkerid]" />
+    </inputs>
+    <outputs>
+      <output type="text" name="NewJson" stage="Json" />
+    </outputs>
+    <onsuccess>e7a97501-5035-4c8b-a135-9e4c6df58561</onsuccess>
+    <code><![CDATA[var jsonObject = JObject.Parse(CompanyJson);
+
+JArray workers = (JArray)jsonObject["responsibleCaseworkers"];
+
+for (int i = workers.Count - 1; i >= 0; i--)
+        {
+            JObject fruit = (JObject)workers[i];
+            if ((string)fruit["caseworkerId"] == CaseworkerId)
+            {
+                workers.RemoveAt(i);
+            }
+        }
+
+NewJson = workers.ToString(Formatting.Indented);]]></code>
+  </stage>
+  <stage stageid="4016d521-2c3f-47e3-ac0d-38ff1a7e4881" name="Caseworkerid" type="Data">
+    <subsheetid>16b558b7-8b0a-42aa-a3f1-82f3c72b5b05</subsheetid>
+    <loginhibit />
+    <display x="-195" y="30" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="e7a97501-5035-4c8b-a135-9e4c6df58561" name="Opdater caseworkers" type="Action">
+    <subsheetid>16b558b7-8b0a-42aa-a3f1-82f3c72b5b05</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="0" y="195" w="90" h="30" />
+    <inputs>
+      <input type="text" name="Url" friendlyname="Url" expr="&quot;punits/&quot;&amp;[Virksomhed.id]&amp;&quot;/responsiblecaseworkers&quot;" />
+      <input type="text" name="Body" friendlyname="Body" expr="[Json]" />
+    </inputs>
+    <outputs>
+      <output type="number" name="Statuskode" friendlyname="Statuskode" narrative="Http statuskoden for kaldet" stage="Statuskode" />
+      <output type="collection" name="Data" friendlyname="Data" stage="" />
+      <output type="number" name="Antal" friendlyname="Antal" stage="" />
+      <output type="text" name="Json" friendlyname="Json" narrative="Det rå json output" stage="" />
+    </outputs>
+    <onsuccess>5b2887fc-ad8c-4f85-8d9f-031f7a145ee4</onsuccess>
+    <resource object="Momentum - Core" action="Put" />
+  </stage>
+  <stage stageid="5b2887fc-ad8c-4f85-8d9f-031f7a145ee4" name="Sæt succes" type="Calculation">
+    <subsheetid>16b558b7-8b0a-42aa-a3f1-82f3c72b5b05</subsheetid>
+    <loginhibit />
+    <display x="0" y="255" />
+    <onsuccess>759ada8d-b803-4872-9a6c-5225c9c1cca8</onsuccess>
+    <calculation expression="[Statuskode] = 200" stage="Succes" />
+  </stage>
+  <stage stageid="c629774d-e085-4074-bb04-1060539d4667" name="Succes?" type="Decision">
+    <subsheetid>16b558b7-8b0a-42aa-a3f1-82f3c72b5b05</subsheetid>
+    <loginhibit />
+    <display x="0" y="105" />
+    <decision expression="[Statuskode] = 200" />
+    <ontrue>0e49adfc-54fe-4726-88d2-1f8cf9adab4b</ontrue>
+    <onfalse>9f756766-c15e-4645-9066-fd9e88f8e38e</onfalse>
+  </stage>
+  <stage stageid="9f756766-c15e-4645-9066-fd9e88f8e38e" name="Sæt ikke succes" type="Calculation">
+    <subsheetid>16b558b7-8b0a-42aa-a3f1-82f3c72b5b05</subsheetid>
+    <loginhibit />
+    <display x="135" y="105" />
+    <onsuccess>c2002399-1965-4daa-a7b3-45eaa0169f0d</onsuccess>
+    <calculation expression="False" stage="Succes" />
+  </stage>
+  <stage stageid="c2002399-1965-4daa-a7b3-45eaa0169f0d" name="End5" type="End">
+    <subsheetid>16b558b7-8b0a-42aa-a3f1-82f3c72b5b05</subsheetid>
+    <loginhibit />
+    <display x="225" y="105" />
+    <outputs>
+      <output type="flag" name="Succes" stage="Succes" />
+    </outputs>
+  </stage>
+</process>

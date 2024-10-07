@@ -1,0 +1,272 @@
+﻿<process name="Nexus - Relationer" version="1.0" bpversion="6.10.5.64603" narrative="" byrefcollection="true" type="object" runmode="Exclusive" preferredid="8e3d8fa0-2a40-4697-a8db-1b9277fb78d0">
+  <appdef>
+    <element name="Application Root">
+      <id>8cb003ef-47b2-41e1-87ad-85d1ec2de1df</id>
+      <type>Application</type>
+      <datatype>unknown</datatype>
+      <diagnose>False</diagnose>
+    </element>
+  </appdef>
+  <view>
+    <camerax>0</camerax>
+    <cameray>0</cameray>
+    <zoom version="2">1.25</zoom>
+  </view>
+  <preconditions />
+  <endpoint narrative="" />
+  <subsheet subsheetid="727fb8f7-1c80-4be2-bcdd-33cda9020f8e" type="CleanUp" published="True">
+    <name>Clean Up</name>
+    <view>
+      <camerax>0</camerax>
+      <cameray>0</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <subsheet subsheetid="dfc7050e-8e76-4928-9fdc-93c6417346c2" type="Normal" published="True">
+    <name>Hent relationer</name>
+    <view>
+      <camerax>0</camerax>
+      <cameray>71</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <subsheet subsheetid="c5b0ef78-3ffe-4247-b1e1-b437a0840485" type="Normal" published="True">
+    <name>Slet relation</name>
+    <view>
+      <camerax>0</camerax>
+      <cameray>71</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <stage stageid="cec93fff-aa06-4a2b-ac76-1ff96ddf95e4" name="Start" type="Start">
+    <loginhibit />
+    <display x="15" y="-105" />
+    <onsuccess>baa96572-b141-4873-9bd0-214f1f785513</onsuccess>
+  </stage>
+  <stage stageid="baa96572-b141-4873-9bd0-214f1f785513" name="End" type="End">
+    <loginhibit />
+    <display x="15" y="90" />
+  </stage>
+  <stage stageid="90f73a14-9b12-490b-93cc-1ba39e16ba64" name="Stage1" type="ProcessInfo">
+    <display x="-195" y="-105" w="150" h="90" />
+    <references>
+      <reference>System.dll</reference>
+      <reference>System.Data.dll</reference>
+      <reference>System.Xml.dll</reference>
+      <reference>System.Drawing.dll</reference>
+    </references>
+    <imports>
+      <import>System</import>
+      <import>System.Drawing</import>
+      <import>System.Data</import>
+    </imports>
+    <language>csharp</language>
+    <globalcode><![CDATA[]]></globalcode>
+    <code><![CDATA[]]></code>
+  </stage>
+  <stage stageid="e3113815-2f13-49f9-8126-74e990b31d81" name="Clean Up" type="SubSheetInfo">
+    <subsheetid>727fb8f7-1c80-4be2-bcdd-33cda9020f8e</subsheetid>
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="d9e26f98-e0f1-45e9-8993-5916407bb32a" name="Start" type="Start">
+    <subsheetid>727fb8f7-1c80-4be2-bcdd-33cda9020f8e</subsheetid>
+    <loginhibit />
+    <display x="15" y="-105" />
+    <onsuccess>dac48cdd-07f7-4a68-b6b3-55b567ba47b5</onsuccess>
+  </stage>
+  <stage stageid="dac48cdd-07f7-4a68-b6b3-55b567ba47b5" name="End" type="End">
+    <subsheetid>727fb8f7-1c80-4be2-bcdd-33cda9020f8e</subsheetid>
+    <loginhibit />
+    <display x="15" y="90" />
+  </stage>
+  <stage stageid="6f960cfe-19af-4473-abfb-1037ffba1c59" name="Hent relationer" type="SubSheetInfo">
+    <subsheetid>dfc7050e-8e76-4928-9fdc-93c6417346c2</subsheetid>
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="32409f56-a583-4666-8911-8161c51f6bbb" name="Start" type="Start">
+    <subsheetid>dfc7050e-8e76-4928-9fdc-93c6417346c2</subsheetid>
+    <loginhibit />
+    <display x="15" y="-105" />
+    <inputs>
+      <input type="collection" name="Objekt" narrative="et objekt som indeholder &quot;related Activities&quot;" stage="Objekt" />
+    </inputs>
+    <onsuccess>c75fd08a-a34c-44f6-9bfa-7fed1a1d90ad</onsuccess>
+  </stage>
+  <stage stageid="15a601dc-332b-482e-9dcf-fc479f45f3d2" name="End" type="End">
+    <subsheetid>dfc7050e-8e76-4928-9fdc-93c6417346c2</subsheetid>
+    <loginhibit />
+    <display x="15" y="15" />
+    <outputs>
+      <output type="collection" name="Relationer" stage="Relationer" />
+      <output type="number" name="Antal" stage="Antal" />
+    </outputs>
+  </stage>
+  <stage stageid="21924f5e-7f26-4c9f-af6c-6016e7b52838" name="" type="Note">
+    <subsheetid>727fb8f7-1c80-4be2-bcdd-33cda9020f8e</subsheetid>
+    <narrative>Clean Up Page
+
+This is an optional page where you might choose to perform some finalisation (or "cleanup") tasks as your business object is closed down.
+
+The cleanup action will be called automatically immediately after closing your business object at the end of a business process.
+
+You will not be able to call this action from a business process, nor will it be called at any other time than before the disposal of the business object.</narrative>
+    <display x="-180" y="60" w="180" h="230" />
+  </stage>
+  <stage stageid="b22ed5e3-ae47-4130-b61e-342ba2d306d2" name="Input" type="Block">
+    <display x="-270" y="-45" w="150" h="45" />
+    <font family="Segoe UI" size="10" style="Regular" color="339966" />
+  </stage>
+  <stage stageid="fbd6da6b-8a77-42df-8540-bf898e6ea0df" name="Variabler" type="Block">
+    <display x="-270" y="75" w="150" h="45" />
+    <font family="Segoe UI" size="10" style="Regular" color="666699" />
+  </stage>
+  <stage stageid="62ff65ad-958d-4de3-9e73-ba5ea1fa9e0d" name="Konstanter" type="Block">
+    <display x="-270" y="15" w="150" h="45" />
+    <font family="Segoe UI" size="10" style="Regular" color="008080" />
+  </stage>
+  <stage stageid="feb7f54a-4a2a-4f15-898d-66de332ee562" name="Output" type="Block">
+    <display x="-270" y="135" w="150" h="45" />
+    <font family="Segoe UI" size="10" style="Regular" color="800080" />
+  </stage>
+  <stage stageid="61dea802-dfc8-4041-a769-bf6644d7b0af" name="Input" type="Block">
+    <subsheetid>dfc7050e-8e76-4928-9fdc-93c6417346c2</subsheetid>
+    <display x="-270" y="-45" w="150" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="339966" />
+  </stage>
+  <stage stageid="abc1eab1-c9f4-4268-990b-c98f39f17ce5" name="Variabler" type="Block">
+    <subsheetid>dfc7050e-8e76-4928-9fdc-93c6417346c2</subsheetid>
+    <display x="-270" y="90" w="150" h="45" />
+    <font family="Segoe UI" size="10" style="Regular" color="666699" />
+  </stage>
+  <stage stageid="1a76de4e-d403-4313-bca1-c15430d31b43" name="Konstanter" type="Block">
+    <subsheetid>dfc7050e-8e76-4928-9fdc-93c6417346c2</subsheetid>
+    <display x="-270" y="30" w="150" h="45" />
+    <font family="Segoe UI" size="10" style="Regular" color="008080" />
+  </stage>
+  <stage stageid="713207b7-1894-432f-87e6-da8fcbfca025" name="Output" type="Block">
+    <subsheetid>dfc7050e-8e76-4928-9fdc-93c6417346c2</subsheetid>
+    <display x="-270" y="150" w="150" h="105" />
+    <font family="Segoe UI" size="10" style="Regular" color="800080" />
+  </stage>
+  <stage stageid="06d8f9ed-527c-4a7e-a48a-f6747f51e604" name="Objekt" type="Collection">
+    <subsheetid>dfc7050e-8e76-4928-9fdc-93c6417346c2</subsheetid>
+    <display x="-195" y="-15" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="fa060123-07d6-4b7a-b49f-223d7bf488d1" name="Relationer" type="Collection">
+    <subsheetid>dfc7050e-8e76-4928-9fdc-93c6417346c2</subsheetid>
+    <display x="-195" y="180" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="c75fd08a-a34c-44f6-9bfa-7fed1a1d90ad" name="Nexus - Core::Get" type="Action">
+    <subsheetid>dfc7050e-8e76-4928-9fdc-93c6417346c2</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="15" y="-45" />
+    <inputs>
+      <input type="text" name="Url" friendlyname="Url" expr="[Objekt._links.relatedActivities]" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="Data" friendlyname="Data" stage="Relationer" />
+      <output type="number" name="Antal" friendlyname="Antal" stage="Antal" />
+      <output type="text" name="Json" friendlyname="Json" narrative="Det rå json output" stage="" />
+      <output type="number" name="Statuskode" friendlyname="Statuskode" narrative="Http statuskoden for kaldet" stage="" />
+    </outputs>
+    <onsuccess>15a601dc-332b-482e-9dcf-fc479f45f3d2</onsuccess>
+    <resource object="Nexus - Core" action="Get" />
+  </stage>
+  <stage stageid="af171813-73f5-46d4-96ef-4e8ecced2735" name="Antal" type="Data">
+    <subsheetid>dfc7050e-8e76-4928-9fdc-93c6417346c2</subsheetid>
+    <display x="-195" y="225" w="120" h="30" />
+    <datatype>number</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="6b03ae92-0ef3-4bd4-94b9-5eae799ab3cd" name="Hent relationer" type="Block">
+    <subsheetid>dfc7050e-8e76-4928-9fdc-93c6417346c2</subsheetid>
+    <loginhibit />
+    <display x="-90" y="-75" w="225" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
+  </stage>
+  <stage stageid="8119c613-a977-402f-b456-026e71df1b75" name="Slet relation" type="SubSheetInfo">
+    <subsheetid>c5b0ef78-3ffe-4247-b1e1-b437a0840485</subsheetid>
+    <narrative>deleteActivityLink</narrative>
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="15e7f076-9a28-4d6b-b2be-f2f8a8f1efd0" name="Start" type="Start">
+    <subsheetid>c5b0ef78-3ffe-4247-b1e1-b437a0840485</subsheetid>
+    <loginhibit />
+    <display x="15" y="-105" />
+    <inputs>
+      <input type="collection" name="Relation" stage="Relation" />
+    </inputs>
+    <onsuccess>59a578aa-971c-4d3b-8cbc-de501c113b26</onsuccess>
+  </stage>
+  <stage stageid="9e3bcc56-bd17-4f4e-84e1-fe47df4e7984" name="End" type="End">
+    <subsheetid>c5b0ef78-3ffe-4247-b1e1-b437a0840485</subsheetid>
+    <loginhibit />
+    <display x="15" y="15" />
+    <outputs>
+      <output type="flag" name="Succes" stage="Succes" />
+    </outputs>
+  </stage>
+  <stage stageid="d83d3973-a152-41cb-97af-281b2f729527" name="Input" type="Block">
+    <subsheetid>c5b0ef78-3ffe-4247-b1e1-b437a0840485</subsheetid>
+    <display x="-270" y="-45" w="150" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="339966" />
+  </stage>
+  <stage stageid="b7f065f0-320e-4fd5-9663-dce51c115a24" name="Variabler" type="Block">
+    <subsheetid>c5b0ef78-3ffe-4247-b1e1-b437a0840485</subsheetid>
+    <display x="-270" y="90" w="150" h="45" />
+    <font family="Segoe UI" size="10" style="Regular" color="666699" />
+  </stage>
+  <stage stageid="7adb7223-8b1f-4394-bb3c-676e9dda2817" name="Konstanter" type="Block">
+    <subsheetid>c5b0ef78-3ffe-4247-b1e1-b437a0840485</subsheetid>
+    <display x="-270" y="30" w="150" h="45" />
+    <font family="Segoe UI" size="10" style="Regular" color="008080" />
+  </stage>
+  <stage stageid="d68c4b2f-8a17-4328-ad2a-be98b031e164" name="Output" type="Block">
+    <subsheetid>c5b0ef78-3ffe-4247-b1e1-b437a0840485</subsheetid>
+    <display x="-270" y="150" w="150" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="800080" />
+  </stage>
+  <stage stageid="67c724ed-6254-43d1-91f9-0fdcf8a327ec" name="Relation" type="Collection">
+    <subsheetid>c5b0ef78-3ffe-4247-b1e1-b437a0840485</subsheetid>
+    <display x="-195" y="-15" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="fe370cc0-e3b2-4fbf-918a-5fa35065129f" name="Slet relation" type="Block">
+    <subsheetid>c5b0ef78-3ffe-4247-b1e1-b437a0840485</subsheetid>
+    <loginhibit />
+    <display x="-90" y="-75" w="225" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
+  </stage>
+  <stage stageid="59a578aa-971c-4d3b-8cbc-de501c113b26" name="Slet relation" type="Action">
+    <subsheetid>c5b0ef78-3ffe-4247-b1e1-b437a0840485</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="15" y="-45" />
+    <inputs>
+      <input type="text" name="Url" friendlyname="Url" expr="[Relation._links.deleteActivityLink]" />
+    </inputs>
+    <outputs>
+      <output type="flag" name="Succes" friendlyname="Succes" stage="Succes" />
+      <output type="number" name="Statuskode" friendlyname="Statuskode" narrative="Http statuskoden for kaldet" stage="" />
+    </outputs>
+    <onsuccess>9e3bcc56-bd17-4f4e-84e1-fe47df4e7984</onsuccess>
+    <resource object="Nexus - Core" action="Delete" />
+  </stage>
+  <stage stageid="e100694c-7f0b-4779-89ba-fdd180290c67" name="Succes" type="Data">
+    <subsheetid>c5b0ef78-3ffe-4247-b1e1-b437a0840485</subsheetid>
+    <display x="-195" y="180" w="120" h="30" />
+    <datatype>flag</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+</process>

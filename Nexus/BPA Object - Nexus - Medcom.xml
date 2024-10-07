@@ -1,0 +1,1526 @@
+﻿<process name="Nexus - Medcom" version="1.0" bpversion="7.3.0.9110" narrative="" byrefcollection="true" processrunningmessage="" disableversioning="false" type="object" runmode="Exclusive" preferredid="326f9611-e605-47a3-adfa-82245b6278c1">
+  <appdef>
+    <element name="Application Root">
+      <id>fe840200-2112-4e62-a6ce-4abbecb551d6</id>
+      <type>Application</type>
+      <basetype>Application</basetype>
+      <datatype>unknown</datatype>
+      <diagnose>False</diagnose>
+    </element>
+  </appdef>
+  <view>
+    <camerax>0</camerax>
+    <cameray>0</cameray>
+    <zoom version="2">1.25</zoom>
+  </view>
+  <preconditions />
+  <endpoint narrative="" />
+  <subsheet subsheetid="dbeb762f-8a83-4595-abe7-26d69b5b6524" type="CleanUp" published="True">
+    <name>Clean Up</name>
+    <view>
+      <camerax>0</camerax>
+      <cameray>0</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <subsheet subsheetid="1dde8cd9-6af8-4a6d-bc0c-1669bba24416" type="Normal" published="True">
+    <name>Hent indbakke</name>
+    <view>
+      <camerax>0</camerax>
+      <cameray>112</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <subsheet subsheetid="db9c5e0d-740c-46d1-abc9-73e90d55993e" type="Normal" published="True">
+    <name>Hent besked</name>
+    <view>
+      <camerax>0</camerax>
+      <cameray>0</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <subsheet subsheetid="e20dc822-64ff-4a26-86e9-e70ae6843ca2" type="Normal" published="True">
+    <name>Accepter besked</name>
+    <view>
+      <camerax>0</camerax>
+      <cameray>0</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <subsheet subsheetid="2b3ac3dd-4488-4e8c-9982-e9a7292fa440" type="Normal" published="True">
+    <name>Tildel besked til forløb</name>
+    <view>
+      <camerax>0</camerax>
+      <cameray>63</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <subsheet subsheetid="8abc48ab-f3b3-46cc-a9b5-a823e2c6de85" type="Normal" published="True">
+    <name>Hent Medcom xml</name>
+    <view>
+      <camerax>0</camerax>
+      <cameray>-84</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <subsheet subsheetid="ede10ce0-ec5f-4280-9ca8-b29054673be0" type="Normal" published="True">
+    <name>Send MedCom korrespondance</name>
+    <view>
+      <camerax>0</camerax>
+      <cameray>105</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <stage stageid="bcf8e061-a79a-4b1f-9890-92f7b52d5674" name="Start" type="Start">
+    <loginhibit />
+    <display x="15" y="-105" />
+    <onsuccess>f3dc13b0-da41-497a-a15e-f6e7f15db751</onsuccess>
+  </stage>
+  <stage stageid="f3dc13b0-da41-497a-a15e-f6e7f15db751" name="End" type="End">
+    <loginhibit />
+    <display x="15" y="90" />
+  </stage>
+  <stage stageid="16647123-a550-4a04-a2c6-30400bd8e833" name="Stage1" type="ProcessInfo">
+    <display x="-195" y="-105" w="150" h="90" />
+    <references>
+      <reference>System.dll</reference>
+      <reference>System.Data.dll</reference>
+      <reference>System.Xml.dll</reference>
+      <reference>System.Drawing.dll</reference>
+      <reference>Newtonsoft.Json.dll</reference>
+      <reference>System.Core.dll</reference>
+      <reference>System.Xml.Linq.dll</reference>
+    </references>
+    <imports>
+      <import>System</import>
+      <import>System.Drawing</import>
+      <import>System.Data</import>
+      <import>Newtonsoft.Json</import>
+      <import>Newtonsoft.Json.Linq</import>
+      <import>System.Collections.Generic</import>
+      <import>System.Linq</import>
+    </imports>
+    <language>csharp</language>
+    <globalcode><![CDATA[]]></globalcode>
+    <code><![CDATA[        public JToken First(JToken token, Func<JToken, bool> condition, string nodeName = "children")
+        {
+            JToken result = null;
+
+            Traverse(token, (element) =>
+            {
+                if (condition(element) && result == null)
+                    result = element;
+            },nodeName);
+
+            return result;
+
+        }
+
+        public IEnumerable<JToken> All(JToken token, Func<JToken, bool> condition, string nodeName = "children")
+        {
+
+            List<JToken> result = new List<JToken>();
+
+            Traverse(token, (element) =>
+             {
+                 if (condition(element))
+                     result.Add(element);
+             },nodeName);
+
+            return result;
+        }
+		
+		
+        public delegate void TraverseCallback(JToken token);
+
+        public void Traverse(JToken root, TraverseCallback callback, string nodeName = "children")
+        {
+
+            callback(root);
+
+            if (root[nodeName] != null)
+            {
+                foreach (var token in root[nodeName] as JArray)
+                    Traverse(token, callback,nodeName);
+            }
+
+        }
+		
+]]></code>
+  </stage>
+  <stage stageid="5d78fc5a-c75d-4675-8174-13977c748b55" name="Clean Up" type="SubSheetInfo">
+    <subsheetid>dbeb762f-8a83-4595-abe7-26d69b5b6524</subsheetid>
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="1dd6f6e1-adff-4588-8731-0847a75749bd" name="Start" type="Start">
+    <subsheetid>dbeb762f-8a83-4595-abe7-26d69b5b6524</subsheetid>
+    <loginhibit />
+    <display x="15" y="-105" />
+    <onsuccess>a7a173da-7dfb-47f1-902a-4308cdb73b1c</onsuccess>
+  </stage>
+  <stage stageid="a7a173da-7dfb-47f1-902a-4308cdb73b1c" name="End" type="End">
+    <subsheetid>dbeb762f-8a83-4595-abe7-26d69b5b6524</subsheetid>
+    <loginhibit />
+    <display x="15" y="90" />
+  </stage>
+  <stage stageid="6254bf13-7f28-4e03-9fa6-8e2111c39f96" name="Hent indbakke" type="SubSheetInfo">
+    <subsheetid>1dde8cd9-6af8-4a6d-bc0c-1669bba24416</subsheetid>
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="c00a7473-1b63-4ef3-a233-a388932054ca" name="Start" type="Start">
+    <subsheetid>1dde8cd9-6af8-4a6d-bc0c-1669bba24416</subsheetid>
+    <loginhibit />
+    <display x="0" y="-105" />
+    <inputs>
+      <input type="collection" name="Borger" stage="Borger" />
+    </inputs>
+    <onsuccess>6e8278b1-3a3c-45d2-aab4-1cc42c75338f</onsuccess>
+  </stage>
+  <stage stageid="8d4ae4f5-6a12-4297-ad19-d399dde14ed6" name="End" type="End">
+    <subsheetid>1dde8cd9-6af8-4a6d-bc0c-1669bba24416</subsheetid>
+    <loginhibit />
+    <display x="0" y="405" />
+    <outputs>
+      <output type="collection" name="Beskedreferencer" stage="Beskedreferencer" />
+      <output type="number" name="Antal" stage="Antal" />
+    </outputs>
+  </stage>
+  <stage stageid="bcff63a5-1fd0-44c0-a9a8-17b449d2fc97" name="Input" type="Block">
+    <display x="-270" y="-45" w="150" h="45" />
+    <font family="Segoe UI" size="10" style="Regular" color="339966" />
+  </stage>
+  <stage stageid="2f9db182-8c37-42e1-95d5-3eb770c7fa3d" name="Variabler" type="Block">
+    <display x="-270" y="75" w="150" h="45" />
+    <font family="Segoe UI" size="10" style="Regular" color="666699" />
+  </stage>
+  <stage stageid="fb53e7e6-0616-4c5e-9d89-52f2e1bb94de" name="Konstanter" type="Block">
+    <display x="-270" y="15" w="150" h="45" />
+    <font family="Segoe UI" size="10" style="Regular" color="008080" />
+  </stage>
+  <stage stageid="2cc76a7c-14d8-4658-bcf7-5e8116693e1c" name="Output" type="Block">
+    <display x="-270" y="135" w="150" h="45" />
+    <font family="Segoe UI" size="10" style="Regular" color="800080" />
+  </stage>
+  <stage stageid="73714628-925e-4608-9930-2eb98b4f63a1" name="Input" type="Block">
+    <subsheetid>1dde8cd9-6af8-4a6d-bc0c-1669bba24416</subsheetid>
+    <display x="-270" y="-45" w="150" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="339966" />
+  </stage>
+  <stage stageid="1acbb23e-de0f-49ac-b054-451c3354edc1" name="Variabler" type="Block">
+    <subsheetid>1dde8cd9-6af8-4a6d-bc0c-1669bba24416</subsheetid>
+    <display x="-270" y="105" w="150" h="150" />
+    <font family="Segoe UI" size="10" style="Regular" color="666699" />
+  </stage>
+  <stage stageid="e8d81bd5-4965-45d1-af6f-713b1c68aba6" name="Konstanter" type="Block">
+    <subsheetid>1dde8cd9-6af8-4a6d-bc0c-1669bba24416</subsheetid>
+    <display x="-270" y="45" w="150" h="45" />
+    <font family="Segoe UI" size="10" style="Regular" color="008080" />
+  </stage>
+  <stage stageid="99aee09d-9349-49cd-bf77-ca9980741fb8" name="Output" type="Block">
+    <subsheetid>1dde8cd9-6af8-4a6d-bc0c-1669bba24416</subsheetid>
+    <display x="-270" y="270" w="150" h="105" />
+    <font family="Segoe UI" size="10" style="Regular" color="800080" />
+  </stage>
+  <stage stageid="77ec77de-e2aa-4a09-881d-ae541fe0b203" name="Borger" type="Collection">
+    <subsheetid>1dde8cd9-6af8-4a6d-bc0c-1669bba24416</subsheetid>
+    <display x="-195" y="-15" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="bbf714ac-a072-4b35-a3fb-21ad06bc47e0" name="Hent indbakken" type="Action">
+    <subsheetid>1dde8cd9-6af8-4a6d-bc0c-1669bba24416</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="0" y="-30" />
+    <inputs>
+      <input type="text" name="Url" friendlyname="Url" expr="[Borger._links.inboxMessages]" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="Data" friendlyname="Data" stage="Indbakke" />
+      <output type="number" name="Antal" friendlyname="Antal" stage="" />
+      <output type="text" name="Json" friendlyname="Json" narrative="Det rå json output" stage="" />
+      <output type="number" name="Statuskode" friendlyname="Statuskode" narrative="Http statuskoden for kaldet" stage="" />
+    </outputs>
+    <onsuccess>6be5b55d-8e49-418c-ac19-d678fef765e3</onsuccess>
+    <resource object="Nexus - Core" action="Get" />
+  </stage>
+  <stage stageid="6e8278b1-3a3c-45d2-aab4-1cc42c75338f" name="Anchor1" type="Anchor">
+    <subsheetid>1dde8cd9-6af8-4a6d-bc0c-1669bba24416</subsheetid>
+    <loginhibit />
+    <display x="0" y="-75" w="10" h="10" />
+    <onsuccess>bbf714ac-a072-4b35-a3fb-21ad06bc47e0</onsuccess>
+  </stage>
+  <stage stageid="738fbd57-a303-4944-8f1e-162a0292c739" name="Indbakke" type="Collection">
+    <subsheetid>1dde8cd9-6af8-4a6d-bc0c-1669bba24416</subsheetid>
+    <display x="-195" y="135" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="310315f1-e798-430f-bf0f-9756783b01cd" name="Læs indbakke" type="Block">
+    <subsheetid>1dde8cd9-6af8-4a6d-bc0c-1669bba24416</subsheetid>
+    <loginhibit />
+    <display x="-90" y="-60" w="255" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
+  </stage>
+  <stage stageid="1ac119d7-ad59-4007-801b-2b25f8083e20" name="Nexus - Core::Start" type="Action">
+    <subsheetid>1dde8cd9-6af8-4a6d-bc0c-1669bba24416</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="135" y="-165" />
+    <inputs>
+      <input type="text" name="Credentials" friendlyname="Credentials" expr="&quot;KMD Nexus - produktion&quot;" />
+    </inputs>
+    <onsuccess>2c9bc98a-19aa-44da-aa8c-9c452f757f7b</onsuccess>
+    <resource object="Nexus - Core" action="Start" />
+  </stage>
+  <stage stageid="59d1edfb-6b4f-456f-88ed-3463d8d7d662" name="Debug" type="Block">
+    <subsheetid>1dde8cd9-6af8-4a6d-bc0c-1669bba24416</subsheetid>
+    <loginhibit />
+    <display x="90" y="-195" w="90" h="105" />
+    <font family="Segoe UI" size="10" style="Regular" color="FFFF99" />
+  </stage>
+  <stage stageid="272460fe-eaf1-4909-9838-a4c927301a1e" name="Anchor4" type="Anchor">
+    <subsheetid>1dde8cd9-6af8-4a6d-bc0c-1669bba24416</subsheetid>
+    <loginhibit />
+    <display x="135" y="-75" w="10" h="10" />
+    <onsuccess>6e8278b1-3a3c-45d2-aab4-1cc42c75338f</onsuccess>
+  </stage>
+  <stage stageid="2c9bc98a-19aa-44da-aa8c-9c452f757f7b" name="Hent borger" type="Action">
+    <subsheetid>1dde8cd9-6af8-4a6d-bc0c-1669bba24416</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="135" y="-120" />
+    <inputs>
+      <input type="text" name="Cpr" friendlyname="Cpr" expr="&quot;xxxxxxxxxx&quot;" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="Borger" friendlyname="Borger" stage="Borger" />
+    </outputs>
+    <onsuccess>272460fe-eaf1-4909-9838-a4c927301a1e</onsuccess>
+    <resource object="Nexus - Borgere og forløb" action="Hent borger" />
+  </stage>
+  <stage stageid="9f4ce780-8812-4381-ad12-d0724e5c9715" name="Hent siderne" type="Block">
+    <subsheetid>1dde8cd9-6af8-4a6d-bc0c-1669bba24416</subsheetid>
+    <loginhibit />
+    <display x="-90" y="15" w="255" h="105" />
+    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
+  </stage>
+  <stage stageid="d536582b-70c7-49e1-85b0-3e95e33ad59d" name="Hent sider" type="Calculation">
+    <subsheetid>1dde8cd9-6af8-4a6d-bc0c-1669bba24416</subsheetid>
+    <loginhibit />
+    <display x="0" y="90" />
+    <onsuccess>f120b9c4-85c2-4d32-9099-738cf0fe5e6f</onsuccess>
+    <calculation expression="[Indbakke.pages]" stage="Sider" />
+  </stage>
+  <stage stageid="6be5b55d-8e49-418c-ac19-d678fef765e3" name="Tom liste?" type="Decision">
+    <subsheetid>1dde8cd9-6af8-4a6d-bc0c-1669bba24416</subsheetid>
+    <loginhibit />
+    <display x="0" y="45" />
+    <decision expression="[Indbakke.totalItems] = 0" />
+    <ontrue>eda38276-120e-4466-b6c2-4743e71d5cc7</ontrue>
+    <onfalse>d536582b-70c7-49e1-85b0-3e95e33ad59d</onfalse>
+  </stage>
+  <stage stageid="eda38276-120e-4466-b6c2-4743e71d5cc7" name="Antal = 0" type="Calculation">
+    <subsheetid>1dde8cd9-6af8-4a6d-bc0c-1669bba24416</subsheetid>
+    <loginhibit />
+    <display x="75" y="45" />
+    <onsuccess>8e243779-ed9a-4b8c-93b2-c39d3596c2a6</onsuccess>
+    <calculation expression="0" stage="Antal" />
+  </stage>
+  <stage stageid="8e243779-ed9a-4b8c-93b2-c39d3596c2a6" name="End1" type="End">
+    <subsheetid>1dde8cd9-6af8-4a6d-bc0c-1669bba24416</subsheetid>
+    <loginhibit />
+    <display x="225" y="45" />
+    <outputs>
+      <output type="collection" name="Beskedreferencer" stage="Beskedreferencer" />
+      <output type="number" name="Antal" stage="Antal" />
+    </outputs>
+  </stage>
+  <stage stageid="7e0a8542-5da4-4ef4-88c3-cb1a93ab280e" name="Hent sidernes indhold" type="Block">
+    <subsheetid>1dde8cd9-6af8-4a6d-bc0c-1669bba24416</subsheetid>
+    <loginhibit />
+    <display x="-90" y="135" w="255" h="240" />
+    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
+  </stage>
+  <stage stageid="f120b9c4-85c2-4d32-9099-738cf0fe5e6f" name="Loop Sider" type="LoopStart">
+    <subsheetid>1dde8cd9-6af8-4a6d-bc0c-1669bba24416</subsheetid>
+    <loginhibit />
+    <display x="0" y="165" />
+    <onsuccess>ad7468e9-487a-4114-b667-dccb0d844bb5</onsuccess>
+    <groupid>06801569-1728-4bee-b574-ab7fa8b2c5e3</groupid>
+    <looptype>ForEach</looptype>
+    <loopdata>Sider</loopdata>
+  </stage>
+  <stage stageid="d963cf55-fd85-4a2e-a5dd-3030117b4945" name="Loop Sider" type="LoopEnd">
+    <subsheetid>1dde8cd9-6af8-4a6d-bc0c-1669bba24416</subsheetid>
+    <loginhibit />
+    <display x="0" y="300" />
+    <onsuccess>d7ba35e1-cb55-41a6-806a-2e54187ff871</onsuccess>
+    <groupid>06801569-1728-4bee-b574-ab7fa8b2c5e3</groupid>
+  </stage>
+  <stage stageid="ad7468e9-487a-4114-b667-dccb0d844bb5" name="Hent sidens indhold" type="Action">
+    <subsheetid>1dde8cd9-6af8-4a6d-bc0c-1669bba24416</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="0" y="210" />
+    <inputs>
+      <input type="text" name="Url" friendlyname="Url" expr="[Sider._links.self]" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="Data" friendlyname="Data" stage="Data" />
+      <output type="number" name="Antal" friendlyname="Antal" stage="" />
+      <output type="text" name="Json" friendlyname="Json" narrative="Det rå json output" stage="" />
+      <output type="number" name="Statuskode" friendlyname="Statuskode" narrative="Http statuskoden for kaldet" stage="" />
+    </outputs>
+    <onsuccess>35e41393-fd08-40c2-a0ef-463a765e9636</onsuccess>
+    <resource object="Nexus - Core" action="Get" />
+  </stage>
+  <stage stageid="35e41393-fd08-40c2-a0ef-463a765e9636" name="Tilføj til beskeder" type="Action">
+    <subsheetid>1dde8cd9-6af8-4a6d-bc0c-1669bba24416</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="0" y="255" />
+    <inputs>
+      <input type="collection" name="Main Collection" friendlyname="Main Collection" narrative="The collection to append to." expr="[Beskedreferencer]" />
+      <input type="collection" name="Collection to Append" friendlyname="Collection to Append" narrative="The collection to append." expr="[Data]" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="Combined Collection" friendlyname="Combined Collection" narrative="The combined collection." stage="Beskedreferencer" />
+    </outputs>
+    <onsuccess>d963cf55-fd85-4a2e-a5dd-3030117b4945</onsuccess>
+    <resource object="Utility - Collection Manipulation" action="Append Rows to Collection" />
+  </stage>
+  <stage stageid="d7ba35e1-cb55-41a6-806a-2e54187ff871" name="Tæl beskeder" type="Action">
+    <subsheetid>1dde8cd9-6af8-4a6d-bc0c-1669bba24416</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="0" y="345" />
+    <inputs>
+      <input type="text" name="Collection Name" friendlyname="Collection Name" narrative="The name of the collection to act upon" expr="&quot;Beskedreferencer&quot;" />
+    </inputs>
+    <outputs>
+      <output type="number" name="Count" friendlyname="Count" narrative="The number of rows counted in the collection" stage="Antal" />
+    </outputs>
+    <onsuccess>8d4ae4f5-6a12-4297-ad19-d399dde14ed6</onsuccess>
+    <resource object="Blueprism.AutomateProcessCore.clsCollectionActions" action="Count Rows" />
+  </stage>
+  <stage stageid="a791c7b5-c87c-4138-b0e1-0efa5d270448" name="Antal" type="Data">
+    <subsheetid>1dde8cd9-6af8-4a6d-bc0c-1669bba24416</subsheetid>
+    <loginhibit />
+    <display x="-195" y="345" w="120" h="30" />
+    <datatype>number</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="3792e4d1-70d3-4478-b039-dd77386cba10" name="Sider" type="Collection">
+    <subsheetid>1dde8cd9-6af8-4a6d-bc0c-1669bba24416</subsheetid>
+    <loginhibit />
+    <display x="-195" y="180" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="2197b577-336b-4420-8e1f-cf79ed48ac83" name="Data" type="Collection">
+    <subsheetid>1dde8cd9-6af8-4a6d-bc0c-1669bba24416</subsheetid>
+    <display x="-195" y="225" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="01656388-99bc-48cc-973f-0274df28cef0" name="Beskedreferencer" type="Collection">
+    <subsheetid>1dde8cd9-6af8-4a6d-bc0c-1669bba24416</subsheetid>
+    <loginhibit />
+    <display x="-195" y="300" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="1f79bb99-8755-46a1-b54b-11272d6dca20" name="Hent Medcom xml" type="SubSheetInfo">
+    <subsheetid>8abc48ab-f3b3-46cc-a9b5-a823e2c6de85</subsheetid>
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="caebf739-3164-48c8-952e-3168dc00fbe8" name="Start" type="Start">
+    <subsheetid>8abc48ab-f3b3-46cc-a9b5-a823e2c6de85</subsheetid>
+    <loginhibit />
+    <display x="0" y="-105" />
+    <inputs>
+      <input type="collection" name="Beskedreference" narrative="eller en fuld besked" stage="Besked" />
+    </inputs>
+    <onsuccess>30454c94-3d78-4dfd-b0db-d578cc1da459</onsuccess>
+  </stage>
+  <stage stageid="585f4c8f-5f3d-4d8e-9082-66c122fb9cb6" name="End" type="End">
+    <subsheetid>8abc48ab-f3b3-46cc-a9b5-a823e2c6de85</subsheetid>
+    <loginhibit />
+    <display x="0" y="120" />
+    <outputs>
+      <output type="text" name="Xml" stage="Xml" />
+    </outputs>
+  </stage>
+  <stage stageid="b6b1bc22-b8ee-4754-93d5-e5d47e92610e" name="Nexus - Core::Start" type="Action">
+    <subsheetid>8abc48ab-f3b3-46cc-a9b5-a823e2c6de85</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="135" y="-210" />
+    <inputs>
+      <input type="text" name="Credentials" friendlyname="Credentials" expr="&quot;KMD Nexus - produktion&quot;" />
+    </inputs>
+    <onsuccess>80b48967-fd08-4dc8-85ca-a0d952e4e173</onsuccess>
+    <resource object="Nexus - Core" action="Start" />
+  </stage>
+  <stage stageid="1877df82-69a5-45dc-9f31-07525dd26e20" name="Debug" type="Block">
+    <subsheetid>8abc48ab-f3b3-46cc-a9b5-a823e2c6de85</subsheetid>
+    <loginhibit />
+    <display x="90" y="-240" w="165" h="150" />
+    <font family="Segoe UI" size="10" style="Regular" color="FFFF99" />
+  </stage>
+  <stage stageid="c7e88e00-2322-4537-89f5-f1bef1d65358" name="Anchor4" type="Anchor">
+    <subsheetid>8abc48ab-f3b3-46cc-a9b5-a823e2c6de85</subsheetid>
+    <loginhibit />
+    <display x="135" y="-75" w="10" h="10" />
+    <onsuccess>30454c94-3d78-4dfd-b0db-d578cc1da459</onsuccess>
+  </stage>
+  <stage stageid="80b48967-fd08-4dc8-85ca-a0d952e4e173" name="Hent borger" type="Action">
+    <subsheetid>8abc48ab-f3b3-46cc-a9b5-a823e2c6de85</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="135" y="-165" />
+    <inputs>
+      <input type="text" name="Cpr" friendlyname="Cpr" expr="&quot;xxxxxxxxxx&quot;" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="Borger" friendlyname="Borger" stage="Borger" />
+    </outputs>
+    <onsuccess>ccf538dc-920d-4ef4-b87b-40d7d836e361</onsuccess>
+    <resource object="Nexus - Borgere og forløb" action="Hent borger" />
+  </stage>
+  <stage stageid="0b41c7fd-d80a-4cba-a61e-55cc19bddd9b" name="Input" type="Block">
+    <subsheetid>8abc48ab-f3b3-46cc-a9b5-a823e2c6de85</subsheetid>
+    <display x="-270" y="-45" w="150" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="339966" />
+  </stage>
+  <stage stageid="00f41542-45d7-4c43-b08d-a8946a6cb325" name="Variabler" type="Block">
+    <subsheetid>8abc48ab-f3b3-46cc-a9b5-a823e2c6de85</subsheetid>
+    <display x="-270" y="90" w="150" h="45" />
+    <font family="Segoe UI" size="10" style="Regular" color="666699" />
+  </stage>
+  <stage stageid="f3876e7d-6647-4206-83cd-fe9f4966eb8f" name="Konstanter" type="Block">
+    <subsheetid>8abc48ab-f3b3-46cc-a9b5-a823e2c6de85</subsheetid>
+    <display x="-270" y="30" w="150" h="45" />
+    <font family="Segoe UI" size="10" style="Regular" color="008080" />
+  </stage>
+  <stage stageid="fbb0fc10-013b-489a-b5e7-00aa08edaaad" name="Output" type="Block">
+    <subsheetid>8abc48ab-f3b3-46cc-a9b5-a823e2c6de85</subsheetid>
+    <display x="-270" y="150" w="150" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="800080" />
+  </stage>
+  <stage stageid="30454c94-3d78-4dfd-b0db-d578cc1da459" name="Anchor2" type="Anchor">
+    <subsheetid>8abc48ab-f3b3-46cc-a9b5-a823e2c6de85</subsheetid>
+    <loginhibit />
+    <display x="0" y="-75" w="10" h="10" />
+    <onsuccess>d844c3b7-ba46-4e6d-83a9-a150fa50f354</onsuccess>
+  </stage>
+  <stage stageid="d844c3b7-ba46-4e6d-83a9-a150fa50f354" name="Hent hele beskeden" type="Action">
+    <subsheetid>8abc48ab-f3b3-46cc-a9b5-a823e2c6de85</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="0" y="-15" />
+    <inputs>
+      <input type="text" name="Url" friendlyname="Url" expr="[Besked._links.self]" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="Data" friendlyname="Data" stage="Besked" />
+      <output type="number" name="Antal" friendlyname="Antal" stage="" />
+      <output type="text" name="Json" friendlyname="Json" narrative="Det rå json output" stage="" />
+      <output type="number" name="Statuskode" friendlyname="Statuskode" narrative="Http statuskoden for kaldet" stage="" />
+    </outputs>
+    <onsuccess>ed8178eb-ccba-496e-a6e8-5cf473e0b95a</onsuccess>
+    <resource object="Nexus - Core" action="Get" />
+  </stage>
+  <stage stageid="ba2036de-de3b-4f32-8717-ca79d442f766" name="Læs indbakke" type="Block">
+    <subsheetid>8abc48ab-f3b3-46cc-a9b5-a823e2c6de85</subsheetid>
+    <loginhibit />
+    <display x="-90" y="-45" w="255" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
+  </stage>
+  <stage stageid="a5aebe65-424e-45ad-8cca-e26fd7ab0c19" name="Besked" type="Collection">
+    <subsheetid>8abc48ab-f3b3-46cc-a9b5-a823e2c6de85</subsheetid>
+    <loginhibit />
+    <display x="-195" y="-15" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="ccf538dc-920d-4ef4-b87b-40d7d836e361" name="Hent indbakke" type="SubSheet">
+    <subsheetid>8abc48ab-f3b3-46cc-a9b5-a823e2c6de85</subsheetid>
+    <loginhibit />
+    <display x="135" y="-120" />
+    <inputs>
+      <input type="collection" name="Borger" friendlyname="Borger" expr="[Borger]" />
+    </inputs>
+    <outputs>
+      <output type="number" name="Antal" friendlyname="Antal" stage="" />
+      <output type="collection" name="Beskedreferencer" friendlyname="Beskedreferencer" stage="" />
+    </outputs>
+    <onsuccess>c7e88e00-2322-4537-89f5-f1bef1d65358</onsuccess>
+    <processid>1dde8cd9-6af8-4a6d-bc0c-1669bba24416</processid>
+  </stage>
+  <stage stageid="e3aeacd3-5a9b-41fb-871b-3944c12467d5" name="Borger" type="Collection">
+    <subsheetid>8abc48ab-f3b3-46cc-a9b5-a823e2c6de85</subsheetid>
+    <loginhibit />
+    <display x="210" y="-210" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="ed8178eb-ccba-496e-a6e8-5cf473e0b95a" name="Dekod Xml" type="Action">
+    <subsheetid>8abc48ab-f3b3-46cc-a9b5-a823e2c6de85</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="0" y="60" />
+    <inputs>
+      <input type="text" name="Base64" friendlyname="Base64" narrative="Base64 streng som skal decodes" expr="[Besked.raw]" />
+    </inputs>
+    <outputs>
+      <output type="text" name="Data" friendlyname="Data" narrative="Base64 strengen som tekst" stage="Xml" />
+    </outputs>
+    <onsuccess>585f4c8f-5f3d-4d8e-9082-66c122fb9cb6</onsuccess>
+    <resource object="Utility - Odk" action="String: Base64 Decode" />
+  </stage>
+  <stage stageid="a1ddbc4e-a593-4957-a1e7-b36731f871b3" name="Xml" type="Data">
+    <subsheetid>8abc48ab-f3b3-46cc-a9b5-a823e2c6de85</subsheetid>
+    <display x="-195" y="180" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="16ae1f02-7f6e-4bfb-8442-4bd80c607b10" name="Dekod xml fra base64" type="Block">
+    <subsheetid>8abc48ab-f3b3-46cc-a9b5-a823e2c6de85</subsheetid>
+    <loginhibit />
+    <display x="-90" y="30" w="255" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
+  </stage>
+  <stage stageid="2166643c-6ed5-4ede-a2cf-e6e822b4a516" name="Hent besked" type="SubSheetInfo">
+    <subsheetid>db9c5e0d-740c-46d1-abc9-73e90d55993e</subsheetid>
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="a7148ba8-2731-4c77-9c7c-dccfc0b4ff6f" name="Start" type="Start">
+    <subsheetid>db9c5e0d-740c-46d1-abc9-73e90d55993e</subsheetid>
+    <loginhibit />
+    <display x="0" y="-135" />
+    <inputs>
+      <input type="collection" name="Beskedreference" stage="Beskedreference" />
+    </inputs>
+    <onsuccess>226010ad-0924-499e-a79c-a3f59cce1137</onsuccess>
+  </stage>
+  <stage stageid="acfe3361-071f-4fc9-864c-1b8e6e54a720" name="End" type="End">
+    <subsheetid>db9c5e0d-740c-46d1-abc9-73e90d55993e</subsheetid>
+    <loginhibit />
+    <display x="0" y="-15" />
+    <outputs>
+      <output type="collection" name="Besked" stage="Besked" />
+    </outputs>
+  </stage>
+  <stage stageid="f74d23dc-df8b-43d9-9bc4-2f99dc9bdc5f" name="Input" type="Block">
+    <subsheetid>db9c5e0d-740c-46d1-abc9-73e90d55993e</subsheetid>
+    <display x="-270" y="-45" w="150" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="339966" />
+  </stage>
+  <stage stageid="844be44f-974e-4231-bbf1-9dde1fcd1765" name="Variabler" type="Block">
+    <subsheetid>db9c5e0d-740c-46d1-abc9-73e90d55993e</subsheetid>
+    <display x="-270" y="90" w="150" h="45" />
+    <font family="Segoe UI" size="10" style="Regular" color="666699" />
+  </stage>
+  <stage stageid="9c72abb2-ff8c-4ac8-9b96-fc970bcf9924" name="Konstanter" type="Block">
+    <subsheetid>db9c5e0d-740c-46d1-abc9-73e90d55993e</subsheetid>
+    <display x="-270" y="30" w="150" h="45" />
+    <font family="Segoe UI" size="10" style="Regular" color="008080" />
+  </stage>
+  <stage stageid="78f15213-4362-469c-b3a0-8733d7c9c0da" name="Output" type="Block">
+    <subsheetid>db9c5e0d-740c-46d1-abc9-73e90d55993e</subsheetid>
+    <display x="-270" y="150" w="150" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="800080" />
+  </stage>
+  <stage stageid="226010ad-0924-499e-a79c-a3f59cce1137" name="Hent hele beskeden" type="Action">
+    <subsheetid>db9c5e0d-740c-46d1-abc9-73e90d55993e</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="0" y="-75" />
+    <inputs>
+      <input type="text" name="Url" friendlyname="Url" expr="[Beskedreference._links.self]" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="Data" friendlyname="Data" stage="Besked" />
+      <output type="number" name="Antal" friendlyname="Antal" stage="" />
+      <output type="text" name="Json" friendlyname="Json" narrative="Det rå json output" stage="" />
+      <output type="number" name="Statuskode" friendlyname="Statuskode" narrative="Http statuskoden for kaldet" stage="" />
+    </outputs>
+    <onsuccess>acfe3361-071f-4fc9-864c-1b8e6e54a720</onsuccess>
+    <resource object="Nexus - Core" action="Get" />
+  </stage>
+  <stage stageid="ab2de55a-2047-45bc-863d-4344a55ed6d0" name="Læs indbakke" type="Block">
+    <subsheetid>db9c5e0d-740c-46d1-abc9-73e90d55993e</subsheetid>
+    <loginhibit />
+    <display x="-90" y="-105" w="255" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
+  </stage>
+  <stage stageid="1a7e9e30-6221-4666-9270-337a2674152f" name="Beskedreference" type="Collection">
+    <subsheetid>db9c5e0d-740c-46d1-abc9-73e90d55993e</subsheetid>
+    <display x="-195" y="-15" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="3f3c83c0-86ef-4532-8d7d-d6fe3f806197" name="Besked" type="Collection">
+    <subsheetid>db9c5e0d-740c-46d1-abc9-73e90d55993e</subsheetid>
+    <loginhibit />
+    <display x="-195" y="180" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="d43d0ba1-2eab-4cc8-817b-89ee0046ed55" name="Accepter besked" type="SubSheetInfo">
+    <subsheetid>e20dc822-64ff-4a26-86e9-e70ae6843ca2</subsheetid>
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="aece8aa8-79c0-4255-bad1-03ccc4d7e785" name="Start" type="Start">
+    <subsheetid>e20dc822-64ff-4a26-86e9-e70ae6843ca2</subsheetid>
+    <loginhibit />
+    <narrative>Beskedreference virker også</narrative>
+    <display x="0" y="-135" />
+    <inputs>
+      <input type="collection" name="Besked" stage="Besked" />
+    </inputs>
+    <onsuccess>aa406f2f-3ea2-4cbb-bbab-bcd692766d7c</onsuccess>
+  </stage>
+  <stage stageid="2b71b9e1-e889-4d87-a45f-2da1d09ab769" name="End" type="End">
+    <subsheetid>e20dc822-64ff-4a26-86e9-e70ae6843ca2</subsheetid>
+    <loginhibit />
+    <display x="0" y="105" />
+    <outputs>
+      <output type="flag" name="Succes" stage="Succes" />
+    </outputs>
+  </stage>
+  <stage stageid="c8af5f35-80aa-4661-b394-275a6c1146d8" name="Input" type="Block">
+    <subsheetid>e20dc822-64ff-4a26-86e9-e70ae6843ca2</subsheetid>
+    <display x="-270" y="-45" w="150" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="339966" />
+  </stage>
+  <stage stageid="4fca5a56-d217-4c40-ad5d-9b42ee60a9b2" name="Variabler" type="Block">
+    <subsheetid>e20dc822-64ff-4a26-86e9-e70ae6843ca2</subsheetid>
+    <display x="-270" y="90" w="150" h="105" />
+    <font family="Segoe UI" size="10" style="Regular" color="666699" />
+  </stage>
+  <stage stageid="4206ff0b-3351-458e-b1bf-1f916bf7983d" name="Konstanter" type="Block">
+    <subsheetid>e20dc822-64ff-4a26-86e9-e70ae6843ca2</subsheetid>
+    <display x="-270" y="30" w="150" h="45" />
+    <font family="Segoe UI" size="10" style="Regular" color="008080" />
+  </stage>
+  <stage stageid="bf079e5e-7c78-400a-9bab-4513bab23907" name="Output" type="Block">
+    <subsheetid>e20dc822-64ff-4a26-86e9-e70ae6843ca2</subsheetid>
+    <display x="-270" y="210" w="150" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="800080" />
+  </stage>
+  <stage stageid="aa406f2f-3ea2-4cbb-bbab-bcd692766d7c" name="Hent hele beskeden" type="Action">
+    <subsheetid>e20dc822-64ff-4a26-86e9-e70ae6843ca2</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="0" y="-75" />
+    <inputs>
+      <input type="text" name="Url" friendlyname="Url" expr="[Besked._links.self]" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="Data" friendlyname="Data" stage="Besked" />
+      <output type="number" name="Antal" friendlyname="Antal" stage="" />
+      <output type="text" name="Json" friendlyname="Json" narrative="Det rå json output" stage="Json" />
+      <output type="number" name="Statuskode" friendlyname="Statuskode" narrative="Http statuskoden for kaldet" stage="" />
+    </outputs>
+    <onsuccess>0a32e569-7b7f-4799-ac6d-afb029359158</onsuccess>
+    <resource object="Nexus - Core" action="Get" />
+  </stage>
+  <stage stageid="8619565c-d472-404a-a4b1-9caa0009659b" name="Læs indbakke" type="Block">
+    <subsheetid>e20dc822-64ff-4a26-86e9-e70ae6843ca2</subsheetid>
+    <loginhibit />
+    <display x="-90" y="-105" w="255" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
+  </stage>
+  <stage stageid="c0bbe3ff-4f2d-4c8d-975c-3fae75edf06e" name="Besked" type="Collection">
+    <subsheetid>e20dc822-64ff-4a26-86e9-e70ae6843ca2</subsheetid>
+    <loginhibit />
+    <display x="-195" y="-15" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="5c5a1ddd-98c0-4791-8cc5-7d82642fdc18" name="Json" type="Data">
+    <subsheetid>e20dc822-64ff-4a26-86e9-e70ae6843ca2</subsheetid>
+    <display x="-195" y="120" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="0a32e569-7b7f-4799-ac6d-afb029359158" name="Accepter besked" type="Action">
+    <subsheetid>e20dc822-64ff-4a26-86e9-e70ae6843ca2</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="0" y="0" />
+    <inputs>
+      <input type="text" name="Url" friendlyname="Url" expr="[Besked._links.accept]" />
+      <input type="text" name="Body" friendlyname="Body" expr="[Json]" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="Data" friendlyname="Data" stage="" />
+      <output type="number" name="Antal" friendlyname="Antal" stage="" />
+      <output type="text" name="Json" friendlyname="Json" narrative="Det rå json output" stage="" />
+      <output type="number" name="Statuskode" friendlyname="Statuskode" narrative="Http statuskoden for kaldet" stage="Statuskode" />
+    </outputs>
+    <onsuccess>d0b6c605-3373-4ef8-8ba2-1278ec32160e</onsuccess>
+    <resource object="Nexus - Core" action="Put" />
+  </stage>
+  <stage stageid="c43d5802-6264-4b46-a12f-9e67513daa43" name="Statuskode" type="Data">
+    <subsheetid>e20dc822-64ff-4a26-86e9-e70ae6843ca2</subsheetid>
+    <display x="-195" y="165" w="120" h="30" />
+    <datatype>number</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="d0b6c605-3373-4ef8-8ba2-1278ec32160e" name="Sæt status" type="Calculation">
+    <subsheetid>e20dc822-64ff-4a26-86e9-e70ae6843ca2</subsheetid>
+    <loginhibit />
+    <display x="0" y="45" />
+    <onsuccess>2b71b9e1-e889-4d87-a45f-2da1d09ab769</onsuccess>
+    <calculation expression="[Statuskode] = 200" stage="Succes" />
+  </stage>
+  <stage stageid="728cc81a-4ff0-40d3-8aaa-0b88e436eb74" name="Succes" type="Data">
+    <subsheetid>e20dc822-64ff-4a26-86e9-e70ae6843ca2</subsheetid>
+    <display x="-195" y="240" w="120" h="30" />
+    <datatype>flag</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="ac2c0438-62c7-4509-882d-df1df88bd5d8" name="Accepter" type="Block">
+    <subsheetid>e20dc822-64ff-4a26-86e9-e70ae6843ca2</subsheetid>
+    <loginhibit />
+    <display x="-90" y="-30" w="255" h="105" />
+    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
+  </stage>
+  <stage stageid="70101326-0c65-43c6-b965-e25da2bc9216" name="Tildel besked til forløb" type="SubSheetInfo">
+    <subsheetid>2b3ac3dd-4488-4e8c-9982-e9a7292fa440</subsheetid>
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="5c98c85f-51fe-4d37-83b5-ae48130b9faa" name="Start" type="Start">
+    <subsheetid>2b3ac3dd-4488-4e8c-9982-e9a7292fa440</subsheetid>
+    <loginhibit />
+    <narrative>Beskedreference virker også</narrative>
+    <display x="0" y="-150" />
+    <inputs>
+      <input type="collection" name="Besked" stage="Besked" />
+      <input type="collection" name="Forløb" stage="Forløb" />
+    </inputs>
+    <onsuccess>501a88ce-7105-4181-bd18-6c3c96baa16c</onsuccess>
+  </stage>
+  <stage stageid="e2bbdcbc-7e97-4ba7-938a-eaf1bbc5ca37" name="End" type="End">
+    <subsheetid>2b3ac3dd-4488-4e8c-9982-e9a7292fa440</subsheetid>
+    <loginhibit />
+    <display x="0" y="300" />
+    <outputs>
+      <output type="flag" name="Succes" stage="Succes" />
+    </outputs>
+  </stage>
+  <stage stageid="f0251028-aa14-456a-af33-160501e0fec6" name="Input" type="Block">
+    <subsheetid>2b3ac3dd-4488-4e8c-9982-e9a7292fa440</subsheetid>
+    <display x="-270" y="-45" w="150" h="105" />
+    <font family="Segoe UI" size="10" style="Regular" color="339966" />
+  </stage>
+  <stage stageid="e6407c8f-89e7-4f52-96d3-90fade0d521b" name="Variabler" type="Block">
+    <subsheetid>2b3ac3dd-4488-4e8c-9982-e9a7292fa440</subsheetid>
+    <display x="-270" y="135" w="150" h="150" />
+    <font family="Segoe UI" size="10" style="Regular" color="666699" />
+  </stage>
+  <stage stageid="fd35932e-2257-473c-a0e5-cce374315d0a" name="Konstanter" type="Block">
+    <subsheetid>2b3ac3dd-4488-4e8c-9982-e9a7292fa440</subsheetid>
+    <display x="-270" y="75" w="150" h="45" />
+    <font family="Segoe UI" size="10" style="Regular" color="008080" />
+  </stage>
+  <stage stageid="f6d8ce84-2712-4d86-8bcb-932169f435b8" name="Output" type="Block">
+    <subsheetid>2b3ac3dd-4488-4e8c-9982-e9a7292fa440</subsheetid>
+    <display x="-270" y="300" w="150" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="800080" />
+  </stage>
+  <stage stageid="244062b0-e5f3-4669-8a03-e9340e18b0bf" name="Hent hele beskeden" type="Action">
+    <subsheetid>2b3ac3dd-4488-4e8c-9982-e9a7292fa440</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="0" y="-75" />
+    <inputs>
+      <input type="text" name="Url" friendlyname="Url" expr="[Besked._links.self]" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="Data" friendlyname="Data" stage="Besked" />
+      <output type="number" name="Antal" friendlyname="Antal" stage="" />
+      <output type="text" name="Json" friendlyname="Json" narrative="Det rå json output" stage="Json" />
+      <output type="number" name="Statuskode" friendlyname="Statuskode" narrative="Http statuskoden for kaldet" stage="" />
+    </outputs>
+    <onsuccess>415e82fc-e1c7-45f5-b3ca-984b058b6a1e</onsuccess>
+    <resource object="Nexus - Core" action="Get" />
+  </stage>
+  <stage stageid="cdb2ff8c-6ecc-42e3-85c8-314a35b06466" name="Læs indbakke" type="Block">
+    <subsheetid>2b3ac3dd-4488-4e8c-9982-e9a7292fa440</subsheetid>
+    <loginhibit />
+    <display x="-90" y="-105" w="255" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
+  </stage>
+  <stage stageid="87d0f9cd-1898-4b00-933e-cf6359dcd201" name="Besked" type="Collection">
+    <subsheetid>2b3ac3dd-4488-4e8c-9982-e9a7292fa440</subsheetid>
+    <loginhibit />
+    <display x="-195" y="-15" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="03c42638-ef36-4ebe-bfc6-448a5da288f9" name="Json" type="Data">
+    <subsheetid>2b3ac3dd-4488-4e8c-9982-e9a7292fa440</subsheetid>
+    <display x="-195" y="165" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="5e62cc24-f52b-4cfc-a600-1ed1f3fb95a4" name="Statuskode" type="Data">
+    <subsheetid>2b3ac3dd-4488-4e8c-9982-e9a7292fa440</subsheetid>
+    <display x="-195" y="255" w="120" h="30" />
+    <datatype>number</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="3775919e-addd-4e1f-8ed3-9baa4cb4ed6d" name="Succes" type="Data">
+    <subsheetid>2b3ac3dd-4488-4e8c-9982-e9a7292fa440</subsheetid>
+    <display x="-195" y="330" w="120" h="30" />
+    <datatype>flag</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="1960ddd6-4c2b-4dbe-b70c-b59f171c59f5" name="Hent tilgængelige pathways " type="Block">
+    <subsheetid>2b3ac3dd-4488-4e8c-9982-e9a7292fa440</subsheetid>
+    <loginhibit />
+    <display x="-90" y="-30" w="255" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
+  </stage>
+  <stage stageid="bca45c09-edeb-4278-99c1-af2bb17c38fc" name="Forløb" type="Collection">
+    <subsheetid>2b3ac3dd-4488-4e8c-9982-e9a7292fa440</subsheetid>
+    <loginhibit />
+    <display x="-195" y="30" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="415e82fc-e1c7-45f5-b3ca-984b058b6a1e" name="Hent tilgængelige forløb" type="Action">
+    <subsheetid>2b3ac3dd-4488-4e8c-9982-e9a7292fa440</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="0" y="0" />
+    <inputs>
+      <input type="text" name="Url" friendlyname="Url" expr="[Besked.pathwayAssociation._links.availablePathwayAssociation]" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="Data" friendlyname="Data" stage="" />
+      <output type="number" name="Antal" friendlyname="Antal" stage="" />
+      <output type="text" name="Json" friendlyname="Json" narrative="Det rå json output" stage="Pathway" />
+      <output type="number" name="Statuskode" friendlyname="Statuskode" narrative="Http statuskoden for kaldet" stage="" />
+    </outputs>
+    <onsuccess>ab4e7bc8-8d64-4246-a820-bd1e828c3d99</onsuccess>
+    <resource object="Nexus - Core" action="Get" />
+  </stage>
+  <stage stageid="a00d2cab-0c35-41c3-a30b-b685bc966f16" name="Nexus - Core::Start" type="Action">
+    <subsheetid>2b3ac3dd-4488-4e8c-9982-e9a7292fa440</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="135" y="-345" />
+    <inputs>
+      <input type="text" name="Credentials" friendlyname="Credentials" expr="&quot;KMD Nexus - produktion&quot;" />
+    </inputs>
+    <onsuccess>6ecac234-d218-4127-b5cf-bf62d9934b87</onsuccess>
+    <resource object="Nexus - Core" action="Start" />
+  </stage>
+  <stage stageid="44bf6cf0-369a-4de6-aade-dfa2d59231c1" name="Debug" type="Block">
+    <subsheetid>2b3ac3dd-4488-4e8c-9982-e9a7292fa440</subsheetid>
+    <loginhibit />
+    <display x="90" y="-375" w="180" h="240" />
+    <font family="Segoe UI" size="10" style="Regular" color="FFFF99" />
+  </stage>
+  <stage stageid="eb7cd7d9-2c9b-408b-90a6-6f89c9e0526e" name="Anchor4" type="Anchor">
+    <subsheetid>2b3ac3dd-4488-4e8c-9982-e9a7292fa440</subsheetid>
+    <loginhibit />
+    <display x="135" y="-120" w="10" h="10" />
+    <onsuccess>501a88ce-7105-4181-bd18-6c3c96baa16c</onsuccess>
+  </stage>
+  <stage stageid="6ecac234-d218-4127-b5cf-bf62d9934b87" name="Hent borger" type="Action">
+    <subsheetid>2b3ac3dd-4488-4e8c-9982-e9a7292fa440</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="135" y="-300" />
+    <inputs>
+      <input type="text" name="Cpr" friendlyname="Cpr" expr="&quot;xxxxxxxxxx&quot;" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="Borger" friendlyname="Borger" stage="Borger" />
+    </outputs>
+    <onsuccess>6498eb40-c15b-476a-a574-fccedfd2a221</onsuccess>
+    <resource object="Nexus - Borgere og forløb" action="Hent borger" />
+  </stage>
+  <stage stageid="6498eb40-c15b-476a-a574-fccedfd2a221" name="Hent indbakke" type="Action">
+    <subsheetid>2b3ac3dd-4488-4e8c-9982-e9a7292fa440</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="135" y="-255" />
+    <inputs>
+      <input type="collection" name="Borger" friendlyname="Borger" expr="[Borger]" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="Beskedreferencer" friendlyname="Beskedreferencer" stage="Besked" />
+      <output type="number" name="Antal" friendlyname="Antal" stage="" />
+    </outputs>
+    <onsuccess>0489bdb4-119e-43a1-996f-b914657efa6f</onsuccess>
+    <resource object="Nexus - Medcom" action="Hent indbakke" />
+  </stage>
+  <stage stageid="560b292d-67eb-4ec4-ba44-552654329a5d" name="Borger" type="Collection">
+    <subsheetid>2b3ac3dd-4488-4e8c-9982-e9a7292fa440</subsheetid>
+    <loginhibit />
+    <display x="225" y="-345" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="501a88ce-7105-4181-bd18-6c3c96baa16c" name="Anchor3" type="Anchor">
+    <subsheetid>2b3ac3dd-4488-4e8c-9982-e9a7292fa440</subsheetid>
+    <loginhibit />
+    <display x="0" y="-120" w="10" h="10" />
+    <onsuccess>244062b0-e5f3-4669-8a03-e9340e18b0bf</onsuccess>
+  </stage>
+  <stage stageid="0489bdb4-119e-43a1-996f-b914657efa6f" name="Nexus - Borgere og forløb::Hent borgers forløb" type="Action">
+    <subsheetid>2b3ac3dd-4488-4e8c-9982-e9a7292fa440</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="135" y="-210" />
+    <inputs>
+      <input type="collection" name="Borger" friendlyname="Borger" expr="[Borger]" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="Forløb" friendlyname="Forløb" stage="Forløb" />
+      <output type="number" name="Antal" friendlyname="Antal" stage="" />
+    </outputs>
+    <onsuccess>d2681ba5-15ab-4daf-8934-0812e9b6eaf8</onsuccess>
+    <resource object="Nexus - Borgere og forløb" action="Hent borgers forløb" />
+  </stage>
+  <stage stageid="d2681ba5-15ab-4daf-8934-0812e9b6eaf8" name="Vælg medcom" type="Action">
+    <subsheetid>2b3ac3dd-4488-4e8c-9982-e9a7292fa440</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="135" y="-165" />
+    <inputs>
+      <input type="collection" name="Collection In" friendlyname="Collection In" narrative="Input collection" expr="[Forløb]" />
+      <input type="text" name="Filter" friendlyname="Filter" narrative="The filter to apply" expr="&quot;[name]='Medcom'&quot;" />
+    </inputs>
+    <outputs>
+      <output type="number" name="Count" friendlyname="Count" narrative="The amount of rows in the filtered collection" stage="" />
+      <output type="collection" name="Collection Out" friendlyname="Collection Out" narrative="The filtered collection" stage="Forløb" />
+    </outputs>
+    <onsuccess>eb7cd7d9-2c9b-408b-90a6-6f89c9e0526e</onsuccess>
+    <resource object="Utility - Odk Linq" action="Filter" />
+  </stage>
+  <stage stageid="ab4e7bc8-8d64-4246-a820-bd1e828c3d99" name="Find pathway" type="Code">
+    <subsheetid>2b3ac3dd-4488-4e8c-9982-e9a7292fa440</subsheetid>
+    <display x="0" y="75" />
+    <inputs>
+      <input type="text" name="pathways" expr="[Pathway]" />
+      <input type="text" name="id" expr="[Forløb.id]" />
+    </inputs>
+    <outputs>
+      <output type="text" name="result" stage="Pathway" />
+    </outputs>
+    <onsuccess>81a483d6-5fab-4739-8fec-02b4c8d48647</onsuccess>
+    <code><![CDATA[var json = JArray.Parse(pathways);
+
+foreach(var root in json) {
+
+	var token = First(root,a => a["programPathwayId"].ToString() == id);
+
+	if(token != null) {
+		((JObject)token).Property("children").Remove();
+		result = token.ToString();
+		return;
+	}
+}
+
+result = "";
+]]></code>
+  </stage>
+  <stage stageid="81a483d6-5fab-4739-8fec-02b4c8d48647" name="Set placement" type="Code">
+    <subsheetid>2b3ac3dd-4488-4e8c-9982-e9a7292fa440</subsheetid>
+    <display x="0" y="120" />
+    <inputs>
+      <input type="text" name="message" expr="[Json]" />
+      <input type="text" name="placement" expr="[Pathway]" />
+    </inputs>
+    <outputs>
+      <output type="text" name="result" stage="Json" />
+    </outputs>
+    <onsuccess>83078c51-b25a-44b7-9f28-babfc7603d20</onsuccess>
+    <breakpoint type="0">
+      <condition></condition>
+    </breakpoint>
+    <code><![CDATA[var json = JObject.Parse(message);
+var placement_json = JObject.Parse(placement);
+
+json["pathwayAssociation"]["placement"] = placement_json;
+
+result = json.ToString();]]></code>
+  </stage>
+  <stage stageid="e43818c1-dc10-431b-9a3c-195c6676eb9d" name="Pathway" type="Data">
+    <subsheetid>2b3ac3dd-4488-4e8c-9982-e9a7292fa440</subsheetid>
+    <display x="-195" y="210" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="27d91f13-1d96-4876-9eec-017e1a319b96" name="Sæt forløb" type="Block">
+    <subsheetid>2b3ac3dd-4488-4e8c-9982-e9a7292fa440</subsheetid>
+    <loginhibit />
+    <display x="-90" y="45" w="255" h="105" />
+    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
+  </stage>
+  <stage stageid="83078c51-b25a-44b7-9f28-babfc7603d20" name="Opdater beskeden" type="Action">
+    <subsheetid>2b3ac3dd-4488-4e8c-9982-e9a7292fa440</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="0" y="195" />
+    <inputs>
+      <input type="text" name="Url" friendlyname="Url" expr="[Besked._links.self]" />
+      <input type="text" name="Body" friendlyname="Body" expr="[Json]" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="Data" friendlyname="Data" stage="" />
+      <output type="number" name="Antal" friendlyname="Antal" stage="" />
+      <output type="text" name="Json" friendlyname="Json" narrative="Det rå json output" stage="" />
+      <output type="number" name="Statuskode" friendlyname="Statuskode" narrative="Http statuskoden for kaldet" stage="Statuskode" />
+    </outputs>
+    <onsuccess>59755912-e763-4616-bfeb-7a60936d4125</onsuccess>
+    <resource object="Nexus - Core" action="Put" />
+  </stage>
+  <stage stageid="410b8b93-551b-4eab-ba6c-5a0316a0b9d9" name="Opdater besked" type="Block">
+    <subsheetid>2b3ac3dd-4488-4e8c-9982-e9a7292fa440</subsheetid>
+    <loginhibit />
+    <display x="-90" y="165" w="255" h="105" />
+    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
+  </stage>
+  <stage stageid="59755912-e763-4616-bfeb-7a60936d4125" name="Sæt succes" type="Calculation">
+    <subsheetid>2b3ac3dd-4488-4e8c-9982-e9a7292fa440</subsheetid>
+    <loginhibit />
+    <display x="0" y="240" />
+    <onsuccess>e2bbdcbc-7e97-4ba7-938a-eaf1bbc5ca37</onsuccess>
+    <calculation expression="[Statuskode] = 200" stage="Succes" />
+  </stage>
+  <stage stageid="3cbe0fde-3e7f-4fe3-847a-86dc012661aa" name="Send MedCom korrespondance" type="SubSheetInfo">
+    <subsheetid>ede10ce0-ec5f-4280-9ca8-b29054673be0</subsheetid>
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="e26cb3a0-b90d-4ea7-b82b-2c43b809f39d" name="Start" type="Start">
+    <subsheetid>ede10ce0-ec5f-4280-9ca8-b29054673be0</subsheetid>
+    <loginhibit />
+    <display x="0" y="-105" />
+    <inputs>
+      <input type="collection" name="Borger" narrative="Hvilken borger skal beskeden sendes fra" stage="Borger" />
+      <input type="text" name="Placering" narrative="Hvilket forløb skal beskeden associeres med" stage="Placering" />
+      <input type="text" name="Fra" narrative="EAN nummer eller specifik søgestreng" stage="Fra" />
+      <input type="text" name="Til" narrative="EAN nummer eller specifik søgestreng" stage="Til" />
+      <input type="text" name="Emne" stage="Emne" />
+      <input type="text" name="Tekst" stage="Tekst" />
+    </inputs>
+    <onsuccess>44b8e028-77a9-4d9a-be32-7916e98d69ac</onsuccess>
+  </stage>
+  <stage stageid="53d82584-16f4-484c-8570-62ab4d5c8203" name="End" type="End">
+    <subsheetid>ede10ce0-ec5f-4280-9ca8-b29054673be0</subsheetid>
+    <loginhibit />
+    <display x="0" y="510" />
+    <outputs>
+      <output type="flag" name="Succes" stage="Succes" />
+    </outputs>
+  </stage>
+  <stage stageid="3b307e76-2384-446a-8623-2dd35765a5f4" name="Nexus - Core::Start" type="Action">
+    <subsheetid>ede10ce0-ec5f-4280-9ca8-b29054673be0</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="135" y="-210" />
+    <inputs>
+      <input type="text" name="Credentials" friendlyname="Credentials" expr="&quot;KMD Nexus - produktion&quot;" />
+    </inputs>
+    <onsuccess>fe273880-0c29-4919-8ddf-93ffb22b42b4</onsuccess>
+    <resource object="Nexus - Core" action="Start" />
+  </stage>
+  <stage stageid="99c0ee93-e9e2-40bb-b1db-b676091f21fc" name="Debug" type="Block">
+    <subsheetid>ede10ce0-ec5f-4280-9ca8-b29054673be0</subsheetid>
+    <loginhibit />
+    <display x="90" y="-240" w="165" h="150" />
+    <font family="Segoe UI" size="10" style="Regular" color="FFFF99" />
+  </stage>
+  <stage stageid="7770c6f6-744f-43bd-9aaa-97d2364edcd1" name="Anchor4" type="Anchor">
+    <subsheetid>ede10ce0-ec5f-4280-9ca8-b29054673be0</subsheetid>
+    <loginhibit />
+    <display x="135" y="-75" w="10" h="10" />
+    <onsuccess>44b8e028-77a9-4d9a-be32-7916e98d69ac</onsuccess>
+  </stage>
+  <stage stageid="fe273880-0c29-4919-8ddf-93ffb22b42b4" name="Hent borger" type="Action">
+    <subsheetid>ede10ce0-ec5f-4280-9ca8-b29054673be0</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="135" y="-165" />
+    <inputs>
+      <input type="text" name="Cpr" friendlyname="Cpr" expr="&quot;xxxxxxxxxx&quot;" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="Borger" friendlyname="Borger" stage="Borger" />
+    </outputs>
+    <onsuccess>c4be12a4-8eb3-4c86-99ad-389f9c2223ee</onsuccess>
+    <resource object="Nexus - Borgere og forløb" action="Hent borger" />
+  </stage>
+  <stage stageid="729c30c8-3cb7-4a0c-9e87-f00721ed2f3b" name="Input" type="Block">
+    <subsheetid>ede10ce0-ec5f-4280-9ca8-b29054673be0</subsheetid>
+    <display x="-270" y="-45" w="150" h="285" />
+    <font family="Segoe UI" size="10" style="Regular" color="339966" />
+  </stage>
+  <stage stageid="2524be1d-378a-47fe-aabf-473347796e07" name="Variabler" type="Block">
+    <subsheetid>ede10ce0-ec5f-4280-9ca8-b29054673be0</subsheetid>
+    <display x="-270" y="315" w="150" h="375" />
+    <font family="Segoe UI" size="10" style="Regular" color="666699" />
+  </stage>
+  <stage stageid="5d350a25-e9de-46ff-834d-61cdc1e93dcd" name="Konstanter" type="Block">
+    <subsheetid>ede10ce0-ec5f-4280-9ca8-b29054673be0</subsheetid>
+    <display x="-270" y="255" w="150" h="45" />
+    <font family="Segoe UI" size="10" style="Regular" color="008080" />
+  </stage>
+  <stage stageid="04c7c8b2-329d-4141-9b0d-732bd5487de7" name="Output" type="Block">
+    <subsheetid>ede10ce0-ec5f-4280-9ca8-b29054673be0</subsheetid>
+    <display x="-270" y="705" w="150" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="800080" />
+  </stage>
+  <stage stageid="44b8e028-77a9-4d9a-be32-7916e98d69ac" name="Anchor2" type="Anchor">
+    <subsheetid>ede10ce0-ec5f-4280-9ca8-b29054673be0</subsheetid>
+    <loginhibit />
+    <display x="0" y="-75" w="10" h="10" />
+    <onsuccess>f5df0ef7-52fc-4a5d-8c40-03344cd9da16</onsuccess>
+  </stage>
+  <stage stageid="54e03cea-5206-443c-a55d-6af5742309f8" name="Læs prototype og placering" type="Block">
+    <subsheetid>ede10ce0-ec5f-4280-9ca8-b29054673be0</subsheetid>
+    <loginhibit />
+    <display x="-90" y="-60" w="255" h="105" />
+    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
+  </stage>
+  <stage stageid="03367dd5-6f30-412a-90c7-f5fa5056aeef" name="Borger" type="Collection">
+    <subsheetid>ede10ce0-ec5f-4280-9ca8-b29054673be0</subsheetid>
+    <loginhibit />
+    <display x="-195" y="-15" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="575d20e0-a16c-4e74-8451-558aea3953d3" name="Succes" type="Data">
+    <subsheetid>ede10ce0-ec5f-4280-9ca8-b29054673be0</subsheetid>
+    <display x="-195" y="735" w="120" h="30" />
+    <datatype>flag</datatype>
+    <initialvalue>False</initialvalue>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="002287f3-e498-48ee-9e8d-5816528cd5cf" name="Placering" type="Data">
+    <subsheetid>ede10ce0-ec5f-4280-9ca8-b29054673be0</subsheetid>
+    <display x="-195" y="30" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="2b14c2ee-f749-4606-864d-87758509b448" name="Fra" type="Data">
+    <subsheetid>ede10ce0-ec5f-4280-9ca8-b29054673be0</subsheetid>
+    <display x="-195" y="120" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="175abe39-3249-4512-8674-fb9225e17811" name="Til" type="Data">
+    <subsheetid>ede10ce0-ec5f-4280-9ca8-b29054673be0</subsheetid>
+    <display x="-195" y="75" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="effce540-ed42-437f-ae93-536e74d28653" name="Emne" type="Data">
+    <subsheetid>ede10ce0-ec5f-4280-9ca8-b29054673be0</subsheetid>
+    <display x="-195" y="165" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="aec3246c-8d96-4ac2-8e3e-0d0c9b526f78" name="Tekst" type="Data">
+    <subsheetid>ede10ce0-ec5f-4280-9ca8-b29054673be0</subsheetid>
+    <display x="-195" y="210" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="f5df0ef7-52fc-4a5d-8c40-03344cd9da16" name="Hent prototype" type="Action">
+    <subsheetid>ede10ce0-ec5f-4280-9ca8-b29054673be0</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="0" y="-30" />
+    <inputs>
+      <input type="text" name="Url" friendlyname="Url" expr="[Borger._links.medcomClinicalEmailCorrespondencePrototype]" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="Data" friendlyname="Data" stage="Prototype" />
+      <output type="number" name="Antal" friendlyname="Antal" stage="" />
+      <output type="text" name="Json" friendlyname="Json" narrative="Det rå json output" stage="Prototype (json)" />
+      <output type="number" name="Statuskode" friendlyname="Statuskode" narrative="Http statuskoden for kaldet" stage="" />
+    </outputs>
+    <onsuccess>7ec8ab97-9b7a-4800-bb99-7dc1759b59d6</onsuccess>
+    <resource object="Nexus - Core" action="Get" />
+  </stage>
+  <stage stageid="76e9ec39-efdc-44b0-849c-9087065f0144" name="tmp" type="Collection">
+    <subsheetid>ede10ce0-ec5f-4280-9ca8-b29054673be0</subsheetid>
+    <display x="120" y="-30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="7ec8ab97-9b7a-4800-bb99-7dc1759b59d6" name="Læs pathways" type="Action">
+    <subsheetid>ede10ce0-ec5f-4280-9ca8-b29054673be0</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="0" y="15" />
+    <inputs>
+      <input type="text" name="Url" friendlyname="Url" expr="[Borger._links.availablePathwayAssociation]" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="Data" friendlyname="Data" stage="tmp" />
+      <output type="number" name="Antal" friendlyname="Antal" stage="" />
+      <output type="text" name="Json" friendlyname="Json" narrative="Det rå json output" stage="Pathways (json)" />
+      <output type="number" name="Statuskode" friendlyname="Statuskode" narrative="Http statuskoden for kaldet" stage="" />
+    </outputs>
+    <onsuccess>15853f17-a397-4b4d-a5c9-65907a11e1f1</onsuccess>
+    <resource object="Nexus - Core" action="Get" />
+  </stage>
+  <stage stageid="7bd9bdd6-5795-4575-b8ad-5c62c6c8624b" name="Pathways (json)" type="Data">
+    <subsheetid>ede10ce0-ec5f-4280-9ca8-b29054673be0</subsheetid>
+    <display x="-195" y="435" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="a503db06-3597-4158-8734-b126cfd1fac1" name="Prototype (json)" type="Data">
+    <subsheetid>ede10ce0-ec5f-4280-9ca8-b29054673be0</subsheetid>
+    <display x="-195" y="390" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="7cde6e1e-d61f-4b10-a888-039060b1ce1b" name="Prototype" type="Collection">
+    <subsheetid>ede10ce0-ec5f-4280-9ca8-b29054673be0</subsheetid>
+    <display x="-195" y="345" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="0cbf6e19-0f51-454e-9028-c68c665a3235" name="Hent afsendere" type="Block">
+    <subsheetid>ede10ce0-ec5f-4280-9ca8-b29054673be0</subsheetid>
+    <loginhibit />
+    <display x="-90" y="60" w="255" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
+  </stage>
+  <stage stageid="15853f17-a397-4b4d-a5c9-65907a11e1f1" name="Hent afsendere" type="Action">
+    <subsheetid>ede10ce0-ec5f-4280-9ca8-b29054673be0</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="0" y="90" />
+    <inputs>
+      <input type="text" name="Url" friendlyname="Url" expr="[Prototype._links.availableSenders]" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="Data" friendlyname="Data" stage="" />
+      <output type="number" name="Antal" friendlyname="Antal" stage="" />
+      <output type="text" name="Json" friendlyname="Json" narrative="Det rå json output" stage="Afsendere (json)" />
+      <output type="number" name="Statuskode" friendlyname="Statuskode" narrative="Http statuskoden for kaldet" stage="" />
+    </outputs>
+    <onsuccess>cab69983-904c-4787-ad73-6bcd056b0dbe</onsuccess>
+    <resource object="Nexus - Core" action="Get" />
+  </stage>
+  <stage stageid="9b1be8b9-b6fb-48c0-a0f0-75e90df34602" name="Afsendere (json)" type="Data">
+    <subsheetid>ede10ce0-ec5f-4280-9ca8-b29054673be0</subsheetid>
+    <display x="-195" y="480" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="b0f92dd7-c318-4a50-8ecf-fec222e43056" name="Til (url-encoded)" type="Data">
+    <subsheetid>ede10ce0-ec5f-4280-9ca8-b29054673be0</subsheetid>
+    <loginhibit />
+    <display x="-195" y="525" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="9852985f-5f0f-40c3-a138-853cd3ce0b1c" name="Hent modtager" type="Block">
+    <subsheetid>ede10ce0-ec5f-4280-9ca8-b29054673be0</subsheetid>
+    <loginhibit />
+    <display x="-90" y="135" w="255" h="150" />
+    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
+  </stage>
+  <stage stageid="cab69983-904c-4787-ad73-6bcd056b0dbe" name="Encode til url" type="Action">
+    <subsheetid>ede10ce0-ec5f-4280-9ca8-b29054673be0</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="0" y="165" />
+    <inputs>
+      <input type="text" name="URL" friendlyname="URL" narrative="The URL to encode" expr="[Til]" />
+    </inputs>
+    <outputs>
+      <output type="text" name="URL" friendlyname="URL" narrative="The encoded URL" stage="Til (url-encoded)" />
+    </outputs>
+    <onsuccess>af2efef1-fabf-4a51-9a84-2a98bd850e6e</onsuccess>
+    <resource object="Utility - HTTP" action="URL Encode" />
+  </stage>
+  <stage stageid="af2efef1-fabf-4a51-9a84-2a98bd850e6e" name="Hent modtagere" type="Action">
+    <subsheetid>ede10ce0-ec5f-4280-9ca8-b29054673be0</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="0" y="210" />
+    <inputs>
+      <input type="text" name="Url" friendlyname="Url" expr="[Prototype._links.searchRecipient] &amp; &quot;?query=&quot; &amp; [Til (url-encoded)]" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="Data" friendlyname="Data" stage="" />
+      <output type="number" name="Antal" friendlyname="Antal" stage="Antal" />
+      <output type="text" name="Json" friendlyname="Json" narrative="Det rå json output" stage="Modtager (json)" />
+      <output type="number" name="Statuskode" friendlyname="Statuskode" narrative="Http statuskoden for kaldet" stage="" />
+    </outputs>
+    <onsuccess>29a9b11e-7405-43cd-8acc-cab368f0ec5e</onsuccess>
+    <resource object="Nexus - Core" action="Get" />
+  </stage>
+  <stage stageid="97b0f830-b193-4421-8e45-9fa3bd982e91" name="Antal" type="Data">
+    <subsheetid>ede10ce0-ec5f-4280-9ca8-b29054673be0</subsheetid>
+    <display x="-195" y="615" w="120" h="30" />
+    <datatype>number</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="c4be12a4-8eb3-4c86-99ad-389f9c2223ee" name="Sæt debug" type="MultipleCalculation">
+    <subsheetid>ede10ce0-ec5f-4280-9ca8-b29054673be0</subsheetid>
+    <loginhibit />
+    <display x="135" y="-120" />
+    <onsuccess>7770c6f6-744f-43bd-9aaa-97d2364edcd1</onsuccess>
+    <steps>
+      <calculation expression="&quot;Team Indgangen&quot;" stage="Fra" />
+      <calculation expression="&quot;5790000184583&quot;" stage="Til" />
+      <calculation expression="&quot;Test besked&quot;" stage="Emne" />
+      <calculation expression="&quot;Dette er en test-besked&quot;" stage="Tekst" />
+      <calculation expression="&quot;MedCom&quot;" stage="Placering" />
+    </steps>
+  </stage>
+  <stage stageid="3c5fc938-4514-43f3-8dfb-304e1f3ec0c0" name="Modtager (json)" type="Data">
+    <subsheetid>ede10ce0-ec5f-4280-9ca8-b29054673be0</subsheetid>
+    <display x="-195" y="570" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="29a9b11e-7405-43cd-8acc-cab368f0ec5e" name="Modtager ikke unik" type="Decision">
+    <subsheetid>ede10ce0-ec5f-4280-9ca8-b29054673be0</subsheetid>
+    <loginhibit />
+    <display x="0" y="255" />
+    <decision expression="[Antal] &lt;&gt; 1" />
+    <ontrue>ee144c4c-bbd3-487b-8929-7c11b587b021</ontrue>
+    <onfalse>b58446cb-1147-4486-8e22-1417abd879d5</onfalse>
+  </stage>
+  <stage stageid="ee144c4c-bbd3-487b-8929-7c11b587b021" name="Ingen modtager" type="Exception">
+    <subsheetid>ede10ce0-ec5f-4280-9ca8-b29054673be0</subsheetid>
+    <display x="225" y="255" />
+    <exception localized="yes" type="Business Exception" detail="&quot;Modtageren matcher &quot; &amp; [Antal] &amp; &quot; enheder fra modtagerlisten&quot;" />
+  </stage>
+  <stage stageid="b58446cb-1147-4486-8e22-1417abd879d5" name="Udfyld medcom" type="Code">
+    <subsheetid>ede10ce0-ec5f-4280-9ca8-b29054673be0</subsheetid>
+    <loginhibit />
+    <display x="0" y="330" />
+    <inputs>
+      <input type="text" name="prototype" expr="[Prototype (json)]" />
+      <input type="text" name="pathways" expr="[Pathways (json)]" />
+      <input type="text" name="placement" expr="[Placering]" />
+      <input type="text" name="recipient" expr="[Modtager (json)]" />
+      <input type="text" name="sender" expr="[Fra]" />
+      <input type="text" name="senderList" expr="[Afsendere (json)]" />
+      <input type="text" name="subject" expr="[Emne]" />
+      <input type="text" name="body" expr="[Tekst]" />
+    </inputs>
+    <outputs>
+      <output type="text" name="result" stage="Prototype (json)" />
+    </outputs>
+    <onsuccess>5e0557e7-5b18-44a6-929e-cce2941bfd4e</onsuccess>
+    <code><![CDATA[var jprototype = JObject.Parse(prototype);
+var jpathways = JArray.Parse(pathways);
+var jrecipient = (JArray.Parse(recipient))[0];
+var jsenderList = JArray.Parse(senderList);
+
+
+jprototype["recipient"] = jrecipient; 
+
+if(!string.IsNullOrEmpty(placement)) {
+	var jplacement = jpathways.FirstOrDefault(a => a["name"].ToString() == placement);
+	if(jplacement != null)
+		jprototype["pathwayAssociation"] = jplacement;
+}
+
+var jsender = jsenderList.FirstOrDefault(a => a["name"].ToString().ToLowerInvariant().Contains(sender.ToLowerInvariant()));
+
+if(jsender == null)
+	throw new Exception("Ukendt afsender");
+
+jprototype["sender"] = jsender;
+
+jprototype["subject"] = subject;
+jprototype["body"] = body;
+
+result = jprototype.ToString();]]></code>
+  </stage>
+  <stage stageid="ab03fbb8-b076-4436-ab4f-139908d91e29" name="Dan prototype" type="Block">
+    <subsheetid>ede10ce0-ec5f-4280-9ca8-b29054673be0</subsheetid>
+    <loginhibit />
+    <display x="-90" y="300" w="255" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
+  </stage>
+  <stage stageid="5e0557e7-5b18-44a6-929e-cce2941bfd4e" name="Send  " type="Action">
+    <subsheetid>ede10ce0-ec5f-4280-9ca8-b29054673be0</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="0" y="405" />
+    <inputs>
+      <input type="text" name="Url" friendlyname="Url" expr="[Prototype._links.send]" />
+      <input type="text" name="Body" friendlyname="Body" expr="[Prototype (json)]" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="Data" friendlyname="Data" stage="" />
+      <output type="number" name="Antal" friendlyname="Antal" stage="" />
+      <output type="text" name="Json" friendlyname="Json" narrative="Det rå json output" stage="" />
+      <output type="number" name="Statuskode" friendlyname="Statuskode" narrative="Http statuskoden for kaldet" stage="Statuskode" />
+    </outputs>
+    <onsuccess>6414fdd0-8981-4e13-8d9e-99035f361fc1</onsuccess>
+    <resource object="Nexus - Core" action="Post" />
+  </stage>
+  <stage stageid="a0605280-1ffa-4dc2-aa1d-680bb6d1494d" name="Send besked" type="Block">
+    <subsheetid>ede10ce0-ec5f-4280-9ca8-b29054673be0</subsheetid>
+    <loginhibit />
+    <display x="-90" y="375" w="255" h="105" />
+    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
+  </stage>
+  <stage stageid="06875f10-b739-40f3-9b8b-459e610c36b5" name="Statuskode" type="Data">
+    <subsheetid>ede10ce0-ec5f-4280-9ca8-b29054673be0</subsheetid>
+    <display x="-195" y="660" w="120" h="30" />
+    <datatype>number</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="6414fdd0-8981-4e13-8d9e-99035f361fc1" name="Sæt succes" type="Calculation">
+    <subsheetid>ede10ce0-ec5f-4280-9ca8-b29054673be0</subsheetid>
+    <loginhibit />
+    <display x="0" y="450" />
+    <onsuccess>53d82584-16f4-484c-8570-62ab4d5c8203</onsuccess>
+    <calculation expression="[Statuskode] = 200" stage="Succes" />
+  </stage>
+</process>

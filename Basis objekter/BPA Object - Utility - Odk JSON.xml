@@ -1,0 +1,486 @@
+﻿<process name="Utility - Odk JSON" version="1.0" bpversion="6.10.5.64603" narrative="" byrefcollection="true" type="object" runmode="Exclusive" preferredid="795323d6-8f03-4fc5-92c3-835c9729738c">
+  <appdef>
+    <element name="Application Root">
+      <id>8afe005f-c8b4-4230-a038-3d0631c207f3</id>
+      <type>Application</type>
+      <basetype>Application</basetype>
+      <datatype>unknown</datatype>
+      <diagnose>False</diagnose>
+    </element>
+  </appdef>
+  <view>
+    <camerax>0</camerax>
+    <cameray>0</cameray>
+    <zoom version="2">1.25</zoom>
+  </view>
+  <preconditions />
+  <endpoint narrative="" />
+  <subsheet subsheetid="0cd2ad85-a20f-4337-8968-3c37e70f1816" type="CleanUp" published="True">
+    <name>Clean Up</name>
+    <view>
+      <camerax>0</camerax>
+      <cameray>0</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <subsheet subsheetid="5f2b8be6-283e-4366-8b08-31de3ca88630" type="Normal" published="True">
+    <name>JSON to Collection</name>
+    <view>
+      <camerax>444</camerax>
+      <cameray>0</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <stage stageid="6416107a-55c7-44c7-a03c-2e13eaf6788a" name="Start" type="Start">
+    <loginhibit />
+    <display x="15" y="-105" />
+    <onsuccess>acf6ce58-3923-49ce-82bd-2121ec802c71</onsuccess>
+  </stage>
+  <stage stageid="acf6ce58-3923-49ce-82bd-2121ec802c71" name="End" type="End">
+    <loginhibit />
+    <display x="15" y="90" />
+  </stage>
+  <stage stageid="8a604ab0-8428-4ec3-83a2-f6b3b631f0cb" name="Stage1" type="ProcessInfo">
+    <display x="-195" y="-105" w="150" h="90" />
+    <references>
+      <reference>System.dll</reference>
+      <reference>System.Data.dll</reference>
+      <reference>System.Xml.dll</reference>
+      <reference>System.Drawing.dll</reference>
+      <reference>Newtonsoft.Json.dll</reference>
+      <reference>System.Core.dll</reference>
+    </references>
+    <imports>
+      <import>System</import>
+      <import>System.Drawing</import>
+      <import>System.Data</import>
+      <import>System.Text.RegularExpressions</import>
+      <import>System.Text</import>
+      <import>Newtonsoft.Json.Linq</import>
+      <import>Newtonsoft.Json</import>
+      <import>System.Collections.Generic</import>
+      <import>System.Linq</import>
+    </imports>
+    <language>csharp</language>
+    <globalcode><![CDATA[]]></globalcode>
+    <code><![CDATA[        public class JSON
+        {
+            public const string Array = "JSON:Array";
+            public const string Null = "JSON:Null";
+            public const string Field = "JSON:Field";
+
+        }
+
+        public class StringOrNull { }
+
+        public DataTable Deserialize(string json)
+        {
+            var obj = Newtonsoft.Json.JsonConvert.DeserializeObject(json);
+
+            return DeserializeGeneric(obj) as DataTable;
+        }
+
+        private object DeserializeGeneric(object obj, Type typeHint = null)
+        {
+            var ja = obj as JArray;
+
+            if (ja != null)
+            {
+                return DeserializeJArray(ja);
+            }
+
+            var jo = obj as JObject;
+
+            if (jo != null)
+            {
+                var objColumns = DeserializeObjectTypes(jo);
+
+                foreach (var key in objColumns.Keys.ToArray())
+                    objColumns[key] = objColumns[key] != typeof(StringOrNull) ? objColumns[key] : typeof(String);
+
+
+                return DeserializeObject(jo, objColumns);
+            }
+
+            //We have a jvalue now so there is typemismatch
+            if (typeHint == typeof(DataTable))
+                return null;
+
+
+            var jv = obj as JValue;
+            if (jv != null)
+            {
+                var currentType = ConvertJTokenType(jv.Type);
+                var targetType = MergeType(currentType, (typeHint != null ? typeHint : currentType));
+
+                if (jv.Value == null && (targetType == typeof(DateTime) || targetType == typeof(TimeSpan)))
+                    return DBNull.Value;
+
+                if (jv.Value == null)
+                    return DBNull.Value;
+
+                if (targetType == typeof(Decimal))
+                    return !string.IsNullOrEmpty(jv.Value.ToString()) ? Decimal.Parse(jv.Value.ToString()) : new Decimal(0);
+
+                if (targetType == typeof(DateTime))
+                    return DateTime.Parse(jv.Value.ToString());
+
+                if (targetType == typeof(TimeSpan))
+                    return TimeSpan.Parse(jv.Value.ToString());
+
+                if (targetType == typeof(Boolean))
+                    return !string.IsNullOrEmpty(jv.Value.ToString()) ? Boolean.Parse(jv.Value.ToString()) : false;
+
+
+                return jv.Value.ToString();
+            }
+
+            return null;
+
+        }
+
+        private object DeserializeJArray(JArray array)
+        {
+            var dt = new DataTable();
+
+            if (array.Count == 0)
+                return dt;
+
+            if (array.All(x => x is JObject))
+            {
+                Dictionary<string, Type> columns = new Dictionary<string, Type>();
+
+                foreach (JObject obj in array)
+                {
+                    var objColumns = DeserializeObjectTypes(obj);
+
+                    foreach (var col in objColumns)
+                    {
+
+                        if (!columns.ContainsKey(col.Key))
+                        {
+                            columns[col.Key] = col.Value;
+                        }
+                        else
+                        {
+                            //Problemet opstår her fordi vi har vildt varierende values henover de her objekter. Så hvis det her sker er vi tvunget i json:array
+                            if (columns[col.Key] as Type != col.Value)
+                            {
+                                //Attempt type coercion
+                                var newType = CoercedCommonType(columns[col.Key] as Type, col.Value);
+
+                                if (newType == null)
+                                    goto Forced_array;
+
+                                columns[col.Key] = newType;
+
+                            }
+                        }
+                    }
+
+                    //Set string or null types to string
+
+                }
+
+                foreach (var key in columns.Keys.ToArray())
+                    columns[key] = columns[key] != typeof(StringOrNull) ? columns[key] : typeof(String);
+
+                foreach (var key in columns.Keys)
+                {
+                    dt.Columns.Add(key.ToString(), columns[key] as Type);
+                }
+
+                foreach (JObject obj in array)
+                {
+                    var result = DeserializeObject(obj, columns);
+                    dt.Rows.Add(result.Rows[0].ItemArray);
+                }
+
+                return dt;
+
+            }
+        Forced_array:
+            //var type = ConvertJTokenType(array[0].Type);
+
+            dt.Columns.Add(JSON.Array, typeof(DataTable));
+            foreach (var obj in array)
+            {
+                var result = DeserializeGeneric((object)obj, ConvertJTokenType(obj.Type));
+
+                if (!(result is DataTable))
+                {
+                    var wrapper = new DataTable();
+                    if (result.GetType() != typeof(DBNull))
+                    {
+                        wrapper.Columns.Add(JSON.Field, result.GetType());
+                        var wraprow = wrapper.NewRow();
+                        wraprow[0] = result;
+                        wrapper.Rows.Add(wraprow);
+                    }
+                    result = wrapper;
+                }
+
+                var row = dt.NewRow();
+                row[0] = result;
+                dt.Rows.Add(row);
+            }
+
+            return dt;
+        }
+
+        private DataTable DeserializeObject(JObject obj, Dictionary<string, Type> typeHints)
+        {
+
+            DataTable result = new DataTable();
+            foreach (var key in typeHints.Keys)
+            {
+                result.Columns.Add(key.ToString(), typeHints[key] as Type);
+            }
+
+            var row = result.NewRow();
+            foreach (KeyValuePair<string, JToken> kvp in obj)
+            {
+                row[kvp.Key] = DeserializeGeneric(kvp.Value, typeHints[kvp.Key]);
+            }
+
+            result.Rows.Add(row);
+
+            return result;
+        }
+
+        private Dictionary<string, Type> DeserializeObjectTypes(JObject obj)
+        {
+
+            var result = new Dictionary<string, Type>();
+
+            foreach (KeyValuePair<string, JToken> kvp in obj)
+            {
+                result[kvp.Key] = ConvertJTokenType(kvp.Value.Type);
+            }
+
+
+
+            return result;
+        }
+
+
+        private Type ConvertJTokenType(JTokenType type)
+        {
+
+            switch (type)
+            {
+                case JTokenType.Object: return typeof(DataTable);
+                case JTokenType.Array: return typeof(DataTable);
+                case JTokenType.Date: return typeof(DateTime);
+                case JTokenType.TimeSpan: return typeof(TimeSpan);
+                case JTokenType.Integer: return typeof(Decimal);
+                case JTokenType.Float: return typeof(Decimal);
+                case JTokenType.Boolean: return typeof(Boolean);
+                case JTokenType.String: return typeof(String);
+                case JTokenType.Null: return typeof(StringOrNull);
+                default: return typeof(StringOrNull);
+            }
+        }
+
+        private Type MergeType(Type t1, Type t2)
+        {
+            if (t1 == typeof(DataTable) || t2 == typeof(DataTable)) return typeof(DataTable);
+            if (t1 == typeof(DateTime) || t2 == typeof(DateTime)) return typeof(DateTime);
+            if (t1 == typeof(TimeSpan) || t2 == typeof(TimeSpan)) return typeof(TimeSpan);
+            if (t1 == typeof(Decimal) || t2 == typeof(Decimal)) return typeof(Decimal);
+            if (t1 == typeof(Boolean) || t2 == typeof(Boolean)) return typeof(Boolean);
+            return typeof(String);
+        }
+
+
+        private Type CoercedCommonType(Type t1, Type t2)
+        {
+            if (t1 == t2)
+                return t1;
+
+            if ((t1 == typeof(Decimal) || t1 == typeof(string) || t1 == typeof(Boolean))
+                && (t2 == typeof(Decimal) || t2 == typeof(string) || t2 == typeof(Boolean)))
+            {
+                return typeof(string);
+            }
+
+            if (t1 == typeof(StringOrNull) && t2 != typeof(StringOrNull))
+                return t2;
+
+            if (t2 == typeof(StringOrNull) && t1 != typeof(StringOrNull))
+                return t1;
+
+
+            return null;
+        }
+
+]]></code>
+  </stage>
+  <stage stageid="cfd91d27-bc24-40fe-bfb2-0b9b04c3cb5a" name="Clean Up" type="SubSheetInfo">
+    <subsheetid>0cd2ad85-a20f-4337-8968-3c37e70f1816</subsheetid>
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="96194e60-617d-417b-baa8-bd342afe85d0" name="Start" type="Start">
+    <subsheetid>0cd2ad85-a20f-4337-8968-3c37e70f1816</subsheetid>
+    <loginhibit />
+    <display x="15" y="-105" />
+    <onsuccess>3848e39d-32ef-4178-ac1c-b08e63181dca</onsuccess>
+  </stage>
+  <stage stageid="3848e39d-32ef-4178-ac1c-b08e63181dca" name="End" type="End">
+    <subsheetid>0cd2ad85-a20f-4337-8968-3c37e70f1816</subsheetid>
+    <loginhibit />
+    <display x="15" y="90" />
+  </stage>
+  <stage stageid="fa7ea25f-79af-4232-88a8-b92433192898" name="JSON to Collection" type="SubSheetInfo">
+    <subsheetid>5f2b8be6-283e-4366-8b08-31de3ca88630</subsheetid>
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="374dde9e-88fe-4a5b-87ce-3cfe3ec54da9" name="Start" type="Start">
+    <subsheetid>5f2b8be6-283e-4366-8b08-31de3ca88630</subsheetid>
+    <loginhibit />
+    <display x="15" y="-120" />
+    <inputs>
+      <input type="text" name="json" stage="json" />
+    </inputs>
+    <onsuccess>94d3a642-cb06-45b7-9b64-2d9e8d4826aa</onsuccess>
+  </stage>
+  <stage stageid="2be743c5-3324-4aa5-8d9b-af125df95f86" name="End" type="End">
+    <subsheetid>5f2b8be6-283e-4366-8b08-31de3ca88630</subsheetid>
+    <loginhibit />
+    <display x="15" y="45" />
+    <outputs>
+      <output type="collection" name="Result" stage="Result" />
+    </outputs>
+  </stage>
+  <stage stageid="05d032c2-9da1-4fe7-92c6-3c994acc3fbe" name="" type="Note">
+    <subsheetid>0cd2ad85-a20f-4337-8968-3c37e70f1816</subsheetid>
+    <narrative>Clean Up Page
+
+This is an optional page where you might choose to perform some finalisation (or "cleanup") tasks as your business object is closed down.
+
+The cleanup action will be called automatically immediately after closing your business object at the end of a business process.
+
+You will not be able to call this action from a business process, nor will it be called at any other time than before the disposal of the business object.</narrative>
+    <display x="-180" y="60" w="180" h="230" />
+  </stage>
+  <stage stageid="fbed4e5f-d4b7-4964-8636-06bc3cf96cd9" name="Input" type="Block">
+    <subsheetid>5f2b8be6-283e-4366-8b08-31de3ca88630</subsheetid>
+    <display x="-270" y="-45" w="150" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="339966" />
+  </stage>
+  <stage stageid="db4136ec-7c75-4122-a565-a82bb8c16562" name="Variabler" type="Block">
+    <subsheetid>5f2b8be6-283e-4366-8b08-31de3ca88630</subsheetid>
+    <display x="-270" y="90" w="150" h="45" />
+    <font family="Segoe UI" size="10" style="Regular" color="666699" />
+  </stage>
+  <stage stageid="4073a01b-5f61-4dc7-94e2-1927e8dba266" name="Konstanter" type="Block">
+    <subsheetid>5f2b8be6-283e-4366-8b08-31de3ca88630</subsheetid>
+    <display x="-270" y="30" w="150" h="45" />
+    <font family="Segoe UI" size="10" style="Regular" color="008080" />
+  </stage>
+  <stage stageid="aabb6843-d896-4ed2-ab78-d27b77a7ca32" name="Output" type="Block">
+    <subsheetid>5f2b8be6-283e-4366-8b08-31de3ca88630</subsheetid>
+    <display x="-270" y="150" w="150" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="800080" />
+  </stage>
+  <stage stageid="5bd5a4c7-eca6-4560-9351-5291925359a7" name="json" type="Data">
+    <subsheetid>5f2b8be6-283e-4366-8b08-31de3ca88630</subsheetid>
+    <display x="-195" y="-15" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="8a0d158b-772a-4eb3-a5b7-5c1822177f20" name="Result" type="Collection">
+    <subsheetid>5f2b8be6-283e-4366-8b08-31de3ca88630</subsheetid>
+    <loginhibit />
+    <display x="-195" y="180" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="a7094754-65f9-4120-90b4-a3b25c56ec0f" name="Code5" type="Code">
+    <subsheetid>5f2b8be6-283e-4366-8b08-31de3ca88630</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="15" y="-15" />
+    <inputs>
+      <input type="text" name="json" expr="[json]" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="data" stage="Result" />
+    </outputs>
+    <onsuccess>2be743c5-3324-4aa5-8d9b-af125df95f86</onsuccess>
+    <code><![CDATA[var obj = Newtonsoft.Json.JsonConvert.DeserializeObject(json);
+
+data = DeserializeGeneric(obj) as DataTable;
+ ]]></code>
+  </stage>
+  <stage stageid="29926c51-0ae8-4f94-ba34-db31f64efeca" name="Recover1" type="Recover">
+    <subsheetid>5f2b8be6-283e-4366-8b08-31de3ca88630</subsheetid>
+    <loginhibit />
+    <display x="255" y="-15" />
+    <onsuccess>3dad4df2-f3ee-4130-b378-a35c3faae60b</onsuccess>
+  </stage>
+  <stage stageid="3dad4df2-f3ee-4130-b378-a35c3faae60b" name="Exception1" type="Exception">
+    <subsheetid>5f2b8be6-283e-4366-8b08-31de3ca88630</subsheetid>
+    <display x="255" y="45" />
+    <exception localized="yes" type="System Exception" detail="[json]" />
+  </stage>
+  <stage stageid="e6b188c7-0212-4603-9002-d7ea4c54fe7f" name="Nexus effort" type="Calculation">
+    <subsheetid>5f2b8be6-283e-4366-8b08-31de3ca88630</subsheetid>
+    <loginhibit />
+    <display x="150" y="-150" />
+    <onsuccess>7289cdef-c426-43c8-bb92-01b68700d13e</onsuccess>
+    <calculation expression="&quot;{}&quot;" stage="json" />
+  </stage>
+  <stage stageid="94d3a642-cb06-45b7-9b64-2d9e8d4826aa" name="Anchor1" type="Anchor">
+    <subsheetid>5f2b8be6-283e-4366-8b08-31de3ca88630</subsheetid>
+    <loginhibit />
+    <display x="15" y="-75" w="10" h="10" />
+    <onsuccess>a7094754-65f9-4120-90b4-a3b25c56ec0f</onsuccess>
+  </stage>
+  <stage stageid="ac335466-41d8-4980-b661-7a88304591c4" name="Convert JSON" type="Block">
+    <subsheetid>5f2b8be6-283e-4366-8b08-31de3ca88630</subsheetid>
+    <loginhibit />
+    <display x="-90" y="-45" w="270" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
+  </stage>
+  <stage stageid="7289cdef-c426-43c8-bb92-01b68700d13e" name="Anchor2" type="Anchor">
+    <subsheetid>5f2b8be6-283e-4366-8b08-31de3ca88630</subsheetid>
+    <loginhibit />
+    <display x="150" y="-75" w="10" h="10" />
+    <onsuccess>94d3a642-cb06-45b7-9b64-2d9e8d4826aa</onsuccess>
+  </stage>
+  <stage stageid="ab0667ed-ec6b-43c1-8bd0-a38eb1393b7d" name="Debug" type="Block">
+    <subsheetid>5f2b8be6-283e-4366-8b08-31de3ca88630</subsheetid>
+    <loginhibit />
+    <display x="105" y="-180" w="225" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="FFFF99" />
+  </stage>
+  <stage stageid="b2bcd943-e87f-4e40-a341-0a4f0df0dc18" name="Build-up" type="Calculation">
+    <subsheetid>5f2b8be6-283e-4366-8b08-31de3ca88630</subsheetid>
+    <loginhibit />
+    <display x="225" y="-150" />
+    <onsuccess>3f7e2841-ff7f-4de6-9ed1-ba66fcaca5f9</onsuccess>
+    <calculation expression="&quot;[&#xA;  {&#xA;    &quot;&quot;field1&quot;&quot;: &quot;&quot;tekst1&quot;&quot;&#xA;  },&#xA;  {&#xA;    &quot;&quot;field1&quot;&quot;: &quot;&quot;tekst1&quot;&quot;,&#xA;    &quot;&quot;field2&quot;&quot;: &quot;&quot;tekst2&quot;&quot;&#xA;  },&#xA;  {&#xA;    &quot;&quot;field1&quot;&quot;: &quot;&quot;tekst&quot;&quot;,&#xA;    &quot;&quot;field2&quot;&quot;: &quot;&quot;tekst2&quot;&quot;,&#xA;    &quot;&quot;field3&quot;&quot;: &quot;&quot;tekst3&quot;&quot;&#xA;  }&#xA;]&#xA;&quot;" stage="json" />
+  </stage>
+  <stage stageid="05579978-ec3b-4814-bbed-1858defb898a" name="Array" type="Calculation">
+    <subsheetid>5f2b8be6-283e-4366-8b08-31de3ca88630</subsheetid>
+    <loginhibit />
+    <display x="300" y="-150" />
+    <onsuccess>df953be7-7875-4345-8800-b267d8f330dc</onsuccess>
+    <calculation expression="&quot;[&#xA;  1,&#xA;  &quot;&quot;Hello world&quot;&quot;,&#xA;  &quot;&quot;2012-04-21T18:25:43-05:00&quot;&quot;&#xA;]&quot;&#xA;" stage="json" />
+  </stage>
+  <stage stageid="3f7e2841-ff7f-4de6-9ed1-ba66fcaca5f9" name="Anchor3" type="Anchor">
+    <subsheetid>5f2b8be6-283e-4366-8b08-31de3ca88630</subsheetid>
+    <loginhibit />
+    <display x="225" y="-75" w="10" h="10" />
+    <onsuccess>7289cdef-c426-43c8-bb92-01b68700d13e</onsuccess>
+  </stage>
+  <stage stageid="df953be7-7875-4345-8800-b267d8f330dc" name="Anchor4" type="Anchor">
+    <subsheetid>5f2b8be6-283e-4366-8b08-31de3ca88630</subsheetid>
+    <loginhibit />
+    <display x="300" y="-75" w="10" h="10" />
+    <onsuccess>3f7e2841-ff7f-4de6-9ed1-ba66fcaca5f9</onsuccess>
+  </stage>
+</process>

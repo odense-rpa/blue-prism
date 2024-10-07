@@ -1,0 +1,2873 @@
+﻿<process name="Nexus - Core" version="1.0" bpversion="7.3.0.9110" narrative="Giver basal adgang til Nexus, håndtere tokens, api kald og konvertering" byrefcollection="true" processrunningmessage="" disableversioning="false" type="object" runmode="Exclusive" shared="True" preferredid="64c7867b-926c-484a-8bdc-a1737e06f08b">
+  <appdef>
+    <element name="Application Root">
+      <id>01c8b426-88f0-4c84-900b-17f82834ee69</id>
+      <type>Application</type>
+      <basetype>Application</basetype>
+      <datatype>unknown</datatype>
+      <diagnose>False</diagnose>
+    </element>
+  </appdef>
+  <view>
+    <camerax>0</camerax>
+    <cameray>-94</cameray>
+    <zoom version="2">1.25</zoom>
+  </view>
+  <preconditions />
+  <endpoint narrative="" />
+  <subsheet subsheetid="5016e95d-2adb-46cc-b86f-d84f0d47f5c2" type="CleanUp" published="True">
+    <name>Clean Up</name>
+    <view>
+      <camerax>0</camerax>
+      <cameray>0</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <subsheet subsheetid="94af1602-beba-4a05-9139-24404c44204c" type="Normal" published="True">
+    <name>Start</name>
+    <view>
+      <camerax>-16</camerax>
+      <cameray>148</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <subsheet subsheetid="dbb5dc0a-bce4-40b2-bb70-f0df455bb056" type="Normal" published="False">
+    <name>Opdater token</name>
+    <view>
+      <camerax>-30</camerax>
+      <cameray>1014</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <subsheet subsheetid="0086b4ce-1ee1-4f4d-b1cf-8c1f5d7861f7" type="Normal" published="True">
+    <name>Get</name>
+    <view>
+      <camerax>47</camerax>
+      <cameray>90</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <subsheet subsheetid="5b2504a6-112c-4abe-9a44-a660a110919c" type="Normal" published="True">
+    <name>Post</name>
+    <view>
+      <camerax>0</camerax>
+      <cameray>172</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <subsheet subsheetid="e5d4df71-c53c-4167-91ed-f5303a3520e0" type="Normal" published="True">
+    <name>Upload fil</name>
+    <view>
+      <camerax>0</camerax>
+      <cameray>294</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <subsheet subsheetid="82780005-198f-460f-af08-8a9996040174" type="Normal" published="True">
+    <name>Put</name>
+    <view>
+      <camerax>0</camerax>
+      <cameray>220</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <subsheet subsheetid="850f4342-90d0-44e8-93b1-33d524c7f10e" type="Normal" published="True">
+    <name>Delete</name>
+    <view>
+      <camerax>0</camerax>
+      <cameray>63</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <subsheet subsheetid="b20307e1-9713-4d08-80f2-573d7723eb01" type="Normal" published="True">
+    <name>Json to collection</name>
+    <view>
+      <camerax>0</camerax>
+      <cameray>0</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <subsheet subsheetid="677bd3f7-09b9-44cb-bb3d-a5903f866539" type="Normal" published="True">
+    <name>Api url</name>
+    <view>
+      <camerax>0</camerax>
+      <cameray>0</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <subsheet subsheetid="cb9fe09f-d42b-40f9-b79c-3789bee0c116" type="Normal" published="True">
+    <name>Hent sider</name>
+    <view>
+      <camerax>0</camerax>
+      <cameray>198</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <stage stageid="5d16e024-7a6d-41f5-a6cd-cd0e5b184046" name="Start" type="Start">
+    <loginhibit />
+    <display x="0" y="-135" />
+    <onsuccess>3571af7d-dc67-4d0c-b273-155876dd006b</onsuccess>
+  </stage>
+  <stage stageid="3571af7d-dc67-4d0c-b273-155876dd006b" name="End" type="End">
+    <loginhibit />
+    <display x="0" y="60" />
+  </stage>
+  <stage stageid="4e055682-f659-48c9-ad63-44a91dad901b" name="Stage1" type="ProcessInfo">
+    <display x="-195" y="-105" w="150" h="90" />
+    <references>
+      <reference>System.dll</reference>
+      <reference>System.Data.dll</reference>
+      <reference>System.Xml.dll</reference>
+      <reference>System.Drawing.dll</reference>
+      <reference>Newtonsoft.Json.dll</reference>
+      <reference>System.Core.dll</reference>
+    </references>
+    <imports>
+      <import>System</import>
+      <import>System.Drawing</import>
+      <import>System.Data</import>
+      <import>System.Text.RegularExpressions</import>
+      <import>System.Text</import>
+      <import>Newtonsoft.Json.Linq</import>
+      <import>Newtonsoft.Json</import>
+      <import>System.Collections.Generic</import>
+      <import>System.Linq</import>
+      <import>System.Net</import>
+    </imports>
+    <language>csharp</language>
+    <globalcode><![CDATA[]]></globalcode>
+    <code><![CDATA[        public DataTable ConvertDataTable(DataTable source)
+        {
+            foreach (DataRow row in source.Rows)
+            {
+                // Recurse into child tables first
+                foreach (DataColumn column in source.Columns)
+                {
+                    if (column.DataType == typeof(DataTable) && column.ColumnName != "_links")
+                    {
+                        row[column] = ConvertDataTable(row[column] as DataTable);
+                    }
+                }
+
+                // Process _links column (if it exists)
+                if (source.Columns.Contains("_links"))
+                {
+                    row["_links"] = ConvertLinks(row["_links"] as DataTable);
+                }
+            }
+
+            return source;
+        }
+
+        public DataTable ConvertLinks(DataTable links)
+        {
+            DataTable dt = new DataTable();
+
+            dt.Clear();
+
+            foreach (DataColumn column in links.Columns)
+            {
+                dt.Columns.Add(column.ColumnName);
+            }
+
+            var row = dt.NewRow();
+            foreach (DataColumn column in links.Columns)
+            {
+                var table = links.Rows[0][column.ColumnName] as DataTable;
+                var value = table.Rows[0][0];
+
+                row[column.ColumnName] = value;
+            }
+
+            dt.Rows.Add(row);
+
+            return dt;
+        }
+
+		
+        public class JSON
+        {
+            public const string Array = "JSON:Array";
+            public const string Null = "JSON:Null";
+            public const string Field = "JSON:Field";
+
+        }
+
+        public class StringOrNull { }
+
+        public DataTable Deserialize(string json)
+        {
+            var obj = Newtonsoft.Json.JsonConvert.DeserializeObject(json);
+
+            return DeserializeGeneric(obj) as DataTable;
+        }
+
+        private object DeserializeGeneric(object obj, Type typeHint = null)
+        {
+            var ja = obj as JArray;
+
+            if (ja != null)
+            {
+                return DeserializeJArray(ja);
+            }
+
+            var jo = obj as JObject;
+
+            if (jo != null)
+            {
+                var objColumns = DeserializeObjectTypes(jo);
+
+                foreach (var key in objColumns.Keys.ToArray())
+                    objColumns[key] = objColumns[key] != typeof(StringOrNull) ? objColumns[key] : typeof(String);
+
+
+                return DeserializeObject(jo, objColumns);
+            }
+
+            //We have a jvalue now so there is typemismatch
+            if (typeHint == typeof(DataTable))
+                return null;
+
+
+            var jv = obj as JValue;
+            if (jv != null)
+            {
+                var currentType = ConvertJTokenType(jv.Type);
+                var targetType = MergeType(currentType, (typeHint != null ? typeHint : currentType));
+
+                if (jv.Value == null && (targetType == typeof(DateTime) || targetType == typeof(TimeSpan)))
+                    return DBNull.Value;
+
+                if (jv.Value == null)
+                    return DBNull.Value;
+
+                if (targetType == typeof(Decimal))
+                    return !string.IsNullOrEmpty(jv.Value.ToString()) ? Decimal.Parse(jv.Value.ToString()) : new Decimal(0);
+
+                if (targetType == typeof(DateTime))
+                    return DateTime.Parse(jv.Value.ToString());
+
+                if (targetType == typeof(TimeSpan))
+                    return TimeSpan.Parse(jv.Value.ToString());
+
+                if (targetType == typeof(Boolean))
+                    return !string.IsNullOrEmpty(jv.Value.ToString()) ? Boolean.Parse(jv.Value.ToString()) : false;
+
+
+                return jv.Value.ToString();
+            }
+
+            return null;
+
+        }
+
+        private object DeserializeJArray(JArray array)
+        {
+            var dt = new DataTable();
+
+            if (array.Count == 0)
+                return dt;
+
+            if (array.All(x => x is JObject))
+            {
+                Dictionary<string, Type> columns = new Dictionary<string, Type>();
+
+                foreach (JObject obj in array)
+                {
+                    var objColumns = DeserializeObjectTypes(obj);
+
+                    foreach (var col in objColumns)
+                    {
+
+                        if (!columns.ContainsKey(col.Key))
+                        {
+                            columns[col.Key] = col.Value;
+                        }
+                        else
+                        {
+                            //Problemet opstår her fordi vi har vildt varierende values henover de her objekter. Så hvis det her sker er vi tvunget i json:array
+                            if (columns[col.Key] as Type != col.Value)
+                            {
+                                //Attempt type coercion
+                                var newType = CoercedCommonType(columns[col.Key] as Type, col.Value);
+
+                                if (newType == null)
+                                    goto Forced_array;
+
+                                columns[col.Key] = newType;
+
+                            }
+                        }
+                    }
+
+                    //Set string or null types to string
+                    
+                }
+
+                foreach (var key in columns.Keys.ToArray())
+                    columns[key] = columns[key] != typeof(StringOrNull) ? columns[key] : typeof(String);
+
+                foreach (var key in columns.Keys)
+                {
+                    dt.Columns.Add(key.ToString(), columns[key] as Type);
+                }
+
+                foreach (JObject obj in array)
+                {
+                    var result = DeserializeObject(obj, columns);
+                    dt.Rows.Add(result.Rows[0].ItemArray);
+                }
+
+                return dt;
+
+            }
+        Forced_array:
+            //var type = ConvertJTokenType(array[0].Type);
+
+            dt.Columns.Add(JSON.Array, typeof(DataTable));
+            foreach (var obj in array)
+            {
+                var result = DeserializeGeneric((object)obj, ConvertJTokenType(obj.Type));
+
+                if (!(result is DataTable))
+                {
+                    var wrapper = new DataTable();
+                    wrapper.Columns.Add(JSON.Field, result.GetType());
+                    var wraprow = wrapper.NewRow();
+                    wraprow[0] = result;
+                    wrapper.Rows.Add(wraprow);
+                    result = wrapper;
+                }
+
+                var row = dt.NewRow();
+                row[0] = result;
+                dt.Rows.Add(row);
+            }
+
+            return dt;
+        }
+
+        private DataTable DeserializeObject(JObject obj, Dictionary<string, Type> typeHints)
+        {
+
+            DataTable result = new DataTable();
+            foreach (var key in typeHints.Keys)
+            {
+                result.Columns.Add(key.ToString(), typeHints[key] as Type);
+            }
+
+            var row = result.NewRow();
+            foreach (KeyValuePair<string, JToken> kvp in obj)
+            {
+                row[kvp.Key] = DeserializeGeneric(kvp.Value, typeHints[kvp.Key]);
+            }
+
+            result.Rows.Add(row);
+
+            return result;
+        }
+
+        private Dictionary<string, Type> DeserializeObjectTypes(JObject obj)
+        {
+
+            var result = new Dictionary<string, Type>();
+
+            foreach (KeyValuePair<string, JToken> kvp in obj)
+            {
+                result[kvp.Key] = ConvertJTokenType(kvp.Value.Type);
+            }
+
+
+
+            return result;
+        }
+
+
+        private Type ConvertJTokenType(JTokenType type)
+        {
+
+            switch (type)
+            {
+                case JTokenType.Object: return typeof(DataTable);
+                case JTokenType.Array: return typeof(DataTable);
+                case JTokenType.Date: return typeof(DateTime);
+                case JTokenType.TimeSpan: return typeof(TimeSpan);
+                case JTokenType.Integer: return typeof(Decimal);
+                case JTokenType.Float: return typeof(Decimal);
+                case JTokenType.Boolean: return typeof(Boolean);
+                case JTokenType.String: return typeof(String);
+                case JTokenType.Null: return typeof(StringOrNull);
+                default: return typeof(StringOrNull);
+            }
+        }
+
+        private Type MergeType(Type t1, Type t2)
+        {
+            if (t1 == typeof(DataTable) || t2 == typeof(DataTable)) return typeof(DataTable);
+            if (t1 == typeof(DateTime) || t2 == typeof(DateTime)) return typeof(DateTime);
+            if (t1 == typeof(TimeSpan) || t2 == typeof(TimeSpan)) return typeof(TimeSpan);
+            if (t1 == typeof(Decimal) || t2 == typeof(Decimal)) return typeof(Decimal);
+            if (t1 == typeof(Boolean) || t2 == typeof(Boolean)) return typeof(Boolean);
+            return typeof(String);
+        }
+
+
+        private Type CoercedCommonType(Type t1, Type t2)
+        {
+            if (t1 == t2)
+                return t1;
+
+            if ((t1 == typeof(Decimal) || t1 == typeof(string) || t1 == typeof(Boolean))
+                && (t2 == typeof(Decimal) || t2 == typeof(string) || t2 == typeof(Boolean)))
+            {
+                return typeof(string);
+            }
+
+            if (t1 == typeof(StringOrNull) && t2 != typeof(StringOrNull))
+                return t2;
+
+            if (t2 == typeof(StringOrNull) && t1 != typeof(StringOrNull))
+                return t1;
+
+
+            return null;
+        }
+
+]]></code>
+  </stage>
+  <stage stageid="05911e28-f880-479d-8a72-3fdd5cd5ca45" name="Clean Up" type="SubSheetInfo">
+    <subsheetid>5016e95d-2adb-46cc-b86f-d84f0d47f5c2</subsheetid>
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="efec1c93-7d51-49b3-9d5f-4535ce2125bd" name="Start" type="Start">
+    <subsheetid>5016e95d-2adb-46cc-b86f-d84f0d47f5c2</subsheetid>
+    <loginhibit />
+    <display x="15" y="-105" />
+    <onsuccess>a2791b0e-4b19-420f-af7a-6f6a556d68fe</onsuccess>
+  </stage>
+  <stage stageid="a2791b0e-4b19-420f-af7a-6f6a556d68fe" name="End" type="End">
+    <subsheetid>5016e95d-2adb-46cc-b86f-d84f0d47f5c2</subsheetid>
+    <loginhibit />
+    <display x="15" y="90" />
+  </stage>
+  <stage stageid="0fc1e85d-ba85-446f-aefa-6dd4dce0477f" name="Start" type="SubSheetInfo">
+    <subsheetid>94af1602-beba-4a05-9139-24404c44204c</subsheetid>
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="146f0f64-859c-4419-bc07-f4bb5d2bf425" name="Start" type="Start">
+    <subsheetid>94af1602-beba-4a05-9139-24404c44204c</subsheetid>
+    <loginhibit />
+    <display x="15" y="-135" />
+    <inputs>
+      <input type="text" name="Credentials" stage="Credentials" />
+    </inputs>
+    <onsuccess>1f3e36ff-ce33-4730-893e-052ef5c74396</onsuccess>
+  </stage>
+  <stage stageid="d2c3a042-aa9c-4b6f-8642-d21016c1d18b" name="End" type="End">
+    <subsheetid>94af1602-beba-4a05-9139-24404c44204c</subsheetid>
+    <loginhibit />
+    <display x="15" y="450" />
+  </stage>
+  <stage stageid="4dee6595-691a-43c1-b424-c97960234797" name="" type="Note">
+    <subsheetid>5016e95d-2adb-46cc-b86f-d84f0d47f5c2</subsheetid>
+    <narrative>Clean Up Page
+
+This is an optional page where you might choose to perform some finalisation (or "cleanup") tasks as your business object is closed down.
+
+The cleanup action will be called automatically immediately after closing your business object at the end of a business process.
+
+You will not be able to call this action from a business process, nor will it be called at any other time than before the disposal of the business object.</narrative>
+    <display x="-180" y="60" w="180" h="230" />
+  </stage>
+  <stage stageid="2ea9db30-c10f-4e07-b966-ce37389ab6e4" name="Input" type="Block">
+    <display x="-270" y="-45" w="150" h="45" />
+    <font family="Segoe UI" size="10" style="Regular" color="339966" />
+  </stage>
+  <stage stageid="8badc4dc-92e8-4401-b0c3-22aee9a05348" name="Variabler" type="Block">
+    <display x="-270" y="75" w="150" h="105" />
+    <font family="Segoe UI" size="10" style="Regular" color="666699" />
+  </stage>
+  <stage stageid="cc8d93e2-d0fb-4da0-a4aa-eeae560e0706" name="Konstanter" type="Block">
+    <display x="-270" y="15" w="150" h="45" />
+    <font family="Segoe UI" size="10" style="Regular" color="008080" />
+  </stage>
+  <stage stageid="2963a5e3-dc8a-43d8-9cee-b43d97d71c91" name="Output" type="Block">
+    <display x="-270" y="195" w="150" h="45" />
+    <font family="Segoe UI" size="10" style="Regular" color="800080" />
+  </stage>
+  <stage stageid="cd061be6-775d-4586-86c9-decdc5b058cc" name="Headers" type="Collection">
+    <loginhibit />
+    <display x="-195" y="105" w="120" h="30" />
+    <datatype>collection</datatype>
+    <alwaysinit />
+    <collectioninfo>
+      <singlerow />
+      <field name="Authorization" type="text" />
+    </collectioninfo>
+    <initialvalue>
+      <singlerow />
+      <row>
+        <field name="Authorization" type="text" value="Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJIdUFnRjFnd3R4bGVhaVY5anIyMjZxR1VtSFpRdVYxUlNGU0M1N0FwaUhzIn0.eyJqdGkiOiJhYmNhYTk2ZS1kYzlkLTQxNjQtYTZlNi1hZTBiYzQ5YTA5NjciLCJleHAiOjE1NzEwNTk0OTMsIm5iZiI6MCwiaWF0IjoxNTcxMDU0MDkzLCJpc3MiOiJodHRwczovL29kZW5zZS5uZXh1cy5rbWQuZGsvYXV0aF92Mi9yZWFsbXMvb2RlbnNlIiwiYXVkIjoibmV4dXMiLCJzdWIiOiJmMzA5NjdmZi1jYmQ4LTQwMmYtYjhiNC1kZmM4NTRhYjNiZTYiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJuZXh1cyIsIm5vbmNlIjoieDJlMU1jdTV0MlUxIiwiYXV0aF90aW1lIjoxNTcxMDU0MDkzLCJzZXNzaW9uX3N0YXRlIjoiNjM3NmI5OWEtMDRlOC00OTlmLThjZjktYjZjMzllNzE0ZjA5IiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyJodHRwczovL29kZW5zZS5uZXh1cy5rbWQuZGsiXSwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbInVtYV9hdXRob3JpemF0aW9uIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwibmFtZSI6Ik1pY2hhZWwgV3VsZmYgTmllbHNlbiIsInByZWZlcnJlZF91c2VybmFtZSI6Im1pd25Ab2RlbnNlLmRrIiwic291cmNlIjoiYnJva2VyIiwiZ2l2ZW5fbmFtZSI6Ik1pY2hhZWwgV3VsZmYiLCJmYW1pbHlfbmFtZSI6Ik5pZWxzZW4iLCJjbGllbnRfaWQiOiJuZXh1cyIsImVtYWlsIjoibWl3bkBvZGVuc2UuZGsiLCJjdXN0b21lciI6Im9kZW5zZSJ9.kE5R8eRAk-7Jde5tvQVzCbfqFjtmF7n1h2RRj_7cEyJjNDHIwhresg_32CWpXkCunbXXuc8he4JeH0wbOVWgiyqFiZ1F-HhEEKZ-9u-ET8J_DxKuBWdm0bFJAN7EQGkEd2rHn4ZOGD0WcO3LMVVQJY7a39bWMlNp3m7s-n18av8mIPZSIn_Wp3FVml6wRX2LKTC5eurFYuR4-AtrRGp79SMh4kmYumEmhZMMJNu2RPx5M2Rsnej7n1Uq-etviDcgrFznChGS3swY-pNdt-VaSWLXfG-kvukAe09Jxpim24VCuruM7qf20nGfw8jSSeVoXUCaCEqABEvtNWoah4W6SQ" />
+      </row>
+    </initialvalue>
+  </stage>
+  <stage stageid="7aba3072-d698-4061-8e5f-7776a6abd472" name="Input" type="Block">
+    <subsheetid>94af1602-beba-4a05-9139-24404c44204c</subsheetid>
+    <display x="-270" y="-45" w="150" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="339966" />
+  </stage>
+  <stage stageid="0b013340-31d0-42cc-864d-9e4fa458d344" name="Credentials" type="Data">
+    <subsheetid>94af1602-beba-4a05-9139-24404c44204c</subsheetid>
+    <display x="-195" y="-15" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <alwaysinit />
+  </stage>
+  <stage stageid="a601d210-f1eb-4bd7-b45a-9dfadd19035d" name="Variabler" type="Block">
+    <subsheetid>94af1602-beba-4a05-9139-24404c44204c</subsheetid>
+    <display x="-270" y="195" w="150" h="195" />
+    <font family="Segoe UI" size="10" style="Regular" color="666699" />
+  </stage>
+  <stage stageid="63c5d2eb-d07c-4710-b3b5-a0b6d69c691a" name="Konstanter" type="Block">
+    <subsheetid>94af1602-beba-4a05-9139-24404c44204c</subsheetid>
+    <display x="-270" y="30" w="150" h="150" />
+    <font family="Segoe UI" size="10" style="Regular" color="008080" />
+  </stage>
+  <stage stageid="172ca485-243b-4d64-83dc-48bd1e9aa34c" name="Output" type="Block">
+    <subsheetid>94af1602-beba-4a05-9139-24404c44204c</subsheetid>
+    <display x="-270" y="405" w="150" h="45" />
+    <font family="Segoe UI" size="10" style="Regular" color="800080" />
+  </stage>
+  <stage stageid="22a8ff5b-1dba-44d5-8ecb-e3b231417f82" name="Api-url" type="Data">
+    <subsheetid>94af1602-beba-4a05-9139-24404c44204c</subsheetid>
+    <loginhibit />
+    <display x="-195" y="105" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <alwaysinit />
+  </stage>
+  <stage stageid="29bac138-0d44-4807-9e80-eb180f605fb6" name="Base-url" type="Data">
+    <subsheetid>94af1602-beba-4a05-9139-24404c44204c</subsheetid>
+    <loginhibit />
+    <display x="-195" y="60" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <alwaysinit />
+  </stage>
+  <stage stageid="5077b4d7-af78-49da-9a2c-6049b2fcdd89" name="Api" type="Collection">
+    <subsheetid>94af1602-beba-4a05-9139-24404c44204c</subsheetid>
+    <loginhibit />
+    <display x="-195" y="150" w="120" h="30" />
+    <datatype>collection</datatype>
+    <noalwaysinit />
+  </stage>
+  <stage stageid="9c320e42-643b-461c-bf38-c87258cf71a3" name="Sæt debug token" type="Calculation">
+    <subsheetid>94af1602-beba-4a05-9139-24404c44204c</subsheetid>
+    <loginhibit />
+    <display x="135" y="-135" />
+    <onsuccess>f5aad97e-9355-425d-874a-c4e43888c75e</onsuccess>
+    <calculation expression="&quot;KMD Nexus - odensedev&quot;" stage="Credentials" />
+  </stage>
+  <stage stageid="2f69eca4-25ed-4e95-a834-1a56d095fe9e" name="Hent credentials" type="Action">
+    <subsheetid>94af1602-beba-4a05-9139-24404c44204c</subsheetid>
+    <loginhibit onsuccess="true" />
+    <narrative>Get the specified set of credentials.
+
+An Exception will occur if access to the credentials is not allowed, based on the running Resource, Process and User.</narrative>
+    <display x="15" y="-45" />
+    <inputs>
+      <input type="text" name="Credentials Name" friendlyname="Credentials Name" narrative="The name of the credentials to get" expr="[Credentials]" />
+    </inputs>
+    <outputs>
+      <output type="password" name="Password" friendlyname="Password" narrative="The password" stage="Client secret" />
+      <output type="text" name="Username" friendlyname="Username" narrative="The user name" stage="Client id" />
+      <output type="date" name="Expiry Date" friendlyname="Expiry Date" narrative="The expiry date" stage="" />
+      <output type="text" name="Status" friendlyname="Status" narrative="The status" stage="" />
+    </outputs>
+    <onsuccess>6600372e-68a6-42fa-8395-9d7f6476db46</onsuccess>
+    <resource object="Blueprism.Automate.clsCredentialsActions" action="Get" />
+  </stage>
+  <stage stageid="6600372e-68a6-42fa-8395-9d7f6476db46" name="Get system" type="Action">
+    <subsheetid>94af1602-beba-4a05-9139-24404c44204c</subsheetid>
+    <loginhibit onsuccess="true" />
+    <narrative>Returns the value of the specified credentials property.
+
+An Exception will occur if access to these credentials is not allowed (based on the running Resource, Process and User) or if the credentials do not contain a property with the specified name.</narrative>
+    <display x="15" y="0" />
+    <inputs>
+      <input type="text" name="Credentials Name" friendlyname="Credentials Name" narrative="The name of the credentials" expr="[Credentials]" />
+      <input type="text" name="Property Name" friendlyname="Property Name" narrative="The name of the property" expr="&quot;system&quot;" />
+    </inputs>
+    <outputs>
+      <output type="password" name="Property Value" friendlyname="Property Value" narrative="The value of the property" stage="System" />
+    </outputs>
+    <onsuccess>882adcb9-82e4-4c53-8e4d-883e7ab584d5</onsuccess>
+    <resource object="Blueprism.Automate.clsCredentialsActions" action="Get Property" />
+  </stage>
+  <stage stageid="882adcb9-82e4-4c53-8e4d-883e7ab584d5" name="Get systemtype" type="Action">
+    <subsheetid>94af1602-beba-4a05-9139-24404c44204c</subsheetid>
+    <loginhibit onsuccess="true" />
+    <narrative>Returns the value of the specified credentials property.
+
+An Exception will occur if access to these credentials is not allowed (based on the running Resource, Process and User) or if the credentials do not contain a property with the specified name.</narrative>
+    <display x="15" y="45" />
+    <inputs>
+      <input type="text" name="Credentials Name" friendlyname="Credentials Name" narrative="The name of the credentials" expr="[Credentials]" />
+      <input type="text" name="Property Name" friendlyname="Property Name" narrative="The name of the property" expr="&quot;system_type&quot;" />
+    </inputs>
+    <outputs>
+      <output type="password" name="Property Value" friendlyname="Property Value" narrative="The value of the property" stage="Systemtype" />
+    </outputs>
+    <onsuccess>b0b54a3d-f0ce-4d31-9456-30f73a4de510</onsuccess>
+    <resource object="Blueprism.Automate.clsCredentialsActions" action="Get Property" />
+  </stage>
+  <stage stageid="b0b54a3d-f0ce-4d31-9456-30f73a4de510" name="Produktion?" type="Decision">
+    <subsheetid>94af1602-beba-4a05-9139-24404c44204c</subsheetid>
+    <loginhibit />
+    <display x="15" y="90" />
+    <decision expression="&quot;&quot; &amp; [Systemtype] = &quot;prod&quot; OR &quot;&quot; &amp; [Systemtype] = &quot;&quot;" />
+    <ontrue>680ab5e6-3e6f-44fd-b7d1-6083ae8d6fb6</ontrue>
+    <onfalse>3b774c17-86ec-4b6e-93aa-d77b91c6b3cb</onfalse>
+  </stage>
+  <stage stageid="680ab5e6-3e6f-44fd-b7d1-6083ae8d6fb6" name="Sæt basis url" type="Calculation">
+    <subsheetid>94af1602-beba-4a05-9139-24404c44204c</subsheetid>
+    <loginhibit />
+    <display x="15" y="135" />
+    <onsuccess>bfc41dec-5b48-419e-9fd7-45a594774462</onsuccess>
+    <calculation expression="&quot;https://&quot; &amp; [System] &amp; &quot;.nexus.kmd.dk&quot;" stage="Base-url" />
+  </stage>
+  <stage stageid="3b774c17-86ec-4b6e-93aa-d77b91c6b3cb" name="Sæt basis url (ikke produktion)" type="Calculation">
+    <subsheetid>94af1602-beba-4a05-9139-24404c44204c</subsheetid>
+    <loginhibit />
+    <display x="90" y="90" />
+    <onsuccess>3b9cceb0-e0d9-4809-b106-b8911e1c09ce</onsuccess>
+    <calculation expression="&quot;https://&quot; &amp; [System] &amp; &quot;.nexus-&quot; &amp; [Systemtype] &amp; &quot;.kmd.dk&quot;" stage="Base-url" />
+  </stage>
+  <stage stageid="bfc41dec-5b48-419e-9fd7-45a594774462" name="Anchor7" type="Anchor">
+    <subsheetid>94af1602-beba-4a05-9139-24404c44204c</subsheetid>
+    <loginhibit />
+    <display x="15" y="165" w="10" h="10" />
+    <onsuccess>8a67221b-665f-40b8-a937-38b48c2271e0</onsuccess>
+  </stage>
+  <stage stageid="3b9cceb0-e0d9-4809-b106-b8911e1c09ce" name="Anchor12" type="Anchor">
+    <subsheetid>94af1602-beba-4a05-9139-24404c44204c</subsheetid>
+    <loginhibit />
+    <display x="90" y="165" w="10" h="10" />
+    <onsuccess>bfc41dec-5b48-419e-9fd7-45a594774462</onsuccess>
+  </stage>
+  <stage stageid="8a67221b-665f-40b8-a937-38b48c2271e0" name="Sæt api url" type="Calculation">
+    <subsheetid>94af1602-beba-4a05-9139-24404c44204c</subsheetid>
+    <loginhibit />
+    <display x="15" y="195" />
+    <onsuccess>71ee7c88-a432-4194-b9a5-3ee8ad0f1601</onsuccess>
+    <calculation expression="[Base-url] &amp; &quot;/api/core/mobile/&quot; &amp; [System] &amp; &quot;/v2/&quot;" stage="Api-url" />
+  </stage>
+  <stage stageid="ee1c23ac-d52d-4137-adf8-f6d047fa46fe" name="Basal opsætning" type="Block">
+    <subsheetid>94af1602-beba-4a05-9139-24404c44204c</subsheetid>
+    <loginhibit />
+    <display x="-75" y="-75" w="270" h="300" />
+    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
+  </stage>
+  <stage stageid="b7e7e741-06f8-4861-9ee2-93438a169e13" name="Client id" type="Data">
+    <subsheetid>94af1602-beba-4a05-9139-24404c44204c</subsheetid>
+    <display x="-195" y="225" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <alwaysinit />
+  </stage>
+  <stage stageid="da913b0e-8b8f-47e4-87b7-251894ab5a98" name="Client secret" type="Data">
+    <subsheetid>94af1602-beba-4a05-9139-24404c44204c</subsheetid>
+    <display x="-195" y="270" w="120" h="30" />
+    <datatype>password</datatype>
+    <initialvalueenc></initialvalueenc>
+    <alwaysinit />
+  </stage>
+  <stage stageid="4dff255b-9fa4-46f5-9cdb-3cda6fae7f2f" name="System" type="Data">
+    <subsheetid>94af1602-beba-4a05-9139-24404c44204c</subsheetid>
+    <loginhibit />
+    <display x="-195" y="315" w="120" h="30" />
+    <datatype>password</datatype>
+    <initialvalueenc></initialvalueenc>
+    <alwaysinit />
+  </stage>
+  <stage stageid="e7070ca7-8dff-472c-8ebf-3327943cabac" name="Systemtype" type="Data">
+    <subsheetid>94af1602-beba-4a05-9139-24404c44204c</subsheetid>
+    <display x="-195" y="360" w="120" h="30" />
+    <datatype>password</datatype>
+    <initialvalueenc></initialvalueenc>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="1f3e36ff-ce33-4730-893e-052ef5c74396" name="Anchor1" type="Anchor">
+    <subsheetid>94af1602-beba-4a05-9139-24404c44204c</subsheetid>
+    <loginhibit />
+    <display x="15" y="-90" w="10" h="10" />
+    <onsuccess>2f69eca4-25ed-4e95-a834-1a56d095fe9e</onsuccess>
+  </stage>
+  <stage stageid="f5aad97e-9355-425d-874a-c4e43888c75e" name="Anchor2" type="Anchor">
+    <subsheetid>94af1602-beba-4a05-9139-24404c44204c</subsheetid>
+    <loginhibit />
+    <display x="135" y="-90" w="10" h="10" />
+    <onsuccess>1f3e36ff-ce33-4730-893e-052ef5c74396</onsuccess>
+  </stage>
+  <stage stageid="94ffa6a4-bdef-4abc-9fc8-86063e0caf97" name="Debug" type="Block">
+    <subsheetid>94af1602-beba-4a05-9139-24404c44204c</subsheetid>
+    <loginhibit />
+    <display x="75" y="-165" w="165" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="FFFF99" />
+  </stage>
+  <stage stageid="75eaa78f-ce3a-40ad-bd9c-8da78010e441" name="Opdater token" type="SubSheetInfo">
+    <subsheetid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</subsheetid>
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="dc0c88f4-f6d6-4ad4-82f8-33e5fae71b70" name="Start" type="Start">
+    <subsheetid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</subsheetid>
+    <loginhibit />
+    <display x="15" y="-225" />
+    <onsuccess>bfaf28a2-0666-4bbf-a4d9-29eeedbcc60b</onsuccess>
+  </stage>
+  <stage stageid="1ee9fb32-444d-4d52-b8d1-352bd8c6dcee" name="Input" type="Block">
+    <subsheetid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</subsheetid>
+    <display x="-270" y="-45" w="150" h="45" />
+    <font family="Segoe UI" size="10" style="Regular" color="339966" />
+  </stage>
+  <stage stageid="2cbdacd2-e0d8-4e5e-b9b6-e1b2c1c73789" name="Variabler" type="Block">
+    <subsheetid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</subsheetid>
+    <display x="-270" y="75" w="150" h="330" />
+    <font family="Segoe UI" size="10" style="Regular" color="666699" />
+  </stage>
+  <stage stageid="d5c395bc-4117-43de-9f3b-043d80fc0348" name="Konstanter" type="Block">
+    <subsheetid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</subsheetid>
+    <display x="-270" y="15" w="150" h="45" />
+    <font family="Segoe UI" size="10" style="Regular" color="008080" />
+  </stage>
+  <stage stageid="3f930ede-7ad6-4ab3-9c4f-3e97a16da18d" name="Output" type="Block">
+    <subsheetid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</subsheetid>
+    <display x="-270" y="420" w="150" h="45" />
+    <font family="Segoe UI" size="10" style="Regular" color="800080" />
+  </stage>
+  <stage stageid="a84f5780-b598-44e0-aaf4-74430c416af0" name="Lock" type="Data">
+    <subsheetid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</subsheetid>
+    <display x="-195" y="105" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="4ff59a1b-bbb7-4b41-b027-c512a622bf0f" name="Expires (text)" type="Data">
+    <subsheetid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</subsheetid>
+    <loginhibit />
+    <display x="-195" y="150" w="120" h="30" />
+    <datatype>password</datatype>
+    <initialvalueenc></initialvalueenc>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="c2d7ca31-7e21-4ce5-9a64-5afade9cb407" name="Loginheaders" type="Collection">
+    <subsheetid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</subsheetid>
+    <loginhibit />
+    <display x="-195" y="240" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+    <collectioninfo>
+      <singlerow />
+      <field name="Authorization" type="text" />
+    </collectioninfo>
+    <initialvalue>
+      <singlerow />
+      <row>
+        <field name="Authorization" type="text" value="" />
+      </row>
+    </initialvalue>
+  </stage>
+  <stage stageid="546769c9-682d-464b-bf1e-a351c3eb9a1d" name="Authorization" type="Data">
+    <subsheetid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</subsheetid>
+    <display x="-195" y="195" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="361bc447-56a5-41f1-a6c4-bb9c722c92d9" name="Resultat" type="Data">
+    <subsheetid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</subsheetid>
+    <display x="-195" y="285" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="660988dc-8230-4047-982f-a0f4c77e9b34" name="Data" type="Collection">
+    <subsheetid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</subsheetid>
+    <display x="-195" y="330" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="bfaf28a2-0666-4bbf-a4d9-29eeedbcc60b" name="Acquire Lock" type="Action">
+    <subsheetid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</subsheetid>
+    <loginhibit onsuccess="true" />
+    <narrative>Acquires the lock associated with the given name. If this session already holds the required lock, it will be re-acquired with a new token</narrative>
+    <display x="15" y="-165" />
+    <inputs>
+      <input type="text" name="Name" friendlyname="Name" narrative="The name of the required lock. Mandatory parameter." expr="&quot;Nexus token (Core) &quot; &amp; [System]" />
+      <input type="timespan" name="Timeout" friendlyname="Timeout" narrative="The maximum amount of time to await the lock. Default is to wait forever" expr="MakeTimeSpan(0, 0, 5, 0)" />
+      <input type="text" name="Preferred Token" friendlyname="Preferred Token" narrative="The preferred token to use for the lock. Default behaviour is to generate a new unique token." expr="" />
+      <input type="text" name="Comment" friendlyname="Comment" narrative="The comments to set on the lock" expr="&quot;Locked: &quot;&amp;Now()" />
+    </inputs>
+    <outputs>
+      <output type="text" name="Token" friendlyname="Token" narrative="The token registered against the lock. This will be empty if the lock could not be acquired" stage="Lock" />
+    </outputs>
+    <onsuccess>025781ba-c7e1-44ce-b532-de5ec7921b75</onsuccess>
+    <resource object="BluePrism.AutomateAppCore.clsEnvironmentLockingBusinessObject" action="Acquire Lock" />
+  </stage>
+  <stage stageid="71b326ed-e8fa-4007-9a2c-0fb621f3246b" name="Get token" type="Action">
+    <subsheetid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</subsheetid>
+    <loginhibit onsuccess="true" />
+    <narrative>Returns the value of the specified credentials property.
+
+An Exception will occur if access to these credentials is not allowed (based on the running Resource, Process and User) or if the credentials do not contain a property with the specified name.</narrative>
+    <display x="15" y="-75" />
+    <inputs>
+      <input type="text" name="Credentials Name" friendlyname="Credentials Name" narrative="The name of the credentials" expr="[Credentials]" />
+      <input type="text" name="Property Name" friendlyname="Property Name" narrative="The name of the property" expr="&quot;token&quot;" />
+    </inputs>
+    <outputs>
+      <output type="password" name="Property Value" friendlyname="Property Value" narrative="The value of the property" stage="Tokens.Token" />
+    </outputs>
+    <onsuccess>e6d56521-2843-4278-bfc0-1a8ab11a2b43</onsuccess>
+    <resource object="Blueprism.Automate.clsCredentialsActions" action="Get Property" />
+  </stage>
+  <stage stageid="e6d56521-2843-4278-bfc0-1a8ab11a2b43" name="Get expires" type="Action">
+    <subsheetid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</subsheetid>
+    <loginhibit onsuccess="true" />
+    <narrative>Returns the value of the specified credentials property.
+
+An Exception will occur if access to these credentials is not allowed (based on the running Resource, Process and User) or if the credentials do not contain a property with the specified name.</narrative>
+    <display x="15" y="-30" />
+    <inputs>
+      <input type="text" name="Credentials Name" friendlyname="Credentials Name" narrative="The name of the credentials" expr="[Credentials]" />
+      <input type="text" name="Property Name" friendlyname="Property Name" narrative="The name of the property" expr="&quot;expires&quot;" />
+    </inputs>
+    <outputs>
+      <output type="password" name="Property Value" friendlyname="Property Value" narrative="The value of the property" stage="Expires (text)" />
+    </outputs>
+    <onsuccess>a46f2306-4221-407d-9ea3-adf1eff13b48</onsuccess>
+    <resource object="Blueprism.Automate.clsCredentialsActions" action="Get Property" />
+  </stage>
+  <stage stageid="a46f2306-4221-407d-9ea3-adf1eff13b48" name="Er expires teksten tom?" type="Decision">
+    <subsheetid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="15" y="30" />
+    <decision expression="Trim(&quot;&quot; &amp; [Expires (text)]) = &quot;&quot;" />
+    <ontrue>b3252382-8186-42e9-86ec-1d2a0981dfc0</ontrue>
+    <onfalse>5187ffa8-7cc7-4c1d-aede-b57a38036da4</onfalse>
+  </stage>
+  <stage stageid="5187ffa8-7cc7-4c1d-aede-b57a38036da4" name="Opdater expires" type="Calculation">
+    <subsheetid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="105" y="30" />
+    <onsuccess>14c38b36-0e30-4fc6-81bb-5c927ecb5af9</onsuccess>
+    <calculation expression="ToDateTime(&quot;&quot; &amp; [Expires (text)])" stage="Tokens.Token expires" />
+  </stage>
+  <stage stageid="d7f50172-1685-41d1-9312-a889fa19de8a" name="End11" type="End">
+    <subsheetid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="240" y="120" />
+  </stage>
+  <stage stageid="ad607894-9470-469f-a793-63e3e6612403" name="Release Lock" type="Action">
+    <subsheetid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</subsheetid>
+    <loginhibit onsuccess="true" />
+    <narrative>Releases the lock(s) associated with the given name and token</narrative>
+    <display x="90" y="120" />
+    <inputs>
+      <input type="text" name="Name" friendlyname="Name" narrative="The name of the specific lock to be released. Default behaviour is to release all locks with the given token." expr="&quot;Nexus token (Core) &quot; &amp; [System]" />
+      <input type="text" name="Comment" friendlyname="Comment" narrative="The comments to set on the lock(s)" expr="&quot;Unlocked: &quot;&amp;Now()" />
+      <input type="text" name="Token" friendlyname="Token" narrative="The token associated with the lock(s) to be released. Mandatory parameter." expr="[Lock]" />
+      <input type="flag" name="All Sessions" friendlyname="All Sessions" narrative="True to release locks matching the specified constraints across all sessions; False to only release locks acquired in the current session. Default is False" expr="" />
+      <input type="flag" name="Keep Environment Lock" friendlyname="Keep Environment Lock" narrative="The environment lock will be kept after that lock is released. Default behaviour is to delete the lock." expr="" />
+    </inputs>
+    <onsuccess>2e59300e-3c82-4a27-a89c-d7b32803527d</onsuccess>
+    <resource object="BluePrism.AutomateAppCore.clsEnvironmentLockingBusinessObject" action="Release Lock" />
+  </stage>
+  <stage stageid="b3252382-8186-42e9-86ec-1d2a0981dfc0" name="Anchor15" type="Anchor">
+    <subsheetid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="15" y="75" w="10" h="10" />
+    <onsuccess>402eabee-76c6-4647-aa2a-c18b76ad44a3</onsuccess>
+  </stage>
+  <stage stageid="14c38b36-0e30-4fc6-81bb-5c927ecb5af9" name="Anchor16" type="Anchor">
+    <subsheetid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="105" y="75" w="10" h="10" />
+    <onsuccess>b3252382-8186-42e9-86ec-1d2a0981dfc0</onsuccess>
+  </stage>
+  <stage stageid="402eabee-76c6-4647-aa2a-c18b76ad44a3" name="Er vi udløbet?" type="Decision">
+    <subsheetid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="15" y="120" />
+    <decision expression="[Tokens.Token expires] &lt; Now() OR [Tokens.Token] = &quot;&quot;" />
+    <ontrue>9ea7d2cd-da0b-4c07-a2dd-575b3e6a1e09</ontrue>
+    <onfalse>ad607894-9470-469f-a793-63e3e6612403</onfalse>
+  </stage>
+  <stage stageid="2e59300e-3c82-4a27-a89c-d7b32803527d" name="Opdater header" type="Calculation">
+    <subsheetid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="165" y="120" />
+    <onsuccess>d7f50172-1685-41d1-9312-a889fa19de8a</onsuccess>
+    <calculation expression="&quot;Bearer &quot; &amp; [Tokens.Token]" stage="Headers.Authorization" />
+  </stage>
+  <stage stageid="025781ba-c7e1-44ce-b532-de5ec7921b75" name="Fik vi låsen?" type="Decision">
+    <subsheetid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="15" y="-120" />
+    <decision expression="[Lock] &lt;&gt; &quot;&quot;" />
+    <ontrue>71b326ed-e8fa-4007-9a2c-0fb621f3246b</ontrue>
+    <onfalse>d2d231e5-5656-48d8-aea9-7c223f9d6a90</onfalse>
+  </stage>
+  <stage stageid="d2d231e5-5656-48d8-aea9-7c223f9d6a90" name="Timeout" type="Exception">
+    <subsheetid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="150" y="-120" />
+    <exception localized="yes" type="Timeout" detail="&quot;Det lykkedes os ikke at få låsen indenfor 5 minuter&quot;" />
+  </stage>
+  <stage stageid="ca4726b7-d2a6-4f2a-abd0-5053d734953a" name="Opdater den lokale token" type="Block">
+    <subsheetid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="-90" y="-195" w="435" h="345" />
+    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
+  </stage>
+  <stage stageid="7169acac-d07e-489e-a1e5-046ba51b4744" name="Hent ny token" type="Block">
+    <subsheetid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</subsheetid>
+    <loginhibit />
+    <display x="-90" y="360" w="435" h="330" />
+    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
+  </stage>
+  <stage stageid="d5b87562-a31d-4d8b-a2b7-1cce58a2711d" name="Gem token" type="Action">
+    <subsheetid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</subsheetid>
+    <narrative>Sets the value of the specified credentials property.
+
+An Exception will occur if access to these credentials is not allowed (based on the running Resource, Process and User).If the credential does not contain the specified property, the property will be added and the value set as specified.</narrative>
+    <display x="15" y="840" />
+    <inputs>
+      <input type="text" name="Credentials Name" friendlyname="Credentials Name" narrative="The name of the credentials" expr="[Credentials]" />
+      <input type="text" name="Property Name" friendlyname="Property Name" narrative="The name of the property" expr="&quot;token&quot;" />
+      <input type="password" name="Property Value" friendlyname="Property Value" narrative="The value of the property" expr="[Tokens.Token]" />
+    </inputs>
+    <onsuccess>ce34161f-5fd0-415d-b99f-2c4015b1f9ff</onsuccess>
+    <resource object="Blueprism.Automate.clsCredentialsActions" action="Set Property" />
+  </stage>
+  <stage stageid="ce34161f-5fd0-415d-b99f-2c4015b1f9ff" name="Gem expires" type="Action">
+    <subsheetid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</subsheetid>
+    <narrative>Sets the value of the specified credentials property.
+
+An Exception will occur if access to these credentials is not allowed (based on the running Resource, Process and User).If the credential does not contain the specified property, the property will be added and the value set as specified.</narrative>
+    <display x="15" y="885" />
+    <inputs>
+      <input type="text" name="Credentials Name" friendlyname="Credentials Name" narrative="The name of the credentials" expr="[Credentials]" />
+      <input type="text" name="Property Name" friendlyname="Property Name" narrative="The name of the property" expr="&quot;expires&quot;" />
+      <input type="password" name="Property Value" friendlyname="Property Value" narrative="The value of the property" expr="&quot;&quot; &amp; [Tokens.Token expires]" />
+    </inputs>
+    <onsuccess>0559a3a0-e9d2-40f6-b720-ec778a348849</onsuccess>
+    <resource object="Blueprism.Automate.clsCredentialsActions" action="Set Property" />
+  </stage>
+  <stage stageid="83023ffc-e30a-44a9-977c-95f8120dcec0" name="Release Lock" type="Action">
+    <subsheetid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</subsheetid>
+    <loginhibit onsuccess="true" />
+    <narrative>Releases the lock(s) associated with the given name and token</narrative>
+    <display x="15" y="1035" />
+    <inputs>
+      <input type="text" name="Name" friendlyname="Name" narrative="The name of the specific lock to be released. Default behaviour is to release all locks with the given token." expr="&quot;Nexus token (Core) &quot; &amp; [System]" />
+      <input type="text" name="Comment" friendlyname="Comment" narrative="The comments to set on the lock(s)" expr="&quot;Unlocked: &quot;&amp;Now()" />
+      <input type="text" name="Token" friendlyname="Token" narrative="The token associated with the lock(s) to be released. Mandatory parameter." expr="[Lock]" />
+      <input type="flag" name="All Sessions" friendlyname="All Sessions" narrative="True to release locks matching the specified constraints across all sessions; False to only release locks acquired in the current session. Default is False" expr="" />
+      <input type="flag" name="Keep Environment Lock" friendlyname="Keep Environment Lock" narrative="The environment lock will be kept after that lock is released. Default behaviour is to delete the lock." expr="" />
+    </inputs>
+    <onsuccess>bba39d6e-be61-4dc9-a272-42b2a65b0be5</onsuccess>
+    <resource object="BluePrism.AutomateAppCore.clsEnvironmentLockingBusinessObject" action="Release Lock" />
+  </stage>
+  <stage stageid="13204beb-fd75-468c-817e-b42bd9e26084" name="End12" type="End">
+    <subsheetid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</subsheetid>
+    <loginhibit />
+    <display x="15" y="1125" />
+  </stage>
+  <stage stageid="bba39d6e-be61-4dc9-a272-42b2a65b0be5" name="Opdater header" type="Calculation">
+    <subsheetid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="15" y="1080" />
+    <onsuccess>13204beb-fd75-468c-817e-b42bd9e26084</onsuccess>
+    <calculation expression="&quot;Bearer &quot; &amp; [Tokens.Token]" stage="Headers.Authorization" />
+  </stage>
+  <stage stageid="4054107c-5ddf-49bc-a550-627ffb8b71e5" name="Kald login" type="Action">
+    <subsheetid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</subsheetid>
+    <display x="135" y="525" />
+    <inputs>
+      <input type="text" name="Address URL" friendlyname="Address URL" narrative="The URL to send the HTTP data to" expr="[Base-url] &amp; &quot;/auth_v2/realms/&quot; &amp; [System] &amp; &quot;/protocol/openid-connect/token&quot;" />
+      <input type="flag" name="Use Proxy" friendlyname="Use Proxy" narrative="Set true if you need to use a proxy" expr="" />
+      <input type="text" name="Proxy URL" friendlyname="Proxy URL" narrative="OPTIONAL: The proxy url" expr="" />
+      <input type="text" name="Proxy Username" friendlyname="Proxy Username" narrative="OPTIONAL: The proxy username" expr="" />
+      <input type="password" name="Proxy Password" friendlyname="Proxy Password" narrative="OPTIONAL: The proxy password" expr="" />
+      <input type="collection" name="Headers" friendlyname="Headers" narrative="OPTIONAL: Headers" expr="[Loginheaders]" />
+      <input type="text" name="Accept" friendlyname="Accept" narrative="OPTIONAL: Accept" expr="&quot;application/json&quot;" />
+      <input type="text" name="Body" friendlyname="Body" narrative="The body text of the HTTP request" expr="&quot;grant_type=client_credentials&amp;scope=openid&quot;" />
+      <input type="text" name="Content Type" friendlyname="Content Type" narrative="The content type of the HTTP request." expr="&quot;application/x-www-form-urlencoded&quot;" />
+      <input type="text" name="Method" friendlyname="Method" narrative="The method of the HTTP request." expr="&quot;POST&quot;" />
+      <input type="text" name="Username" friendlyname="Username" narrative="OPTIONAL: Basic Authentication username" expr="" />
+      <input type="password" name="Password" friendlyname="Password" narrative="OPTIONAL: Basic Authenction password" expr="" />
+      <input type="text" name="Certificate ID" friendlyname="Certificate ID" narrative="OPTIONAL: The id of the client authentication certificate" expr="" />
+      <input type="flag" name="Force Pre Authorization" friendlyname="Force Pre Authorization" narrative="OPTIONAL: Force the request to send the 'Authorization' header for HTTP Basic." expr="" />
+      <input type="flag" name="File URL" friendlyname="File URL" narrative="OPTIONAL: Is the JSON Body a file instead?" expr="" />
+      <input type="flag" name="Use Bearer Token" friendlyname="Use Bearer Token" expr="" />
+      <input type="text" name="Bearer Token" friendlyname="Bearer Token" narrative="OPTIONAL: If you 'Use Bearer Token' is set to True, this must be set to the value of the actual Bearer Token." expr="" />
+      <input type="flag" name="Allow Auto Redirects" friendlyname="Allow Auto Redirects" narrative="OPTIONAL: If you prefer to manually handle redirects (ie. HTTP 302) set this flag to False. Default value is True." expr="" />
+      <input type="number" name="Maximum Redirects" friendlyname="Maximum Redirects" narrative="OPTIONAL: If 'Allow Auto Redirect' is True, this controls the maximum number of redirects to allow. Default value is 50." expr="" />
+      <input type="number" name="Request Timeout" friendlyname="Request Timeout" narrative="OPTIONAL: This  property controls the length of time, in milliseconds, until the request times out and throws a WebException. Default value is 100000 milliseconds (i.e. 100 seconds)." expr="" />
+    </inputs>
+    <outputs>
+      <output type="text" name="Result" friendlyname="Result" narrative="The result from the Post query." stage="Resultat" />
+      <output type="text" name="Headers as Json" friendlyname="Headers as Json" narrative="The returned headers response as Json" stage="" />
+      <output type="number" name="Status Code" friendlyname="Status Code" narrative="The HTTP status code associated with the request." stage="Status Code" />
+    </outputs>
+    <onsuccess>e80d2736-6ffe-48fa-bb13-f1a04f7ee0ab</onsuccess>
+    <resource object="Utility - HTTP" action="HTTP Request" />
+  </stage>
+  <stage stageid="cb56f59c-411a-4d63-bb03-74ab252b1bf6" name="Konverter til collection" type="Action">
+    <subsheetid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="15" y="750" />
+    <inputs>
+      <input type="text" name="json" friendlyname="json" expr="[Resultat]" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="Result" friendlyname="Result" stage="Data" />
+    </outputs>
+    <onsuccess>c413c117-bce2-404b-a765-180d10b5f71e</onsuccess>
+    <resource object="Utility - JSON" action="JSON to Collection (skipping JArray)" />
+  </stage>
+  <stage stageid="ffeec38f-3065-4fe4-a5aa-12c5e25bc67b" name="Ingen token" type="Exception">
+    <subsheetid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="270" y="660" />
+    <exception localized="yes" type="System" detail="[Data.error_description]" />
+  </stage>
+  <stage stageid="e3292241-7378-4fe9-a952-acab9cb6fd69" name="Release Lock" type="Action">
+    <subsheetid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</subsheetid>
+    <loginhibit onsuccess="true" />
+    <narrative>Releases the lock(s) associated with the given name and token</narrative>
+    <display x="90" y="660" />
+    <inputs>
+      <input type="text" name="Name" friendlyname="Name" narrative="The name of the specific lock to be released. Default behaviour is to release all locks with the given token." expr="&quot;Nexus token (Core) &quot; &amp; [System]" />
+      <input type="text" name="Comment" friendlyname="Comment" narrative="The comments to set on the lock(s)" expr="&quot;Unlocked: &quot;&amp;Now()" />
+      <input type="text" name="Token" friendlyname="Token" narrative="The token associated with the lock(s) to be released. Mandatory parameter." expr="[Lock]" />
+      <input type="flag" name="All Sessions" friendlyname="All Sessions" narrative="True to release locks matching the specified constraints across all sessions; False to only release locks acquired in the current session. Default is False" expr="" />
+      <input type="flag" name="Keep Environment Lock" friendlyname="Keep Environment Lock" narrative="The environment lock will be kept after that lock is released. Default behaviour is to delete the lock." expr="" />
+    </inputs>
+    <onsuccess>bbf36d34-a6f5-4de7-b52c-ef9158e6c24c</onsuccess>
+    <resource object="BluePrism.AutomateAppCore.clsEnvironmentLockingBusinessObject" action="Release Lock" />
+  </stage>
+  <stage stageid="d0f613f8-12fa-43de-96de-59c94c8af419" name="Recover3" type="Recover">
+    <subsheetid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</subsheetid>
+    <loginhibit />
+    <display x="435" y="105" />
+    <onsuccess>7d711c1d-ae11-4e1b-b7fc-4b80809740a5</onsuccess>
+  </stage>
+  <stage stageid="7d711c1d-ae11-4e1b-b7fc-4b80809740a5" name="har vi en lås?" type="Decision">
+    <subsheetid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</subsheetid>
+    <loginhibit />
+    <display x="435" y="150" />
+    <decision expression="[Lock] &lt;&gt; &quot;&quot;" />
+    <ontrue>afcd16ce-0f44-439a-9c6f-879db325ee86</ontrue>
+    <onfalse>14d0b57e-60b9-4f2d-ac4e-c42808914c28</onfalse>
+  </stage>
+  <stage stageid="14d0b57e-60b9-4f2d-ac4e-c42808914c28" name="Rethrow" type="Exception">
+    <subsheetid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</subsheetid>
+    <display x="435" y="210" />
+    <exception localized="yes" type="" detail="" usecurrent="yes" />
+  </stage>
+  <stage stageid="ad368db9-8c94-4fb7-893f-0d7e411e9b4e" name="Anchor54" type="Anchor">
+    <subsheetid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</subsheetid>
+    <loginhibit />
+    <display x="525" y="210" w="10" h="10" />
+    <onsuccess>14d0b57e-60b9-4f2d-ac4e-c42808914c28</onsuccess>
+  </stage>
+  <stage stageid="afcd16ce-0f44-439a-9c6f-879db325ee86" name="Release Lock" type="Action">
+    <subsheetid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</subsheetid>
+    <loginhibit onsuccess="true" />
+    <narrative>Releases the lock(s) associated with the given name and token</narrative>
+    <display x="525" y="150" />
+    <inputs>
+      <input type="text" name="Name" friendlyname="Name" narrative="The name of the specific lock to be released. Default behaviour is to release all locks with the given token." expr="&quot;Nexus token (Core) &quot; &amp; [System]" />
+      <input type="text" name="Comment" friendlyname="Comment" narrative="The comments to set on the lock(s)" expr="&quot;Unlocked: &quot;&amp;Now()" />
+      <input type="text" name="Token" friendlyname="Token" narrative="The token associated with the lock(s) to be released. Mandatory parameter." expr="[Lock]" />
+      <input type="flag" name="All Sessions" friendlyname="All Sessions" narrative="True to release locks matching the specified constraints across all sessions; False to only release locks acquired in the current session. Default is False" expr="" />
+      <input type="flag" name="Keep Environment Lock" friendlyname="Keep Environment Lock" narrative="The environment lock will be kept after that lock is released. Default behaviour is to delete the lock." expr="" />
+    </inputs>
+    <onsuccess>ad368db9-8c94-4fb7-893f-0d7e411e9b4e</onsuccess>
+    <resource object="BluePrism.AutomateAppCore.clsEnvironmentLockingBusinessObject" action="Release Lock" />
+  </stage>
+  <stage stageid="bbf36d34-a6f5-4de7-b52c-ef9158e6c24c" name="Reset" type="Calculation">
+    <subsheetid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="180" y="660" />
+    <onsuccess>ffeec38f-3065-4fe4-a5aa-12c5e25bc67b</onsuccess>
+    <calculation expression="&quot;&quot;" stage="Lock" />
+  </stage>
+  <stage stageid="e11d6d23-6910-4800-afd1-28338d808bef" name="Sov 8 sekunder" type="Action">
+    <subsheetid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</subsheetid>
+    <loginhibit onsuccess="true" />
+    <narrative>Det her er for at andre sessions har en chance for at tæske ind i låsen så de får nyeste token med det samme. Det giver dem også en chance for at få lavet deres kald inden login rammer. Principielt burde alle kald være i lock, men så gik det af røv til.</narrative>
+    <display x="135" y="480" />
+    <inputs>
+      <input type="number" name="Sleep Time (Seconds)" friendlyname="Sleep Time (Seconds)" narrative="The time (in seconds) for which to sleep" expr="8" />
+    </inputs>
+    <onsuccess>4054107c-5ddf-49bc-a550-627ffb8b71e5</onsuccess>
+    <resource object="Utility - General" action="Sleep" />
+  </stage>
+  <stage stageid="bf7b7c2e-cfc4-4c8d-9059-4e90d0add8be" name="Note4" type="Note">
+    <subsheetid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</subsheetid>
+    <loginhibit onsuccess="true" />
+    <narrative>Det her er for at andre sessions har en chance for at tæske ind i låsen, så de får nyeste token med det samme. Det giver dem også en chance for at få lavet deres kald inden login rammer. Principielt burde alle kald være i lock, men så gik det røv sløvt.</narrative>
+    <display x="465" y="480" w="180" h="90" />
+    <onsuccess>e11d6d23-6910-4800-afd1-28338d808bef</onsuccess>
+  </stage>
+  <stage stageid="90a8c4d4-3e5b-486d-b228-4f6c8af7faed" name="Token" type="Block">
+    <subsheetid>94af1602-beba-4a05-9139-24404c44204c</subsheetid>
+    <loginhibit />
+    <display x="-75" y="240" w="270" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
+  </stage>
+  <stage stageid="71ee7c88-a432-4194-b9a5-3ee8ad0f1601" name="Opdater token" type="SubSheet">
+    <subsheetid>94af1602-beba-4a05-9139-24404c44204c</subsheetid>
+    <loginhibit />
+    <display x="15" y="270" />
+    <onsuccess>b0221b60-f1ae-4de3-95f7-db2abdc87963</onsuccess>
+    <processid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</processid>
+  </stage>
+  <stage stageid="2807c3c6-a5c1-4a55-8297-c3c6187ce704" name="Opret bruger" type="SubSheetInfo">
+    <subsheetid>0086b4ce-1ee1-4f4d-b1cf-8c1f5d7861f7</subsheetid>
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="23a4159b-154b-489c-8525-5cd32cda18cf" name="Input" type="Block">
+    <subsheetid>0086b4ce-1ee1-4f4d-b1cf-8c1f5d7861f7</subsheetid>
+    <display x="-270" y="-45" w="150" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="339966" />
+  </stage>
+  <stage stageid="5eea1756-9e3a-46d9-ba09-5557c7c124e8" name="Start" type="Start">
+    <subsheetid>0086b4ce-1ee1-4f4d-b1cf-8c1f5d7861f7</subsheetid>
+    <loginhibit />
+    <display x="15" y="-120" />
+    <inputs>
+      <input type="text" name="Url" stage="Url" />
+    </inputs>
+    <onsuccess>1841e16b-0ef7-4e9f-bddd-4cfcdc6ec5e7</onsuccess>
+  </stage>
+  <stage stageid="4acfb7b7-ce89-4826-8bf4-36733741c95c" name="Variabler" type="Block">
+    <subsheetid>0086b4ce-1ee1-4f4d-b1cf-8c1f5d7861f7</subsheetid>
+    <display x="-270" y="105" w="150" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="666699" />
+  </stage>
+  <stage stageid="31b83bbb-eb58-4770-8ee1-ed73f70ac3f3" name="Konstanter" type="Block">
+    <subsheetid>0086b4ce-1ee1-4f4d-b1cf-8c1f5d7861f7</subsheetid>
+    <display x="-270" y="30" w="150" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="008080" />
+  </stage>
+  <stage stageid="d6ed91c4-13d8-4e70-b6f6-df9d0b8e628d" name="Output" type="Block">
+    <subsheetid>0086b4ce-1ee1-4f4d-b1cf-8c1f5d7861f7</subsheetid>
+    <display x="-270" y="180" w="150" h="195" />
+    <font family="Segoe UI" size="10" style="Regular" color="800080" />
+  </stage>
+  <stage stageid="fb69e8be-3e3e-44e8-83f8-c00922942bf5" name="Kald Nexus" type="Action">
+    <subsheetid>0086b4ce-1ee1-4f4d-b1cf-8c1f5d7861f7</subsheetid>
+    <loginhibit />
+    <display x="15" y="75" />
+    <inputs>
+      <input type="text" name="Username" narrative="OPTIONAL: Basic Authentication username" expr="" />
+      <input type="password" name="Password" narrative="OPTIONAL: Basic Authenction password" expr="" />
+      <input type="text" name="Address URL" narrative="The URL to send the HTTP data to" expr="[Url]" />
+      <input type="text" name="Body" narrative="The body text of the HTTP request" expr="" />
+      <input type="flag" name="Use Proxy" narrative="Set true if you need to use a proxy" expr="" />
+      <input type="text" name="Content Type" narrative="The content type of the HTTP request." expr="&quot;application/json&quot;" />
+      <input type="text" name="Method" narrative="The method of the HTTP request." expr="&quot;GET&quot;" />
+      <input type="text" name="Proxy URL" narrative="OPTIONAL: The proxy url" expr="" />
+      <input type="text" name="Proxy Username" narrative="OPTIONAL: The proxy username" expr="" />
+      <input type="password" name="Proxy Password" narrative="OPTIONAL: The proxy password" expr="" />
+      <input type="collection" name="Headers" narrative="OPTIONAL: Headers" expr="[Headers]" />
+      <input type="text" name="Accept" narrative="OPTIONAL: Accept" expr="&quot;application/json, text/plain, */*&quot;" />
+      <input type="text" name="Certificate ID" narrative="OPTIONAL: The id of the client authentication certificate" expr="" />
+      <input type="flag" name="Force Pre Authorization" narrative="OPTIONAL: Force the request to send the 'Authorization' header for HTTP Basic." expr="" />
+      <input type="flag" name="File URL" narrative="OPTIONAL: Is the JSON Body a file instead?" expr="" />
+      <input type="flag" name="Use Bearer Token" friendlyname="Use Bearer Token" expr="" />
+      <input type="text" name="Bearer Token" friendlyname="Bearer Token" narrative="OPTIONAL: If you 'Use Bearer Token' is set to True, this must be set to the value of the actual Bearer Token." expr="" />
+      <input type="flag" name="Allow Auto Redirects" friendlyname="Allow Auto Redirects" narrative="OPTIONAL: If you prefer to manually handle redirects (ie. HTTP 302) set this flag to False. Default value is True." expr="" />
+      <input type="number" name="Maximum Redirects" friendlyname="Maximum Redirects" narrative="OPTIONAL: If 'Allow Auto Redirect' is True, this controls the maximum number of redirects to allow. Default value is 50." expr="" />
+      <input type="number" name="Request Timeout" friendlyname="Request Timeout" narrative="OPTIONAL: This  property controls the length of time, in milliseconds, until the request times out and throws a WebException. Default value is 100000 milliseconds (i.e. 100 seconds)." expr="" />
+    </inputs>
+    <outputs>
+      <output type="text" name="Result" narrative="The result from the Post query." stage="Raw" />
+      <output type="text" name="Headers as Json" friendlyname="Headers as Json" narrative="The returned headers response as Json" stage="" />
+      <output type="number" name="Status Code" friendlyname="Status Code" narrative="The HTTP status code associated with the request." stage="Status" />
+    </outputs>
+    <onsuccess>4e7060d2-40c5-477e-a3e1-216b2dfa11d6</onsuccess>
+    <resource object="Utility - HTTP" action="HTTP Request" />
+  </stage>
+  <stage stageid="d3f75d92-685f-4fec-b0bc-9c3d16430dc3" name="Antal" type="Data">
+    <subsheetid>0086b4ce-1ee1-4f4d-b1cf-8c1f5d7861f7</subsheetid>
+    <loginhibit />
+    <display x="-195" y="255" w="120" h="30" />
+    <datatype>number</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="d3660450-5be6-4041-be4f-d6a6fcb43ecd" name="Data" type="Collection">
+    <subsheetid>0086b4ce-1ee1-4f4d-b1cf-8c1f5d7861f7</subsheetid>
+    <display x="-195" y="210" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="2c4a6e74-cfbf-453d-8fbc-b2ac30dcd43b" name="Url" type="Data">
+    <subsheetid>0086b4ce-1ee1-4f4d-b1cf-8c1f5d7861f7</subsheetid>
+    <display x="-195" y="-15" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="9219156a-ad04-4687-85ae-e6ef5e5f92b0" name="_Links?" type="Data">
+    <subsheetid>0086b4ce-1ee1-4f4d-b1cf-8c1f5d7861f7</subsheetid>
+    <display x="-195" y="135" w="120" h="30" />
+    <datatype>flag</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="a35e6fc2-fe11-4e66-8021-253bed57f5aa" name="Tæl data" type="Action">
+    <subsheetid>0086b4ce-1ee1-4f4d-b1cf-8c1f5d7861f7</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="15" y="255" />
+    <inputs>
+      <input type="text" name="Collection Name" friendlyname="Collection Name" narrative="The name of the collection to act upon" expr="&quot;Data&quot;" />
+    </inputs>
+    <outputs>
+      <output type="number" name="Count" friendlyname="Count" narrative="The number of rows counted in the collection" stage="Antal" />
+    </outputs>
+    <onsuccess>1e3d6081-4122-451e-ba2c-ea89c2f94821</onsuccess>
+    <resource object="Blueprism.AutomateProcessCore.clsCollectionActions" action="Count Rows" />
+  </stage>
+  <stage stageid="1841e16b-0ef7-4e9f-bddd-4cfcdc6ec5e7" name="Opdater token" type="SubSheet">
+    <subsheetid>0086b4ce-1ee1-4f4d-b1cf-8c1f5d7861f7</subsheetid>
+    <loginhibit />
+    <display x="15" y="-60" />
+    <onsuccess>10a67393-065f-4624-ab18-3178039ce6b9</onsuccess>
+    <processid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</processid>
+  </stage>
+  <stage stageid="4e7060d2-40c5-477e-a3e1-216b2dfa11d6" name="Er det 404 eller anden fejl?" type="Decision">
+    <subsheetid>0086b4ce-1ee1-4f4d-b1cf-8c1f5d7861f7</subsheetid>
+    <loginhibit />
+    <display x="15" y="150" />
+    <decision expression="[Status] &gt;= 400 AND [Status] &lt;= 600" />
+    <ontrue>9cd42d18-a7ca-4580-b87d-38050d23c875</ontrue>
+    <onfalse>50218d9d-695c-4bc4-affa-92c4ff2792c3</onfalse>
+  </stage>
+  <stage stageid="9cd42d18-a7ca-4580-b87d-38050d23c875" name="Http error" type="Exception">
+    <subsheetid>0086b4ce-1ee1-4f4d-b1cf-8c1f5d7861f7</subsheetid>
+    <display x="105" y="150" />
+    <exception localized="yes" type="Business Exception" detail="&quot;Http statuscode: &quot; &amp; [Status] &amp; NewLine() &amp;&#xA;&quot;Raw response: &quot; &amp; NewLine() &amp;&#xA;[Raw]" />
+  </stage>
+  <stage stageid="10a67393-065f-4624-ab18-3178039ce6b9" name="Relativ url?" type="Decision">
+    <subsheetid>0086b4ce-1ee1-4f4d-b1cf-8c1f5d7861f7</subsheetid>
+    <loginhibit />
+    <display x="15" y="15" />
+    <decision expression="StartsWith([Url],&quot;/&quot;)" />
+    <ontrue>5da03e00-81a2-40cd-8e14-c07f2c602b02</ontrue>
+    <onfalse>8c0de7d1-aa50-4174-8773-8b21c8454f14</onfalse>
+  </stage>
+  <stage stageid="5da03e00-81a2-40cd-8e14-c07f2c602b02" name="Konverter til absolut" type="Calculation">
+    <subsheetid>0086b4ce-1ee1-4f4d-b1cf-8c1f5d7861f7</subsheetid>
+    <loginhibit />
+    <display x="105" y="15" />
+    <onsuccess>2e10e446-3190-4cd7-b2dc-cf1ca17edd1f</onsuccess>
+    <calculation expression="[Base-url] &amp; [Url]" stage="Url" />
+  </stage>
+  <stage stageid="2e10e446-3190-4cd7-b2dc-cf1ca17edd1f" name="Anchor76" type="Anchor">
+    <subsheetid>0086b4ce-1ee1-4f4d-b1cf-8c1f5d7861f7</subsheetid>
+    <loginhibit />
+    <display x="105" y="45" w="10" h="10" />
+    <onsuccess>8c0de7d1-aa50-4174-8773-8b21c8454f14</onsuccess>
+  </stage>
+  <stage stageid="8c0de7d1-aa50-4174-8773-8b21c8454f14" name="Anchor77" type="Anchor">
+    <subsheetid>0086b4ce-1ee1-4f4d-b1cf-8c1f5d7861f7</subsheetid>
+    <loginhibit />
+    <display x="15" y="45" w="10" h="10" />
+    <onsuccess>fb69e8be-3e3e-44e8-83f8-c00922942bf5</onsuccess>
+  </stage>
+  <stage stageid="ccbc98d3-6641-4c2a-9cf1-72f79da6b055" name="Raw" type="Data">
+    <subsheetid>0086b4ce-1ee1-4f4d-b1cf-8c1f5d7861f7</subsheetid>
+    <display x="-195" y="300" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="1e3d6081-4122-451e-ba2c-ea89c2f94821" name="End1" type="End">
+    <subsheetid>0086b4ce-1ee1-4f4d-b1cf-8c1f5d7861f7</subsheetid>
+    <loginhibit />
+    <display x="15" y="315" />
+    <outputs>
+      <output type="collection" name="Data" stage="Data" />
+      <output type="number" name="Antal" stage="Antal" />
+      <output type="text" name="Json" narrative="Det rå json output" stage="Raw" />
+      <output type="number" name="Statuskode" narrative="Http statuskoden for kaldet" stage="Status" />
+    </outputs>
+  </stage>
+  <stage stageid="fb0264d6-dcf3-477b-bee5-27f3edf17b77" name="Hent rod api" type="Block">
+    <subsheetid>94af1602-beba-4a05-9139-24404c44204c</subsheetid>
+    <loginhibit />
+    <display x="-75" y="315" w="270" h="105" />
+    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
+  </stage>
+  <stage stageid="b0221b60-f1ae-4de3-95f7-db2abdc87963" name="Hent rod api" type="SubSheet">
+    <subsheetid>94af1602-beba-4a05-9139-24404c44204c</subsheetid>
+    <loginhibit />
+    <display x="15" y="345" />
+    <inputs>
+      <input type="text" name="Url" friendlyname="Url" expr="[Api-url]" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="Data" friendlyname="Data" stage="Api" />
+      <output type="number" name="Antal" friendlyname="Antal" stage="" />
+      <output type="text" name="Json" friendlyname="Json" narrative="Det rå json output" stage="" />
+      <output type="number" name="Statuskode" friendlyname="Statuskode" narrative="Http statuskoden for kaldet" stage="" />
+    </outputs>
+    <onsuccess>0ea1d50d-3f4d-44e1-96d9-f567a13ea70a</onsuccess>
+    <processid>0086b4ce-1ee1-4f4d-b1cf-8c1f5d7861f7</processid>
+  </stage>
+  <stage stageid="0ea1d50d-3f4d-44e1-96d9-f567a13ea70a" name="Sæt api" type="Calculation">
+    <subsheetid>94af1602-beba-4a05-9139-24404c44204c</subsheetid>
+    <loginhibit />
+    <display x="15" y="390" />
+    <onsuccess>d2c3a042-aa9c-4b6f-8642-d21016c1d18b</onsuccess>
+    <calculation expression="[Api._links]" stage="Api" />
+  </stage>
+  <stage stageid="9ea7d2cd-da0b-4c07-a2dd-575b3e6a1e09" name="Hent refresh token" type="Action">
+    <subsheetid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</subsheetid>
+    <loginhibit onsuccess="true" />
+    <narrative>Returns the value of the specified credentials property.
+
+An Exception will occur if access to these credentials is not allowed (based on the running Resource, Process and User) or if the credentials do not contain a property with the specified name.</narrative>
+    <display x="15" y="195" />
+    <inputs>
+      <input type="text" name="Credentials Name" friendlyname="Credentials Name" narrative="The name of the credentials" expr="[Credentials]" />
+      <input type="text" name="Property Name" friendlyname="Property Name" narrative="The name of the property" expr="&quot;refresh_token&quot;" />
+    </inputs>
+    <outputs>
+      <output type="password" name="Property Value" friendlyname="Property Value" narrative="The value of the property" stage="Tokens.Refresh-token" />
+    </outputs>
+    <onsuccess>25ceda20-d5ab-4982-b87f-69a4924cd448</onsuccess>
+    <resource object="Blueprism.Automate.clsCredentialsActions" action="Get Property" />
+  </stage>
+  <stage stageid="25ceda20-d5ab-4982-b87f-69a4924cd448" name="Get expires" type="Action">
+    <subsheetid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</subsheetid>
+    <loginhibit onsuccess="true" />
+    <narrative>Returns the value of the specified credentials property.
+
+An Exception will occur if access to these credentials is not allowed (based on the running Resource, Process and User) or if the credentials do not contain a property with the specified name.</narrative>
+    <display x="15" y="240" />
+    <inputs>
+      <input type="text" name="Credentials Name" friendlyname="Credentials Name" narrative="The name of the credentials" expr="[Credentials]" />
+      <input type="text" name="Property Name" friendlyname="Property Name" narrative="The name of the property" expr="&quot;refresh_expires&quot;" />
+    </inputs>
+    <outputs>
+      <output type="password" name="Property Value" friendlyname="Property Value" narrative="The value of the property" stage="Expires (text)" />
+    </outputs>
+    <onsuccess>6eac1d52-0973-4269-85ef-88fa39dc0629</onsuccess>
+    <resource object="Blueprism.Automate.clsCredentialsActions" action="Get Property" />
+  </stage>
+  <stage stageid="6eac1d52-0973-4269-85ef-88fa39dc0629" name="Er expires teksten tom?" type="Decision">
+    <subsheetid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="15" y="285" />
+    <decision expression="Trim([Expires (text)]) = &quot;&quot;" />
+    <ontrue>86e5b30a-8b94-4ead-8068-1c5ee2a9ef24</ontrue>
+    <onfalse>3e63a678-7d4c-456b-b12c-33bf45e30823</onfalse>
+  </stage>
+  <stage stageid="3e63a678-7d4c-456b-b12c-33bf45e30823" name="Opdater refresh expires" type="Calculation">
+    <subsheetid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="105" y="285" />
+    <onsuccess>6e15fcb0-ee74-4026-9225-2eff7f8dec2a</onsuccess>
+    <calculation expression="ToDateTime(&quot;&quot; &amp; [Expires (text)])" stage="Tokens.Refresh-token expires" />
+  </stage>
+  <stage stageid="86e5b30a-8b94-4ead-8068-1c5ee2a9ef24" name="Anchor15" type="Anchor">
+    <subsheetid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="15" y="330" w="10" h="10" />
+    <onsuccess>86077e8f-9ff9-4dbd-8e9c-9b48c010d756</onsuccess>
+  </stage>
+  <stage stageid="6e15fcb0-ee74-4026-9225-2eff7f8dec2a" name="Anchor16" type="Anchor">
+    <subsheetid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="105" y="330" w="10" h="10" />
+    <onsuccess>86e5b30a-8b94-4ead-8068-1c5ee2a9ef24</onsuccess>
+  </stage>
+  <stage stageid="cd1b94d0-86fc-4861-a8b9-e8938c7c07e9" name="Opdater refresh token" type="Block">
+    <subsheetid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</subsheetid>
+    <loginhibit />
+    <display x="-90" y="165" w="435" h="180" />
+    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
+  </stage>
+  <stage stageid="69ef3c4f-a8fc-4665-9393-8ccabf880ce6" name="Kan vi nøjes med refresh?" type="Decision">
+    <subsheetid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</subsheetid>
+    <loginhibit />
+    <display x="15" y="480" />
+    <breakpoint type="0">
+      <condition></condition>
+    </breakpoint>
+    <decision expression="[Tokens.Refresh-token] &lt;&gt; &quot;&quot; AND [Tokens.Refresh-token expires] &gt; Now()" />
+    <ontrue>8eb6732a-29e7-4d2b-a0c0-860001468be5</ontrue>
+    <onfalse>d6fbf785-2558-4fc1-a63c-b3541f4a57ff</onfalse>
+  </stage>
+  <stage stageid="4cc43d08-6cfb-451d-9846-51e714a40912" name="Status Code" type="Data">
+    <subsheetid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</subsheetid>
+    <display x="-195" y="375" w="120" h="30" />
+    <datatype>number</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="8e67eabb-fc46-4c51-987f-2d09431826ca" name="Gik kaldet godt?" type="Decision">
+    <subsheetid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</subsheetid>
+    <loginhibit />
+    <display x="15" y="660" />
+    <decision expression="[Status Code] = 200" />
+    <ontrue>cb56f59c-411a-4d63-bb03-74ab252b1bf6</ontrue>
+    <onfalse>e3292241-7378-4fe9-a952-acab9cb6fd69</onfalse>
+  </stage>
+  <stage stageid="c413c117-bce2-404b-a765-180d10b5f71e" name="Sæt alle token felter" type="MultipleCalculation">
+    <subsheetid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</subsheetid>
+    <loginhibit />
+    <display x="15" y="795" />
+    <onsuccess>d5b87562-a31d-4d8b-a2b7-1cce58a2711d</onsuccess>
+    <steps>
+      <calculation expression="[Data.refresh_token]" stage="Tokens.Refresh-token" />
+      <calculation expression="Now() + MakeTimeSpan(0, 0, 0, ToNumber([Data.refresh_expires_in]) - 20)" stage="Tokens.Refresh-token expires" />
+      <calculation expression="[Data.access_token]" stage="Tokens.Token" />
+      <calculation expression="Now() + MakeTimeSpan(0, 0, 0, ToNumber([Data.expires_in]) - 20)" stage="Tokens.Token expires" />
+    </steps>
+  </stage>
+  <stage stageid="bdb355e0-ecc1-405a-82df-d2a5dc5bf6f4" name="Tokens" type="Collection">
+    <loginhibit />
+    <display x="-195" y="150" w="120" h="30" />
+    <datatype>collection</datatype>
+    <alwaysinit />
+    <collectioninfo>
+      <singlerow />
+      <field name="Token" type="text" />
+      <field name="Token expires" type="datetime" />
+      <field name="Refresh-token" type="text" />
+      <field name="Refresh-token expires" type="datetime" />
+    </collectioninfo>
+    <initialvalue>
+      <singlerow />
+      <row>
+        <field name="Token" type="text" value="" />
+        <field name="Token expires" type="datetime" value="2000-01-01 00:00:00Z" />
+        <field name="Refresh-token" type="text" value="" />
+        <field name="Refresh-token expires" type="datetime" value="2000-01-01 00:00:00Z" />
+      </row>
+    </initialvalue>
+  </stage>
+  <stage stageid="0559a3a0-e9d2-40f6-b720-ec778a348849" name="Gem refresh token" type="Action">
+    <subsheetid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</subsheetid>
+    <narrative>Sets the value of the specified credentials property.
+
+An Exception will occur if access to these credentials is not allowed (based on the running Resource, Process and User).If the credential does not contain the specified property, the property will be added and the value set as specified.</narrative>
+    <display x="15" y="930" />
+    <inputs>
+      <input type="text" name="Credentials Name" friendlyname="Credentials Name" narrative="The name of the credentials" expr="[Credentials]" />
+      <input type="text" name="Property Name" friendlyname="Property Name" narrative="The name of the property" expr="&quot;refresh_token&quot;" />
+      <input type="password" name="Property Value" friendlyname="Property Value" narrative="The value of the property" expr="[Tokens.Refresh-token]" />
+    </inputs>
+    <onsuccess>8cb4af0a-ea83-4f2f-a084-cd4150cf04e2</onsuccess>
+    <resource object="Blueprism.Automate.clsCredentialsActions" action="Set Property" />
+  </stage>
+  <stage stageid="8cb4af0a-ea83-4f2f-a084-cd4150cf04e2" name="Gem refresh expires" type="Action">
+    <subsheetid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</subsheetid>
+    <narrative>Sets the value of the specified credentials property.
+
+An Exception will occur if access to these credentials is not allowed (based on the running Resource, Process and User).If the credential does not contain the specified property, the property will be added and the value set as specified.</narrative>
+    <display x="15" y="975" />
+    <inputs>
+      <input type="text" name="Credentials Name" friendlyname="Credentials Name" narrative="The name of the credentials" expr="[Credentials]" />
+      <input type="text" name="Property Name" friendlyname="Property Name" narrative="The name of the property" expr="&quot;refresh_expires&quot;" />
+      <input type="password" name="Property Value" friendlyname="Property Value" narrative="The value of the property" expr="&quot;&quot; &amp; [Tokens.Refresh-token expires]" />
+    </inputs>
+    <onsuccess>83023ffc-e30a-44a9-977c-95f8120dcec0</onsuccess>
+    <resource object="Blueprism.Automate.clsCredentialsActions" action="Set Property" />
+  </stage>
+  <stage stageid="c6d2cb62-0a04-4d4c-aaf5-3d9e21c274e9" name="Status" type="Data">
+    <subsheetid>0086b4ce-1ee1-4f4d-b1cf-8c1f5d7861f7</subsheetid>
+    <display x="-195" y="345" w="120" h="30" />
+    <datatype>number</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="86077e8f-9ff9-4dbd-8e9c-9b48c010d756" name="Dan header" type="Action">
+    <subsheetid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="15" y="390" />
+    <inputs>
+      <input type="text" name="Data" friendlyname="Data" narrative="Tekststreng som skal encodes" expr="[Client id] &amp; &quot;:&quot; &amp; [Client secret]" />
+    </inputs>
+    <outputs>
+      <output type="text" name="Base64" friendlyname="Base64" narrative="De binære data encoded som en base64 streng" stage="Authorization" />
+    </outputs>
+    <onsuccess>18a43ee9-1518-46a6-8253-c204c8d5d1a4</onsuccess>
+    <resource object="Utility - Odk" action="String: Base64 Encode" />
+  </stage>
+  <stage stageid="18a43ee9-1518-46a6-8253-c204c8d5d1a4" name="Sæt login header" type="Calculation">
+    <subsheetid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="15" y="435" />
+    <onsuccess>69ef3c4f-a8fc-4665-9393-8ccabf880ce6</onsuccess>
+    <calculation expression="&quot;Basic &quot; &amp; [Authorization] " stage="Loginheaders.Authorization" />
+  </stage>
+  <stage stageid="8eb6732a-29e7-4d2b-a0c0-860001468be5" name="Kald refresh" type="Action">
+    <subsheetid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</subsheetid>
+    <display x="15" y="525" />
+    <inputs>
+      <input type="text" name="Address URL" friendlyname="Address URL" narrative="The URL to send the HTTP data to" expr="[Base-url] &amp; &quot;/auth_v2/realms/&quot; &amp; [System] &amp; &quot;/protocol/openid-connect/token&quot;" />
+      <input type="flag" name="Use Proxy" friendlyname="Use Proxy" narrative="Set true if you need to use a proxy" expr="" />
+      <input type="text" name="Proxy URL" friendlyname="Proxy URL" narrative="OPTIONAL: The proxy url" expr="" />
+      <input type="text" name="Proxy Username" friendlyname="Proxy Username" narrative="OPTIONAL: The proxy username" expr="" />
+      <input type="password" name="Proxy Password" friendlyname="Proxy Password" narrative="OPTIONAL: The proxy password" expr="" />
+      <input type="collection" name="Headers" friendlyname="Headers" narrative="OPTIONAL: Headers" expr="[Loginheaders]" />
+      <input type="text" name="Accept" friendlyname="Accept" narrative="OPTIONAL: Accept" expr="&quot;application/json&quot;" />
+      <input type="text" name="Body" friendlyname="Body" narrative="The body text of the HTTP request" expr="&quot;grant_type=refresh_token&amp;scope=openid&amp;refresh_token=&quot; &amp; [Tokens.Refresh-token]" />
+      <input type="text" name="Content Type" friendlyname="Content Type" narrative="The content type of the HTTP request." expr="&quot;application/x-www-form-urlencoded&quot;" />
+      <input type="text" name="Method" friendlyname="Method" narrative="The method of the HTTP request." expr="&quot;POST&quot;" />
+      <input type="text" name="Username" friendlyname="Username" narrative="OPTIONAL: Basic Authentication username" expr="" />
+      <input type="password" name="Password" friendlyname="Password" narrative="OPTIONAL: Basic Authenction password" expr="" />
+      <input type="text" name="Certificate ID" friendlyname="Certificate ID" narrative="OPTIONAL: The id of the client authentication certificate" expr="" />
+      <input type="flag" name="Force Pre Authorization" friendlyname="Force Pre Authorization" narrative="OPTIONAL: Force the request to send the 'Authorization' header for HTTP Basic." expr="" />
+      <input type="flag" name="File URL" friendlyname="File URL" narrative="OPTIONAL: Is the JSON Body a file instead?" expr="" />
+      <input type="flag" name="Use Bearer Token" friendlyname="Use Bearer Token" expr="" />
+      <input type="text" name="Bearer Token" friendlyname="Bearer Token" narrative="OPTIONAL: If you 'Use Bearer Token' is set to True, this must be set to the value of the actual Bearer Token." expr="" />
+      <input type="flag" name="Allow Auto Redirects" friendlyname="Allow Auto Redirects" narrative="OPTIONAL: If you prefer to manually handle redirects (ie. HTTP 302) set this flag to False. Default value is True." expr="" />
+      <input type="number" name="Maximum Redirects" friendlyname="Maximum Redirects" narrative="OPTIONAL: If 'Allow Auto Redirect' is True, this controls the maximum number of redirects to allow. Default value is 50." expr="" />
+      <input type="number" name="Request Timeout" friendlyname="Request Timeout" narrative="OPTIONAL: This  property controls the length of time, in milliseconds, until the request times out and throws a WebException. Default value is 100000 milliseconds (i.e. 100 seconds)." expr="" />
+    </inputs>
+    <outputs>
+      <output type="text" name="Result" friendlyname="Result" narrative="The result from the Post query." stage="Resultat" />
+      <output type="text" name="Headers as Json" friendlyname="Headers as Json" narrative="The returned headers response as Json" stage="" />
+      <output type="number" name="Status Code" friendlyname="Status Code" narrative="The HTTP status code associated with the request." stage="Status Code" />
+    </outputs>
+    <onsuccess>4f102c86-7adf-441c-9428-39bc62a4ebf9</onsuccess>
+    <resource object="Utility - HTTP" action="HTTP Request" />
+  </stage>
+  <stage stageid="82871c93-05d1-4c24-9b0b-ac2809ca5a0f" name="Gem token oplysninger globalt" type="Block">
+    <subsheetid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</subsheetid>
+    <loginhibit />
+    <display x="-90" y="720" w="435" h="285" />
+    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
+  </stage>
+  <stage stageid="e80d2736-6ffe-48fa-bb13-f1a04f7ee0ab" name="Anchor3" type="Anchor">
+    <subsheetid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</subsheetid>
+    <loginhibit />
+    <display x="135" y="615" w="10" h="10" />
+    <onsuccess>d5b41219-6d74-4747-a783-ec9b37da198b</onsuccess>
+  </stage>
+  <stage stageid="d5b41219-6d74-4747-a783-ec9b37da198b" name="Anchor4" type="Anchor">
+    <subsheetid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</subsheetid>
+    <loginhibit />
+    <display x="15" y="615" w="10" h="10" />
+    <onsuccess>8e67eabb-fc46-4c51-987f-2d09431826ca</onsuccess>
+  </stage>
+  <stage stageid="01c62b27-9e15-4f21-999d-038cae079ab3" name="Json to collection" type="SubSheetInfo">
+    <subsheetid>b20307e1-9713-4d08-80f2-573d7723eb01</subsheetid>
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="b119fb28-2598-4481-86f4-ce1f62403da5" name="Start" type="Start">
+    <subsheetid>b20307e1-9713-4d08-80f2-573d7723eb01</subsheetid>
+    <loginhibit />
+    <display x="15" y="-105" />
+    <inputs>
+      <input type="text" name="Json" stage="Json" />
+    </inputs>
+    <onsuccess>ff3f29e6-2b09-4516-b3eb-f83144e0d5a6</onsuccess>
+  </stage>
+  <stage stageid="e9f7a9e5-00f2-4572-8542-fcb29b1439b2" name="End" type="End">
+    <subsheetid>b20307e1-9713-4d08-80f2-573d7723eb01</subsheetid>
+    <loginhibit />
+    <display x="15" y="60" />
+    <outputs>
+      <output type="collection" name="Data" stage="Data" />
+    </outputs>
+  </stage>
+  <stage stageid="ff3f29e6-2b09-4516-b3eb-f83144e0d5a6" name="Json til collection" type="Code">
+    <subsheetid>b20307e1-9713-4d08-80f2-573d7723eb01</subsheetid>
+    <loginhibit />
+    <display x="15" y="-45" />
+    <inputs>
+      <input type="text" name="json" expr="[Json]" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="data" stage="Data" />
+    </outputs>
+    <onsuccess>d3764fbd-c832-477c-8aa2-ad166b8da9b1</onsuccess>
+    <code><![CDATA[var obj = Newtonsoft.Json.JsonConvert.DeserializeObject(json);
+
+data = DeserializeGeneric(obj) as DataTable;
+ ]]></code>
+  </stage>
+  <stage stageid="2669afa3-14eb-4c71-bab2-ab4ecc92b2d8" name="Input" type="Block">
+    <subsheetid>b20307e1-9713-4d08-80f2-573d7723eb01</subsheetid>
+    <display x="-270" y="-45" w="150" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="339966" />
+  </stage>
+  <stage stageid="6a0c6f86-e16b-4fb5-9910-ab9aacd7c2dc" name="Variabler" type="Block">
+    <subsheetid>b20307e1-9713-4d08-80f2-573d7723eb01</subsheetid>
+    <display x="-270" y="90" w="150" h="45" />
+    <font family="Segoe UI" size="10" style="Regular" color="666699" />
+  </stage>
+  <stage stageid="6d4f16a6-5931-447d-bbc6-32b9b1995326" name="Konstanter" type="Block">
+    <subsheetid>b20307e1-9713-4d08-80f2-573d7723eb01</subsheetid>
+    <display x="-270" y="30" w="150" h="45" />
+    <font family="Segoe UI" size="10" style="Regular" color="008080" />
+  </stage>
+  <stage stageid="75b0c0a4-197c-409a-b753-b0223a48374d" name="Output" type="Block">
+    <subsheetid>b20307e1-9713-4d08-80f2-573d7723eb01</subsheetid>
+    <display x="-270" y="150" w="150" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="800080" />
+  </stage>
+  <stage stageid="46a2f4aa-7cc6-44cc-ad75-7ea30f396ef4" name="Json" type="Data">
+    <subsheetid>b20307e1-9713-4d08-80f2-573d7723eb01</subsheetid>
+    <display x="-195" y="-15" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="1e6cf231-b635-4d9f-b2ad-369e8bd7840b" name="Data" type="Collection">
+    <subsheetid>b20307e1-9713-4d08-80f2-573d7723eb01</subsheetid>
+    <loginhibit />
+    <display x="-195" y="180" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="50218d9d-695c-4bc4-affa-92c4ff2792c3" name="Json to collection" type="SubSheet">
+    <subsheetid>0086b4ce-1ee1-4f4d-b1cf-8c1f5d7861f7</subsheetid>
+    <loginhibit />
+    <display x="15" y="210" />
+    <inputs>
+      <input type="text" name="Json" friendlyname="Json" expr="[Raw]" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="Data" friendlyname="Data" stage="Data" />
+    </outputs>
+    <onsuccess>a35e6fc2-fe11-4e66-8021-253bed57f5aa</onsuccess>
+    <processid>b20307e1-9713-4d08-80f2-573d7723eb01</processid>
+  </stage>
+  <stage stageid="c6db6d5d-1f4d-4058-bae0-766aa6e09348" name="Post" type="SubSheetInfo">
+    <subsheetid>5b2504a6-112c-4abe-9a44-a660a110919c</subsheetid>
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="90f4db0c-a1c5-486c-a8ca-c74ea726fb76" name="Start" type="Start">
+    <subsheetid>5b2504a6-112c-4abe-9a44-a660a110919c</subsheetid>
+    <loginhibit />
+    <display x="15" y="-105" />
+    <inputs>
+      <input type="text" name="Url" stage="Url" />
+      <input type="text" name="Body" stage="Body" />
+    </inputs>
+    <onsuccess>be689364-dfba-4b30-a860-e12015cd6734</onsuccess>
+  </stage>
+  <stage stageid="048280ee-805f-494b-b74d-5ea20170e593" name="End" type="End">
+    <subsheetid>5b2504a6-112c-4abe-9a44-a660a110919c</subsheetid>
+    <loginhibit />
+    <display x="15" y="315" />
+    <outputs>
+      <output type="collection" name="Data" stage="Data" />
+      <output type="number" name="Antal" stage="Antal" />
+      <output type="text" name="Json" narrative="Det rå json output" stage="Raw" />
+      <output type="number" name="Statuskode" narrative="Http statuskoden for kaldet" stage="Status" />
+    </outputs>
+  </stage>
+  <stage stageid="a50cab05-7b68-4885-9606-4dc65852643b" name="Put" type="SubSheetInfo">
+    <subsheetid>82780005-198f-460f-af08-8a9996040174</subsheetid>
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="e9594279-d5ae-46f9-8097-370d65743c6d" name="Start" type="Start">
+    <subsheetid>82780005-198f-460f-af08-8a9996040174</subsheetid>
+    <loginhibit />
+    <display x="15" y="-105" />
+    <inputs>
+      <input type="text" name="Url" stage="Url" />
+      <input type="text" name="Body" stage="Body" />
+    </inputs>
+    <onsuccess>fbd9c783-26da-4fbf-8284-7b40a17fbeb7</onsuccess>
+  </stage>
+  <stage stageid="c7abeb52-2e37-4126-a452-415c7822e1d7" name="Delete" type="SubSheetInfo">
+    <subsheetid>850f4342-90d0-44e8-93b1-33d524c7f10e</subsheetid>
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="029de655-7c5a-4348-b628-7a9733d6ace4" name="Start" type="Start">
+    <subsheetid>850f4342-90d0-44e8-93b1-33d524c7f10e</subsheetid>
+    <loginhibit />
+    <display x="15" y="-105" />
+    <inputs>
+      <input type="text" name="Url" stage="Url" />
+    </inputs>
+    <onsuccess>1681f918-ba7e-4dd4-affd-cbeaebeed9cc</onsuccess>
+  </stage>
+  <stage stageid="afe81bbd-afe8-49e0-b309-a9c42eef179f" name="End" type="End">
+    <subsheetid>850f4342-90d0-44e8-93b1-33d524c7f10e</subsheetid>
+    <loginhibit />
+    <display x="15" y="225" />
+    <outputs>
+      <output type="flag" name="Succes" stage="Succes" />
+      <output type="number" name="Statuskode" narrative="Http statuskoden for kaldet" stage="Status" />
+    </outputs>
+  </stage>
+  <stage stageid="0f101461-7c08-42fb-b08e-21d97834c579" name="Input" type="Block">
+    <subsheetid>5b2504a6-112c-4abe-9a44-a660a110919c</subsheetid>
+    <display x="-270" y="-45" w="150" h="105" />
+    <font family="Segoe UI" size="10" style="Regular" color="339966" />
+  </stage>
+  <stage stageid="307df0f5-25aa-4645-a9dc-d406d92493fd" name="Variabler" type="Block">
+    <subsheetid>5b2504a6-112c-4abe-9a44-a660a110919c</subsheetid>
+    <display x="-270" y="150" w="150" h="105" />
+    <font family="Segoe UI" size="10" style="Regular" color="666699" />
+  </stage>
+  <stage stageid="8023e43c-2e22-480c-9c6e-a4b5745add98" name="Konstanter" type="Block">
+    <subsheetid>5b2504a6-112c-4abe-9a44-a660a110919c</subsheetid>
+    <display x="-270" y="75" w="150" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="008080" />
+  </stage>
+  <stage stageid="f27de215-7f4c-4cc1-8a15-526e84e8cc8c" name="Output" type="Block">
+    <subsheetid>5b2504a6-112c-4abe-9a44-a660a110919c</subsheetid>
+    <display x="-270" y="270" w="150" h="195" />
+    <font family="Segoe UI" size="10" style="Regular" color="800080" />
+  </stage>
+  <stage stageid="5393fd80-b706-40c8-94a5-dd1c7873ac67" name="Antal" type="Data">
+    <subsheetid>5b2504a6-112c-4abe-9a44-a660a110919c</subsheetid>
+    <loginhibit />
+    <display x="-195" y="345" w="120" h="30" />
+    <datatype>number</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="7b0bfeb1-9875-4fd0-8949-65ee628e6665" name="Data" type="Collection">
+    <subsheetid>5b2504a6-112c-4abe-9a44-a660a110919c</subsheetid>
+    <display x="-195" y="300" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="2934f2d4-7582-4500-bc0f-810f26092a53" name="Url" type="Data">
+    <subsheetid>5b2504a6-112c-4abe-9a44-a660a110919c</subsheetid>
+    <display x="-195" y="-15" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="f6127919-8dbd-48ba-aeda-08667a64a246" name="Body" type="Data">
+    <subsheetid>5b2504a6-112c-4abe-9a44-a660a110919c</subsheetid>
+    <display x="-195" y="30" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="807862d1-7532-4238-b77a-f197d98d343f" name="Kald Nexus" type="Action">
+    <subsheetid>5b2504a6-112c-4abe-9a44-a660a110919c</subsheetid>
+    <loginhibit />
+    <display x="15" y="90" />
+    <inputs>
+      <input type="text" name="Username" narrative="OPTIONAL: Basic Authentication username" expr="" />
+      <input type="password" name="Password" narrative="OPTIONAL: Basic Authenction password" expr="" />
+      <input type="text" name="Address URL" narrative="The URL to send the HTTP data to" expr="[Url]" />
+      <input type="text" name="Body" narrative="The body text of the HTTP request" expr="[Body]" />
+      <input type="flag" name="Use Proxy" narrative="Set true if you need to use a proxy" expr="" />
+      <input type="text" name="Content Type" narrative="The content type of the HTTP request." expr="&quot;application/json&quot;" />
+      <input type="text" name="Method" narrative="The method of the HTTP request." expr="&quot;POST&quot;" />
+      <input type="text" name="Proxy URL" narrative="OPTIONAL: The proxy url" expr="" />
+      <input type="text" name="Proxy Username" narrative="OPTIONAL: The proxy username" expr="" />
+      <input type="password" name="Proxy Password" narrative="OPTIONAL: The proxy password" expr="" />
+      <input type="collection" name="Headers" narrative="OPTIONAL: Headers" expr="[Headers]" />
+      <input type="text" name="Accept" narrative="OPTIONAL: Accept" expr="&quot;application/json, text/plain, */*&quot;" />
+      <input type="text" name="Certificate ID" narrative="OPTIONAL: The id of the client authentication certificate" expr="" />
+      <input type="flag" name="Force Pre Authorization" narrative="OPTIONAL: Force the request to send the 'Authorization' header for HTTP Basic." expr="" />
+      <input type="flag" name="File URL" narrative="OPTIONAL: Is the JSON Body a file instead?" expr="" />
+      <input type="flag" name="Use Bearer Token" friendlyname="Use Bearer Token" expr="" />
+      <input type="text" name="Bearer Token" friendlyname="Bearer Token" narrative="OPTIONAL: If you 'Use Bearer Token' is set to True, this must be set to the value of the actual Bearer Token." expr="" />
+      <input type="flag" name="Allow Auto Redirects" friendlyname="Allow Auto Redirects" narrative="OPTIONAL: If you prefer to manually handle redirects (ie. HTTP 302) set this flag to False. Default value is True." expr="" />
+      <input type="number" name="Maximum Redirects" friendlyname="Maximum Redirects" narrative="OPTIONAL: If 'Allow Auto Redirect' is True, this controls the maximum number of redirects to allow. Default value is 50." expr="" />
+      <input type="number" name="Request Timeout" friendlyname="Request Timeout" narrative="OPTIONAL: This  property controls the length of time, in milliseconds, until the request times out and throws a WebException. Default value is 100000 milliseconds (i.e. 100 seconds)." expr="" />
+    </inputs>
+    <outputs>
+      <output type="text" name="Result" narrative="The result from the Post query." stage="Raw" />
+      <output type="text" name="Headers as Json" friendlyname="Headers as Json" narrative="The returned headers response as Json" stage="" />
+      <output type="number" name="Status Code" friendlyname="Status Code" narrative="The HTTP status code associated with the request." stage="Status" />
+    </outputs>
+    <onsuccess>0baa7b09-10a0-4c87-8db0-a91922d22c42</onsuccess>
+    <resource object="Utility - HTTP" action="HTTP Request" />
+  </stage>
+  <stage stageid="be689364-dfba-4b30-a860-e12015cd6734" name="Opdater token" type="SubSheet">
+    <subsheetid>5b2504a6-112c-4abe-9a44-a660a110919c</subsheetid>
+    <loginhibit />
+    <display x="15" y="-45" />
+    <onsuccess>f0b53b21-ffe8-48e1-8012-8c1edcead15a</onsuccess>
+    <processid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</processid>
+  </stage>
+  <stage stageid="0baa7b09-10a0-4c87-8db0-a91922d22c42" name="Uventet fejlkode?" type="Decision">
+    <subsheetid>5b2504a6-112c-4abe-9a44-a660a110919c</subsheetid>
+    <loginhibit />
+    <display x="15" y="165" />
+    <decision expression="[Status] &lt; 200 OR [Status] &gt;= 300" />
+    <ontrue>54f6bbd2-51ea-40e8-a49e-26af88f5e351</ontrue>
+    <onfalse>ee2ec100-646f-4ff9-9630-f7d3e9714811</onfalse>
+  </stage>
+  <stage stageid="54f6bbd2-51ea-40e8-a49e-26af88f5e351" name="Http error" type="Exception">
+    <subsheetid>5b2504a6-112c-4abe-9a44-a660a110919c</subsheetid>
+    <display x="105" y="165" />
+    <exception localized="yes" type="Business Exception" detail="&quot;Http statuscode: &quot; &amp; [Status] &amp; NewLine() &amp;&#xA;&quot;Raw response: &quot; &amp; NewLine() &amp;&#xA;[Raw]" />
+  </stage>
+  <stage stageid="f0b53b21-ffe8-48e1-8012-8c1edcead15a" name="Relativ url?" type="Decision">
+    <subsheetid>5b2504a6-112c-4abe-9a44-a660a110919c</subsheetid>
+    <loginhibit />
+    <display x="15" y="30" />
+    <decision expression="StartsWith([Url],&quot;/&quot;)" />
+    <ontrue>f1a2ed6c-78a1-4dfa-a88a-bf0fcc01b435</ontrue>
+    <onfalse>d314daee-b4ca-4b22-be21-ac3d20c40d42</onfalse>
+  </stage>
+  <stage stageid="f1a2ed6c-78a1-4dfa-a88a-bf0fcc01b435" name="Konverter til absolut" type="Calculation">
+    <subsheetid>5b2504a6-112c-4abe-9a44-a660a110919c</subsheetid>
+    <loginhibit />
+    <display x="105" y="30" />
+    <onsuccess>fcfe597f-2d30-42c3-a920-baf5bf022e8b</onsuccess>
+    <calculation expression="[Base-url] &amp; [Url]" stage="Url" />
+  </stage>
+  <stage stageid="fcfe597f-2d30-42c3-a920-baf5bf022e8b" name="Anchor76" type="Anchor">
+    <subsheetid>5b2504a6-112c-4abe-9a44-a660a110919c</subsheetid>
+    <loginhibit />
+    <display x="105" y="60" w="10" h="10" />
+    <onsuccess>d314daee-b4ca-4b22-be21-ac3d20c40d42</onsuccess>
+  </stage>
+  <stage stageid="d314daee-b4ca-4b22-be21-ac3d20c40d42" name="Anchor77" type="Anchor">
+    <subsheetid>5b2504a6-112c-4abe-9a44-a660a110919c</subsheetid>
+    <loginhibit />
+    <display x="15" y="60" w="10" h="10" />
+    <onsuccess>807862d1-7532-4238-b77a-f197d98d343f</onsuccess>
+  </stage>
+  <stage stageid="c11b322d-3d8b-4654-9a61-333f8afef321" name="Raw" type="Data">
+    <subsheetid>5b2504a6-112c-4abe-9a44-a660a110919c</subsheetid>
+    <display x="-195" y="390" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="30801cab-9420-4472-b7f5-ed221a13faaf" name="Tæl data" type="Action">
+    <subsheetid>5b2504a6-112c-4abe-9a44-a660a110919c</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="15" y="255" />
+    <inputs>
+      <input type="text" name="Collection Name" friendlyname="Collection Name" narrative="The name of the collection to act upon" expr="&quot;Data&quot;" />
+    </inputs>
+    <outputs>
+      <output type="number" name="Count" friendlyname="Count" narrative="The number of rows counted in the collection" stage="Antal" />
+    </outputs>
+    <onsuccess>048280ee-805f-494b-b74d-5ea20170e593</onsuccess>
+    <resource object="Blueprism.AutomateProcessCore.clsCollectionActions" action="Count Rows" />
+  </stage>
+  <stage stageid="ee2ec100-646f-4ff9-9630-f7d3e9714811" name="Json to collection" type="SubSheet">
+    <subsheetid>5b2504a6-112c-4abe-9a44-a660a110919c</subsheetid>
+    <loginhibit />
+    <display x="15" y="210" />
+    <inputs>
+      <input type="text" name="Json" friendlyname="Json" expr="[Raw]" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="Data" friendlyname="Data" stage="Data" />
+    </outputs>
+    <onsuccess>30801cab-9420-4472-b7f5-ed221a13faaf</onsuccess>
+    <processid>b20307e1-9713-4d08-80f2-573d7723eb01</processid>
+  </stage>
+  <stage stageid="bcb60dfc-87f3-4aab-b476-c069eff4a27c" name="End" type="End">
+    <subsheetid>82780005-198f-460f-af08-8a9996040174</subsheetid>
+    <loginhibit />
+    <display x="15" y="315" />
+    <outputs>
+      <output type="collection" name="Data" stage="Data" />
+      <output type="number" name="Antal" stage="Antal" />
+      <output type="text" name="Json" narrative="Det rå json output" stage="Raw" />
+      <output type="number" name="Statuskode" narrative="Http statuskoden for kaldet" stage="Status" />
+    </outputs>
+  </stage>
+  <stage stageid="48cc9e77-c640-4634-9459-2803768e6d53" name="Kald Nexus" type="Action">
+    <subsheetid>82780005-198f-460f-af08-8a9996040174</subsheetid>
+    <loginhibit />
+    <display x="15" y="90" />
+    <inputs>
+      <input type="text" name="Username" narrative="OPTIONAL: Basic Authentication username" expr="" />
+      <input type="password" name="Password" narrative="OPTIONAL: Basic Authenction password" expr="" />
+      <input type="text" name="Address URL" narrative="The URL to send the HTTP data to" expr="[Url]" />
+      <input type="text" name="Body" narrative="The body text of the HTTP request" expr="[Body]" />
+      <input type="flag" name="Use Proxy" narrative="Set true if you need to use a proxy" expr="" />
+      <input type="text" name="Content Type" narrative="The content type of the HTTP request." expr="&quot;application/json&quot;" />
+      <input type="text" name="Method" narrative="The method of the HTTP request." expr="&quot;PUT&quot;" />
+      <input type="text" name="Proxy URL" narrative="OPTIONAL: The proxy url" expr="" />
+      <input type="text" name="Proxy Username" narrative="OPTIONAL: The proxy username" expr="" />
+      <input type="password" name="Proxy Password" narrative="OPTIONAL: The proxy password" expr="" />
+      <input type="collection" name="Headers" narrative="OPTIONAL: Headers" expr="[Headers]" />
+      <input type="text" name="Accept" narrative="OPTIONAL: Accept" expr="&quot;application/json, text/plain, */*&quot;" />
+      <input type="text" name="Certificate ID" narrative="OPTIONAL: The id of the client authentication certificate" expr="" />
+      <input type="flag" name="Force Pre Authorization" narrative="OPTIONAL: Force the request to send the 'Authorization' header for HTTP Basic." expr="" />
+      <input type="flag" name="File URL" narrative="OPTIONAL: Is the JSON Body a file instead?" expr="" />
+      <input type="flag" name="Use Bearer Token" friendlyname="Use Bearer Token" expr="" />
+      <input type="text" name="Bearer Token" friendlyname="Bearer Token" narrative="OPTIONAL: If you 'Use Bearer Token' is set to True, this must be set to the value of the actual Bearer Token." expr="" />
+      <input type="flag" name="Allow Auto Redirects" friendlyname="Allow Auto Redirects" narrative="OPTIONAL: If you prefer to manually handle redirects (ie. HTTP 302) set this flag to False. Default value is True." expr="" />
+      <input type="number" name="Maximum Redirects" friendlyname="Maximum Redirects" narrative="OPTIONAL: If 'Allow Auto Redirect' is True, this controls the maximum number of redirects to allow. Default value is 50." expr="" />
+      <input type="number" name="Request Timeout" friendlyname="Request Timeout" narrative="OPTIONAL: This  property controls the length of time, in milliseconds, until the request times out and throws a WebException. Default value is 100000 milliseconds (i.e. 100 seconds)." expr="" />
+    </inputs>
+    <outputs>
+      <output type="text" name="Result" narrative="The result from the Post query." stage="Raw" />
+      <output type="text" name="Headers as Json" friendlyname="Headers as Json" narrative="The returned headers response as Json" stage="" />
+      <output type="number" name="Status Code" friendlyname="Status Code" narrative="The HTTP status code associated with the request." stage="Status" />
+    </outputs>
+    <onsuccess>804eafbb-b630-4c5b-86df-5c91dea6a86b</onsuccess>
+    <resource object="Utility - HTTP" action="HTTP Request" />
+  </stage>
+  <stage stageid="fbd9c783-26da-4fbf-8284-7b40a17fbeb7" name="Opdater token" type="SubSheet">
+    <subsheetid>82780005-198f-460f-af08-8a9996040174</subsheetid>
+    <loginhibit />
+    <display x="15" y="-45" />
+    <onsuccess>31409bd8-d99f-4c2b-b2ec-136756b569fa</onsuccess>
+    <processid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</processid>
+  </stage>
+  <stage stageid="804eafbb-b630-4c5b-86df-5c91dea6a86b" name="Uventet fejlkode?" type="Decision">
+    <subsheetid>82780005-198f-460f-af08-8a9996040174</subsheetid>
+    <loginhibit />
+    <display x="15" y="165" />
+    <decision expression="[Status] &lt; 200 OR [Status] &gt;= 300" />
+    <ontrue>e2d87e1e-f465-4276-afc2-9a63885fb27e</ontrue>
+    <onfalse>be129604-08a1-405e-bf35-6b535ffcaeef</onfalse>
+  </stage>
+  <stage stageid="e2d87e1e-f465-4276-afc2-9a63885fb27e" name="Http error" type="Exception">
+    <subsheetid>82780005-198f-460f-af08-8a9996040174</subsheetid>
+    <display x="105" y="165" />
+    <exception localized="yes" type="Business Exception" detail="&quot;Http statuscode: &quot; &amp; [Status] &amp; NewLine() &amp;&#xA;&quot;Raw response: &quot; &amp; NewLine() &amp;&#xA;[Raw]" />
+  </stage>
+  <stage stageid="31409bd8-d99f-4c2b-b2ec-136756b569fa" name="Relativ url?" type="Decision">
+    <subsheetid>82780005-198f-460f-af08-8a9996040174</subsheetid>
+    <loginhibit />
+    <display x="15" y="30" />
+    <decision expression="StartsWith([Url],&quot;/&quot;)" />
+    <ontrue>b2fa457a-66d4-409c-aec6-8b90c4115bad</ontrue>
+    <onfalse>f2d7fc6d-ee20-4f93-b6d7-a7fb3e2f65c0</onfalse>
+  </stage>
+  <stage stageid="b2fa457a-66d4-409c-aec6-8b90c4115bad" name="Konverter til absolut" type="Calculation">
+    <subsheetid>82780005-198f-460f-af08-8a9996040174</subsheetid>
+    <loginhibit />
+    <display x="105" y="30" />
+    <onsuccess>be1ba8f0-52ba-45af-bc6e-166d1168b5fb</onsuccess>
+    <calculation expression="[Base-url] &amp; [Url]" stage="Url" />
+  </stage>
+  <stage stageid="be1ba8f0-52ba-45af-bc6e-166d1168b5fb" name="Anchor76" type="Anchor">
+    <subsheetid>82780005-198f-460f-af08-8a9996040174</subsheetid>
+    <loginhibit />
+    <display x="105" y="60" w="10" h="10" />
+    <onsuccess>f2d7fc6d-ee20-4f93-b6d7-a7fb3e2f65c0</onsuccess>
+  </stage>
+  <stage stageid="f2d7fc6d-ee20-4f93-b6d7-a7fb3e2f65c0" name="Anchor77" type="Anchor">
+    <subsheetid>82780005-198f-460f-af08-8a9996040174</subsheetid>
+    <loginhibit />
+    <display x="15" y="60" w="10" h="10" />
+    <onsuccess>48cc9e77-c640-4634-9459-2803768e6d53</onsuccess>
+  </stage>
+  <stage stageid="2b8be9ad-9702-48b8-8465-55a23ba1f02d" name="Tæl data" type="Action">
+    <subsheetid>82780005-198f-460f-af08-8a9996040174</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="15" y="255" />
+    <inputs>
+      <input type="text" name="Collection Name" friendlyname="Collection Name" narrative="The name of the collection to act upon" expr="&quot;Data&quot;" />
+    </inputs>
+    <outputs>
+      <output type="number" name="Count" friendlyname="Count" narrative="The number of rows counted in the collection" stage="Antal" />
+    </outputs>
+    <onsuccess>bcb60dfc-87f3-4aab-b476-c069eff4a27c</onsuccess>
+    <resource object="Blueprism.AutomateProcessCore.clsCollectionActions" action="Count Rows" />
+  </stage>
+  <stage stageid="be129604-08a1-405e-bf35-6b535ffcaeef" name="Json to collection" type="SubSheet">
+    <subsheetid>82780005-198f-460f-af08-8a9996040174</subsheetid>
+    <loginhibit />
+    <display x="15" y="210" />
+    <inputs>
+      <input type="text" name="Json" friendlyname="Json" expr="[Raw]" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="Data" friendlyname="Data" stage="Data" />
+    </outputs>
+    <onsuccess>2b8be9ad-9702-48b8-8465-55a23ba1f02d</onsuccess>
+    <processid>b20307e1-9713-4d08-80f2-573d7723eb01</processid>
+  </stage>
+  <stage stageid="3962f69a-1209-41a5-88d0-6e0786b9b1a1" name="Input" type="Block">
+    <subsheetid>82780005-198f-460f-af08-8a9996040174</subsheetid>
+    <display x="-270" y="-45" w="150" h="105" />
+    <font family="Segoe UI" size="10" style="Regular" color="339966" />
+  </stage>
+  <stage stageid="5127fc4a-49c6-4884-90eb-704a9f4eb473" name="Variabler" type="Block">
+    <subsheetid>82780005-198f-460f-af08-8a9996040174</subsheetid>
+    <display x="-270" y="150" w="150" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="666699" />
+  </stage>
+  <stage stageid="b937014e-573b-414d-9eeb-a5df784a934c" name="Konstanter" type="Block">
+    <subsheetid>82780005-198f-460f-af08-8a9996040174</subsheetid>
+    <display x="-270" y="75" w="150" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="008080" />
+  </stage>
+  <stage stageid="05c96095-a565-4066-8eac-f30cc3e7f8b6" name="Output" type="Block">
+    <subsheetid>82780005-198f-460f-af08-8a9996040174</subsheetid>
+    <display x="-270" y="225" w="150" h="195" />
+    <font family="Segoe UI" size="10" style="Regular" color="800080" />
+  </stage>
+  <stage stageid="9c84c3eb-debf-40fe-be63-7c20ce857c9f" name="Result" type="Data">
+    <subsheetid>82780005-198f-460f-af08-8a9996040174</subsheetid>
+    <display x="-195" y="180" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="87dcde56-dd0c-4c78-8585-098765ea321b" name="Antal" type="Data">
+    <subsheetid>82780005-198f-460f-af08-8a9996040174</subsheetid>
+    <loginhibit />
+    <display x="-195" y="300" w="120" h="30" />
+    <datatype>number</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="5026e1f8-38fb-4d7a-a1e6-23c092521469" name="Data" type="Collection">
+    <subsheetid>82780005-198f-460f-af08-8a9996040174</subsheetid>
+    <display x="-195" y="255" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="ce3633a3-c285-4330-b7ef-c64a7effce32" name="Url" type="Data">
+    <subsheetid>82780005-198f-460f-af08-8a9996040174</subsheetid>
+    <display x="-195" y="-15" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="761ff431-4975-4e96-b8bd-cbc6ef40b036" name="Body" type="Data">
+    <subsheetid>82780005-198f-460f-af08-8a9996040174</subsheetid>
+    <display x="-195" y="30" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="b49180e1-3f12-4821-85fc-2c5a91595eb3" name="Raw" type="Data">
+    <subsheetid>82780005-198f-460f-af08-8a9996040174</subsheetid>
+    <display x="-195" y="345" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="52a79d1a-b179-4fb9-916f-2b7a5063fa5b" name="Input" type="Block">
+    <subsheetid>850f4342-90d0-44e8-93b1-33d524c7f10e</subsheetid>
+    <display x="-270" y="-45" w="150" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="339966" />
+  </stage>
+  <stage stageid="f53cc097-9520-42b0-81e9-dac6447dcc17" name="Variabler" type="Block">
+    <subsheetid>850f4342-90d0-44e8-93b1-33d524c7f10e</subsheetid>
+    <display x="-270" y="90" w="150" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="666699" />
+  </stage>
+  <stage stageid="fe4a961e-08db-40a7-8447-f17fdf175d49" name="Konstanter" type="Block">
+    <subsheetid>850f4342-90d0-44e8-93b1-33d524c7f10e</subsheetid>
+    <display x="-270" y="30" w="150" h="45" />
+    <font family="Segoe UI" size="10" style="Regular" color="008080" />
+  </stage>
+  <stage stageid="844bdb71-4871-4c3f-abc8-6a72a783abf0" name="Output" type="Block">
+    <subsheetid>850f4342-90d0-44e8-93b1-33d524c7f10e</subsheetid>
+    <display x="-270" y="165" w="150" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="800080" />
+  </stage>
+  <stage stageid="436ff468-37c0-4eb6-b82a-53e56f2ab218" name="Url" type="Data">
+    <subsheetid>850f4342-90d0-44e8-93b1-33d524c7f10e</subsheetid>
+    <display x="-195" y="-15" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="c6b14cc6-4897-4fc6-9c7f-bbaf04cf63dd" name="Status" type="Data">
+    <subsheetid>82780005-198f-460f-af08-8a9996040174</subsheetid>
+    <display x="-195" y="390" w="120" h="30" />
+    <datatype>number</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="d3a0d7d2-3eb5-4021-bbb4-e2143d2eb278" name="Status" type="Data">
+    <subsheetid>5b2504a6-112c-4abe-9a44-a660a110919c</subsheetid>
+    <display x="-195" y="435" w="120" h="30" />
+    <datatype>number</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="d38bb0b8-60c9-4347-825e-8299e091410d" name="Succes" type="Data">
+    <subsheetid>850f4342-90d0-44e8-93b1-33d524c7f10e</subsheetid>
+    <display x="-195" y="195" w="120" h="30" />
+    <datatype>flag</datatype>
+    <initialvalue>False</initialvalue>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="b2d77f1a-63a0-4e35-8cbe-2c2465608344" name="Kald Nexus" type="Action">
+    <subsheetid>850f4342-90d0-44e8-93b1-33d524c7f10e</subsheetid>
+    <loginhibit />
+    <display x="15" y="90" />
+    <inputs>
+      <input type="text" name="Username" narrative="OPTIONAL: Basic Authentication username" expr="" />
+      <input type="password" name="Password" narrative="OPTIONAL: Basic Authenction password" expr="" />
+      <input type="text" name="Address URL" narrative="The URL to send the HTTP data to" expr="[Url]" />
+      <input type="text" name="Body" narrative="The body text of the HTTP request" expr="" />
+      <input type="flag" name="Use Proxy" narrative="Set true if you need to use a proxy" expr="" />
+      <input type="text" name="Content Type" narrative="The content type of the HTTP request." expr="&quot;application/json&quot;" />
+      <input type="text" name="Method" narrative="The method of the HTTP request." expr="&quot;DELETE&quot;" />
+      <input type="text" name="Proxy URL" narrative="OPTIONAL: The proxy url" expr="" />
+      <input type="text" name="Proxy Username" narrative="OPTIONAL: The proxy username" expr="" />
+      <input type="password" name="Proxy Password" narrative="OPTIONAL: The proxy password" expr="" />
+      <input type="collection" name="Headers" narrative="OPTIONAL: Headers" expr="[Headers]" />
+      <input type="text" name="Accept" narrative="OPTIONAL: Accept" expr="&quot;application/json, text/plain, */*&quot;" />
+      <input type="text" name="Certificate ID" narrative="OPTIONAL: The id of the client authentication certificate" expr="" />
+      <input type="flag" name="Force Pre Authorization" narrative="OPTIONAL: Force the request to send the 'Authorization' header for HTTP Basic." expr="" />
+      <input type="flag" name="File URL" narrative="OPTIONAL: Is the JSON Body a file instead?" expr="" />
+      <input type="flag" name="Use Bearer Token" friendlyname="Use Bearer Token" expr="" />
+      <input type="text" name="Bearer Token" friendlyname="Bearer Token" narrative="OPTIONAL: If you 'Use Bearer Token' is set to True, this must be set to the value of the actual Bearer Token." expr="" />
+      <input type="flag" name="Allow Auto Redirects" friendlyname="Allow Auto Redirects" narrative="OPTIONAL: If you prefer to manually handle redirects (ie. HTTP 302) set this flag to False. Default value is True." expr="" />
+      <input type="number" name="Maximum Redirects" friendlyname="Maximum Redirects" narrative="OPTIONAL: If 'Allow Auto Redirect' is True, this controls the maximum number of redirects to allow. Default value is 50." expr="" />
+      <input type="number" name="Request Timeout" friendlyname="Request Timeout" narrative="OPTIONAL: This  property controls the length of time, in milliseconds, until the request times out and throws a WebException. Default value is 100000 milliseconds (i.e. 100 seconds)." expr="" />
+    </inputs>
+    <outputs>
+      <output type="text" name="Result" narrative="The result from the Post query." stage="" />
+      <output type="text" name="Headers as Json" friendlyname="Headers as Json" narrative="The returned headers response as Json" stage="" />
+      <output type="number" name="Status Code" friendlyname="Status Code" narrative="The HTTP status code associated with the request." stage="Status" />
+    </outputs>
+    <onsuccess>d6cd5e88-41dd-4132-ac68-8cdd92cbd00e</onsuccess>
+    <resource object="Utility - HTTP" action="HTTP Request" />
+  </stage>
+  <stage stageid="1681f918-ba7e-4dd4-affd-cbeaebeed9cc" name="Opdater token" type="SubSheet">
+    <subsheetid>850f4342-90d0-44e8-93b1-33d524c7f10e</subsheetid>
+    <loginhibit />
+    <display x="15" y="-45" />
+    <onsuccess>d0ebb146-eac8-4b39-a10b-1e51ca0efb92</onsuccess>
+    <processid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</processid>
+  </stage>
+  <stage stageid="d0ebb146-eac8-4b39-a10b-1e51ca0efb92" name="Relativ url?" type="Decision">
+    <subsheetid>850f4342-90d0-44e8-93b1-33d524c7f10e</subsheetid>
+    <loginhibit />
+    <display x="15" y="30" />
+    <decision expression="StartsWith([Url],&quot;/&quot;)" />
+    <ontrue>cffa64a4-4df8-4b21-95c7-4fac4c4ff271</ontrue>
+    <onfalse>fcac7183-d04d-48c6-a4df-64ab36b8ba87</onfalse>
+  </stage>
+  <stage stageid="cffa64a4-4df8-4b21-95c7-4fac4c4ff271" name="Konverter til absolut" type="Calculation">
+    <subsheetid>850f4342-90d0-44e8-93b1-33d524c7f10e</subsheetid>
+    <loginhibit />
+    <display x="105" y="30" />
+    <onsuccess>83c9fca2-5565-45d6-8e03-8d3bb5752a48</onsuccess>
+    <calculation expression="[Base-url] &amp; [Url]" stage="Url" />
+  </stage>
+  <stage stageid="83c9fca2-5565-45d6-8e03-8d3bb5752a48" name="Anchor76" type="Anchor">
+    <subsheetid>850f4342-90d0-44e8-93b1-33d524c7f10e</subsheetid>
+    <loginhibit />
+    <display x="105" y="60" w="10" h="10" />
+    <onsuccess>fcac7183-d04d-48c6-a4df-64ab36b8ba87</onsuccess>
+  </stage>
+  <stage stageid="fcac7183-d04d-48c6-a4df-64ab36b8ba87" name="Anchor77" type="Anchor">
+    <subsheetid>850f4342-90d0-44e8-93b1-33d524c7f10e</subsheetid>
+    <loginhibit />
+    <display x="15" y="60" w="10" h="10" />
+    <onsuccess>b2d77f1a-63a0-4e35-8cbe-2c2465608344</onsuccess>
+  </stage>
+  <stage stageid="a304aff0-91fa-4b48-8840-20a4323c4aab" name="Status" type="Data">
+    <subsheetid>850f4342-90d0-44e8-93b1-33d524c7f10e</subsheetid>
+    <display x="-195" y="120" w="120" h="30" />
+    <datatype>number</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="d1754dde-e97f-483d-a0f0-9f1e80a2db13" name="Token" type="Block">
+    <subsheetid>850f4342-90d0-44e8-93b1-33d524c7f10e</subsheetid>
+    <loginhibit />
+    <display x="-90" y="-75" w="285" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
+  </stage>
+  <stage stageid="b914250f-1090-448b-aab5-4661c6f00a45" name="Http kald" type="Block">
+    <subsheetid>850f4342-90d0-44e8-93b1-33d524c7f10e</subsheetid>
+    <loginhibit />
+    <display x="-90" y="0" w="285" h="120" />
+    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
+  </stage>
+  <stage stageid="7895e6a0-c5ae-4add-b92e-7518e2cd272b" name="Resultat" type="Block">
+    <subsheetid>850f4342-90d0-44e8-93b1-33d524c7f10e</subsheetid>
+    <loginhibit />
+    <display x="-90" y="135" w="285" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
+  </stage>
+  <stage stageid="a86252f4-43c3-4d3c-85ea-bc9c34e1f3fe" name="Token" type="Block">
+    <subsheetid>82780005-198f-460f-af08-8a9996040174</subsheetid>
+    <loginhibit />
+    <display x="-90" y="-75" w="330" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
+  </stage>
+  <stage stageid="a8cea0b0-82c6-4165-a73e-195910801254" name="Http kald" type="Block">
+    <subsheetid>82780005-198f-460f-af08-8a9996040174</subsheetid>
+    <loginhibit />
+    <display x="-90" y="0" w="330" h="120" />
+    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
+  </stage>
+  <stage stageid="c81d6dab-ae25-49c4-9328-29b05f60567c" name="Resultat" type="Block">
+    <subsheetid>82780005-198f-460f-af08-8a9996040174</subsheetid>
+    <loginhibit />
+    <display x="-90" y="135" w="330" h="150" />
+    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
+  </stage>
+  <stage stageid="1ff18796-54dc-414a-8a16-48b7ce471b5a" name="Token" type="Block">
+    <subsheetid>5b2504a6-112c-4abe-9a44-a660a110919c</subsheetid>
+    <loginhibit />
+    <display x="-90" y="-75" w="330" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
+  </stage>
+  <stage stageid="fcfc3b38-b663-44e2-8dac-b6782c51b021" name="Http kald" type="Block">
+    <subsheetid>5b2504a6-112c-4abe-9a44-a660a110919c</subsheetid>
+    <loginhibit />
+    <display x="-90" y="0" w="330" h="120" />
+    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
+  </stage>
+  <stage stageid="cec3a695-c437-4556-a88a-c223e0ddbd60" name="Resultat" type="Block">
+    <subsheetid>5b2504a6-112c-4abe-9a44-a660a110919c</subsheetid>
+    <loginhibit />
+    <display x="-90" y="135" w="330" h="150" />
+    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
+  </stage>
+  <stage stageid="a720f2b9-c3f9-433e-b726-07168cd5495d" name="Token" type="Block">
+    <subsheetid>0086b4ce-1ee1-4f4d-b1cf-8c1f5d7861f7</subsheetid>
+    <loginhibit />
+    <display x="-90" y="-90" w="330" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
+  </stage>
+  <stage stageid="c70c42b6-5226-430e-9735-9a0d42720060" name="Http kald" type="Block">
+    <subsheetid>0086b4ce-1ee1-4f4d-b1cf-8c1f5d7861f7</subsheetid>
+    <loginhibit />
+    <display x="-90" y="-15" w="330" h="120" />
+    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
+  </stage>
+  <stage stageid="8b626a4d-d981-4cd7-b4d3-d79851b1fd2f" name="Resultat" type="Block">
+    <subsheetid>0086b4ce-1ee1-4f4d-b1cf-8c1f5d7861f7</subsheetid>
+    <loginhibit />
+    <display x="-90" y="120" w="330" h="165" />
+    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
+  </stage>
+  <stage stageid="464090ae-8028-43ec-a684-304497c49431" name="Api url" type="SubSheetInfo">
+    <subsheetid>677bd3f7-09b9-44cb-bb3d-a5903f866539</subsheetid>
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="4e01ee60-9fec-46a6-a108-5cbd5825b20c" name="Start" type="Start">
+    <subsheetid>677bd3f7-09b9-44cb-bb3d-a5903f866539</subsheetid>
+    <loginhibit />
+    <display x="15" y="-105" />
+    <inputs>
+      <input type="text" name="Navn" narrative="navn på det globale rod api" stage="Navn" />
+    </inputs>
+    <onsuccess>b0bcb61a-fa25-4c9b-a454-d7ba63bf84a7</onsuccess>
+  </stage>
+  <stage stageid="5bd2c1fe-2c3f-4a70-817e-69a5a768aab6" name="End" type="End">
+    <subsheetid>677bd3f7-09b9-44cb-bb3d-a5903f866539</subsheetid>
+    <loginhibit />
+    <display x="15" y="-15" />
+    <outputs>
+      <output type="text" name="Url" stage="Url" />
+    </outputs>
+  </stage>
+  <stage stageid="922be437-cd30-495a-a471-16f39522e783" name="Input" type="Block">
+    <subsheetid>677bd3f7-09b9-44cb-bb3d-a5903f866539</subsheetid>
+    <display x="-270" y="-45" w="150" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="339966" />
+  </stage>
+  <stage stageid="2244a034-ff59-4d37-9bb8-4f759d1862aa" name="Variabler" type="Block">
+    <subsheetid>677bd3f7-09b9-44cb-bb3d-a5903f866539</subsheetid>
+    <display x="-270" y="90" w="150" h="45" />
+    <font family="Segoe UI" size="10" style="Regular" color="666699" />
+  </stage>
+  <stage stageid="7264abb3-3ae7-44c0-954c-859d65fd3623" name="Konstanter" type="Block">
+    <subsheetid>677bd3f7-09b9-44cb-bb3d-a5903f866539</subsheetid>
+    <display x="-270" y="30" w="150" h="45" />
+    <font family="Segoe UI" size="10" style="Regular" color="008080" />
+  </stage>
+  <stage stageid="109fc770-4f0f-4058-a9e9-004f61391ae9" name="Output" type="Block">
+    <subsheetid>677bd3f7-09b9-44cb-bb3d-a5903f866539</subsheetid>
+    <display x="-270" y="150" w="150" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="800080" />
+  </stage>
+  <stage stageid="6e836307-4d8e-4dc1-ad3f-954be5c4f530" name="Navn" type="Data">
+    <subsheetid>677bd3f7-09b9-44cb-bb3d-a5903f866539</subsheetid>
+    <display x="-195" y="-15" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="cab3a6dd-7265-49ab-a1c8-28b5a093e311" name="Url" type="Data">
+    <subsheetid>677bd3f7-09b9-44cb-bb3d-a5903f866539</subsheetid>
+    <loginhibit />
+    <display x="-195" y="180" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="b0bcb61a-fa25-4c9b-a454-d7ba63bf84a7" name="Læs api felt" type="Action">
+    <subsheetid>677bd3f7-09b9-44cb-bb3d-a5903f866539</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="15" y="-60" />
+    <inputs>
+      <input type="collection" name="Collection" friendlyname="Collection" narrative="The collection to read." expr="[Api]" />
+      <input type="text" name="Field Name" friendlyname="Field Name" narrative="The field within the collection to read." expr="[Navn]" />
+      <input type="number" name="Row Index" friendlyname="Row Index" narrative="The row index within the collection to read from. The index is from 0 to N-1 (where N is the total number of rows in the collection)." expr="0" />
+    </inputs>
+    <outputs>
+      <output type="text" name="Value Read" friendlyname="Value Read" narrative="The value of the requested field as text." stage="Url" />
+    </outputs>
+    <onsuccess>5bd2c1fe-2c3f-4a70-817e-69a5a768aab6</onsuccess>
+    <resource object="Utility - Collection Manipulation" action="Read Collection Field" />
+  </stage>
+  <stage stageid="d6cd5e88-41dd-4132-ac68-8cdd92cbd00e" name="Sæt succes" type="Calculation">
+    <subsheetid>850f4342-90d0-44e8-93b1-33d524c7f10e</subsheetid>
+    <loginhibit />
+    <display x="15" y="165" />
+    <onsuccess>afe81bbd-afe8-49e0-b309-a9c42eef179f</onsuccess>
+    <calculation expression="[Status] &gt;= 200 AND [Status] &lt;= 300" stage="Succes" />
+  </stage>
+  <stage stageid="d3764fbd-c832-477c-8aa2-ad166b8da9b1" name="Konverter links" type="Code">
+    <subsheetid>b20307e1-9713-4d08-80f2-573d7723eb01</subsheetid>
+    <loginhibit />
+    <display x="15" y="0" />
+    <inputs>
+      <input type="collection" name="data" expr="[Data]" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="result" stage="Data" />
+    </outputs>
+    <onsuccess>e9f7a9e5-00f2-4572-8542-fcb29b1439b2</onsuccess>
+    <code><![CDATA[result = ConvertDataTable(data);]]></code>
+  </stage>
+  <stage stageid="b1fc09e4-894e-4b36-a0f6-6e0542482eb5" name="Json konvertering" type="Block">
+    <subsheetid>b20307e1-9713-4d08-80f2-573d7723eb01</subsheetid>
+    <loginhibit />
+    <display x="-90" y="-75" w="225" h="105" />
+    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
+  </stage>
+  <stage stageid="3206b041-427d-411c-8873-159b77ca5501" name="Hent sider" type="SubSheetInfo">
+    <subsheetid>cb9fe09f-d42b-40f9-b79c-3789bee0c116</subsheetid>
+    <narrative>Dette er generel funktionalitet til at håndtere sider i KMD Nexus. Anvendes både på lister og ved søgning.</narrative>
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="5ac5fe68-81ec-4ced-940b-162cf9916da9" name="Start" type="Start">
+    <subsheetid>cb9fe09f-d42b-40f9-b79c-3789bee0c116</subsheetid>
+    <loginhibit />
+    <display x="15" y="-105" />
+    <inputs>
+      <input type="collection" name="Sider" narrative="Sideobjektet" stage="Sider" />
+      <input type="number" name="Antal sider" narrative="Maksimale antal sider der skal hentes, -1 = hent alle (default)" stage="Antal sider" />
+      <input type="text" name="Sidelink" narrative="Hvad er navnet på kolonnen der indeholder sidelinket" stage="Sidelink" />
+    </inputs>
+    <onsuccess>daf609f0-444a-4239-89b5-b6128c0edf8e</onsuccess>
+  </stage>
+  <stage stageid="4439943c-0ec2-4fcb-839c-114b574b3135" name="Input" type="Block">
+    <subsheetid>cb9fe09f-d42b-40f9-b79c-3789bee0c116</subsheetid>
+    <display x="-270" y="-45" w="150" h="150" />
+    <font family="Segoe UI" size="10" style="Regular" color="339966" />
+  </stage>
+  <stage stageid="fd8a60c0-c368-4a63-8229-86d796173ba5" name="Variabler" type="Block">
+    <subsheetid>cb9fe09f-d42b-40f9-b79c-3789bee0c116</subsheetid>
+    <display x="-270" y="180" w="150" h="150" />
+    <font family="Segoe UI" size="10" style="Regular" color="666699" />
+  </stage>
+  <stage stageid="b60e7780-5511-4777-944a-0c8442a65f5f" name="Konstanter" type="Block">
+    <subsheetid>cb9fe09f-d42b-40f9-b79c-3789bee0c116</subsheetid>
+    <display x="-270" y="120" w="150" h="45" />
+    <font family="Segoe UI" size="10" style="Regular" color="008080" />
+  </stage>
+  <stage stageid="47140d48-4cfb-47d7-bb73-98f036281843" name="Output" type="Block">
+    <subsheetid>cb9fe09f-d42b-40f9-b79c-3789bee0c116</subsheetid>
+    <display x="-270" y="345" w="150" h="105" />
+    <font family="Segoe UI" size="10" style="Regular" color="800080" />
+  </stage>
+  <stage stageid="72c03791-75f1-4d2c-8869-550987b882ff" name="End" type="End">
+    <subsheetid>cb9fe09f-d42b-40f9-b79c-3789bee0c116</subsheetid>
+    <loginhibit />
+    <display x="15" y="450" />
+    <outputs>
+      <output type="collection" name="Objekter" stage="Objekter" />
+      <output type="number" name="Antal" stage="Antal" />
+    </outputs>
+  </stage>
+  <stage stageid="43dd6b89-d56f-471d-8373-4d0c04181bc1" name="Hent siderne" type="Block">
+    <subsheetid>cb9fe09f-d42b-40f9-b79c-3789bee0c116</subsheetid>
+    <loginhibit />
+    <display x="-75" y="-75" w="210" h="105" />
+    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
+  </stage>
+  <stage stageid="bec3affe-f04a-4003-bdc6-717871816be7" name="Hent sider" type="Calculation">
+    <subsheetid>cb9fe09f-d42b-40f9-b79c-3789bee0c116</subsheetid>
+    <loginhibit />
+    <display x="15" y="0" />
+    <onsuccess>66583d9c-f3be-4ed6-ad29-2a1329268a3b</onsuccess>
+    <calculation expression="[Sider.pages]" stage="Sider" />
+  </stage>
+  <stage stageid="daf609f0-444a-4239-89b5-b6128c0edf8e" name="Tom liste?" type="Decision">
+    <subsheetid>cb9fe09f-d42b-40f9-b79c-3789bee0c116</subsheetid>
+    <loginhibit />
+    <display x="15" y="-45" />
+    <decision expression="[Sider.totalItems] = 0" />
+    <ontrue>2a44b3b9-12a3-4034-870b-0b5f25a5ea14</ontrue>
+    <onfalse>bec3affe-f04a-4003-bdc6-717871816be7</onfalse>
+  </stage>
+  <stage stageid="2a44b3b9-12a3-4034-870b-0b5f25a5ea14" name="Antal = 0" type="Calculation">
+    <subsheetid>cb9fe09f-d42b-40f9-b79c-3789bee0c116</subsheetid>
+    <loginhibit />
+    <display x="90" y="-45" />
+    <onsuccess>cfe69eeb-09d8-45c1-8b45-890c42c2850f</onsuccess>
+    <calculation expression="0" stage="Antal" />
+  </stage>
+  <stage stageid="cfe69eeb-09d8-45c1-8b45-890c42c2850f" name="End1" type="End">
+    <subsheetid>cb9fe09f-d42b-40f9-b79c-3789bee0c116</subsheetid>
+    <loginhibit />
+    <display x="180" y="-45" />
+    <outputs>
+      <output type="collection" name="Objekter" stage="Objekter" />
+      <output type="number" name="Antal" stage="Antal" />
+    </outputs>
+  </stage>
+  <stage stageid="734e9500-54a5-4b0c-90cf-8f3e9cf46963" name="Hent sidernes indhold" type="Block">
+    <subsheetid>cb9fe09f-d42b-40f9-b79c-3789bee0c116</subsheetid>
+    <loginhibit />
+    <display x="-75" y="45" w="210" h="375" />
+    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
+  </stage>
+  <stage stageid="66583d9c-f3be-4ed6-ad29-2a1329268a3b" name="Loop Sider" type="LoopStart">
+    <subsheetid>cb9fe09f-d42b-40f9-b79c-3789bee0c116</subsheetid>
+    <loginhibit />
+    <display x="15" y="75" />
+    <onsuccess>8fd8e162-fb68-4a1f-8409-8bba9bfe1345</onsuccess>
+    <groupid>5219cdc8-0786-4b11-87a5-7e65fb2be9ac</groupid>
+    <looptype>ForEach</looptype>
+    <loopdata>Sider</loopdata>
+  </stage>
+  <stage stageid="ffc13451-bba9-47b1-b6e9-04453966d8c9" name="Loop Sider" type="LoopEnd">
+    <subsheetid>cb9fe09f-d42b-40f9-b79c-3789bee0c116</subsheetid>
+    <loginhibit />
+    <display x="15" y="345" />
+    <onsuccess>32e56df8-ad1b-4de0-8080-a6071a3068e3</onsuccess>
+    <groupid>5219cdc8-0786-4b11-87a5-7e65fb2be9ac</groupid>
+  </stage>
+  <stage stageid="22de3a57-df4a-40dc-a3a0-0cf4a688bc3f" name="Tilføj til objekter" type="Action">
+    <subsheetid>cb9fe09f-d42b-40f9-b79c-3789bee0c116</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="15" y="210" />
+    <inputs>
+      <input type="collection" name="Main Collection" friendlyname="Main Collection" narrative="The collection to append to." expr="[Objekter]" />
+      <input type="collection" name="Collection to Append" friendlyname="Collection to Append" narrative="The collection to append." expr="[Midlertidige objekter]" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="Combined Collection" friendlyname="Combined Collection" narrative="The combined collection." stage="Objekter" />
+    </outputs>
+    <onsuccess>2f01bef7-b03b-4588-96d9-074fe356e458</onsuccess>
+    <resource object="Utility - Collection Manipulation" action="Append Rows to Collection" />
+  </stage>
+  <stage stageid="2f01bef7-b03b-4588-96d9-074fe356e458" name="Side++" type="Calculation">
+    <subsheetid>cb9fe09f-d42b-40f9-b79c-3789bee0c116</subsheetid>
+    <loginhibit />
+    <display x="15" y="255" />
+    <onsuccess>d546698a-3b73-4b3c-9884-ac7ebee82cbe</onsuccess>
+    <calculation expression="[Side] + 1" stage="Side" />
+  </stage>
+  <stage stageid="d546698a-3b73-4b3c-9884-ac7ebee82cbe" name="Er vi færdige?" type="Decision">
+    <subsheetid>cb9fe09f-d42b-40f9-b79c-3789bee0c116</subsheetid>
+    <loginhibit />
+    <display x="15" y="300" />
+    <decision expression="[Side] = [Antal sider] AND [Antal sider] &lt;&gt; -1" />
+    <ontrue>70673300-5c23-4d6d-a59c-12ccc235b651</ontrue>
+    <onfalse>ffc13451-bba9-47b1-b6e9-04453966d8c9</onfalse>
+  </stage>
+  <stage stageid="70673300-5c23-4d6d-a59c-12ccc235b651" name="Anchor3" type="Anchor">
+    <subsheetid>cb9fe09f-d42b-40f9-b79c-3789bee0c116</subsheetid>
+    <loginhibit />
+    <display x="75" y="300" w="10" h="10" />
+    <onsuccess>da86c715-fb8c-46aa-830d-d383041e12dd</onsuccess>
+  </stage>
+  <stage stageid="32e56df8-ad1b-4de0-8080-a6071a3068e3" name="Tæl aktiviteter" type="Action">
+    <subsheetid>cb9fe09f-d42b-40f9-b79c-3789bee0c116</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="15" y="390" />
+    <inputs>
+      <input type="text" name="Collection Name" friendlyname="Collection Name" narrative="The name of the collection to act upon" expr="&quot;Objekter&quot;" />
+    </inputs>
+    <outputs>
+      <output type="number" name="Count" friendlyname="Count" narrative="The number of rows counted in the collection" stage="Antal" />
+    </outputs>
+    <onsuccess>72c03791-75f1-4d2c-8869-550987b882ff</onsuccess>
+    <resource object="Blueprism.AutomateProcessCore.clsCollectionActions" action="Count Rows" />
+  </stage>
+  <stage stageid="da86c715-fb8c-46aa-830d-d383041e12dd" name="Anchor4" type="Anchor">
+    <subsheetid>cb9fe09f-d42b-40f9-b79c-3789bee0c116</subsheetid>
+    <loginhibit />
+    <display x="75" y="390" w="10" h="10" />
+    <onsuccess>32e56df8-ad1b-4de0-8080-a6071a3068e3</onsuccess>
+  </stage>
+  <stage stageid="3927eea5-1461-4c16-94cc-3bceebfb3b63" name="Antal sider" type="Data">
+    <subsheetid>cb9fe09f-d42b-40f9-b79c-3789bee0c116</subsheetid>
+    <display x="-195" y="30" w="120" h="30" />
+    <datatype>number</datatype>
+    <initialvalue>-1</initialvalue>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="767d3cc2-496c-45ad-b770-1806d2ec628e" name="Objekter" type="Collection">
+    <subsheetid>cb9fe09f-d42b-40f9-b79c-3789bee0c116</subsheetid>
+    <loginhibit />
+    <display x="-195" y="375" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="6e97569b-17d3-4cd5-a512-3aaea47a35cf" name="Antal" type="Data">
+    <subsheetid>cb9fe09f-d42b-40f9-b79c-3789bee0c116</subsheetid>
+    <loginhibit />
+    <display x="-195" y="420" w="120" h="30" />
+    <datatype>number</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="4e514ef6-6e48-477a-8317-593712d2cdd2" name="Sidelink" type="Data">
+    <subsheetid>cb9fe09f-d42b-40f9-b79c-3789bee0c116</subsheetid>
+    <display x="-195" y="75" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="752e4a9f-3357-4dd4-b600-71ea589fce59" name="Sider" type="Collection">
+    <subsheetid>cb9fe09f-d42b-40f9-b79c-3789bee0c116</subsheetid>
+    <loginhibit />
+    <display x="-195" y="-15" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="d0624686-759f-4575-b934-a70d13a112e9" name="Midlertidige objekter" type="Collection">
+    <subsheetid>cb9fe09f-d42b-40f9-b79c-3789bee0c116</subsheetid>
+    <loginhibit />
+    <display x="-195" y="210" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="def1e807-bd39-420c-a6d8-8dbd9e16d0d1" name="Side" type="Data">
+    <subsheetid>cb9fe09f-d42b-40f9-b79c-3789bee0c116</subsheetid>
+    <loginhibit />
+    <display x="-195" y="255" w="120" h="30" />
+    <datatype>number</datatype>
+    <initialvalue>0</initialvalue>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="8fd8e162-fb68-4a1f-8409-8bba9bfe1345" name="Læs link-felt" type="Action">
+    <subsheetid>cb9fe09f-d42b-40f9-b79c-3789bee0c116</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="15" y="120" />
+    <inputs>
+      <input type="collection" name="Collection" friendlyname="Collection" narrative="The collection to read." expr="[Sider._links]" />
+      <input type="text" name="Field Name" friendlyname="Field Name" narrative="The field within the collection to read." expr="[Sidelink]" />
+      <input type="number" name="Row Index" friendlyname="Row Index" narrative="The row index within the collection to read from. The index is from 0 to N-1 (where N is the total number of rows in the collection)." expr="0" />
+    </inputs>
+    <outputs>
+      <output type="text" name="Value Read" friendlyname="Value Read" narrative="The value of the requested field as text." stage="Url" />
+    </outputs>
+    <onsuccess>7e8608e6-e8e9-4e67-a4f1-ee477268d05e</onsuccess>
+    <resource object="Utility - Collection Manipulation" action="Read Collection Field" />
+  </stage>
+  <stage stageid="85fd902d-b2a2-4306-965c-2530ed570c89" name="Url" type="Data">
+    <subsheetid>cb9fe09f-d42b-40f9-b79c-3789bee0c116</subsheetid>
+    <display x="-195" y="300" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="7e8608e6-e8e9-4e67-a4f1-ee477268d05e" name="Get" type="SubSheet">
+    <subsheetid>cb9fe09f-d42b-40f9-b79c-3789bee0c116</subsheetid>
+    <loginhibit />
+    <display x="15" y="165" />
+    <inputs>
+      <input type="text" name="Url" friendlyname="Url" expr="[Url]" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="Data" friendlyname="Data" stage="Midlertidige objekter" />
+      <output type="number" name="Antal" friendlyname="Antal" stage="" />
+      <output type="text" name="Json" friendlyname="Json" narrative="Det rå json output" stage="" />
+      <output type="number" name="Statuskode" friendlyname="Statuskode" narrative="Http statuskoden for kaldet" stage="" />
+    </outputs>
+    <onsuccess>22de3a57-df4a-40dc-a3a0-0cf4a688bc3f</onsuccess>
+    <processid>0086b4ce-1ee1-4f4d-b1cf-8c1f5d7861f7</processid>
+  </stage>
+  <stage stageid="4f102c86-7adf-441c-9428-39bc62a4ebf9" name="Fik vi en refresh token?" type="Decision">
+    <subsheetid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</subsheetid>
+    <loginhibit />
+    <display x="15" y="570" />
+    <decision expression="[Status Code] = 200" />
+    <ontrue>d5b41219-6d74-4747-a783-ec9b37da198b</ontrue>
+    <onfalse>e0f9f4ae-b48b-417e-a06b-b75023ef432c</onfalse>
+  </stage>
+  <stage stageid="d6fbf785-2558-4fc1-a63c-b3541f4a57ff" name="Anchor5" type="Anchor">
+    <subsheetid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</subsheetid>
+    <loginhibit />
+    <display x="75" y="480" w="10" h="10" />
+    <onsuccess>e11d6d23-6910-4800-afd1-28338d808bef</onsuccess>
+  </stage>
+  <stage stageid="e0f9f4ae-b48b-417e-a06b-b75023ef432c" name="Anchor6" type="Anchor">
+    <subsheetid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</subsheetid>
+    <loginhibit />
+    <display x="75" y="570" w="10" h="10" />
+    <onsuccess>d6fbf785-2558-4fc1-a63c-b3541f4a57ff</onsuccess>
+  </stage>
+  <stage stageid="ed28a053-5c02-4976-bc97-9df6da5da323" name="Upload fil" type="SubSheetInfo">
+    <subsheetid>e5d4df71-c53c-4167-91ed-f5303a3520e0</subsheetid>
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="c3327b99-cdd1-4366-83f0-e16ccb886283" name="Start" type="Start">
+    <subsheetid>e5d4df71-c53c-4167-91ed-f5303a3520e0</subsheetid>
+    <loginhibit />
+    <display x="0" y="-135" />
+    <inputs>
+      <input type="text" name="Url" stage="Url" />
+      <input type="text" name="Filnavn" stage="Filnavn" />
+      <input type="text" name="Indholdstype" stage="Indholdstype" />
+      <input type="binary" name="Fil" stage="Fil" />
+    </inputs>
+    <onsuccess>b2071a68-5eb1-4ec8-97d4-9883ff704a56</onsuccess>
+  </stage>
+  <stage stageid="166ca29a-198a-4212-98db-172dbc73116a" name="Input" type="Block">
+    <subsheetid>e5d4df71-c53c-4167-91ed-f5303a3520e0</subsheetid>
+    <display x="-270" y="-45" w="150" h="195" />
+    <font family="Segoe UI" size="10" style="Regular" color="339966" />
+  </stage>
+  <stage stageid="e6601bc6-15a5-412a-a553-c1dd0e5dde11" name="Variabler" type="Block">
+    <subsheetid>e5d4df71-c53c-4167-91ed-f5303a3520e0</subsheetid>
+    <display x="-270" y="240" w="150" h="105" />
+    <font family="Segoe UI" size="10" style="Regular" color="666699" />
+  </stage>
+  <stage stageid="c58477d7-c3ee-4948-9b7e-db0602d75956" name="Konstanter" type="Block">
+    <subsheetid>e5d4df71-c53c-4167-91ed-f5303a3520e0</subsheetid>
+    <display x="-270" y="165" w="150" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="008080" />
+  </stage>
+  <stage stageid="94501e41-0357-4b01-9754-e72096dbdea7" name="Output" type="Block">
+    <subsheetid>e5d4df71-c53c-4167-91ed-f5303a3520e0</subsheetid>
+    <display x="-270" y="360" w="150" h="195" />
+    <font family="Segoe UI" size="10" style="Regular" color="800080" />
+  </stage>
+  <stage stageid="bc44e085-1205-4322-996d-bc02391ed622" name="Antal" type="Data">
+    <subsheetid>e5d4df71-c53c-4167-91ed-f5303a3520e0</subsheetid>
+    <loginhibit />
+    <display x="-195" y="435" w="120" h="30" />
+    <datatype>number</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="c12623c8-08d6-4178-9aa6-6c95b170f752" name="Uploadet dokument" type="Collection">
+    <subsheetid>e5d4df71-c53c-4167-91ed-f5303a3520e0</subsheetid>
+    <display x="-195" y="390" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="33d2fe51-f9be-4ee5-8fc1-0849a2f480b4" name="Url" type="Data">
+    <subsheetid>e5d4df71-c53c-4167-91ed-f5303a3520e0</subsheetid>
+    <display x="-195" y="-15" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="6e6850cc-c6f0-420b-baac-2a8e68b8c15d" name="Raw" type="Data">
+    <subsheetid>e5d4df71-c53c-4167-91ed-f5303a3520e0</subsheetid>
+    <display x="-195" y="480" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="01c6e836-c22b-479a-ad47-5930ec04680f" name="Succes" type="Data">
+    <subsheetid>e5d4df71-c53c-4167-91ed-f5303a3520e0</subsheetid>
+    <display x="-195" y="525" w="120" h="30" />
+    <datatype>flag</datatype>
+    <initialvalue>False</initialvalue>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="ba8b4f9d-b41c-4100-baff-22e03fb00376" name="End" type="End">
+    <subsheetid>e5d4df71-c53c-4167-91ed-f5303a3520e0</subsheetid>
+    <loginhibit />
+    <display x="0" y="225" />
+    <outputs>
+      <output type="collection" name="Uploadet dokument" stage="Uploadet dokument" />
+      <output type="number" name="Antal" stage="Antal" />
+      <output type="text" name="Json" narrative="Det rå json output" stage="Raw" />
+      <output type="flag" name="Succes" narrative="Http statuskoden for kaldet" stage="Succes" />
+    </outputs>
+  </stage>
+  <stage stageid="b2071a68-5eb1-4ec8-97d4-9883ff704a56" name="Opdater token" type="SubSheet">
+    <subsheetid>e5d4df71-c53c-4167-91ed-f5303a3520e0</subsheetid>
+    <loginhibit />
+    <display x="0" y="-75" />
+    <onsuccess>d2629082-de93-4786-9af2-9ff3079ea5e8</onsuccess>
+    <processid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</processid>
+  </stage>
+  <stage stageid="ed8b6356-a6c0-4046-a916-971d36e358e2" name="Tæl data" type="Action">
+    <subsheetid>e5d4df71-c53c-4167-91ed-f5303a3520e0</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="0" y="165" />
+    <inputs>
+      <input type="text" name="Collection Name" friendlyname="Collection Name" narrative="The name of the collection to act upon" expr="&quot;Uploadet dokument&quot;" />
+    </inputs>
+    <outputs>
+      <output type="number" name="Count" friendlyname="Count" narrative="The number of rows counted in the collection" stage="Antal" />
+    </outputs>
+    <onsuccess>ba8b4f9d-b41c-4100-baff-22e03fb00376</onsuccess>
+    <resource object="Blueprism.AutomateProcessCore.clsCollectionActions" action="Count Rows" />
+  </stage>
+  <stage stageid="6a87a675-7723-430f-b340-22b65225504e" name="Token" type="Block">
+    <subsheetid>e5d4df71-c53c-4167-91ed-f5303a3520e0</subsheetid>
+    <loginhibit />
+    <display x="-90" y="-105" w="315" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
+  </stage>
+  <stage stageid="15bb570e-9d0d-4f0d-8471-207247def665" name="Http kald" type="Block">
+    <subsheetid>e5d4df71-c53c-4167-91ed-f5303a3520e0</subsheetid>
+    <loginhibit />
+    <display x="-90" y="-30" w="315" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
+  </stage>
+  <stage stageid="379c533a-3103-42c5-bf7a-23d075d2d259" name="Resultat" type="Block">
+    <subsheetid>e5d4df71-c53c-4167-91ed-f5303a3520e0</subsheetid>
+    <loginhibit />
+    <display x="-90" y="45" w="315" h="150" />
+    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
+  </stage>
+  <stage stageid="d2629082-de93-4786-9af2-9ff3079ea5e8" name="Upload fil" type="Code">
+    <subsheetid>e5d4df71-c53c-4167-91ed-f5303a3520e0</subsheetid>
+    <loginhibit />
+    <display x="0" y="0" />
+    <inputs>
+      <input type="text" name="url" expr="[Url]" />
+      <input type="text" name="token" expr="[Tokens.Token]" />
+      <input type="text" name="filename" expr="[Filnavn]" />
+      <input type="text" name="contentType" expr="[Indholdstype]" />
+      <input type="binary" name="fil" expr="[Fil]" />
+    </inputs>
+    <outputs>
+      <output type="text" name="response" stage="Raw" />
+    </outputs>
+    <onsuccess>2f6d9c70-6391-434c-851b-4e68769f6b71</onsuccess>
+    <breakpoint type="0">
+      <condition></condition>
+    </breakpoint>
+    <code><![CDATA[var webClient = new WebClient();
+string boundary = "------------------------" + DateTime.Now.Ticks.ToString("x");
+
+webClient.Headers.Add("Authorization", "Bearer " + token);
+webClient.Headers.Add("Content-Type", "multipart/form-data; boundary=" + boundary);
+
+var fileData = webClient.Encoding.GetString(fil);
+var package = string.Format("--{0}\r\nContent-Disposition: form-data; name=\"file\"; filename=\"{1}\"\r\nContent-Type: {2}\r\n\r\n{3}\r\n--{0}--\r\n", boundary, filename, contentType, fileData);
+var nfile = webClient.Encoding.GetBytes(package);
+
+byte[] resp = webClient.UploadData(url, "POST", nfile);
+response = Encoding.UTF8.GetString(resp, 0, resp.Length);]]></code>
+  </stage>
+  <stage stageid="a890cff7-42a6-4fdf-bde7-68f78115d5ca" name="Filnavn" type="Data">
+    <subsheetid>e5d4df71-c53c-4167-91ed-f5303a3520e0</subsheetid>
+    <loginhibit />
+    <display x="-195" y="30" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="d8cd6202-8003-4626-b204-70d2baa4ea8d" name="Indholdstype" type="Data">
+    <subsheetid>e5d4df71-c53c-4167-91ed-f5303a3520e0</subsheetid>
+    <loginhibit />
+    <narrative>Fx.:  "application/pdf"</narrative>
+    <display x="-195" y="75" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="d52d52d3-3943-4908-8325-9844757b5a83" name="Fil" type="Data">
+    <subsheetid>e5d4df71-c53c-4167-91ed-f5303a3520e0</subsheetid>
+    <loginhibit />
+    <display x="-195" y="120" w="120" h="30" />
+    <datatype>binary</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="2f6d9c70-6391-434c-851b-4e68769f6b71" name="Json to collection" type="SubSheet">
+    <subsheetid>e5d4df71-c53c-4167-91ed-f5303a3520e0</subsheetid>
+    <loginhibit />
+    <display x="0" y="75" />
+    <inputs>
+      <input type="text" name="Json" friendlyname="Json" expr="[Raw]" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="Data" friendlyname="Data" stage="Uploadet dokument" />
+    </outputs>
+    <onsuccess>34c009a8-17df-4368-9445-97249a82fde3</onsuccess>
+    <processid>b20307e1-9713-4d08-80f2-573d7723eb01</processid>
+  </stage>
+  <stage stageid="34c009a8-17df-4368-9445-97249a82fde3" name="Har vi activity type?" type="Action">
+    <subsheetid>e5d4df71-c53c-4167-91ed-f5303a3520e0</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="0" y="120" />
+    <inputs>
+      <input type="collection" name="Input Collection" friendlyname="Input Collection" narrative="The collection to check." expr="[Uploadet dokument]" />
+      <input type="text" name="Field" friendlyname="Field" narrative="The field to check for." expr="&quot;patientActivityType&quot;" />
+    </inputs>
+    <outputs>
+      <output type="flag" name="Exists" friendlyname="Exists" narrative="True if the collection contains the field." stage="Succes" />
+    </outputs>
+    <onsuccess>ed8b6356-a6c0-4046-a916-971d36e358e2</onsuccess>
+    <resource object="Utility - Collection Manipulation" action="Field Exists" />
+  </stage>
+</process>

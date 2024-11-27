@@ -55,6 +55,14 @@
       <zoom version="2">1.25</zoom>
     </view>
   </subsheet>
+  <subsheet subsheetid="db76ec33-a0c1-4532-b4b9-3006b64391ec" type="Normal" published="True">
+    <name>Hent udvidet opgaveinfo</name>
+    <view>
+      <camerax>-97</camerax>
+      <cameray>171</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
   <subsheet subsheetid="566b3da3-5d14-40f3-b11e-85e4ced08055" type="Normal" published="True">
     <name>Opret opgave</name>
     <view>
@@ -2887,5 +2895,189 @@ NewJson = workers.ToString(Formatting.Indented);]]></code>
     <outputs>
       <output type="flag" name="Succes" stage="Succes" />
     </outputs>
+  </stage>
+  <stage stageid="a451250b-a16b-4c1f-8808-4bac8efc29c5" name="Hent udvidet opgaveinfo" type="SubSheetInfo">
+    <subsheetid>db76ec33-a0c1-4532-b4b9-3006b64391ec</subsheetid>
+    <narrative>Henter udvidet opgave hvilket bl.a. omfatter description/kommentar</narrative>
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="64128b27-878f-4808-9ac0-b955cbe0fe17" name="Start" type="Start">
+    <subsheetid>db76ec33-a0c1-4532-b4b9-3006b64391ec</subsheetid>
+    <loginhibit />
+    <display x="0" y="-135" />
+    <inputs>
+      <input type="collection" name="Opgave" stage="Opgave" />
+    </inputs>
+    <onsuccess>dce9564b-5bca-4d07-b8ee-61878701d7f2</onsuccess>
+  </stage>
+  <stage stageid="269db630-7974-4b28-a5dd-0d21c9bea4c8" name="End" type="End">
+    <subsheetid>db76ec33-a0c1-4532-b4b9-3006b64391ec</subsheetid>
+    <loginhibit />
+    <display x="0" y="135" />
+    <outputs>
+      <output type="collection" name="Opgaveinfo" stage="Opgaveinfo" />
+      <output type="flag" name="Succes" stage="Succes" />
+    </outputs>
+  </stage>
+  <stage stageid="43a1d759-7755-4bde-827d-43d1e18bf1a8" name="Input" type="Block">
+    <subsheetid>db76ec33-a0c1-4532-b4b9-3006b64391ec</subsheetid>
+    <display x="-270" y="-45" w="150" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="339966" />
+  </stage>
+  <stage stageid="25e4cec0-5819-471f-85c0-5c276327ea71" name="Variabler" type="Block">
+    <subsheetid>db76ec33-a0c1-4532-b4b9-3006b64391ec</subsheetid>
+    <display x="-270" y="90" w="150" h="105" />
+    <font family="Segoe UI" size="10" style="Regular" color="666699" />
+  </stage>
+  <stage stageid="6d320d5d-8280-4180-9d8d-8f7bde24ed7e" name="Konstanter" type="Block">
+    <subsheetid>db76ec33-a0c1-4532-b4b9-3006b64391ec</subsheetid>
+    <display x="-270" y="30" w="150" h="45" />
+    <font family="Segoe UI" size="10" style="Regular" color="008080" />
+  </stage>
+  <stage stageid="c7d9ec4b-4c5f-47dd-9c07-f872fba8f299" name="Output" type="Block">
+    <subsheetid>db76ec33-a0c1-4532-b4b9-3006b64391ec</subsheetid>
+    <display x="-270" y="210" w="150" h="105" />
+    <font family="Segoe UI" size="10" style="Regular" color="800080" />
+  </stage>
+  <stage stageid="86e1e753-0479-4777-a47f-051d45a448f2" name="Start Momemtum (test)" type="Action">
+    <subsheetid>db76ec33-a0c1-4532-b4b9-3006b64391ec</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="105" y="-135" />
+    <inputs>
+      <input type="text" name="Credentials" friendlyname="Credentials" expr="&quot;KMD Momentum - edu&quot;" />
+    </inputs>
+    <onsuccess>48d9598b-ee33-402b-b8ec-d14cb7d4d3b7</onsuccess>
+    <resource object="Momentum - Core" action="Start" />
+  </stage>
+  <stage stageid="dce9564b-5bca-4d07-b8ee-61878701d7f2" name="Anchor1" type="Anchor">
+    <subsheetid>db76ec33-a0c1-4532-b4b9-3006b64391ec</subsheetid>
+    <loginhibit />
+    <display x="0" y="-30" w="10" h="10" />
+    <onsuccess>5dd410eb-d0d7-42cd-a067-e4b27a486744</onsuccess>
+  </stage>
+  <stage stageid="8ed99d25-2ead-42fb-b20d-5df6176320fb" name="Anchor2" type="Anchor">
+    <subsheetid>db76ec33-a0c1-4532-b4b9-3006b64391ec</subsheetid>
+    <loginhibit />
+    <display x="105" y="-30" w="10" h="10" />
+    <onsuccess>dce9564b-5bca-4d07-b8ee-61878701d7f2</onsuccess>
+  </stage>
+  <stage stageid="90c42c90-37f7-4176-a9b9-0508bb6b6f1d" name="Statuskode" type="Data">
+    <subsheetid>db76ec33-a0c1-4532-b4b9-3006b64391ec</subsheetid>
+    <display x="-195" y="120" w="120" h="30" />
+    <datatype>number</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="d962caae-61df-4e39-8b49-8d9dc0d34740" name="Debug" type="Block">
+    <subsheetid>db76ec33-a0c1-4532-b4b9-3006b64391ec</subsheetid>
+    <loginhibit />
+    <display x="60" y="-165" w="90" h="120" />
+    <font family="Segoe UI" size="10" style="Regular" color="FFFF99" />
+  </stage>
+  <stage stageid="493c25d4-61c9-4106-90c4-efc829c076c7" name="Anchor2" type="Anchor">
+    <subsheetid>db76ec33-a0c1-4532-b4b9-3006b64391ec</subsheetid>
+    <loginhibit />
+    <display x="210" y="-30" w="10" h="10" />
+    <onsuccess>8ed99d25-2ead-42fb-b20d-5df6176320fb</onsuccess>
+  </stage>
+  <stage stageid="9eeb24df-1298-4b15-b500-11be73ace47c" name="Start Momemtum (produktion)" type="Action">
+    <subsheetid>db76ec33-a0c1-4532-b4b9-3006b64391ec</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="210" y="-135" />
+    <inputs>
+      <input type="text" name="Credentials" friendlyname="Credentials" expr="&quot;KMD Momentum - produktion&quot;" />
+    </inputs>
+    <onsuccess>8cd834bd-de74-43b2-a1c1-f74652f6b63f</onsuccess>
+    <resource object="Momentum - Core" action="Start" />
+  </stage>
+  <stage stageid="0d786eb1-0e2a-4d21-bc76-4d77e28b32d7" name="Debug" type="Block">
+    <subsheetid>db76ec33-a0c1-4532-b4b9-3006b64391ec</subsheetid>
+    <loginhibit />
+    <display x="165" y="-165" w="90" h="120" />
+    <font family="Segoe UI" size="10" style="Regular" color="FFFF99" />
+  </stage>
+  <stage stageid="365cf438-a1b4-4c69-87ef-af3203d92ab9" name="Opgave" type="Collection">
+    <subsheetid>db76ec33-a0c1-4532-b4b9-3006b64391ec</subsheetid>
+    <display x="-195" y="-15" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="48d9598b-ee33-402b-b8ec-d14cb7d4d3b7" name="Hent virksomhed" type="Action">
+    <subsheetid>db76ec33-a0c1-4532-b4b9-3006b64391ec</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="105" y="-90" />
+    <inputs>
+      <input type="text" name="Cvr" friendlyname="Cvr" narrative="Cvr skal angives" expr="&quot;34815100&quot;" />
+      <input type="text" name="P-nummer" friendlyname="P-nummer" narrative="P-nummer er valgfri" expr="&quot;1018162853&quot;" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="Virksomhed" friendlyname="Virksomhed" stage="Virksomhed" />
+      <output type="number" name="Antal" friendlyname="Antal" stage="" />
+      <output type="flag" name="Succes" friendlyname="Succes" stage="" />
+    </outputs>
+    <onsuccess>8ed99d25-2ead-42fb-b20d-5df6176320fb</onsuccess>
+    <resource object="Momentum - Virksomheder" action="Hent virksomhed" />
+  </stage>
+  <stage stageid="5dd410eb-d0d7-42cd-a067-e4b27a486744" name="Hent udvidet opgaveinfo" type="Action">
+    <subsheetid>db76ec33-a0c1-4532-b4b9-3006b64391ec</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="0" y="30" />
+    <inputs>
+      <input type="text" name="Url" friendlyname="Url" expr="&quot;tasks/&quot;&amp;[Opgave.id]" />
+    </inputs>
+    <outputs>
+      <output type="number" name="Statuskode" friendlyname="Statuskode" narrative="Http statuskoden for kaldet" stage="Statuskode" />
+      <output type="collection" name="Data" friendlyname="Data" stage="Opgaveinfo" />
+      <output type="number" name="Antal" friendlyname="Antal" stage="" />
+      <output type="text" name="Json" friendlyname="Json" narrative="Det rå json output" stage="" />
+    </outputs>
+    <onsuccess>d26cb6b9-3b73-4e8a-833b-b20975e0a483</onsuccess>
+    <resource object="Momentum - Core" action="Get" />
+  </stage>
+  <stage stageid="7851e770-ae18-42f4-9457-ac0c3e6bc0b4" name="Succes" type="Data">
+    <subsheetid>db76ec33-a0c1-4532-b4b9-3006b64391ec</subsheetid>
+    <display x="-195" y="285" w="120" h="30" />
+    <datatype>flag</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="d26cb6b9-3b73-4e8a-833b-b20975e0a483" name="Sæt succes" type="Calculation">
+    <subsheetid>db76ec33-a0c1-4532-b4b9-3006b64391ec</subsheetid>
+    <loginhibit />
+    <display x="0" y="75" />
+    <onsuccess>269db630-7974-4b28-a5dd-0d21c9bea4c8</onsuccess>
+    <calculation expression="[Statuskode] = 200" stage="Succes" />
+  </stage>
+  <stage stageid="b318225b-0b18-42e7-ac55-06bda69f8dbd" name="Hent udvidet opgaveinfo" type="Block">
+    <subsheetid>db76ec33-a0c1-4532-b4b9-3006b64391ec</subsheetid>
+    <loginhibit />
+    <display x="-75" y="0" w="165" h="105" />
+    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
+  </stage>
+  <stage stageid="f6de1a8b-b571-4364-9db5-9a889838af69" name="Opgaveinfo" type="Collection">
+    <subsheetid>db76ec33-a0c1-4532-b4b9-3006b64391ec</subsheetid>
+    <display x="-195" y="240" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="8cd834bd-de74-43b2-a1c1-f74652f6b63f" name="Hent virksomhed" type="Action">
+    <subsheetid>db76ec33-a0c1-4532-b4b9-3006b64391ec</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="210" y="-90" />
+    <inputs>
+      <input type="text" name="Cvr" friendlyname="Cvr" narrative="Cvr skal angives" expr="&quot;33501404&quot;" />
+      <input type="text" name="P-nummer" friendlyname="P-nummer" narrative="P-nummer er valgfri" expr="&quot;1016667648&quot;" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="Virksomhed" friendlyname="Virksomhed" stage="Virksomhed" />
+      <output type="number" name="Antal" friendlyname="Antal" stage="" />
+      <output type="flag" name="Succes" friendlyname="Succes" stage="" />
+    </outputs>
+    <onsuccess>493c25d4-61c9-4106-90c4-efc829c076c7</onsuccess>
+    <resource object="Momentum - Virksomheder" action="Hent virksomhed" />
   </stage>
 </process>

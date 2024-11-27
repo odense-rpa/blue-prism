@@ -9,7 +9,7 @@
     </element>
   </appdef>
   <view>
-    <camerax>0</camerax>
+    <camerax>150.800049</camerax>
     <cameray>-94</cameray>
     <zoom version="2">1.25</zoom>
   </view>
@@ -82,7 +82,7 @@
   <subsheet subsheetid="b20307e1-9713-4d08-80f2-573d7723eb01" type="Normal" published="True">
     <name>Json to collection</name>
     <view>
-      <camerax>0</camerax>
+      <camerax>150.800049</camerax>
       <cameray>0</cameray>
       <zoom version="2">1.25</zoom>
     </view>
@@ -301,7 +301,7 @@
                     }
 
                     //Set string or null types to string
-                    
+
                 }
 
                 foreach (var key in columns.Keys.ToArray())
@@ -332,10 +332,13 @@
                 if (!(result is DataTable))
                 {
                     var wrapper = new DataTable();
-                    wrapper.Columns.Add(JSON.Field, result.GetType());
-                    var wraprow = wrapper.NewRow();
-                    wraprow[0] = result;
-                    wrapper.Rows.Add(wraprow);
+                    if (result.GetType() != typeof(DBNull))
+                    {
+                        wrapper.Columns.Add(JSON.Field, result.GetType());
+                        var wraprow = wrapper.NewRow();
+                        wraprow[0] = result;
+                        wrapper.Rows.Add(wraprow);
+                    }
                     result = wrapper;
                 }
 

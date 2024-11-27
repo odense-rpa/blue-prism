@@ -67,7 +67,7 @@
     <name>Hent aktuelle udlån</name>
     <view>
       <camerax>0</camerax>
-      <cameray>210</cameray>
+      <cameray>21</cameray>
       <zoom version="2">1.25</zoom>
     </view>
   </subsheet>
@@ -4370,7 +4370,7 @@ Den komplette liste kan findes i borgerens prototype, som hentes i "Get borger p
       <calculation expression="&quot;Dette er notefeltet&quot;" stage="Noter" />
       <calculation expression="Today()" stage="Modtaget" />
       <calculation expression="&quot;Test.pdf&quot;" stage="Originalt filnavn" />
-      <calculation expression="LoadBinaryFile(&quot;C:\Users\roboa\Documents\simof-test.pdf&quot;)" stage="Fil" />
+      <calculation expression="LoadBinaryFile(&quot;&quot;)" stage="Fil" />
     </steps>
   </stage>
   <stage stageid="20014b76-f724-4e1b-9853-2d32a6eae5b0" name="Referencer (json)" type="Data">

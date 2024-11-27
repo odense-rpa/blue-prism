@@ -35,7 +35,7 @@
     <name>Hent skema</name>
     <view>
       <camerax>34</camerax>
-      <cameray>0</cameray>
+      <cameray>105</cameray>
       <zoom version="2">1.25</zoom>
     </view>
   </subsheet>
@@ -51,7 +51,23 @@
     <name>Opret skema</name>
     <view>
       <camerax>15</camerax>
-      <cameray>700</cameray>
+      <cameray>141</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <subsheet subsheetid="30be2d2a-01ae-432d-958a-255b04206cab" type="Normal" published="False">
+    <name>Hent skemadefinition på forløb</name>
+    <view>
+      <camerax>0</camerax>
+      <cameray>84</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <subsheet subsheetid="d4bab19b-a7b8-40ac-8c66-9df7009e5fae" type="Normal" published="False">
+    <name>Hent skemadefinition uden forløb</name>
+    <view>
+      <camerax>0</camerax>
+      <cameray>139</cameray>
       <zoom version="2">1.25</zoom>
     </view>
   </subsheet>
@@ -59,7 +75,7 @@
     <name>Udfyld skema</name>
     <view>
       <camerax>0</camerax>
-      <cameray>126</cameray>
+      <cameray>147</cameray>
       <zoom version="2">1.25</zoom>
     </view>
   </subsheet>
@@ -73,12 +89,12 @@
   </subsheet>
   <stage stageid="d9f185ec-77c9-4b55-86b7-6d541299f350" name="Start" type="Start">
     <loginhibit />
-    <display x="15" y="-105" />
+    <display x="0" y="-135" />
     <onsuccess>edc04b60-6ecc-4198-beb2-d0248c67762b</onsuccess>
   </stage>
   <stage stageid="edc04b60-6ecc-4198-beb2-d0248c67762b" name="End" type="End">
     <loginhibit />
-    <display x="15" y="90" />
+    <display x="0" y="-45" />
   </stage>
   <stage stageid="a52d555e-a6b8-4c5c-ab65-617862384bc2" name="Stage1" type="ProcessInfo">
     <display x="-195" y="-105" w="150" h="90" />
@@ -221,7 +237,7 @@
   </stage>
   <stage stageid="9aabc782-3ad8-4bc9-bf42-8314f1104de6" name="Variabler" type="Block">
     <subsheetid>b6e28ae9-abe9-449e-ab7d-b82a719fcd66</subsheetid>
-    <display x="-270" y="180" w="150" h="195" />
+    <display x="-270" y="180" w="150" h="240" />
     <font family="Segoe UI" size="10" style="Regular" color="666699" />
   </stage>
   <stage stageid="3f13d035-3d6e-442c-89c3-ad4910758ace" name="Konstanter" type="Block">
@@ -231,7 +247,7 @@
   </stage>
   <stage stageid="88b53da5-abe5-4c60-ae52-ec95d21a94a7" name="Output" type="Block">
     <subsheetid>b6e28ae9-abe9-449e-ab7d-b82a719fcd66</subsheetid>
-    <display x="-270" y="390" w="150" h="45" />
+    <display x="-270" y="435" w="150" h="45" />
     <font family="Segoe UI" size="10" style="Regular" color="800080" />
   </stage>
   <stage stageid="0b283575-26b8-4884-a1f2-2fe6528d7cf2" name="Anchor4" type="Anchor">
@@ -779,7 +795,7 @@ Antal = Skemaer.Rows.Count;]]></code>
       <input type="text" name="Url" friendlyname="Url" expr="[Skema._links.self]" />
     </inputs>
     <outputs>
-      <output type="collection" name="Data" friendlyname="Data" stage="" />
+      <output type="collection" name="Data" friendlyname="Data" stage="Skema (object)" />
       <output type="number" name="Antal" friendlyname="Antal" stage="" />
       <output type="text" name="Json" friendlyname="Json" narrative="Det rå json output" stage="Skema (json)" />
       <output type="number" name="Statuskode" friendlyname="Statuskode" narrative="Http statuskoden for kaldet" stage="" />
@@ -813,7 +829,7 @@ Antal = Skemaer.Rows.Count;]]></code>
   </stage>
   <stage stageid="bb721e21-bcd7-47a2-bd1c-7ccaf7ae8181" name="Handlinger" type="Collection">
     <subsheetid>b6e28ae9-abe9-449e-ab7d-b82a719fcd66</subsheetid>
-    <display x="-195" y="255" w="120" h="30" />
+    <display x="-195" y="300" w="120" h="30" />
     <datatype>collection</datatype>
     <private />
     <alwaysinit />
@@ -860,7 +876,7 @@ Antal = Skemaer.Rows.Count;]]></code>
   </stage>
   <stage stageid="2564ab69-5f22-4591-b946-9221dea09c1c" name="Antal" type="Data">
     <subsheetid>b6e28ae9-abe9-449e-ab7d-b82a719fcd66</subsheetid>
-    <display x="-195" y="300" w="120" h="30" />
+    <display x="-195" y="345" w="120" h="30" />
     <datatype>number</datatype>
     <initialvalue />
     <private />
@@ -897,7 +913,7 @@ Antal = Skemaer.Rows.Count;]]></code>
   </stage>
   <stage stageid="a32670e1-b37c-4bf6-b11b-1d8807c26ced" name="Statuskode" type="Data">
     <subsheetid>b6e28ae9-abe9-449e-ab7d-b82a719fcd66</subsheetid>
-    <display x="-195" y="345" w="120" h="30" />
+    <display x="-195" y="390" w="120" h="30" />
     <datatype>number</datatype>
     <initialvalue />
     <private />
@@ -981,7 +997,7 @@ Antal = Skemaer.Rows.Count;]]></code>
   <stage stageid="f2bdac49-faaa-4c6a-8ba8-d21462c9b9a6" name="Start" type="Start">
     <subsheetid>e0f3567a-b4d5-479a-b358-8f606afa91e4</subsheetid>
     <loginhibit />
-    <display x="15" y="-105" />
+    <display x="0" y="-135" />
     <inputs>
       <input type="collection" name="Borger" stage="Borger" />
       <input type="text" name="Grundforløb" stage="Grundforløb" />
@@ -995,7 +1011,7 @@ Antal = Skemaer.Rows.Count;]]></code>
   <stage stageid="60717123-8680-4800-a73f-d390b0e4b240" name="End" type="End">
     <subsheetid>e0f3567a-b4d5-479a-b358-8f606afa91e4</subsheetid>
     <loginhibit />
-    <display x="15" y="900" />
+    <display x="0" y="435" />
     <outputs>
       <output type="collection" name="Oprettet skema" stage="Oprettet skema" />
       <output type="flag" name="Succes" stage="Succes" />
@@ -1008,7 +1024,7 @@ Antal = Skemaer.Rows.Count;]]></code>
   </stage>
   <stage stageid="3d79ed11-b280-4547-b88b-7c0b4adcb2d9" name="Variabler" type="Block">
     <subsheetid>e0f3567a-b4d5-479a-b358-8f606afa91e4</subsheetid>
-    <display x="-270" y="315" w="150" h="330" />
+    <display x="-270" y="315" w="150" h="285" />
     <font family="Segoe UI" size="10" style="Regular" color="666699" />
   </stage>
   <stage stageid="054973ed-ec47-48dd-b0c5-a858c8967571" name="Konstanter" type="Block">
@@ -1018,7 +1034,7 @@ Antal = Skemaer.Rows.Count;]]></code>
   </stage>
   <stage stageid="04c43f80-96f9-4707-ad73-17ebd4018553" name="Output" type="Block">
     <subsheetid>e0f3567a-b4d5-479a-b358-8f606afa91e4</subsheetid>
-    <display x="-270" y="660" w="150" h="105" />
+    <display x="-270" y="615" w="150" h="105" />
     <font family="Segoe UI" size="10" style="Regular" color="800080" />
   </stage>
   <stage stageid="ffa15493-ed41-458d-86f8-91a56b9dcc29" name="Grundforløb" type="Data">
@@ -1037,23 +1053,6 @@ Antal = Skemaer.Rows.Count;]]></code>
     <private />
     <alwaysinit />
   </stage>
-  <stage stageid="84bda8a6-c25e-4a49-b5da-e6a020a447c2" name="Hent borgerens forløbspathway" type="Action">
-    <subsheetid>e0f3567a-b4d5-479a-b358-8f606afa91e4</subsheetid>
-    <loginhibit onsuccess="true" />
-    <display x="15" y="-30" />
-    <inputs>
-      <input type="collection" name="Borger" friendlyname="Borger" expr="[Borger]" />
-      <input type="text" name="Pathway" friendlyname="Pathway" narrative="Default &quot;-Alt&quot;" expr="&quot;-Aktive forløb&quot;" />
-    </inputs>
-    <outputs>
-      <output type="collection" name="Pathway" friendlyname="Pathway" stage="" />
-      <output type="collection" name="Referencer" friendlyname="Referencer" stage="Referencer" />
-      <output type="text" name="Referencer (json)" friendlyname="Referencer (json)" narrative="Referencer som rå json" stage="" />
-      <output type="number" name="Antal" friendlyname="Antal" stage="Antal" />
-    </outputs>
-    <onsuccess>e535853b-4bb2-4c3e-85e6-f1d38fc8527c</onsuccess>
-    <resource object="Nexus - Borgere og forløb" action="Hent pathway" />
-  </stage>
   <stage stageid="12eb9c16-45bd-45e2-8f76-890b8b994f97" name="Borger" type="Collection">
     <subsheetid>e0f3567a-b4d5-479a-b358-8f606afa91e4</subsheetid>
     <loginhibit />
@@ -1062,16 +1061,9 @@ Antal = Skemaer.Rows.Count;]]></code>
     <private />
     <alwaysinit />
   </stage>
-  <stage stageid="799b5901-978d-4475-a2b1-0e89d15c7d34" name="Referencer" type="Collection">
-    <subsheetid>e0f3567a-b4d5-479a-b358-8f606afa91e4</subsheetid>
-    <display x="-195" y="345" w="120" h="30" />
-    <datatype>collection</datatype>
-    <private />
-    <alwaysinit />
-  </stage>
   <stage stageid="e67946c2-7348-49b2-8816-088a4432ca6d" name="Antal" type="Data">
     <subsheetid>e0f3567a-b4d5-479a-b358-8f606afa91e4</subsheetid>
-    <display x="-195" y="390" w="120" h="30" />
+    <display x="-195" y="345" w="120" h="30" />
     <datatype>number</datatype>
     <initialvalue />
     <private />
@@ -1080,19 +1072,19 @@ Antal = Skemaer.Rows.Count;]]></code>
   <stage stageid="2cab2257-c983-4292-b7de-ec8c0324c9c5" name="Anchor8" type="Anchor">
     <subsheetid>e0f3567a-b4d5-479a-b358-8f606afa91e4</subsheetid>
     <loginhibit />
-    <display x="15" y="-75" w="10" h="10" />
-    <onsuccess>84bda8a6-c25e-4a49-b5da-e6a020a447c2</onsuccess>
+    <display x="0" y="-105" w="10" h="10" />
+    <onsuccess>ececa472-9c19-4117-a71a-7ba6dd85e011</onsuccess>
   </stage>
   <stage stageid="c3d6e1c3-87e7-4c8e-b04d-e9487cf30747" name="Anchor9" type="Anchor">
     <subsheetid>e0f3567a-b4d5-479a-b358-8f606afa91e4</subsheetid>
     <loginhibit />
-    <display x="120" y="-75" w="10" h="10" />
+    <display x="105" y="-105" w="10" h="10" />
     <onsuccess>2cab2257-c983-4292-b7de-ec8c0324c9c5</onsuccess>
   </stage>
   <stage stageid="14a0128f-f3cf-45ac-b463-54b1c24c22de" name="Nexus - Core::Start" type="Action">
     <subsheetid>e0f3567a-b4d5-479a-b358-8f606afa91e4</subsheetid>
     <loginhibit onsuccess="true" />
-    <display x="120" y="-210" />
+    <display x="105" y="-240" />
     <inputs>
       <input type="text" name="Credentials" friendlyname="Credentials" expr="&quot;KMD Nexus - produktion&quot;" />
     </inputs>
@@ -1102,13 +1094,13 @@ Antal = Skemaer.Rows.Count;]]></code>
   <stage stageid="bc5e248a-6578-42c9-86fe-ee0c7d118167" name="Debug" type="Block">
     <subsheetid>e0f3567a-b4d5-479a-b358-8f606afa91e4</subsheetid>
     <loginhibit />
-    <display x="60" y="-240" w="180" h="150" />
+    <display x="45" y="-270" w="360" h="150" />
     <font family="Segoe UI" size="10" style="Regular" color="FFFF99" />
   </stage>
   <stage stageid="75d8d00e-a796-4a3b-991c-1590014fc09f" name="Hent borger" type="Action">
     <subsheetid>e0f3567a-b4d5-479a-b358-8f606afa91e4</subsheetid>
     <loginhibit onsuccess="true" />
-    <display x="120" y="-165" />
+    <display x="105" y="-195" />
     <inputs>
       <input type="text" name="Cpr" friendlyname="Cpr" expr="&quot;xxxxxxxxxx&quot;" />
     </inputs>
@@ -1118,113 +1110,22 @@ Antal = Skemaer.Rows.Count;]]></code>
     <onsuccess>5cf4cb23-9e70-4dc4-ba81-97098b9f0068</onsuccess>
     <resource object="Nexus - Borgere og forløb" action="Hent borger" />
   </stage>
-  <stage stageid="ae0cbaa8-69e5-4b07-ae81-e48e1c2ddc8d" name="Pathway" type="Block">
-    <subsheetid>e0f3567a-b4d5-479a-b358-8f606afa91e4</subsheetid>
-    <loginhibit />
-    <display x="-90" y="-60" w="225" h="60" />
-    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
-  </stage>
-  <stage stageid="ee6b2a2b-aa37-4fd5-959e-0d58ca5a991c" name="Vælg forløb" type="Block">
-    <subsheetid>e0f3567a-b4d5-479a-b358-8f606afa91e4</subsheetid>
-    <loginhibit />
-    <display x="-90" y="15" w="225" h="285" />
-    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
-  </stage>
-  <stage stageid="e535853b-4bb2-4c3e-85e6-f1d38fc8527c" name="Vælg grundforløb" type="Action">
-    <subsheetid>e0f3567a-b4d5-479a-b358-8f606afa91e4</subsheetid>
-    <loginhibit onsuccess="true" />
-    <display x="15" y="45" />
-    <inputs>
-      <input type="collection" name="Collection In" friendlyname="Collection In" narrative="Input collection" expr="[Referencer]" />
-      <input type="text" name="Filter" friendlyname="Filter" narrative="The filter to apply" expr="&quot;[name]='&quot; &amp; [Grundforløb] &amp; &quot;' AND [type]='patientPathwayReference'&quot;" />
-    </inputs>
-    <outputs>
-      <output type="number" name="Count" friendlyname="Count" narrative="The amount of rows in the filtered collection" stage="Antal" />
-      <output type="collection" name="Collection Out" friendlyname="Collection Out" narrative="The filtered collection" stage="Referencer" />
-    </outputs>
-    <onsuccess>2edaac28-45c4-4689-99fd-1635f4f89a75</onsuccess>
-    <resource object="Utility - Odk Linq" action="Filter" />
-  </stage>
-  <stage stageid="2edaac28-45c4-4689-99fd-1635f4f89a75" name="Har vi grundforløb?" type="Decision">
-    <subsheetid>e0f3567a-b4d5-479a-b358-8f606afa91e4</subsheetid>
-    <loginhibit />
-    <display x="15" y="90" />
-    <decision expression="[Antal] = 1" />
-    <ontrue>1c98c815-64bc-4c2b-a67f-146c74cc592f</ontrue>
-    <onfalse>0a79126a-9fbe-4d94-94f3-46bb79b568a4</onfalse>
-  </stage>
-  <stage stageid="0a79126a-9fbe-4d94-94f3-46bb79b568a4" name="Intet forløb" type="Exception">
-    <subsheetid>e0f3567a-b4d5-479a-b358-8f606afa91e4</subsheetid>
-    <display x="210" y="90" />
-    <exception localized="yes" type="Business Exception" detail="&quot;Grundforløbet kunne ikke findes&quot;" />
-  </stage>
-  <stage stageid="1c98c815-64bc-4c2b-a67f-146c74cc592f" name="Hent children" type="Calculation">
-    <subsheetid>e0f3567a-b4d5-479a-b358-8f606afa91e4</subsheetid>
-    <loginhibit />
-    <display x="15" y="135" />
-    <onsuccess>26f24388-b094-4563-ba2a-36881fa6bcd4</onsuccess>
-    <calculation expression="[Referencer.children]" stage="Referencer" />
-  </stage>
-  <stage stageid="26f24388-b094-4563-ba2a-36881fa6bcd4" name="Vælg forløb" type="Action">
-    <subsheetid>e0f3567a-b4d5-479a-b358-8f606afa91e4</subsheetid>
-    <loginhibit onsuccess="true" />
-    <display x="15" y="180" />
-    <inputs>
-      <input type="collection" name="Collection In" friendlyname="Collection In" narrative="Input collection" expr="[Referencer]" />
-      <input type="text" name="Filter" friendlyname="Filter" narrative="The filter to apply" expr="&quot;[name]='&quot; &amp; [Forløb] &amp; &quot;' AND [type]='patientPathwayReference'&quot;" />
-    </inputs>
-    <outputs>
-      <output type="number" name="Count" friendlyname="Count" narrative="The amount of rows in the filtered collection" stage="Antal" />
-      <output type="collection" name="Collection Out" friendlyname="Collection Out" narrative="The filtered collection" stage="Referencer" />
-    </outputs>
-    <onsuccess>4909fbf2-61b1-4fa6-88cb-c71f96e82322</onsuccess>
-    <resource object="Utility - Odk Linq" action="Filter" />
-  </stage>
-  <stage stageid="4909fbf2-61b1-4fa6-88cb-c71f96e82322" name="Har vi forløb" type="Decision">
-    <subsheetid>e0f3567a-b4d5-479a-b358-8f606afa91e4</subsheetid>
-    <loginhibit />
-    <display x="15" y="225" />
-    <decision expression="[Antal] = 1" />
-    <ontrue>010ac10d-f19e-4c3e-9401-889c72f6e52f</ontrue>
-    <onfalse>474f2d2d-c90a-4cdf-8e83-c92c5fa6a8f1</onfalse>
-  </stage>
-  <stage stageid="474f2d2d-c90a-4cdf-8e83-c92c5fa6a8f1" name="Intet forløb" type="Exception">
-    <subsheetid>e0f3567a-b4d5-479a-b358-8f606afa91e4</subsheetid>
-    <display x="210" y="225" />
-    <exception localized="yes" type="Business Exception" detail="&quot;Forløbet kunne ikke findes&quot;" />
-  </stage>
   <stage stageid="5cf4cb23-9e70-4dc4-ba81-97098b9f0068" name="Sæt forløb" type="MultipleCalculation">
     <subsheetid>e0f3567a-b4d5-479a-b358-8f606afa91e4</subsheetid>
     <loginhibit />
-    <display x="120" y="-120" />
+    <display x="105" y="-150" />
     <onsuccess>c3d6e1c3-87e7-4c8e-b04d-e9487cf30747</onsuccess>
     <steps>
       <calculation expression="&quot;Sundhedsfagligt grundforløb&quot;" stage="Grundforløb" />
       <calculation expression="&quot;FSIII&quot;" stage="Forløb" />
-      <calculation expression="&quot;Henvendelse/sagsåbning hjælpemidler v5&quot;" stage="Skema" />
+      <calculation expression="&quot;Sagsnotat - Ældre&quot;" stage="Skema" />
       <calculation expression="[Debugfelter]" stage="Felter" />
-      <calculation expression="&quot;Udfyldt&quot;" stage="Handling" />
+      <calculation expression="&quot;Låst&quot;" stage="Handling" />
     </steps>
-  </stage>
-  <stage stageid="010ac10d-f19e-4c3e-9401-889c72f6e52f" name="Hent reference" type="Action">
-    <subsheetid>e0f3567a-b4d5-479a-b358-8f606afa91e4</subsheetid>
-    <loginhibit onsuccess="true" />
-    <display x="15" y="270" />
-    <inputs>
-      <input type="text" name="Url" friendlyname="Url" expr="[Referencer._links.self]" />
-    </inputs>
-    <outputs>
-      <output type="collection" name="Data" friendlyname="Data" stage="Referencer" />
-      <output type="number" name="Antal" friendlyname="Antal" stage="Antal" />
-      <output type="text" name="Json" friendlyname="Json" narrative="Det rå json output" stage="" />
-      <output type="number" name="Statuskode" friendlyname="Statuskode" narrative="Http statuskoden for kaldet" stage="" />
-    </outputs>
-    <onsuccess>7f6bd043-44b0-4197-a167-99ed7767e970</onsuccess>
-    <resource object="Nexus - Core" action="Get" />
   </stage>
   <stage stageid="6f9429f5-a041-4916-a84d-68f06e18c50d" name="Statuskode" type="Data">
     <subsheetid>e0f3567a-b4d5-479a-b358-8f606afa91e4</subsheetid>
-    <display x="-195" y="435" w="120" h="30" />
+    <display x="-195" y="390" w="120" h="30" />
     <datatype>number</datatype>
     <initialvalue />
     <private />
@@ -1232,7 +1133,7 @@ Antal = Skemaer.Rows.Count;]]></code>
   </stage>
   <stage stageid="f98fbe6e-d181-465c-848b-ef6c10b2901d" name="Succes" type="Data">
     <subsheetid>e0f3567a-b4d5-479a-b358-8f606afa91e4</subsheetid>
-    <display x="-195" y="735" w="120" h="30" />
+    <display x="-195" y="690" w="120" h="30" />
     <datatype>flag</datatype>
     <initialvalue />
     <private />
@@ -1258,65 +1159,15 @@ Antal = Skemaer.Rows.Count;]]></code>
   <stage stageid="13272e61-12a6-4dbc-8ec6-bba31cc5f764" name="Skemadefinitioner" type="Collection">
     <subsheetid>e0f3567a-b4d5-479a-b358-8f606afa91e4</subsheetid>
     <loginhibit />
-    <display x="-195" y="480" w="120" h="30" />
+    <display x="-195" y="435" w="120" h="30" />
     <datatype>collection</datatype>
     <private />
     <alwaysinit />
   </stage>
-  <stage stageid="7f6bd043-44b0-4197-a167-99ed7767e970" name="Hent skemadefinitioner" type="Action">
-    <subsheetid>e0f3567a-b4d5-479a-b358-8f606afa91e4</subsheetid>
-    <loginhibit onsuccess="true" />
-    <display x="15" y="345" />
-    <inputs>
-      <input type="text" name="Url" friendlyname="Url" expr="[Referencer._links.availableFormDefinitions]" />
-    </inputs>
-    <outputs>
-      <output type="collection" name="Data" friendlyname="Data" stage="Skemadefinitioner" />
-      <output type="number" name="Antal" friendlyname="Antal" stage="Antal" />
-      <output type="text" name="Json" friendlyname="Json" narrative="Det rå json output" stage="" />
-      <output type="number" name="Statuskode" friendlyname="Statuskode" narrative="Http statuskoden for kaldet" stage="" />
-    </outputs>
-    <onsuccess>8fc006d0-ae7e-45c3-bc20-3c42cb93a82e</onsuccess>
-    <resource object="Nexus - Core" action="Get" />
-  </stage>
-  <stage stageid="1c46fa3c-a615-4345-ba4c-98ca477611ab" name="Find definitionen" type="Block">
-    <subsheetid>e0f3567a-b4d5-479a-b358-8f606afa91e4</subsheetid>
-    <loginhibit />
-    <display x="-90" y="315" w="225" h="150" />
-    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
-  </stage>
-  <stage stageid="8fc006d0-ae7e-45c3-bc20-3c42cb93a82e" name="Vælg det korrekte skema" type="Action">
-    <subsheetid>e0f3567a-b4d5-479a-b358-8f606afa91e4</subsheetid>
-    <loginhibit onsuccess="true" />
-    <display x="15" y="390" />
-    <inputs>
-      <input type="collection" name="Collection In" friendlyname="Collection In" narrative="Input collection" expr="[Skemadefinitioner]" />
-      <input type="text" name="Filter" friendlyname="Filter" narrative="The filter to apply" expr="&quot;[title]='&quot; &amp; [Skema] &amp; &quot;'&quot;" />
-    </inputs>
-    <outputs>
-      <output type="number" name="Count" friendlyname="Count" narrative="The amount of rows in the filtered collection" stage="Antal" />
-      <output type="collection" name="Collection Out" friendlyname="Collection Out" narrative="The filtered collection" stage="Skemadefinitioner" />
-    </outputs>
-    <onsuccess>f8976a63-2e7b-4284-9857-1b026622c03e</onsuccess>
-    <resource object="Utility - Odk Linq" action="Filter" />
-  </stage>
-  <stage stageid="f8976a63-2e7b-4284-9857-1b026622c03e" name="Fik vi en definition?" type="Decision">
-    <subsheetid>e0f3567a-b4d5-479a-b358-8f606afa91e4</subsheetid>
-    <loginhibit />
-    <display x="15" y="435" />
-    <decision expression="[Antal] &gt; 0" />
-    <ontrue>68ea409a-bdcf-43c6-bc68-7ab96fc51403</ontrue>
-    <onfalse>c3eece1a-0f77-4a8c-bf2b-8df188d15711</onfalse>
-  </stage>
-  <stage stageid="c3eece1a-0f77-4a8c-bf2b-8df188d15711" name="Ingen definition" type="Exception">
-    <subsheetid>e0f3567a-b4d5-479a-b358-8f606afa91e4</subsheetid>
-    <display x="210" y="435" />
-    <exception localized="yes" type="Business Exception" detail="&quot;Skemadefinitionen kunne ikke findes&quot;" />
-  </stage>
   <stage stageid="68ea409a-bdcf-43c6-bc68-7ab96fc51403" name="Hent prototype" type="Action">
     <subsheetid>e0f3567a-b4d5-479a-b358-8f606afa91e4</subsheetid>
     <loginhibit onsuccess="true" />
-    <display x="15" y="510" />
+    <display x="0" y="45" />
     <inputs>
       <input type="text" name="Url" friendlyname="Url" expr="[Skemadefinitioner._links.formDataPrototype]" />
     </inputs>
@@ -1331,7 +1182,7 @@ Antal = Skemaer.Rows.Count;]]></code>
   </stage>
   <stage stageid="c2ce7224-da5a-44da-9686-cc12fdbda3ff" name="Prototype (json)" type="Data">
     <subsheetid>e0f3567a-b4d5-479a-b358-8f606afa91e4</subsheetid>
-    <display x="-195" y="570" w="120" h="30" />
+    <display x="-195" y="525" w="120" h="30" />
     <datatype>text</datatype>
     <initialvalue />
     <private />
@@ -1340,7 +1191,7 @@ Antal = Skemaer.Rows.Count;]]></code>
   <stage stageid="6ba68730-57cb-495f-a818-2dd66ae48af9" name="Prototype" type="Collection">
     <subsheetid>e0f3567a-b4d5-479a-b358-8f606afa91e4</subsheetid>
     <loginhibit />
-    <display x="-195" y="525" w="120" h="30" />
+    <display x="-195" y="480" w="120" h="30" />
     <datatype>collection</datatype>
     <private />
     <alwaysinit />
@@ -1348,13 +1199,13 @@ Antal = Skemaer.Rows.Count;]]></code>
   <stage stageid="943d82d9-6da7-48f1-9cf2-0447d4063891" name="Hent prototype" type="Block">
     <subsheetid>e0f3567a-b4d5-479a-b358-8f606afa91e4</subsheetid>
     <loginhibit />
-    <display x="-90" y="480" w="225" h="60" />
+    <display x="-75" y="15" w="195" h="60" />
     <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
   </stage>
   <stage stageid="e2b89e8c-f904-43f6-8984-62246884ca8f" name="Hent handlinger" type="Action">
     <subsheetid>e0f3567a-b4d5-479a-b358-8f606afa91e4</subsheetid>
     <loginhibit onsuccess="true" />
-    <display x="15" y="585" />
+    <display x="0" y="120" />
     <inputs>
       <input type="text" name="Url" friendlyname="Url" expr="[Prototype._links.availableActions]" />
     </inputs>
@@ -1369,7 +1220,7 @@ Antal = Skemaer.Rows.Count;]]></code>
   </stage>
   <stage stageid="e00a7b21-85be-45d9-a8c0-b2f95b0bed92" name="Handlinger" type="Collection">
     <subsheetid>e0f3567a-b4d5-479a-b358-8f606afa91e4</subsheetid>
-    <display x="-195" y="615" w="120" h="30" />
+    <display x="-195" y="570" w="120" h="30" />
     <datatype>collection</datatype>
     <private />
     <alwaysinit />
@@ -1377,7 +1228,7 @@ Antal = Skemaer.Rows.Count;]]></code>
   <stage stageid="9819d704-c6df-4743-b8f0-af29c0cac011" name="Vælg aktiv handling" type="Action">
     <subsheetid>e0f3567a-b4d5-479a-b358-8f606afa91e4</subsheetid>
     <loginhibit onsuccess="true" />
-    <display x="15" y="630" />
+    <display x="0" y="165" />
     <inputs>
       <input type="collection" name="Collection In" friendlyname="Collection In" narrative="Input collection" expr="[Handlinger]" />
       <input type="text" name="Filter" friendlyname="Filter" narrative="The filter to apply" expr="&quot;[name]='&quot; &amp; [Handling] &amp; &quot;'&quot;" />
@@ -1401,20 +1252,20 @@ Antal = Skemaer.Rows.Count;]]></code>
   <stage stageid="fb3cc6b4-f365-4633-988e-c08d28612437" name="Har vi en handling?" type="Decision">
     <subsheetid>e0f3567a-b4d5-479a-b358-8f606afa91e4</subsheetid>
     <loginhibit />
-    <display x="15" y="675" />
+    <display x="0" y="210" />
     <decision expression="[Antal] &gt; 0" />
     <ontrue>3f25762c-80d8-45db-810c-989fa7e514aa</ontrue>
     <onfalse>e6d1d90b-3e1b-4fcb-a9f3-a30e97c0d3fc</onfalse>
   </stage>
   <stage stageid="e6d1d90b-3e1b-4fcb-a9f3-a30e97c0d3fc" name="Ingen handling" type="Exception">
     <subsheetid>e0f3567a-b4d5-479a-b358-8f606afa91e4</subsheetid>
-    <display x="210" y="675" />
+    <display x="165" y="210" />
     <exception localized="yes" type="Business Exception" detail="&quot;Handlingen kunne ikke findes&quot;" />
   </stage>
   <stage stageid="46e4c5ad-3b47-4b01-a4d9-b76c91eafe23" name="Handling" type="Block">
     <subsheetid>e0f3567a-b4d5-479a-b358-8f606afa91e4</subsheetid>
     <loginhibit />
-    <display x="-90" y="555" w="225" h="150" />
+    <display x="-75" y="90" w="195" h="150" />
     <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
   </stage>
   <stage stageid="e631aeba-7700-421e-ad25-6454fd0efdff" name="Udfyld skema" type="SubSheetInfo">
@@ -1424,39 +1275,40 @@ Antal = Skemaer.Rows.Count;]]></code>
   <stage stageid="85ae59fc-819d-4c10-8253-16c181e5414d" name="Start" type="Start">
     <subsheetid>91e3b872-3006-48e8-88ea-9791215847c5</subsheetid>
     <loginhibit />
-    <display x="15" y="-105" />
+    <display x="0" y="-135" />
     <inputs>
       <input type="text" name="Skema (json)" stage="Skema (json)" />
+      <input type="collection" name="Skema" stage="Skema" />
       <input type="collection" name="Felter" stage="Felter" />
     </inputs>
-    <onsuccess>0c603098-f26a-4231-82b9-f40ff1c7af87</onsuccess>
+    <onsuccess>6a50d68d-6c7d-4fe3-a4ed-638848058257</onsuccess>
   </stage>
   <stage stageid="6dc05cd0-4475-46d5-be1a-8cde7850067c" name="End" type="End">
     <subsheetid>91e3b872-3006-48e8-88ea-9791215847c5</subsheetid>
     <loginhibit />
-    <display x="15" y="90" />
+    <display x="0" y="330" />
     <outputs>
       <output type="text" name="Skema (json)" stage="Opdateret skema (json)" />
     </outputs>
   </stage>
   <stage stageid="841d53f0-2357-493f-8045-a8d7b5278ff4" name="Input" type="Block">
     <subsheetid>91e3b872-3006-48e8-88ea-9791215847c5</subsheetid>
-    <display x="-270" y="-45" w="150" h="105" />
+    <display x="-270" y="-45" w="150" h="150" />
     <font family="Segoe UI" size="10" style="Regular" color="339966" />
   </stage>
   <stage stageid="3dc9289f-1cf2-48cf-9d4a-c36c6eeb3723" name="Variabler" type="Block">
     <subsheetid>91e3b872-3006-48e8-88ea-9791215847c5</subsheetid>
-    <display x="-270" y="135" w="150" h="195" />
+    <display x="-270" y="180" w="150" h="240" />
     <font family="Segoe UI" size="10" style="Regular" color="666699" />
   </stage>
   <stage stageid="4e34f02e-b830-425c-9b94-bfbecad12eb4" name="Konstanter" type="Block">
     <subsheetid>91e3b872-3006-48e8-88ea-9791215847c5</subsheetid>
-    <display x="-270" y="75" w="150" h="45" />
+    <display x="-270" y="120" w="150" h="45" />
     <font family="Segoe UI" size="10" style="Regular" color="008080" />
   </stage>
   <stage stageid="45b5266e-fb5e-4f8a-a9eb-0997682a4bed" name="Output" type="Block">
     <subsheetid>91e3b872-3006-48e8-88ea-9791215847c5</subsheetid>
-    <display x="-270" y="345" w="150" h="60" />
+    <display x="-270" y="435" w="150" h="60" />
     <font family="Segoe UI" size="10" style="Regular" color="800080" />
   </stage>
   <stage stageid="a3837925-e639-40b6-8870-ef58e155003c" name="Skema (json)" type="Data">
@@ -1469,7 +1321,7 @@ Antal = Skemaer.Rows.Count;]]></code>
   </stage>
   <stage stageid="5bbd0a41-0e6b-45bb-b256-a86a84515b48" name="Felter" type="Collection">
     <subsheetid>91e3b872-3006-48e8-88ea-9791215847c5</subsheetid>
-    <display x="-195" y="30" w="120" h="30" />
+    <display x="-195" y="75" w="120" h="30" />
     <datatype>collection</datatype>
     <private />
     <alwaysinit />
@@ -1477,7 +1329,7 @@ Antal = Skemaer.Rows.Count;]]></code>
   <stage stageid="0c603098-f26a-4231-82b9-f40ff1c7af87" name="Udfyld skema" type="Code">
     <subsheetid>91e3b872-3006-48e8-88ea-9791215847c5</subsheetid>
     <loginhibit />
-    <display x="15" y="15" />
+    <display x="0" y="285" />
     <inputs>
       <input type="text" name="schema" expr="[Skema (json)]" />
       <input type="collection" name="changes" expr="[Felter]" />
@@ -1496,14 +1348,13 @@ if(changes != null && changes.Rows.Count > 0)
 {
 	foreach(DataColumn column in changes.Columns)
 	{
-
 		var element = elements.FirstOrDefault(a => a["label"].ToString().Replace(".","").Replace("[","").Replace("]","") == column.ColumnName);
 
 		if (element == null)
 			throw new Exception("Ukendt felt: " + column.ColumnName);
 
 		if(column.DataType == typeof(string))
-		{
+		{			
 			if(element["type"].ToString() == "radioGroup" || element["type"].ToString() == "dropDown") {
 				var selected = element["possibleValues"].FirstOrDefault(a => a["name"].ToString() == changes.Rows[0][column.ColumnName].ToString());
 				
@@ -1514,11 +1365,15 @@ if(changes != null && changes.Rows.Count > 0)
 				continue;
 			}
 			
+			if(element["label"].ToString() == "Diagnose")
+			{
+				element["value"] = JToken.Parse(changes.Rows[0][column.ColumnName].ToString());
+				continue;
+			}
 			
 			element["value"] = changes.Rows[0][column.ColumnName].ToString();
 			continue;
 		}
-
 		
 		if (column.DataType == typeof(DateTime))
 		{
@@ -1534,20 +1389,15 @@ if(changes != null && changes.Rows.Count > 0)
 			continue;
 		}*/
 
-
 		throw new Exception("Ukendt type: " + column.DataType.ToString());
-
 	}
 }
 
-template = jschema.ToString();
-
-
-]]></code>
+template = jschema.ToString();]]></code>
   </stage>
   <stage stageid="ac65b4c7-0539-4403-a9e4-f96a01dfe536" name="Opdateret skema (json)" type="Data">
     <subsheetid>91e3b872-3006-48e8-88ea-9791215847c5</subsheetid>
-    <display x="-195" y="375" w="120" h="30" />
+    <display x="-195" y="465" w="120" h="30" />
     <datatype>text</datatype>
     <initialvalue />
     <private />
@@ -1556,10 +1406,11 @@ template = jschema.ToString();
   <stage stageid="3f25762c-80d8-45db-810c-989fa7e514aa" name="Udfyld skema" type="SubSheet">
     <subsheetid>e0f3567a-b4d5-479a-b358-8f606afa91e4</subsheetid>
     <loginhibit />
-    <display x="15" y="750" />
+    <display x="0" y="285" />
     <inputs>
       <input type="text" name="Skema (json)" friendlyname="Skema (json)" expr="[Prototype (json)]" />
       <input type="collection" name="Felter" friendlyname="Felter" expr="[Felter]" />
+      <input type="collection" name="Skema" friendlyname="Skema" expr="[Prototype]" />
     </inputs>
     <outputs>
       <output type="text" name="Skema (json)" friendlyname="Skema (json)" stage="Prototype (json)" />
@@ -1573,7 +1424,7 @@ template = jschema.ToString();
   <stage stageid="87762c95-6e76-4b50-995b-3c8e509430e7" name="Udfyld og opdater" type="Block">
     <subsheetid>e0f3567a-b4d5-479a-b358-8f606afa91e4</subsheetid>
     <loginhibit />
-    <display x="-90" y="720" w="225" h="150" />
+    <display x="-75" y="255" w="195" h="150" />
     <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
   </stage>
   <stage stageid="b3797a72-6a17-44df-a23d-96163b346969" name="Udfyld skema" type="SubSheet">
@@ -1583,6 +1434,7 @@ template = jschema.ToString();
     <inputs>
       <input type="text" name="Skema (json)" friendlyname="Skema (json)" expr="[Skema (json)]" />
       <input type="collection" name="Felter" friendlyname="Felter" expr="[Felter]" />
+      <input type="collection" name="Skema" friendlyname="Skema" expr="[Skema (object)]" />
     </inputs>
     <outputs>
       <output type="text" name="Skema (json)" friendlyname="Skema (json)" stage="Skema (json)" />
@@ -1769,7 +1621,7 @@ template = jschema.ToString();
   <stage stageid="5a4ee0f3-20ec-4b5b-a6c2-86e559ecc1c6" name="Prototype til collection" type="SubSheet">
     <subsheetid>e0f3567a-b4d5-479a-b358-8f606afa91e4</subsheetid>
     <loginhibit />
-    <display x="210" y="510" />
+    <display x="195" y="45" />
     <inputs>
       <input type="collection" name="Prototype" friendlyname="Prototype" expr="[Prototype]" />
     </inputs>
@@ -1851,13 +1703,13 @@ template = jschema.ToString();
   <stage stageid="8e73ac50-4873-4153-b18c-d904afcfe91b" name="Hjælp til felter" type="Block">
     <subsheetid>e0f3567a-b4d5-479a-b358-8f606afa91e4</subsheetid>
     <loginhibit />
-    <display x="150" y="480" w="315" h="105" />
+    <display x="135" y="15" w="315" h="105" />
     <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
   </stage>
   <stage stageid="3f6a15f2-7a84-4810-a10b-2864f0902e71" name="End1" type="End">
     <subsheetid>e0f3567a-b4d5-479a-b358-8f606afa91e4</subsheetid>
     <loginhibit />
-    <display x="285" y="510" />
+    <display x="270" y="45" />
     <outputs>
       <output type="collection" name="Oprettet skema" stage="Oprettet skema" />
       <output type="flag" name="Succes" stage="Succes" />
@@ -1865,7 +1717,7 @@ template = jschema.ToString();
   </stage>
   <stage stageid="171895e7-b49c-424e-9a36-1d6a86633140" name="Xml" type="Data">
     <subsheetid>e0f3567a-b4d5-479a-b358-8f606afa91e4</subsheetid>
-    <display x="210" y="555" />
+    <display x="195" y="90" />
     <datatype>text</datatype>
     <initialvalue />
     <private />
@@ -1875,36 +1727,31 @@ template = jschema.ToString();
     <subsheetid>e0f3567a-b4d5-479a-b358-8f606afa91e4</subsheetid>
     <loginhibit />
     <narrative>Kan bruges til at få lavet en "felter" collection. Brug "Set next stage" efter hent prototype. Må ikke linkes til ellers død ved kølle.</narrative>
-    <display x="390" y="525" w="120" h="60" />
+    <display x="375" y="60" w="120" h="60" />
   </stage>
   <stage stageid="a931df6d-d0d3-4a41-8bfc-cd0e2171c805" name="Debugfelter" type="Collection">
     <subsheetid>e0f3567a-b4d5-479a-b358-8f606afa91e4</subsheetid>
     <loginhibit />
-    <display x="195" y="-210" />
+    <display x="180" y="-240" />
     <datatype>collection</datatype>
     <private />
     <alwaysinit />
     <collectioninfo>
-      <singlerow />
-      <field name="Henvendelse modtaget" type="date" />
-      <field name="Kilde som henvendelsen kommer fra" type="text" />
-      <field name="Hvad drejer henvendelsen sig om?" type="text" />
-      <field name="Årsag til henvendelse og sagsbehandlingsforløb (OBS Husk dato og initialer på noter, og skriv nyeste note nederst)" type="text" />
+      <field name="Emne" type="text" />
+      <field name="Tekst" type="text" />
     </collectioninfo>
     <initialvalue>
       <singlerow />
       <row>
-        <field name="Henvendelse modtaget" type="date" value="2024/02/11" />
-        <field name="Kilde som henvendelsen kommer fra" type="text" value="Borger" />
-        <field name="Hvad drejer henvendelsen sig om?" type="text" value="§117a" />
-        <field name="Årsag til henvendelse og sagsbehandlingsforløb (OBS Husk dato og initialer på noter, og skriv nyeste note nederst)" type="text" value="Test" />
+        <field name="Emne" type="text" value="simof test" />
+        <field name="Tekst" type="text" value="simof test" />
       </row>
     </initialvalue>
   </stage>
   <stage stageid="235b9fda-9d13-4b30-90a4-d4a3aa12de6b" name="Opret skema" type="Action">
     <subsheetid>e0f3567a-b4d5-479a-b358-8f606afa91e4</subsheetid>
     <loginhibit onsuccess="true" />
-    <display x="15" y="795" />
+    <display x="0" y="330" />
     <inputs>
       <input type="text" name="Url" friendlyname="Url" expr="[Handlinger._links.createFormData]" />
       <input type="text" name="Body" friendlyname="Body" expr="[Prototype (json)]" />
@@ -1921,15 +1768,715 @@ template = jschema.ToString();
   <stage stageid="752f4999-0049-4f58-a487-3f954930a18e" name="Sæt succes" type="Calculation">
     <subsheetid>e0f3567a-b4d5-479a-b358-8f606afa91e4</subsheetid>
     <loginhibit />
-    <display x="15" y="840" />
+    <display x="0" y="375" />
     <onsuccess>60717123-8680-4800-a73f-d390b0e4b240</onsuccess>
     <calculation expression="[Statuskode] = 200" stage="Succes" />
   </stage>
   <stage stageid="281729c0-1ee9-4e14-ad5a-cff123b491b3" name="Oprettet skema" type="Collection">
     <subsheetid>e0f3567a-b4d5-479a-b358-8f606afa91e4</subsheetid>
-    <display x="-195" y="690" w="120" h="30" />
+    <display x="-195" y="645" w="120" h="30" />
     <datatype>collection</datatype>
     <private />
     <alwaysinit />
+  </stage>
+  <stage stageid="ef6b1be7-735d-4b44-9b74-9c0d1613c0b2" name="Skemadefinitionerv2" type="Collection">
+    <subsheetid>e0f3567a-b4d5-479a-b358-8f606afa91e4</subsheetid>
+    <display x="180" y="-195" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="4b9b7abc-fece-4127-aafc-b053b8a8a9e5" name="Nexus - Core::Start" type="Action">
+    <subsheetid>e0f3567a-b4d5-479a-b358-8f606afa91e4</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="255" y="-240" />
+    <inputs>
+      <input type="text" name="Credentials" friendlyname="Credentials" expr="&quot;KMD Nexus - produktion&quot;" />
+    </inputs>
+    <onsuccess>9af66e38-e647-4c98-a257-97dbb4743071</onsuccess>
+    <resource object="Nexus - Core" action="Start" />
+  </stage>
+  <stage stageid="9af66e38-e647-4c98-a257-97dbb4743071" name="Hent borger" type="Action">
+    <subsheetid>e0f3567a-b4d5-479a-b358-8f606afa91e4</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="255" y="-195" />
+    <inputs>
+      <input type="text" name="Cpr" friendlyname="Cpr" expr="&quot;xxxxxxxxxx&quot;" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="Borger" friendlyname="Borger" stage="Borger" />
+    </outputs>
+    <onsuccess>22fb066a-d5e3-4a33-aa58-53a81bd3f20f</onsuccess>
+    <resource object="Nexus - Borgere og forløb" action="Hent borger" />
+  </stage>
+  <stage stageid="22fb066a-d5e3-4a33-aa58-53a81bd3f20f" name="Sæt intet forløb" type="MultipleCalculation">
+    <subsheetid>e0f3567a-b4d5-479a-b358-8f606afa91e4</subsheetid>
+    <loginhibit />
+    <display x="255" y="-150" />
+    <onsuccess>20c48555-4767-4882-92a5-022f4132439a</onsuccess>
+    <steps>
+      <calculation expression="&quot;&quot;" stage="Grundforløb" />
+      <calculation expression="&quot;&quot;" stage="Forløb" />
+      <calculation expression="&quot;Diagnose ICD-10&quot;" stage="Skema" />
+      <calculation expression="[Debugfelter ingen forløb]" stage="Felter" />
+      <calculation expression="&quot;Aktivt&quot;" stage="Handling" />
+    </steps>
+  </stage>
+  <stage stageid="ececa472-9c19-4117-a71a-7ba6dd85e011" name="Skal oprettes på forløb?" type="Decision">
+    <subsheetid>e0f3567a-b4d5-479a-b358-8f606afa91e4</subsheetid>
+    <loginhibit />
+    <display x="0" y="-75" />
+    <decision expression="[Forløb] &lt;&gt; &quot;&quot; OR [Grundforløb] &lt;&gt; &quot;&quot;" />
+    <ontrue>1d372ebe-d321-4e0e-8c42-3368b26dcfb9</ontrue>
+    <onfalse>10b71b44-a315-4b00-b11d-2e405f6c0f24</onfalse>
+  </stage>
+  <stage stageid="397629e6-bf9e-41ec-a6b0-ba44ce5bb75a" name="Hent skemadefinition på forløb" type="SubSheetInfo">
+    <subsheetid>30be2d2a-01ae-432d-958a-255b04206cab</subsheetid>
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="7527933c-ee3e-47cc-ab3e-8a4838b702bd" name="Start" type="Start">
+    <subsheetid>30be2d2a-01ae-432d-958a-255b04206cab</subsheetid>
+    <loginhibit />
+    <display x="0" y="-135" />
+    <inputs>
+      <input type="collection" name="Borger" stage="Borger" />
+      <input type="text" name="Grundforløb" stage="Grundforløb" />
+      <input type="text" name="Forløb" stage="Forløb" />
+      <input type="text" name="Skema" stage="Skema" />
+    </inputs>
+    <onsuccess>84bda8a6-c25e-4a49-b5da-e6a020a447c2</onsuccess>
+  </stage>
+  <stage stageid="6908c553-bc27-46ff-b0e1-756d0f3a4db9" name="End" type="End">
+    <subsheetid>30be2d2a-01ae-432d-958a-255b04206cab</subsheetid>
+    <loginhibit />
+    <display x="0" y="450" />
+    <outputs>
+      <output type="collection" name="Skemadefinitioner" stage="Skemadefinitioner" />
+    </outputs>
+  </stage>
+  <stage stageid="c6ca35b9-4884-495a-b989-ac21cf3f18df" name="Hent skemadefinition uden forløb" type="SubSheetInfo">
+    <subsheetid>d4bab19b-a7b8-40ac-8c66-9df7009e5fae</subsheetid>
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="b09fe606-fa35-4fe0-a7ef-b0f9b398550c" name="Start" type="Start">
+    <subsheetid>d4bab19b-a7b8-40ac-8c66-9df7009e5fae</subsheetid>
+    <loginhibit />
+    <display x="0" y="-135" />
+    <inputs>
+      <input type="collection" name="Borger" stage="Borger" />
+      <input type="text" name="Skema" stage="Skema" />
+    </inputs>
+    <onsuccess>a836e676-21bf-4f63-8b71-9393ff87af5c</onsuccess>
+  </stage>
+  <stage stageid="2772a666-c922-4fc1-b586-1d49a77cad69" name="End" type="End">
+    <subsheetid>d4bab19b-a7b8-40ac-8c66-9df7009e5fae</subsheetid>
+    <loginhibit />
+    <display x="0" y="75" />
+    <outputs>
+      <output type="collection" name="Skemadefinitioner" stage="Skemadefinitioner" />
+    </outputs>
+  </stage>
+  <stage stageid="84bda8a6-c25e-4a49-b5da-e6a020a447c2" name="Hent borgerens forløbspathway" type="Action">
+    <subsheetid>30be2d2a-01ae-432d-958a-255b04206cab</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="0" y="-75" />
+    <inputs>
+      <input type="collection" name="Borger" friendlyname="Borger" expr="[Borger]" />
+      <input type="text" name="Pathway" friendlyname="Pathway" narrative="Default &quot;-Alt&quot;" expr="&quot;-Aktive forløb&quot;" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="Pathway" friendlyname="Pathway" stage="" />
+      <output type="collection" name="Referencer" friendlyname="Referencer" stage="Referencer" />
+      <output type="text" name="Referencer (json)" friendlyname="Referencer (json)" narrative="Referencer som rå json" stage="" />
+      <output type="number" name="Antal referencer" friendlyname="Antal referencer" stage="" />
+      <output type="collection" name="Aktiviteter" friendlyname="Aktiviteter" stage="" />
+      <output type="number" name="Antal aktiviteter" friendlyname="Antal aktiviteter" stage="" />
+    </outputs>
+    <onsuccess>e535853b-4bb2-4c3e-85e6-f1d38fc8527c</onsuccess>
+    <resource object="Nexus - Borgere og forløb" action="Hent pathway" />
+  </stage>
+  <stage stageid="ae0cbaa8-69e5-4b07-ae81-e48e1c2ddc8d" name="Pathway" type="Block">
+    <subsheetid>30be2d2a-01ae-432d-958a-255b04206cab</subsheetid>
+    <loginhibit />
+    <display x="-75" y="-105" w="195" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
+  </stage>
+  <stage stageid="ee6b2a2b-aa37-4fd5-959e-0d58ca5a991c" name="Vælg forløb" type="Block">
+    <subsheetid>30be2d2a-01ae-432d-958a-255b04206cab</subsheetid>
+    <loginhibit />
+    <display x="-75" y="-30" w="195" h="285" />
+    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
+  </stage>
+  <stage stageid="e535853b-4bb2-4c3e-85e6-f1d38fc8527c" name="Vælg grundforløb" type="Action">
+    <subsheetid>30be2d2a-01ae-432d-958a-255b04206cab</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="0" y="0" />
+    <inputs>
+      <input type="collection" name="Collection In" friendlyname="Collection In" narrative="Input collection" expr="[Referencer]" />
+      <input type="text" name="Filter" friendlyname="Filter" narrative="The filter to apply" expr="&quot;[name]='&quot; &amp; [Grundforløb] &amp; &quot;' AND [type]='patientPathwayReference'&quot;" />
+    </inputs>
+    <outputs>
+      <output type="number" name="Count" friendlyname="Count" narrative="The amount of rows in the filtered collection" stage="Antal" />
+      <output type="collection" name="Collection Out" friendlyname="Collection Out" narrative="The filtered collection" stage="Referencer" />
+    </outputs>
+    <onsuccess>2edaac28-45c4-4689-99fd-1635f4f89a75</onsuccess>
+    <resource object="Utility - Odk Linq" action="Filter" />
+  </stage>
+  <stage stageid="2edaac28-45c4-4689-99fd-1635f4f89a75" name="Har vi grundforløb?" type="Decision">
+    <subsheetid>30be2d2a-01ae-432d-958a-255b04206cab</subsheetid>
+    <loginhibit />
+    <display x="0" y="45" />
+    <decision expression="[Antal] = 1" />
+    <ontrue>1c98c815-64bc-4c2b-a67f-146c74cc592f</ontrue>
+    <onfalse>0a79126a-9fbe-4d94-94f3-46bb79b568a4</onfalse>
+  </stage>
+  <stage stageid="0a79126a-9fbe-4d94-94f3-46bb79b568a4" name="Intet forløb" type="Exception">
+    <subsheetid>30be2d2a-01ae-432d-958a-255b04206cab</subsheetid>
+    <display x="165" y="45" />
+    <exception localized="yes" type="Business Exception" detail="&quot;Grundforløbet kunne ikke findes&quot;" />
+  </stage>
+  <stage stageid="1c98c815-64bc-4c2b-a67f-146c74cc592f" name="Hent children" type="Calculation">
+    <subsheetid>30be2d2a-01ae-432d-958a-255b04206cab</subsheetid>
+    <loginhibit />
+    <display x="0" y="90" />
+    <onsuccess>26f24388-b094-4563-ba2a-36881fa6bcd4</onsuccess>
+    <calculation expression="[Referencer.children]" stage="Referencer" />
+  </stage>
+  <stage stageid="26f24388-b094-4563-ba2a-36881fa6bcd4" name="Vælg forløb" type="Action">
+    <subsheetid>30be2d2a-01ae-432d-958a-255b04206cab</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="0" y="135" />
+    <inputs>
+      <input type="collection" name="Collection In" friendlyname="Collection In" narrative="Input collection" expr="[Referencer]" />
+      <input type="text" name="Filter" friendlyname="Filter" narrative="The filter to apply" expr="&quot;[name]='&quot; &amp; [Forløb] &amp; &quot;' AND [type]='patientPathwayReference'&quot;" />
+    </inputs>
+    <outputs>
+      <output type="number" name="Count" friendlyname="Count" narrative="The amount of rows in the filtered collection" stage="Antal" />
+      <output type="collection" name="Collection Out" friendlyname="Collection Out" narrative="The filtered collection" stage="Referencer" />
+    </outputs>
+    <onsuccess>4909fbf2-61b1-4fa6-88cb-c71f96e82322</onsuccess>
+    <resource object="Utility - Odk Linq" action="Filter" />
+  </stage>
+  <stage stageid="4909fbf2-61b1-4fa6-88cb-c71f96e82322" name="Har vi forløb" type="Decision">
+    <subsheetid>30be2d2a-01ae-432d-958a-255b04206cab</subsheetid>
+    <loginhibit />
+    <display x="0" y="180" />
+    <decision expression="[Antal] = 1" />
+    <ontrue>010ac10d-f19e-4c3e-9401-889c72f6e52f</ontrue>
+    <onfalse>474f2d2d-c90a-4cdf-8e83-c92c5fa6a8f1</onfalse>
+  </stage>
+  <stage stageid="474f2d2d-c90a-4cdf-8e83-c92c5fa6a8f1" name="Intet forløb" type="Exception">
+    <subsheetid>30be2d2a-01ae-432d-958a-255b04206cab</subsheetid>
+    <display x="165" y="180" />
+    <exception localized="yes" type="Business Exception" detail="&quot;Forløbet kunne ikke findes&quot;" />
+  </stage>
+  <stage stageid="010ac10d-f19e-4c3e-9401-889c72f6e52f" name="Hent reference" type="Action">
+    <subsheetid>30be2d2a-01ae-432d-958a-255b04206cab</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="0" y="225" />
+    <inputs>
+      <input type="text" name="Url" friendlyname="Url" expr="[Referencer._links.self]" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="Data" friendlyname="Data" stage="Referencer" />
+      <output type="number" name="Antal" friendlyname="Antal" stage="Antal" />
+      <output type="text" name="Json" friendlyname="Json" narrative="Det rå json output" stage="" />
+      <output type="number" name="Statuskode" friendlyname="Statuskode" narrative="Http statuskoden for kaldet" stage="" />
+    </outputs>
+    <onsuccess>7f6bd043-44b0-4197-a167-99ed7767e970</onsuccess>
+    <resource object="Nexus - Core" action="Get" />
+  </stage>
+  <stage stageid="7f6bd043-44b0-4197-a167-99ed7767e970" name="Hent skemadefinitioner" type="Action">
+    <subsheetid>30be2d2a-01ae-432d-958a-255b04206cab</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="0" y="300" />
+    <inputs>
+      <input type="text" name="Url" friendlyname="Url" expr="[Referencer._links.availableFormDefinitions]" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="Data" friendlyname="Data" stage="Skemadefinitioner" />
+      <output type="number" name="Antal" friendlyname="Antal" stage="Antal" />
+      <output type="text" name="Json" friendlyname="Json" narrative="Det rå json output" stage="" />
+      <output type="number" name="Statuskode" friendlyname="Statuskode" narrative="Http statuskoden for kaldet" stage="" />
+    </outputs>
+    <onsuccess>8fc006d0-ae7e-45c3-bc20-3c42cb93a82e</onsuccess>
+    <resource object="Nexus - Core" action="Get" />
+  </stage>
+  <stage stageid="1c46fa3c-a615-4345-ba4c-98ca477611ab" name="Find definitionen" type="Block">
+    <subsheetid>30be2d2a-01ae-432d-958a-255b04206cab</subsheetid>
+    <loginhibit />
+    <display x="-75" y="270" w="195" h="150" />
+    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
+  </stage>
+  <stage stageid="8fc006d0-ae7e-45c3-bc20-3c42cb93a82e" name="Vælg det korrekte skema" type="Action">
+    <subsheetid>30be2d2a-01ae-432d-958a-255b04206cab</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="0" y="345" />
+    <inputs>
+      <input type="collection" name="Collection In" friendlyname="Collection In" narrative="Input collection" expr="[Skemadefinitioner]" />
+      <input type="text" name="Filter" friendlyname="Filter" narrative="The filter to apply" expr="&quot;[title]='&quot; &amp; [Skema] &amp; &quot;'&quot;" />
+    </inputs>
+    <outputs>
+      <output type="number" name="Count" friendlyname="Count" narrative="The amount of rows in the filtered collection" stage="Antal" />
+      <output type="collection" name="Collection Out" friendlyname="Collection Out" narrative="The filtered collection" stage="Skemadefinitioner" />
+    </outputs>
+    <onsuccess>f8976a63-2e7b-4284-9857-1b026622c03e</onsuccess>
+    <resource object="Utility - Odk Linq" action="Filter" />
+  </stage>
+  <stage stageid="f8976a63-2e7b-4284-9857-1b026622c03e" name="Fik vi en definition?" type="Decision">
+    <subsheetid>30be2d2a-01ae-432d-958a-255b04206cab</subsheetid>
+    <loginhibit />
+    <display x="0" y="390" />
+    <decision expression="[Antal] &gt; 0" />
+    <ontrue>6908c553-bc27-46ff-b0e1-756d0f3a4db9</ontrue>
+    <onfalse>c3eece1a-0f77-4a8c-bf2b-8df188d15711</onfalse>
+  </stage>
+  <stage stageid="c3eece1a-0f77-4a8c-bf2b-8df188d15711" name="Ingen definition" type="Exception">
+    <subsheetid>30be2d2a-01ae-432d-958a-255b04206cab</subsheetid>
+    <display x="165" y="390" />
+    <exception localized="yes" type="Business Exception" detail="&quot;Skemadefinitionen kunne ikke findes&quot;" />
+  </stage>
+  <stage stageid="89370bc0-2622-40c1-8da2-34f2fcca766a" name="Input" type="Block">
+    <subsheetid>30be2d2a-01ae-432d-958a-255b04206cab</subsheetid>
+    <display x="-270" y="-45" w="150" h="195" />
+    <font family="Segoe UI" size="10" style="Regular" color="339966" />
+  </stage>
+  <stage stageid="849e2a3e-da82-4f14-83da-d229be41d43c" name="Variabler" type="Block">
+    <subsheetid>30be2d2a-01ae-432d-958a-255b04206cab</subsheetid>
+    <display x="-270" y="225" w="150" h="105" />
+    <font family="Segoe UI" size="10" style="Regular" color="666699" />
+  </stage>
+  <stage stageid="665be3ca-33ad-4d60-8ac8-fc35fc838467" name="Konstanter" type="Block">
+    <subsheetid>30be2d2a-01ae-432d-958a-255b04206cab</subsheetid>
+    <display x="-270" y="165" w="150" h="45" />
+    <font family="Segoe UI" size="10" style="Regular" color="008080" />
+  </stage>
+  <stage stageid="ad81d244-96dd-4b46-aa32-c12355cc29b4" name="Output" type="Block">
+    <subsheetid>30be2d2a-01ae-432d-958a-255b04206cab</subsheetid>
+    <display x="-270" y="345" w="150" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="800080" />
+  </stage>
+  <stage stageid="c65888ba-1394-47c4-b846-e4eae401045c" name="Borger" type="Collection">
+    <subsheetid>30be2d2a-01ae-432d-958a-255b04206cab</subsheetid>
+    <loginhibit />
+    <display x="-195" y="-15" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="c534ecd6-8bc4-47f9-9a22-04be4594cb79" name="Grundforløb" type="Data">
+    <subsheetid>30be2d2a-01ae-432d-958a-255b04206cab</subsheetid>
+    <display x="-195" y="30" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="880c964e-6e6b-4ebd-93ab-c0517e66c856" name="Forløb" type="Data">
+    <subsheetid>30be2d2a-01ae-432d-958a-255b04206cab</subsheetid>
+    <display x="-195" y="75" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="a377b36d-e16d-4ac2-b844-4cc9a500ad74" name="Referencer" type="Collection">
+    <subsheetid>30be2d2a-01ae-432d-958a-255b04206cab</subsheetid>
+    <display x="-195" y="255" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="18b7e674-da96-4aab-839f-3c45c7b4eb89" name="Antal" type="Data">
+    <subsheetid>30be2d2a-01ae-432d-958a-255b04206cab</subsheetid>
+    <display x="-195" y="300" w="120" h="30" />
+    <datatype>number</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="cb1deb74-1fb1-48f5-944c-24b565128d4e" name="Skemadefinitioner" type="Collection">
+    <subsheetid>30be2d2a-01ae-432d-958a-255b04206cab</subsheetid>
+    <display x="-195" y="375" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="1d372ebe-d321-4e0e-8c42-3368b26dcfb9" name="Hent skemadefinition på forløb" type="SubSheet">
+    <subsheetid>e0f3567a-b4d5-479a-b358-8f606afa91e4</subsheetid>
+    <loginhibit />
+    <display x="0" y="-30" />
+    <inputs>
+      <input type="collection" name="Borger" friendlyname="Borger" expr="[Borger]" />
+      <input type="text" name="Grundforløb" friendlyname="Grundforløb" expr="[Grundforløb]" />
+      <input type="text" name="Forløb" friendlyname="Forløb" expr="[Forløb]" />
+      <input type="text" name="Skema" friendlyname="Skema" expr="[Skema]" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="Skemadefinitioner" friendlyname="Skemadefinitioner" stage="Skemadefinitioner" />
+    </outputs>
+    <onsuccess>7d7d4881-6b80-4386-904e-0bcbc81475a3</onsuccess>
+    <processid>30be2d2a-01ae-432d-958a-255b04206cab</processid>
+  </stage>
+  <stage stageid="23d5f264-1c89-4e4a-b2f4-b6933fc0957f" name="Skema" type="Data">
+    <subsheetid>30be2d2a-01ae-432d-958a-255b04206cab</subsheetid>
+    <loginhibit />
+    <display x="-195" y="120" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="dbcce4d7-0ef4-48a8-99ec-18f00633611d" name="Input" type="Block">
+    <subsheetid>d4bab19b-a7b8-40ac-8c66-9df7009e5fae</subsheetid>
+    <display x="-270" y="-45" w="150" h="105" />
+    <font family="Segoe UI" size="10" style="Regular" color="339966" />
+  </stage>
+  <stage stageid="07b504f9-8aac-490f-a424-6dfaef2e05cd" name="Variabler" type="Block">
+    <subsheetid>d4bab19b-a7b8-40ac-8c66-9df7009e5fae</subsheetid>
+    <display x="-270" y="135" w="150" h="105" />
+    <font family="Segoe UI" size="10" style="Regular" color="666699" />
+  </stage>
+  <stage stageid="a2b79390-afb8-486d-adc2-902df4a69602" name="Konstanter" type="Block">
+    <subsheetid>d4bab19b-a7b8-40ac-8c66-9df7009e5fae</subsheetid>
+    <display x="-270" y="75" w="150" h="45" />
+    <font family="Segoe UI" size="10" style="Regular" color="008080" />
+  </stage>
+  <stage stageid="b67fde89-e42a-4284-b410-d3c24a92df2d" name="Output" type="Block">
+    <subsheetid>d4bab19b-a7b8-40ac-8c66-9df7009e5fae</subsheetid>
+    <display x="-270" y="255" w="150" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="800080" />
+  </stage>
+  <stage stageid="7e06af16-d280-48dc-b15d-9781a3a54768" name="Borger" type="Collection">
+    <subsheetid>d4bab19b-a7b8-40ac-8c66-9df7009e5fae</subsheetid>
+    <loginhibit />
+    <display x="-195" y="-15" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="cefe5e03-99ec-40ca-a8cd-a493b4ab8019" name="Skemadefinitioner" type="Collection">
+    <subsheetid>d4bab19b-a7b8-40ac-8c66-9df7009e5fae</subsheetid>
+    <display x="-195" y="285" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="249e3aa6-528d-4cd3-a4d6-b16b99f262d6" name="Skema" type="Data">
+    <subsheetid>d4bab19b-a7b8-40ac-8c66-9df7009e5fae</subsheetid>
+    <loginhibit />
+    <display x="-195" y="30" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="2c5db12f-8cf7-4e6d-9192-52717dbeccda" name="Referencer" type="Collection">
+    <subsheetid>d4bab19b-a7b8-40ac-8c66-9df7009e5fae</subsheetid>
+    <display x="-195" y="165" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="52512eac-47be-48c9-8984-2c3653885542" name="Antal" type="Data">
+    <subsheetid>d4bab19b-a7b8-40ac-8c66-9df7009e5fae</subsheetid>
+    <display x="-195" y="210" w="120" h="30" />
+    <datatype>number</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="a836e676-21bf-4f63-8b71-9393ff87af5c" name="Hent skemadefinitioner" type="Action">
+    <subsheetid>d4bab19b-a7b8-40ac-8c66-9df7009e5fae</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="0" y="-75" />
+    <inputs>
+      <input type="text" name="Url" friendlyname="Url" expr="[Borger._links.availableFormDefinitions]" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="Data" friendlyname="Data" stage="Skemadefinitioner" />
+      <output type="number" name="Antal" friendlyname="Antal" stage="" />
+      <output type="text" name="Json" friendlyname="Json" narrative="Det rå json output" stage="" />
+      <output type="number" name="Statuskode" friendlyname="Statuskode" narrative="Http statuskoden for kaldet" stage="" />
+    </outputs>
+    <onsuccess>da1609a2-594c-4c83-8235-95e249a20673</onsuccess>
+    <resource object="Nexus - Core" action="Get" />
+  </stage>
+  <stage stageid="da1609a2-594c-4c83-8235-95e249a20673" name="Filtrer skema" type="Action">
+    <subsheetid>d4bab19b-a7b8-40ac-8c66-9df7009e5fae</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="0" y="-30" />
+    <inputs>
+      <input type="collection" name="Collection In" friendlyname="Collection In" narrative="Input collection" expr="[Skemadefinitioner]" />
+      <input type="text" name="Filter" friendlyname="Filter" narrative="The filter to apply" expr="&quot;[title] = '&quot; &amp; [Skema] &amp;&quot;'&quot;" />
+    </inputs>
+    <outputs>
+      <output type="number" name="Count" friendlyname="Count" narrative="The amount of rows in the filtered collection" stage="Antal" />
+      <output type="collection" name="Collection Out" friendlyname="Collection Out" narrative="The filtered collection" stage="Skemadefinitioner" />
+    </outputs>
+    <onsuccess>8d391d47-c490-44ea-a988-3b00c7dc20aa</onsuccess>
+    <resource object="Utility - Odk Linq" action="Filter" />
+  </stage>
+  <stage stageid="8d391d47-c490-44ea-a988-3b00c7dc20aa" name="Findes skemadefinition?" type="Decision">
+    <subsheetid>d4bab19b-a7b8-40ac-8c66-9df7009e5fae</subsheetid>
+    <loginhibit />
+    <display x="0" y="15" />
+    <decision expression="[Antal] &gt; 0" />
+    <ontrue>2772a666-c922-4fc1-b586-1d49a77cad69</ontrue>
+    <onfalse>e7e1b309-cbe1-4036-8f07-5af9fba1ec04</onfalse>
+  </stage>
+  <stage stageid="e7e1b309-cbe1-4036-8f07-5af9fba1ec04" name="Skemadefinition kunne ikke findes" type="Exception">
+    <subsheetid>d4bab19b-a7b8-40ac-8c66-9df7009e5fae</subsheetid>
+    <display x="165" y="15" />
+    <exception localized="yes" type="" detail="&quot;Skemadefinition kunne ikke findes&quot;" />
+  </stage>
+  <stage stageid="55785d99-c58b-47a8-90f7-48265870c69d" name="Find definitionen" type="Block">
+    <subsheetid>d4bab19b-a7b8-40ac-8c66-9df7009e5fae</subsheetid>
+    <loginhibit />
+    <display x="-75" y="-105" w="195" h="150" />
+    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
+  </stage>
+  <stage stageid="10b71b44-a315-4b00-b11d-2e405f6c0f24" name="Anchor11" type="Anchor">
+    <subsheetid>e0f3567a-b4d5-479a-b358-8f606afa91e4</subsheetid>
+    <loginhibit />
+    <display x="75" y="-75" w="10" h="10" />
+    <onsuccess>7d1a9e10-bd76-4461-8c8b-0c63b158cb9b</onsuccess>
+  </stage>
+  <stage stageid="7d1a9e10-bd76-4461-8c8b-0c63b158cb9b" name="Hent skemadefinition uden forløb" type="SubSheet">
+    <subsheetid>e0f3567a-b4d5-479a-b358-8f606afa91e4</subsheetid>
+    <loginhibit />
+    <display x="75" y="-30" />
+    <inputs>
+      <input type="collection" name="Borger" friendlyname="Borger" expr="[Borger]" />
+      <input type="text" name="Skema" friendlyname="Skema" expr="[Skema]" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="Skemadefinitioner" friendlyname="Skemadefinitioner" stage="Skemadefinitioner" />
+    </outputs>
+    <onsuccess>d9f2c852-1ca8-4ce1-bda4-9d1a48ee3f30</onsuccess>
+    <processid>d4bab19b-a7b8-40ac-8c66-9df7009e5fae</processid>
+  </stage>
+  <stage stageid="7d7d4881-6b80-4386-904e-0bcbc81475a3" name="Anchor12" type="Anchor">
+    <subsheetid>e0f3567a-b4d5-479a-b358-8f606afa91e4</subsheetid>
+    <loginhibit />
+    <display x="0" y="0" w="10" h="10" />
+    <onsuccess>68ea409a-bdcf-43c6-bc68-7ab96fc51403</onsuccess>
+  </stage>
+  <stage stageid="d9f2c852-1ca8-4ce1-bda4-9d1a48ee3f30" name="Anchor12" type="Anchor">
+    <subsheetid>e0f3567a-b4d5-479a-b358-8f606afa91e4</subsheetid>
+    <loginhibit />
+    <display x="75" y="0" w="10" h="10" />
+    <onsuccess>7d7d4881-6b80-4386-904e-0bcbc81475a3</onsuccess>
+  </stage>
+  <stage stageid="20c48555-4767-4882-92a5-022f4132439a" name="Anchor9" type="Anchor">
+    <subsheetid>e0f3567a-b4d5-479a-b358-8f606afa91e4</subsheetid>
+    <loginhibit />
+    <display x="255" y="-105" w="10" h="10" />
+    <onsuccess>c3d6e1c3-87e7-4c8e-b04d-e9487cf30747</onsuccess>
+  </stage>
+  <stage stageid="6a50d68d-6c7d-4fe3-a4ed-638848058257" name="Check for diagnose felt" type="Action">
+    <subsheetid>91e3b872-3006-48e8-88ea-9791215847c5</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="0" y="-75" />
+    <inputs>
+      <input type="collection" name="Input Collection" friendlyname="Input Collection" narrative="The collection to check." expr="[Felter]" />
+      <input type="text" name="Field" friendlyname="Field" narrative="The field to see if the collection has." expr="&quot;Diagnose&quot;" />
+    </inputs>
+    <outputs>
+      <output type="flag" name="Success" friendlyname="Success" narrative="True if the collection contains the field." stage="Felter indeholder diagnose" />
+      <output type="text" name="Error Message" friendlyname="Error Message" narrative="Unused" stage="" />
+    </outputs>
+    <onsuccess>51728ff6-8d98-4905-9c4d-0d7323993f3a</onsuccess>
+    <resource object="Utility - Collection Manipulation" action="Collection Contains Field" />
+  </stage>
+  <stage stageid="c16498c8-2e8c-4826-a1c2-dcff19342e05" name="Kontroller diagnose felt" type="Block">
+    <subsheetid>91e3b872-3006-48e8-88ea-9791215847c5</subsheetid>
+    <loginhibit />
+    <display x="-75" y="-105" w="150" h="195" />
+    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
+  </stage>
+  <stage stageid="4d8f2555-1e4f-4aa4-8e6c-feead91e84d7" name="Felter indeholder diagnose" type="Data">
+    <subsheetid>91e3b872-3006-48e8-88ea-9791215847c5</subsheetid>
+    <display x="-195" y="210" w="120" h="30" />
+    <datatype>flag</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="51728ff6-8d98-4905-9c4d-0d7323993f3a" name="Felter indeholder diagnose?" type="Decision">
+    <subsheetid>91e3b872-3006-48e8-88ea-9791215847c5</subsheetid>
+    <loginhibit />
+    <display x="0" y="-30" />
+    <decision expression="[Felter indeholder diagnose]" />
+    <ontrue>d1644051-9934-46e7-9683-32f58dcc1fa6</ontrue>
+    <onfalse>348f8ed3-b6e0-4c1a-84f3-1221b8943676</onfalse>
+  </stage>
+  <stage stageid="c592383d-18f3-406d-ab00-86808f8d3821" name="Skema" type="Collection">
+    <subsheetid>91e3b872-3006-48e8-88ea-9791215847c5</subsheetid>
+    <display x="-195" y="30" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="348f8ed3-b6e0-4c1a-84f3-1221b8943676" name="Anchor13" type="Anchor">
+    <subsheetid>91e3b872-3006-48e8-88ea-9791215847c5</subsheetid>
+    <loginhibit />
+    <display x="-45" y="-30" w="10" h="10" />
+    <onsuccess>22025e60-6562-42fd-bc36-1a144c20853d</onsuccess>
+  </stage>
+  <stage stageid="22025e60-6562-42fd-bc36-1a144c20853d" name="Anchor13" type="Anchor">
+    <subsheetid>91e3b872-3006-48e8-88ea-9791215847c5</subsheetid>
+    <loginhibit />
+    <display x="-45" y="285" w="10" h="10" />
+    <onsuccess>0c603098-f26a-4231-82b9-f40ff1c7af87</onsuccess>
+  </stage>
+  <stage stageid="d1644051-9934-46e7-9683-32f58dcc1fa6" name="Filtrer diagnose item" type="Action">
+    <subsheetid>91e3b872-3006-48e8-88ea-9791215847c5</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="0" y="15" />
+    <inputs>
+      <input type="collection" name="Collection In" friendlyname="Collection In" narrative="Input collection" expr="[Skema.items]" />
+      <input type="text" name="Filter" friendlyname="Filter" narrative="The filter to apply" expr="&quot;[label] = 'Diagnose'&quot;" />
+    </inputs>
+    <outputs>
+      <output type="number" name="Count" friendlyname="Count" narrative="The amount of rows in the filtered collection" stage="Antal" />
+      <output type="collection" name="Collection Out" friendlyname="Collection Out" narrative="The filtered collection" stage="Diagnose felt" />
+    </outputs>
+    <onsuccess>e2e9f511-2f43-4b8b-b784-08301008bf58</onsuccess>
+    <resource object="Utility - Odk Linq" action="Filter" />
+  </stage>
+  <stage stageid="20e72c71-6686-4724-a80b-ac29580cd51b" name="Antal" type="Data">
+    <subsheetid>91e3b872-3006-48e8-88ea-9791215847c5</subsheetid>
+    <display x="-195" y="255" w="120" h="30" />
+    <datatype>number</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="284356ca-3b06-487e-8444-1b3f8e2cb8df" name="Diagnose felt" type="Collection">
+    <subsheetid>91e3b872-3006-48e8-88ea-9791215847c5</subsheetid>
+    <display x="-195" y="300" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="e2e9f511-2f43-4b8b-b784-08301008bf58" name="Findes diagnose felt?" type="Decision">
+    <subsheetid>91e3b872-3006-48e8-88ea-9791215847c5</subsheetid>
+    <loginhibit />
+    <display x="0" y="60" />
+    <decision expression="[Antal] &gt; 0" />
+    <ontrue>d715028b-6add-4fb7-ad69-6b93964d65cd</ontrue>
+    <onfalse>25bc6257-9f76-40a6-b940-210605744094</onfalse>
+  </stage>
+  <stage stageid="25bc6257-9f76-40a6-b940-210605744094" name="Skema indeholder ikke diagnose felt" type="Exception">
+    <subsheetid>91e3b872-3006-48e8-88ea-9791215847c5</subsheetid>
+    <display x="120" y="60" />
+    <exception localized="yes" type="Business Exception" detail="&quot;Skema indeholder ikke diagnose felt&quot;" />
+  </stage>
+  <stage stageid="45795540-0719-4709-a1ca-8f7a9006cfd9" name="Find diagnose json" type="Block">
+    <subsheetid>91e3b872-3006-48e8-88ea-9791215847c5</subsheetid>
+    <loginhibit />
+    <display x="-75" y="105" w="150" h="150" />
+    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
+  </stage>
+  <stage stageid="d715028b-6add-4fb7-ad69-6b93964d65cd" name="Fremsøg diagnose" type="Action">
+    <subsheetid>91e3b872-3006-48e8-88ea-9791215847c5</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="0" y="135" />
+    <inputs>
+      <input type="text" name="Url" friendlyname="Url" expr="[Diagnose felt._links.search] &amp; &quot;?query=&quot; &amp; [Felter.Diagnose]" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="Data" friendlyname="Data" stage="" />
+      <output type="number" name="Antal" friendlyname="Antal" stage="Antal" />
+      <output type="text" name="Json" friendlyname="Json" narrative="Det rå json output" stage="Diagnose (json)" />
+      <output type="number" name="Statuskode" friendlyname="Statuskode" narrative="Http statuskoden for kaldet" stage="" />
+    </outputs>
+    <onsuccess>d3589a9f-e5dd-47be-8318-bc071dc5aeaa</onsuccess>
+    <resource object="Nexus - Core" action="Get" />
+  </stage>
+  <stage stageid="d3586771-12db-437a-87ca-79cce78f2729" name="Diagnose (json)" type="Data">
+    <subsheetid>91e3b872-3006-48e8-88ea-9791215847c5</subsheetid>
+    <loginhibit />
+    <display x="-195" y="345" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="d3589a9f-e5dd-47be-8318-bc071dc5aeaa" name="Find diagnose i søgeresultater" type="Code">
+    <subsheetid>91e3b872-3006-48e8-88ea-9791215847c5</subsheetid>
+    <loginhibit />
+    <display x="0" y="180" />
+    <inputs>
+      <input type="text" name="json" expr="[Diagnose (json)]" />
+      <input type="text" name="diagnosisCode" expr="[Felter.Diagnose]" />
+    </inputs>
+    <outputs>
+      <output type="text" name="result" stage="Felter.Diagnose" />
+      <output type="number" name="count" stage="Antal" />
+    </outputs>
+    <onsuccess>191c826b-350d-4a02-9c73-8c85cd32a081</onsuccess>
+    <code><![CDATA[JArray ja = JArray.Parse(json);
+result = "";
+count = 0;
+
+foreach (var root in ja) 
+{
+	var tokens = All(root, (token) => token["code"].ToString() == diagnosisCode);
+	var childToken = tokens.FirstOrDefault();
+
+	if(childToken != null) 
+	{
+		result = childToken.ToString(Newtonsoft.Json.Formatting.None);
+		count = 1;
+	}	
+}]]></code>
+  </stage>
+  <stage stageid="290d07df-cfd8-43aa-b480-8ec7602fb264" name="Diagnoseværdi (json)" type="Data">
+    <subsheetid>91e3b872-3006-48e8-88ea-9791215847c5</subsheetid>
+    <display x="-195" y="390" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="191c826b-350d-4a02-9c73-8c85cd32a081" name="Findes Diagnoseværdi?" type="Decision">
+    <subsheetid>91e3b872-3006-48e8-88ea-9791215847c5</subsheetid>
+    <loginhibit />
+    <display x="0" y="225" />
+    <decision expression="[Antal] &gt; 0" />
+    <ontrue>0c603098-f26a-4231-82b9-f40ff1c7af87</ontrue>
+    <onfalse>006c8ca2-abc1-47fc-ae8a-956401d6679a</onfalse>
+  </stage>
+  <stage stageid="006c8ca2-abc1-47fc-ae8a-956401d6679a" name="Diagnosekode kunne ikke findes" type="Exception">
+    <subsheetid>91e3b872-3006-48e8-88ea-9791215847c5</subsheetid>
+    <display x="120" y="225" />
+    <exception localized="yes" type="Business Exception" detail="&quot;Diagnosekode kunne ikke findes via søgning i søgetræ.&quot;" />
+  </stage>
+  <stage stageid="c6542f71-e424-46b1-a4aa-044f3b509c02" name="Skema (object)" type="Collection">
+    <subsheetid>b6e28ae9-abe9-449e-ab7d-b82a719fcd66</subsheetid>
+    <display x="-195" y="255" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="43e0a6aa-e423-41da-ab10-7362005a8828" name="Debugfelter ingen forløb" type="Collection">
+    <subsheetid>e0f3567a-b4d5-479a-b358-8f606afa91e4</subsheetid>
+    <loginhibit />
+    <display x="330" y="-240" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+    <collectioninfo>
+      <singlerow />
+      <field name="Diagnose" type="text" />
+    </collectioninfo>
+    <initialvalue>
+      <singlerow />
+      <row>
+        <field name="Diagnose" type="text" value="DV1350" />
+      </row>
+    </initialvalue>
   </stage>
 </process>

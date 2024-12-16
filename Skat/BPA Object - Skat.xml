@@ -1,0 +1,485 @@
+﻿<process name="Skat" version="1.0" bpversion="7.3.0.9110" narrative="" byrefcollection="true" processrunningmessage="" disableversioning="false" type="object" runmode="Exclusive" preferredid="18845fc1-2c21-4397-90dd-effa8c2677e0">
+  <appdef>
+    <element name="Application Root">
+      <id>1a1619d8-3c20-491f-b7bb-96fb3e6c5693</id>
+      <type>Application</type>
+      <basetype>Application</basetype>
+      <datatype>unknown</datatype>
+      <diagnose>False</diagnose>
+    </element>
+  </appdef>
+  <view>
+    <camerax>0</camerax>
+    <cameray>0</cameray>
+    <zoom version="2">1.25</zoom>
+  </view>
+  <preconditions />
+  <endpoint narrative="" />
+  <subsheet subsheetid="c0b36c69-ce6c-49b2-89cf-07196400a362" type="CleanUp" published="True">
+    <name>Clean Up</name>
+    <view>
+      <camerax>0</camerax>
+      <cameray>0</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <subsheet subsheetid="25759a9c-ff14-4aaa-b2de-450e4ed65e59" type="Normal" published="True">
+    <name>Hent eIndkomst</name>
+    <view>
+      <camerax>298</camerax>
+      <cameray>219</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <stage stageid="4c8f58e5-a552-451c-b48d-c972e6a2dc60" name="Start" type="Start">
+    <loginhibit />
+    <display x="15" y="-105" />
+    <onsuccess>43c6d32e-bc7a-40e3-a215-df94309b1d77</onsuccess>
+  </stage>
+  <stage stageid="43c6d32e-bc7a-40e3-a215-df94309b1d77" name="End" type="End">
+    <loginhibit />
+    <display x="15" y="90" />
+  </stage>
+  <stage stageid="8a29f1e7-f5cc-40c4-949c-9a9210b3faa1" name="Stage1" type="ProcessInfo">
+    <display x="-195" y="-105" w="150" h="90" />
+    <references>
+      <reference>System.dll</reference>
+      <reference>System.Data.dll</reference>
+      <reference>System.Xml.dll</reference>
+      <reference>System.Drawing.dll</reference>
+      <reference>C:\Program Files\Blue Prism Limited\Blue Prism Automate\Odk.BluePrism.Skat.dll</reference>
+    </references>
+    <imports>
+      <import>System</import>
+      <import>System.Drawing</import>
+      <import>System.Data</import>
+      <import>Odk.BluePrism.Skat</import>
+    </imports>
+    <language>csharp</language>
+    <globalcode><![CDATA[]]></globalcode>
+    <code><![CDATA[]]></code>
+  </stage>
+  <stage stageid="5b382477-a1f6-43ac-90dd-90f984944cc4" name="Clean Up" type="SubSheetInfo">
+    <subsheetid>c0b36c69-ce6c-49b2-89cf-07196400a362</subsheetid>
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="302645ff-b97c-4e18-96ca-39f9f4e846aa" name="Start" type="Start">
+    <subsheetid>c0b36c69-ce6c-49b2-89cf-07196400a362</subsheetid>
+    <loginhibit />
+    <display x="15" y="-105" />
+    <onsuccess>874ef8d6-c721-410b-a625-afc697e8f48e</onsuccess>
+  </stage>
+  <stage stageid="874ef8d6-c721-410b-a625-afc697e8f48e" name="End" type="End">
+    <subsheetid>c0b36c69-ce6c-49b2-89cf-07196400a362</subsheetid>
+    <loginhibit />
+    <display x="15" y="90" />
+  </stage>
+  <stage stageid="a04fa954-d3fe-4426-a6fe-5ca9f11075b7" name="Hent eIndkomst" type="SubSheetInfo">
+    <subsheetid>25759a9c-ff14-4aaa-b2de-450e4ed65e59</subsheetid>
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="9d8c0eb7-cf93-4be2-8876-f9acab64ca25" name="Start" type="Start">
+    <subsheetid>25759a9c-ff14-4aaa-b2de-450e4ed65e59</subsheetid>
+    <loginhibit />
+    <display x="-15" y="-180" />
+    <inputs>
+      <input type="text" name="Cpr" stage="Cpr" />
+      <input type="date" name="Periodestart" stage="Periodestart" />
+      <input type="date" name="Periodeslut" stage="Periodeslut" />
+      <input type="text" name="Abonnement type kode" stage="Abonnement type kode" />
+      <input type="text" name="Abonnent type kode" stage="Abonnent type kode" />
+      <input type="text" name="Adgang formål type kode" stage="Adgang formål type kode" />
+      <input type="flag" name="Benyt skattemåned" stage="Benyt skattemåned" />
+    </inputs>
+    <onsuccess>8edc7eeb-e5e3-46eb-8843-623a24e75c88</onsuccess>
+  </stage>
+  <stage stageid="17bb6160-e836-4129-af76-22a58997f119" name="End" type="End">
+    <subsheetid>25759a9c-ff14-4aaa-b2de-450e4ed65e59</subsheetid>
+    <loginhibit />
+    <display x="-15" y="420" />
+    <outputs>
+      <output type="collection" name="indkomstdata" stage="data" />
+    </outputs>
+  </stage>
+  <stage stageid="492952a3-084f-4c65-b810-656dd3bc9088" name="Note2" type="Note">
+    <subsheetid>c0b36c69-ce6c-49b2-89cf-07196400a362</subsheetid>
+    <narrative>Clean Up Page
+
+This is an optional page where you might choose to perform some finalisation (or "cleanup") tasks as your business object is closed down.
+
+The cleanup action will be called automatically immediately after closing your business object at the end of a business process.
+
+You will not be able to call this action from a business process, nor will it be called at any other time than before the disposal of the business object.</narrative>
+    <display x="-180" y="60" w="180" h="230" />
+  </stage>
+  <stage stageid="ae2d3dc1-5da5-41da-a6e9-f9323af908bd" name="Input" type="Block">
+    <display x="-270" y="-45" w="150" h="45" />
+    <font family="Segoe UI" size="10" style="Regular" color="339966" />
+  </stage>
+  <stage stageid="d025b2cf-26ab-4090-aa31-2a3e5bab8421" name="Variabler" type="Block">
+    <display x="-270" y="75" w="150" h="45" />
+    <font family="Segoe UI" size="10" style="Regular" color="666699" />
+  </stage>
+  <stage stageid="e4996020-7278-425c-a428-6272e7515194" name="Konstanter" type="Block">
+    <display x="-270" y="15" w="150" h="45" />
+    <font family="Segoe UI" size="10" style="Regular" color="008080" />
+  </stage>
+  <stage stageid="d3ceb3c6-7131-4772-85e7-749838f4f697" name="Output" type="Block">
+    <display x="-270" y="135" w="150" h="45" />
+    <font family="Segoe UI" size="10" style="Regular" color="800080" />
+  </stage>
+  <stage stageid="6da74d28-66b7-4213-8a05-1235bb304c7a" name="Input" type="Block">
+    <subsheetid>25759a9c-ff14-4aaa-b2de-450e4ed65e59</subsheetid>
+    <display x="-270" y="-45" w="150" h="330" />
+    <font family="Segoe UI" size="10" style="Regular" color="339966" />
+  </stage>
+  <stage stageid="291f2f87-fc1a-4f26-b9c3-f28fe1dc6b5f" name="Variabler" type="Block">
+    <subsheetid>25759a9c-ff14-4aaa-b2de-450e4ed65e59</subsheetid>
+    <display x="-270" y="360" w="150" h="285" />
+    <font family="Segoe UI" size="10" style="Regular" color="666699" />
+  </stage>
+  <stage stageid="f40ccfe2-51ff-4e4e-9f74-d84962c7b816" name="Konstanter" type="Block">
+    <subsheetid>25759a9c-ff14-4aaa-b2de-450e4ed65e59</subsheetid>
+    <display x="-270" y="300" w="150" h="45" />
+    <font family="Segoe UI" size="10" style="Regular" color="008080" />
+  </stage>
+  <stage stageid="063f9c12-cbbf-4ec7-9cc0-6c8fafbc300d" name="Output" type="Block">
+    <subsheetid>25759a9c-ff14-4aaa-b2de-450e4ed65e59</subsheetid>
+    <display x="-270" y="660" w="150" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="800080" />
+  </stage>
+  <stage stageid="989b6b3e-fc08-4c0a-9b29-6419a0987152" name="EIndkomst" type="Code">
+    <subsheetid>25759a9c-ff14-4aaa-b2de-450e4ed65e59</subsheetid>
+    <loginhibit />
+    <display x="-15" y="240" />
+    <inputs>
+      <input type="text" name="ssn" expr="[Cpr]" />
+      <input type="datetime" name="startdate" expr="[Periodestart]" />
+      <input type="datetime" name="enddate" expr="[Periodeslut]" />
+      <input type="text" name="username" expr="[Bruger]" />
+      <input type="text" name="transactionid" expr="[Id]" />
+      <input type="text" name="abonnementTypeKode" expr="[Abonnement type kode]" />
+      <input type="text" name="abonnentTypeKode" expr="[Abonnent type kode]" />
+      <input type="text" name="adgangFormaalTypeKode" expr="[Adgang formål type kode]" />
+      <input type="flag" name="benytSkattemåned" expr="[Benyt skattemåned]" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="data" stage="data" />
+    </outputs>
+    <onsuccess>2f1462e9-835c-4709-b703-3bffec898f47</onsuccess>
+    <code><![CDATA[var e = new EIndkomst(new ServiceConfig
+{
+	DNSIdentity = "SKAT OIO Gateway Prod",
+	AuthenticationCertificateName = "eIndkomst Skat - RPA",     // OCES3 Organisations Certifikat
+	SigningCertificateName = "SKAT OIO Gateway Prod",           // Signeringscertifikat
+	SENummer = "35209115",                                      // Odense Kommunes SE-nummer
+	AbonnementTypeKode = abonnementTypeKode,                    // Indkomstafhængige ydelser
+	AbonnentTypeKode = abonnentTypeKode,                        // Odense Kommune
+	AdgangFormaalTypeKode = adgangFormaalTypeKode               // Aktiv beskæftigelsesindsats – Flekslønstilskud
+});
+// var e = new EIndkomst();
+
+var table  = e.IndkomstOplysningPersonHent(ssn, username, 
+	startdate, 
+	enddate, 
+	transactionid,
+	benytSkattemåned);
+			
+foreach (DataRow row in table.Rows)
+{
+	foreach(DataColumn col in table.Columns)
+	{
+		if(col.DataType == System.Type.GetType("System.DateTime"))
+		{
+			var item = (DateTime)row[col];
+			var localZone = TimeZone.CurrentTimeZone;
+			var span = localZone.GetUtcOffset(item);
+			var spanString = span.ToString();
+			item.Add(span);
+			var newItem = item.ToLocalTime();
+			row[col] = newItem;
+		}
+	}
+}
+
+data = table;]]></code>
+  </stage>
+  <stage stageid="324ac278-0d1a-436e-b623-6f4abdf05b24" name="Cpr" type="Data">
+    <subsheetid>25759a9c-ff14-4aaa-b2de-450e4ed65e59</subsheetid>
+    <display x="-195" y="-15" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue xml:space="preserve">"xxxxxxxxxx"</initialvalue>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="3e81b4df-63bf-4484-8977-d39364009a21" name="Periodestart" type="Data">
+    <subsheetid>25759a9c-ff14-4aaa-b2de-450e4ed65e59</subsheetid>
+    <display x="-195" y="30" w="120" h="30" />
+    <datatype>date</datatype>
+    <initialvalue>2023/01/01</initialvalue>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="0024f3da-836d-415c-b09c-2c4c0bff703b" name="Periodeslut" type="Data">
+    <subsheetid>25759a9c-ff14-4aaa-b2de-450e4ed65e59</subsheetid>
+    <display x="-195" y="75" w="120" h="30" />
+    <datatype>date</datatype>
+    <initialvalue>2023/01/31</initialvalue>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="92af1bd4-c100-4aff-94a8-38a5949b3b91" name="Start log" type="Block">
+    <subsheetid>25759a9c-ff14-4aaa-b2de-450e4ed65e59</subsheetid>
+    <loginhibit />
+    <display x="-90" y="-150" w="210" h="330" />
+    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
+  </stage>
+  <stage stageid="a47a27da-3139-480c-b263-e3277ffa3f36" name="Servicekald" type="Block">
+    <subsheetid>25759a9c-ff14-4aaa-b2de-450e4ed65e59</subsheetid>
+    <loginhibit />
+    <display x="-90" y="210" w="210" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
+  </stage>
+  <stage stageid="4b53030c-691a-4990-a5ca-97f6edb62c23" name="Opdater log" type="Block">
+    <subsheetid>25759a9c-ff14-4aaa-b2de-450e4ed65e59</subsheetid>
+    <loginhibit />
+    <display x="-90" y="285" w="210" h="105" />
+    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
+  </stage>
+  <stage stageid="3a6266f8-24a6-487d-9602-4d8fa38f77a1" name="Recover1" type="Recover">
+    <subsheetid>25759a9c-ff14-4aaa-b2de-450e4ed65e59</subsheetid>
+    <loginhibit />
+    <display x="75" y="240" />
+    <onsuccess>d54c5b57-6952-4b29-8881-69ddf3e0f70b</onsuccess>
+  </stage>
+  <stage stageid="9dddb598-ed06-40a4-91fb-d9fc8b485a46" name="eIndkomst fejl" type="Exception">
+    <subsheetid>25759a9c-ff14-4aaa-b2de-450e4ed65e59</subsheetid>
+    <display x="240" y="240" />
+    <exception localized="yes" type="" detail="" usecurrent="yes" />
+  </stage>
+  <stage stageid="8edc7eeb-e5e3-46eb-8843-623a24e75c88" name="Hent session" type="Action">
+    <subsheetid>25759a9c-ff14-4aaa-b2de-450e4ed65e59</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="-15" y="-120" />
+    <inputs>
+      <input type="text" name="Sessionid" friendlyname="Sessionid" expr="GetSessionId()" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="Session" friendlyname="Session" stage="Session" />
+      <output type="flag" name="Succes" friendlyname="Succes" stage="Succes" />
+    </outputs>
+    <onsuccess>87417f43-6b89-4507-af01-d314ffe39a2d</onsuccess>
+    <resource object="Blue Prism" action="Hent sessionsoplysninger" />
+  </stage>
+  <stage stageid="34a55532-2853-4b93-9716-e29babad71fd" name="Session" type="Collection">
+    <subsheetid>25759a9c-ff14-4aaa-b2de-450e4ed65e59</subsheetid>
+    <display x="-195" y="435" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+    <collectioninfo>
+      <field name="Sessionid" type="text" />
+      <field name="Sessionnumber" type="text" />
+      <field name="Start" type="datetime" />
+      <field name="End" type="datetime" />
+      <field name="Process" type="text" />
+      <field name="Resource" type="text" />
+      <field name="Last updated" type="datetime" />
+      <field name="Last stage" type="text" />
+    </collectioninfo>
+  </stage>
+  <stage stageid="65cbd6b8-a65e-43ca-ad02-e2ccaf211988" name="Succes" type="Data">
+    <subsheetid>25759a9c-ff14-4aaa-b2de-450e4ed65e59</subsheetid>
+    <display x="-195" y="480" w="120" h="30" />
+    <datatype>flag</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="87417f43-6b89-4507-af01-d314ffe39a2d" name="Fik vi en session?" type="Decision">
+    <subsheetid>25759a9c-ff14-4aaa-b2de-450e4ed65e59</subsheetid>
+    <loginhibit />
+    <display x="-15" y="-75" />
+    <decision expression="[Succes]" />
+    <ontrue>7c438fce-2eef-465a-9d57-725c85bb7b7e</ontrue>
+    <onfalse>dc64b1a7-a815-4810-9d16-90b0ca1e9e9c</onfalse>
+  </stage>
+  <stage stageid="dc64b1a7-a815-4810-9d16-90b0ca1e9e9c" name="Ingen session" type="Exception">
+    <subsheetid>25759a9c-ff14-4aaa-b2de-450e4ed65e59</subsheetid>
+    <display x="225" y="-75" w="90" h="30" />
+    <exception localized="yes" type="Business Exception" detail="&quot;Der kunne ikke findes en BP session, der er ikke foretaget noget kald til Skat&quot;" />
+  </stage>
+  <stage stageid="b6adc46e-199d-4411-92fa-789e9af8e1c5" name="Nyt id" type="Action">
+    <subsheetid>25759a9c-ff14-4aaa-b2de-450e4ed65e59</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="-15" y="15" />
+    <outputs>
+      <output type="text" name="GUID" friendlyname="GUID" narrative="The new guid" stage="Id" />
+    </outputs>
+    <onsuccess>69c81f37-a1db-40c1-ad37-25631469bf28</onsuccess>
+    <resource object="Utility - Strings" action="Generate New GUID" />
+  </stage>
+  <stage stageid="5c77a9d8-b37c-4983-9b0b-365e5fe23f38" name="Id" type="Data">
+    <subsheetid>25759a9c-ff14-4aaa-b2de-450e4ed65e59</subsheetid>
+    <display x="-195" y="525" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="fdd0943a-1571-4920-b176-48adfd81c42d" name="Indsæt ny logentry" type="Action">
+    <subsheetid>25759a9c-ff14-4aaa-b2de-450e4ed65e59</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="-15" y="105" />
+    <inputs>
+      <input type="text" name="Query" friendlyname="Query" narrative="The SQL query to use to perform this action" expr="&quot;INSERT INTO [dbo].[Skat_eIndkomst_log]&#xA;           ([Id]&#xA;           ,[Cpr]&#xA;           ,[Periodestart]&#xA;           ,[Periodeslut]&#xA;           ,[Resource]&#xA;           ,[Process]&#xA;           ,[Oprettet]&#xA;           ,[Afsluttet]&#xA;           ,[Status]&#xA;           ,[Bruger])&#xA;     VALUES&#xA;           ('&quot; &amp; [Id] &amp; &quot;'&#xA;           ,'&quot; &amp; [Cpr] &amp; &quot;'&#xA;           ,'&quot; &amp; FormatDate([Periodestart], &quot;yyyy/MM/dd&quot;) &amp; &quot;'&#xA;           ,'&quot; &amp; FormatDate([Periodeslut], &quot;yyyy/MM/dd&quot;) &amp; &quot;'&#xA;           ,'&quot; &amp; [Session.Resource] &amp; &quot;'&#xA;           ,'&quot; &amp; [Session.Process] &amp; &quot;'&#xA;           ,GETDATE()&#xA;           ,NULL&#xA;           ,'Ny'&#xA;           ,'&quot;&amp;[Bruger]&amp;&quot;')&quot;" />
+    </inputs>
+    <outputs>
+      <output type="flag" name="Success" friendlyname="Success" narrative="Flag indicating success (True) or failure (False)" stage="db_success" />
+      <output type="text" name="Message" friendlyname="Message" narrative="Error message giving detail regarding why this action failed" stage="db_message" />
+    </outputs>
+    <onsuccess>7037160b-4c0f-4e66-a78f-5f3096769f08</onsuccess>
+    <resource object="Data - SQL Server" action="Execute" />
+  </stage>
+  <stage stageid="69c81f37-a1db-40c1-ad37-25631469bf28" name="DB connection" type="Action">
+    <subsheetid>25759a9c-ff14-4aaa-b2de-450e4ed65e59</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="-15" y="60" />
+    <inputs>
+      <input type="text" name="Server" friendlyname="Server" narrative="The name of the server and, if necessary, instance name of the SQL Server instance to connect to" expr="&quot;rpa.sql.odknet.dk&quot;" />
+      <input type="text" name="Database" friendlyname="Database" narrative="The name of the database to connect to" expr="&quot;RPA_RPI&quot;" />
+      <input type="text" name="User" friendlyname="User" narrative="If appropriate, the login name to use to connect to SQL Server. If left empty, windows authentication using the current user will be used instead of SQL Server authentication" expr="" />
+      <input type="text" name="Password" friendlyname="Password" narrative="If appropriate, the password to use with the above login name to access SQL Server. Unused for windows authentication" expr="" />
+    </inputs>
+    <onsuccess>fdd0943a-1571-4920-b176-48adfd81c42d</onsuccess>
+    <resource object="Data - SQL Server" action="Set Connection" />
+  </stage>
+  <stage stageid="eb4353ac-fd1d-463f-a09d-11e476eb890f" name="db_success" type="Data">
+    <subsheetid>25759a9c-ff14-4aaa-b2de-450e4ed65e59</subsheetid>
+    <display x="-195" y="570" w="120" h="30" />
+    <datatype>flag</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="8b15a434-2c5c-40c0-a357-5fcb759a7c68" name="db_message" type="Data">
+    <subsheetid>25759a9c-ff14-4aaa-b2de-450e4ed65e59</subsheetid>
+    <display x="-195" y="615" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="662bcad2-92f5-4ee9-9a7d-f40bedd4cdb9" name="data" type="Collection">
+    <subsheetid>25759a9c-ff14-4aaa-b2de-450e4ed65e59</subsheetid>
+    <display x="-195" y="690" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="2f1462e9-835c-4709-b703-3bffec898f47" name="Opdater logentry med OK" type="Action">
+    <subsheetid>25759a9c-ff14-4aaa-b2de-450e4ed65e59</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="-15" y="315" />
+    <inputs>
+      <input type="text" name="Query" friendlyname="Query" narrative="The SQL query to use to perform this action" expr="&quot;UPDATE [RPA_RPI].[dbo].[Skat_eIndkomst_log] set [Status] = 'OK', [Afsluttet]  = GETDATE() WHERE [Id] =  '&quot; &amp; [Id] &amp; &quot;';&quot;" />
+    </inputs>
+    <outputs>
+      <output type="flag" name="Success" friendlyname="Success" narrative="Flag indicating success (True) or failure (False)" stage="db_success" />
+      <output type="text" name="Message" friendlyname="Message" narrative="Error message giving detail regarding why this action failed" stage="db_message" />
+    </outputs>
+    <onsuccess>dc316036-f719-455f-8403-3e53e0309775</onsuccess>
+    <resource object="Data - SQL Server" action="Execute" />
+  </stage>
+  <stage stageid="7442964c-3ccd-43ea-b9b4-58798cd39adf" name="Bruger" type="Data">
+    <subsheetid>25759a9c-ff14-4aaa-b2de-450e4ed65e59</subsheetid>
+    <loginhibit />
+    <display x="-195" y="390" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="7037160b-4c0f-4e66-a78f-5f3096769f08" name="DB kald ok?" type="Decision">
+    <subsheetid>25759a9c-ff14-4aaa-b2de-450e4ed65e59</subsheetid>
+    <loginhibit />
+    <display x="-15" y="150" />
+    <decision expression="[db_success]" />
+    <ontrue>989b6b3e-fc08-4c0a-9b29-6419a0987152</ontrue>
+    <onfalse>3bc6091f-5102-44f5-ab80-f8e4104431fc</onfalse>
+  </stage>
+  <stage stageid="3bc6091f-5102-44f5-ab80-f8e4104431fc" name="DB Insert fejl" type="Exception">
+    <subsheetid>25759a9c-ff14-4aaa-b2de-450e4ed65e59</subsheetid>
+    <display x="225" y="150" w="90" h="30" />
+    <exception localized="yes" type="Business Exception" detail="&quot;Database insert fejl - BEMÆRK webservicekald til skat er endnu IKKE foretaget på dette tidspunkt. Fejl: &quot; &amp; [db_message]" />
+  </stage>
+  <stage stageid="dc316036-f719-455f-8403-3e53e0309775" name="DB Update ok ?" type="Decision">
+    <subsheetid>25759a9c-ff14-4aaa-b2de-450e4ed65e59</subsheetid>
+    <loginhibit />
+    <display x="-15" y="360" />
+    <decision expression="[db_success]" />
+    <ontrue>17bb6160-e836-4129-af76-22a58997f119</ontrue>
+    <onfalse>e78c10a8-875e-4917-b445-d54139912f30</onfalse>
+  </stage>
+  <stage stageid="e78c10a8-875e-4917-b445-d54139912f30" name="DN Update fejl" type="Exception">
+    <subsheetid>25759a9c-ff14-4aaa-b2de-450e4ed65e59</subsheetid>
+    <display x="225" y="360" w="90" h="30" />
+    <exception localized="yes" type="Business Exception" detail="&quot;Database Update handling fejlet - BEMÆRK webservicekald ER foretaget på dette tidspunkt, der foretages ikke rollback på database. Fejl: &quot; &amp; [db_message] &amp; &quot;, ID: '&quot; &amp; [Id] &amp; &quot;'&quot;" />
+  </stage>
+  <stage stageid="7c438fce-2eef-465a-9d57-725c85bb7b7e" name="Hent brugernavn" type="Action">
+    <subsheetid>25759a9c-ff14-4aaa-b2de-450e4ed65e59</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="-15" y="-30" />
+    <outputs>
+      <output type="text" name="User Name" friendlyname="User Name" narrative="The name of the logged in user in the current system" stage="Bruger" />
+    </outputs>
+    <onsuccess>b6adc46e-199d-4411-92fa-789e9af8e1c5</onsuccess>
+    <resource object="Utility - Environment" action="Get User Name" />
+  </stage>
+  <stage stageid="d54c5b57-6952-4b29-8881-69ddf3e0f70b" name="Opdater logentry med fejl" type="Action">
+    <subsheetid>25759a9c-ff14-4aaa-b2de-450e4ed65e59</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="165" y="240" />
+    <inputs>
+      <input type="text" name="Query" friendlyname="Query" narrative="The SQL query to use to perform this action" expr="&quot;UPDATE [RPA_RPI].[dbo].[Skat_eIndkomst_log] set [Status] = 'FEJL', [Afsluttet]  = GETDATE() WHERE [Id] =  '&quot; &amp; [Id] &amp; &quot;';&quot;" />
+    </inputs>
+    <outputs>
+      <output type="flag" name="Success" friendlyname="Success" narrative="Flag indicating success (True) or failure (False)" stage="db_success" />
+      <output type="text" name="Message" friendlyname="Message" narrative="Error message giving detail regarding why this action failed" stage="db_message" />
+    </outputs>
+    <onsuccess>9dddb598-ed06-40a4-91fb-d9fc8b485a46</onsuccess>
+    <resource object="Data - SQL Server" action="Execute" />
+  </stage>
+  <stage stageid="5f1d189d-f08a-443d-a34b-66e17ca6f2e2" name="Abonnement type kode" type="Data">
+    <subsheetid>25759a9c-ff14-4aaa-b2de-450e4ed65e59</subsheetid>
+    <display x="-195" y="120" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue xml:space="preserve">3153</initialvalue>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="b77f01af-5bb2-4b87-b802-7b73d4f2319d" name="Abonnent type kode" type="Data">
+    <subsheetid>25759a9c-ff14-4aaa-b2de-450e4ed65e59</subsheetid>
+    <display x="-195" y="165" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue xml:space="preserve">0750</initialvalue>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="8ec91d34-2e9a-461e-809d-68c4682a9616" name="Adgang formål type kode" type="Data">
+    <subsheetid>25759a9c-ff14-4aaa-b2de-450e4ed65e59</subsheetid>
+    <display x="-195" y="210" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue xml:space="preserve">171</initialvalue>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="615dd0ab-3b18-40f1-a0c5-2de97461cda0" name="Benyt skattemåned" type="Data">
+    <subsheetid>25759a9c-ff14-4aaa-b2de-450e4ed65e59</subsheetid>
+    <display x="-195" y="255" w="120" h="30" />
+    <datatype>flag</datatype>
+    <initialvalue>True</initialvalue>
+    <private />
+    <alwaysinit />
+  </stage>
+</process>

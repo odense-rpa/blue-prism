@@ -178,7 +178,7 @@
   <subsheet subsheetid="7a9a5034-382d-4433-b523-c5015cc289e3" type="Normal" published="True">
     <name>Tilknyt borger til organisation</name>
     <view>
-      <camerax>52</camerax>
+      <camerax>150.800049</camerax>
       <cameray>55</cameray>
       <zoom version="2">1.25</zoom>
     </view>
@@ -210,7 +210,7 @@
   <subsheet subsheetid="8c3f8a07-18c6-49b4-9793-b9c63086f744" type="Normal" published="True">
     <name>Opdater borgers organisationsrelation</name>
     <view>
-      <camerax>458</camerax>
+      <camerax>150.800049</camerax>
       <cameray>0</cameray>
       <zoom version="2">1.25</zoom>
     </view>
@@ -1731,7 +1731,7 @@ json_out = obj.ToString();]]></code>
       <input type="text" name="Url" friendlyname="Url" expr="[Organisationsrelation._links.self]" />
     </inputs>
     <outputs>
-      <output type="collection" name="Data" friendlyname="Data" stage="" />
+      <output type="collection" name="Data" friendlyname="Data" stage="Organisationsrelation" />
       <output type="number" name="Antal" friendlyname="Antal" stage="" />
       <output type="text" name="Json" friendlyname="Json" narrative="Det rå json output" stage="Json" />
       <output type="number" name="Statuskode" friendlyname="Statuskode" narrative="Http statuskoden for kaldet" stage="" />
@@ -6541,7 +6541,6 @@ fmk_updated = json_file.ToString();]]></code>
   <stage stageid="eb05f805-ffa4-4e5f-b88d-ac9a669d06d1" name="Er tæller mindre end 4?" type="Decision">
     <subsheetid>33d259f7-cb45-4401-b725-01d2ac0cb72b</subsheetid>
     <loginhibit />
-    <narrative></narrative>
     <display x="120" y="-30" />
     <decision expression="[Tæller] &lt; 4" />
     <ontrue>0745d735-6f41-45ea-a08e-12340f20f157</ontrue>

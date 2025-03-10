@@ -99,7 +99,15 @@
     <name>Opdater brugers konfiguration</name>
     <view>
       <camerax>55</camerax>
-      <cameray>129</cameray>
+      <cameray>66</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <subsheet subsheetid="16c18705-e9de-41ec-bfaa-164f3a3b83ac" type="Normal" published="True">
+    <name>Opdater brugers kalenderbegivenheder til Outlook</name>
+    <view>
+      <camerax>55</camerax>
+      <cameray>87</cameray>
       <zoom version="2">1.25</zoom>
     </view>
   </subsheet>
@@ -114,8 +122,8 @@
   <subsheet subsheetid="473d0583-ee88-4797-9170-8d2964e5ea03" type="Normal" published="True">
     <name>Opdater bruger</name>
     <view>
-      <camerax>311</camerax>
-      <cameray>15</cameray>
+      <camerax>36</camerax>
+      <cameray>-69</cameray>
       <zoom version="2">1.25</zoom>
     </view>
   </subsheet>
@@ -139,7 +147,7 @@
     <name>Opret bruger fra STS</name>
     <view>
       <camerax>0</camerax>
-      <cameray>126</cameray>
+      <cameray>84</cameray>
       <zoom version="2">1.25</zoom>
     </view>
   </subsheet>
@@ -5080,7 +5088,7 @@ prototype = jobj.ToString();]]></code>
   <stage stageid="7a9d3c43-37cb-4a2a-ba3a-8fbb1365bfac" name="Start" type="Start">
     <subsheetid>2f69471a-eaed-4fd6-9670-dc9970411be6</subsheetid>
     <loginhibit />
-    <display x="15" y="-105" />
+    <display x="0" y="-135" />
     <inputs>
       <input type="collection" name="Bruger" stage="Bruger" />
       <input type="text" name="Stilling" stage="Stilling" />
@@ -5095,7 +5103,7 @@ prototype = jobj.ToString();]]></code>
   <stage stageid="e40a2438-6527-46a0-90a4-9af9aada2e55" name="End" type="End">
     <subsheetid>2f69471a-eaed-4fd6-9670-dc9970411be6</subsheetid>
     <loginhibit />
-    <display x="15" y="360" />
+    <display x="0" y="330" />
     <outputs>
       <output type="flag" name="Succes" stage="Succes" />
     </outputs>
@@ -5123,7 +5131,7 @@ prototype = jobj.ToString();]]></code>
   <stage stageid="3ad56a0e-26e8-4382-9359-22b3de02f578" name="Hent konfiguration" type="Block">
     <subsheetid>2f69471a-eaed-4fd6-9670-dc9970411be6</subsheetid>
     <loginhibit />
-    <display x="-90" y="-60" w="270" h="60" />
+    <display x="-75" y="-90" w="150" h="60" />
     <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
   </stage>
   <stage stageid="8eb37361-6cc6-4f97-bcd9-4c3cb44a2f6f" name="Bruger" type="Collection">
@@ -5146,7 +5154,7 @@ prototype = jobj.ToString();]]></code>
   <stage stageid="912070f3-8af7-4c5e-917e-d71593ffd329" name="Hent konfiguration" type="Action">
     <subsheetid>2f69471a-eaed-4fd6-9670-dc9970411be6</subsheetid>
     <loginhibit onsuccess="true" />
-    <display x="15" y="-30" />
+    <display x="0" y="-60" />
     <inputs>
       <input type="text" name="Url" friendlyname="Url" expr="[Bruger._links.configuration]" />
     </inputs>
@@ -5217,13 +5225,13 @@ prototype = jobj.ToString();]]></code>
   <stage stageid="7ebcf3e6-8ef2-425c-8b63-a721a520f514" name="Debug" type="Block">
     <subsheetid>2f69471a-eaed-4fd6-9670-dc9970411be6</subsheetid>
     <loginhibit />
-    <display x="105" y="-255" w="120" h="150" />
+    <display x="45" y="-285" w="120" h="150" />
     <font family="Segoe UI" size="10" style="Regular" color="FFFF99" />
   </stage>
   <stage stageid="b444b322-f9e0-4494-aaa1-5cc4df45303e" name="Nexus - Core::Start" type="Action">
     <subsheetid>2f69471a-eaed-4fd6-9670-dc9970411be6</subsheetid>
     <loginhibit onsuccess="true" />
-    <display x="165" y="-225" />
+    <display x="105" y="-255" />
     <inputs>
       <input type="text" name="Credentials" friendlyname="Credentials" expr="&quot;KMD Nexus - produktion&quot;" />
     </inputs>
@@ -5233,7 +5241,7 @@ prototype = jobj.ToString();]]></code>
   <stage stageid="79c9f4bd-57e0-463e-b472-c5d9f3ed62dd" name="Hent bruger" type="SubSheet">
     <subsheetid>2f69471a-eaed-4fd6-9670-dc9970411be6</subsheetid>
     <loginhibit />
-    <display x="165" y="-180" />
+    <display x="105" y="-210" />
     <inputs>
       <input type="text" name="Initialer" friendlyname="Initialer" expr="&quot;roboa&quot;" />
     </inputs>
@@ -5247,25 +5255,25 @@ prototype = jobj.ToString();]]></code>
   <stage stageid="48a67556-dc15-4f0b-8a5c-e112e0b28575" name="Anchor20" type="Anchor">
     <subsheetid>2f69471a-eaed-4fd6-9670-dc9970411be6</subsheetid>
     <loginhibit />
-    <display x="15" y="-75" w="10" h="10" />
+    <display x="0" y="-105" w="10" h="10" />
     <onsuccess>912070f3-8af7-4c5e-917e-d71593ffd329</onsuccess>
   </stage>
   <stage stageid="9d2d13f1-50ad-482d-9b48-b390de17d109" name="Anchor21" type="Anchor">
     <subsheetid>2f69471a-eaed-4fd6-9670-dc9970411be6</subsheetid>
     <loginhibit />
-    <display x="165" y="-75" w="10" h="10" />
+    <display x="105" y="-105" w="10" h="10" />
     <onsuccess>48a67556-dc15-4f0b-8a5c-e112e0b28575</onsuccess>
   </stage>
   <stage stageid="9215b40e-a479-4b8e-bf9b-48b30d9b5543" name="Hent støtteinformation" type="Block">
     <subsheetid>2f69471a-eaed-4fd6-9670-dc9970411be6</subsheetid>
     <loginhibit />
-    <display x="-90" y="15" w="270" h="150" />
+    <display x="-75" y="-15" w="150" h="150" />
     <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
   </stage>
   <stage stageid="aea24eb9-3321-457d-9255-cc1566211bc4" name="Hent stillinger" type="Action">
     <subsheetid>2f69471a-eaed-4fd6-9670-dc9970411be6</subsheetid>
     <loginhibit onsuccess="true" />
-    <display x="15" y="45" />
+    <display x="0" y="15" />
     <inputs>
       <input type="text" name="Url" friendlyname="Url" expr="[Konfiguration._links.availableProfessionalJobs]" />
     </inputs>
@@ -5289,7 +5297,7 @@ prototype = jobj.ToString();]]></code>
   <stage stageid="e0c0f3f8-d0ca-4c4e-94a0-26b95711519f" name="Hent organisationer" type="Action">
     <subsheetid>2f69471a-eaed-4fd6-9670-dc9970411be6</subsheetid>
     <loginhibit onsuccess="true" />
-    <display x="15" y="90" />
+    <display x="0" y="60" />
     <inputs>
       <input type="text" name="Url" friendlyname="Url" expr="[Konfiguration._links.organizations]" />
     </inputs>
@@ -5313,7 +5321,7 @@ prototype = jobj.ToString();]]></code>
   <stage stageid="c3c33cf7-5631-4a76-b8b4-258ec67e0da9" name="Hent organisationer til arbejdstid" type="Action">
     <subsheetid>2f69471a-eaed-4fd6-9670-dc9970411be6</subsheetid>
     <loginhibit onsuccess="true" />
-    <display x="15" y="135" />
+    <display x="0" y="105" />
     <inputs>
       <input type="text" name="Url" friendlyname="Url" expr="[Konfiguration._links.availableOrganizationSuppliers]" />
     </inputs>
@@ -5337,12 +5345,12 @@ prototype = jobj.ToString();]]></code>
   <stage stageid="ede41c61-98ae-4d77-80bc-e4665fb6797b" name="Opdater konfiguration" type="Block">
     <subsheetid>2f69471a-eaed-4fd6-9670-dc9970411be6</subsheetid>
     <loginhibit />
-    <display x="-90" y="180" w="270" h="150" />
+    <display x="-75" y="150" w="150" h="150" />
     <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
   </stage>
   <stage stageid="26ad2a79-3a01-4000-8973-bc26200771f7" name="Opdatering konfiguration" type="Code">
     <subsheetid>2f69471a-eaed-4fd6-9670-dc9970411be6</subsheetid>
-    <display x="15" y="210" />
+    <display x="0" y="180" />
     <inputs>
       <input type="text" name="config_json" expr="[Konfiguration (json)]" />
       <input type="text" name="jobs_json" expr="[Stillinger (json)]" />
@@ -5399,7 +5407,7 @@ config_updated = config.ToString();]]></code>
   <stage stageid="3688476e-d8ac-4e76-a4e7-5f19bbcafe10" name="Kald Nexus opdater" type="Action">
     <subsheetid>2f69471a-eaed-4fd6-9670-dc9970411be6</subsheetid>
     <loginhibit onsuccess="true" />
-    <display x="15" y="255" />
+    <display x="0" y="225" />
     <inputs>
       <input type="text" name="Url" friendlyname="Url" expr="[Konfiguration._links.update]" />
       <input type="text" name="Body" friendlyname="Body" expr="[Konfiguration (json)]" />
@@ -5416,7 +5424,7 @@ config_updated = config.ToString();]]></code>
   <stage stageid="692f1410-4395-4b3c-9503-13a0bb5d1db4" name="Sæt succes" type="Calculation">
     <subsheetid>2f69471a-eaed-4fd6-9670-dc9970411be6</subsheetid>
     <loginhibit />
-    <display x="15" y="300" />
+    <display x="0" y="270" />
     <onsuccess>e40a2438-6527-46a0-90a4-9af9aada2e55</onsuccess>
     <calculation expression="[Statuskode] = 200" stage="Succes" />
   </stage>
@@ -6129,7 +6137,7 @@ output = config.ToString();]]></code>
   <stage stageid="8da2f084-f053-4d05-b730-6cce73643b6e" name="Sæt debug" type="MultipleCalculation">
     <subsheetid>2f69471a-eaed-4fd6-9670-dc9970411be6</subsheetid>
     <loginhibit />
-    <display x="165" y="-135" />
+    <display x="105" y="-165" />
     <onsuccess>9d2d13f1-50ad-482d-9b48-b390de17d109</onsuccess>
     <steps>
       <calculation expression="&quot;Odense&quot;" stage="Primær organisation" />
@@ -6550,5 +6558,217 @@ fmk_updated = json_file.ToString();]]></code>
     <subsheetid>33d259f7-cb45-4401-b725-01d2ac0cb72b</subsheetid>
     <display x="225" y="-30" />
     <exception localized="yes" type="Business Exception" detail="&quot;Kunne ikke finde brugerens 'organizations'&quot;" />
+  </stage>
+  <stage stageid="8e030bb7-6d83-4e36-86e5-bd7dddcb20a8" name="Opdater brugers kalenderbegivenheder til Outlook" type="SubSheetInfo">
+    <subsheetid>16c18705-e9de-41ec-bfaa-164f3a3b83ac</subsheetid>
+    <narrative>Ligner Opdater brugers konfiguration, men copy paste version pga. nullable boolean allowance i BP. sendToExchange er udstillet i UI, og ikke fetchFromExchange. Den kan tilføjes på sigt.</narrative>
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="9273f946-f1c7-45b2-997e-46e8812054c4" name="Start" type="Start">
+    <subsheetid>16c18705-e9de-41ec-bfaa-164f3a3b83ac</subsheetid>
+    <loginhibit />
+    <display x="0" y="-135" />
+    <inputs>
+      <input type="collection" name="Bruger" stage="Bruger" />
+      <input type="flag" name="Overfør kalenderbegivenheder til Exchange/Outlook" stage="Overfør kalenderbegivenheder til Exchange/Outlook" />
+    </inputs>
+    <onsuccess>a12281d8-6229-40ea-8615-862541a45475</onsuccess>
+  </stage>
+  <stage stageid="5d3f1ca8-c7ac-44a9-b92d-c5b1e2bcc78a" name="End" type="End">
+    <subsheetid>16c18705-e9de-41ec-bfaa-164f3a3b83ac</subsheetid>
+    <loginhibit />
+    <display x="0" y="165" />
+    <outputs>
+      <output type="flag" name="Succes" stage="Succes" />
+    </outputs>
+  </stage>
+  <stage stageid="c0c202c6-43a4-4550-9e22-2999b383c21a" name="Input" type="Block">
+    <subsheetid>16c18705-e9de-41ec-bfaa-164f3a3b83ac</subsheetid>
+    <display x="-270" y="-45" w="150" h="105" />
+    <font family="Segoe UI" size="10" style="Regular" color="339966" />
+  </stage>
+  <stage stageid="d0da8b2e-39cc-4e0d-9d21-6e8537774e24" name="Variabler" type="Block">
+    <subsheetid>16c18705-e9de-41ec-bfaa-164f3a3b83ac</subsheetid>
+    <display x="-270" y="135" w="150" h="150" />
+    <font family="Segoe UI" size="10" style="Regular" color="666699" />
+  </stage>
+  <stage stageid="96a1f6fc-80c4-4b86-8c8d-acfccbf5fa5e" name="Konstanter" type="Block">
+    <subsheetid>16c18705-e9de-41ec-bfaa-164f3a3b83ac</subsheetid>
+    <display x="-270" y="75" w="150" h="45" />
+    <font family="Segoe UI" size="10" style="Regular" color="008080" />
+  </stage>
+  <stage stageid="e9b22093-770f-44fc-99e1-95b20550bcf6" name="Output" type="Block">
+    <subsheetid>16c18705-e9de-41ec-bfaa-164f3a3b83ac</subsheetid>
+    <display x="-270" y="300" w="150" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="800080" />
+  </stage>
+  <stage stageid="e0520f5d-2726-402a-8497-af1b6190e5c3" name="Hent konfiguration" type="Block">
+    <subsheetid>16c18705-e9de-41ec-bfaa-164f3a3b83ac</subsheetid>
+    <loginhibit />
+    <display x="-75" y="-90" w="150" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
+  </stage>
+  <stage stageid="9b7d2ee6-0bfa-4cd9-abc9-915400a20dfe" name="Bruger" type="Collection">
+    <subsheetid>16c18705-e9de-41ec-bfaa-164f3a3b83ac</subsheetid>
+    <loginhibit />
+    <display x="-195" y="-15" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="45e26025-049c-4e76-900a-fc71ba034f9c" name="Succes" type="Data">
+    <subsheetid>16c18705-e9de-41ec-bfaa-164f3a3b83ac</subsheetid>
+    <loginhibit />
+    <display x="-195" y="330" w="120" h="30" />
+    <datatype>flag</datatype>
+    <initialvalue>False</initialvalue>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="69f0fbc4-0dac-4a6c-9bee-e1073d601519" name="Hent konfiguration" type="Action">
+    <subsheetid>16c18705-e9de-41ec-bfaa-164f3a3b83ac</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="0" y="-60" />
+    <inputs>
+      <input type="text" name="Url" friendlyname="Url" expr="[Bruger._links.configuration]" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="Data" friendlyname="Data" stage="Konfiguration" />
+      <output type="number" name="Antal" friendlyname="Antal" stage="" />
+      <output type="text" name="Json" friendlyname="Json" narrative="Det rå json output" stage="Konfiguration (json)" />
+      <output type="number" name="Statuskode" friendlyname="Statuskode" narrative="Http statuskoden for kaldet" stage="Statuskode" />
+    </outputs>
+    <onsuccess>a57d7256-ec55-4842-b6da-6302288355d0</onsuccess>
+    <resource object="Nexus - Core" action="Get" />
+  </stage>
+  <stage stageid="0bc207e1-a9da-4da1-82d6-8d5b34df27b0" name="Konfiguration" type="Collection">
+    <subsheetid>16c18705-e9de-41ec-bfaa-164f3a3b83ac</subsheetid>
+    <display x="-195" y="165" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="88078989-6467-4de2-b84b-39740e1799b1" name="Statuskode" type="Data">
+    <subsheetid>16c18705-e9de-41ec-bfaa-164f3a3b83ac</subsheetid>
+    <display x="-195" y="255" w="120" h="30" />
+    <datatype>number</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="191949fb-a407-432b-a8a5-988b0460161f" name="Konfiguration (json)" type="Data">
+    <subsheetid>16c18705-e9de-41ec-bfaa-164f3a3b83ac</subsheetid>
+    <display x="-195" y="210" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="c3a31072-6c75-4026-bbda-f4835a6ba6a4" name="Debug" type="Block">
+    <subsheetid>16c18705-e9de-41ec-bfaa-164f3a3b83ac</subsheetid>
+    <loginhibit />
+    <display x="45" y="-285" w="120" h="150" />
+    <font family="Segoe UI" size="10" style="Regular" color="FFFF99" />
+  </stage>
+  <stage stageid="1682d3b0-47ab-4131-b894-99c9a957d477" name="Nexus - Core::Start" type="Action">
+    <subsheetid>16c18705-e9de-41ec-bfaa-164f3a3b83ac</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="105" y="-255" />
+    <inputs>
+      <input type="text" name="Credentials" friendlyname="Credentials" expr="&quot;KMD Nexus - produktion&quot;" />
+    </inputs>
+    <onsuccess>62c880c0-8a29-4aa5-8d1d-7d64bf33ca72</onsuccess>
+    <resource object="Nexus - Core" action="Start" />
+  </stage>
+  <stage stageid="62c880c0-8a29-4aa5-8d1d-7d64bf33ca72" name="Hent bruger" type="SubSheet">
+    <subsheetid>16c18705-e9de-41ec-bfaa-164f3a3b83ac</subsheetid>
+    <loginhibit />
+    <display x="105" y="-210" />
+    <inputs>
+      <input type="text" name="Initialer" friendlyname="Initialer" expr="&quot;roboa&quot;" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="Bruger" friendlyname="Bruger" stage="Bruger" />
+      <output type="flag" name="Succes" friendlyname="Succes" stage="" />
+    </outputs>
+    <onsuccess>5602c810-94e9-415e-8189-e5a9bbd43eb0</onsuccess>
+    <processid>c42c155b-56ed-41c5-83f4-a82d50269c93</processid>
+  </stage>
+  <stage stageid="a12281d8-6229-40ea-8615-862541a45475" name="Anchor20" type="Anchor">
+    <subsheetid>16c18705-e9de-41ec-bfaa-164f3a3b83ac</subsheetid>
+    <loginhibit />
+    <display x="0" y="-105" w="10" h="10" />
+    <onsuccess>69f0fbc4-0dac-4a6c-9bee-e1073d601519</onsuccess>
+  </stage>
+  <stage stageid="945a478d-ba2e-47c1-9411-7e4211ab7375" name="Anchor21" type="Anchor">
+    <subsheetid>16c18705-e9de-41ec-bfaa-164f3a3b83ac</subsheetid>
+    <loginhibit />
+    <display x="105" y="-105" w="10" h="10" />
+    <onsuccess>a12281d8-6229-40ea-8615-862541a45475</onsuccess>
+  </stage>
+  <stage stageid="6f57cd7b-6954-444f-81c5-c959eccfe0c4" name="Opdater konfiguration" type="Block">
+    <subsheetid>16c18705-e9de-41ec-bfaa-164f3a3b83ac</subsheetid>
+    <loginhibit />
+    <display x="-75" y="-15" w="150" h="150" />
+    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
+  </stage>
+  <stage stageid="a57d7256-ec55-4842-b6da-6302288355d0" name="Opdater Exchange/Outlook konfiguration" type="Code">
+    <subsheetid>16c18705-e9de-41ec-bfaa-164f3a3b83ac</subsheetid>
+    <display x="0" y="15" />
+    <inputs>
+      <input type="text" name="config_json" expr="[Konfiguration (json)]" />
+      <input type="flag" name="sendToExchange" expr="[Overfør kalenderbegivenheder til Exchange/Outlook]" />
+    </inputs>
+    <outputs>
+      <output type="text" name="config_updated" stage="Konfiguration (json)" />
+    </outputs>
+    <onsuccess>cb1c4216-dd01-4ceb-83b5-e9ab03b632e0</onsuccess>
+    <code><![CDATA[var config = JObject.Parse(config_json);
+
+config["exchangeConfiguration"]["sendToExchange"] = sendToExchange;
+
+config_updated = config.ToString();]]></code>
+  </stage>
+  <stage stageid="cb1c4216-dd01-4ceb-83b5-e9ab03b632e0" name="Kald Nexus opdater" type="Action">
+    <subsheetid>16c18705-e9de-41ec-bfaa-164f3a3b83ac</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="0" y="60" />
+    <inputs>
+      <input type="text" name="Url" friendlyname="Url" expr="[Konfiguration._links.update]" />
+      <input type="text" name="Body" friendlyname="Body" expr="[Konfiguration (json)]" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="Data" friendlyname="Data" stage="" />
+      <output type="number" name="Antal" friendlyname="Antal" stage="" />
+      <output type="text" name="Json" friendlyname="Json" narrative="Det rå json output" stage="" />
+      <output type="number" name="Statuskode" friendlyname="Statuskode" narrative="Http statuskoden for kaldet" stage="Statuskode" />
+    </outputs>
+    <onsuccess>56530d01-af9e-4b4c-89c3-09f7a36f9536</onsuccess>
+    <resource object="Nexus - Core" action="Put" />
+  </stage>
+  <stage stageid="56530d01-af9e-4b4c-89c3-09f7a36f9536" name="Sæt succes" type="Calculation">
+    <subsheetid>16c18705-e9de-41ec-bfaa-164f3a3b83ac</subsheetid>
+    <loginhibit />
+    <display x="0" y="105" />
+    <onsuccess>5d3f1ca8-c7ac-44a9-b92d-c5b1e2bcc78a</onsuccess>
+    <calculation expression="[Statuskode] = 200" stage="Succes" />
+  </stage>
+  <stage stageid="5602c810-94e9-415e-8189-e5a9bbd43eb0" name="Sæt debug" type="MultipleCalculation">
+    <subsheetid>16c18705-e9de-41ec-bfaa-164f3a3b83ac</subsheetid>
+    <loginhibit />
+    <display x="105" y="-165" />
+    <onsuccess>945a478d-ba2e-47c1-9411-7e4211ab7375</onsuccess>
+    <steps>
+      <calculation expression="False" stage="Overfør kalenderbegivenheder til Exchange/Outlook" />
+    </steps>
+  </stage>
+  <stage stageid="9ff9f70d-16e1-46fd-bc63-96f57d0d091e" name="Overfør kalenderbegivenheder til Exchange/Outlook" type="Data">
+    <subsheetid>16c18705-e9de-41ec-bfaa-164f3a3b83ac</subsheetid>
+    <loginhibit />
+    <display x="-195" y="30" w="120" h="30" />
+    <datatype>flag</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
   </stage>
 </process>

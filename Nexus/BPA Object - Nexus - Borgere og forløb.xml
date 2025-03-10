@@ -27,7 +27,7 @@
     <name>Hent borger</name>
     <view>
       <camerax>14</camerax>
-      <cameray>42</cameray>
+      <cameray>105</cameray>
       <zoom version="2">1.25</zoom>
     </view>
   </subsheet>
@@ -486,7 +486,7 @@ You will not be able to call this action from a business process, nor will it be
     <loginhibit onsuccess="true" />
     <display x="135" y="-180" />
     <inputs>
-      <input type="text" name="Credentials" friendlyname="Credentials" expr="&quot;KMD Nexus - odensedev&quot;" />
+      <input type="text" name="Credentials" friendlyname="Credentials" expr="&quot;KMD Nexus - produktion&quot;" />
     </inputs>
     <onsuccess>9172f5d5-bc1e-4711-9252-727dc850f981</onsuccess>
     <resource object="Nexus - Core" action="Start" />

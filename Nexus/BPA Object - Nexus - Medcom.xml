@@ -47,6 +47,14 @@
       <zoom version="2">1.25</zoom>
     </view>
   </subsheet>
+  <subsheet subsheetid="80cbfe9f-f975-45a4-860d-5c5d1d1a9744" type="Normal" published="True">
+    <name>Arkiver besked</name>
+    <view>
+      <camerax>0</camerax>
+      <cameray>0</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
   <subsheet subsheetid="2b3ac3dd-4488-4e8c-9982-e9a7292fa440" type="Normal" published="True">
     <name>Tildel besked til forløb</name>
     <view>
@@ -1522,5 +1530,131 @@ result = jprototype.ToString();]]></code>
     <display x="0" y="450" />
     <onsuccess>53d82584-16f4-484c-8570-62ab4d5c8203</onsuccess>
     <calculation expression="[Statuskode] = 200" stage="Succes" />
+  </stage>
+  <stage stageid="1124a305-1006-4272-a1b7-b6ebc65a5353" name="Arkiver besked" type="SubSheetInfo">
+    <subsheetid>80cbfe9f-f975-45a4-860d-5c5d1d1a9744</subsheetid>
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="1906d522-eb58-42dd-9d7b-1d1fbd868283" name="Start" type="Start">
+    <subsheetid>80cbfe9f-f975-45a4-860d-5c5d1d1a9744</subsheetid>
+    <loginhibit />
+    <narrative>Beskedreference virker også</narrative>
+    <display x="0" y="-135" />
+    <inputs>
+      <input type="collection" name="Besked" stage="Besked" />
+    </inputs>
+    <onsuccess>3b9914ad-9679-47fa-8df6-5c9c4b476cd9</onsuccess>
+  </stage>
+  <stage stageid="c8cce658-67d3-48ea-ab0e-36ee54c96e4f" name="End" type="End">
+    <subsheetid>80cbfe9f-f975-45a4-860d-5c5d1d1a9744</subsheetid>
+    <loginhibit />
+    <display x="0" y="105" />
+    <outputs>
+      <output type="flag" name="Succes" stage="Succes" />
+    </outputs>
+  </stage>
+  <stage stageid="da6798cb-f7db-43a0-8303-a66acd52f4ac" name="Input" type="Block">
+    <subsheetid>80cbfe9f-f975-45a4-860d-5c5d1d1a9744</subsheetid>
+    <display x="-270" y="-45" w="150" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="339966" />
+  </stage>
+  <stage stageid="acdd0786-c665-43de-84d3-434a707697db" name="Variabler" type="Block">
+    <subsheetid>80cbfe9f-f975-45a4-860d-5c5d1d1a9744</subsheetid>
+    <display x="-270" y="90" w="150" h="105" />
+    <font family="Segoe UI" size="10" style="Regular" color="666699" />
+  </stage>
+  <stage stageid="3bf1412f-b50d-43d7-b4a1-ad7a71884ffc" name="Konstanter" type="Block">
+    <subsheetid>80cbfe9f-f975-45a4-860d-5c5d1d1a9744</subsheetid>
+    <display x="-270" y="30" w="150" h="45" />
+    <font family="Segoe UI" size="10" style="Regular" color="008080" />
+  </stage>
+  <stage stageid="8baba428-8aab-4d24-b5c0-086179301dd9" name="Output" type="Block">
+    <subsheetid>80cbfe9f-f975-45a4-860d-5c5d1d1a9744</subsheetid>
+    <display x="-270" y="210" w="150" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="800080" />
+  </stage>
+  <stage stageid="3b9914ad-9679-47fa-8df6-5c9c4b476cd9" name="Hent hele beskeden" type="Action">
+    <subsheetid>80cbfe9f-f975-45a4-860d-5c5d1d1a9744</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="0" y="-75" />
+    <inputs>
+      <input type="text" name="Url" friendlyname="Url" expr="[Besked._links.self]" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="Data" friendlyname="Data" stage="Besked" />
+      <output type="number" name="Antal" friendlyname="Antal" stage="" />
+      <output type="text" name="Json" friendlyname="Json" narrative="Det rå json output" stage="Json" />
+      <output type="number" name="Statuskode" friendlyname="Statuskode" narrative="Http statuskoden for kaldet" stage="" />
+    </outputs>
+    <onsuccess>f838c9bb-acd7-422d-9bd1-e3160a7b5597</onsuccess>
+    <resource object="Nexus - Core" action="Get" />
+  </stage>
+  <stage stageid="d573a3d7-967a-473d-a6c7-7d996828c530" name="Læs indbakke" type="Block">
+    <subsheetid>80cbfe9f-f975-45a4-860d-5c5d1d1a9744</subsheetid>
+    <loginhibit />
+    <display x="-90" y="-105" w="255" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
+  </stage>
+  <stage stageid="f1159c22-29c0-4729-b1ca-39820ecac1e0" name="Besked" type="Collection">
+    <subsheetid>80cbfe9f-f975-45a4-860d-5c5d1d1a9744</subsheetid>
+    <loginhibit />
+    <display x="-195" y="-15" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="1b8b9d55-276c-4d26-8b81-952b77d089c8" name="Json" type="Data">
+    <subsheetid>80cbfe9f-f975-45a4-860d-5c5d1d1a9744</subsheetid>
+    <display x="-195" y="120" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="f838c9bb-acd7-422d-9bd1-e3160a7b5597" name="Arkiver besked" type="Action">
+    <subsheetid>80cbfe9f-f975-45a4-860d-5c5d1d1a9744</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="0" y="0" />
+    <inputs>
+      <input type="text" name="Url" friendlyname="Url" expr="[Besked._links.archive]" />
+      <input type="text" name="Body" friendlyname="Body" expr="[Json]" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="Data" friendlyname="Data" stage="" />
+      <output type="number" name="Antal" friendlyname="Antal" stage="" />
+      <output type="text" name="Json" friendlyname="Json" narrative="Det rå json output" stage="" />
+      <output type="number" name="Statuskode" friendlyname="Statuskode" narrative="Http statuskoden for kaldet" stage="Statuskode" />
+    </outputs>
+    <onsuccess>ea90e40d-de78-4427-b390-049df19aff58</onsuccess>
+    <resource object="Nexus - Core" action="Post" />
+  </stage>
+  <stage stageid="256a6110-b4a9-4222-8384-fa1d23e9df0b" name="Statuskode" type="Data">
+    <subsheetid>80cbfe9f-f975-45a4-860d-5c5d1d1a9744</subsheetid>
+    <display x="-195" y="165" w="120" h="30" />
+    <datatype>number</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="ea90e40d-de78-4427-b390-049df19aff58" name="Sæt status" type="Calculation">
+    <subsheetid>80cbfe9f-f975-45a4-860d-5c5d1d1a9744</subsheetid>
+    <loginhibit />
+    <display x="0" y="45" />
+    <onsuccess>c8cce658-67d3-48ea-ab0e-36ee54c96e4f</onsuccess>
+    <calculation expression="[Statuskode] = 200" stage="Succes" />
+  </stage>
+  <stage stageid="fe0e888e-fd41-4342-9835-3cb381d38acc" name="Succes" type="Data">
+    <subsheetid>80cbfe9f-f975-45a4-860d-5c5d1d1a9744</subsheetid>
+    <display x="-195" y="240" w="120" h="30" />
+    <datatype>flag</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="14b50fcc-a939-4984-b80e-f614f71047d3" name="Accepter" type="Block">
+    <subsheetid>80cbfe9f-f975-45a4-860d-5c5d1d1a9744</subsheetid>
+    <loginhibit />
+    <display x="-90" y="-30" w="255" h="105" />
+    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
   </stage>
 </process>

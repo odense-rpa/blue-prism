@@ -82,7 +82,7 @@
   <subsheet subsheetid="0f740177-1165-4499-8f39-958a88c2dbf5" type="Normal" published="True">
     <name>Filtrer indsatsreferencer</name>
     <view>
-      <camerax>-86</camerax>
+      <camerax>298</camerax>
       <cameray>168</cameray>
       <zoom version="2">1.25</zoom>
     </view>
@@ -3188,7 +3188,7 @@ template = jgrant.ToString();
   <stage stageid="c1ca445d-1183-4b83-883c-1f3608d73e6b" name="Filtrer referencer" type="Block">
     <subsheetid>0f740177-1165-4499-8f39-958a88c2dbf5</subsheetid>
     <loginhibit />
-    <display x="-90" y="-60" w="255" h="420" />
+    <display x="-75" y="-60" w="300" h="420" />
     <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
   </stage>
   <stage stageid="e55b9310-7a04-4127-8c1c-fc87308cc2cb" name="Tjek prototype link" type="Action">
@@ -4857,5 +4857,18 @@ result = jobj.ToString();]]></code>
     <datatype>collection</datatype>
     <private />
     <alwaysinit />
+  </stage>
+  <stage stageid="69d8c7f9-9b08-4587-9359-be52ce236839" name="Recover2" type="Recover">
+    <subsheetid>0f740177-1165-4499-8f39-958a88c2dbf5</subsheetid>
+    <loginhibit />
+    <narrative>Nogle gange har ref.workflowState null values</narrative>
+    <display x="180" y="285" />
+    <onsuccess>5ac2a5d4-98dc-481e-8fb6-2ad367f17eb7</onsuccess>
+  </stage>
+  <stage stageid="5ac2a5d4-98dc-481e-8fb6-2ad367f17eb7" name="Resume2" type="Resume">
+    <subsheetid>0f740177-1165-4499-8f39-958a88c2dbf5</subsheetid>
+    <loginhibit />
+    <display x="180" y="330" />
+    <onsuccess>24e355ae-d7f9-4129-a12e-d26cccca0eee</onsuccess>
   </stage>
 </process>

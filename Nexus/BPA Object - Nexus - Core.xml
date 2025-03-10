@@ -9,7 +9,7 @@
     </element>
   </appdef>
   <view>
-    <camerax>150.800049</camerax>
+    <camerax>151</camerax>
     <cameray>-94</cameray>
     <zoom version="2">1.25</zoom>
   </view>
@@ -26,16 +26,16 @@
   <subsheet subsheetid="94af1602-beba-4a05-9139-24404c44204c" type="Normal" published="True">
     <name>Start</name>
     <view>
-      <camerax>-16</camerax>
-      <cameray>148</cameray>
+      <camerax>-95</camerax>
+      <cameray>64</cameray>
       <zoom version="2">1.25</zoom>
     </view>
   </subsheet>
-  <subsheet subsheetid="dbb5dc0a-bce4-40b2-bb70-f0df455bb056" type="Normal" published="False">
+  <subsheet subsheetid="b1ec8206-1000-431f-8da4-49ed41a0ee70" type="Normal" published="False">
     <name>Opdater token</name>
     <view>
-      <camerax>-30</camerax>
-      <cameray>1014</cameray>
+      <camerax>311</camerax>
+      <cameray>6</cameray>
       <zoom version="2">1.25</zoom>
     </view>
   </subsheet>
@@ -59,7 +59,7 @@
     <name>Upload fil</name>
     <view>
       <camerax>0</camerax>
-      <cameray>294</cameray>
+      <cameray>-75</cameray>
       <zoom version="2">1.25</zoom>
     </view>
   </subsheet>
@@ -528,17 +528,17 @@ You will not be able to call this action from a business process, nor will it be
   </stage>
   <stage stageid="a601d210-f1eb-4bd7-b45a-9dfadd19035d" name="Variabler" type="Block">
     <subsheetid>94af1602-beba-4a05-9139-24404c44204c</subsheetid>
-    <display x="-270" y="195" w="150" h="195" />
+    <display x="-270" y="240" w="150" h="195" />
     <font family="Segoe UI" size="10" style="Regular" color="666699" />
   </stage>
   <stage stageid="63c5d2eb-d07c-4710-b3b5-a0b6d69c691a" name="Konstanter" type="Block">
     <subsheetid>94af1602-beba-4a05-9139-24404c44204c</subsheetid>
-    <display x="-270" y="30" w="150" h="150" />
+    <display x="-270" y="30" w="150" h="195" />
     <font family="Segoe UI" size="10" style="Regular" color="008080" />
   </stage>
   <stage stageid="172ca485-243b-4d64-83dc-48bd1e9aa34c" name="Output" type="Block">
     <subsheetid>94af1602-beba-4a05-9139-24404c44204c</subsheetid>
-    <display x="-270" y="405" w="150" h="45" />
+    <display x="-270" y="450" w="150" h="45" />
     <font family="Segoe UI" size="10" style="Regular" color="800080" />
   </stage>
   <stage stageid="22a8ff5b-1dba-44d5-8ecb-e3b231417f82" name="Api-url" type="Data">
@@ -564,12 +564,12 @@ You will not be able to call this action from a business process, nor will it be
     <datatype>collection</datatype>
     <noalwaysinit />
   </stage>
-  <stage stageid="9c320e42-643b-461c-bf38-c87258cf71a3" name="Sæt debug token" type="Calculation">
+  <stage stageid="9c320e42-643b-461c-bf38-c87258cf71a3" name="Sæt produktions token" type="Calculation">
     <subsheetid>94af1602-beba-4a05-9139-24404c44204c</subsheetid>
     <loginhibit />
     <display x="135" y="-135" />
     <onsuccess>f5aad97e-9355-425d-874a-c4e43888c75e</onsuccess>
-    <calculation expression="&quot;KMD Nexus - odensedev&quot;" stage="Credentials" />
+    <calculation expression="&quot;KMD Nexus - produktion&quot;" stage="Credentials" />
   </stage>
   <stage stageid="2f69eca4-25ed-4e95-a834-1a56d095fe9e" name="Hent credentials" type="Action">
     <subsheetid>94af1602-beba-4a05-9139-24404c44204c</subsheetid>
@@ -629,22 +629,8 @@ An Exception will occur if access to these credentials is not allowed (based on 
     <loginhibit />
     <display x="15" y="90" />
     <decision expression="&quot;&quot; &amp; [Systemtype] = &quot;prod&quot; OR &quot;&quot; &amp; [Systemtype] = &quot;&quot;" />
-    <ontrue>680ab5e6-3e6f-44fd-b7d1-6083ae8d6fb6</ontrue>
-    <onfalse>3b774c17-86ec-4b6e-93aa-d77b91c6b3cb</onfalse>
-  </stage>
-  <stage stageid="680ab5e6-3e6f-44fd-b7d1-6083ae8d6fb6" name="Sæt basis url" type="Calculation">
-    <subsheetid>94af1602-beba-4a05-9139-24404c44204c</subsheetid>
-    <loginhibit />
-    <display x="15" y="135" />
-    <onsuccess>bfc41dec-5b48-419e-9fd7-45a594774462</onsuccess>
-    <calculation expression="&quot;https://&quot; &amp; [System] &amp; &quot;.nexus.kmd.dk&quot;" stage="Base-url" />
-  </stage>
-  <stage stageid="3b774c17-86ec-4b6e-93aa-d77b91c6b3cb" name="Sæt basis url (ikke produktion)" type="Calculation">
-    <subsheetid>94af1602-beba-4a05-9139-24404c44204c</subsheetid>
-    <loginhibit />
-    <display x="90" y="90" />
-    <onsuccess>3b9cceb0-e0d9-4809-b106-b8911e1c09ce</onsuccess>
-    <calculation expression="&quot;https://&quot; &amp; [System] &amp; &quot;.nexus-&quot; &amp; [Systemtype] &amp; &quot;.kmd.dk&quot;" stage="Base-url" />
+    <ontrue>b9864749-ccfe-4672-aeff-aa96a287f0d9</ontrue>
+    <onfalse>55682a1a-9860-47bb-be74-abee292630ba</onfalse>
   </stage>
   <stage stageid="bfc41dec-5b48-419e-9fd7-45a594774462" name="Anchor7" type="Anchor">
     <subsheetid>94af1602-beba-4a05-9139-24404c44204c</subsheetid>
@@ -673,14 +659,14 @@ An Exception will occur if access to these credentials is not allowed (based on 
   </stage>
   <stage stageid="b7e7e741-06f8-4861-9ee2-93438a169e13" name="Client id" type="Data">
     <subsheetid>94af1602-beba-4a05-9139-24404c44204c</subsheetid>
-    <display x="-195" y="225" w="120" h="30" />
+    <display x="-195" y="270" w="120" h="30" />
     <datatype>text</datatype>
     <initialvalue />
     <alwaysinit />
   </stage>
   <stage stageid="da913b0e-8b8f-47e4-87b7-251894ab5a98" name="Client secret" type="Data">
     <subsheetid>94af1602-beba-4a05-9139-24404c44204c</subsheetid>
-    <display x="-195" y="270" w="120" h="30" />
+    <display x="-195" y="315" w="120" h="30" />
     <datatype>password</datatype>
     <initialvalueenc></initialvalueenc>
     <alwaysinit />
@@ -688,14 +674,14 @@ An Exception will occur if access to these credentials is not allowed (based on 
   <stage stageid="4dff255b-9fa4-46f5-9cdb-3cda6fae7f2f" name="System" type="Data">
     <subsheetid>94af1602-beba-4a05-9139-24404c44204c</subsheetid>
     <loginhibit />
-    <display x="-195" y="315" w="120" h="30" />
+    <display x="-195" y="360" w="120" h="30" />
     <datatype>password</datatype>
     <initialvalueenc></initialvalueenc>
     <alwaysinit />
   </stage>
   <stage stageid="e7070ca7-8dff-472c-8ebf-3327943cabac" name="Systemtype" type="Data">
     <subsheetid>94af1602-beba-4a05-9139-24404c44204c</subsheetid>
-    <display x="-195" y="360" w="120" h="30" />
+    <display x="-195" y="405" w="120" h="30" />
     <datatype>password</datatype>
     <initialvalueenc></initialvalueenc>
     <private />
@@ -719,420 +705,6 @@ An Exception will occur if access to these credentials is not allowed (based on 
     <display x="75" y="-165" w="165" h="60" />
     <font family="Segoe UI" size="10" style="Regular" color="FFFF99" />
   </stage>
-  <stage stageid="75eaa78f-ce3a-40ad-bd9c-8da78010e441" name="Opdater token" type="SubSheetInfo">
-    <subsheetid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</subsheetid>
-    <display x="-195" y="-105" w="150" h="90" />
-  </stage>
-  <stage stageid="dc0c88f4-f6d6-4ad4-82f8-33e5fae71b70" name="Start" type="Start">
-    <subsheetid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</subsheetid>
-    <loginhibit />
-    <display x="15" y="-225" />
-    <onsuccess>bfaf28a2-0666-4bbf-a4d9-29eeedbcc60b</onsuccess>
-  </stage>
-  <stage stageid="1ee9fb32-444d-4d52-b8d1-352bd8c6dcee" name="Input" type="Block">
-    <subsheetid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</subsheetid>
-    <display x="-270" y="-45" w="150" h="45" />
-    <font family="Segoe UI" size="10" style="Regular" color="339966" />
-  </stage>
-  <stage stageid="2cbdacd2-e0d8-4e5e-b9b6-e1b2c1c73789" name="Variabler" type="Block">
-    <subsheetid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</subsheetid>
-    <display x="-270" y="75" w="150" h="330" />
-    <font family="Segoe UI" size="10" style="Regular" color="666699" />
-  </stage>
-  <stage stageid="d5c395bc-4117-43de-9f3b-043d80fc0348" name="Konstanter" type="Block">
-    <subsheetid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</subsheetid>
-    <display x="-270" y="15" w="150" h="45" />
-    <font family="Segoe UI" size="10" style="Regular" color="008080" />
-  </stage>
-  <stage stageid="3f930ede-7ad6-4ab3-9c4f-3e97a16da18d" name="Output" type="Block">
-    <subsheetid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</subsheetid>
-    <display x="-270" y="420" w="150" h="45" />
-    <font family="Segoe UI" size="10" style="Regular" color="800080" />
-  </stage>
-  <stage stageid="a84f5780-b598-44e0-aaf4-74430c416af0" name="Lock" type="Data">
-    <subsheetid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</subsheetid>
-    <display x="-195" y="105" w="120" h="30" />
-    <datatype>text</datatype>
-    <initialvalue />
-    <private />
-    <alwaysinit />
-  </stage>
-  <stage stageid="4ff59a1b-bbb7-4b41-b027-c512a622bf0f" name="Expires (text)" type="Data">
-    <subsheetid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</subsheetid>
-    <loginhibit />
-    <display x="-195" y="150" w="120" h="30" />
-    <datatype>password</datatype>
-    <initialvalueenc></initialvalueenc>
-    <private />
-    <alwaysinit />
-  </stage>
-  <stage stageid="c2d7ca31-7e21-4ce5-9a64-5afade9cb407" name="Loginheaders" type="Collection">
-    <subsheetid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</subsheetid>
-    <loginhibit />
-    <display x="-195" y="240" w="120" h="30" />
-    <datatype>collection</datatype>
-    <private />
-    <alwaysinit />
-    <collectioninfo>
-      <singlerow />
-      <field name="Authorization" type="text" />
-    </collectioninfo>
-    <initialvalue>
-      <singlerow />
-      <row>
-        <field name="Authorization" type="text" value="" />
-      </row>
-    </initialvalue>
-  </stage>
-  <stage stageid="546769c9-682d-464b-bf1e-a351c3eb9a1d" name="Authorization" type="Data">
-    <subsheetid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</subsheetid>
-    <display x="-195" y="195" w="120" h="30" />
-    <datatype>text</datatype>
-    <initialvalue />
-    <private />
-    <alwaysinit />
-  </stage>
-  <stage stageid="361bc447-56a5-41f1-a6c4-bb9c722c92d9" name="Resultat" type="Data">
-    <subsheetid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</subsheetid>
-    <display x="-195" y="285" w="120" h="30" />
-    <datatype>text</datatype>
-    <initialvalue />
-    <private />
-    <alwaysinit />
-  </stage>
-  <stage stageid="660988dc-8230-4047-982f-a0f4c77e9b34" name="Data" type="Collection">
-    <subsheetid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</subsheetid>
-    <display x="-195" y="330" w="120" h="30" />
-    <datatype>collection</datatype>
-    <private />
-    <alwaysinit />
-  </stage>
-  <stage stageid="bfaf28a2-0666-4bbf-a4d9-29eeedbcc60b" name="Acquire Lock" type="Action">
-    <subsheetid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</subsheetid>
-    <loginhibit onsuccess="true" />
-    <narrative>Acquires the lock associated with the given name. If this session already holds the required lock, it will be re-acquired with a new token</narrative>
-    <display x="15" y="-165" />
-    <inputs>
-      <input type="text" name="Name" friendlyname="Name" narrative="The name of the required lock. Mandatory parameter." expr="&quot;Nexus token (Core) &quot; &amp; [System]" />
-      <input type="timespan" name="Timeout" friendlyname="Timeout" narrative="The maximum amount of time to await the lock. Default is to wait forever" expr="MakeTimeSpan(0, 0, 5, 0)" />
-      <input type="text" name="Preferred Token" friendlyname="Preferred Token" narrative="The preferred token to use for the lock. Default behaviour is to generate a new unique token." expr="" />
-      <input type="text" name="Comment" friendlyname="Comment" narrative="The comments to set on the lock" expr="&quot;Locked: &quot;&amp;Now()" />
-    </inputs>
-    <outputs>
-      <output type="text" name="Token" friendlyname="Token" narrative="The token registered against the lock. This will be empty if the lock could not be acquired" stage="Lock" />
-    </outputs>
-    <onsuccess>025781ba-c7e1-44ce-b532-de5ec7921b75</onsuccess>
-    <resource object="BluePrism.AutomateAppCore.clsEnvironmentLockingBusinessObject" action="Acquire Lock" />
-  </stage>
-  <stage stageid="71b326ed-e8fa-4007-9a2c-0fb621f3246b" name="Get token" type="Action">
-    <subsheetid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</subsheetid>
-    <loginhibit onsuccess="true" />
-    <narrative>Returns the value of the specified credentials property.
-
-An Exception will occur if access to these credentials is not allowed (based on the running Resource, Process and User) or if the credentials do not contain a property with the specified name.</narrative>
-    <display x="15" y="-75" />
-    <inputs>
-      <input type="text" name="Credentials Name" friendlyname="Credentials Name" narrative="The name of the credentials" expr="[Credentials]" />
-      <input type="text" name="Property Name" friendlyname="Property Name" narrative="The name of the property" expr="&quot;token&quot;" />
-    </inputs>
-    <outputs>
-      <output type="password" name="Property Value" friendlyname="Property Value" narrative="The value of the property" stage="Tokens.Token" />
-    </outputs>
-    <onsuccess>e6d56521-2843-4278-bfc0-1a8ab11a2b43</onsuccess>
-    <resource object="Blueprism.Automate.clsCredentialsActions" action="Get Property" />
-  </stage>
-  <stage stageid="e6d56521-2843-4278-bfc0-1a8ab11a2b43" name="Get expires" type="Action">
-    <subsheetid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</subsheetid>
-    <loginhibit onsuccess="true" />
-    <narrative>Returns the value of the specified credentials property.
-
-An Exception will occur if access to these credentials is not allowed (based on the running Resource, Process and User) or if the credentials do not contain a property with the specified name.</narrative>
-    <display x="15" y="-30" />
-    <inputs>
-      <input type="text" name="Credentials Name" friendlyname="Credentials Name" narrative="The name of the credentials" expr="[Credentials]" />
-      <input type="text" name="Property Name" friendlyname="Property Name" narrative="The name of the property" expr="&quot;expires&quot;" />
-    </inputs>
-    <outputs>
-      <output type="password" name="Property Value" friendlyname="Property Value" narrative="The value of the property" stage="Expires (text)" />
-    </outputs>
-    <onsuccess>a46f2306-4221-407d-9ea3-adf1eff13b48</onsuccess>
-    <resource object="Blueprism.Automate.clsCredentialsActions" action="Get Property" />
-  </stage>
-  <stage stageid="a46f2306-4221-407d-9ea3-adf1eff13b48" name="Er expires teksten tom?" type="Decision">
-    <subsheetid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</subsheetid>
-    <loginhibit onsuccess="true" />
-    <display x="15" y="30" />
-    <decision expression="Trim(&quot;&quot; &amp; [Expires (text)]) = &quot;&quot;" />
-    <ontrue>b3252382-8186-42e9-86ec-1d2a0981dfc0</ontrue>
-    <onfalse>5187ffa8-7cc7-4c1d-aede-b57a38036da4</onfalse>
-  </stage>
-  <stage stageid="5187ffa8-7cc7-4c1d-aede-b57a38036da4" name="Opdater expires" type="Calculation">
-    <subsheetid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</subsheetid>
-    <loginhibit onsuccess="true" />
-    <display x="105" y="30" />
-    <onsuccess>14c38b36-0e30-4fc6-81bb-5c927ecb5af9</onsuccess>
-    <calculation expression="ToDateTime(&quot;&quot; &amp; [Expires (text)])" stage="Tokens.Token expires" />
-  </stage>
-  <stage stageid="d7f50172-1685-41d1-9312-a889fa19de8a" name="End11" type="End">
-    <subsheetid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</subsheetid>
-    <loginhibit onsuccess="true" />
-    <display x="240" y="120" />
-  </stage>
-  <stage stageid="ad607894-9470-469f-a793-63e3e6612403" name="Release Lock" type="Action">
-    <subsheetid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</subsheetid>
-    <loginhibit onsuccess="true" />
-    <narrative>Releases the lock(s) associated with the given name and token</narrative>
-    <display x="90" y="120" />
-    <inputs>
-      <input type="text" name="Name" friendlyname="Name" narrative="The name of the specific lock to be released. Default behaviour is to release all locks with the given token." expr="&quot;Nexus token (Core) &quot; &amp; [System]" />
-      <input type="text" name="Comment" friendlyname="Comment" narrative="The comments to set on the lock(s)" expr="&quot;Unlocked: &quot;&amp;Now()" />
-      <input type="text" name="Token" friendlyname="Token" narrative="The token associated with the lock(s) to be released. Mandatory parameter." expr="[Lock]" />
-      <input type="flag" name="All Sessions" friendlyname="All Sessions" narrative="True to release locks matching the specified constraints across all sessions; False to only release locks acquired in the current session. Default is False" expr="" />
-      <input type="flag" name="Keep Environment Lock" friendlyname="Keep Environment Lock" narrative="The environment lock will be kept after that lock is released. Default behaviour is to delete the lock." expr="" />
-    </inputs>
-    <onsuccess>2e59300e-3c82-4a27-a89c-d7b32803527d</onsuccess>
-    <resource object="BluePrism.AutomateAppCore.clsEnvironmentLockingBusinessObject" action="Release Lock" />
-  </stage>
-  <stage stageid="b3252382-8186-42e9-86ec-1d2a0981dfc0" name="Anchor15" type="Anchor">
-    <subsheetid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</subsheetid>
-    <loginhibit onsuccess="true" />
-    <display x="15" y="75" w="10" h="10" />
-    <onsuccess>402eabee-76c6-4647-aa2a-c18b76ad44a3</onsuccess>
-  </stage>
-  <stage stageid="14c38b36-0e30-4fc6-81bb-5c927ecb5af9" name="Anchor16" type="Anchor">
-    <subsheetid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</subsheetid>
-    <loginhibit onsuccess="true" />
-    <display x="105" y="75" w="10" h="10" />
-    <onsuccess>b3252382-8186-42e9-86ec-1d2a0981dfc0</onsuccess>
-  </stage>
-  <stage stageid="402eabee-76c6-4647-aa2a-c18b76ad44a3" name="Er vi udløbet?" type="Decision">
-    <subsheetid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</subsheetid>
-    <loginhibit onsuccess="true" />
-    <display x="15" y="120" />
-    <decision expression="[Tokens.Token expires] &lt; Now() OR [Tokens.Token] = &quot;&quot;" />
-    <ontrue>9ea7d2cd-da0b-4c07-a2dd-575b3e6a1e09</ontrue>
-    <onfalse>ad607894-9470-469f-a793-63e3e6612403</onfalse>
-  </stage>
-  <stage stageid="2e59300e-3c82-4a27-a89c-d7b32803527d" name="Opdater header" type="Calculation">
-    <subsheetid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</subsheetid>
-    <loginhibit onsuccess="true" />
-    <display x="165" y="120" />
-    <onsuccess>d7f50172-1685-41d1-9312-a889fa19de8a</onsuccess>
-    <calculation expression="&quot;Bearer &quot; &amp; [Tokens.Token]" stage="Headers.Authorization" />
-  </stage>
-  <stage stageid="025781ba-c7e1-44ce-b532-de5ec7921b75" name="Fik vi låsen?" type="Decision">
-    <subsheetid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</subsheetid>
-    <loginhibit onsuccess="true" />
-    <display x="15" y="-120" />
-    <decision expression="[Lock] &lt;&gt; &quot;&quot;" />
-    <ontrue>71b326ed-e8fa-4007-9a2c-0fb621f3246b</ontrue>
-    <onfalse>d2d231e5-5656-48d8-aea9-7c223f9d6a90</onfalse>
-  </stage>
-  <stage stageid="d2d231e5-5656-48d8-aea9-7c223f9d6a90" name="Timeout" type="Exception">
-    <subsheetid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</subsheetid>
-    <loginhibit onsuccess="true" />
-    <display x="150" y="-120" />
-    <exception localized="yes" type="Timeout" detail="&quot;Det lykkedes os ikke at få låsen indenfor 5 minuter&quot;" />
-  </stage>
-  <stage stageid="ca4726b7-d2a6-4f2a-abd0-5053d734953a" name="Opdater den lokale token" type="Block">
-    <subsheetid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</subsheetid>
-    <loginhibit onsuccess="true" />
-    <display x="-90" y="-195" w="435" h="345" />
-    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
-  </stage>
-  <stage stageid="7169acac-d07e-489e-a1e5-046ba51b4744" name="Hent ny token" type="Block">
-    <subsheetid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</subsheetid>
-    <loginhibit />
-    <display x="-90" y="360" w="435" h="330" />
-    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
-  </stage>
-  <stage stageid="d5b87562-a31d-4d8b-a2b7-1cce58a2711d" name="Gem token" type="Action">
-    <subsheetid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</subsheetid>
-    <narrative>Sets the value of the specified credentials property.
-
-An Exception will occur if access to these credentials is not allowed (based on the running Resource, Process and User).If the credential does not contain the specified property, the property will be added and the value set as specified.</narrative>
-    <display x="15" y="840" />
-    <inputs>
-      <input type="text" name="Credentials Name" friendlyname="Credentials Name" narrative="The name of the credentials" expr="[Credentials]" />
-      <input type="text" name="Property Name" friendlyname="Property Name" narrative="The name of the property" expr="&quot;token&quot;" />
-      <input type="password" name="Property Value" friendlyname="Property Value" narrative="The value of the property" expr="[Tokens.Token]" />
-    </inputs>
-    <onsuccess>ce34161f-5fd0-415d-b99f-2c4015b1f9ff</onsuccess>
-    <resource object="Blueprism.Automate.clsCredentialsActions" action="Set Property" />
-  </stage>
-  <stage stageid="ce34161f-5fd0-415d-b99f-2c4015b1f9ff" name="Gem expires" type="Action">
-    <subsheetid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</subsheetid>
-    <narrative>Sets the value of the specified credentials property.
-
-An Exception will occur if access to these credentials is not allowed (based on the running Resource, Process and User).If the credential does not contain the specified property, the property will be added and the value set as specified.</narrative>
-    <display x="15" y="885" />
-    <inputs>
-      <input type="text" name="Credentials Name" friendlyname="Credentials Name" narrative="The name of the credentials" expr="[Credentials]" />
-      <input type="text" name="Property Name" friendlyname="Property Name" narrative="The name of the property" expr="&quot;expires&quot;" />
-      <input type="password" name="Property Value" friendlyname="Property Value" narrative="The value of the property" expr="&quot;&quot; &amp; [Tokens.Token expires]" />
-    </inputs>
-    <onsuccess>0559a3a0-e9d2-40f6-b720-ec778a348849</onsuccess>
-    <resource object="Blueprism.Automate.clsCredentialsActions" action="Set Property" />
-  </stage>
-  <stage stageid="83023ffc-e30a-44a9-977c-95f8120dcec0" name="Release Lock" type="Action">
-    <subsheetid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</subsheetid>
-    <loginhibit onsuccess="true" />
-    <narrative>Releases the lock(s) associated with the given name and token</narrative>
-    <display x="15" y="1035" />
-    <inputs>
-      <input type="text" name="Name" friendlyname="Name" narrative="The name of the specific lock to be released. Default behaviour is to release all locks with the given token." expr="&quot;Nexus token (Core) &quot; &amp; [System]" />
-      <input type="text" name="Comment" friendlyname="Comment" narrative="The comments to set on the lock(s)" expr="&quot;Unlocked: &quot;&amp;Now()" />
-      <input type="text" name="Token" friendlyname="Token" narrative="The token associated with the lock(s) to be released. Mandatory parameter." expr="[Lock]" />
-      <input type="flag" name="All Sessions" friendlyname="All Sessions" narrative="True to release locks matching the specified constraints across all sessions; False to only release locks acquired in the current session. Default is False" expr="" />
-      <input type="flag" name="Keep Environment Lock" friendlyname="Keep Environment Lock" narrative="The environment lock will be kept after that lock is released. Default behaviour is to delete the lock." expr="" />
-    </inputs>
-    <onsuccess>bba39d6e-be61-4dc9-a272-42b2a65b0be5</onsuccess>
-    <resource object="BluePrism.AutomateAppCore.clsEnvironmentLockingBusinessObject" action="Release Lock" />
-  </stage>
-  <stage stageid="13204beb-fd75-468c-817e-b42bd9e26084" name="End12" type="End">
-    <subsheetid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</subsheetid>
-    <loginhibit />
-    <display x="15" y="1125" />
-  </stage>
-  <stage stageid="bba39d6e-be61-4dc9-a272-42b2a65b0be5" name="Opdater header" type="Calculation">
-    <subsheetid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</subsheetid>
-    <loginhibit onsuccess="true" />
-    <display x="15" y="1080" />
-    <onsuccess>13204beb-fd75-468c-817e-b42bd9e26084</onsuccess>
-    <calculation expression="&quot;Bearer &quot; &amp; [Tokens.Token]" stage="Headers.Authorization" />
-  </stage>
-  <stage stageid="4054107c-5ddf-49bc-a550-627ffb8b71e5" name="Kald login" type="Action">
-    <subsheetid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</subsheetid>
-    <display x="135" y="525" />
-    <inputs>
-      <input type="text" name="Address URL" friendlyname="Address URL" narrative="The URL to send the HTTP data to" expr="[Base-url] &amp; &quot;/auth_v2/realms/&quot; &amp; [System] &amp; &quot;/protocol/openid-connect/token&quot;" />
-      <input type="flag" name="Use Proxy" friendlyname="Use Proxy" narrative="Set true if you need to use a proxy" expr="" />
-      <input type="text" name="Proxy URL" friendlyname="Proxy URL" narrative="OPTIONAL: The proxy url" expr="" />
-      <input type="text" name="Proxy Username" friendlyname="Proxy Username" narrative="OPTIONAL: The proxy username" expr="" />
-      <input type="password" name="Proxy Password" friendlyname="Proxy Password" narrative="OPTIONAL: The proxy password" expr="" />
-      <input type="collection" name="Headers" friendlyname="Headers" narrative="OPTIONAL: Headers" expr="[Loginheaders]" />
-      <input type="text" name="Accept" friendlyname="Accept" narrative="OPTIONAL: Accept" expr="&quot;application/json&quot;" />
-      <input type="text" name="Body" friendlyname="Body" narrative="The body text of the HTTP request" expr="&quot;grant_type=client_credentials&amp;scope=openid&quot;" />
-      <input type="text" name="Content Type" friendlyname="Content Type" narrative="The content type of the HTTP request." expr="&quot;application/x-www-form-urlencoded&quot;" />
-      <input type="text" name="Method" friendlyname="Method" narrative="The method of the HTTP request." expr="&quot;POST&quot;" />
-      <input type="text" name="Username" friendlyname="Username" narrative="OPTIONAL: Basic Authentication username" expr="" />
-      <input type="password" name="Password" friendlyname="Password" narrative="OPTIONAL: Basic Authenction password" expr="" />
-      <input type="text" name="Certificate ID" friendlyname="Certificate ID" narrative="OPTIONAL: The id of the client authentication certificate" expr="" />
-      <input type="flag" name="Force Pre Authorization" friendlyname="Force Pre Authorization" narrative="OPTIONAL: Force the request to send the 'Authorization' header for HTTP Basic." expr="" />
-      <input type="flag" name="File URL" friendlyname="File URL" narrative="OPTIONAL: Is the JSON Body a file instead?" expr="" />
-      <input type="flag" name="Use Bearer Token" friendlyname="Use Bearer Token" expr="" />
-      <input type="text" name="Bearer Token" friendlyname="Bearer Token" narrative="OPTIONAL: If you 'Use Bearer Token' is set to True, this must be set to the value of the actual Bearer Token." expr="" />
-      <input type="flag" name="Allow Auto Redirects" friendlyname="Allow Auto Redirects" narrative="OPTIONAL: If you prefer to manually handle redirects (ie. HTTP 302) set this flag to False. Default value is True." expr="" />
-      <input type="number" name="Maximum Redirects" friendlyname="Maximum Redirects" narrative="OPTIONAL: If 'Allow Auto Redirect' is True, this controls the maximum number of redirects to allow. Default value is 50." expr="" />
-      <input type="number" name="Request Timeout" friendlyname="Request Timeout" narrative="OPTIONAL: This  property controls the length of time, in milliseconds, until the request times out and throws a WebException. Default value is 100000 milliseconds (i.e. 100 seconds)." expr="" />
-    </inputs>
-    <outputs>
-      <output type="text" name="Result" friendlyname="Result" narrative="The result from the Post query." stage="Resultat" />
-      <output type="text" name="Headers as Json" friendlyname="Headers as Json" narrative="The returned headers response as Json" stage="" />
-      <output type="number" name="Status Code" friendlyname="Status Code" narrative="The HTTP status code associated with the request." stage="Status Code" />
-    </outputs>
-    <onsuccess>e80d2736-6ffe-48fa-bb13-f1a04f7ee0ab</onsuccess>
-    <resource object="Utility - HTTP" action="HTTP Request" />
-  </stage>
-  <stage stageid="cb56f59c-411a-4d63-bb03-74ab252b1bf6" name="Konverter til collection" type="Action">
-    <subsheetid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</subsheetid>
-    <loginhibit onsuccess="true" />
-    <display x="15" y="750" />
-    <inputs>
-      <input type="text" name="json" friendlyname="json" expr="[Resultat]" />
-    </inputs>
-    <outputs>
-      <output type="collection" name="Result" friendlyname="Result" stage="Data" />
-    </outputs>
-    <onsuccess>c413c117-bce2-404b-a765-180d10b5f71e</onsuccess>
-    <resource object="Utility - JSON" action="JSON to Collection (skipping JArray)" />
-  </stage>
-  <stage stageid="ffeec38f-3065-4fe4-a5aa-12c5e25bc67b" name="Ingen token" type="Exception">
-    <subsheetid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</subsheetid>
-    <loginhibit onsuccess="true" />
-    <display x="270" y="660" />
-    <exception localized="yes" type="System" detail="[Data.error_description]" />
-  </stage>
-  <stage stageid="e3292241-7378-4fe9-a952-acab9cb6fd69" name="Release Lock" type="Action">
-    <subsheetid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</subsheetid>
-    <loginhibit onsuccess="true" />
-    <narrative>Releases the lock(s) associated with the given name and token</narrative>
-    <display x="90" y="660" />
-    <inputs>
-      <input type="text" name="Name" friendlyname="Name" narrative="The name of the specific lock to be released. Default behaviour is to release all locks with the given token." expr="&quot;Nexus token (Core) &quot; &amp; [System]" />
-      <input type="text" name="Comment" friendlyname="Comment" narrative="The comments to set on the lock(s)" expr="&quot;Unlocked: &quot;&amp;Now()" />
-      <input type="text" name="Token" friendlyname="Token" narrative="The token associated with the lock(s) to be released. Mandatory parameter." expr="[Lock]" />
-      <input type="flag" name="All Sessions" friendlyname="All Sessions" narrative="True to release locks matching the specified constraints across all sessions; False to only release locks acquired in the current session. Default is False" expr="" />
-      <input type="flag" name="Keep Environment Lock" friendlyname="Keep Environment Lock" narrative="The environment lock will be kept after that lock is released. Default behaviour is to delete the lock." expr="" />
-    </inputs>
-    <onsuccess>bbf36d34-a6f5-4de7-b52c-ef9158e6c24c</onsuccess>
-    <resource object="BluePrism.AutomateAppCore.clsEnvironmentLockingBusinessObject" action="Release Lock" />
-  </stage>
-  <stage stageid="d0f613f8-12fa-43de-96de-59c94c8af419" name="Recover3" type="Recover">
-    <subsheetid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</subsheetid>
-    <loginhibit />
-    <display x="435" y="105" />
-    <onsuccess>7d711c1d-ae11-4e1b-b7fc-4b80809740a5</onsuccess>
-  </stage>
-  <stage stageid="7d711c1d-ae11-4e1b-b7fc-4b80809740a5" name="har vi en lås?" type="Decision">
-    <subsheetid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</subsheetid>
-    <loginhibit />
-    <display x="435" y="150" />
-    <decision expression="[Lock] &lt;&gt; &quot;&quot;" />
-    <ontrue>afcd16ce-0f44-439a-9c6f-879db325ee86</ontrue>
-    <onfalse>14d0b57e-60b9-4f2d-ac4e-c42808914c28</onfalse>
-  </stage>
-  <stage stageid="14d0b57e-60b9-4f2d-ac4e-c42808914c28" name="Rethrow" type="Exception">
-    <subsheetid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</subsheetid>
-    <display x="435" y="210" />
-    <exception localized="yes" type="" detail="" usecurrent="yes" />
-  </stage>
-  <stage stageid="ad368db9-8c94-4fb7-893f-0d7e411e9b4e" name="Anchor54" type="Anchor">
-    <subsheetid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</subsheetid>
-    <loginhibit />
-    <display x="525" y="210" w="10" h="10" />
-    <onsuccess>14d0b57e-60b9-4f2d-ac4e-c42808914c28</onsuccess>
-  </stage>
-  <stage stageid="afcd16ce-0f44-439a-9c6f-879db325ee86" name="Release Lock" type="Action">
-    <subsheetid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</subsheetid>
-    <loginhibit onsuccess="true" />
-    <narrative>Releases the lock(s) associated with the given name and token</narrative>
-    <display x="525" y="150" />
-    <inputs>
-      <input type="text" name="Name" friendlyname="Name" narrative="The name of the specific lock to be released. Default behaviour is to release all locks with the given token." expr="&quot;Nexus token (Core) &quot; &amp; [System]" />
-      <input type="text" name="Comment" friendlyname="Comment" narrative="The comments to set on the lock(s)" expr="&quot;Unlocked: &quot;&amp;Now()" />
-      <input type="text" name="Token" friendlyname="Token" narrative="The token associated with the lock(s) to be released. Mandatory parameter." expr="[Lock]" />
-      <input type="flag" name="All Sessions" friendlyname="All Sessions" narrative="True to release locks matching the specified constraints across all sessions; False to only release locks acquired in the current session. Default is False" expr="" />
-      <input type="flag" name="Keep Environment Lock" friendlyname="Keep Environment Lock" narrative="The environment lock will be kept after that lock is released. Default behaviour is to delete the lock." expr="" />
-    </inputs>
-    <onsuccess>ad368db9-8c94-4fb7-893f-0d7e411e9b4e</onsuccess>
-    <resource object="BluePrism.AutomateAppCore.clsEnvironmentLockingBusinessObject" action="Release Lock" />
-  </stage>
-  <stage stageid="bbf36d34-a6f5-4de7-b52c-ef9158e6c24c" name="Reset" type="Calculation">
-    <subsheetid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</subsheetid>
-    <loginhibit onsuccess="true" />
-    <display x="180" y="660" />
-    <onsuccess>ffeec38f-3065-4fe4-a5aa-12c5e25bc67b</onsuccess>
-    <calculation expression="&quot;&quot;" stage="Lock" />
-  </stage>
-  <stage stageid="e11d6d23-6910-4800-afd1-28338d808bef" name="Sov 8 sekunder" type="Action">
-    <subsheetid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</subsheetid>
-    <loginhibit onsuccess="true" />
-    <narrative>Det her er for at andre sessions har en chance for at tæske ind i låsen så de får nyeste token med det samme. Det giver dem også en chance for at få lavet deres kald inden login rammer. Principielt burde alle kald være i lock, men så gik det af røv til.</narrative>
-    <display x="135" y="480" />
-    <inputs>
-      <input type="number" name="Sleep Time (Seconds)" friendlyname="Sleep Time (Seconds)" narrative="The time (in seconds) for which to sleep" expr="8" />
-    </inputs>
-    <onsuccess>4054107c-5ddf-49bc-a550-627ffb8b71e5</onsuccess>
-    <resource object="Utility - General" action="Sleep" />
-  </stage>
-  <stage stageid="bf7b7c2e-cfc4-4c8d-9059-4e90d0add8be" name="Note4" type="Note">
-    <subsheetid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</subsheetid>
-    <loginhibit onsuccess="true" />
-    <narrative>Det her er for at andre sessions har en chance for at tæske ind i låsen, så de får nyeste token med det samme. Det giver dem også en chance for at få lavet deres kald inden login rammer. Principielt burde alle kald være i lock, men så gik det røv sløvt.</narrative>
-    <display x="465" y="480" w="180" h="90" />
-    <onsuccess>e11d6d23-6910-4800-afd1-28338d808bef</onsuccess>
-  </stage>
   <stage stageid="90a8c4d4-3e5b-486d-b228-4f6c8af7faed" name="Token" type="Block">
     <subsheetid>94af1602-beba-4a05-9139-24404c44204c</subsheetid>
     <loginhibit />
@@ -1144,7 +716,7 @@ An Exception will occur if access to these credentials is not allowed (based on 
     <loginhibit />
     <display x="15" y="270" />
     <onsuccess>b0221b60-f1ae-4de3-95f7-db2abdc87963</onsuccess>
-    <processid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</processid>
+    <processid>b1ec8206-1000-431f-8da4-49ed41a0ee70</processid>
   </stage>
   <stage stageid="2807c3c6-a5c1-4a55-8297-c3c6187ce704" name="Opret bruger" type="SubSheetInfo">
     <subsheetid>0086b4ce-1ee1-4f4d-b1cf-8c1f5d7861f7</subsheetid>
@@ -1263,13 +835,13 @@ An Exception will occur if access to these credentials is not allowed (based on 
     <loginhibit />
     <display x="15" y="-60" />
     <onsuccess>10a67393-065f-4624-ab18-3178039ce6b9</onsuccess>
-    <processid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</processid>
+    <processid>b1ec8206-1000-431f-8da4-49ed41a0ee70</processid>
   </stage>
   <stage stageid="4e7060d2-40c5-477e-a3e1-216b2dfa11d6" name="Er det 404 eller anden fejl?" type="Decision">
     <subsheetid>0086b4ce-1ee1-4f4d-b1cf-8c1f5d7861f7</subsheetid>
     <loginhibit />
     <display x="15" y="150" />
-    <decision expression="[Status] &gt;= 400 AND [Status] &lt;= 600" />
+    <decision expression="[Status] &gt;= 400 AND [Status] &lt;= 600 OR [Status] = 0" />
     <ontrue>9cd42d18-a7ca-4580-b87d-38050d23c875</ontrue>
     <onfalse>50218d9d-695c-4bc4-affa-92c4ff2792c3</onfalse>
   </stage>
@@ -1353,112 +925,6 @@ An Exception will occur if access to these credentials is not allowed (based on 
     <onsuccess>d2c3a042-aa9c-4b6f-8642-d21016c1d18b</onsuccess>
     <calculation expression="[Api._links]" stage="Api" />
   </stage>
-  <stage stageid="9ea7d2cd-da0b-4c07-a2dd-575b3e6a1e09" name="Hent refresh token" type="Action">
-    <subsheetid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</subsheetid>
-    <loginhibit onsuccess="true" />
-    <narrative>Returns the value of the specified credentials property.
-
-An Exception will occur if access to these credentials is not allowed (based on the running Resource, Process and User) or if the credentials do not contain a property with the specified name.</narrative>
-    <display x="15" y="195" />
-    <inputs>
-      <input type="text" name="Credentials Name" friendlyname="Credentials Name" narrative="The name of the credentials" expr="[Credentials]" />
-      <input type="text" name="Property Name" friendlyname="Property Name" narrative="The name of the property" expr="&quot;refresh_token&quot;" />
-    </inputs>
-    <outputs>
-      <output type="password" name="Property Value" friendlyname="Property Value" narrative="The value of the property" stage="Tokens.Refresh-token" />
-    </outputs>
-    <onsuccess>25ceda20-d5ab-4982-b87f-69a4924cd448</onsuccess>
-    <resource object="Blueprism.Automate.clsCredentialsActions" action="Get Property" />
-  </stage>
-  <stage stageid="25ceda20-d5ab-4982-b87f-69a4924cd448" name="Get expires" type="Action">
-    <subsheetid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</subsheetid>
-    <loginhibit onsuccess="true" />
-    <narrative>Returns the value of the specified credentials property.
-
-An Exception will occur if access to these credentials is not allowed (based on the running Resource, Process and User) or if the credentials do not contain a property with the specified name.</narrative>
-    <display x="15" y="240" />
-    <inputs>
-      <input type="text" name="Credentials Name" friendlyname="Credentials Name" narrative="The name of the credentials" expr="[Credentials]" />
-      <input type="text" name="Property Name" friendlyname="Property Name" narrative="The name of the property" expr="&quot;refresh_expires&quot;" />
-    </inputs>
-    <outputs>
-      <output type="password" name="Property Value" friendlyname="Property Value" narrative="The value of the property" stage="Expires (text)" />
-    </outputs>
-    <onsuccess>6eac1d52-0973-4269-85ef-88fa39dc0629</onsuccess>
-    <resource object="Blueprism.Automate.clsCredentialsActions" action="Get Property" />
-  </stage>
-  <stage stageid="6eac1d52-0973-4269-85ef-88fa39dc0629" name="Er expires teksten tom?" type="Decision">
-    <subsheetid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</subsheetid>
-    <loginhibit onsuccess="true" />
-    <display x="15" y="285" />
-    <decision expression="Trim([Expires (text)]) = &quot;&quot;" />
-    <ontrue>86e5b30a-8b94-4ead-8068-1c5ee2a9ef24</ontrue>
-    <onfalse>3e63a678-7d4c-456b-b12c-33bf45e30823</onfalse>
-  </stage>
-  <stage stageid="3e63a678-7d4c-456b-b12c-33bf45e30823" name="Opdater refresh expires" type="Calculation">
-    <subsheetid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</subsheetid>
-    <loginhibit onsuccess="true" />
-    <display x="105" y="285" />
-    <onsuccess>6e15fcb0-ee74-4026-9225-2eff7f8dec2a</onsuccess>
-    <calculation expression="ToDateTime(&quot;&quot; &amp; [Expires (text)])" stage="Tokens.Refresh-token expires" />
-  </stage>
-  <stage stageid="86e5b30a-8b94-4ead-8068-1c5ee2a9ef24" name="Anchor15" type="Anchor">
-    <subsheetid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</subsheetid>
-    <loginhibit onsuccess="true" />
-    <display x="15" y="330" w="10" h="10" />
-    <onsuccess>86077e8f-9ff9-4dbd-8e9c-9b48c010d756</onsuccess>
-  </stage>
-  <stage stageid="6e15fcb0-ee74-4026-9225-2eff7f8dec2a" name="Anchor16" type="Anchor">
-    <subsheetid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</subsheetid>
-    <loginhibit onsuccess="true" />
-    <display x="105" y="330" w="10" h="10" />
-    <onsuccess>86e5b30a-8b94-4ead-8068-1c5ee2a9ef24</onsuccess>
-  </stage>
-  <stage stageid="cd1b94d0-86fc-4861-a8b9-e8938c7c07e9" name="Opdater refresh token" type="Block">
-    <subsheetid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</subsheetid>
-    <loginhibit />
-    <display x="-90" y="165" w="435" h="180" />
-    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
-  </stage>
-  <stage stageid="69ef3c4f-a8fc-4665-9393-8ccabf880ce6" name="Kan vi nøjes med refresh?" type="Decision">
-    <subsheetid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</subsheetid>
-    <loginhibit />
-    <display x="15" y="480" />
-    <breakpoint type="0">
-      <condition></condition>
-    </breakpoint>
-    <decision expression="[Tokens.Refresh-token] &lt;&gt; &quot;&quot; AND [Tokens.Refresh-token expires] &gt; Now()" />
-    <ontrue>8eb6732a-29e7-4d2b-a0c0-860001468be5</ontrue>
-    <onfalse>d6fbf785-2558-4fc1-a63c-b3541f4a57ff</onfalse>
-  </stage>
-  <stage stageid="4cc43d08-6cfb-451d-9846-51e714a40912" name="Status Code" type="Data">
-    <subsheetid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</subsheetid>
-    <display x="-195" y="375" w="120" h="30" />
-    <datatype>number</datatype>
-    <initialvalue />
-    <private />
-    <alwaysinit />
-  </stage>
-  <stage stageid="8e67eabb-fc46-4c51-987f-2d09431826ca" name="Gik kaldet godt?" type="Decision">
-    <subsheetid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</subsheetid>
-    <loginhibit />
-    <display x="15" y="660" />
-    <decision expression="[Status Code] = 200" />
-    <ontrue>cb56f59c-411a-4d63-bb03-74ab252b1bf6</ontrue>
-    <onfalse>e3292241-7378-4fe9-a952-acab9cb6fd69</onfalse>
-  </stage>
-  <stage stageid="c413c117-bce2-404b-a765-180d10b5f71e" name="Sæt alle token felter" type="MultipleCalculation">
-    <subsheetid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</subsheetid>
-    <loginhibit />
-    <display x="15" y="795" />
-    <onsuccess>d5b87562-a31d-4d8b-a2b7-1cce58a2711d</onsuccess>
-    <steps>
-      <calculation expression="[Data.refresh_token]" stage="Tokens.Refresh-token" />
-      <calculation expression="Now() + MakeTimeSpan(0, 0, 0, ToNumber([Data.refresh_expires_in]) - 20)" stage="Tokens.Refresh-token expires" />
-      <calculation expression="[Data.access_token]" stage="Tokens.Token" />
-      <calculation expression="Now() + MakeTimeSpan(0, 0, 0, ToNumber([Data.expires_in]) - 20)" stage="Tokens.Token expires" />
-    </steps>
-  </stage>
   <stage stageid="bdb355e0-ecc1-405a-82df-d2a5dc5bf6f4" name="Tokens" type="Collection">
     <loginhibit />
     <display x="-195" y="150" w="120" h="30" />
@@ -1481,34 +947,6 @@ An Exception will occur if access to these credentials is not allowed (based on 
       </row>
     </initialvalue>
   </stage>
-  <stage stageid="0559a3a0-e9d2-40f6-b720-ec778a348849" name="Gem refresh token" type="Action">
-    <subsheetid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</subsheetid>
-    <narrative>Sets the value of the specified credentials property.
-
-An Exception will occur if access to these credentials is not allowed (based on the running Resource, Process and User).If the credential does not contain the specified property, the property will be added and the value set as specified.</narrative>
-    <display x="15" y="930" />
-    <inputs>
-      <input type="text" name="Credentials Name" friendlyname="Credentials Name" narrative="The name of the credentials" expr="[Credentials]" />
-      <input type="text" name="Property Name" friendlyname="Property Name" narrative="The name of the property" expr="&quot;refresh_token&quot;" />
-      <input type="password" name="Property Value" friendlyname="Property Value" narrative="The value of the property" expr="[Tokens.Refresh-token]" />
-    </inputs>
-    <onsuccess>8cb4af0a-ea83-4f2f-a084-cd4150cf04e2</onsuccess>
-    <resource object="Blueprism.Automate.clsCredentialsActions" action="Set Property" />
-  </stage>
-  <stage stageid="8cb4af0a-ea83-4f2f-a084-cd4150cf04e2" name="Gem refresh expires" type="Action">
-    <subsheetid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</subsheetid>
-    <narrative>Sets the value of the specified credentials property.
-
-An Exception will occur if access to these credentials is not allowed (based on the running Resource, Process and User).If the credential does not contain the specified property, the property will be added and the value set as specified.</narrative>
-    <display x="15" y="975" />
-    <inputs>
-      <input type="text" name="Credentials Name" friendlyname="Credentials Name" narrative="The name of the credentials" expr="[Credentials]" />
-      <input type="text" name="Property Name" friendlyname="Property Name" narrative="The name of the property" expr="&quot;refresh_expires&quot;" />
-      <input type="password" name="Property Value" friendlyname="Property Value" narrative="The value of the property" expr="&quot;&quot; &amp; [Tokens.Refresh-token expires]" />
-    </inputs>
-    <onsuccess>83023ffc-e30a-44a9-977c-95f8120dcec0</onsuccess>
-    <resource object="Blueprism.Automate.clsCredentialsActions" action="Set Property" />
-  </stage>
   <stage stageid="c6d2cb62-0a04-4d4c-aaf5-3d9e21c274e9" name="Status" type="Data">
     <subsheetid>0086b4ce-1ee1-4f4d-b1cf-8c1f5d7861f7</subsheetid>
     <display x="-195" y="345" w="120" h="30" />
@@ -1516,77 +954,6 @@ An Exception will occur if access to these credentials is not allowed (based on 
     <initialvalue />
     <private />
     <alwaysinit />
-  </stage>
-  <stage stageid="86077e8f-9ff9-4dbd-8e9c-9b48c010d756" name="Dan header" type="Action">
-    <subsheetid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</subsheetid>
-    <loginhibit onsuccess="true" />
-    <display x="15" y="390" />
-    <inputs>
-      <input type="text" name="Data" friendlyname="Data" narrative="Tekststreng som skal encodes" expr="[Client id] &amp; &quot;:&quot; &amp; [Client secret]" />
-    </inputs>
-    <outputs>
-      <output type="text" name="Base64" friendlyname="Base64" narrative="De binære data encoded som en base64 streng" stage="Authorization" />
-    </outputs>
-    <onsuccess>18a43ee9-1518-46a6-8253-c204c8d5d1a4</onsuccess>
-    <resource object="Utility - Odk" action="String: Base64 Encode" />
-  </stage>
-  <stage stageid="18a43ee9-1518-46a6-8253-c204c8d5d1a4" name="Sæt login header" type="Calculation">
-    <subsheetid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</subsheetid>
-    <loginhibit onsuccess="true" />
-    <display x="15" y="435" />
-    <onsuccess>69ef3c4f-a8fc-4665-9393-8ccabf880ce6</onsuccess>
-    <calculation expression="&quot;Basic &quot; &amp; [Authorization] " stage="Loginheaders.Authorization" />
-  </stage>
-  <stage stageid="8eb6732a-29e7-4d2b-a0c0-860001468be5" name="Kald refresh" type="Action">
-    <subsheetid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</subsheetid>
-    <display x="15" y="525" />
-    <inputs>
-      <input type="text" name="Address URL" friendlyname="Address URL" narrative="The URL to send the HTTP data to" expr="[Base-url] &amp; &quot;/auth_v2/realms/&quot; &amp; [System] &amp; &quot;/protocol/openid-connect/token&quot;" />
-      <input type="flag" name="Use Proxy" friendlyname="Use Proxy" narrative="Set true if you need to use a proxy" expr="" />
-      <input type="text" name="Proxy URL" friendlyname="Proxy URL" narrative="OPTIONAL: The proxy url" expr="" />
-      <input type="text" name="Proxy Username" friendlyname="Proxy Username" narrative="OPTIONAL: The proxy username" expr="" />
-      <input type="password" name="Proxy Password" friendlyname="Proxy Password" narrative="OPTIONAL: The proxy password" expr="" />
-      <input type="collection" name="Headers" friendlyname="Headers" narrative="OPTIONAL: Headers" expr="[Loginheaders]" />
-      <input type="text" name="Accept" friendlyname="Accept" narrative="OPTIONAL: Accept" expr="&quot;application/json&quot;" />
-      <input type="text" name="Body" friendlyname="Body" narrative="The body text of the HTTP request" expr="&quot;grant_type=refresh_token&amp;scope=openid&amp;refresh_token=&quot; &amp; [Tokens.Refresh-token]" />
-      <input type="text" name="Content Type" friendlyname="Content Type" narrative="The content type of the HTTP request." expr="&quot;application/x-www-form-urlencoded&quot;" />
-      <input type="text" name="Method" friendlyname="Method" narrative="The method of the HTTP request." expr="&quot;POST&quot;" />
-      <input type="text" name="Username" friendlyname="Username" narrative="OPTIONAL: Basic Authentication username" expr="" />
-      <input type="password" name="Password" friendlyname="Password" narrative="OPTIONAL: Basic Authenction password" expr="" />
-      <input type="text" name="Certificate ID" friendlyname="Certificate ID" narrative="OPTIONAL: The id of the client authentication certificate" expr="" />
-      <input type="flag" name="Force Pre Authorization" friendlyname="Force Pre Authorization" narrative="OPTIONAL: Force the request to send the 'Authorization' header for HTTP Basic." expr="" />
-      <input type="flag" name="File URL" friendlyname="File URL" narrative="OPTIONAL: Is the JSON Body a file instead?" expr="" />
-      <input type="flag" name="Use Bearer Token" friendlyname="Use Bearer Token" expr="" />
-      <input type="text" name="Bearer Token" friendlyname="Bearer Token" narrative="OPTIONAL: If you 'Use Bearer Token' is set to True, this must be set to the value of the actual Bearer Token." expr="" />
-      <input type="flag" name="Allow Auto Redirects" friendlyname="Allow Auto Redirects" narrative="OPTIONAL: If you prefer to manually handle redirects (ie. HTTP 302) set this flag to False. Default value is True." expr="" />
-      <input type="number" name="Maximum Redirects" friendlyname="Maximum Redirects" narrative="OPTIONAL: If 'Allow Auto Redirect' is True, this controls the maximum number of redirects to allow. Default value is 50." expr="" />
-      <input type="number" name="Request Timeout" friendlyname="Request Timeout" narrative="OPTIONAL: This  property controls the length of time, in milliseconds, until the request times out and throws a WebException. Default value is 100000 milliseconds (i.e. 100 seconds)." expr="" />
-    </inputs>
-    <outputs>
-      <output type="text" name="Result" friendlyname="Result" narrative="The result from the Post query." stage="Resultat" />
-      <output type="text" name="Headers as Json" friendlyname="Headers as Json" narrative="The returned headers response as Json" stage="" />
-      <output type="number" name="Status Code" friendlyname="Status Code" narrative="The HTTP status code associated with the request." stage="Status Code" />
-    </outputs>
-    <onsuccess>4f102c86-7adf-441c-9428-39bc62a4ebf9</onsuccess>
-    <resource object="Utility - HTTP" action="HTTP Request" />
-  </stage>
-  <stage stageid="82871c93-05d1-4c24-9b0b-ac2809ca5a0f" name="Gem token oplysninger globalt" type="Block">
-    <subsheetid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</subsheetid>
-    <loginhibit />
-    <display x="-90" y="720" w="435" h="285" />
-    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
-  </stage>
-  <stage stageid="e80d2736-6ffe-48fa-bb13-f1a04f7ee0ab" name="Anchor3" type="Anchor">
-    <subsheetid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</subsheetid>
-    <loginhibit />
-    <display x="135" y="615" w="10" h="10" />
-    <onsuccess>d5b41219-6d74-4747-a783-ec9b37da198b</onsuccess>
-  </stage>
-  <stage stageid="d5b41219-6d74-4747-a783-ec9b37da198b" name="Anchor4" type="Anchor">
-    <subsheetid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</subsheetid>
-    <loginhibit />
-    <display x="15" y="615" w="10" h="10" />
-    <onsuccess>8e67eabb-fc46-4c51-987f-2d09431826ca</onsuccess>
   </stage>
   <stage stageid="01c62b27-9e15-4f21-999d-038cae079ab3" name="Json to collection" type="SubSheetInfo">
     <subsheetid>b20307e1-9713-4d08-80f2-573d7723eb01</subsheetid>
@@ -1826,7 +1193,7 @@ data = DeserializeGeneric(obj) as DataTable;
     <loginhibit />
     <display x="15" y="-45" />
     <onsuccess>f0b53b21-ffe8-48e1-8012-8c1edcead15a</onsuccess>
-    <processid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</processid>
+    <processid>b1ec8206-1000-431f-8da4-49ed41a0ee70</processid>
   </stage>
   <stage stageid="0baa7b09-10a0-4c87-8db0-a91922d22c42" name="Uventet fejlkode?" type="Decision">
     <subsheetid>5b2504a6-112c-4abe-9a44-a660a110919c</subsheetid>
@@ -1952,7 +1319,7 @@ data = DeserializeGeneric(obj) as DataTable;
     <loginhibit />
     <display x="15" y="-45" />
     <onsuccess>31409bd8-d99f-4c2b-b2ec-136756b569fa</onsuccess>
-    <processid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</processid>
+    <processid>b1ec8206-1000-431f-8da4-49ed41a0ee70</processid>
   </stage>
   <stage stageid="804eafbb-b630-4c5b-86df-5c91dea6a86b" name="Uventet fejlkode?" type="Decision">
     <subsheetid>82780005-198f-460f-af08-8a9996040174</subsheetid>
@@ -2179,7 +1546,7 @@ data = DeserializeGeneric(obj) as DataTable;
     <loginhibit />
     <display x="15" y="-45" />
     <onsuccess>d0ebb146-eac8-4b39-a10b-1e51ca0efb92</onsuccess>
-    <processid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</processid>
+    <processid>b1ec8206-1000-431f-8da4-49ed41a0ee70</processid>
   </stage>
   <stage stageid="d0ebb146-eac8-4b39-a10b-1e51ca0efb92" name="Relativ url?" type="Decision">
     <subsheetid>850f4342-90d0-44e8-93b1-33d524c7f10e</subsheetid>
@@ -2642,26 +2009,6 @@ data = DeserializeGeneric(obj) as DataTable;
     <onsuccess>22de3a57-df4a-40dc-a3a0-0cf4a688bc3f</onsuccess>
     <processid>0086b4ce-1ee1-4f4d-b1cf-8c1f5d7861f7</processid>
   </stage>
-  <stage stageid="4f102c86-7adf-441c-9428-39bc62a4ebf9" name="Fik vi en refresh token?" type="Decision">
-    <subsheetid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</subsheetid>
-    <loginhibit />
-    <display x="15" y="570" />
-    <decision expression="[Status Code] = 200" />
-    <ontrue>d5b41219-6d74-4747-a783-ec9b37da198b</ontrue>
-    <onfalse>e0f9f4ae-b48b-417e-a06b-b75023ef432c</onfalse>
-  </stage>
-  <stage stageid="d6fbf785-2558-4fc1-a63c-b3541f4a57ff" name="Anchor5" type="Anchor">
-    <subsheetid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</subsheetid>
-    <loginhibit />
-    <display x="75" y="480" w="10" h="10" />
-    <onsuccess>e11d6d23-6910-4800-afd1-28338d808bef</onsuccess>
-  </stage>
-  <stage stageid="e0f9f4ae-b48b-417e-a06b-b75023ef432c" name="Anchor6" type="Anchor">
-    <subsheetid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</subsheetid>
-    <loginhibit />
-    <display x="75" y="570" w="10" h="10" />
-    <onsuccess>d6fbf785-2558-4fc1-a63c-b3541f4a57ff</onsuccess>
-  </stage>
   <stage stageid="ed28a053-5c02-4976-bc97-9df6da5da323" name="Upload fil" type="SubSheetInfo">
     <subsheetid>e5d4df71-c53c-4167-91ed-f5303a3520e0</subsheetid>
     <display x="-195" y="-105" w="150" h="90" />
@@ -2754,7 +2101,7 @@ data = DeserializeGeneric(obj) as DataTable;
     <loginhibit />
     <display x="0" y="-75" />
     <onsuccess>d2629082-de93-4786-9af2-9ff3079ea5e8</onsuccess>
-    <processid>dbb5dc0a-bce4-40b2-bb70-f0df455bb056</processid>
+    <processid>b1ec8206-1000-431f-8da4-49ed41a0ee70</processid>
   </stage>
   <stage stageid="ed8b6356-a6c0-4046-a916-971d36e358e2" name="Tæl data" type="Action">
     <subsheetid>e5d4df71-c53c-4167-91ed-f5303a3520e0</subsheetid>
@@ -2872,5 +2219,246 @@ response = Encoding.UTF8.GetString(resp, 0, resp.Length);]]></code>
     </outputs>
     <onsuccess>ed8b6356-a6c0-4046-a916-971d36e358e2</onsuccess>
     <resource object="Utility - Collection Manipulation" action="Field Exists" />
+  </stage>
+  <stage stageid="99b06e89-5881-4341-aad4-3257bc583aba" name="Opdater token" type="SubSheetInfo">
+    <subsheetid>b1ec8206-1000-431f-8da4-49ed41a0ee70</subsheetid>
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="e8534845-c7a4-4d4a-97b0-9adcec27762a" name="Start" type="Start">
+    <subsheetid>b1ec8206-1000-431f-8da4-49ed41a0ee70</subsheetid>
+    <loginhibit />
+    <display x="15" y="-180" />
+    <onsuccess>5271f681-09c2-4237-a12a-2207b3f1f0fd</onsuccess>
+  </stage>
+  <stage stageid="26d4645a-4657-49cf-acb8-d7d0bd738362" name="Input" type="Block">
+    <subsheetid>b1ec8206-1000-431f-8da4-49ed41a0ee70</subsheetid>
+    <display x="-270" y="-45" w="150" h="45" />
+    <font family="Segoe UI" size="10" style="Regular" color="339966" />
+  </stage>
+  <stage stageid="c6c0a2c5-545e-4f0d-afc1-a06ac0d62283" name="Variabler" type="Block">
+    <subsheetid>b1ec8206-1000-431f-8da4-49ed41a0ee70</subsheetid>
+    <display x="-270" y="75" w="150" h="240" />
+    <font family="Segoe UI" size="10" style="Regular" color="666699" />
+  </stage>
+  <stage stageid="56266286-9ea0-44cf-943f-c4fbb1a84ee7" name="Konstanter" type="Block">
+    <subsheetid>b1ec8206-1000-431f-8da4-49ed41a0ee70</subsheetid>
+    <display x="-270" y="15" w="150" h="45" />
+    <font family="Segoe UI" size="10" style="Regular" color="008080" />
+  </stage>
+  <stage stageid="da0b3f07-53ad-4350-aeb2-edcd5262e77e" name="Output" type="Block">
+    <subsheetid>b1ec8206-1000-431f-8da4-49ed41a0ee70</subsheetid>
+    <display x="-270" y="330" w="150" h="45" />
+    <font family="Segoe UI" size="10" style="Regular" color="800080" />
+  </stage>
+  <stage stageid="860db223-4509-48d4-8be0-7587f810be46" name="Loginheaders" type="Collection">
+    <subsheetid>b1ec8206-1000-431f-8da4-49ed41a0ee70</subsheetid>
+    <loginhibit />
+    <display x="-195" y="150" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+    <collectioninfo>
+      <singlerow />
+      <field name="Authorization" type="text" />
+    </collectioninfo>
+    <initialvalue>
+      <singlerow />
+      <row>
+        <field name="Authorization" type="text" value="" />
+      </row>
+    </initialvalue>
+  </stage>
+  <stage stageid="db277c8e-2903-4b73-9787-20be37b33dac" name="Authorization" type="Data">
+    <subsheetid>b1ec8206-1000-431f-8da4-49ed41a0ee70</subsheetid>
+    <display x="-195" y="105" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="60c347bb-f0c7-4215-9789-4838efa14feb" name="Resultat" type="Data">
+    <subsheetid>b1ec8206-1000-431f-8da4-49ed41a0ee70</subsheetid>
+    <display x="-195" y="195" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="05dd287e-1ac4-4df1-880a-96ec8ea68d79" name="Data" type="Collection">
+    <subsheetid>b1ec8206-1000-431f-8da4-49ed41a0ee70</subsheetid>
+    <display x="-195" y="240" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="d50818c0-4bb2-4b40-ac37-bd84a9b52181" name="Hent ny token" type="Block">
+    <subsheetid>b1ec8206-1000-431f-8da4-49ed41a0ee70</subsheetid>
+    <loginhibit />
+    <display x="-90" y="-75" w="435" h="195" />
+    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
+  </stage>
+  <stage stageid="c5ff4bf9-d783-4bad-b1ae-8080871533c8" name="End12" type="End">
+    <subsheetid>b1ec8206-1000-431f-8da4-49ed41a0ee70</subsheetid>
+    <loginhibit />
+    <display x="15" y="315" />
+  </stage>
+  <stage stageid="4cfbf8a2-1366-45a8-b90a-d69e79459bde" name="Opdater header" type="Calculation">
+    <subsheetid>b1ec8206-1000-431f-8da4-49ed41a0ee70</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="15" y="255" />
+    <onsuccess>c5ff4bf9-d783-4bad-b1ae-8080871533c8</onsuccess>
+    <calculation expression="&quot;Bearer &quot; &amp; [Tokens.Token]" stage="Headers.Authorization" />
+  </stage>
+  <stage stageid="c8a1bce4-b207-4876-af14-a9d14fb9a500" name="Kald login" type="Action">
+    <subsheetid>b1ec8206-1000-431f-8da4-49ed41a0ee70</subsheetid>
+    <display x="15" y="45" />
+    <inputs>
+      <input type="text" name="Address URL" friendlyname="Address URL" narrative="The URL to send the HTTP data to" expr="[Base-url] &amp; &quot;/auth_v2/realms/&quot; &amp; [System] &amp; &quot;/protocol/openid-connect/token&quot;" />
+      <input type="flag" name="Use Proxy" friendlyname="Use Proxy" narrative="Set true if you need to use a proxy" expr="" />
+      <input type="text" name="Proxy URL" friendlyname="Proxy URL" narrative="OPTIONAL: The proxy url" expr="" />
+      <input type="text" name="Proxy Username" friendlyname="Proxy Username" narrative="OPTIONAL: The proxy username" expr="" />
+      <input type="password" name="Proxy Password" friendlyname="Proxy Password" narrative="OPTIONAL: The proxy password" expr="" />
+      <input type="collection" name="Headers" friendlyname="Headers" narrative="OPTIONAL: Headers" expr="[Loginheaders]" />
+      <input type="text" name="Accept" friendlyname="Accept" narrative="OPTIONAL: Accept" expr="&quot;application/json&quot;" />
+      <input type="text" name="Body" friendlyname="Body" narrative="The body text of the HTTP request" expr="&quot;grant_type=client_credentials&amp;scope=openid&quot;" />
+      <input type="text" name="Content Type" friendlyname="Content Type" narrative="The content type of the HTTP request." expr="&quot;application/x-www-form-urlencoded&quot;" />
+      <input type="text" name="Method" friendlyname="Method" narrative="The method of the HTTP request." expr="&quot;POST&quot;" />
+      <input type="text" name="Username" friendlyname="Username" narrative="OPTIONAL: Basic Authentication username" expr="" />
+      <input type="password" name="Password" friendlyname="Password" narrative="OPTIONAL: Basic Authenction password" expr="" />
+      <input type="text" name="Certificate ID" friendlyname="Certificate ID" narrative="OPTIONAL: The id of the client authentication certificate" expr="" />
+      <input type="flag" name="Force Pre Authorization" friendlyname="Force Pre Authorization" narrative="OPTIONAL: Force the request to send the 'Authorization' header for HTTP Basic." expr="" />
+      <input type="flag" name="File URL" friendlyname="File URL" narrative="OPTIONAL: Is the JSON Body a file instead?" expr="" />
+      <input type="flag" name="Use Bearer Token" friendlyname="Use Bearer Token" expr="" />
+      <input type="text" name="Bearer Token" friendlyname="Bearer Token" narrative="OPTIONAL: If you 'Use Bearer Token' is set to True, this must be set to the value of the actual Bearer Token." expr="" />
+      <input type="flag" name="Allow Auto Redirects" friendlyname="Allow Auto Redirects" narrative="OPTIONAL: If you prefer to manually handle redirects (ie. HTTP 302) set this flag to False. Default value is True." expr="" />
+      <input type="number" name="Maximum Redirects" friendlyname="Maximum Redirects" narrative="OPTIONAL: If 'Allow Auto Redirect' is True, this controls the maximum number of redirects to allow. Default value is 50." expr="" />
+      <input type="number" name="Request Timeout" friendlyname="Request Timeout" narrative="OPTIONAL: This  property controls the length of time, in milliseconds, until the request times out and throws a WebException. Default value is 100000 milliseconds (i.e. 100 seconds)." expr="" />
+    </inputs>
+    <outputs>
+      <output type="text" name="Result" friendlyname="Result" narrative="The result from the Post query." stage="Resultat" />
+      <output type="text" name="Headers as Json" friendlyname="Headers as Json" narrative="The returned headers response as Json" stage="" />
+      <output type="number" name="Status Code" friendlyname="Status Code" narrative="The HTTP status code associated with the request." stage="Status Code" />
+    </outputs>
+    <onsuccess>6a2fe534-0b6b-4beb-ac62-e3c3037c80b3</onsuccess>
+    <resource object="Utility - HTTP" action="HTTP Request" />
+  </stage>
+  <stage stageid="82410622-6c34-457c-bdfe-1c8ebc587b58" name="Konverter til collection" type="Action">
+    <subsheetid>b1ec8206-1000-431f-8da4-49ed41a0ee70</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="15" y="165" />
+    <inputs>
+      <input type="text" name="json" friendlyname="json" expr="[Resultat]" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="Result" friendlyname="Result" stage="Data" />
+    </outputs>
+    <onsuccess>d4278a2b-c1b5-4fb6-b8db-b18278e83b14</onsuccess>
+    <resource object="Utility - JSON" action="JSON to Collection (skipping JArray)" />
+  </stage>
+  <stage stageid="576e085b-05e0-4dfa-a6bd-b48c8b648506" name="Ingen token" type="Exception">
+    <subsheetid>b1ec8206-1000-431f-8da4-49ed41a0ee70</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="270" y="90" />
+    <exception localized="yes" type="System" detail="[Data.error_description]" />
+  </stage>
+  <stage stageid="c930c304-36c3-4dbd-8b09-106cc5557c37" name="Status Code" type="Data">
+    <subsheetid>b1ec8206-1000-431f-8da4-49ed41a0ee70</subsheetid>
+    <display x="-195" y="285" w="120" h="30" />
+    <datatype>number</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="6a2fe534-0b6b-4beb-ac62-e3c3037c80b3" name="Gik kaldet godt?" type="Decision">
+    <subsheetid>b1ec8206-1000-431f-8da4-49ed41a0ee70</subsheetid>
+    <loginhibit />
+    <display x="15" y="90" />
+    <decision expression="[Status Code] = 200" />
+    <ontrue>82410622-6c34-457c-bdfe-1c8ebc587b58</ontrue>
+    <onfalse>576e085b-05e0-4dfa-a6bd-b48c8b648506</onfalse>
+  </stage>
+  <stage stageid="d4278a2b-c1b5-4fb6-b8db-b18278e83b14" name="Sæt alle token felter" type="MultipleCalculation">
+    <subsheetid>b1ec8206-1000-431f-8da4-49ed41a0ee70</subsheetid>
+    <loginhibit />
+    <display x="15" y="210" />
+    <onsuccess>4cfbf8a2-1366-45a8-b90a-d69e79459bde</onsuccess>
+    <steps>
+      <calculation expression="[Data.access_token]" stage="Tokens.Token" />
+      <calculation expression="Now() + MakeTimeSpan(0, 0, 0, ToNumber([Data.expires_in]) - 20)" stage="Tokens.Token expires" />
+    </steps>
+  </stage>
+  <stage stageid="57257e7e-02e5-4bb7-89b5-42e2f2db5c90" name="Dan header" type="Action">
+    <subsheetid>b1ec8206-1000-431f-8da4-49ed41a0ee70</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="15" y="-45" />
+    <inputs>
+      <input type="text" name="Data" friendlyname="Data" narrative="Tekststreng som skal encodes" expr="[Client id] &amp; &quot;:&quot; &amp; [Client secret]" />
+    </inputs>
+    <outputs>
+      <output type="text" name="Base64" friendlyname="Base64" narrative="De binære data encoded som en base64 streng" stage="Authorization" />
+    </outputs>
+    <onsuccess>23f6eb13-be6d-43ac-bbde-3c87f861ed1f</onsuccess>
+    <resource object="Utility - Odk" action="String: Base64 Encode" />
+  </stage>
+  <stage stageid="23f6eb13-be6d-43ac-bbde-3c87f861ed1f" name="Sæt login header" type="Calculation">
+    <subsheetid>b1ec8206-1000-431f-8da4-49ed41a0ee70</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="15" y="0" />
+    <onsuccess>c8a1bce4-b207-4876-af14-a9d14fb9a500</onsuccess>
+    <calculation expression="&quot;Basic &quot; &amp; [Authorization] " stage="Loginheaders.Authorization" />
+  </stage>
+  <stage stageid="b757eada-0f18-4898-9596-677c8ddabfb9" name="Gem token oplysninger globalt" type="Block">
+    <subsheetid>b1ec8206-1000-431f-8da4-49ed41a0ee70</subsheetid>
+    <loginhibit />
+    <display x="-90" y="135" w="435" h="150" />
+    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
+  </stage>
+  <stage stageid="5271f681-09c2-4237-a12a-2207b3f1f0fd" name="Er token udløbet?" type="Decision">
+    <subsheetid>b1ec8206-1000-431f-8da4-49ed41a0ee70</subsheetid>
+    <loginhibit />
+    <display x="15" y="-120" />
+    <decision expression="Now() &gt;= [Tokens.Token expires]" />
+    <ontrue>57257e7e-02e5-4bb7-89b5-42e2f2db5c90</ontrue>
+    <onfalse>6eb176fa-e20b-4b0f-a861-aac0614f6265</onfalse>
+  </stage>
+  <stage stageid="6eb176fa-e20b-4b0f-a861-aac0614f6265" name="End2" type="End">
+    <subsheetid>b1ec8206-1000-431f-8da4-49ed41a0ee70</subsheetid>
+    <loginhibit />
+    <display x="135" y="-120" />
+  </stage>
+  <stage stageid="57b6ab62-c73d-4207-9bb5-b183dd66f4af" name="Token udløb" type="Block">
+    <subsheetid>b1ec8206-1000-431f-8da4-49ed41a0ee70</subsheetid>
+    <loginhibit />
+    <display x="-90" y="-150" w="435" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
+  </stage>
+  <stage stageid="a8d6b1c9-383b-4ffc-b975-9fb16994feb7" name="Token-Url" type="Data">
+    <subsheetid>94af1602-beba-4a05-9139-24404c44204c</subsheetid>
+    <loginhibit />
+    <display x="-195" y="195" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="b9864749-ccfe-4672-aeff-aa96a287f0d9" name="Sæt urls" type="MultipleCalculation">
+    <subsheetid>94af1602-beba-4a05-9139-24404c44204c</subsheetid>
+    <loginhibit />
+    <display x="15" y="135" />
+    <onsuccess>bfc41dec-5b48-419e-9fd7-45a594774462</onsuccess>
+    <steps>
+      <calculation expression="&quot;https://&quot; &amp; [System] &amp; &quot;.nexus.kmd.dk&quot;" stage="Base-url" />
+      <calculation expression="&quot;https://iam.nexus.kmd.dk/authx/realms/&quot; &amp; [System] &amp; &quot;/protocol/openid-connect/token&quot;" stage="Token-Url" />
+    </steps>
+  </stage>
+  <stage stageid="55682a1a-9860-47bb-be74-abee292630ba" name="Sæt urls (ikke produktion)" type="MultipleCalculation">
+    <subsheetid>94af1602-beba-4a05-9139-24404c44204c</subsheetid>
+    <loginhibit />
+    <display x="90" y="90" />
+    <onsuccess>3b9cceb0-e0d9-4809-b106-b8911e1c09ce</onsuccess>
+    <steps>
+      <calculation expression="&quot;https://&quot; &amp; [System] &amp; &quot;.nexus-&quot; &amp; [Systemtype] &amp; &quot;.kmd.dk&quot;" stage="Base-url" />
+      <calculation expression="&quot;https://iam.nexus-&quot; &amp; [Systemtype] &amp; &quot;.kmd.dk/authx/realms/&quot; &amp; [System] &amp; &quot;/protocol/openid-connect/token&quot;" stage="Token-Url" />
+    </steps>
   </stage>
 </process>

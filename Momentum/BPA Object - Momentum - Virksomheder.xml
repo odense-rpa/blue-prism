@@ -99,7 +99,7 @@
     <name>Opdater markering</name>
     <view>
       <camerax>-17</camerax>
-      <cameray>129</cameray>
+      <cameray>66</cameray>
       <zoom version="2">1.25</zoom>
     </view>
   </subsheet>
@@ -2424,7 +2424,7 @@ You will not be able to call this action from a business process, nor will it be
   <stage stageid="ffc0d95b-4fcb-461b-92c9-da962141fdc3" name="Start" type="Start">
     <subsheetid>12a1ebd8-4210-4c59-9274-ee2542c86bfc</subsheetid>
     <loginhibit />
-    <display x="0" y="-90" />
+    <display x="0" y="-135" />
     <inputs>
       <input type="collection" name="Markering" stage="Markering" />
       <input type="date" name="Slutdato" stage="Slutdato" />
@@ -2434,7 +2434,7 @@ You will not be able to call this action from a business process, nor will it be
   <stage stageid="76044f0b-858e-44c9-9e5e-634ccaca6eff" name="End" type="End">
     <subsheetid>12a1ebd8-4210-4c59-9274-ee2542c86bfc</subsheetid>
     <loginhibit />
-    <display x="0" y="240" />
+    <display x="0" y="135" />
     <outputs>
       <output type="collection" name="Markering" stage="Markering ud" />
       <output type="number" name="Antal" stage="Antal" />
@@ -2464,7 +2464,7 @@ You will not be able to call this action from a business process, nor will it be
   <stage stageid="fa1973fd-3abd-4e10-8e44-e4fd222d6214" name="Start Momemtum (test)" type="Action">
     <subsheetid>12a1ebd8-4210-4c59-9274-ee2542c86bfc</subsheetid>
     <loginhibit onsuccess="true" />
-    <display x="105" y="-135" />
+    <display x="165" y="-255" />
     <inputs>
       <input type="text" name="Credentials" friendlyname="Credentials" expr="&quot;KMD Momentum - edu&quot;" />
     </inputs>
@@ -2474,13 +2474,13 @@ You will not be able to call this action from a business process, nor will it be
   <stage stageid="338f6d2c-a5c2-4e31-9ade-d3c44a63ef3c" name="Anchor1" type="Anchor">
     <subsheetid>12a1ebd8-4210-4c59-9274-ee2542c86bfc</subsheetid>
     <loginhibit />
-    <display x="0" y="45" w="10" h="10" />
+    <display x="0" y="-75" w="10" h="10" />
     <onsuccess>b5dd5cd2-26d4-47e8-87ba-cb046c8cbb15</onsuccess>
   </stage>
   <stage stageid="0ff3e7a4-1bb5-4a22-9d7c-099cdbebff96" name="Anchor2" type="Anchor">
     <subsheetid>12a1ebd8-4210-4c59-9274-ee2542c86bfc</subsheetid>
     <loginhibit />
-    <display x="105" y="45" w="10" h="10" />
+    <display x="165" y="-75" w="10" h="10" />
     <onsuccess>338f6d2c-a5c2-4e31-9ade-d3c44a63ef3c</onsuccess>
   </stage>
   <stage stageid="47e136fa-3822-4acb-90b3-57c865ede501" name="Statuskode" type="Data">
@@ -2494,7 +2494,7 @@ You will not be able to call this action from a business process, nor will it be
   <stage stageid="76004a66-e48f-4789-a774-babfdc7d25f6" name="Debug" type="Block">
     <subsheetid>12a1ebd8-4210-4c59-9274-ee2542c86bfc</subsheetid>
     <loginhibit />
-    <display x="60" y="-165" w="90" h="195" />
+    <display x="120" y="-285" w="165" h="195" />
     <font family="Segoe UI" size="10" style="Regular" color="FFFF99" />
   </stage>
   <stage stageid="7ef133ea-9626-4e10-873d-464eddabc3b2" name="Markering" type="Collection">
@@ -2507,7 +2507,7 @@ You will not be able to call this action from a business process, nor will it be
   <stage stageid="e626e266-cf6b-4d72-ac1e-b5e4618775a3" name="Hent virksomhed" type="Action">
     <subsheetid>12a1ebd8-4210-4c59-9274-ee2542c86bfc</subsheetid>
     <loginhibit onsuccess="true" />
-    <display x="105" y="-90" />
+    <display x="165" y="-210" />
     <inputs>
       <input type="text" name="Cvr" friendlyname="Cvr" narrative="Cvr skal angives" expr="&quot;40223584&quot;" />
       <input type="text" name="P-nummer" friendlyname="P-nummer" narrative="P-nummer er valgfri" expr="&quot;1024366037&quot;" />
@@ -2523,7 +2523,7 @@ You will not be able to call this action from a business process, nor will it be
   <stage stageid="648b4945-399d-47f9-9e30-2c613c21dabf" name="Opdater markering" type="Action">
     <subsheetid>12a1ebd8-4210-4c59-9274-ee2542c86bfc</subsheetid>
     <loginhibit onsuccess="true" />
-    <display x="0" y="135" />
+    <display x="0" y="30" />
     <inputs>
       <input type="text" name="Url" friendlyname="Url" expr="&quot;/tagassignments/&quot;&amp;[Markering.id]" />
       <input type="text" name="Body" friendlyname="Body" expr="[Body]" />
@@ -2556,14 +2556,14 @@ You will not be able to call this action from a business process, nor will it be
   <stage stageid="4ac52a98-a6cb-4012-a955-3a845dc5411c" name="Sæt succes" type="Calculation">
     <subsheetid>12a1ebd8-4210-4c59-9274-ee2542c86bfc</subsheetid>
     <loginhibit />
-    <display x="0" y="180" />
+    <display x="0" y="75" />
     <onsuccess>76044f0b-858e-44c9-9e5e-634ccaca6eff</onsuccess>
     <calculation expression="[Statuskode] = 200" stage="Succes" />
   </stage>
   <stage stageid="101451bd-5e86-40de-ab41-b7e42c96e7c7" name="Ændre slutdato på markering" type="Block">
     <subsheetid>12a1ebd8-4210-4c59-9274-ee2542c86bfc</subsheetid>
     <loginhibit />
-    <display x="-75" y="105" w="165" h="105" />
+    <display x="-75" y="0" w="165" h="105" />
     <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
   </stage>
   <stage stageid="db8dd6af-892c-48a4-83b3-d4749f3c0133" name="Markering ud" type="Collection">
@@ -2578,14 +2578,29 @@ You will not be able to call this action from a business process, nor will it be
     <loginhibit />
     <display x="-195" y="210" w="120" h="30" />
     <datatype>text</datatype>
-    <initialvalue xml:space="preserve">{"id":"{{TAGASSID}}","end":"{{TAGEND}}","tagId":"{{TAGID}}"}</initialvalue>
+    <initialvalue xml:space="preserve">{
+  "tagId": "{{TAGID}}",
+  "start": "{{TAGSTART}}",
+  "end": "{{TAGEND}}",
+  "correctionComment": {
+    "referenceId": "{{TAGASSID}}",
+    "referenceType": null,
+    "body": null,
+    "title": null,
+    "commentTypeCode": null
+  },
+  "attachmentsToAdd": [
+  ],
+  "attachmentsToRemove": [
+  ]
+}</initialvalue>
     <private />
     <alwaysinit />
   </stage>
   <stage stageid="8516cbae-4f27-4d06-b61c-2fcc1a4e0277" name="Hent markeringer" type="Action">
     <subsheetid>12a1ebd8-4210-4c59-9274-ee2542c86bfc</subsheetid>
     <loginhibit onsuccess="true" />
-    <display x="105" y="-45" />
+    <display x="165" y="-165" />
     <inputs>
       <input type="collection" name="Virksomhed" friendlyname="Virksomhed" expr="[Virksomhed]" />
     </inputs>
@@ -2599,14 +2614,14 @@ You will not be able to call this action from a business process, nor will it be
   </stage>
   <stage stageid="e84757df-fe39-4ce9-a638-c0401718aba3" name="Markeringer" type="Collection">
     <subsheetid>12a1ebd8-4210-4c59-9274-ee2542c86bfc</subsheetid>
-    <display x="195" y="-45" />
+    <display x="240" y="-165" />
     <datatype>collection</datatype>
     <private />
     <alwaysinit />
   </stage>
   <stage stageid="c6d1a908-a631-49fd-9912-dd0c5b0bd380" name="Virksomhed" type="Collection">
     <subsheetid>12a1ebd8-4210-4c59-9274-ee2542c86bfc</subsheetid>
-    <display x="195" y="-90" />
+    <display x="240" y="-210" />
     <datatype>collection</datatype>
     <private />
     <alwaysinit />
@@ -2614,7 +2629,7 @@ You will not be able to call this action from a business process, nor will it be
   <stage stageid="54e52ec7-284a-4923-9c11-2b7f5aed517f" name="Find markering" type="Action">
     <subsheetid>12a1ebd8-4210-4c59-9274-ee2542c86bfc</subsheetid>
     <loginhibit onsuccess="true" />
-    <display x="105" y="0" />
+    <display x="165" y="-120" />
     <inputs>
       <input type="collection" name="Collection In" friendlyname="Collection In" narrative="Input collection" expr="[Markeringer]" />
       <input type="text" name="Filter" friendlyname="Filter" narrative="The filter to apply" expr="&quot;[id] = '09dd7a2d-10ab-4a9c-acb9-e30fa6df8309'&quot;" />
@@ -2629,12 +2644,13 @@ You will not be able to call this action from a business process, nor will it be
   <stage stageid="b5dd5cd2-26d4-47e8-87ba-cb046c8cbb15" name="Klargør body" type="MultipleCalculation">
     <subsheetid>12a1ebd8-4210-4c59-9274-ee2542c86bfc</subsheetid>
     <loginhibit />
-    <display x="0" y="75" />
+    <display x="0" y="-30" />
     <onsuccess>648b4945-399d-47f9-9e30-2c613c21dabf</onsuccess>
     <steps>
       <calculation expression="Replace([Body], &quot;{{TAGASSID}}&quot;, [Markering.id])" stage="Body" />
       <calculation expression="Replace([Body], &quot;{{TAGEND}}&quot;, FormatDateTime([Slutdato], &quot;yyyy-MM-ddT22:00:00Z&quot;))" stage="Body" />
       <calculation expression="Replace([Body], &quot;{{TAGID}}&quot;, [Markering.tag.id])" stage="Body" />
+      <calculation expression="Replace([Body], &quot;{{TAGSTART}}&quot;, FormatDateTime([Markering.start], &quot;yyyy-MM-ddTHH:mm:ssZ&quot;))" stage="Body" />
     </steps>
   </stage>
   <stage stageid="5716b44c-cd1a-4faa-9134-93b70ae338de" name="Slutdato" type="Data">

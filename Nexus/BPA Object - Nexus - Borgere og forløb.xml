@@ -155,7 +155,7 @@
     <name>Filtrer referencer</name>
     <view>
       <camerax>47</camerax>
-      <cameray>75</cameray>
+      <cameray>12</cameray>
       <zoom version="2">1.25</zoom>
     </view>
   </subsheet>
@@ -3174,7 +3174,7 @@ You will not be able to call this action from a business process, nor will it be
   <stage stageid="82d87516-a5f0-49e8-aee8-ff956409f106" name="Start" type="Start">
     <subsheetid>1d658246-3945-476b-836d-924fa5946298</subsheetid>
     <loginhibit />
-    <display x="15" y="-135" />
+    <display x="0" y="-135" />
     <inputs>
       <input type="text" name="Referencer (json)" narrative="Referencerne som json" stage="Referencer (json)" />
       <input type="text" name="Filter" narrative="/x/y/*/z" stage="Filter" />
@@ -3185,7 +3185,7 @@ You will not be able to call this action from a business process, nor will it be
   <stage stageid="30327b87-8d2c-4ff4-bcc8-24e95e9997ad" name="End" type="End">
     <subsheetid>1d658246-3945-476b-836d-924fa5946298</subsheetid>
     <loginhibit />
-    <display x="15" y="105" />
+    <display x="0" y="90" />
     <outputs>
       <output type="collection" name="Referencer" stage="Referencer" />
       <output type="number" name="Antal" stage="Antal" />
@@ -3195,7 +3195,7 @@ You will not be able to call this action from a business process, nor will it be
   <stage stageid="da74935b-817e-4bef-b4f4-2be65dcd1e85" name="Filtrer referencer" type="Code">
     <subsheetid>1d658246-3945-476b-836d-924fa5946298</subsheetid>
     <loginhibit onsuccess="true" />
-    <display x="15" y="-60" />
+    <display x="0" y="-60" />
     <inputs>
       <input type="text" name="filter" expr="[Filter]" />
       <input type="text" name="references" expr="[Referencer (json)]" />
@@ -3246,13 +3246,13 @@ You will not be able to call this action from a business process, nor will it be
   <stage stageid="093b53cc-6515-425d-8f77-a13c05c06e0c" name="Filtrer (se global code)" type="Block">
     <subsheetid>1d658246-3945-476b-836d-924fa5946298</subsheetid>
     <loginhibit />
-    <display x="-90" y="-90" w="240" h="150" />
+    <display x="-75" y="-90" w="150" h="150" />
     <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
   </stage>
   <stage stageid="f55c0408-5b2c-41d1-b87f-342894e13662" name="Nexus - Core::Start" type="Action">
     <subsheetid>1d658246-3945-476b-836d-924fa5946298</subsheetid>
     <loginhibit onsuccess="true" />
-    <display x="135" y="-285" />
+    <display x="120" y="-285" />
     <inputs>
       <input type="text" name="Credentials" friendlyname="Credentials" expr="&quot;KMD Nexus - produktion&quot;" />
     </inputs>
@@ -3262,13 +3262,13 @@ You will not be able to call this action from a business process, nor will it be
   <stage stageid="6c6d10e9-8e3a-47e8-aa91-135197bc53ae" name="Debug" type="Block">
     <subsheetid>1d658246-3945-476b-836d-924fa5946298</subsheetid>
     <loginhibit />
-    <display x="90" y="-315" w="165" h="195" />
+    <display x="75" y="-315" w="165" h="195" />
     <font family="Segoe UI" size="10" style="Regular" color="FFFF99" />
   </stage>
   <stage stageid="5fcab355-7fd0-41c1-9146-6777e91f8b2b" name="Hent borger" type="SubSheet">
     <subsheetid>1d658246-3945-476b-836d-924fa5946298</subsheetid>
     <loginhibit />
-    <display x="135" y="-240" />
+    <display x="120" y="-240" />
     <inputs>
       <input type="text" name="Cpr" friendlyname="Cpr" expr="&quot;xxxxxxxxxx&quot;" />
     </inputs>
@@ -3281,14 +3281,14 @@ You will not be able to call this action from a business process, nor will it be
   <stage stageid="2752bd5e-2489-43a7-822a-78d38a218375" name="Hent referencer" type="SubSheet">
     <subsheetid>1d658246-3945-476b-836d-924fa5946298</subsheetid>
     <loginhibit />
-    <display x="135" y="-195" />
+    <display x="120" y="-195" />
     <inputs>
       <input type="collection" name="Borger" friendlyname="Borger" expr="[Borger]" />
       <input type="text" name="Pathway" friendlyname="Pathway" narrative="Default &quot;-Alt&quot;" expr="&quot;-Alt&quot;" />
     </inputs>
     <outputs>
       <output type="collection" name="Pathway" friendlyname="Pathway" stage="" />
-      <output type="collection" name="Referencer" friendlyname="Referencer" stage="" />
+      <output type="collection" name="Referencer" friendlyname="Referencer" stage="Referencer" />
       <output type="text" name="Referencer (json)" friendlyname="Referencer (json)" narrative="Referencer som rå json" stage="Referencer (json)" />
       <output type="number" name="Antal referencer" friendlyname="Antal referencer" stage="" />
       <output type="collection" name="Aktiviteter" friendlyname="Aktiviteter" stage="" />
@@ -3300,18 +3300,18 @@ You will not be able to call this action from a business process, nor will it be
   <stage stageid="002149b9-68b6-4550-b71b-2b51156cba86" name="Anchor15" type="Anchor">
     <subsheetid>1d658246-3945-476b-836d-924fa5946298</subsheetid>
     <loginhibit />
-    <display x="15" y="-105" w="10" h="10" />
+    <display x="0" y="-105" w="10" h="10" />
     <onsuccess>da74935b-817e-4bef-b4f4-2be65dcd1e85</onsuccess>
   </stage>
   <stage stageid="fdba8486-9057-4b4e-b986-df2048983c00" name="Anchor16" type="Anchor">
     <subsheetid>1d658246-3945-476b-836d-924fa5946298</subsheetid>
     <loginhibit />
-    <display x="135" y="-105" w="10" h="10" />
+    <display x="120" y="-105" w="10" h="10" />
     <onsuccess>002149b9-68b6-4550-b71b-2b51156cba86</onsuccess>
   </stage>
   <stage stageid="bbef69d4-7187-4306-9f4b-23d27778dccf" name="Borger" type="Collection">
     <subsheetid>1d658246-3945-476b-836d-924fa5946298</subsheetid>
-    <display x="210" y="-285" />
+    <display x="195" y="-285" />
     <datatype>collection</datatype>
     <private />
     <alwaysinit />
@@ -3319,7 +3319,7 @@ You will not be able to call this action from a business process, nor will it be
   <stage stageid="e8012788-dfb1-4f08-b3e0-eccc08b06540" name="Sæt filter" type="Calculation">
     <subsheetid>1d658246-3945-476b-836d-924fa5946298</subsheetid>
     <loginhibit />
-    <display x="135" y="-150" />
+    <display x="120" y="-150" />
     <onsuccess>fdba8486-9057-4b4e-b986-df2048983c00</onsuccess>
     <calculation expression="&quot;/Sundhedsfagligt grundforløb/*/Indsatser/*&quot;" stage="Filter" />
   </stage>
@@ -3342,7 +3342,7 @@ You will not be able to call this action from a business process, nor will it be
   <stage stageid="7e9f30aa-b033-4ee1-b3be-de7f97dabed8" name="Konverter til collection" type="Action">
     <subsheetid>1d658246-3945-476b-836d-924fa5946298</subsheetid>
     <loginhibit onsuccess="true" />
-    <display x="15" y="-15" />
+    <display x="0" y="-15" />
     <inputs>
       <input type="text" name="Json" friendlyname="Json" expr="[Json]" />
     </inputs>
@@ -3355,7 +3355,7 @@ You will not be able to call this action from a business process, nor will it be
   <stage stageid="fbe54c4f-91a5-4298-8463-86a9326d768e" name="Find antal" type="Action">
     <subsheetid>1d658246-3945-476b-836d-924fa5946298</subsheetid>
     <loginhibit onsuccess="true" />
-    <display x="15" y="30" />
+    <display x="0" y="30" />
     <inputs>
       <input type="text" name="Collection Name" friendlyname="Collection Name" narrative="The name of the collection to act upon" expr="&quot;Referencer&quot;" />
     </inputs>

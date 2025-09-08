@@ -9,8 +9,8 @@
     </element>
   </appdef>
   <view>
-    <camerax>48</camerax>
-    <cameray>0</cameray>
+    <camerax>144</camerax>
+    <cameray>0.3999939</cameray>
     <zoom version="2">1.25</zoom>
   </view>
   <preconditions />
@@ -27,7 +27,7 @@
     <name>Hent borger</name>
     <view>
       <camerax>-54</camerax>
-      <cameray>117</cameray>
+      <cameray>-93</cameray>
       <zoom version="2">1.25</zoom>
     </view>
   </subsheet>
@@ -83,7 +83,15 @@
     <name>Opret markering på borger</name>
     <view>
       <camerax>-17</camerax>
-      <cameray>47</cameray>
+      <cameray>173</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <subsheet subsheetid="6858a206-53c5-4f65-ae66-7c3f28eea850" type="Normal" published="True">
+    <name>Opdater markering på borger</name>
+    <view>
+      <camerax>-17</camerax>
+      <cameray>131</cameray>
       <zoom version="2">1.25</zoom>
     </view>
   </subsheet>
@@ -91,7 +99,7 @@
     <name>Hent målgrupper</name>
     <view>
       <camerax>0</camerax>
-      <cameray>21</cameray>
+      <cameray>47</cameray>
       <zoom version="2">1.25</zoom>
     </view>
   </subsheet>
@@ -99,7 +107,31 @@
     <name>Hent personvisitationstatus</name>
     <view>
       <camerax>0</camerax>
-      <cameray>-21</cameray>
+      <cameray>42</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <subsheet subsheetid="e56552ff-f2dc-433b-8bdf-13b436be183a" type="Normal" published="True">
+    <name>Opret målgruppe/visitation</name>
+    <view>
+      <camerax>-33</camerax>
+      <cameray>42</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <subsheet subsheetid="a305d68a-edc2-4568-97b9-f0174296f845" type="Normal" published="False">
+    <name>Hent og find hændelseskode</name>
+    <view>
+      <camerax>-33</camerax>
+      <cameray>126</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <subsheet subsheetid="58422f5c-e9e5-4f7c-bb74-5cf8bf16000c" type="Normal" published="True">
+    <name>Luk visitation/målgruppe</name>
+    <view>
+      <camerax>-33</camerax>
+      <cameray>87</cameray>
       <zoom version="2">1.25</zoom>
     </view>
   </subsheet>
@@ -107,7 +139,7 @@
     <name>Opdater borgers ansvarlige og kontaktpersoner</name>
     <view>
       <camerax>0</camerax>
-      <cameray>327</cameray>
+      <cameray>306</cameray>
       <zoom version="2">1.25</zoom>
     </view>
   </subsheet>
@@ -123,7 +155,7 @@
     <name>Hent uddannelser</name>
     <view>
       <camerax>-63</camerax>
-      <cameray>0</cameray>
+      <cameray>84</cameray>
       <zoom version="2">1.25</zoom>
     </view>
   </subsheet>
@@ -131,7 +163,7 @@
     <name>Hent sager</name>
     <view>
       <camerax>0</camerax>
-      <cameray>17</cameray>
+      <cameray>122</cameray>
       <zoom version="2">1.25</zoom>
     </view>
   </subsheet>
@@ -146,7 +178,7 @@
   <subsheet subsheetid="db0c250e-db5e-40c7-b9d7-d2d932642bfe" type="Normal" published="True">
     <name>Hent ansvarlige sagsbehandlere</name>
     <view>
-      <camerax>-110</camerax>
+      <camerax>298</camerax>
       <cameray>119</cameray>
       <zoom version="2">1.25</zoom>
     </view>
@@ -163,7 +195,7 @@
     <name>Hent supplerende sager</name>
     <view>
       <camerax>0</camerax>
-      <cameray>5</cameray>
+      <cameray>-37</cameray>
       <zoom version="2">1.25</zoom>
     </view>
   </subsheet>
@@ -179,15 +211,23 @@
     <name>Aflys indkaldelse</name>
     <view>
       <camerax>3</camerax>
-      <cameray>55</cameray>
+      <cameray>139</cameray>
       <zoom version="2">1.25</zoom>
     </view>
   </subsheet>
-  <subsheet subsheetid="c1be2f9b-ed93-4247-a6b8-18049978684d" type="Normal" published="False">
+  <subsheet subsheetid="c1be2f9b-ed93-4247-a6b8-18049978684d" type="Normal" published="True">
     <name>Opret supplerende sag</name>
     <view>
       <camerax>0</camerax>
-      <cameray>11</cameray>
+      <cameray>52</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <subsheet subsheetid="09507ff5-d6bf-4a15-ab35-de9761d8a7a9" type="Normal" published="True">
+    <name>Luk supplerende sag</name>
+    <view>
+      <camerax>0</camerax>
+      <cameray>137</cameray>
       <zoom version="2">1.25</zoom>
     </view>
   </subsheet>
@@ -195,7 +235,7 @@
     <name>Opret opgave</name>
     <view>
       <camerax>-54</camerax>
-      <cameray>126</cameray>
+      <cameray>-63</cameray>
       <zoom version="2">1.25</zoom>
     </view>
   </subsheet>
@@ -207,11 +247,19 @@
       <zoom version="2">1.25</zoom>
     </view>
   </subsheet>
-  <subsheet subsheetid="91739283-00f6-4755-bf1f-9c644b37c67b" type="Normal" published="False">
+  <subsheet subsheetid="e3271003-1406-4f4d-95f3-ddf0cef13672" type="Normal" published="True">
+    <name>Tilføj agenda</name>
+    <view>
+      <camerax>15</camerax>
+      <cameray>151</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <subsheet subsheetid="91739283-00f6-4755-bf1f-9c644b37c67b" type="Normal" published="True">
     <name>Send partshøring</name>
     <view>
-      <camerax>195</camerax>
-      <cameray>-256</cameray>
+      <camerax>-156</camerax>
+      <cameray>359</cameray>
       <zoom version="2">1.25</zoom>
     </view>
   </subsheet>
@@ -219,7 +267,7 @@
     <name>Kontroller og oversæt hændelsestype</name>
     <view>
       <camerax>0</camerax>
-      <cameray>261</cameray>
+      <cameray>30</cameray>
       <zoom version="2">1.25</zoom>
     </view>
   </subsheet>
@@ -257,6 +305,7 @@
       <import>Newtonsoft.Json</import>
       <import>Newtonsoft.Json.Linq</import>
       <import>System.Linq</import>
+      <import>System.Collections.Generic</import>
     </imports>
     <language>csharp</language>
     <globalcode><![CDATA[]]></globalcode>
@@ -3178,7 +3227,7 @@ result = array1.ToString();]]></code>
   <stage stageid="c7f3eefb-894a-4119-a9d0-a37d6d1730ec" name="End" type="End">
     <subsheetid>7de9c11d-f658-49bb-8c3f-ba0dd42d459c</subsheetid>
     <loginhibit />
-    <display x="15" y="135" />
+    <display x="15" y="180" />
     <outputs>
       <output type="collection" name="Opgaver" stage="Opgaver" />
       <output type="flag" name="Succes" stage="Succes" />
@@ -3192,7 +3241,7 @@ result = array1.ToString();]]></code>
   </stage>
   <stage stageid="3d524ddf-aeb3-4107-9797-e16566152432" name="Variabler" type="Block">
     <subsheetid>7de9c11d-f658-49bb-8c3f-ba0dd42d459c</subsheetid>
-    <display x="-270" y="105" w="150" h="105" />
+    <display x="-270" y="105" w="150" h="195" />
     <font family="Segoe UI" size="10" style="Regular" color="666699" />
   </stage>
   <stage stageid="5c42ce69-a50d-4cfd-8e92-f26762de55bf" name="Konstanter" type="Block">
@@ -3202,7 +3251,7 @@ result = array1.ToString();]]></code>
   </stage>
   <stage stageid="41769046-db94-4d21-9bc3-0441e28ba514" name="Output" type="Block">
     <subsheetid>7de9c11d-f658-49bb-8c3f-ba0dd42d459c</subsheetid>
-    <display x="-270" y="225" w="150" h="150" />
+    <display x="-270" y="315" w="150" h="150" />
     <font family="Segoe UI" size="10" style="Regular" color="800080" />
   </stage>
   <stage stageid="3d535660-ac00-4803-af2d-91b78fcfe7e9" name="Borger" type="Collection">
@@ -3234,25 +3283,25 @@ result = array1.ToString();]]></code>
       <output type="number" name="Antal" friendlyname="Antal" stage="Antal" />
       <output type="text" name="Json" friendlyname="Json" narrative="Det rå json output" stage="" />
     </outputs>
-    <onsuccess>039c618b-032d-4f12-a9aa-16db3b9da3f8</onsuccess>
+    <onsuccess>795c8ea7-7898-440b-b30f-9acc03c1f11e</onsuccess>
     <resource object="Momentum - Core" action="Post" />
   </stage>
   <stage stageid="8c8009d5-026d-410f-8a0a-f1757eae0b32" name="Hent opgaver" type="Block">
     <subsheetid>7de9c11d-f658-49bb-8c3f-ba0dd42d459c</subsheetid>
     <loginhibit />
-    <display x="-75" y="-90" w="240" h="195" />
+    <display x="-75" y="-90" w="240" h="240" />
     <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
   </stage>
   <stage stageid="039c618b-032d-4f12-a9aa-16db3b9da3f8" name="Sæt succes" type="Calculation">
     <subsheetid>7de9c11d-f658-49bb-8c3f-ba0dd42d459c</subsheetid>
     <loginhibit />
-    <display x="15" y="30" />
-    <onsuccess>b2f972f8-64d1-4210-ac55-350048bff963</onsuccess>
+    <display x="15" y="120" />
+    <onsuccess>c7f3eefb-894a-4119-a9d0-a37d6d1730ec</onsuccess>
     <calculation expression="[Statuskode] = 200" stage="Succes" />
   </stage>
   <stage stageid="e73adb20-781f-49f1-8b47-f7cb91eb393a" name="Opgaver" type="Collection">
     <subsheetid>7de9c11d-f658-49bb-8c3f-ba0dd42d459c</subsheetid>
-    <display x="-195" y="300" w="120" h="30" />
+    <display x="-195" y="390" w="120" h="30" />
     <datatype>collection</datatype>
     <private />
     <alwaysinit />
@@ -3298,7 +3347,7 @@ result = array1.ToString();]]></code>
     <subsheetid>7de9c11d-f658-49bb-8c3f-ba0dd42d459c</subsheetid>
     <loginhibit />
     <display x="15" y="-105" w="10" h="10" />
-    <onsuccess>e2713e28-efd8-4360-baf5-71301a8ef7bd</onsuccess>
+    <onsuccess>53e7443a-d1cd-4fb9-886a-52491a134bd2</onsuccess>
   </stage>
   <stage stageid="2ce68c95-fca4-4310-bdfe-6f81d3a832e9" name="Note2" type="Note">
     <subsheetid>7de9c11d-f658-49bb-8c3f-ba0dd42d459c</subsheetid>
@@ -3490,27 +3539,20 @@ result = array1.ToString();]]></code>
     <loginhibit />
     <display x="-195" y="180" w="120" h="30" />
     <datatype>text</datatype>
-    <initialvalue xml:space="preserve">{"columns":[],"filters":[{"fieldName":"citizenId","values":["{{BORGERID}}"]}],"sort":[{"fieldName":"deadline","ascending":true}],"paging":{"pageNumber":0,"pageSize":50}}</initialvalue>
+    <initialvalue xml:space="preserve">{"columns":[],"filters":[{"fieldName":"citizenId","values":["{{BORGERID}}"]}],"sort":[{"fieldName":"deadline","ascending":true}],"paging":{"pageNumber":0,"pageSize":150}}</initialvalue>
     <private />
     <alwaysinit />
-  </stage>
-  <stage stageid="e2713e28-efd8-4360-baf5-71301a8ef7bd" name="Klargør body" type="Calculation">
-    <subsheetid>7de9c11d-f658-49bb-8c3f-ba0dd42d459c</subsheetid>
-    <loginhibit />
-    <display x="15" y="-60" />
-    <onsuccess>0c8ff7dc-46a3-4613-98b6-b77f79e38229</onsuccess>
-    <calculation expression="Replace([Body], &quot;{{BORGERID}}&quot;, [Borger.id])" stage="Body" />
   </stage>
   <stage stageid="b2f972f8-64d1-4210-ac55-350048bff963" name="Træk opgaver ud" type="Calculation">
     <subsheetid>7de9c11d-f658-49bb-8c3f-ba0dd42d459c</subsheetid>
     <loginhibit />
     <display x="15" y="75" />
-    <onsuccess>c7f3eefb-894a-4119-a9d0-a37d6d1730ec</onsuccess>
+    <onsuccess>039c618b-032d-4f12-a9aa-16db3b9da3f8</onsuccess>
     <calculation expression="[Opgaver.data]" stage="Opgaver" />
   </stage>
   <stage stageid="0d11cc50-4124-4e87-9114-460cc982b569" name="Succes" type="Data">
     <subsheetid>7de9c11d-f658-49bb-8c3f-ba0dd42d459c</subsheetid>
-    <display x="-195" y="255" w="120" h="30" />
+    <display x="-195" y="345" w="120" h="30" />
     <datatype>flag</datatype>
     <initialvalue />
     <private />
@@ -3518,7 +3560,7 @@ result = array1.ToString();]]></code>
   </stage>
   <stage stageid="370f33a3-331f-4fc8-b393-98e86b00f260" name="Antal" type="Data">
     <subsheetid>7de9c11d-f658-49bb-8c3f-ba0dd42d459c</subsheetid>
-    <display x="-195" y="345" w="120" h="30" />
+    <display x="-195" y="435" w="120" h="30" />
     <datatype>number</datatype>
     <initialvalue />
     <private />
@@ -3635,11 +3677,11 @@ result = array1.ToString();]]></code>
     <display x="120" y="-180" />
     <onsuccess>5b42d180-c79b-41bd-81b4-9bf2e6ddb0b2</onsuccess>
     <steps>
-      <calculation expression="ToDate(&quot;10-01-2025&quot;)" stage="Partshøringsfrist" />
+      <calculation expression="ToDate(&quot;14-04-2025&quot;)" stage="Partshøringsfrist" />
       <calculation expression="&quot;Udebliver fra samtale eller aktivitet&quot;" stage="Hændelsestype" />
       <calculation expression="&quot;Test og intet andet&quot;" stage="Titel" />
       <calculation expression="&quot;Simof Test&quot;" stage="Begrundelse for partshøring" />
-      <calculation expression="&quot;2.32&quot;" stage="Brevskabelonkode" />
+      <calculation expression="&quot;x.13&quot;" stage="Brevskabelonkode" />
       <calculation expression="[Hændelsesdatoer template]" stage="Hændelsesdatoer" />
     </steps>
   </stage>
@@ -3951,13 +3993,13 @@ Skabelon id er empty string i kald fra Momentum</narrative>
     </collectioninfo>
     <initialvalue>
       <row>
-        <field name="Hændelsesdato" type="date" value="2025/01/01" />
+        <field name="Hændelsesdato" type="date" value="2025/04/01" />
       </row>
       <row>
-        <field name="Hændelsesdato" type="date" value="2025/01/02" />
+        <field name="Hændelsesdato" type="date" value="2025/04/02" />
       </row>
       <row>
-        <field name="Hændelsesdato" type="date" value="2025/01/03" />
+        <field name="Hændelsesdato" type="date" value="2025/04/03" />
       </row>
     </initialvalue>
   </stage>
@@ -4006,7 +4048,7 @@ Skabelon id er empty string i kald fra Momentum</narrative>
     <loginhibit onsuccess="true" />
     <display x="0" y="705" />
     <inputs>
-      <input type="text" name="Url" friendlyname="Url" expr="&quot;/mea/consultation-hearing/&quot; &amp; [Borger.id] &amp; &quot;/with-letter/&quot; &amp; [Ansvarlig sagsbehandler.caseworkerId] &amp; &quot;?api-version=1.0-external&quot;" />
+      <input type="text" name="Url" friendlyname="Url" expr="&quot;/rpa/consultation-hearing/&quot; &amp; [Borger.id] &amp; &quot;/with-letter/&quot; &amp; [Ansvarlig sagsbehandler.caseworkerId]" />
       <input type="text" name="Body" friendlyname="Body" expr="[Partshøring (json)]" />
     </inputs>
     <outputs>
@@ -4036,6 +4078,9 @@ Skabelon id er empty string i kald fra Momentum</narrative>
       <output type="text" name="Json" friendlyname="Json" narrative="Det rå json output" stage="Json" />
     </outputs>
     <onsuccess>ae5a660d-84dc-49b0-96bd-9a65508a7ab6</onsuccess>
+    <breakpoint type="0">
+      <condition></condition>
+    </breakpoint>
     <resource object="Momentum - Core" action="Post" />
   </stage>
   <stage stageid="a354cd27-7bca-4a0d-983d-6500d5dda374" name="Kontroller og oversæt hændelsestype" type="SubSheetInfo">
@@ -4489,7 +4534,7 @@ foreach (DataRow row in events.Rows)
 	regularNegativeEvent["citizenId"] = row["Borger-id"].ToString();
 	regularNegativeEvent["description"] = row["Begrundelse for partshøring"].ToString();
 	regularNegativeEvent["eventTypeCode"] = row["Hændelsestype"].ToString();
-	regularNegativeEvent["startDate"] = row["Hændelsesdato"] is DateTime date ? date.ToString("yyyy-MM-ddT22:00:00.000Z") : (string)null;
+	regularNegativeEvent["startDate"] = row["Hændelsesdato"] is DateTime date ? date.ToString("yyyy-MM-ddT21:00:00.000Z") : (string)null;
 	regularNegativeEvent["title"] = eventType == "Andet" ? row["Titel"].ToString() : eventType;
 	
 	regularNegativeEvents.Add(regularNegativeEvent);
@@ -4717,38 +4762,39 @@ consultationHearingJson = mainObject.ToString();]]></code>
     <display x="0" y="-135" />
     <inputs>
       <input type="collection" name="Borger" stage="Borger" />
-      <input type="date" name="Startdato" stage="Startdato" />
+      <input type="date" name="Startdato" narrative="Kan ikke være frem i tid" stage="Startdato" />
+      <input type="collection" name="Sagsbehandler" stage="Sagsbehandler" />
+      <input type="text" name="Sagstype" stage="Sagstype" />
     </inputs>
-    <onsuccess>2aefe122-5b02-445e-9292-f88640b0acf2</onsuccess>
+    <onsuccess>daf5cb31-4ee4-4a03-8eb3-9cefe4494da0</onsuccess>
   </stage>
   <stage stageid="fd1be98b-f6af-4ec2-97ff-314f0ae9c71b" name="End" type="End">
     <subsheetid>c1be2f9b-ed93-4247-a6b8-18049978684d</subsheetid>
     <loginhibit />
-    <display x="0" y="30" />
+    <display x="0" y="240" />
     <outputs>
-      <output type="collection" name="Supplerende sager" stage="Sager" />
+      <output type="collection" name="Supplerende sager" stage="Sag" />
       <output type="flag" name="Succes" stage="Succes" />
-      <output type="number" name="Antal" stage="Antal" />
     </outputs>
   </stage>
   <stage stageid="c5f3613e-fe0f-4b4a-88d1-7be4f4d58621" name="Input" type="Block">
     <subsheetid>c1be2f9b-ed93-4247-a6b8-18049978684d</subsheetid>
-    <display x="-270" y="-45" w="150" h="165" />
+    <display x="-270" y="-45" w="150" h="195" />
     <font family="Segoe UI" size="10" style="Regular" color="339966" />
   </stage>
   <stage stageid="e7f89986-a600-47de-876e-b293aed984c0" name="Variabler" type="Block">
     <subsheetid>c1be2f9b-ed93-4247-a6b8-18049978684d</subsheetid>
-    <display x="-270" y="210" w="150" h="105" />
+    <display x="-270" y="240" w="150" h="240" />
     <font family="Segoe UI" size="10" style="Regular" color="666699" />
   </stage>
   <stage stageid="fab604fb-4757-4b93-921a-3c882f78fbe5" name="Konstanter" type="Block">
     <subsheetid>c1be2f9b-ed93-4247-a6b8-18049978684d</subsheetid>
-    <display x="-270" y="135" w="150" h="60" />
+    <display x="-270" y="165" w="150" h="60" />
     <font family="Segoe UI" size="10" style="Regular" color="008080" />
   </stage>
   <stage stageid="ee3486a9-0f3f-473b-8af2-fec0d2d7242c" name="Output" type="Block">
     <subsheetid>c1be2f9b-ed93-4247-a6b8-18049978684d</subsheetid>
-    <display x="-270" y="330" w="150" h="195" />
+    <display x="-270" y="495" w="150" h="105" />
     <font family="Segoe UI" size="10" style="Regular" color="800080" />
   </stage>
   <stage stageid="3636047d-23a8-45f1-83e3-8b14109fe004" name="Borger" type="Collection">
@@ -4758,41 +4804,34 @@ consultationHearingJson = mainObject.ToString();]]></code>
     <private />
     <alwaysinit />
   </stage>
-  <stage stageid="9697a278-124e-4ae3-b4e2-d098bb1bc2b7" name="Anchor3" type="Anchor">
-    <subsheetid>c1be2f9b-ed93-4247-a6b8-18049978684d</subsheetid>
-    <loginhibit />
-    <display x="45" y="-75" w="10" h="10" />
-    <font family="Segoe UI" size="10" style="Regular" color="FFFF99" />
-    <onsuccess>2aefe122-5b02-445e-9292-f88640b0acf2</onsuccess>
-  </stage>
   <stage stageid="28f04694-914d-488d-8753-d34476b31285" name="Antal" type="Data">
     <subsheetid>c1be2f9b-ed93-4247-a6b8-18049978684d</subsheetid>
-    <display x="-195" y="495" w="120" h="30" />
+    <display x="-195" y="315" w="120" h="30" />
     <datatype>number</datatype>
     <initialvalue />
     <private />
     <alwaysinit />
   </stage>
-  <stage stageid="2aefe122-5b02-445e-9292-f88640b0acf2" name="Opret sag" type="Action">
+  <stage stageid="2aefe122-5b02-445e-9292-f88640b0acf2" name="Opret supplerende sag" type="Action">
     <subsheetid>c1be2f9b-ed93-4247-a6b8-18049978684d</subsheetid>
     <loginhibit onsuccess="true" />
-    <display x="0" y="-75" />
+    <display x="0" y="120" />
     <inputs>
       <input type="text" name="Url" friendlyname="Url" expr="&quot;/citizens/&quot; &amp; [Borger.id] &amp; &quot;/supplemental-cases&quot;" />
-      <input type="text" name="Body" friendlyname="Body" expr="[JSON body]" />
+      <input type="text" name="Body" friendlyname="Body" expr="[Body]" />
     </inputs>
     <outputs>
       <output type="number" name="Statuskode" friendlyname="Statuskode" narrative="Http statuskoden for kaldet" stage="Statuskode" />
-      <output type="collection" name="Data" friendlyname="Data" stage="Sager" />
-      <output type="number" name="Antal" friendlyname="Antal" stage="Antal" />
-      <output type="text" name="Json" friendlyname="Json" narrative="Det rå json output" stage="Sager (json)" />
+      <output type="collection" name="Data" friendlyname="Data" stage="Sag" />
+      <output type="number" name="Antal" friendlyname="Antal" stage="" />
+      <output type="text" name="Json" friendlyname="Json" narrative="Det rå json output" stage="" />
     </outputs>
     <onsuccess>1a424ea7-bd4b-4715-adb1-25447bec19c2</onsuccess>
     <resource object="Momentum - Core" action="Post" />
   </stage>
   <stage stageid="527d6d8b-e9e1-4019-befc-cdd80acd5e99" name="Succes" type="Data">
     <subsheetid>c1be2f9b-ed93-4247-a6b8-18049978684d</subsheetid>
-    <display x="-195" y="450" w="120" h="30" />
+    <display x="-195" y="570" w="120" h="30" />
     <datatype>flag</datatype>
     <initialvalue>False</initialvalue>
     <private />
@@ -4801,12 +4840,12 @@ consultationHearingJson = mainObject.ToString();]]></code>
   <stage stageid="83e913b7-613c-4d98-803e-a5d4ff699927" name="Opret supplerende sag" type="Block">
     <subsheetid>c1be2f9b-ed93-4247-a6b8-18049978684d</subsheetid>
     <loginhibit />
-    <display x="-75" y="-105" w="150" h="105" />
+    <display x="-75" y="45" w="150" h="150" />
     <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
   </stage>
   <stage stageid="c36ff61b-4281-4650-98ea-e9a12d2a151f" name="Statuskode" type="Data">
     <subsheetid>c1be2f9b-ed93-4247-a6b8-18049978684d</subsheetid>
-    <display x="-195" y="240" w="120" h="30" />
+    <display x="-195" y="270" w="120" h="30" />
     <datatype>number</datatype>
     <initialvalue />
     <private />
@@ -4815,24 +4854,9 @@ consultationHearingJson = mainObject.ToString();]]></code>
   <stage stageid="1a424ea7-bd4b-4715-adb1-25447bec19c2" name="Sæt succes" type="Calculation">
     <subsheetid>c1be2f9b-ed93-4247-a6b8-18049978684d</subsheetid>
     <loginhibit />
-    <display x="0" y="-30" />
+    <display x="0" y="165" />
     <onsuccess>fd1be98b-f6af-4ec2-97ff-314f0ae9c71b</onsuccess>
     <calculation expression="[Statuskode] = 200" stage="Succes" />
-  </stage>
-  <stage stageid="e7b07956-fcec-4640-a68e-a3a46acebf34" name="Sager (json)" type="Data">
-    <subsheetid>c1be2f9b-ed93-4247-a6b8-18049978684d</subsheetid>
-    <display x="-195" y="405" w="120" h="30" />
-    <datatype>text</datatype>
-    <initialvalue />
-    <private />
-    <alwaysinit />
-  </stage>
-  <stage stageid="d0b811fa-c9d1-43a6-aa3c-f478c68bb236" name="Sager" type="Collection">
-    <subsheetid>c1be2f9b-ed93-4247-a6b8-18049978684d</subsheetid>
-    <display x="-195" y="360" w="120" h="30" />
-    <datatype>collection</datatype>
-    <private />
-    <alwaysinit />
   </stage>
   <stage stageid="8e0811d6-0e2d-4ce3-b1a6-cef3d87b12b0" name="Start Momemtum (test)" type="Action">
     <subsheetid>c1be2f9b-ed93-4247-a6b8-18049978684d</subsheetid>
@@ -4857,39 +4881,8 @@ consultationHearingJson = mainObject.ToString();]]></code>
       <output type="number" name="Antal" friendlyname="Antal" stage="" />
       <output type="flag" name="Succes" friendlyname="Succes" stage="Succes" />
     </outputs>
-    <onsuccess>cf812cf0-3f6a-434d-abf8-4bb14a092a92</onsuccess>
+    <onsuccess>fd72b4a9-8c54-4591-9282-0fd87835493b</onsuccess>
     <processid>63591284-298c-492b-8b08-88710ae50832</processid>
-  </stage>
-  <stage stageid="cf812cf0-3f6a-434d-abf8-4bb14a092a92" name="Hent supplerende sager" type="SubSheet">
-    <subsheetid>c1be2f9b-ed93-4247-a6b8-18049978684d</subsheetid>
-    <loginhibit />
-    <display x="105" y="-195" />
-    <inputs>
-      <input type="collection" name="Borger" friendlyname="Borger" expr="[Borger]" />
-    </inputs>
-    <outputs>
-      <output type="collection" name="Supplerende sager" friendlyname="Supplerende sager" stage="Supplerende sager" />
-      <output type="flag" name="Succes" friendlyname="Succes" stage="" />
-      <output type="number" name="Antal" friendlyname="Antal" stage="" />
-    </outputs>
-    <onsuccess>9697a278-124e-4ae3-b4e2-d098bb1bc2b7</onsuccess>
-    <processid>cacce5a6-4192-42f0-9d3f-984d6285b08c</processid>
-  </stage>
-  <stage stageid="abd3733e-4137-4341-ab6e-eff3b1dbfc5f" name="Supplerende sager" type="Collection">
-    <subsheetid>c1be2f9b-ed93-4247-a6b8-18049978684d</subsheetid>
-    <display x="255" y="-195" />
-    <datatype>collection</datatype>
-    <private />
-    <alwaysinit />
-  </stage>
-  <stage stageid="7740a58a-79c7-457d-b04e-540491dc6c58" name="JSON body" type="Data">
-    <subsheetid>c1be2f9b-ed93-4247-a6b8-18049978684d</subsheetid>
-    <loginhibit />
-    <display x="-195" y="285" w="150" h="30" />
-    <datatype>text</datatype>
-    <initialvalue xml:space="preserve">{"supplementalCaseTypeId":"41b1896d-d555-ed11-af52-001dd8b71e9e","startDate":"2024-10-29T23:00:00.000Z","privateContactPersons":[],"responsibleCaseworkers":[{"responsibilities":[],"id":"7036ac6c-3bbd-4cb7-aeb0-1802b2604631","actorId":"c2bd6a6d-fa4d-44ca-aaac-79f550e4536e","role":1}]}</initialvalue>
-    <private />
-    <alwaysinit />
   </stage>
   <stage stageid="81c7d36f-7773-4f41-96bc-d9c40e8d5b37" name="Startdato" type="Data">
     <subsheetid>c1be2f9b-ed93-4247-a6b8-18049978684d</subsheetid>
@@ -4911,7 +4904,7 @@ consultationHearingJson = mainObject.ToString();]]></code>
   <stage stageid="daf5cb31-4ee4-4a03-8eb3-9cefe4494da0" name="Hent sagstyper" type="Action">
     <subsheetid>c1be2f9b-ed93-4247-a6b8-18049978684d</subsheetid>
     <loginhibit onsuccess="true" />
-    <display x="180" y="-195" />
+    <display x="0" y="-75" />
     <inputs>
       <input type="text" name="Url" friendlyname="Url" expr="&quot;/supplemental-case-types?activeOnly=true&quot;" />
     </inputs>
@@ -4919,14 +4912,14 @@ consultationHearingJson = mainObject.ToString();]]></code>
       <output type="number" name="Statuskode" friendlyname="Statuskode" narrative="Http statuskoden for kaldet" stage="Statuskode" />
       <output type="collection" name="Data" friendlyname="Data" stage="Sagstyper" />
       <output type="number" name="Antal" friendlyname="Antal" stage="Antal" />
-      <output type="text" name="Json" friendlyname="Json" narrative="Det rå json output" stage="Sager (json)" />
+      <output type="text" name="Json" friendlyname="Json" narrative="Det rå json output" stage="" />
     </outputs>
-    <onsuccess>9697a278-124e-4ae3-b4e2-d098bb1bc2b7</onsuccess>
+    <onsuccess>a5675da7-80d2-448e-9063-dcc501d622c0</onsuccess>
     <resource object="Momentum - Core" action="Get" />
   </stage>
   <stage stageid="de6b7988-7376-4ec2-9f25-e26d03021db0" name="Sagstyper" type="Collection">
     <subsheetid>c1be2f9b-ed93-4247-a6b8-18049978684d</subsheetid>
-    <display x="255" y="-240" />
+    <display x="-195" y="405" w="120" h="30" />
     <datatype>collection</datatype>
     <private />
     <alwaysinit />
@@ -5221,31 +5214,6 @@ consultationHearingJson = mainObject.ToString();]]></code>
       <output type="flag" name="Succes" friendlyname="Succes" stage="Succes" />
     </outputs>
     <onsuccess>c74ce23a-239e-4e10-98f8-592e206e58f1</onsuccess>
-    <processid>63591284-298c-492b-8b08-88710ae50832</processid>
-  </stage>
-  <stage stageid="f187753d-a961-43d7-a200-7c3c12ebf484" name="Start Momemtum (produktion)" type="Action">
-    <subsheetid>c1be2f9b-ed93-4247-a6b8-18049978684d</subsheetid>
-    <loginhibit onsuccess="true" />
-    <display x="180" y="-285" />
-    <inputs>
-      <input type="text" name="Credentials" friendlyname="Credentials" expr="&quot;KMD Momentum - produktion&quot;" />
-    </inputs>
-    <onsuccess>ec51f342-33ad-4911-9389-88bcc3a69df5</onsuccess>
-    <resource object="Momentum - Core" action="Start" />
-  </stage>
-  <stage stageid="ec51f342-33ad-4911-9389-88bcc3a69df5" name="Hent borger" type="SubSheet">
-    <subsheetid>c1be2f9b-ed93-4247-a6b8-18049978684d</subsheetid>
-    <loginhibit />
-    <display x="180" y="-240" />
-    <inputs>
-      <input type="text" name="Cpr" friendlyname="Cpr" expr="&quot;xxxxxxxxxx&quot;" />
-    </inputs>
-    <outputs>
-      <output type="collection" name="Borger" friendlyname="Borger" stage="Borger" />
-      <output type="number" name="Antal" friendlyname="Antal" stage="" />
-      <output type="flag" name="Succes" friendlyname="Succes" stage="Succes" />
-    </outputs>
-    <onsuccess>daf5cb31-4ee4-4a03-8eb3-9cefe4494da0</onsuccess>
     <processid>63591284-298c-492b-8b08-88710ae50832</processid>
   </stage>
   <stage stageid="c74ce23a-239e-4e10-98f8-592e206e58f1" name="Hent indkaldelser" type="SubSheet">
@@ -5712,7 +5680,7 @@ Uddannelser_out = educationsJson;]]></code>
     <display x="120" y="-225" />
     <inputs>
       <input type="collection" name="Collection In" friendlyname="Collection In" narrative="Input collection" expr="[Aktivitet]" />
-      <input type="text" name="Filter" friendlyname="Filter" narrative="The filter to apply" expr="&quot;[title] LIKE 'AOF danskuddannelse%'&quot;" />
+      <input type="text" name="Filter" friendlyname="Filter" narrative="The filter to apply" expr="&quot;[title] LIKE 'AOF danskuddannelse%' AND [start] &lt;= '&quot; &amp; FormatDate(&quot;01-04-2025&quot;, &quot;dd-MM-yyyy&quot;) &amp; &quot;' AND ([end] = '01-01-0001' OR '&quot; &amp; FormatDate(&quot;01-04-2025&quot;, &quot;dd-MM-yyyy&quot;) &amp; &quot;' &lt;= [end])&quot;&#xA;" />
     </inputs>
     <outputs>
       <output type="number" name="Count" friendlyname="Count" narrative="The amount of rows in the filtered collection" stage="" />
@@ -5892,7 +5860,7 @@ Uddannelser_out = educationsJson;]]></code>
   <stage stageid="63eb5c13-854b-4622-a556-1ae2b988286d" name="End" type="End">
     <subsheetid>e5490c05-b96d-4ca7-bac7-18edc4757c4d</subsheetid>
     <loginhibit />
-    <display x="0" y="555" />
+    <display x="0" y="510" />
     <outputs>
       <output type="collection" name="Opdateret person" stage="Opdateret person" />
       <output type="number" name="Antal" stage="Antal" />
@@ -5906,7 +5874,7 @@ Uddannelser_out = educationsJson;]]></code>
   </stage>
   <stage stageid="b1687c53-d6cb-4a89-abba-f83df9afbebe" name="Variabler" type="Block">
     <subsheetid>e5490c05-b96d-4ca7-bac7-18edc4757c4d</subsheetid>
-    <display x="-270" y="225" w="150" h="195" />
+    <display x="-270" y="225" w="150" h="240" />
     <font family="Segoe UI" size="10" style="Regular" color="666699" />
   </stage>
   <stage stageid="9347b7ac-09f2-4339-945e-92790a569d38" name="Konstanter" type="Block">
@@ -5916,7 +5884,7 @@ Uddannelser_out = educationsJson;]]></code>
   </stage>
   <stage stageid="2c228307-d3d6-43d0-bd78-ba31a2baaeb3" name="Output" type="Block">
     <subsheetid>e5490c05-b96d-4ca7-bac7-18edc4757c4d</subsheetid>
-    <display x="-270" y="435" w="150" h="150" />
+    <display x="-270" y="480" w="150" h="150" />
     <font family="Segoe UI" size="10" style="Regular" color="800080" />
   </stage>
   <stage stageid="c27fbf62-fc83-4298-8fce-8adbf9a08a9d" name="Anchor1" type="Anchor">
@@ -5933,7 +5901,7 @@ Uddannelser_out = educationsJson;]]></code>
   </stage>
   <stage stageid="533499f7-eb62-4a53-b6ca-987358c3a8b5" name="Statuskode" type="Data">
     <subsheetid>e5490c05-b96d-4ca7-bac7-18edc4757c4d</subsheetid>
-    <display x="-195" y="390" w="120" h="30" />
+    <display x="-195" y="435" w="120" h="30" />
     <datatype>number</datatype>
     <initialvalue />
     <private />
@@ -5952,7 +5920,7 @@ Uddannelser_out = educationsJson;]]></code>
     <inputs>
       <input type="text" name="Credentials" friendlyname="Credentials" expr="&quot;KMD Momentum - produktion&quot;" />
     </inputs>
-    <onsuccess>cb920e3f-8421-47d3-a6ac-2912c94746cd</onsuccess>
+    <onsuccess>3085ae9d-7b1a-4cef-9c43-fb00b5617f10</onsuccess>
     <resource object="Momentum - Core" action="Start" />
   </stage>
   <stage stageid="1cd21e23-3c94-4522-a1b7-351ff996bd7f" name="Debug" type="Block">
@@ -5971,7 +5939,7 @@ Uddannelser_out = educationsJson;]]></code>
   <stage stageid="22e9ad8f-1153-4f82-b9d1-f75bdc25d0a9" name="Opdater ansvarlige og kontaktpersoner" type="Action">
     <subsheetid>e5490c05-b96d-4ca7-bac7-18edc4757c4d</subsheetid>
     <loginhibit onsuccess="true" />
-    <display x="0" y="450" />
+    <display x="0" y="405" />
     <inputs>
       <input type="text" name="Url" friendlyname="Url" expr="&quot;/citizens/&quot; &amp; [Borger.id] &amp; &quot;/responsibleactors&quot;" />
       <input type="text" name="Body" friendlyname="Body" expr="[json]" />
@@ -5987,7 +5955,7 @@ Uddannelser_out = educationsJson;]]></code>
   </stage>
   <stage stageid="a8d81aed-b6f5-45c5-9699-821b15a079df" name="Antal" type="Data">
     <subsheetid>e5490c05-b96d-4ca7-bac7-18edc4757c4d</subsheetid>
-    <display x="-195" y="510" w="120" h="30" />
+    <display x="-195" y="555" w="120" h="30" />
     <datatype>number</datatype>
     <initialvalue />
     <private />
@@ -5995,7 +5963,7 @@ Uddannelser_out = educationsJson;]]></code>
   </stage>
   <stage stageid="a9449c34-a306-4083-81b0-78ab2f0a6d4e" name="Succes" type="Data">
     <subsheetid>e5490c05-b96d-4ca7-bac7-18edc4757c4d</subsheetid>
-    <display x="-195" y="555" w="120" h="30" />
+    <display x="-195" y="600" w="120" h="30" />
     <datatype>flag</datatype>
     <initialvalue />
     <private />
@@ -6004,14 +5972,14 @@ Uddannelser_out = educationsJson;]]></code>
   <stage stageid="732666ec-6ac3-4755-a315-40193458f3b2" name="Sæt succes" type="Calculation">
     <subsheetid>e5490c05-b96d-4ca7-bac7-18edc4757c4d</subsheetid>
     <loginhibit />
-    <display x="0" y="510" />
+    <display x="0" y="465" />
     <onsuccess>63eb5c13-854b-4622-a556-1ae2b988286d</onsuccess>
     <calculation expression="[Statuskode] = 200" stage="Succes" />
   </stage>
   <stage stageid="46508772-f599-46bd-a823-16551ee21fcc" name="Opdater borgers ansvarlige og kontaktpersoner" type="Block">
     <subsheetid>e5490c05-b96d-4ca7-bac7-18edc4757c4d</subsheetid>
     <loginhibit />
-    <display x="-75" y="405" w="285" h="75" />
+    <display x="-75" y="360" w="285" h="75" />
     <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
   </stage>
   <stage stageid="daf6aa4f-62e6-49ef-9da7-604ba2370c8f" name="Start Momemtum (edu)" type="Action">
@@ -6089,7 +6057,7 @@ Uddannelser_out = educationsJson;]]></code>
   </stage>
   <stage stageid="dc6ad6c2-da31-4be5-b1b6-f0f35cca0d9d" name="Opdateret person" type="Collection">
     <subsheetid>e5490c05-b96d-4ca7-bac7-18edc4757c4d</subsheetid>
-    <display x="-195" y="465" w="120" h="30" />
+    <display x="-195" y="510" w="120" h="30" />
     <datatype>collection</datatype>
     <private />
     <alwaysinit />
@@ -6202,7 +6170,7 @@ pr 12/12/24 er listen opdateret - ikke fuldent</narrative>
     <loginhibit />
     <display x="0" y="120" />
     <onsuccess>b0439a2c-9d63-409c-8a3e-d575b1bd6a23</onsuccess>
-    <calculation expression="[Statuskode] = 200" stage="Succes" />
+    <calculation expression="[Statuskode] = 200 OR&#xA;[Statuskode] = 201" stage="Succes" />
   </stage>
   <stage stageid="c6cb2a6a-9367-4e82-9e46-ed89a52b04a5" name="Opret markering på borger" type="Block">
     <subsheetid>24d441b1-352d-4e24-b87e-935ddfa178b4</subsheetid>
@@ -6240,7 +6208,7 @@ pr 12/12/24 er listen opdateret - ikke fuldent</narrative>
     <subsheetid>24d441b1-352d-4e24-b87e-935ddfa178b4</subsheetid>
     <display x="-195" y="75" w="120" h="30" />
     <datatype>date</datatype>
-    <initialvalue>2024/12/12</initialvalue>
+    <initialvalue>2025/05/05</initialvalue>
     <private />
     <alwaysinit />
   </stage>
@@ -6418,7 +6386,7 @@ pr 12/12/24 er listen opdateret - ikke fuldent</narrative>
     <subsheetid>24d441b1-352d-4e24-b87e-935ddfa178b4</subsheetid>
     <display x="-195" y="30" w="120" h="30" />
     <datatype>text</datatype>
-    <initialvalue xml:space="preserve">01167966 - Centralarkivet</initialvalue>
+    <initialvalue xml:space="preserve">Booking af møde i rehabiliteringsteam</initialvalue>
     <private />
     <alwaysinit />
   </stage>
@@ -6580,19 +6548,6 @@ pr 12/12/24 er listen opdateret - ikke fuldent</narrative>
     <display x="0" y="-15" w="10" h="10" />
     <onsuccess>c4a68982-c560-4b9f-bb08-921a48a832a1</onsuccess>
   </stage>
-  <stage stageid="de510939-8d40-4204-a350-8d517033a5d1" name="Omskriv fra collection JSON" type="Action">
-    <subsheetid>e5490c05-b96d-4ca7-bac7-18edc4757c4d</subsheetid>
-    <loginhibit onsuccess="true" />
-    <display x="0" y="315" />
-    <inputs>
-      <input type="collection" name="Data" friendlyname="Data" expr="[Sagsbehandlere]" />
-    </inputs>
-    <outputs>
-      <output type="text" name="JSON" friendlyname="JSON" stage="caseworker-JSON" />
-    </outputs>
-    <onsuccess>7ad74861-f77c-495d-96f5-885764f735dc</onsuccess>
-    <resource object="Utility - JSON" action="Collection to JSON" />
-  </stage>
   <stage stageid="fbf9291f-b2f6-41d0-8f64-c67e6fe876cb" name="Hent alle caseworkers" type="Action">
     <subsheetid>e5490c05-b96d-4ca7-bac7-18edc4757c4d</subsheetid>
     <loginhibit onsuccess="true" />
@@ -6604,29 +6559,14 @@ pr 12/12/24 er listen opdateret - ikke fuldent</narrative>
       <output type="number" name="Statuskode" friendlyname="Statuskode" narrative="Http statuskoden for kaldet" stage="Statuskode" />
       <output type="collection" name="Data" friendlyname="Data" stage="Sagsbehandlere" />
       <output type="number" name="Antal" friendlyname="Antal" stage="Antal" />
-      <output type="text" name="Json" friendlyname="Json" narrative="Det rå json output" stage="" />
+      <output type="text" name="Json" friendlyname="Json" narrative="Det rå json output" stage="alle caseworkers json" />
     </outputs>
-    <onsuccess>291fcd7e-7b32-4013-b4b5-5209c14ca703</onsuccess>
+    <onsuccess>a9c5541e-71cb-4f2b-b751-459183d47e72</onsuccess>
     <resource object="Momentum - Core" action="Get" />
-  </stage>
-  <stage stageid="291fcd7e-7b32-4013-b4b5-5209c14ca703" name="Filter på aktive" type="Action">
-    <subsheetid>e5490c05-b96d-4ca7-bac7-18edc4757c4d</subsheetid>
-    <loginhibit onsuccess="true" />
-    <display x="0" y="270" />
-    <inputs>
-      <input type="collection" name="Collection In" friendlyname="Collection In" narrative="Input collection" expr="[Sagsbehandlere]" />
-      <input type="text" name="Filter" friendlyname="Filter" narrative="The filter to apply" expr="&quot;[endDate] = '01-01-0001'&quot;" />
-    </inputs>
-    <outputs>
-      <output type="number" name="Count" friendlyname="Count" narrative="The amount of rows in the filtered collection" stage="Antal" />
-      <output type="collection" name="Collection Out" friendlyname="Collection Out" narrative="The filtered collection" stage="Sagsbehandlere" />
-    </outputs>
-    <onsuccess>de510939-8d40-4204-a350-8d517033a5d1</onsuccess>
-    <resource object="Utility - Odk Linq" action="Filter" />
   </stage>
   <stage stageid="7ba20442-189b-44fa-b6d1-91eec3c22560" name="caseworker-JSON" type="Data">
     <subsheetid>e5490c05-b96d-4ca7-bac7-18edc4757c4d</subsheetid>
-    <display x="-195" y="345" w="120" h="30" />
+    <display x="-195" y="390" w="120" h="30" />
     <datatype>text</datatype>
     <initialvalue />
     <private />
@@ -6659,13 +6599,13 @@ pr 12/12/24 er listen opdateret - ikke fuldent</narrative>
   <stage stageid="5363c6e4-476b-4adb-9120-aefda58096cb" name="Klargør body" type="Block">
     <subsheetid>e5490c05-b96d-4ca7-bac7-18edc4757c4d</subsheetid>
     <loginhibit />
-    <display x="-75" y="195" w="285" h="195" />
+    <display x="-75" y="195" w="285" h="150" />
     <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
   </stage>
   <stage stageid="7ad74861-f77c-495d-96f5-885764f735dc" name="Fix JSON body" type="Code">
     <subsheetid>e5490c05-b96d-4ca7-bac7-18edc4757c4d</subsheetid>
     <loginhibit />
-    <display x="0" y="360" />
+    <display x="0" y="315" />
     <inputs>
       <input type="text" name="json" expr="[json]" />
       <input type="text" name="caseworker-JSON" expr="[caseworker-JSON]" />
@@ -6899,7 +6839,1977 @@ json_out = updatedJson;
   <stage stageid="3effbd19-0521-413f-8e09-3fa9ac1d1efb" name="Debug" type="Block">
     <subsheetid>c1be2f9b-ed93-4247-a6b8-18049978684d</subsheetid>
     <loginhibit />
-    <display x="60" y="-315" w="240" h="150" />
+    <display x="60" y="-315" w="240" h="195" />
     <font family="Segoe UI" size="10" style="Regular" color="FFFF99" />
+  </stage>
+  <stage stageid="3016cbbb-6e88-4fab-b0a8-637702b3d9a2" name="Opdater markering på borger" type="SubSheetInfo">
+    <subsheetid>6858a206-53c5-4f65-ae66-7c3f28eea850</subsheetid>
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="6bb131b2-9d30-4e10-a9a1-1de2121676e2" name="Debug" type="Block">
+    <subsheetid>3ca52f28-cdab-40f6-a948-f3556dde706c</subsheetid>
+    <loginhibit />
+    <display x="180" y="-270" w="90" h="105" />
+    <font family="Segoe UI" size="10" style="Regular" color="FFFF99" />
+  </stage>
+  <stage stageid="dd0c2d6f-ffc7-4c1f-82c3-c0c6deea5dba" name="Hent borger" type="SubSheet">
+    <subsheetid>3ca52f28-cdab-40f6-a948-f3556dde706c</subsheetid>
+    <loginhibit />
+    <display x="225" y="-195" />
+    <inputs>
+      <input type="text" name="Cpr" friendlyname="Cpr" expr="&quot;xxxxxxxxxx&quot;" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="Borger" friendlyname="Borger" stage="Borger" />
+      <output type="number" name="Antal" friendlyname="Antal" stage="" />
+      <output type="flag" name="Succes" friendlyname="Succes" stage="Succes" />
+    </outputs>
+    <onsuccess>f58455b2-6000-4b41-ac03-fd751987beb1</onsuccess>
+    <processid>63591284-298c-492b-8b08-88710ae50832</processid>
+  </stage>
+  <stage stageid="e22741a3-daf7-4ab5-91fa-f8382b5bd7c5" name="Start Momemtum (edu)" type="Action">
+    <subsheetid>3ca52f28-cdab-40f6-a948-f3556dde706c</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="225" y="-240" />
+    <inputs>
+      <input type="text" name="Credentials" friendlyname="Credentials" expr="&quot;KMD Momentum - edu&quot;" />
+    </inputs>
+    <onsuccess>dd0c2d6f-ffc7-4c1f-82c3-c0c6deea5dba</onsuccess>
+    <resource object="Momentum - Core" action="Start" />
+  </stage>
+  <stage stageid="f58455b2-6000-4b41-ac03-fd751987beb1" name="Anchor21" type="Anchor">
+    <subsheetid>3ca52f28-cdab-40f6-a948-f3556dde706c</subsheetid>
+    <loginhibit />
+    <display x="225" y="-60" w="10" h="10" />
+    <onsuccess>d0001f83-c961-4ef9-b022-aa4bf7ff3560</onsuccess>
+  </stage>
+  <stage stageid="74d1e434-bd08-42f8-ac08-757ba66f76db" name="Opret målgruppe/visitation" type="SubSheetInfo">
+    <subsheetid>e56552ff-f2dc-433b-8bdf-13b436be183a</subsheetid>
+    <narrative>Kræver borger som input</narrative>
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="383a8e0b-16f5-48ac-955b-fda8dc56c7fb" name="Start" type="Start">
+    <subsheetid>e56552ff-f2dc-433b-8bdf-13b436be183a</subsheetid>
+    <loginhibit />
+    <display x="0" y="-135" />
+    <inputs>
+      <input type="collection" name="Borger" stage="Borger" />
+      <input type="date" name="Startdato" stage="Startdato" />
+      <input type="text" name="Målgruppekode" stage="Visitationsmålgruppekode" />
+      <input type="collection" name="Sagsbehandler" stage="Sagsbehandler" />
+    </inputs>
+    <onsuccess>d5567824-5987-45e8-a786-490c2f61396a</onsuccess>
+  </stage>
+  <stage stageid="3108efac-97cc-44e1-9412-417065f6b5b7" name="End" type="End">
+    <subsheetid>e56552ff-f2dc-433b-8bdf-13b436be183a</subsheetid>
+    <loginhibit />
+    <display x="0" y="180" />
+    <outputs>
+      <output type="flag" name="Succes" stage="Succes" />
+      <output type="collection" name="Visitation" stage="Data" />
+    </outputs>
+  </stage>
+  <stage stageid="e3e22db3-53a9-400b-bcc9-a13f17953d63" name="Input" type="Block">
+    <subsheetid>e56552ff-f2dc-433b-8bdf-13b436be183a</subsheetid>
+    <display x="-270" y="-45" w="150" h="195" />
+    <font family="Segoe UI" size="10" style="Regular" color="339966" />
+  </stage>
+  <stage stageid="f40ff7a0-2661-47fe-9f19-7af171901d0d" name="Variabler" type="Block">
+    <subsheetid>e56552ff-f2dc-433b-8bdf-13b436be183a</subsheetid>
+    <display x="-270" y="240" w="150" h="105" />
+    <font family="Segoe UI" size="10" style="Regular" color="666699" />
+  </stage>
+  <stage stageid="d5fa80aa-58c6-4840-b28e-bc5b8b9ead7b" name="Konstanter" type="Block">
+    <subsheetid>e56552ff-f2dc-433b-8bdf-13b436be183a</subsheetid>
+    <display x="-270" y="165" w="150" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="008080" />
+  </stage>
+  <stage stageid="9d02e289-d84c-4ff7-86cb-b848b5a020df" name="Output" type="Block">
+    <subsheetid>e56552ff-f2dc-433b-8bdf-13b436be183a</subsheetid>
+    <display x="-270" y="360" w="150" h="105" />
+    <font family="Segoe UI" size="10" style="Regular" color="800080" />
+  </stage>
+  <stage stageid="d17bb664-7546-4e3f-bd01-548a8c2b62bb" name="Borger" type="Collection">
+    <subsheetid>e56552ff-f2dc-433b-8bdf-13b436be183a</subsheetid>
+    <display x="-195" y="-15" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="24ae7290-10b2-4bd9-9e22-9015b4a7fd42" name="Debug" type="Block">
+    <subsheetid>e56552ff-f2dc-433b-8bdf-13b436be183a</subsheetid>
+    <loginhibit />
+    <display x="60" y="-330" w="90" h="105" />
+    <font family="Segoe UI" size="10" style="Regular" color="FFFF99" />
+  </stage>
+  <stage stageid="cb8ea028-e120-4649-a0ab-c329337fa466" name="Start Momemtum (produktion)" type="Action">
+    <subsheetid>e56552ff-f2dc-433b-8bdf-13b436be183a</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="105" y="-300" />
+    <inputs>
+      <input type="text" name="Credentials" friendlyname="Credentials" expr="&quot;KMD Momentum - produktion&quot;" />
+    </inputs>
+    <onsuccess>9cc2ad99-a885-47e1-b778-6b2de624ffdc</onsuccess>
+    <resource object="Momentum - Core" action="Start" />
+  </stage>
+  <stage stageid="9384a21a-f3f2-4372-8faf-49953ec8dcd6" name="Succes" type="Data">
+    <subsheetid>e56552ff-f2dc-433b-8bdf-13b436be183a</subsheetid>
+    <display x="-195" y="390" w="120" h="30" />
+    <datatype>flag</datatype>
+    <initialvalue>False</initialvalue>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="5edad5bd-6035-4b0c-a352-aae5f05a7f6e" name="Hent Personvisitationstatus" type="Block">
+    <subsheetid>e56552ff-f2dc-433b-8bdf-13b436be183a</subsheetid>
+    <loginhibit />
+    <display x="-60" y="-30" w="195" h="120" />
+    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
+  </stage>
+  <stage stageid="5c3f19f2-fdf6-40ab-be58-9661ae5cfbea" name="Statuskode" type="Data">
+    <subsheetid>e56552ff-f2dc-433b-8bdf-13b436be183a</subsheetid>
+    <display x="-195" y="315" w="120" h="30" />
+    <datatype>number</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="9cc2ad99-a885-47e1-b778-6b2de624ffdc" name="Hent borger" type="SubSheet">
+    <subsheetid>e56552ff-f2dc-433b-8bdf-13b436be183a</subsheetid>
+    <loginhibit />
+    <display x="105" y="-255" />
+    <inputs>
+      <input type="text" name="Cpr" friendlyname="Cpr" expr="&quot;xxxxxxxxxx&quot;" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="Borger" friendlyname="Borger" stage="Borger" />
+      <output type="number" name="Antal" friendlyname="Antal" stage="" />
+      <output type="flag" name="Succes" friendlyname="Succes" stage="Succes" />
+    </outputs>
+    <onsuccess>ee917882-7d45-4e73-b5f2-2b73a8821c60</onsuccess>
+    <processid>63591284-298c-492b-8b08-88710ae50832</processid>
+  </stage>
+  <stage stageid="0eec7b62-9f22-4eae-8b22-8de8b0e6f102" name="Sæt succes" type="Calculation">
+    <subsheetid>e56552ff-f2dc-433b-8bdf-13b436be183a</subsheetid>
+    <loginhibit />
+    <display x="0" y="120" />
+    <onsuccess>3108efac-97cc-44e1-9412-417065f6b5b7</onsuccess>
+    <calculation expression="[Statuskode] = 200" stage="Succes" />
+  </stage>
+  <stage stageid="07d4a55b-c9f5-46a9-91f3-8813da90c1da" name="Debug" type="Block">
+    <subsheetid>e56552ff-f2dc-433b-8bdf-13b436be183a</subsheetid>
+    <loginhibit />
+    <display x="180" y="-330" w="90" h="240" />
+    <font family="Segoe UI" size="10" style="Regular" color="FFFF99" />
+  </stage>
+  <stage stageid="ec34db98-5ee0-4e17-8f22-68808046c022" name="Hent borger" type="SubSheet">
+    <subsheetid>e56552ff-f2dc-433b-8bdf-13b436be183a</subsheetid>
+    <loginhibit />
+    <display x="225" y="-255" />
+    <inputs>
+      <input type="text" name="Cpr" friendlyname="Cpr" expr="&quot;xxxxxxxxxx&quot;" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="Borger" friendlyname="Borger" stage="Borger" />
+      <output type="number" name="Antal" friendlyname="Antal" stage="" />
+      <output type="flag" name="Succes" friendlyname="Succes" stage="Succes" />
+    </outputs>
+    <onsuccess>cbe40391-3ee7-43fe-a697-fbb7b3f8ab45</onsuccess>
+    <processid>63591284-298c-492b-8b08-88710ae50832</processid>
+  </stage>
+  <stage stageid="4d16e8e8-46cd-46f4-9d15-9ea53eb0831e" name="Start Momemtum (edu)" type="Action">
+    <subsheetid>e56552ff-f2dc-433b-8bdf-13b436be183a</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="225" y="-300" />
+    <inputs>
+      <input type="text" name="Credentials" friendlyname="Credentials" expr="&quot;KMD Momentum - edu&quot;" />
+    </inputs>
+    <onsuccess>ec34db98-5ee0-4e17-8f22-68808046c022</onsuccess>
+    <resource object="Momentum - Core" action="Start" />
+  </stage>
+  <stage stageid="dcbafe82-84e4-4d42-b01c-d5d6f5e27d73" name="JSON" type="Data">
+    <subsheetid>e56552ff-f2dc-433b-8bdf-13b436be183a</subsheetid>
+    <loginhibit />
+    <display x="-195" y="270" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue xml:space="preserve">{
+  "start": null,
+  "end": null,
+  "targetGroupCode": "gruppe",
+  "context":{"process_type":"1"},
+  "responsibleActors": [
+    {
+      "responsibilities": [],
+      "actorId": "ansvarligid"
+    }
+  ],
+  "responsiblePrivateContacts": [],
+  "asylumProfile": {
+    "asylumTransitionDate": null
+  }
+}</initialvalue>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="97df0028-bc5e-4694-a560-2227d68dfff4" name="Udfyld visitation" type="Code">
+    <subsheetid>e56552ff-f2dc-433b-8bdf-13b436be183a</subsheetid>
+    <loginhibit />
+    <display x="0" y="15" />
+    <inputs>
+      <input type="date" name="startDate" expr="[Startdato]" />
+      <input type="text" name="actorId" expr="[Sagsbehandler.id]" />
+      <input type="text" name="classificationCode" expr="[Visitationsmålgruppekode]" />
+      <input type="text" name="schema" expr="[JSON]" />
+    </inputs>
+    <outputs>
+      <output type="text" name="json" stage="JSON" />
+    </outputs>
+    <onsuccess>912f6fdb-e355-4237-825c-b1aa0995bb58</onsuccess>
+    <code><![CDATA[JObject jObj = JObject.Parse(schema);
+
+
+jObj["targetGroupCode"] = classificationCode;
+jObj["start"] = startDate;
+
+JArray responsibleActors = (JArray)jObj["responsibleActors"];
+
+JObject actorObj = responsibleActors
+    .FirstOrDefault(actor => actor["actorId"] != null) as JObject;
+
+if (actorObj != null)
+{
+    actorObj["actorId"] = actorId;
+}
+
+
+json = jObj.ToString();]]></code>
+  </stage>
+  <stage stageid="c21221b1-de93-48e4-8a71-64b911950282" name="Startdato" type="Data">
+    <subsheetid>e56552ff-f2dc-433b-8bdf-13b436be183a</subsheetid>
+    <loginhibit />
+    <display x="-195" y="30" w="120" h="30" />
+    <datatype>date</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="117cfa19-17ef-4987-b397-e2a477b49661" name="Visitationsmålgruppekode" type="Data">
+    <subsheetid>e56552ff-f2dc-433b-8bdf-13b436be183a</subsheetid>
+    <display x="-195" y="120" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="912f6fdb-e355-4237-825c-b1aa0995bb58" name="Opret personvisitation" type="Action">
+    <subsheetid>e56552ff-f2dc-433b-8bdf-13b436be183a</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="0" y="60" />
+    <inputs>
+      <input type="text" name="Url" friendlyname="Url" expr="&quot;/classifications/&quot; &amp; [Borger.id]" />
+      <input type="text" name="Body" friendlyname="Body" expr="[JSON]" />
+    </inputs>
+    <outputs>
+      <output type="number" name="Statuskode" friendlyname="Statuskode" narrative="Http statuskoden for kaldet" stage="Statuskode" />
+      <output type="collection" name="Data" friendlyname="Data" stage="Data" />
+      <output type="number" name="Antal" friendlyname="Antal" stage="" />
+      <output type="text" name="Json" friendlyname="Json" narrative="Det rå json output" stage="" />
+    </outputs>
+    <onsuccess>0eec7b62-9f22-4eae-8b22-8de8b0e6f102</onsuccess>
+    <resource object="Momentum - Core" action="Post" />
+  </stage>
+  <stage stageid="ca232e14-0251-45f3-ab9c-85e857d07687" name="Data" type="Collection">
+    <subsheetid>e56552ff-f2dc-433b-8bdf-13b436be183a</subsheetid>
+    <display x="-195" y="435" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="fff3f158-a6e2-48f0-8e46-a48aa014a720" name="Luk visitation/målgruppe" type="SubSheetInfo">
+    <subsheetid>58422f5c-e9e5-4f7c-bb74-5cf8bf16000c</subsheetid>
+    <narrative>Kræver borger som input</narrative>
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="8b313172-2bd9-42b6-9134-b102cc276dc3" name="Slutdato" type="Start">
+    <subsheetid>58422f5c-e9e5-4f7c-bb74-5cf8bf16000c</subsheetid>
+    <loginhibit />
+    <display x="0" y="-135" />
+    <inputs>
+      <input type="collection" name="Borger" stage="Borger" />
+      <input type="collection" name="Visitation" stage="Visitation" />
+      <input type="date" name="Slutdato" stage="Slutdato" />
+      <input type="text" name="Lukkekode" stage="Lukkekode" />
+      <input type="text" name="Kommentar" stage="Kommentar" />
+    </inputs>
+    <onsuccess>db2894cd-8479-48c8-af7e-125242a65161</onsuccess>
+  </stage>
+  <stage stageid="71850125-5562-4b1b-a5e9-7e19395a489f" name="End" type="End">
+    <subsheetid>58422f5c-e9e5-4f7c-bb74-5cf8bf16000c</subsheetid>
+    <loginhibit />
+    <display x="0" y="90" />
+    <outputs>
+      <output type="flag" name="Succes" stage="Succes" />
+    </outputs>
+  </stage>
+  <stage stageid="f6f742b4-3500-4ab8-8662-93decd313870" name="Input" type="Block">
+    <subsheetid>58422f5c-e9e5-4f7c-bb74-5cf8bf16000c</subsheetid>
+    <display x="-270" y="-45" w="150" h="240" />
+    <font family="Segoe UI" size="10" style="Regular" color="339966" />
+  </stage>
+  <stage stageid="10b8130e-e994-405a-bb21-b6301b8ec4a4" name="Variabler" type="Block">
+    <subsheetid>58422f5c-e9e5-4f7c-bb74-5cf8bf16000c</subsheetid>
+    <display x="-270" y="285" w="150" h="105" />
+    <font family="Segoe UI" size="10" style="Regular" color="666699" />
+  </stage>
+  <stage stageid="b813185c-e161-4ab6-9bdb-515994372c1a" name="Konstanter" type="Block">
+    <subsheetid>58422f5c-e9e5-4f7c-bb74-5cf8bf16000c</subsheetid>
+    <display x="-270" y="210" w="150" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="008080" />
+  </stage>
+  <stage stageid="f01f5f7d-7dc9-4466-b4d6-31bc805fc405" name="Output" type="Block">
+    <subsheetid>58422f5c-e9e5-4f7c-bb74-5cf8bf16000c</subsheetid>
+    <display x="-270" y="405" w="150" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="800080" />
+  </stage>
+  <stage stageid="c05b9f7a-9e7f-446b-a9e4-90dddeb22e9d" name="Borger" type="Collection">
+    <subsheetid>58422f5c-e9e5-4f7c-bb74-5cf8bf16000c</subsheetid>
+    <display x="-195" y="-15" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="97e6af1f-75d9-4760-b1c8-3a9dec4d0b19" name="Succes" type="Data">
+    <subsheetid>58422f5c-e9e5-4f7c-bb74-5cf8bf16000c</subsheetid>
+    <display x="-195" y="435" w="120" h="30" />
+    <datatype>flag</datatype>
+    <initialvalue>False</initialvalue>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="5825687d-bd2f-48e7-85a8-fa55980e7b3d" name="Hent Personvisitationstatus" type="Block">
+    <subsheetid>58422f5c-e9e5-4f7c-bb74-5cf8bf16000c</subsheetid>
+    <loginhibit />
+    <display x="-60" y="-90" w="195" h="105" />
+    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
+  </stage>
+  <stage stageid="835b113f-fe71-42ce-aada-02277ef76083" name="Statuskode" type="Data">
+    <subsheetid>58422f5c-e9e5-4f7c-bb74-5cf8bf16000c</subsheetid>
+    <display x="-195" y="360" w="120" h="30" />
+    <datatype>number</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="f8db6363-8ea6-43ff-8cee-427cc39d3627" name="Sæt succes" type="Calculation">
+    <subsheetid>58422f5c-e9e5-4f7c-bb74-5cf8bf16000c</subsheetid>
+    <loginhibit />
+    <display x="0" y="45" />
+    <onsuccess>71850125-5562-4b1b-a5e9-7e19395a489f</onsuccess>
+    <calculation expression="[Statuskode] = 200" stage="Succes" />
+  </stage>
+  <stage stageid="ea8ceef3-e7a1-469e-a884-4e777c754b67" name="Debug" type="Block">
+    <subsheetid>58422f5c-e9e5-4f7c-bb74-5cf8bf16000c</subsheetid>
+    <loginhibit />
+    <display x="180" y="-330" w="90" h="300" />
+    <font family="Segoe UI" size="10" style="Regular" color="FFFF99" />
+  </stage>
+  <stage stageid="e5e0ba62-6408-44b2-9ccf-5c85c5128b37" name="Hent borger" type="SubSheet">
+    <subsheetid>58422f5c-e9e5-4f7c-bb74-5cf8bf16000c</subsheetid>
+    <loginhibit />
+    <display x="225" y="-255" />
+    <inputs>
+      <input type="text" name="Cpr" friendlyname="Cpr" expr="&quot;xxxxxxxxxx&quot;" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="Borger" friendlyname="Borger" stage="Borger" />
+      <output type="number" name="Antal" friendlyname="Antal" stage="" />
+      <output type="flag" name="Succes" friendlyname="Succes" stage="Succes" />
+    </outputs>
+    <onsuccess>37668255-1cb7-42af-916f-e196f713387c</onsuccess>
+    <processid>63591284-298c-492b-8b08-88710ae50832</processid>
+  </stage>
+  <stage stageid="6bb9b940-8a97-4929-a017-da991d2d1b1b" name="Start Momemtum (edu)" type="Action">
+    <subsheetid>58422f5c-e9e5-4f7c-bb74-5cf8bf16000c</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="225" y="-300" />
+    <inputs>
+      <input type="text" name="Credentials" friendlyname="Credentials" expr="&quot;KMD Momentum - edu&quot;" />
+    </inputs>
+    <onsuccess>e5e0ba62-6408-44b2-9ccf-5c85c5128b37</onsuccess>
+    <resource object="Momentum - Core" action="Start" />
+  </stage>
+  <stage stageid="d11f5087-9f0c-4a8c-98cf-d1ee45e89654" name="JSON" type="Data">
+    <subsheetid>58422f5c-e9e5-4f7c-bb74-5cf8bf16000c</subsheetid>
+    <loginhibit />
+    <display x="-195" y="315" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue xml:space="preserve">{
+  "closingReasonCode": "string",
+  "closingDate": "xxxx",
+  "comment": "string"
+}</initialvalue>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="db2894cd-8479-48c8-af7e-125242a65161" name="Udfyld målgruppe luk JSON" type="Code">
+    <subsheetid>58422f5c-e9e5-4f7c-bb74-5cf8bf16000c</subsheetid>
+    <loginhibit />
+    <display x="0" y="-60" />
+    <inputs>
+      <input type="text" name="schema" expr="[JSON]" />
+      <input type="text" name="ClosingCode" expr="[Lukkekode]" />
+      <input type="text" name="Comment" expr="[Kommentar]" />
+      <input type="date" name="ClosingDate" expr="[Slutdato]" />
+    </inputs>
+    <outputs>
+      <output type="text" name="json" stage="JSON" />
+    </outputs>
+    <onsuccess>403ef5c7-4b85-4036-b514-85219b44c420</onsuccess>
+    <code><![CDATA[JObject jObj = JObject.Parse(schema);
+
+jObj["closingReasonCode"] = ClosingCode;
+jObj["closingDate"] = ClosingDate;
+
+jObj["Comment"] = ClosingDate;
+
+json = jObj.ToString();]]></code>
+  </stage>
+  <stage stageid="403ef5c7-4b85-4036-b514-85219b44c420" name="Luk målgruppe/visitation" type="Action">
+    <subsheetid>58422f5c-e9e5-4f7c-bb74-5cf8bf16000c</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="0" y="-15" />
+    <inputs>
+      <input type="text" name="Url" friendlyname="Url" expr="&quot;/citizens/&quot;&amp; [Borger.id] &amp;&quot;/classifications/&quot;&amp;[Visitation.id]&amp;&quot;/close&quot;" />
+      <input type="text" name="Body" friendlyname="Body" expr="[JSON]" />
+    </inputs>
+    <outputs>
+      <output type="number" name="Statuskode" friendlyname="Statuskode" narrative="Http statuskoden for kaldet" stage="Statuskode" />
+      <output type="collection" name="Data" friendlyname="Data" stage="" />
+      <output type="number" name="Antal" friendlyname="Antal" stage="" />
+      <output type="text" name="Json" friendlyname="Json" narrative="Det rå json output" stage="" />
+    </outputs>
+    <onsuccess>f8db6363-8ea6-43ff-8cee-427cc39d3627</onsuccess>
+    <resource object="Momentum - Core" action="Put" />
+  </stage>
+  <stage stageid="9367e093-5f2c-46eb-a98f-cb356f5c3e00" name="Visitation" type="Collection">
+    <subsheetid>58422f5c-e9e5-4f7c-bb74-5cf8bf16000c</subsheetid>
+    <display x="-195" y="30" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="8168bfe0-cccb-43b7-9f4a-f84e075a3c67" name="Slutdato" type="Data">
+    <subsheetid>58422f5c-e9e5-4f7c-bb74-5cf8bf16000c</subsheetid>
+    <display x="-195" y="75" w="120" h="30" />
+    <datatype>date</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="baea0847-dbd3-49bd-956a-3326f8e6bbf4" name="Debug" type="Block">
+    <subsheetid>6122771e-2f6d-4372-a223-809fe5b5904e</subsheetid>
+    <loginhibit />
+    <display x="210" y="-210" w="90" h="105" />
+    <font family="Segoe UI" size="10" style="Regular" color="FFFF99" />
+  </stage>
+  <stage stageid="c6a211fb-c47e-4a4f-b5eb-188025a4ae0d" name="Hent borger" type="SubSheet">
+    <subsheetid>6122771e-2f6d-4372-a223-809fe5b5904e</subsheetid>
+    <loginhibit />
+    <display x="255" y="-135" />
+    <inputs>
+      <input type="text" name="Cpr" friendlyname="Cpr" expr="&quot;xxxxxxxxxx&quot;" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="Borger" friendlyname="Borger" stage="Borger" />
+      <output type="number" name="Antal" friendlyname="Antal" stage="" />
+      <output type="flag" name="Succes" friendlyname="Succes" stage="Succes" />
+    </outputs>
+    <onsuccess>ace10e81-1376-459d-bb52-cd48766913fd</onsuccess>
+    <processid>63591284-298c-492b-8b08-88710ae50832</processid>
+  </stage>
+  <stage stageid="36be0d91-dbda-4e2e-9f12-762a80705a8d" name="Start Momemtum (edu)" type="Action">
+    <subsheetid>6122771e-2f6d-4372-a223-809fe5b5904e</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="255" y="-180" />
+    <inputs>
+      <input type="text" name="Credentials" friendlyname="Credentials" expr="&quot;KMD Momentum - edu&quot;" />
+    </inputs>
+    <onsuccess>c6a211fb-c47e-4a4f-b5eb-188025a4ae0d</onsuccess>
+    <resource object="Momentum - Core" action="Start" />
+  </stage>
+  <stage stageid="ace10e81-1376-459d-bb52-cd48766913fd" name="Anchor23" type="Anchor">
+    <subsheetid>6122771e-2f6d-4372-a223-809fe5b5904e</subsheetid>
+    <loginhibit />
+    <display x="255" y="-90" w="10" h="10" />
+    <onsuccess>82b22915-f2cc-4d1b-ab93-b173f0b4d154</onsuccess>
+  </stage>
+  <stage stageid="566d4ea6-208c-42ea-b5bf-582e4462675e" name="Hent og find hændelseskode" type="SubSheetInfo">
+    <subsheetid>a305d68a-edc2-4568-97b9-f0174296f845</subsheetid>
+    <narrative>Kræver borger som input</narrative>
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="790e7ba5-3a08-47a0-8371-fac83dd2cf1d" name="Start" type="Start">
+    <subsheetid>a305d68a-edc2-4568-97b9-f0174296f845</subsheetid>
+    <loginhibit />
+    <display x="0" y="-135" />
+    <inputs>
+      <input type="text" name="Hændelseskodeområde" stage="Hændelseskodeområde" />
+      <input type="text" name="Hændelsesnavn" stage="Hændelsesnavn" />
+    </inputs>
+    <onsuccess>7b2ec91e-fa2e-4020-a33d-4a12e28bcdd4</onsuccess>
+  </stage>
+  <stage stageid="c1d30af4-898a-432b-83c9-074e3de3e554" name="End" type="End">
+    <subsheetid>a305d68a-edc2-4568-97b9-f0174296f845</subsheetid>
+    <loginhibit />
+    <display x="0" y="150" />
+    <outputs>
+      <output type="flag" name="Succes" stage="Succes" />
+      <output type="collection" name="Hændelseskoder" stage="Data" />
+      <output type="number" name="Antal" stage="Antal" />
+    </outputs>
+  </stage>
+  <stage stageid="889e963b-aebd-40ad-ac59-e41ff73619da" name="Input" type="Block">
+    <subsheetid>a305d68a-edc2-4568-97b9-f0174296f845</subsheetid>
+    <display x="-270" y="-45" w="150" h="105" />
+    <font family="Segoe UI" size="10" style="Regular" color="339966" />
+  </stage>
+  <stage stageid="feb2b4e6-c934-4e5f-a69d-9da480b85d74" name="Variabler" type="Block">
+    <subsheetid>a305d68a-edc2-4568-97b9-f0174296f845</subsheetid>
+    <display x="-270" y="150" w="150" h="105" />
+    <font family="Segoe UI" size="10" style="Regular" color="666699" />
+  </stage>
+  <stage stageid="c220e42a-8264-4532-872b-6b73628ac2b7" name="Konstanter" type="Block">
+    <subsheetid>a305d68a-edc2-4568-97b9-f0174296f845</subsheetid>
+    <display x="-270" y="75" w="150" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="008080" />
+  </stage>
+  <stage stageid="31ec2e3c-911f-46ce-bd67-7efd4b6ab454" name="Output" type="Block">
+    <subsheetid>a305d68a-edc2-4568-97b9-f0174296f845</subsheetid>
+    <display x="-270" y="270" w="150" h="150" />
+    <font family="Segoe UI" size="10" style="Regular" color="800080" />
+  </stage>
+  <stage stageid="c36574bc-9431-4a4d-9d24-ebc211f329b5" name="Succes" type="Data">
+    <subsheetid>a305d68a-edc2-4568-97b9-f0174296f845</subsheetid>
+    <display x="-195" y="300" w="120" h="30" />
+    <datatype>flag</datatype>
+    <initialvalue>False</initialvalue>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="25afbf2e-28a1-4912-af09-28c762e76cd9" name="Find taxanomi" type="Block">
+    <subsheetid>a305d68a-edc2-4568-97b9-f0174296f845</subsheetid>
+    <loginhibit />
+    <display x="-60" y="-45" w="165" h="120" />
+    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
+  </stage>
+  <stage stageid="cf316b31-e12a-4142-8b22-760bef8ae8cb" name="Statuskode" type="Data">
+    <subsheetid>a305d68a-edc2-4568-97b9-f0174296f845</subsheetid>
+    <display x="-195" y="225" w="120" h="30" />
+    <datatype>number</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="7fc50830-6e50-41c1-91f8-503c48286247" name="Debug" type="Block">
+    <subsheetid>a305d68a-edc2-4568-97b9-f0174296f845</subsheetid>
+    <loginhibit />
+    <display x="135" y="-150" w="90" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="FFFF99" />
+  </stage>
+  <stage stageid="c44101fb-ac4b-4e08-8d86-33280411eaa3" name="Start Momemtum (edu)" type="Action">
+    <subsheetid>a305d68a-edc2-4568-97b9-f0174296f845</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="180" y="-120" />
+    <inputs>
+      <input type="text" name="Credentials" friendlyname="Credentials" expr="&quot;KMD Momentum - edu&quot;" />
+    </inputs>
+    <onsuccess>209ac822-7fe5-467f-90f3-932eadaa938f</onsuccess>
+    <resource object="Momentum - Core" action="Start" />
+  </stage>
+  <stage stageid="e320c9c5-2991-4ca3-93af-72a453c11fe2" name="Data" type="Collection">
+    <subsheetid>a305d68a-edc2-4568-97b9-f0174296f845</subsheetid>
+    <display x="-195" y="345" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="faed5d80-3e9b-476a-b5b5-a7189f3526bc" name="Hændelsesnavn" type="Data">
+    <subsheetid>a305d68a-edc2-4568-97b9-f0174296f845</subsheetid>
+    <display x="-195" y="30" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue xml:space="preserve">nb</initialvalue>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="7b2ec91e-fa2e-4020-a33d-4a12e28bcdd4" name="Hent taxonomier" type="Action">
+    <subsheetid>a305d68a-edc2-4568-97b9-f0174296f845</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="0" y="0" />
+    <inputs>
+      <input type="text" name="Url" friendlyname="Url" expr="&quot;/taxonomies/&quot;&amp;[Hændelseskodeområde]" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="Data" friendlyname="Data" stage="" />
+      <output type="number" name="Antal" friendlyname="Antal" stage="" />
+      <output type="text" name="Json" friendlyname="Json" narrative="Det rå json output" stage="Json" />
+      <output type="number" name="Statuskode" friendlyname="Statuskode" narrative="Http statuskoden for kaldet" stage="Statuskode" />
+    </outputs>
+    <onsuccess>e5695574-1399-490f-a823-7cce6daf572e</onsuccess>
+    <resource object="Momentum - Core" action="Get" />
+  </stage>
+  <stage stageid="209ac822-7fe5-467f-90f3-932eadaa938f" name="Anchor24" type="Anchor">
+    <subsheetid>a305d68a-edc2-4568-97b9-f0174296f845</subsheetid>
+    <loginhibit />
+    <display x="180" y="0" w="10" h="10" />
+    <onsuccess>7b2ec91e-fa2e-4020-a33d-4a12e28bcdd4</onsuccess>
+  </stage>
+  <stage stageid="e5695574-1399-490f-a823-7cce6daf572e" name="Find hændelseskode" type="Code">
+    <subsheetid>a305d68a-edc2-4568-97b9-f0174296f845</subsheetid>
+    <loginhibit />
+    <display x="0" y="45" />
+    <inputs>
+      <input type="text" name="TaxonomiName" expr="[Hændelsesnavn]" />
+      <input type="text" name="Json" expr="[Json]" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="table" stage="Data" />
+      <output type="number" name="count" stage="Antal" />
+    </outputs>
+    <onsuccess>c696e830-3e47-4b36-9c3b-e3b16bac2950</onsuccess>
+    <code><![CDATA[JToken jsonToken = JToken.Parse(Json);
+
+//JObject jsonObject = JObject.Parse(Json);
+JArray taxons = null;
+var foundTax = new List<JToken>();
+table = null;
+count = 0;
+
+if (jsonToken is JArray){
+	taxons = (JArray)jsonToken;
+	
+	 if (string.IsNullOrEmpty(TaxonomiName))
+    {
+         foundTax = taxons
+            .SelectMany(root => root["items"])
+            .ToList();  // Get all items
+    }else{
+		foundTax = taxons
+            .SelectMany(root => root["items"])
+            .Where(item => string.Equals(item["name"]?.ToString(), TaxonomiName, StringComparison.OrdinalIgnoreCase)).ToList();
+	}
+			
+	 foreach (var item in foundTax)
+	 {
+		 var parentCode = taxons.FirstOrDefault(root => root["items"] != null && root["items"].Any(i => string.Equals(i["code"]?.ToString(), item["code"]?.ToString(), StringComparison.OrdinalIgnoreCase)))?["code"];
+
+          if (parentCode != null){
+               item["parentCode"] = parentCode;
+		  }
+	 }
+}
+	
+if (jsonToken is JObject jsonObject){
+	taxons = (JArray)jsonObject["taxons"];
+	
+	 if (!string.IsNullOrEmpty(TaxonomiName))
+    {
+		foundTax = taxons.Where(x => string.Equals(x["name"]?.ToString(), TaxonomiName, StringComparison.OrdinalIgnoreCase)).ToList();
+	}else{
+		foundTax = taxons.ToList();
+		}
+	
+	foreach (var item in foundTax){
+		item["parentCode"] = jsonObject["code"];  // Add the parent "code" to each item
+		}
+}
+
+
+			
+if(foundTax != null){
+	
+	
+	table = new DataTable();
+
+    if (foundTax.Any())
+    {
+        // Add columns to DataTable based on the properties of the first item in the list
+        var firstItem = foundTax.First().ToObject<JObject>();
+        foreach (var property in firstItem.Properties())
+        {
+            table.Columns.Add(property.Name);
+        }
+
+        // Add rows to DataTable
+        foreach (var item in foundTax)
+        {
+            var row = table.NewRow();
+            var jObject = item.ToObject<JObject>();
+            foreach (var property in jObject.Properties())
+            {
+                row[property.Name] = property.Value.ToString();
+            }
+            table.Rows.Add(row);
+			count = count+1;
+        }
+    }
+	
+
+}
+
+]]></code>
+  </stage>
+  <stage stageid="b858dd62-493e-42b5-b324-fe2e79c9ffc6" name="Json" type="Data">
+    <subsheetid>a305d68a-edc2-4568-97b9-f0174296f845</subsheetid>
+    <display x="-195" y="180" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="dce26d03-9f9b-4321-9a66-b78cfadd8623" name="Antal" type="Data">
+    <subsheetid>a305d68a-edc2-4568-97b9-f0174296f845</subsheetid>
+    <display x="-195" y="390" w="120" h="30" />
+    <datatype>number</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="c696e830-3e47-4b36-9c3b-e3b16bac2950" name="Sæt succes" type="Calculation">
+    <subsheetid>a305d68a-edc2-4568-97b9-f0174296f845</subsheetid>
+    <loginhibit />
+    <display x="0" y="105" />
+    <onsuccess>c1d30af4-898a-432b-83c9-074e3de3e554</onsuccess>
+    <calculation expression="[Statuskode] = 200" stage="Succes" />
+  </stage>
+  <stage stageid="bd77cd2f-da85-4ed6-be37-12aa05339720" name="Hændelseskodeområde" type="Data">
+    <subsheetid>a305d68a-edc2-4568-97b9-f0174296f845</subsheetid>
+    <display x="-195" y="-15" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="37668255-1cb7-42af-916f-e196f713387c" name="Hent og find hændelseskode" type="SubSheet">
+    <subsheetid>58422f5c-e9e5-4f7c-bb74-5cf8bf16000c</subsheetid>
+    <loginhibit />
+    <display x="225" y="-195" />
+    <inputs>
+      <input type="text" name="Hændelseskodeområde" friendlyname="Hændelseskodeområde" expr="&quot;CLOSING_CAUSE_TYPE&quot;" />
+      <input type="text" name="Hændelsesnavn" friendlyname="Hændelsesnavn" expr="&quot;Fejloprettet&quot;" />
+    </inputs>
+    <outputs>
+      <output type="flag" name="Succes" friendlyname="Succes" stage="Succes" />
+      <output type="collection" name="Hændelseskoder" friendlyname="Hændelseskoder" stage="Hændelseskoder" />
+      <output type="number" name="Antal" friendlyname="Antal" stage="" />
+    </outputs>
+    <onsuccess>ac7d7b3f-0537-419f-853b-c74c06559ae7</onsuccess>
+    <processid>a305d68a-edc2-4568-97b9-f0174296f845</processid>
+  </stage>
+  <stage stageid="90036ba4-39f8-4ef8-a17f-034c2008c6a6" name="Hændelseskoder" type="Collection">
+    <subsheetid>58422f5c-e9e5-4f7c-bb74-5cf8bf16000c</subsheetid>
+    <display x="315" y="-195" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="12536588-dde0-4c80-9854-4375f7cef74c" name="Lukkekode" type="Data">
+    <subsheetid>58422f5c-e9e5-4f7c-bb74-5cf8bf16000c</subsheetid>
+    <display x="-195" y="120" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="ac7d7b3f-0537-419f-853b-c74c06559ae7" name="Calc1" type="Calculation">
+    <subsheetid>58422f5c-e9e5-4f7c-bb74-5cf8bf16000c</subsheetid>
+    <loginhibit />
+    <display x="225" y="-150" />
+    <onsuccess>b0f77df0-1ecc-4ffe-9dc3-d91926250c58</onsuccess>
+    <calculation expression="[Hændelseskoder.code]" stage="Lukkekode" />
+  </stage>
+  <stage stageid="1cd25f96-989d-4601-855b-d49e7cbea68c" name="Kommentar" type="Data">
+    <subsheetid>58422f5c-e9e5-4f7c-bb74-5cf8bf16000c</subsheetid>
+    <display x="-195" y="165" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="ee917882-7d45-4e73-b5f2-2b73a8821c60" name="Anchor25" type="Anchor">
+    <subsheetid>e56552ff-f2dc-433b-8bdf-13b436be183a</subsheetid>
+    <loginhibit />
+    <display x="105" y="-60" w="10" h="10" />
+    <onsuccess>d5567824-5987-45e8-a786-490c2f61396a</onsuccess>
+  </stage>
+  <stage stageid="d5567824-5987-45e8-a786-490c2f61396a" name="Anchor27" type="Anchor">
+    <subsheetid>e56552ff-f2dc-433b-8bdf-13b436be183a</subsheetid>
+    <loginhibit />
+    <display x="0" y="-60" w="10" h="10" />
+    <onsuccess>97df0028-bc5e-4694-a560-2227d68dfff4</onsuccess>
+  </stage>
+  <stage stageid="b013c6ed-c849-4804-b382-1ade1bc21eab" name="Målgruppe" type="Calculation">
+    <subsheetid>e56552ff-f2dc-433b-8bdf-13b436be183a</subsheetid>
+    <loginhibit />
+    <display x="225" y="-165" />
+    <onsuccess>767d9494-a60d-4f7f-9549-49be3096e72d</onsuccess>
+    <calculation expression="&quot;NB&quot;" stage="Visitationsmålgruppekode" />
+  </stage>
+  <stage stageid="767d9494-a60d-4f7f-9549-49be3096e72d" name="Sæt startdato" type="Calculation">
+    <subsheetid>e56552ff-f2dc-433b-8bdf-13b436be183a</subsheetid>
+    <loginhibit />
+    <display x="225" y="-120" />
+    <onsuccess>3aafa2de-a07c-4ce6-b1cc-d40534d84d39</onsuccess>
+    <calculation expression="Today()" stage="Startdato" />
+  </stage>
+  <stage stageid="3aafa2de-a07c-4ce6-b1cc-d40534d84d39" name="Anchor26" type="Anchor">
+    <subsheetid>e56552ff-f2dc-433b-8bdf-13b436be183a</subsheetid>
+    <loginhibit />
+    <display x="225" y="-60" w="10" h="10" />
+    <onsuccess>ee917882-7d45-4e73-b5f2-2b73a8821c60</onsuccess>
+  </stage>
+  <stage stageid="22089ca3-6033-46b1-9f66-42fe75b5c578" name="Sagsbehandler" type="Collection">
+    <subsheetid>e56552ff-f2dc-433b-8bdf-13b436be183a</subsheetid>
+    <display x="-195" y="75" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="cbe40391-3ee7-43fe-a697-fbb7b3f8ab45" name="Momentum - Borger::Hent sagsbehandler" type="Action">
+    <subsheetid>e56552ff-f2dc-433b-8bdf-13b436be183a</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="225" y="-210" />
+    <inputs>
+      <input type="text" name="Initialer" friendlyname="Initialer" expr="&quot;andja&quot;" />
+    </inputs>
+    <outputs>
+      <output type="flag" name="Succes" friendlyname="Succes" stage="" />
+      <output type="collection" name="Sagsbehandler" friendlyname="Sagsbehandler" stage="Sagsbehandler" />
+    </outputs>
+    <onsuccess>b013c6ed-c849-4804-b382-1ade1bc21eab</onsuccess>
+    <resource object="Momentum - Borger" action="Hent sagsbehandler" />
+  </stage>
+  <stage stageid="3085ae9d-7b1a-4cef-9c43-fb00b5617f10" name="Hent borger" type="SubSheet">
+    <subsheetid>e5490c05-b96d-4ca7-bac7-18edc4757c4d</subsheetid>
+    <loginhibit />
+    <display x="210" y="-180" />
+    <inputs>
+      <input type="text" name="Cpr" friendlyname="Cpr" expr="&quot;xxxxxxxxxx&quot;" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="Borger" friendlyname="Borger" stage="Borger" />
+      <output type="number" name="Antal" friendlyname="Antal" stage="" />
+      <output type="flag" name="Succes" friendlyname="Succes" stage="Succes" />
+    </outputs>
+    <onsuccess>cb920e3f-8421-47d3-a6ac-2912c94746cd</onsuccess>
+    <processid>63591284-298c-492b-8b08-88710ae50832</processid>
+  </stage>
+  <stage stageid="a9c5541e-71cb-4f2b-b751-459183d47e72" name="Code: hent aktive caseworkers" type="Code">
+    <subsheetid>e5490c05-b96d-4ca7-bac7-18edc4757c4d</subsheetid>
+    <loginhibit />
+    <display x="0" y="270" />
+    <inputs>
+      <input type="text" name="json" expr="[alle caseworkers json]" />
+    </inputs>
+    <outputs>
+      <output type="text" name="json-out" stage="caseworker-JSON" />
+    </outputs>
+    <onsuccess>7ad74861-f77c-495d-96f5-885764f735dc</onsuccess>
+    <code><![CDATA[JArray activeCaseworkers = JArray.Parse(json);
+activeCaseworkers = new JArray(activeCaseworkers
+    .Where(item => item["endDate"] == null || item["endDate"].Type == JTokenType.Null));
+	
+json_out = JsonConvert.SerializeObject(activeCaseworkers, Formatting.Indented);]]></code>
+  </stage>
+  <stage stageid="fc03e008-4175-4c6c-93ee-b44a22db2a7a" name="alle caseworkers json" type="Data">
+    <subsheetid>e5490c05-b96d-4ca7-bac7-18edc4757c4d</subsheetid>
+    <display x="-195" y="345" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="3fc02e73-19f3-4abe-b137-2e9692bfee81" name="Tilføj agenda" type="SubSheetInfo">
+    <subsheetid>e3271003-1406-4f4d-95f3-ddf0cef13672</subsheetid>
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="20c444c8-b1fe-4442-beee-e6af3383e886" name="Start" type="Start">
+    <subsheetid>e3271003-1406-4f4d-95f3-ddf0cef13672</subsheetid>
+    <loginhibit />
+    <display x="15" y="-135" />
+    <inputs>
+      <input type="collection" name="Borger" stage="Borger" />
+      <input type="text" name="Agendanavn" stage="Agenda" />
+    </inputs>
+    <onsuccess>0d63d03d-b667-4eef-affa-ce3dce8b7e09</onsuccess>
+  </stage>
+  <stage stageid="ffc03719-1ad9-47de-b1c9-640a5cf9ce5d" name="End" type="End">
+    <subsheetid>e3271003-1406-4f4d-95f3-ddf0cef13672</subsheetid>
+    <loginhibit />
+    <display x="15" y="390" />
+    <outputs>
+      <output type="flag" name="Succes" stage="Succes" />
+    </outputs>
+  </stage>
+  <stage stageid="4aad1206-d746-4922-ba18-30836bb8d5f3" name="Input" type="Block">
+    <subsheetid>e3271003-1406-4f4d-95f3-ddf0cef13672</subsheetid>
+    <display x="-270" y="-45" w="150" h="105" />
+    <font family="Segoe UI" size="10" style="Regular" color="339966" />
+  </stage>
+  <stage stageid="719b5ec2-9a52-4435-a08d-296344faf30a" name="Variabler" type="Block">
+    <subsheetid>e3271003-1406-4f4d-95f3-ddf0cef13672</subsheetid>
+    <display x="-270" y="150" w="150" h="240" />
+    <font family="Segoe UI" size="10" style="Regular" color="666699" />
+  </stage>
+  <stage stageid="c0aa15fe-5a60-4071-bc99-4ea5a58c34a6" name="Konstanter" type="Block">
+    <subsheetid>e3271003-1406-4f4d-95f3-ddf0cef13672</subsheetid>
+    <display x="-270" y="75" w="150" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="008080" />
+  </stage>
+  <stage stageid="b7d23631-86c9-42a3-949b-c746a5f4f757" name="Output" type="Block">
+    <subsheetid>e3271003-1406-4f4d-95f3-ddf0cef13672</subsheetid>
+    <display x="-270" y="405" w="150" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="800080" />
+  </stage>
+  <stage stageid="c31166c0-dbe6-4dec-ab55-f5bbfd68aa8a" name="Borger" type="Collection">
+    <subsheetid>e3271003-1406-4f4d-95f3-ddf0cef13672</subsheetid>
+    <display x="-195" y="-15" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="d8e0e282-1f4a-4184-982d-55afbbd2bfe5" name="Statuskode" type="Data">
+    <subsheetid>e3271003-1406-4f4d-95f3-ddf0cef13672</subsheetid>
+    <display x="-195" y="180" w="120" h="30" />
+    <datatype>number</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="cb0b48ba-95f5-4279-8154-4e42d9cfab17" name="Hent agenda templates" type="Action">
+    <subsheetid>e3271003-1406-4f4d-95f3-ddf0cef13672</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="15" y="105" />
+    <inputs>
+      <input type="text" name="Url" friendlyname="Url" expr="&quot;/agenda-templates/citizens/&quot;&amp;[Borger.id]" />
+    </inputs>
+    <outputs>
+      <output type="number" name="Statuskode" friendlyname="Statuskode" narrative="Http statuskoden for kaldet" stage="Statuskode" />
+      <output type="collection" name="Data" friendlyname="Data" stage="Templates" />
+      <output type="number" name="Antal" friendlyname="Antal" stage="Antal" />
+      <output type="text" name="Json" friendlyname="Json" narrative="Det rå json output" stage="" />
+    </outputs>
+    <onsuccess>a63141d9-42cb-40b9-a620-4c0dd097e2b0</onsuccess>
+    <resource object="Momentum - Core" action="Get" />
+  </stage>
+  <stage stageid="d0b4a77f-f10b-4276-b4b5-2ef3148529d1" name="Tilføj agenda" type="Block">
+    <subsheetid>e3271003-1406-4f4d-95f3-ddf0cef13672</subsheetid>
+    <loginhibit />
+    <display x="-60" y="75" w="195" h="285" />
+    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
+  </stage>
+  <stage stageid="d7e12de8-e061-49fe-9d0e-73299a24eff9" name="Sæt succes" type="Calculation">
+    <subsheetid>e3271003-1406-4f4d-95f3-ddf0cef13672</subsheetid>
+    <loginhibit />
+    <display x="15" y="330" />
+    <onsuccess>ffc03719-1ad9-47de-b1c9-640a5cf9ce5d</onsuccess>
+    <calculation expression="[Statuskode] = 200" stage="Succes" />
+  </stage>
+  <stage stageid="a0398e08-9706-48e7-bf49-a8930909c77b" name="Anchor2" type="Anchor">
+    <subsheetid>e3271003-1406-4f4d-95f3-ddf0cef13672</subsheetid>
+    <loginhibit />
+    <display x="105" y="-105" w="10" h="10" />
+    <onsuccess>0d63d03d-b667-4eef-affa-ce3dce8b7e09</onsuccess>
+  </stage>
+  <stage stageid="9b99ad82-1737-4dc4-ab0d-417b9fdb0076" name="Debug" type="Block">
+    <subsheetid>e3271003-1406-4f4d-95f3-ddf0cef13672</subsheetid>
+    <loginhibit />
+    <display x="60" y="-270" w="90" h="150" />
+    <font family="Segoe UI" size="10" style="Regular" color="FFFF99" />
+  </stage>
+  <stage stageid="116c41e5-45fe-4e09-804d-664cc3130a4e" name="Hent borger" type="SubSheet">
+    <subsheetid>e3271003-1406-4f4d-95f3-ddf0cef13672</subsheetid>
+    <loginhibit />
+    <display x="105" y="-195" />
+    <inputs>
+      <input type="text" name="Cpr" friendlyname="Cpr" expr="&quot;xxxxxxxxxx&quot;" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="Borger" friendlyname="Borger" stage="Borger" />
+      <output type="number" name="Antal" friendlyname="Antal" stage="" />
+      <output type="flag" name="Succes" friendlyname="Succes" stage="" />
+    </outputs>
+    <onsuccess>d8d3a663-23c6-48c4-9c7f-1c2ccc8405b2</onsuccess>
+    <processid>63591284-298c-492b-8b08-88710ae50832</processid>
+  </stage>
+  <stage stageid="0d63d03d-b667-4eef-affa-ce3dce8b7e09" name="Anchor2" type="Anchor">
+    <subsheetid>e3271003-1406-4f4d-95f3-ddf0cef13672</subsheetid>
+    <loginhibit />
+    <display x="15" y="-105" w="10" h="10" />
+    <onsuccess>772898c0-fce0-48dd-ba5a-4104ad0963a2</onsuccess>
+  </stage>
+  <stage stageid="29c96bd0-ddb5-47bd-8905-123d67f7833c" name="Succes" type="Data">
+    <subsheetid>e3271003-1406-4f4d-95f3-ddf0cef13672</subsheetid>
+    <display x="-195" y="435" w="120" h="30" />
+    <datatype>flag</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="825ffe34-6d83-43af-a682-61046ef2fa45" name="Antal" type="Data">
+    <subsheetid>e3271003-1406-4f4d-95f3-ddf0cef13672</subsheetid>
+    <display x="-195" y="315" w="120" h="30" />
+    <datatype>number</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="5e0f3bd9-654c-48b4-b384-8bdf7e69905b" name="Start Momemtum (test)" type="Action">
+    <subsheetid>e3271003-1406-4f4d-95f3-ddf0cef13672</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="105" y="-240" />
+    <inputs>
+      <input type="text" name="Credentials" friendlyname="Credentials" expr="&quot;KMD Momentum - edu&quot;" />
+    </inputs>
+    <onsuccess>116c41e5-45fe-4e09-804d-664cc3130a4e</onsuccess>
+    <resource object="Momentum - Core" action="Start" />
+  </stage>
+  <stage stageid="a63141d9-42cb-40b9-a620-4c0dd097e2b0" name="200?" type="Decision">
+    <subsheetid>e3271003-1406-4f4d-95f3-ddf0cef13672</subsheetid>
+    <loginhibit />
+    <display x="15" y="150" />
+    <decision expression="[Statuskode] = 200" />
+    <ontrue>4c42c12f-7513-4adb-842f-e01b58963464</ontrue>
+    <onfalse>80bc0565-c723-4f45-9dcc-138982ba5667</onfalse>
+  </stage>
+  <stage stageid="e952193d-0fc6-4b8b-8d0a-3a6252180657" name="Agenda" type="Data">
+    <subsheetid>e3271003-1406-4f4d-95f3-ddf0cef13672</subsheetid>
+    <display x="-195" y="30" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="d8d3a663-23c6-48c4-9c7f-1c2ccc8405b2" name="Sæt agenda" type="Calculation">
+    <subsheetid>e3271003-1406-4f4d-95f3-ddf0cef13672</subsheetid>
+    <loginhibit />
+    <display x="105" y="-150" />
+    <onsuccess>a0398e08-9706-48e7-bf49-a8930909c77b</onsuccess>
+    <calculation expression="&quot;Dedikeret vejledningssamtale – repatriering&quot;" stage="Agenda" />
+  </stage>
+  <stage stageid="d878d92e-3180-49da-8f26-35c090089fa0" name="Templates" type="Collection">
+    <subsheetid>e3271003-1406-4f4d-95f3-ddf0cef13672</subsheetid>
+    <display x="-195" y="270" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="4c42c12f-7513-4adb-842f-e01b58963464" name="Find template" type="Action">
+    <subsheetid>e3271003-1406-4f4d-95f3-ddf0cef13672</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="15" y="195" />
+    <inputs>
+      <input type="collection" name="Collection In" friendlyname="Collection In" narrative="Input collection" expr="[Templates]" />
+      <input type="text" name="Filter" friendlyname="Filter" narrative="The filter to apply" expr="&quot;[title] = '&quot;&amp;[Agenda]&amp;&quot;'&quot;" />
+    </inputs>
+    <outputs>
+      <output type="number" name="Count" friendlyname="Count" narrative="The amount of rows in the filtered collection" stage="Antal" />
+      <output type="collection" name="Collection Out" friendlyname="Collection Out" narrative="The filtered collection" stage="Template" />
+    </outputs>
+    <onsuccess>c90281d9-34d6-4640-8b26-de25c79d2ba3</onsuccess>
+    <resource object="Utility - Odk Linq" action="Filter" />
+  </stage>
+  <stage stageid="6dd1fcf4-2d82-41cd-9a81-8b32b6e402d0" name="Template" type="Collection">
+    <subsheetid>e3271003-1406-4f4d-95f3-ddf0cef13672</subsheetid>
+    <display x="-195" y="360" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="c90281d9-34d6-4640-8b26-de25c79d2ba3" name="1 template?" type="Decision">
+    <subsheetid>e3271003-1406-4f4d-95f3-ddf0cef13672</subsheetid>
+    <loginhibit />
+    <display x="15" y="240" />
+    <decision expression="[Antal] = 1" />
+    <ontrue>efc55e4e-939d-4353-a1c6-f0f5f9806ddf</ontrue>
+    <onfalse>45b64f78-45ea-4a29-b775-5411f1733faa</onfalse>
+  </stage>
+  <stage stageid="efc55e4e-939d-4353-a1c6-f0f5f9806ddf" name="Opret agenda" type="Action">
+    <subsheetid>e3271003-1406-4f4d-95f3-ddf0cef13672</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="15" y="285" />
+    <inputs>
+      <input type="text" name="Url" friendlyname="Url" expr="&quot;/agendas/reference/&quot;&amp;[Borger.id]&amp;&quot;/agenda-template/&quot;&amp;[Template.id]" />
+      <input type="text" name="Body" friendlyname="Body" expr="" />
+    </inputs>
+    <outputs>
+      <output type="number" name="Statuskode" friendlyname="Statuskode" narrative="Http statuskoden for kaldet" stage="Statuskode" />
+      <output type="collection" name="Data" friendlyname="Data" stage="Templates" />
+      <output type="number" name="Antal" friendlyname="Antal" stage="Antal" />
+      <output type="text" name="Json" friendlyname="Json" narrative="Det rå json output" stage="" />
+    </outputs>
+    <onsuccess>d7e12de8-e061-49fe-9d0e-73299a24eff9</onsuccess>
+    <resource object="Momentum - Core" action="Post" />
+  </stage>
+  <stage stageid="80bc0565-c723-4f45-9dcc-138982ba5667" name="Sæt ikke succes" type="Calculation">
+    <subsheetid>e3271003-1406-4f4d-95f3-ddf0cef13672</subsheetid>
+    <loginhibit />
+    <display x="90" y="150" />
+    <onsuccess>768e86a0-4bb3-49e1-b822-fd14236e4950</onsuccess>
+    <calculation expression="False" stage="Succes" />
+  </stage>
+  <stage stageid="45b64f78-45ea-4a29-b775-5411f1733faa" name="Sæt ikke succes" type="Calculation">
+    <subsheetid>e3271003-1406-4f4d-95f3-ddf0cef13672</subsheetid>
+    <loginhibit />
+    <display x="90" y="240" />
+    <onsuccess>91a3b8e1-faa5-4fa1-b883-1c4a7d8c3842</onsuccess>
+    <calculation expression="False" stage="Succes" />
+  </stage>
+  <stage stageid="91a3b8e1-faa5-4fa1-b883-1c4a7d8c3842" name="End6" type="End">
+    <subsheetid>e3271003-1406-4f4d-95f3-ddf0cef13672</subsheetid>
+    <loginhibit />
+    <display x="180" y="240" />
+    <outputs>
+      <output type="flag" name="Succes" stage="Succes" />
+    </outputs>
+  </stage>
+  <stage stageid="768e86a0-4bb3-49e1-b822-fd14236e4950" name="End7" type="End">
+    <subsheetid>e3271003-1406-4f4d-95f3-ddf0cef13672</subsheetid>
+    <loginhibit />
+    <display x="180" y="150" />
+    <outputs>
+      <output type="flag" name="Succes" stage="Succes" />
+    </outputs>
+  </stage>
+  <stage stageid="772898c0-fce0-48dd-ba5a-4104ad0963a2" name="Hent nuværende agendaer" type="Action">
+    <subsheetid>e3271003-1406-4f4d-95f3-ddf0cef13672</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="15" y="-60" />
+    <inputs>
+      <input type="text" name="Url" friendlyname="Url" expr="&quot;/agendas/reference/&quot;&amp;[Borger.id]" />
+    </inputs>
+    <outputs>
+      <output type="number" name="Statuskode" friendlyname="Statuskode" narrative="Http statuskoden for kaldet" stage="Statuskode" />
+      <output type="collection" name="Data" friendlyname="Data" stage="Agendaer" />
+      <output type="number" name="Antal" friendlyname="Antal" stage="Antal" />
+      <output type="text" name="Json" friendlyname="Json" narrative="Det rå json output" stage="" />
+    </outputs>
+    <onsuccess>35d39300-47b4-4408-becb-06e1057893c9</onsuccess>
+    <resource object="Momentum - Core" action="Get" />
+  </stage>
+  <stage stageid="4f9cf4c4-3b50-459a-a602-3b6b65259a9d" name="Agendaer" type="Collection">
+    <subsheetid>e3271003-1406-4f4d-95f3-ddf0cef13672</subsheetid>
+    <display x="-195" y="225" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="35d39300-47b4-4408-becb-06e1057893c9" name="Tjek om allerede findes" type="Action">
+    <subsheetid>e3271003-1406-4f4d-95f3-ddf0cef13672</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="15" y="-15" />
+    <inputs>
+      <input type="collection" name="Collection In" friendlyname="Collection In" narrative="Input collection" expr="[Agendaer]" />
+      <input type="text" name="Filter" friendlyname="Filter" narrative="The filter to apply" expr="&quot;[title] = '&quot;&amp;[Agenda]&amp;&quot;'&quot;" />
+    </inputs>
+    <outputs>
+      <output type="number" name="Count" friendlyname="Count" narrative="The amount of rows in the filtered collection" stage="Antal" />
+      <output type="collection" name="Collection Out" friendlyname="Collection Out" narrative="The filtered collection" stage="" />
+    </outputs>
+    <onsuccess>7f22f14c-d0b3-4370-8bdf-66750ef85bc2</onsuccess>
+    <resource object="Utility - Odk Linq" action="Filter" />
+  </stage>
+  <stage stageid="7f22f14c-d0b3-4370-8bdf-66750ef85bc2" name="Har borger allerede agenda?" type="Decision">
+    <subsheetid>e3271003-1406-4f4d-95f3-ddf0cef13672</subsheetid>
+    <loginhibit />
+    <display x="15" y="30" />
+    <decision expression="[Antal] &gt; 0" />
+    <ontrue>e0ad1534-bdf1-42e3-b738-3884e03844ec</ontrue>
+    <onfalse>cb0b48ba-95f5-4279-8154-4e42d9cfab17</onfalse>
+  </stage>
+  <stage stageid="ef487bc3-b4d1-4f52-ab22-28f47e8793c2" name="End8" type="End">
+    <subsheetid>e3271003-1406-4f4d-95f3-ddf0cef13672</subsheetid>
+    <loginhibit />
+    <display x="180" y="30" />
+    <outputs>
+      <output type="flag" name="Succes" stage="Succes" />
+    </outputs>
+  </stage>
+  <stage stageid="e0ad1534-bdf1-42e3-b738-3884e03844ec" name="Sæt succes" type="Calculation">
+    <subsheetid>e3271003-1406-4f4d-95f3-ddf0cef13672</subsheetid>
+    <loginhibit />
+    <display x="90" y="30" />
+    <onsuccess>ef487bc3-b4d1-4f52-ab22-28f47e8793c2</onsuccess>
+    <calculation expression="True" stage="Succes" />
+  </stage>
+  <stage stageid="68cf7da2-f4b4-4322-beff-51a7f7cd864b" name="Tjek om borger har agenda" type="Block">
+    <subsheetid>e3271003-1406-4f4d-95f3-ddf0cef13672</subsheetid>
+    <loginhibit />
+    <display x="-60" y="-90" w="195" h="150" />
+    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
+  </stage>
+  <stage stageid="d7bcf8ea-7d4d-4070-a303-8b453b903ec7" name="Body" type="Data">
+    <subsheetid>c1be2f9b-ed93-4247-a6b8-18049978684d</subsheetid>
+    <loginhibit />
+    <display x="-195" y="360" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue xml:space="preserve">{
+  "supplementalCaseTypeId": "00000000-0000-0000-0000-000000000000",
+  "startDate": "StartDate",
+  "responsibleCaseworkers": [
+    {
+      "actorId": "00000000-0000-0000-0000-000000000000",
+      "role": "1",
+      "responsibilities": []
+    }
+  ],
+  "privateContactPersons": [
+  ]
+}</initialvalue>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="e0f9e3f0-38fa-4f50-b667-e5b82db53a61" name="Sagsbehandler" type="Collection">
+    <subsheetid>c1be2f9b-ed93-4247-a6b8-18049978684d</subsheetid>
+    <display x="-195" y="120" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="fd72b4a9-8c54-4591-9282-0fd87835493b" name="Hent sagsbehandler" type="SubSheet">
+    <subsheetid>c1be2f9b-ed93-4247-a6b8-18049978684d</subsheetid>
+    <loginhibit />
+    <display x="105" y="-195" />
+    <inputs>
+      <input type="text" name="Initialer" friendlyname="Initialer" expr="&quot;andja&quot;" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="Sagsbehandler" friendlyname="Sagsbehandler" stage="Sagsbehandler" />
+      <output type="flag" name="Succes" friendlyname="Succes" stage="" />
+    </outputs>
+    <onsuccess>b8e2a6ce-df50-4b31-a992-7cef92fd9941</onsuccess>
+    <processid>5d0568a3-62a2-474e-8322-93512d72dc61</processid>
+  </stage>
+  <stage stageid="3e2bb76c-c2d3-4d4f-b458-b63e37187234" name="Anchor28" type="Anchor">
+    <subsheetid>c1be2f9b-ed93-4247-a6b8-18049978684d</subsheetid>
+    <loginhibit />
+    <display x="105" y="-75" w="10" h="10" />
+    <onsuccess>daf5cb31-4ee4-4a03-8eb3-9cefe4494da0</onsuccess>
+  </stage>
+  <stage stageid="b8e2a6ce-df50-4b31-a992-7cef92fd9941" name="Sæt test værdier" type="MultipleCalculation">
+    <subsheetid>c1be2f9b-ed93-4247-a6b8-18049978684d</subsheetid>
+    <loginhibit />
+    <display x="105" y="-150" />
+    <onsuccess>3e2bb76c-c2d3-4d4f-b458-b63e37187234</onsuccess>
+    <steps>
+      <calculation expression="&quot;Dedikeret vejledningssamtale om repatriering - diversesag&quot;" stage="Sagstype" />
+      <calculation expression="Today()" stage="Startdato" />
+    </steps>
+  </stage>
+  <stage stageid="a5675da7-80d2-448e-9063-dcc501d622c0" name="Find sagstype" type="Action">
+    <subsheetid>c1be2f9b-ed93-4247-a6b8-18049978684d</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="0" y="-30" />
+    <inputs>
+      <input type="collection" name="Collection In" friendlyname="Collection In" narrative="Input collection" expr="[Sagstyper]" />
+      <input type="text" name="Filter" friendlyname="Filter" narrative="The filter to apply" expr="&quot;[name] = '&quot;&amp;[Sagstype]&amp;&quot;'&quot;" />
+    </inputs>
+    <outputs>
+      <output type="number" name="Count" friendlyname="Count" narrative="The amount of rows in the filtered collection" stage="Antal" />
+      <output type="collection" name="Collection Out" friendlyname="Collection Out" narrative="The filtered collection" stage="Fundet sagstype" />
+    </outputs>
+    <onsuccess>b7e9b892-3815-4e73-81bd-0b59a5cd7b42</onsuccess>
+    <resource object="Utility - Odk Linq" action="Filter" />
+  </stage>
+  <stage stageid="8e09f043-8c4a-48a4-9f97-bf37fc45732d" name="Fundet sagstype" type="Collection">
+    <subsheetid>c1be2f9b-ed93-4247-a6b8-18049978684d</subsheetid>
+    <display x="-195" y="450" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="b7e9b892-3815-4e73-81bd-0b59a5cd7b42" name="Sagstype fundet?" type="Decision">
+    <subsheetid>c1be2f9b-ed93-4247-a6b8-18049978684d</subsheetid>
+    <loginhibit />
+    <display x="0" y="15" />
+    <decision expression="[Antal] = 1" />
+    <ontrue>59c0392b-6cea-4cf3-8a15-402d69b5fbba</ontrue>
+    <onfalse>8881ba63-f482-4903-9820-7d03d6b95890</onfalse>
+  </stage>
+  <stage stageid="59c0392b-6cea-4cf3-8a15-402d69b5fbba" name="Dan sagstype body" type="Code">
+    <subsheetid>c1be2f9b-ed93-4247-a6b8-18049978684d</subsheetid>
+    <loginhibit />
+    <display x="0" y="75" />
+    <inputs>
+      <input type="text" name="actorId" expr="[Sagsbehandler.id]" />
+      <input type="date" name="startDate" expr="[Startdato]" />
+      <input type="text" name="supplmentcaseTypeId" expr="[Fundet sagstype.id]" />
+      <input type="text" name="json" expr="[Body]" />
+    </inputs>
+    <outputs>
+      <output type="text" name="updatedJson" stage="Body" />
+    </outputs>
+    <onsuccess>2aefe122-5b02-445e-9292-f88640b0acf2</onsuccess>
+    <code><![CDATA[JObject obj = JObject.Parse(json);
+
+obj["supplementalCaseTypeId"] = supplmentcaseTypeId;
+obj["startDate"] = startDate;
+
+JArray caseworkers = (JArray)obj["responsibleCaseworkers"];
+
+JObject caseworker = (JObject)caseworkers[0];
+caseworker["actorId"] = actorId;
+
+updatedJson = JsonConvert.SerializeObject(obj);]]></code>
+  </stage>
+  <stage stageid="8881ba63-f482-4903-9820-7d03d6b95890" name="Sæt ikke succes" type="Calculation">
+    <subsheetid>c1be2f9b-ed93-4247-a6b8-18049978684d</subsheetid>
+    <loginhibit />
+    <display x="90" y="15" />
+    <onsuccess>e21f3367-828b-4a66-bbaf-750d34383b01</onsuccess>
+    <calculation expression="False" stage="Succes" />
+  </stage>
+  <stage stageid="e21f3367-828b-4a66-bbaf-750d34383b01" name="End9" type="End">
+    <subsheetid>c1be2f9b-ed93-4247-a6b8-18049978684d</subsheetid>
+    <loginhibit />
+    <display x="195" y="15" />
+    <outputs>
+      <output type="collection" name="Supplerende sager" stage="Sag" />
+      <output type="flag" name="Succes" stage="Succes" />
+    </outputs>
+  </stage>
+  <stage stageid="654d69cd-6e91-4aa1-b149-f012122e1951" name="Sag" type="Collection">
+    <subsheetid>c1be2f9b-ed93-4247-a6b8-18049978684d</subsheetid>
+    <display x="-195" y="525" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="3cd446a7-94f0-4a4c-8fa3-4d25bdacac04" name="Luk supplerende sag" type="SubSheetInfo">
+    <subsheetid>09507ff5-d6bf-4a15-ab35-de9761d8a7a9</subsheetid>
+    <narrative>Kræver borger som input</narrative>
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="883105f8-8125-498f-9f57-f0f744564add" name="Start" type="Start">
+    <subsheetid>09507ff5-d6bf-4a15-ab35-de9761d8a7a9</subsheetid>
+    <loginhibit />
+    <display x="0" y="-135" />
+    <inputs>
+      <input type="collection" name="Borger" stage="Borger" />
+      <input type="date" name="Slutdato" narrative="Kan ikke være frem i tid" stage="Slutdato" />
+      <input type="collection" name="Supplerende sag" stage="Supplerende sag" />
+      <input type="text" name="Kommentar" stage="Kommentar" />
+    </inputs>
+    <onsuccess>3a56e759-7c3a-44b0-9517-87fae05d5074</onsuccess>
+  </stage>
+  <stage stageid="3bf10e40-2847-4ab6-9b65-3b918f604a3a" name="End" type="End">
+    <subsheetid>09507ff5-d6bf-4a15-ab35-de9761d8a7a9</subsheetid>
+    <loginhibit />
+    <display x="0" y="150" />
+    <outputs>
+      <output type="collection" name="Supplerende sager" stage="Sag" />
+      <output type="flag" name="Succes" stage="Succes" />
+    </outputs>
+  </stage>
+  <stage stageid="cc702331-7105-4280-938d-86af877cd66a" name="Input" type="Block">
+    <subsheetid>09507ff5-d6bf-4a15-ab35-de9761d8a7a9</subsheetid>
+    <display x="-270" y="-45" w="150" h="195" />
+    <font family="Segoe UI" size="10" style="Regular" color="339966" />
+  </stage>
+  <stage stageid="bf65b51c-bd30-4b1e-bd46-00838ba0bbf4" name="Variabler" type="Block">
+    <subsheetid>09507ff5-d6bf-4a15-ab35-de9761d8a7a9</subsheetid>
+    <display x="-270" y="240" w="150" h="240" />
+    <font family="Segoe UI" size="10" style="Regular" color="666699" />
+  </stage>
+  <stage stageid="140cc52d-94b6-443e-a04e-5fa4e970630a" name="Konstanter" type="Block">
+    <subsheetid>09507ff5-d6bf-4a15-ab35-de9761d8a7a9</subsheetid>
+    <display x="-270" y="165" w="150" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="008080" />
+  </stage>
+  <stage stageid="fbd3b2ca-dc45-4775-a37b-a0781fedbb01" name="Output" type="Block">
+    <subsheetid>09507ff5-d6bf-4a15-ab35-de9761d8a7a9</subsheetid>
+    <display x="-270" y="495" w="150" h="105" />
+    <font family="Segoe UI" size="10" style="Regular" color="800080" />
+  </stage>
+  <stage stageid="9e435f47-6b1f-4862-ad4e-fe3f3cccbe44" name="Borger" type="Collection">
+    <subsheetid>09507ff5-d6bf-4a15-ab35-de9761d8a7a9</subsheetid>
+    <display x="-195" y="-15" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="8c889af8-5ca9-44fc-9840-3346d7283e39" name="Antal" type="Data">
+    <subsheetid>09507ff5-d6bf-4a15-ab35-de9761d8a7a9</subsheetid>
+    <display x="-195" y="315" w="120" h="30" />
+    <datatype>number</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="ac878319-f91b-497b-897d-f77c97285f72" name="Luk supplerende sag" type="Action">
+    <subsheetid>09507ff5-d6bf-4a15-ab35-de9761d8a7a9</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="0" y="30" />
+    <inputs>
+      <input type="text" name="Url" friendlyname="Url" expr="&quot;/citizens/&quot; &amp; [Borger.id] &amp; &quot;/supplemental-cases/&quot;&amp;[Supplerende sag.id]&amp;&quot;/close&quot;" />
+      <input type="text" name="Body" friendlyname="Body" expr="[Body]" />
+    </inputs>
+    <outputs>
+      <output type="number" name="Statuskode" friendlyname="Statuskode" narrative="Http statuskoden for kaldet" stage="Statuskode" />
+      <output type="collection" name="Data" friendlyname="Data" stage="Sag" />
+      <output type="number" name="Antal" friendlyname="Antal" stage="" />
+      <output type="text" name="Json" friendlyname="Json" narrative="Det rå json output" stage="" />
+    </outputs>
+    <onsuccess>cb697605-8179-4d1c-9764-b262108b9b64</onsuccess>
+    <resource object="Momentum - Core" action="Put" />
+  </stage>
+  <stage stageid="1e187050-4aa1-4820-8d79-11d7f5c376d8" name="Succes" type="Data">
+    <subsheetid>09507ff5-d6bf-4a15-ab35-de9761d8a7a9</subsheetid>
+    <display x="-195" y="570" w="120" h="30" />
+    <datatype>flag</datatype>
+    <initialvalue>False</initialvalue>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="2cc6c5b5-7f11-47da-b0d6-68fa5e464499" name="Luk supplerende sag" type="Block">
+    <subsheetid>09507ff5-d6bf-4a15-ab35-de9761d8a7a9</subsheetid>
+    <loginhibit />
+    <display x="-75" y="-45" w="150" h="150" />
+    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
+  </stage>
+  <stage stageid="c1222f12-a56f-470f-ab1f-d7728ed8911a" name="Statuskode" type="Data">
+    <subsheetid>09507ff5-d6bf-4a15-ab35-de9761d8a7a9</subsheetid>
+    <display x="-195" y="270" w="120" h="30" />
+    <datatype>number</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="cb697605-8179-4d1c-9764-b262108b9b64" name="Sæt succes" type="Calculation">
+    <subsheetid>09507ff5-d6bf-4a15-ab35-de9761d8a7a9</subsheetid>
+    <loginhibit />
+    <display x="0" y="75" />
+    <onsuccess>3bf10e40-2847-4ab6-9b65-3b918f604a3a</onsuccess>
+    <calculation expression="[Statuskode] = 200" stage="Succes" />
+  </stage>
+  <stage stageid="ea0fe497-2875-412f-b608-7d51136f4445" name="Start Momemtum (test)" type="Action">
+    <subsheetid>09507ff5-d6bf-4a15-ab35-de9761d8a7a9</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="105" y="-285" />
+    <inputs>
+      <input type="text" name="Credentials" friendlyname="Credentials" expr="&quot;KMD Momentum - edu&quot;" />
+    </inputs>
+    <onsuccess>af781a04-f869-4d55-b026-42d726d36910</onsuccess>
+    <resource object="Momentum - Core" action="Start" />
+  </stage>
+  <stage stageid="af781a04-f869-4d55-b026-42d726d36910" name="Hent borger" type="SubSheet">
+    <subsheetid>09507ff5-d6bf-4a15-ab35-de9761d8a7a9</subsheetid>
+    <loginhibit />
+    <narrative>"xxxxxxxxxx"</narrative>
+    <display x="105" y="-240" />
+    <inputs>
+      <input type="text" name="Cpr" friendlyname="Cpr" expr="&quot;xxxxxxxxxx&quot;" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="Borger" friendlyname="Borger" stage="Borger" />
+      <output type="number" name="Antal" friendlyname="Antal" stage="" />
+      <output type="flag" name="Succes" friendlyname="Succes" stage="Succes" />
+    </outputs>
+    <onsuccess>614b97c7-7b2d-420f-90e8-d4368c7e5499</onsuccess>
+    <processid>63591284-298c-492b-8b08-88710ae50832</processid>
+  </stage>
+  <stage stageid="caca1c51-2d2b-49ad-a643-0783f9d698c1" name="Sagstyper" type="Collection">
+    <subsheetid>09507ff5-d6bf-4a15-ab35-de9761d8a7a9</subsheetid>
+    <display x="-195" y="405" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="a7b8d3bc-42a8-4fa3-9531-37be1793bd4f" name="Debug" type="Block">
+    <subsheetid>09507ff5-d6bf-4a15-ab35-de9761d8a7a9</subsheetid>
+    <loginhibit />
+    <display x="60" y="-315" w="225" h="240" />
+    <font family="Segoe UI" size="10" style="Regular" color="FFFF99" />
+  </stage>
+  <stage stageid="2dd01350-b111-40e9-9707-f9c4c57dfd6b" name="Body" type="Data">
+    <subsheetid>09507ff5-d6bf-4a15-ab35-de9761d8a7a9</subsheetid>
+    <loginhibit />
+    <display x="-195" y="360" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue xml:space="preserve">{
+  endDate: "xxxx",
+  comment: "string"
+}</initialvalue>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="c7b8845d-d613-4bd6-a344-3956666461f8" name="Fundet sagstype" type="Collection">
+    <subsheetid>09507ff5-d6bf-4a15-ab35-de9761d8a7a9</subsheetid>
+    <display x="-195" y="450" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="a76af266-6c1d-436a-9ede-e89001b9a145" name="Udfyld luk supplerende sag json" type="Code">
+    <subsheetid>09507ff5-d6bf-4a15-ab35-de9761d8a7a9</subsheetid>
+    <loginhibit />
+    <display x="0" y="-15" />
+    <inputs>
+      <input type="text" name="json" expr="[Body]" />
+      <input type="date" name="endDate" expr="[Slutdato]" />
+      <input type="text" name="comment" expr="[Kommentar]" />
+    </inputs>
+    <outputs>
+      <output type="text" name="updatedJson" stage="Body" />
+    </outputs>
+    <onsuccess>ac878319-f91b-497b-897d-f77c97285f72</onsuccess>
+    <code><![CDATA[JObject obj = JObject.Parse(json);
+
+obj["endDate"] = endDate;
+obj["comment"] = comment;
+
+
+updatedJson = JsonConvert.SerializeObject(obj);]]></code>
+  </stage>
+  <stage stageid="c07c9210-2036-47b4-b84d-063b2100c095" name="Sag" type="Collection">
+    <subsheetid>09507ff5-d6bf-4a15-ab35-de9761d8a7a9</subsheetid>
+    <display x="-195" y="525" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="4761cc7f-e096-4854-9547-3c40da1d7c5e" name="Supplerende sag" type="Collection">
+    <subsheetid>09507ff5-d6bf-4a15-ab35-de9761d8a7a9</subsheetid>
+    <display x="-195" y="75" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="5f927123-7911-40fd-8c8b-8cd7845f364f" name="Slutdato" type="Data">
+    <subsheetid>09507ff5-d6bf-4a15-ab35-de9761d8a7a9</subsheetid>
+    <display x="-195" y="30" w="120" h="30" />
+    <datatype>date</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="614b97c7-7b2d-420f-90e8-d4368c7e5499" name="Hent supplerende sager" type="SubSheet">
+    <subsheetid>09507ff5-d6bf-4a15-ab35-de9761d8a7a9</subsheetid>
+    <loginhibit />
+    <display x="105" y="-195" />
+    <inputs>
+      <input type="collection" name="Borger" friendlyname="Borger" expr="[Borger]" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="Supplerende sager" friendlyname="Supplerende sager" stage="Supplerende sager" />
+      <output type="flag" name="Succes" friendlyname="Succes" stage="" />
+      <output type="number" name="Antal" friendlyname="Antal" stage="" />
+    </outputs>
+    <onsuccess>6de5f6ea-b823-4904-b6fc-e40e11592634</onsuccess>
+    <processid>cacce5a6-4192-42f0-9d3f-984d6285b08c</processid>
+  </stage>
+  <stage stageid="8ace1b11-a145-4038-8bba-b0f93ef2ce08" name="Supplerende sager" type="Collection">
+    <subsheetid>09507ff5-d6bf-4a15-ab35-de9761d8a7a9</subsheetid>
+    <display x="180" y="-195" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="6de5f6ea-b823-4904-b6fc-e40e11592634" name="Tag supplerende sag" type="Action">
+    <subsheetid>09507ff5-d6bf-4a15-ab35-de9761d8a7a9</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="105" y="-150" />
+    <inputs>
+      <input type="collection" name="Collection In" friendlyname="Collection In" narrative="Input collection" expr="[Supplerende sager]" />
+      <input type="text" name="Filter" friendlyname="Filter" narrative="The filter to apply" expr="&quot;[caseId] = '903ceb55-e5d8-4a06-b15c-482dea81d5e0'&quot;" />
+    </inputs>
+    <outputs>
+      <output type="number" name="Count" friendlyname="Count" narrative="The amount of rows in the filtered collection" stage="" />
+      <output type="collection" name="Collection Out" friendlyname="Collection Out" narrative="The filtered collection" stage="Supplerende sag" />
+    </outputs>
+    <onsuccess>8d080728-dc9f-495d-ab4c-6dcacb4918dd</onsuccess>
+    <resource object="Utility - Odk Linq" action="Filter" />
+  </stage>
+  <stage stageid="bf817f06-a6fc-469c-9f5d-8c718ad9ba05" name="Kommentar" type="Data">
+    <subsheetid>09507ff5-d6bf-4a15-ab35-de9761d8a7a9</subsheetid>
+    <display x="-195" y="120" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="8d080728-dc9f-495d-ab4c-6dcacb4918dd" name="Sæt testværdier" type="MultipleCalculation">
+    <subsheetid>09507ff5-d6bf-4a15-ab35-de9761d8a7a9</subsheetid>
+    <loginhibit />
+    <display x="105" y="-105" />
+    <onsuccess>3a56e759-7c3a-44b0-9517-87fae05d5074</onsuccess>
+    <steps>
+      <calculation expression="&quot;test&quot;" stage="Kommentar" />
+      <calculation expression="Today()" stage="Slutdato" />
+    </steps>
+  </stage>
+  <stage stageid="3a56e759-7c3a-44b0-9517-87fae05d5074" name="Anchor29" type="Anchor">
+    <subsheetid>09507ff5-d6bf-4a15-ab35-de9761d8a7a9</subsheetid>
+    <loginhibit />
+    <display x="0" y="-105" w="10" h="10" />
+    <onsuccess>a76af266-6c1d-436a-9ede-e89001b9a145</onsuccess>
+  </stage>
+  <stage stageid="b0f77df0-1ecc-4ffe-9dc3-d91926250c58" name="Hent målgrupper" type="SubSheet">
+    <subsheetid>58422f5c-e9e5-4f7c-bb74-5cf8bf16000c</subsheetid>
+    <loginhibit />
+    <display x="225" y="-105" />
+    <inputs>
+      <input type="collection" name="Borger" friendlyname="Borger" expr="[Borger]" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="Målgrupper" friendlyname="Målgrupper" stage="Målgrupper" />
+      <output type="flag" name="Succes" friendlyname="Succes" stage="" />
+      <output type="number" name="Antal" friendlyname="Antal" stage="" />
+    </outputs>
+    <onsuccess>71c3b52a-bf3b-45b4-98fb-274319b36fc0</onsuccess>
+    <processid>6122771e-2f6d-4372-a223-809fe5b5904e</processid>
+  </stage>
+  <stage stageid="83fd6440-362e-46d8-ae23-ff8fd060220c" name="Målgrupper" type="Collection">
+    <subsheetid>58422f5c-e9e5-4f7c-bb74-5cf8bf16000c</subsheetid>
+    <display x="315" y="-150" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="71c3b52a-bf3b-45b4-98fb-274319b36fc0" name="Utility - Collection Manipulation::Copy Rows" type="Action">
+    <subsheetid>58422f5c-e9e5-4f7c-bb74-5cf8bf16000c</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="225" y="-60" />
+    <inputs>
+      <input type="number" name="Start Row" friendlyname="Start Row" narrative="The row index to start copying from. The index is from 0 to N-1 (where N is the total number of rows in the collection)." expr="0" />
+      <input type="number" name="Number of Rows to Copy" friendlyname="Number of Rows to Copy" narrative="The number of rows to copy." expr="1" />
+      <input type="collection" name="Source Collection" friendlyname="Source Collection" narrative="The collection to copy." expr="[Målgrupper]" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="Output Collection" friendlyname="Output Collection" narrative="The copied collection." stage="Visitation" />
+    </outputs>
+    <onsuccess>db2894cd-8479-48c8-af7e-125242a65161</onsuccess>
+    <resource object="Utility - Collection Manipulation" action="Copy Rows" />
+  </stage>
+  <stage stageid="53e7443a-d1cd-4fb9-886a-52491a134bd2" name="Ret opgave body" type="Code">
+    <subsheetid>7de9c11d-f658-49bb-8c3f-ba0dd42d459c</subsheetid>
+    <loginhibit />
+    <display x="15" y="-60" />
+    <inputs>
+      <input type="text" name="json" expr="[Body]" />
+      <input type="text" name="userId" expr="[Borger.id]" />
+      <input type="number" name="resultAmount" expr="[Antal resultater]" />
+    </inputs>
+    <outputs>
+      <output type="text" name="result" stage="Body" />
+    </outputs>
+    <onsuccess>0c8ff7dc-46a3-4613-98b6-b77f79e38229</onsuccess>
+    <code><![CDATA[JObject jObj = JObject.Parse(json);
+
+
+jObj["filters"][0]["values"][0] = userId;
+
+jObj["paging"]["pageSize"] = (int)resultAmount;
+
+result = jObj.ToString();]]></code>
+  </stage>
+  <stage stageid="892fa3a6-36e6-4660-a267-74f4e172514a" name="Antal resultater" type="Data">
+    <subsheetid>7de9c11d-f658-49bb-8c3f-ba0dd42d459c</subsheetid>
+    <loginhibit />
+    <display x="-195" y="225" w="120" h="30" />
+    <datatype>number</datatype>
+    <initialvalue>150</initialvalue>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="795c8ea7-7898-440b-b30f-9acc03c1f11e" name="Har vi alle opgaver?" type="Decision">
+    <subsheetid>7de9c11d-f658-49bb-8c3f-ba0dd42d459c</subsheetid>
+    <loginhibit />
+    <display x="15" y="30" />
+    <decision expression="ToNumber([Opgaver.totalSearchCount]) &lt;= [Antal resultater]" />
+    <ontrue>b2f972f8-64d1-4210-ac55-350048bff963</ontrue>
+    <onfalse>fba2b501-ee8b-46ed-b264-9d4cfc7e848f</onfalse>
+  </stage>
+  <stage stageid="fba2b501-ee8b-46ed-b264-9d4cfc7e848f" name="Stop?" type="Decision">
+    <subsheetid>7de9c11d-f658-49bb-8c3f-ba0dd42d459c</subsheetid>
+    <loginhibit />
+    <display x="105" y="30" />
+    <decision expression="[Stop med at hente opgaver?]" />
+    <ontrue>04eda5d5-8c83-4897-b0c5-5c9ee973f94a</ontrue>
+    <onfalse>67f202c2-834b-4cf7-aee4-ff2b88dc37c8</onfalse>
+  </stage>
+  <stage stageid="def42452-ebc3-4309-8fca-f7e04fd14cff" name="Stop med at hente opgaver?" type="Data">
+    <subsheetid>7de9c11d-f658-49bb-8c3f-ba0dd42d459c</subsheetid>
+    <loginhibit />
+    <display x="-195" y="270" />
+    <datatype>flag</datatype>
+    <initialvalue>False</initialvalue>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="04eda5d5-8c83-4897-b0c5-5c9ee973f94a" name="Sæt ikke succes" type="Calculation">
+    <subsheetid>7de9c11d-f658-49bb-8c3f-ba0dd42d459c</subsheetid>
+    <loginhibit />
+    <display x="210" y="30" />
+    <onsuccess>cb6f4445-7aa4-4dce-99d1-1358b02756ef</onsuccess>
+    <calculation expression="False" stage="Succes" />
+  </stage>
+  <stage stageid="cb6f4445-7aa4-4dce-99d1-1358b02756ef" name="End10" type="End">
+    <subsheetid>7de9c11d-f658-49bb-8c3f-ba0dd42d459c</subsheetid>
+    <loginhibit />
+    <display x="300" y="30" />
+    <outputs>
+      <output type="collection" name="Opgaver" stage="Opgaver" />
+      <output type="flag" name="Succes" stage="Succes" />
+      <output type="number" name="Antal" stage="Antal" />
+    </outputs>
+  </stage>
+  <stage stageid="67f202c2-834b-4cf7-aee4-ff2b88dc37c8" name="Sæt ny antal reultater" type="MultipleCalculation">
+    <subsheetid>7de9c11d-f658-49bb-8c3f-ba0dd42d459c</subsheetid>
+    <loginhibit />
+    <display x="105" y="-60" />
+    <onsuccess>53e7443a-d1cd-4fb9-886a-52491a134bd2</onsuccess>
+    <steps>
+      <calculation expression="[Opgaver.totalSearchCount]" stage="Antal resultater" />
+      <calculation expression="True" stage="Stop med at hente opgaver?" />
+    </steps>
+  </stage>
+  <stage stageid="126fdf6d-8b26-479f-8bfc-6bdb66af58e0" name="Start" type="Start">
+    <subsheetid>6858a206-53c5-4f65-ae66-7c3f28eea850</subsheetid>
+    <loginhibit />
+    <display x="0" y="-135" />
+    <inputs>
+      <input type="collection" name="Markering" stage="Markering" />
+      <input type="date" name="Slutdato" stage="Slutdato" />
+    </inputs>
+    <onsuccess>acfa0968-97c6-4752-9439-8c4af6cf9102</onsuccess>
+  </stage>
+  <stage stageid="0a2955d2-ce09-46e5-95e6-4c74803d14b2" name="End" type="End">
+    <subsheetid>6858a206-53c5-4f65-ae66-7c3f28eea850</subsheetid>
+    <loginhibit />
+    <display x="0" y="135" />
+    <outputs>
+      <output type="collection" name="Markering" stage="Markering ud" />
+      <output type="number" name="Antal" stage="Antal" />
+      <output type="flag" name="Succes" stage="Succes" />
+    </outputs>
+  </stage>
+  <stage stageid="16ac4002-147c-48ca-8b99-3faa893f44dd" name="Input" type="Block">
+    <subsheetid>6858a206-53c5-4f65-ae66-7c3f28eea850</subsheetid>
+    <display x="-270" y="-45" w="150" h="105" />
+    <font family="Segoe UI" size="10" style="Regular" color="339966" />
+  </stage>
+  <stage stageid="71313238-9421-4ed1-8c9a-e53729684532" name="Variabler" type="Block">
+    <subsheetid>6858a206-53c5-4f65-ae66-7c3f28eea850</subsheetid>
+    <display x="-270" y="135" w="150" h="105" />
+    <font family="Segoe UI" size="10" style="Regular" color="666699" />
+  </stage>
+  <stage stageid="dcf655bf-1eb2-45fa-b795-c8567e262d61" name="Konstanter" type="Block">
+    <subsheetid>6858a206-53c5-4f65-ae66-7c3f28eea850</subsheetid>
+    <display x="-270" y="75" w="150" h="45" />
+    <font family="Segoe UI" size="10" style="Regular" color="008080" />
+  </stage>
+  <stage stageid="15d2921c-3588-4016-8209-caa625bcc73b" name="Output" type="Block">
+    <subsheetid>6858a206-53c5-4f65-ae66-7c3f28eea850</subsheetid>
+    <display x="-270" y="255" w="150" h="150" />
+    <font family="Segoe UI" size="10" style="Regular" color="800080" />
+  </stage>
+  <stage stageid="dc54ea8f-313f-49d2-8240-97a45ce22234" name="Start Momemtum (test)" type="Action">
+    <subsheetid>6858a206-53c5-4f65-ae66-7c3f28eea850</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="165" y="-255" />
+    <inputs>
+      <input type="text" name="Credentials" friendlyname="Credentials" expr="&quot;KMD Momentum - edu&quot;" />
+    </inputs>
+    <onsuccess>34e89089-f4a3-44be-897d-07fb3fd3f4c6</onsuccess>
+    <resource object="Momentum - Core" action="Start" />
+  </stage>
+  <stage stageid="acfa0968-97c6-4752-9439-8c4af6cf9102" name="Anchor1" type="Anchor">
+    <subsheetid>6858a206-53c5-4f65-ae66-7c3f28eea850</subsheetid>
+    <loginhibit />
+    <display x="0" y="-75" w="10" h="10" />
+    <onsuccess>761a820c-5e65-4dc5-9da9-71ac3705fff3</onsuccess>
+  </stage>
+  <stage stageid="bce6b615-0032-4d4a-9412-3d8aa38c1b5b" name="Anchor2" type="Anchor">
+    <subsheetid>6858a206-53c5-4f65-ae66-7c3f28eea850</subsheetid>
+    <loginhibit />
+    <display x="165" y="-75" w="10" h="10" />
+    <onsuccess>acfa0968-97c6-4752-9439-8c4af6cf9102</onsuccess>
+  </stage>
+  <stage stageid="fec2dcff-5dd9-4a96-8274-d75acdd71525" name="Statuskode" type="Data">
+    <subsheetid>6858a206-53c5-4f65-ae66-7c3f28eea850</subsheetid>
+    <display x="-195" y="165" w="120" h="30" />
+    <datatype>number</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="5aa42160-025e-4225-bb6a-c902bfefa954" name="Debug" type="Block">
+    <subsheetid>6858a206-53c5-4f65-ae66-7c3f28eea850</subsheetid>
+    <loginhibit />
+    <display x="120" y="-285" w="165" h="195" />
+    <font family="Segoe UI" size="10" style="Regular" color="FFFF99" />
+  </stage>
+  <stage stageid="6dec0165-1363-4e05-a5d8-44dd0330db33" name="Markering" type="Collection">
+    <subsheetid>6858a206-53c5-4f65-ae66-7c3f28eea850</subsheetid>
+    <display x="-195" y="-15" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="34e89089-f4a3-44be-897d-07fb3fd3f4c6" name="Hent Borger" type="Action">
+    <subsheetid>6858a206-53c5-4f65-ae66-7c3f28eea850</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="165" y="-210" />
+    <inputs>
+      <input type="text" name="Cpr" friendlyname="Cpr" expr="&quot;xxxxxxxxxx&quot;" />
+    </inputs>
+    <outputs>
+      <output type="flag" name="Succes" friendlyname="Succes" stage="" />
+      <output type="number" name="Antal" friendlyname="Antal" stage="" />
+      <output type="collection" name="Borger" friendlyname="Borger" stage="Borger" />
+    </outputs>
+    <onsuccess>f19e088b-7149-4c6b-91ba-4d0d0c4dfeeb</onsuccess>
+    <resource object="Momentum - Borger" action="Hent borger" />
+  </stage>
+  <stage stageid="3208bb6b-f880-4eb1-bfb1-5f96b780f60a" name="Opdater markering" type="Action">
+    <subsheetid>6858a206-53c5-4f65-ae66-7c3f28eea850</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="0" y="30" />
+    <inputs>
+      <input type="text" name="Url" friendlyname="Url" expr="&quot;/tagassignments/&quot;&amp;[Markering.id]" />
+      <input type="text" name="Body" friendlyname="Body" expr="[Body]" />
+    </inputs>
+    <outputs>
+      <output type="number" name="Statuskode" friendlyname="Statuskode" narrative="Http statuskoden for kaldet" stage="Statuskode" />
+      <output type="collection" name="Data" friendlyname="Data" stage="Markering ud" />
+      <output type="number" name="Antal" friendlyname="Antal" stage="Antal" />
+      <output type="text" name="Json" friendlyname="Json" narrative="Det rå json output" stage="" />
+    </outputs>
+    <onsuccess>728a9a18-d3bf-43f6-8dc7-db480a0ae34b</onsuccess>
+    <resource object="Momentum - Core" action="Put" />
+  </stage>
+  <stage stageid="b38af102-bf8c-4135-b4c7-01931fccfa5e" name="Antal" type="Data">
+    <subsheetid>6858a206-53c5-4f65-ae66-7c3f28eea850</subsheetid>
+    <display x="-195" y="330" w="120" h="30" />
+    <datatype>number</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="eb05dcbb-3c66-48a0-b39d-0be0dad7a39c" name="Succes" type="Data">
+    <subsheetid>6858a206-53c5-4f65-ae66-7c3f28eea850</subsheetid>
+    <display x="-195" y="375" w="120" h="30" />
+    <datatype>flag</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="728a9a18-d3bf-43f6-8dc7-db480a0ae34b" name="Sæt succes" type="Calculation">
+    <subsheetid>6858a206-53c5-4f65-ae66-7c3f28eea850</subsheetid>
+    <loginhibit />
+    <display x="0" y="75" />
+    <onsuccess>0a2955d2-ce09-46e5-95e6-4c74803d14b2</onsuccess>
+    <calculation expression="[Statuskode] = 200" stage="Succes" />
+  </stage>
+  <stage stageid="19e1a28d-9f0e-4509-b79e-cbe1baf90123" name="Ændre slutdato på markering" type="Block">
+    <subsheetid>6858a206-53c5-4f65-ae66-7c3f28eea850</subsheetid>
+    <loginhibit />
+    <display x="-75" y="0" w="165" h="105" />
+    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
+  </stage>
+  <stage stageid="ad824a4d-ce48-4bae-b4c6-2f1288770b72" name="Markering ud" type="Collection">
+    <subsheetid>6858a206-53c5-4f65-ae66-7c3f28eea850</subsheetid>
+    <display x="-195" y="285" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="37a5c200-3e22-4aea-b95c-484248d24ce7" name="Body" type="Data">
+    <subsheetid>6858a206-53c5-4f65-ae66-7c3f28eea850</subsheetid>
+    <loginhibit />
+    <display x="-195" y="210" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue xml:space="preserve">{
+  "tagId": "{{TAGID}}",
+  "start": "{{TAGSTART}}",
+  "end": "{{TAGEND}}",
+  "correctionComment": {
+    "referenceId": "{{TAGASSID}}",
+    "referenceType": null,
+    "body": null,
+    "title": null,
+    "commentTypeCode": null
+  },
+  "attachmentsToAdd": [
+  ],
+  "attachmentsToRemove": [
+  ]
+}</initialvalue>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="f19e088b-7149-4c6b-91ba-4d0d0c4dfeeb" name="Hent markeringer" type="Action">
+    <subsheetid>6858a206-53c5-4f65-ae66-7c3f28eea850</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="165" y="-165" />
+    <inputs>
+      <input type="collection" name="Borger" friendlyname="Borger" expr="[Borger]" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="Markeringer" friendlyname="Markeringer" stage="Markeringer" />
+      <output type="number" name="Antal" friendlyname="Antal" stage="" />
+      <output type="flag" name="Succes" friendlyname="Succes" stage="" />
+    </outputs>
+    <onsuccess>b336eb86-e527-4551-9a24-2db52541e42c</onsuccess>
+    <resource object="Momentum - Borger" action="Hent markeringer" />
+  </stage>
+  <stage stageid="acba7dbb-ac78-4fe8-acec-22796b516828" name="Markeringer" type="Collection">
+    <subsheetid>6858a206-53c5-4f65-ae66-7c3f28eea850</subsheetid>
+    <display x="240" y="-165" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="b336eb86-e527-4551-9a24-2db52541e42c" name="Find markering" type="Action">
+    <subsheetid>6858a206-53c5-4f65-ae66-7c3f28eea850</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="165" y="-120" />
+    <inputs>
+      <input type="collection" name="Collection In" friendlyname="Collection In" narrative="Input collection" expr="[Markeringer]" />
+      <input type="text" name="Filter" friendlyname="Filter" narrative="The filter to apply" expr="&quot;[id] = 'faad719a-c56c-4819-ac10-80d55dc1829d'&quot;" />
+    </inputs>
+    <outputs>
+      <output type="number" name="Count" friendlyname="Count" narrative="The amount of rows in the filtered collection" stage="" />
+      <output type="collection" name="Collection Out" friendlyname="Collection Out" narrative="The filtered collection" stage="Markering" />
+    </outputs>
+    <onsuccess>bce6b615-0032-4d4a-9412-3d8aa38c1b5b</onsuccess>
+    <resource object="Utility - Odk Linq" action="Filter" />
+  </stage>
+  <stage stageid="761a820c-5e65-4dc5-9da9-71ac3705fff3" name="Klargør body" type="MultipleCalculation">
+    <subsheetid>6858a206-53c5-4f65-ae66-7c3f28eea850</subsheetid>
+    <loginhibit />
+    <display x="0" y="-30" />
+    <onsuccess>3208bb6b-f880-4eb1-bfb1-5f96b780f60a</onsuccess>
+    <steps>
+      <calculation expression="Replace([Body], &quot;{{TAGASSID}}&quot;, [Markering.id])" stage="Body" />
+      <calculation expression="Replace([Body], &quot;{{TAGEND}}&quot;, FormatDateTime([Slutdato], &quot;yyyy-MM-ddT22:00:00Z&quot;))" stage="Body" />
+      <calculation expression="Replace([Body], &quot;{{TAGID}}&quot;, [Markering.tag.id])" stage="Body" />
+      <calculation expression="Replace([Body], &quot;{{TAGSTART}}&quot;, FormatDateTime([Markering.start], &quot;yyyy-MM-ddTHH:mm:ssZ&quot;))" stage="Body" />
+    </steps>
+  </stage>
+  <stage stageid="a0a701a5-a04b-4c67-b69f-a75cffe5803f" name="Slutdato" type="Data">
+    <subsheetid>6858a206-53c5-4f65-ae66-7c3f28eea850</subsheetid>
+    <display x="-195" y="30" w="120" h="30" />
+    <datatype>date</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="d24378c5-0282-4314-b578-f3114e7510c9" name="Borger" type="Collection">
+    <subsheetid>6858a206-53c5-4f65-ae66-7c3f28eea850</subsheetid>
+    <display x="240" y="-210" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
   </stage>
 </process>

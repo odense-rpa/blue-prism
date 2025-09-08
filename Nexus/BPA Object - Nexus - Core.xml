@@ -9,8 +9,8 @@
     </element>
   </appdef>
   <view>
-    <camerax>151</camerax>
-    <cameray>-94</cameray>
+    <camerax>-25</camerax>
+    <cameray>-10</cameray>
     <zoom version="2">1.25</zoom>
   </view>
   <preconditions />

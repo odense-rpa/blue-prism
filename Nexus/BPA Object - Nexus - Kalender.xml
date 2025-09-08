@@ -9,7 +9,7 @@
     </element>
   </appdef>
   <view>
-    <camerax>0</camerax>
+    <camerax>298</camerax>
     <cameray>0</cameray>
     <zoom version="2">1.25</zoom>
   </view>
@@ -26,16 +26,16 @@
   <subsheet subsheetid="65528b95-f815-4450-bfa4-2dc39542f07c" type="Normal" published="True">
     <name>Hent borgerkalender</name>
     <view>
-      <camerax>0</camerax>
-      <cameray>63</cameray>
+      <camerax>193</camerax>
+      <cameray>-84</cameray>
       <zoom version="2">1.25</zoom>
     </view>
   </subsheet>
   <subsheet subsheetid="7445d594-30d9-4ff2-9e2a-14e44dc82396" type="Normal" published="True">
     <name>Hent begivenheder</name>
     <view>
-      <camerax>298</camerax>
-      <cameray>0</cameray>
+      <camerax>185</camerax>
+      <cameray>106</cameray>
       <zoom version="2">1.25</zoom>
     </view>
   </subsheet>
@@ -136,7 +136,7 @@ public void Traverse(JToken root, TraverseCallback callback, string nodeName = "
   <stage stageid="3e976577-8f54-40fb-be49-70a1fcffba1e" name="Start" type="Start">
     <subsheetid>65528b95-f815-4450-bfa4-2dc39542f07c</subsheetid>
     <loginhibit />
-    <display x="15" y="-105" />
+    <display x="0" y="-135" />
     <inputs>
       <input type="collection" name="Borger" stage="Borger" />
       <input type="text" name="Kalendernavn" narrative="Hvilken kalender ønskes hentet, default er &quot;Borgerkalender&quot;" stage="Kalendernavn" />
@@ -146,7 +146,7 @@ public void Traverse(JToken root, TraverseCallback callback, string nodeName = "
   <stage stageid="7a169739-8b0f-4ec3-a4af-170612915059" name="End" type="End">
     <subsheetid>65528b95-f815-4450-bfa4-2dc39542f07c</subsheetid>
     <loginhibit />
-    <display x="15" y="165" />
+    <display x="0" y="135" />
     <outputs>
       <output type="collection" name="Kalender" stage="Kalender" />
     </outputs>
@@ -216,7 +216,7 @@ You will not be able to call this action from a business process, nor will it be
   <stage stageid="b09605c2-a696-4c31-af77-79bbe70762b3" name="Nexus - Borgere og forløb::Hent borgers præferencer" type="Action">
     <subsheetid>65528b95-f815-4450-bfa4-2dc39542f07c</subsheetid>
     <loginhibit onsuccess="true" />
-    <display x="15" y="-30" />
+    <display x="0" y="-60" />
     <inputs>
       <input type="collection" name="Borger" friendlyname="Borger" expr="[Borger]" />
     </inputs>
@@ -230,7 +230,7 @@ You will not be able to call this action from a business process, nor will it be
   <stage stageid="f08882dc-5526-4429-86a8-6317f8ceb608" name="Start Nexus" type="Action">
     <subsheetid>65528b95-f815-4450-bfa4-2dc39542f07c</subsheetid>
     <loginhibit onsuccess="true" />
-    <display x="135" y="-195" />
+    <display x="90" y="-225" />
     <inputs>
       <input type="text" name="Credentials" friendlyname="Credentials" expr="&quot;KMD Nexus - Produktion&quot;" />
     </inputs>
@@ -240,7 +240,7 @@ You will not be able to call this action from a business process, nor will it be
   <stage stageid="2c7618c7-fafa-48a0-a729-dc14ced7ac97" name="Hent borger" type="Action">
     <subsheetid>65528b95-f815-4450-bfa4-2dc39542f07c</subsheetid>
     <loginhibit onsuccess="true" />
-    <display x="135" y="-150" />
+    <display x="90" y="-180" />
     <inputs>
       <input type="text" name="Cpr" friendlyname="Cpr" expr="&quot;xxxxxxxxxx&quot;" />
     </inputs>
@@ -253,7 +253,7 @@ You will not be able to call this action from a business process, nor will it be
   <stage stageid="0ceff882-8a98-4695-8a6d-3c0977a37a77" name="Vælg kalender" type="Action">
     <subsheetid>65528b95-f815-4450-bfa4-2dc39542f07c</subsheetid>
     <loginhibit onsuccess="true" />
-    <display x="15" y="15" />
+    <display x="0" y="-15" />
     <inputs>
       <input type="collection" name="Collection In" friendlyname="Collection In" narrative="Input collection" expr="[Præferencer.CITIZEN_CALENDAR]" />
       <input type="text" name="Filter" friendlyname="Filter" narrative="The filter to apply" expr="&quot;[name]='&quot; &amp; [Kalendernavn] &amp; &quot;'&quot;" />
@@ -268,7 +268,7 @@ You will not be able to call this action from a business process, nor will it be
   <stage stageid="ae2e3e63-6ceb-4a75-ab5b-8bc328d610da" name="Hent detaljeret kalender" type="Action">
     <subsheetid>65528b95-f815-4450-bfa4-2dc39542f07c</subsheetid>
     <loginhibit onsuccess="true" />
-    <display x="15" y="105" />
+    <display x="0" y="75" />
     <inputs>
       <input type="text" name="Url" friendlyname="Url" expr="[Kalender._links.self]" />
     </inputs>
@@ -284,13 +284,13 @@ You will not be able to call this action from a business process, nor will it be
   <stage stageid="23ba790a-336b-461d-a4a3-60c995f25f86" name="Anchor1" type="Anchor">
     <subsheetid>65528b95-f815-4450-bfa4-2dc39542f07c</subsheetid>
     <loginhibit />
-    <display x="15" y="-75" w="10" h="10" />
+    <display x="0" y="-105" w="10" h="10" />
     <onsuccess>b09605c2-a696-4c31-af77-79bbe70762b3</onsuccess>
   </stage>
   <stage stageid="a11dfd90-1f5b-469b-b112-e90088935df1" name="Anchor2" type="Anchor">
     <subsheetid>65528b95-f815-4450-bfa4-2dc39542f07c</subsheetid>
     <loginhibit />
-    <display x="135" y="-75" w="10" h="10" />
+    <display x="90" y="-105" w="10" h="10" />
     <onsuccess>23ba790a-336b-461d-a4a3-60c995f25f86</onsuccess>
   </stage>
   <stage stageid="7d375dd1-d118-401f-9cf7-79985cd25a90" name="Præferencer" type="Collection">
@@ -318,26 +318,26 @@ You will not be able to call this action from a business process, nor will it be
   <stage stageid="a681afb5-da8a-4dde-b7f8-4937e2b7203c" name="Har vi kalender?" type="Decision">
     <subsheetid>65528b95-f815-4450-bfa4-2dc39542f07c</subsheetid>
     <loginhibit />
-    <display x="15" y="60" />
+    <display x="0" y="30" />
     <decision expression="[Antal] = 1" />
     <ontrue>ae2e3e63-6ceb-4a75-ab5b-8bc328d610da</ontrue>
     <onfalse>996bc9f6-3950-498f-9a44-71b118a74ba4</onfalse>
   </stage>
   <stage stageid="996bc9f6-3950-498f-9a44-71b118a74ba4" name="Exception1" type="Exception">
     <subsheetid>65528b95-f815-4450-bfa4-2dc39542f07c</subsheetid>
-    <display x="225" y="60" />
+    <display x="120" y="30" />
     <exception localized="yes" type="Invalid Input Parameter" detail="&quot;Kalendernavnet var ugyldigt&quot;" />
   </stage>
   <stage stageid="4d3ad54c-5ab7-4809-bd8a-8d7d14773bf6" name="Hent kalender" type="Block">
     <subsheetid>65528b95-f815-4450-bfa4-2dc39542f07c</subsheetid>
     <loginhibit />
-    <display x="-90" y="-60" w="270" h="195" />
+    <display x="-75" y="-90" w="150" h="195" />
     <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
   </stage>
   <stage stageid="834278e2-8b97-4fd1-9217-df75ef20d7f1" name="Debug" type="Block">
     <subsheetid>65528b95-f815-4450-bfa4-2dc39542f07c</subsheetid>
     <loginhibit />
-    <display x="90" y="-225" w="105" h="105" />
+    <display x="45" y="-255" w="105" h="105" />
     <font family="Segoe UI" size="10" style="Regular" color="FFFF99" />
   </stage>
   <stage stageid="a47f06a1-476a-4913-bd90-66e865ee584a" name="Hent begivenheder" type="SubSheetInfo">
@@ -347,7 +347,7 @@ You will not be able to call this action from a business process, nor will it be
   <stage stageid="d0617371-77c5-4efd-b7f7-39c6d4e77533" name="Start" type="Start">
     <subsheetid>7445d594-30d9-4ff2-9e2a-14e44dc82396</subsheetid>
     <loginhibit />
-    <display x="15" y="-120" />
+    <display x="0" y="-135" />
     <inputs>
       <input type="collection" name="Kalender" narrative="En nexus kalender" stage="Kalender" />
       <input type="date" name="Fra" stage="Fra" />
@@ -358,7 +358,7 @@ You will not be able to call this action from a business process, nor will it be
   <stage stageid="36188108-cb79-4d92-9f5d-9f91a22059c0" name="End" type="End">
     <subsheetid>7445d594-30d9-4ff2-9e2a-14e44dc82396</subsheetid>
     <loginhibit />
-    <display x="15" y="165" />
+    <display x="0" y="150" />
     <outputs>
       <output type="collection" name="Begivenheder" stage="Begivenheder" />
       <output type="number" name="Antal" stage="Antal" />
@@ -387,7 +387,7 @@ You will not be able to call this action from a business process, nor will it be
   <stage stageid="19160de7-3154-477a-9085-1d813c9d5b3a" name="Start Nexus" type="Action">
     <subsheetid>7445d594-30d9-4ff2-9e2a-14e44dc82396</subsheetid>
     <loginhibit onsuccess="true" />
-    <display x="135" y="-255" />
+    <display x="105" y="-270" />
     <inputs>
       <input type="text" name="Credentials" friendlyname="Credentials" expr="&quot;KMD Nexus - Produktion&quot;" />
     </inputs>
@@ -397,7 +397,7 @@ You will not be able to call this action from a business process, nor will it be
   <stage stageid="b032c4c5-6c55-487b-abd8-595bde265047" name="Hent borger" type="Action">
     <subsheetid>7445d594-30d9-4ff2-9e2a-14e44dc82396</subsheetid>
     <loginhibit onsuccess="true" />
-    <display x="135" y="-210" />
+    <display x="105" y="-225" />
     <inputs>
       <input type="text" name="Cpr" friendlyname="Cpr" expr="&quot;xxxxxxxxxx&quot;" />
     </inputs>
@@ -410,13 +410,13 @@ You will not be able to call this action from a business process, nor will it be
   <stage stageid="7cd7ec32-5061-450e-8413-c8f0bda568f2" name="Anchor1" type="Anchor">
     <subsheetid>7445d594-30d9-4ff2-9e2a-14e44dc82396</subsheetid>
     <loginhibit />
-    <display x="15" y="-75" w="10" h="10" />
+    <display x="0" y="-90" w="10" h="10" />
     <onsuccess>fab8078a-b6c5-42c7-9a3c-18517a37d002</onsuccess>
   </stage>
   <stage stageid="8ff902e5-07ca-4135-8504-8199c4d52992" name="Anchor2" type="Anchor">
     <subsheetid>7445d594-30d9-4ff2-9e2a-14e44dc82396</subsheetid>
     <loginhibit />
-    <display x="135" y="-75" w="10" h="10" />
+    <display x="105" y="-90" w="10" h="10" />
     <onsuccess>7cd7ec32-5061-450e-8413-c8f0bda568f2</onsuccess>
   </stage>
   <stage stageid="d1d45cc3-c34e-4a3d-8250-a7c073169553" name="Antal" type="Data">
@@ -436,25 +436,25 @@ You will not be able to call this action from a business process, nor will it be
   </stage>
   <stage stageid="75ac1bec-229f-4674-95ea-d678d76de13b" name="Fejl i kalender" type="Exception">
     <subsheetid>7445d594-30d9-4ff2-9e2a-14e44dc82396</subsheetid>
-    <display x="225" y="15" />
+    <display x="120" y="0" />
     <exception localized="yes" type="Business Exception" detail="&quot;Fejl under hentning af kalender&quot;" />
   </stage>
   <stage stageid="f5c31207-c786-468b-b445-db77a6f73677" name="Hent begivenheder" type="Block">
     <subsheetid>7445d594-30d9-4ff2-9e2a-14e44dc82396</subsheetid>
     <loginhibit />
-    <display x="-90" y="-60" w="270" h="195" />
+    <display x="-75" y="-75" w="150" h="195" />
     <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
   </stage>
   <stage stageid="99c75359-92bc-4f74-82f7-0accf5a1721c" name="Debug" type="Block">
     <subsheetid>7445d594-30d9-4ff2-9e2a-14e44dc82396</subsheetid>
     <loginhibit />
-    <display x="90" y="-285" w="165" h="195" />
+    <display x="60" y="-300" w="165" h="195" />
     <font family="Segoe UI" size="10" style="Regular" color="FFFF99" />
   </stage>
   <stage stageid="5921473c-cad0-498e-a377-6f58128f6e59" name="Hent borgerkalender" type="SubSheet">
     <subsheetid>7445d594-30d9-4ff2-9e2a-14e44dc82396</subsheetid>
     <loginhibit />
-    <display x="135" y="-165" />
+    <display x="105" y="-180" />
     <inputs>
       <input type="collection" name="Borger" friendlyname="Borger" expr="[Borger]" />
       <input type="text" name="Kalendernavn" friendlyname="Kalendernavn" narrative="Hvilken kalender ønskes hentet, default er &quot;Borgerkalender&quot;" expr="" />
@@ -468,7 +468,7 @@ You will not be able to call this action from a business process, nor will it be
   <stage stageid="cae31e4e-2639-4d9b-b025-11588601519f" name="Borger" type="Collection">
     <subsheetid>7445d594-30d9-4ff2-9e2a-14e44dc82396</subsheetid>
     <loginhibit />
-    <display x="210" y="-255" />
+    <display x="180" y="-270" />
     <datatype>collection</datatype>
     <private />
     <alwaysinit />
@@ -476,7 +476,7 @@ You will not be able to call this action from a business process, nor will it be
   <stage stageid="fab8078a-b6c5-42c7-9a3c-18517a37d002" name="Hent begivenheder" type="Action">
     <subsheetid>7445d594-30d9-4ff2-9e2a-14e44dc82396</subsheetid>
     <loginhibit onsuccess="true" />
-    <display x="15" y="-30" />
+    <display x="0" y="-45" />
     <inputs>
       <input type="text" name="Url" friendlyname="Url" expr="[Kalender._links.events] &amp; &quot;?from=&quot; &amp; FormatDateTime([Fra], &quot;yyyy-MM-ddT00:00:00.000Z&quot;)&#xA;&amp; &quot;&amp;to=&quot; &amp; FormatDateTime([Til], &quot;yyyy-MM-ddT00:00:00.000Z&quot;)&#xA;&#xA;" />
     </inputs>
@@ -507,14 +507,14 @@ You will not be able to call this action from a business process, nor will it be
   <stage stageid="41e54d01-7434-47dc-92c3-8104154ae569" name="Hent begivenheder" type="Calculation">
     <subsheetid>7445d594-30d9-4ff2-9e2a-14e44dc82396</subsheetid>
     <loginhibit />
-    <display x="15" y="60" />
+    <display x="0" y="45" />
     <onsuccess>98e816dc-3b35-48ba-9469-9113f8132ad8</onsuccess>
     <calculation expression="[Begivenheder.eventResources]" stage="Begivenheder" />
   </stage>
   <stage stageid="28566460-5c00-461d-abf2-26bd66abaa77" name="Alt ok?" type="Decision">
     <subsheetid>7445d594-30d9-4ff2-9e2a-14e44dc82396</subsheetid>
     <loginhibit />
-    <display x="15" y="15" />
+    <display x="0" y="0" />
     <decision expression="[Statuskode] = 200" />
     <ontrue>41e54d01-7434-47dc-92c3-8104154ae569</ontrue>
     <onfalse>75ac1bec-229f-4674-95ea-d678d76de13b</onfalse>
@@ -522,7 +522,7 @@ You will not be able to call this action from a business process, nor will it be
   <stage stageid="98e816dc-3b35-48ba-9469-9113f8132ad8" name="Tæl begivenheder" type="Action">
     <subsheetid>7445d594-30d9-4ff2-9e2a-14e44dc82396</subsheetid>
     <loginhibit onsuccess="true" />
-    <display x="15" y="105" />
+    <display x="0" y="90" />
     <inputs>
       <input type="text" name="Collection Name" friendlyname="Collection Name" narrative="The name of the collection to act upon" expr="&quot;Begivenheder&quot;" />
     </inputs>
@@ -536,7 +536,7 @@ You will not be able to call this action from a business process, nor will it be
     <subsheetid>7445d594-30d9-4ff2-9e2a-14e44dc82396</subsheetid>
     <loginhibit />
     <narrative>I den gamle så vi JSON:Array. Dette kunne teoretisk stadig ske, men burde ikke.</narrative>
-    <display x="120" y="180" w="120" h="60" />
+    <display x="120" y="165" w="120" h="60" />
   </stage>
   <stage stageid="8a9f914b-fc6e-4928-981d-a4944a5c7890" name="Fra" type="Data">
     <subsheetid>7445d594-30d9-4ff2-9e2a-14e44dc82396</subsheetid>
@@ -557,7 +557,7 @@ You will not be able to call this action from a business process, nor will it be
   <stage stageid="403c222d-fc3d-47fd-a17d-f4a2a2204900" name="Sæt fra/til" type="MultipleCalculation">
     <subsheetid>7445d594-30d9-4ff2-9e2a-14e44dc82396</subsheetid>
     <loginhibit />
-    <display x="135" y="-120" />
+    <display x="105" y="-135" />
     <onsuccess>8ff902e5-07ca-4135-8504-8199c4d52992</onsuccess>
     <steps>
       <calculation expression="Today()" stage="Fra" />

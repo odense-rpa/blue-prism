@@ -163,15 +163,15 @@
     <name>Hent medicinkort</name>
     <view>
       <camerax>47</camerax>
-      <cameray>75</cameray>
+      <cameray>-30</cameray>
       <zoom version="2">1.25</zoom>
     </view>
   </subsheet>
-  <subsheet subsheetid="ceea0079-36a7-4682-904d-7c5f6e2058f8" type="Normal" published="False">
+  <subsheet subsheetid="ceea0079-36a7-4682-904d-7c5f6e2058f8" type="Normal" published="True">
     <name>Opdater medicin</name>
     <view>
       <camerax>47</camerax>
-      <cameray>159</cameray>
+      <cameray>219</cameray>
       <zoom version="2">1.25</zoom>
     </view>
   </subsheet>
@@ -5046,7 +5046,7 @@ result = obj.ToString();]]></code>
   </stage>
   <stage stageid="4c0879fd-88e9-47cf-8040-8231c22cad6d" name="Opdater medicin" type="SubSheetInfo">
     <subsheetid>ceea0079-36a7-4682-904d-7c5f6e2058f8</subsheetid>
-    <display x="-195" y="-105" w="150" h="90" />
+    <display x="-195" y="45" w="150" h="90" />
   </stage>
   <stage stageid="ec4b002b-d7a8-4e1e-bd4d-a04622ff1f03" name="Start" type="Start">
     <subsheetid>ceea0079-36a7-4682-904d-7c5f6e2058f8</subsheetid>
@@ -5069,22 +5069,22 @@ result = obj.ToString();]]></code>
   </stage>
   <stage stageid="471c7b3e-8d84-4fef-b19d-37d31a5d0288" name="Input" type="Block">
     <subsheetid>ceea0079-36a7-4682-904d-7c5f6e2058f8</subsheetid>
-    <display x="-270" y="-45" w="150" h="150" />
+    <display x="-270" y="105" w="150" h="105" />
     <font family="Segoe UI" size="10" style="Regular" color="339966" />
   </stage>
   <stage stageid="d9e1291c-862a-4f71-b9a2-088f67ad0006" name="Variabler" type="Block">
     <subsheetid>ceea0079-36a7-4682-904d-7c5f6e2058f8</subsheetid>
-    <display x="-270" y="180" w="150" h="105" />
+    <display x="-270" y="285" w="150" h="105" />
     <font family="Segoe UI" size="10" style="Regular" color="666699" />
   </stage>
   <stage stageid="4ae56e84-b9ad-4420-afa7-88114b5aa7bf" name="Konstanter" type="Block">
     <subsheetid>ceea0079-36a7-4682-904d-7c5f6e2058f8</subsheetid>
-    <display x="-270" y="120" w="150" h="45" />
+    <display x="-270" y="225" w="150" h="45" />
     <font family="Segoe UI" size="10" style="Regular" color="008080" />
   </stage>
   <stage stageid="96960b52-a7e2-4dcf-9cec-dae7ec875bcf" name="Output" type="Block">
     <subsheetid>ceea0079-36a7-4682-904d-7c5f6e2058f8</subsheetid>
-    <display x="-270" y="300" w="150" h="150" />
+    <display x="-270" y="405" w="150" h="150" />
     <font family="Segoe UI" size="10" style="Regular" color="800080" />
   </stage>
   <stage stageid="1009c9a5-6d32-4b6d-9ee8-296d1eb4951b" name="Nexus - Core::Start" type="Action">
@@ -5145,14 +5145,14 @@ result = obj.ToString();]]></code>
   </stage>
   <stage stageid="e6054ee0-1a9f-4bcd-886d-563c14c6b52b" name="Data" type="Collection">
     <subsheetid>ceea0079-36a7-4682-904d-7c5f6e2058f8</subsheetid>
-    <display x="-195" y="330" w="120" h="30" />
+    <display x="-195" y="435" w="120" h="30" />
     <datatype>collection</datatype>
     <private />
     <alwaysinit />
   </stage>
   <stage stageid="0dab683d-8f38-422c-aaaf-06c02b0492e6" name="Json" type="Data">
     <subsheetid>ceea0079-36a7-4682-904d-7c5f6e2058f8</subsheetid>
-    <display x="-195" y="420" w="120" h="30" />
+    <display x="-195" y="525" w="120" h="30" />
     <datatype>text</datatype>
     <initialvalue />
     <private />
@@ -5160,7 +5160,7 @@ result = obj.ToString();]]></code>
   </stage>
   <stage stageid="47c98808-187d-453a-b790-0000a0fd9e2e" name="Statuskode" type="Data">
     <subsheetid>ceea0079-36a7-4682-904d-7c5f6e2058f8</subsheetid>
-    <display x="-195" y="255" w="120" h="30" />
+    <display x="-195" y="360" w="120" h="30" />
     <datatype>number</datatype>
     <initialvalue />
     <private />
@@ -5175,7 +5175,7 @@ result = obj.ToString();]]></code>
   <stage stageid="8ea96041-a378-4462-aafc-381d8bfdeb49" name="Succes" type="Data">
     <subsheetid>ceea0079-36a7-4682-904d-7c5f6e2058f8</subsheetid>
     <loginhibit />
-    <display x="-195" y="375" w="120" h="30" />
+    <display x="-195" y="480" w="120" h="30" />
     <datatype>flag</datatype>
     <initialvalue />
     <private />
@@ -5211,14 +5211,14 @@ result = obj.ToString();]]></code>
   </stage>
   <stage stageid="2086055a-859f-4e62-aadb-3eaccd286756" name="Medicin" type="Collection">
     <subsheetid>ceea0079-36a7-4682-904d-7c5f6e2058f8</subsheetid>
-    <display x="-195" y="-15" w="120" h="30" />
+    <display x="-195" y="135" w="120" h="30" />
     <datatype>collection</datatype>
     <private />
     <alwaysinit />
   </stage>
   <stage stageid="34e56e21-b7c9-4297-9fef-eb57cc009979" name="Bemærkning" type="Data">
     <subsheetid>ceea0079-36a7-4682-904d-7c5f6e2058f8</subsheetid>
-    <display x="-195" y="30" w="120" h="30" />
+    <display x="-195" y="180" w="120" h="30" />
     <datatype>text</datatype>
     <initialvalue />
     <private />
@@ -5230,7 +5230,7 @@ result = obj.ToString();]]></code>
     <display x="135" y="-60" />
     <inputs>
       <input type="collection" name="Collection In" friendlyname="Collection In" narrative="Input collection" expr="[Medicinkort.medicationGroups]" />
-      <input type="text" name="Filter" friendlyname="Filter" narrative="The filter to apply" expr="&quot;[displayName] = 'Dosisdispenseret medicin'&quot;" />
+      <input type="text" name="Filter" friendlyname="Filter" narrative="The filter to apply" expr="&quot;[displayName] = 'Fast medicin'&quot;" />
     </inputs>
     <outputs>
       <output type="number" name="Count" friendlyname="Count" narrative="The amount of rows in the filtered collection" stage="" />
@@ -5252,7 +5252,7 @@ result = obj.ToString();]]></code>
     <display x="135" y="-15" />
     <inputs>
       <input type="collection" name="Collection In" friendlyname="Collection In" narrative="Input collection" expr="[Medigruppe.medications]" />
-      <input type="text" name="Filter" friendlyname="Filter" narrative="The filter to apply" expr="&quot;[id] = '156873'&quot;" />
+      <input type="text" name="Filter" friendlyname="Filter" narrative="The filter to apply" expr="&quot;[id] = '111697'&quot;" />
     </inputs>
     <outputs>
       <output type="number" name="Count" friendlyname="Count" narrative="The amount of rows in the filtered collection" stage="" />
@@ -5279,7 +5279,7 @@ result = obj.ToString();]]></code>
   </stage>
   <stage stageid="016bc2e4-5704-425d-aa59-fa6563c39bde" name="MedicinJson" type="Data">
     <subsheetid>ceea0079-36a7-4682-904d-7c5f6e2058f8</subsheetid>
-    <display x="-195" y="210" w="120" h="30" />
+    <display x="-195" y="315" w="120" h="30" />
     <datatype>text</datatype>
     <initialvalue />
     <private />

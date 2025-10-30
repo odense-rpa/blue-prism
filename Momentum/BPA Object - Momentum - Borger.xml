@@ -258,8 +258,16 @@
   <subsheet subsheetid="91739283-00f6-4755-bf1f-9c644b37c67b" type="Normal" published="True">
     <name>Send partshøring</name>
     <view>
-      <camerax>-156</camerax>
-      <cameray>359</cameray>
+      <camerax>0</camerax>
+      <cameray>663</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <subsheet subsheetid="53eff783-03c4-473b-b45c-53e6530bf79f" type="Normal" published="False">
+    <name>Opret og send simpelt brev</name>
+    <view>
+      <camerax>307</camerax>
+      <cameray>429</cameray>
       <zoom version="2">1.25</zoom>
     </view>
   </subsheet>
@@ -267,7 +275,7 @@
     <name>Kontroller og oversæt hændelsestype</name>
     <view>
       <camerax>0</camerax>
-      <cameray>30</cameray>
+      <cameray>429</cameray>
       <zoom version="2">1.25</zoom>
     </view>
   </subsheet>
@@ -4045,7 +4053,6 @@ Skabelon id er empty string i kald fra Momentum</narrative>
   </stage>
   <stage stageid="96743dac-db4c-42a2-b44e-e0d83692a754" name="Opret partshøring med brev" type="Action">
     <subsheetid>91739283-00f6-4755-bf1f-9c644b37c67b</subsheetid>
-    <loginhibit onsuccess="true" />
     <display x="0" y="705" />
     <inputs>
       <input type="text" name="Url" friendlyname="Url" expr="&quot;/rpa/consultation-hearing/&quot; &amp; [Borger.id] &amp; &quot;/with-letter/&quot; &amp; [Ansvarlig sagsbehandler.caseworkerId]" />
@@ -4065,7 +4072,6 @@ Skabelon id er empty string i kald fra Momentum</narrative>
   </stage>
   <stage stageid="3f25318c-3aea-45ae-b765-2358daa2962e" name="Send brev" type="Action">
     <subsheetid>91739283-00f6-4755-bf1f-9c644b37c67b</subsheetid>
-    <loginhibit onsuccess="true" />
     <display x="0" y="750" />
     <inputs>
       <input type="text" name="Url" friendlyname="Url" expr="&quot;/messages/&quot; &amp; [Response.letterId] &amp; &quot;/send/&quot; &amp; [AdresseId]" />
@@ -7437,7 +7443,7 @@ json = jObj.ToString();]]></code>
     <subsheetid>a305d68a-edc2-4568-97b9-f0174296f845</subsheetid>
     <display x="-195" y="30" w="120" h="30" />
     <datatype>text</datatype>
-    <initialvalue xml:space="preserve">nb</initialvalue>
+    <initialvalue />
     <private />
     <alwaysinit />
   </stage>
@@ -8811,5 +8817,481 @@ result = jObj.ToString();]]></code>
     <datatype>collection</datatype>
     <private />
     <alwaysinit />
+  </stage>
+  <stage stageid="16ab12f1-3795-428f-a46b-2416214ca808" name="Opret og send simpelt brev" type="SubSheetInfo">
+    <subsheetid>53eff783-03c4-473b-b45c-53e6530bf79f</subsheetid>
+    <narrative>Opretter og sender brev på en borger. Dette er et specifikt slags brev uden titel eller påhørende sag. Prøver man at sende eller oprette brev til en af disse slags melder den fejl. </narrative>
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="965c28f0-bee7-46c3-a742-f49b44f7aeb5" name="Start" type="Start">
+    <subsheetid>53eff783-03c4-473b-b45c-53e6530bf79f</subsheetid>
+    <loginhibit />
+    <display x="0" y="-135" />
+    <inputs>
+      <input type="collection" name="Borger" stage="Borger" />
+      <input type="text" name="Brevskabelonsnavn" stage="Brevskabelonsnavn" />
+    </inputs>
+    <onsuccess>fa73985b-7cf0-4ba9-b4a5-fba907128330</onsuccess>
+  </stage>
+  <stage stageid="97b37b29-41cc-4672-a105-1f1dfd29a56f" name="End" type="End">
+    <subsheetid>53eff783-03c4-473b-b45c-53e6530bf79f</subsheetid>
+    <loginhibit />
+    <display x="0" y="690" />
+    <outputs>
+      <output type="flag" name="Succes" stage="Succes" />
+    </outputs>
+  </stage>
+  <stage stageid="5ac5208a-0f4a-435b-a08c-f54947ee50f8" name="Input" type="Block">
+    <subsheetid>53eff783-03c4-473b-b45c-53e6530bf79f</subsheetid>
+    <display x="-270" y="-45" w="150" h="105" />
+    <font family="Segoe UI" size="10" style="Regular" color="339966" />
+  </stage>
+  <stage stageid="67db1172-ae20-468d-82a6-a0b5732bed18" name="Variabler" type="Block">
+    <subsheetid>53eff783-03c4-473b-b45c-53e6530bf79f</subsheetid>
+    <display x="-270" y="150" w="150" h="285" />
+    <font family="Segoe UI" size="10" style="Regular" color="666699" />
+  </stage>
+  <stage stageid="f925ae19-e79d-4e0b-b0aa-b9d6823b99ac" name="Konstanter" type="Block">
+    <subsheetid>53eff783-03c4-473b-b45c-53e6530bf79f</subsheetid>
+    <display x="-270" y="75" w="150" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="008080" />
+  </stage>
+  <stage stageid="b34844db-0adb-4fc6-b67f-6ffef21432cb" name="Output" type="Block">
+    <subsheetid>53eff783-03c4-473b-b45c-53e6530bf79f</subsheetid>
+    <display x="-270" y="1125" w="150" h="105" />
+    <font family="Segoe UI" size="10" style="Regular" color="800080" />
+  </stage>
+  <stage stageid="4f7355ac-47ec-473d-8e53-5d18a8d8ddfa" name="Borger" type="Collection">
+    <subsheetid>53eff783-03c4-473b-b45c-53e6530bf79f</subsheetid>
+    <display x="-195" y="-15" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="d1bc2fa9-f31d-4625-8ae0-7fc0a123deb1" name="Succes" type="Data">
+    <subsheetid>53eff783-03c4-473b-b45c-53e6530bf79f</subsheetid>
+    <display x="-195" y="1155" w="120" h="30" />
+    <datatype>flag</datatype>
+    <initialvalue>False</initialvalue>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="15dc323c-226e-4ec6-bbb4-2a48487470bf" name="Debug" type="Block">
+    <subsheetid>53eff783-03c4-473b-b45c-53e6530bf79f</subsheetid>
+    <loginhibit />
+    <display x="60" y="-255" w="195" h="105" />
+    <font family="Segoe UI" size="10" style="Regular" color="FFFF99" />
+  </stage>
+  <stage stageid="f9d8efac-05d1-4041-b117-f9c5a891c634" name="Start Momemtum (edu)" type="Action">
+    <subsheetid>53eff783-03c4-473b-b45c-53e6530bf79f</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="120" y="-225" />
+    <inputs>
+      <input type="text" name="Credentials" friendlyname="Credentials" expr="&quot;KMD Momentum - edu&quot;" />
+    </inputs>
+    <onsuccess>22e392d2-3172-4e8b-ab64-785a3d1d5df0</onsuccess>
+    <resource object="Momentum - Core" action="Start" />
+  </stage>
+  <stage stageid="22e392d2-3172-4e8b-ab64-785a3d1d5df0" name="Hent borger" type="SubSheet">
+    <subsheetid>53eff783-03c4-473b-b45c-53e6530bf79f</subsheetid>
+    <loginhibit />
+    <display x="120" y="-180" />
+    <inputs>
+      <input type="text" name="Cpr" friendlyname="Cpr" expr="&quot;xxxxxxxxxx&quot;" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="Borger" friendlyname="Borger" stage="Borger" />
+      <output type="number" name="Antal" friendlyname="Antal" stage="" />
+      <output type="flag" name="Succes" friendlyname="Succes" stage="" />
+    </outputs>
+    <onsuccess>404409d4-6ab5-49bf-8f1a-b8364f912b3b</onsuccess>
+    <processid>63591284-298c-492b-8b08-88710ae50832</processid>
+  </stage>
+  <stage stageid="404409d4-6ab5-49bf-8f1a-b8364f912b3b" name="Anchor6" type="Anchor">
+    <subsheetid>53eff783-03c4-473b-b45c-53e6530bf79f</subsheetid>
+    <loginhibit />
+    <display x="120" y="-105" w="10" h="10" />
+    <onsuccess>fa73985b-7cf0-4ba9-b4a5-fba907128330</onsuccess>
+  </stage>
+  <stage stageid="fa73985b-7cf0-4ba9-b4a5-fba907128330" name="Anchor6" type="Anchor">
+    <subsheetid>53eff783-03c4-473b-b45c-53e6530bf79f</subsheetid>
+    <loginhibit />
+    <display x="0" y="-105" w="10" h="10" />
+    <onsuccess>af515cb7-1c46-46a9-b7a1-186505f20082</onsuccess>
+  </stage>
+  <stage stageid="5db7f800-a0c2-41a8-8777-bd1fe70aa407" name="Opret partshøring" type="Block">
+    <subsheetid>53eff783-03c4-473b-b45c-53e6530bf79f</subsheetid>
+    <loginhibit />
+    <display x="-75" y="495" w="225" h="165" />
+    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
+  </stage>
+  <stage stageid="33628c2f-4c65-4307-8f7b-3f77d166bd9e" name="Find skabelon" type="Block">
+    <subsheetid>53eff783-03c4-473b-b45c-53e6530bf79f</subsheetid>
+    <loginhibit />
+    <display x="-75" y="60" w="225" h="240" />
+    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
+  </stage>
+  <stage stageid="7185a453-a93f-41dc-a5a3-d54b80148bc4" name="Statuskode" type="Data">
+    <subsheetid>53eff783-03c4-473b-b45c-53e6530bf79f</subsheetid>
+    <display x="-195" y="180" w="120" h="30" />
+    <datatype>number</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="4131e6d6-1cf5-4f9a-b6f1-a1cfe6c02a6c" name="Antal" type="Data">
+    <subsheetid>53eff783-03c4-473b-b45c-53e6530bf79f</subsheetid>
+    <display x="-195" y="225" w="120" h="30" />
+    <datatype>number</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="2539e9a9-27b7-4e38-acfc-7bc82e64d4b9" name="Målgrupper" type="Collection">
+    <subsheetid>53eff783-03c4-473b-b45c-53e6530bf79f</subsheetid>
+    <display x="-195" y="270" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="0b93a89e-5d02-442a-ac49-a727d1168030" name="Hent brevskabeloner" type="Action">
+    <subsheetid>53eff783-03c4-473b-b45c-53e6530bf79f</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="0" y="90" />
+    <inputs>
+      <input type="text" name="Url" friendlyname="Url" expr="&quot;/messages/lettertemplates?codes=6.3&amp;excludedTags=CompanyLetter&amp;excludedTags=CitizenCompanyLetter&amp;excludedTags=DynamicDocument&amp;excludedTags=Jobmatch&amp;excludedTags=AttachPDFWithJobs&quot;" />
+    </inputs>
+    <outputs>
+      <output type="number" name="Statuskode" friendlyname="Statuskode" narrative="Http statuskoden for kaldet" stage="Statuskode" />
+      <output type="collection" name="Data" friendlyname="Data" stage="Brevskabeloner" />
+      <output type="number" name="Antal" friendlyname="Antal" stage="Antal" />
+      <output type="text" name="Json" friendlyname="Json" narrative="Det rå json output" stage="" />
+    </outputs>
+    <onsuccess>9f06ae86-9853-49fe-9a98-61e281c7ad90</onsuccess>
+    <resource object="Momentum - Core" action="Get" />
+  </stage>
+  <stage stageid="13d5750c-5897-4d83-be1b-4051cf70f9b6" name="Brevskabeloner" type="Collection">
+    <subsheetid>53eff783-03c4-473b-b45c-53e6530bf79f</subsheetid>
+    <display x="-195" y="315" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="9f06ae86-9853-49fe-9a98-61e281c7ad90" name="Filtrer brevskabelon" type="Action">
+    <subsheetid>53eff783-03c4-473b-b45c-53e6530bf79f</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="0" y="135" />
+    <inputs>
+      <input type="collection" name="Collection In" friendlyname="Collection In" narrative="Input collection" expr="[Brevskabeloner]" />
+      <input type="text" name="Filter" friendlyname="Filter" narrative="The filter to apply" expr="&quot;[name] = '&quot; &amp; [Brevskabelonsnavn] &amp; &quot;'&quot;" />
+    </inputs>
+    <outputs>
+      <output type="number" name="Count" friendlyname="Count" narrative="The amount of rows in the filtered collection" stage="Antal" />
+      <output type="collection" name="Collection Out" friendlyname="Collection Out" narrative="The filtered collection" stage="Brevskabelon" />
+    </outputs>
+    <onsuccess>4ff449d5-b6d5-464b-8938-07eb8dafe88b</onsuccess>
+    <resource object="Utility - Odk Linq" action="Filter" />
+  </stage>
+  <stage stageid="b452ee3a-8f4d-48ac-a07e-96f999e8255c" name="Partshøringsfrist" type="Data">
+    <subsheetid>53eff783-03c4-473b-b45c-53e6530bf79f</subsheetid>
+    <loginhibit />
+    <display x="-465" y="180" w="120" h="30" />
+    <datatype>date</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="d4eb4293-0373-49f3-a73e-3b183526e619" name="Hændelsestype" type="Data">
+    <subsheetid>53eff783-03c4-473b-b45c-53e6530bf79f</subsheetid>
+    <loginhibit />
+    <display x="-465" y="270" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="eb9c14fe-3ef1-4873-b4d5-91a2b17db474" name="Begrundelse for partshøring" type="Data">
+    <subsheetid>53eff783-03c4-473b-b45c-53e6530bf79f</subsheetid>
+    <loginhibit />
+    <display x="-465" y="225" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="ba56610e-cb89-4e4f-ad7f-ba53ff190740" name="Titel" type="Data">
+    <subsheetid>53eff783-03c4-473b-b45c-53e6530bf79f</subsheetid>
+    <loginhibit />
+    <display x="-465" y="315" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="053127e1-f75e-4b1b-a006-e461c8ad7cf2" name="Ansvarlig sagsbehandler" type="Collection">
+    <subsheetid>53eff783-03c4-473b-b45c-53e6530bf79f</subsheetid>
+    <display x="-465" y="90" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="b81d3f52-fcb4-4dda-acf8-67055b3aca15" name="Brevskabelonkode" type="Data">
+    <subsheetid>53eff783-03c4-473b-b45c-53e6530bf79f</subsheetid>
+    <loginhibit />
+    <display x="-480" y="345" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="f17f70cb-ec01-4b55-846c-bc1876017d7c" name="Udfyld json" type="Block">
+    <subsheetid>53eff783-03c4-473b-b45c-53e6530bf79f</subsheetid>
+    <loginhibit />
+    <display x="-75" y="315" w="225" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
+  </stage>
+  <stage stageid="388ee0d9-c810-4597-aa8a-d0a154807414" name="Sag" type="Collection">
+    <subsheetid>53eff783-03c4-473b-b45c-53e6530bf79f</subsheetid>
+    <loginhibit />
+    <display x="-465" y="0" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="e4fb8090-6e78-447c-9b02-3cec95cadbbe" name="Hændelsesdatoer" type="Collection">
+    <subsheetid>53eff783-03c4-473b-b45c-53e6530bf79f</subsheetid>
+    <loginhibit />
+    <display x="-465" y="135" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+    <collectioninfo>
+      <field name="Hændelsesdato" type="date" />
+    </collectioninfo>
+    <initialvalue>
+      <row>
+        <field name="Hændelsesdato" type="date" value="" />
+      </row>
+    </initialvalue>
+  </stage>
+  <stage stageid="145ab158-fd67-462a-a777-5b7d5fa5406f" name="Aktivitet" type="Collection">
+    <subsheetid>53eff783-03c4-473b-b45c-53e6530bf79f</subsheetid>
+    <loginhibit />
+    <display x="-465" y="45" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="738fa746-cb64-4f50-8583-a93f330c95ab" name="Udfyld brev template" type="Code">
+    <subsheetid>53eff783-03c4-473b-b45c-53e6530bf79f</subsheetid>
+    <loginhibit />
+    <display x="0" y="345" />
+    <inputs>
+      <input type="text" name="citizenid" expr="[Borger.id]" />
+      <input type="text" name="template" expr="[Template]" />
+      <input type="text" name="targetCode" expr="[Målgrupper.targetGroupCode]" />
+      <input type="text" name="templateCode" expr="[Brevskabelon.code]" />
+      <input type="text" name="templateType" expr="[Brevskabelon.type]" />
+      <input type="text" name="templateTitle" expr="[Brevskabelon.name]" />
+    </inputs>
+    <outputs>
+      <output type="text" name="BrevJson" stage="Brev Json" />
+    </outputs>
+    <onsuccess>27ad843e-1a45-4695-89f8-ca1b286ea55f</onsuccess>
+    <code><![CDATA[JObject jObj = JObject.Parse(template);
+
+jObj["recipientId"] = citizenid;
+jObj["title"] = templateTitle;
+jObj["recipientTargetGroupCode"] = targetCode;
+jObj["temaplteCode"] = templateCode;
+jObj["templateType"] = templateType;
+
+
+BrevJson = JsonConvert.SerializeObject(jObj);]]></code>
+  </stage>
+  <stage stageid="bc1bc2a8-a1ea-4343-a057-61edd6f0bd02" name="Sæt succes" type="Calculation">
+    <subsheetid>53eff783-03c4-473b-b45c-53e6530bf79f</subsheetid>
+    <loginhibit />
+    <display x="0" y="630" />
+    <onsuccess>97b37b29-41cc-4672-a105-1f1dfd29a56f</onsuccess>
+    <calculation expression="[Statuskode] = 200" stage="Succes" />
+  </stage>
+  <stage stageid="2e9ae9ac-3c8e-40d0-8d05-aaba4709db4b" name="Afsendt brev" type="Collection">
+    <subsheetid>53eff783-03c4-473b-b45c-53e6530bf79f</subsheetid>
+    <display x="-195" y="1200" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="4a887314-e9dd-4ecb-b493-60ca39e1c2c3" name="Brevskabelonsnavn" type="Data">
+    <subsheetid>53eff783-03c4-473b-b45c-53e6530bf79f</subsheetid>
+    <display x="-195" y="30" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue xml:space="preserve">Repatriering - Information om rettigheder - ODK.O.013</initialvalue>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="51a841d1-ff3a-4671-82ad-37816dffefcc" name="Brevskabelon" type="Collection">
+    <subsheetid>53eff783-03c4-473b-b45c-53e6530bf79f</subsheetid>
+    <display x="-195" y="360" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="4ff449d5-b6d5-464b-8938-07eb8dafe88b" name="1 brevskabelon fundet?" type="Decision">
+    <subsheetid>53eff783-03c4-473b-b45c-53e6530bf79f</subsheetid>
+    <loginhibit />
+    <display x="0" y="180" />
+    <decision expression="[Antal] = 1" />
+    <ontrue>c1903c3f-b035-4c39-abb0-c469730e06ef</ontrue>
+    <onfalse>1e668da8-e4fc-45c5-a3e6-381041998d10</onfalse>
+  </stage>
+  <stage stageid="3610878e-22ae-40df-a63c-06acda212ad4" name="Template" type="Data">
+    <subsheetid>53eff783-03c4-473b-b45c-53e6530bf79f</subsheetid>
+    <loginhibit />
+    <display x="-195" y="105" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue xml:space="preserve">{
+ "recipientId":"",
+ "templateId":"",
+ "templateCode":"",
+ "tags":[],
+ "templateType":"",
+ "title":"",
+ "context":{},
+ "messageRecipientType":0,
+ "processEmptyMergeFields":true,
+ "recipientTargetGroupCode":""
+}</initialvalue>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="af515cb7-1c46-46a9-b7a1-186505f20082" name="Hent målgrupper" type="Action">
+    <subsheetid>53eff783-03c4-473b-b45c-53e6530bf79f</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="0" y="-45" />
+    <inputs>
+      <input type="collection" name="Borger" friendlyname="Borger" expr="[Borger]" />
+    </inputs>
+    <outputs>
+      <output type="number" name="Antal" friendlyname="Antal" stage="Antal" />
+      <output type="flag" name="Succes" friendlyname="Succes" stage="Succes" />
+      <output type="collection" name="Målgrupper" friendlyname="Målgrupper" stage="Målgrupper" />
+    </outputs>
+    <onsuccess>6e032c34-2eb2-4781-8757-87cb9dead51a</onsuccess>
+    <resource object="Momentum - Borger" action="Hent målgrupper" />
+  </stage>
+  <stage stageid="6e032c34-2eb2-4781-8757-87cb9dead51a" name="Kun én målgruppe?" type="Decision">
+    <subsheetid>53eff783-03c4-473b-b45c-53e6530bf79f</subsheetid>
+    <loginhibit />
+    <narrative>I så fald er den altid aktiv, her slipper vi for json parse mismatch som giver problemer i ODK Filter.</narrative>
+    <display x="0" y="0" />
+    <decision expression="[Antal] = 1" />
+    <ontrue>0b93a89e-5d02-442a-ac49-a727d1168030</ontrue>
+    <onfalse>4e3c0e84-1beb-4cb0-bbb8-1e9178df3c60</onfalse>
+  </stage>
+  <stage stageid="4e3c0e84-1beb-4cb0-bbb8-1e9178df3c60" name="Filtrer aktiv målgruppe" type="Action">
+    <subsheetid>53eff783-03c4-473b-b45c-53e6530bf79f</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="75" y="0" />
+    <inputs>
+      <input type="collection" name="Collection In" friendlyname="Collection In" narrative="Input collection" expr="[Målgrupper]" />
+      <input type="text" name="Filter" friendlyname="Filter" narrative="The filter to apply" expr="&quot;[end] = '01-01-0001'&quot;" />
+    </inputs>
+    <outputs>
+      <output type="number" name="Count" friendlyname="Count" narrative="The amount of rows in the filtered collection" stage="Antal" />
+      <output type="collection" name="Collection Out" friendlyname="Collection Out" narrative="The filtered collection" stage="Målgrupper" />
+    </outputs>
+    <onsuccess>0e5d6f35-d774-48d7-8497-d1eda558f53a</onsuccess>
+    <resource object="Utility - Odk Linq" action="Filter" />
+  </stage>
+  <stage stageid="0e5d6f35-d774-48d7-8497-d1eda558f53a" name="Anchor22" type="Anchor">
+    <subsheetid>53eff783-03c4-473b-b45c-53e6530bf79f</subsheetid>
+    <loginhibit />
+    <display x="75" y="90" w="10" h="10" />
+    <onsuccess>0b93a89e-5d02-442a-ac49-a727d1168030</onsuccess>
+  </stage>
+  <stage stageid="8b44b23e-c4fe-47b9-a6b6-ce77867d896b" name="Find målgruppe" type="Block">
+    <subsheetid>53eff783-03c4-473b-b45c-53e6530bf79f</subsheetid>
+    <loginhibit />
+    <display x="-75" y="-75" w="225" h="120" />
+    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
+  </stage>
+  <stage stageid="db4adfb9-09e2-483c-82a9-de0d5c138a1f" name="Brev Json" type="Data">
+    <subsheetid>53eff783-03c4-473b-b45c-53e6530bf79f</subsheetid>
+    <display x="-195" y="405" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="c1903c3f-b035-4c39-abb0-c469730e06ef" name="Kontroller om korrekt brevtype" type="Action">
+    <subsheetid>53eff783-03c4-473b-b45c-53e6530bf79f</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="0" y="225" />
+    <inputs>
+      <input type="text" name="Collection Name" friendlyname="Collection Name" narrative="The name of the collection to act upon" expr="&quot;Brevskabelon.tags&quot;" />
+    </inputs>
+    <outputs>
+      <output type="number" name="Count" friendlyname="Count" narrative="The number of rows counted in the collection" stage="Antal" />
+    </outputs>
+    <onsuccess>8c51affd-0cea-4c79-ac48-1ca5176a78aa</onsuccess>
+    <resource object="Blueprism.AutomateProcessCore.clsCollectionActions" action="Count Rows" />
+  </stage>
+  <stage stageid="8c51affd-0cea-4c79-ac48-1ca5176a78aa" name="Korrekt brevtype?" type="Decision">
+    <subsheetid>53eff783-03c4-473b-b45c-53e6530bf79f</subsheetid>
+    <loginhibit />
+    <display x="0" y="270" />
+    <decision expression="[Antal] = 0" />
+    <ontrue>738fa746-cb64-4f50-8583-a93f330c95ab</ontrue>
+    <onfalse>a5d14f41-959d-4ee4-a4af-cd6d179175db</onfalse>
+  </stage>
+  <stage stageid="a5d14f41-959d-4ee4-a4af-cd6d179175db" name="Ikke mulig brev type" type="Exception">
+    <subsheetid>53eff783-03c4-473b-b45c-53e6530bf79f</subsheetid>
+    <display x="240" y="270" />
+    <exception localized="yes" type="Business Exception" detail="&quot;Du har valgt et brev som ikke kan håndteres af denne funktion&quot;" />
+  </stage>
+  <stage stageid="1e668da8-e4fc-45c5-a3e6-381041998d10" name="Brevskabelon ikke fundet" type="Exception">
+    <subsheetid>53eff783-03c4-473b-b45c-53e6530bf79f</subsheetid>
+    <display x="240" y="180" />
+    <exception localized="yes" type="Business Exception" detail="&quot;Kunne ikke finde skabelon ud fra skabelonsnavn&quot;" />
+  </stage>
+  <stage stageid="27ad843e-1a45-4695-89f8-ca1b286ea55f" name="Opret brev" type="Action">
+    <subsheetid>53eff783-03c4-473b-b45c-53e6530bf79f</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="0" y="405" />
+    <inputs>
+      <input type="text" name="Url" friendlyname="Url" expr="&quot;messages/letter&quot;" />
+      <input type="text" name="Body" friendlyname="Body" expr="[Brev Json]" />
+    </inputs>
+    <outputs>
+      <output type="number" name="Statuskode" friendlyname="Statuskode" narrative="Http statuskoden for kaldet" stage="Statuskode" />
+      <output type="collection" name="Data" friendlyname="Data" stage="Oprettet Brev" />
+      <output type="number" name="Antal" friendlyname="Antal" stage="Antal" />
+      <output type="text" name="Json" friendlyname="Json" narrative="Det rå json output" stage="Json" />
+    </outputs>
+    <onsuccess>55824246-2d6b-4390-bc5c-1287640dea18</onsuccess>
+    <resource object="Momentum - Core" action="Post" />
+  </stage>
+  <stage stageid="d94a6436-0b37-4e6f-8d6d-815203f56139" name="Oprettet Brev" type="Collection">
+    <subsheetid>53eff783-03c4-473b-b45c-53e6530bf79f</subsheetid>
+    <display x="105" y="435" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="c85ef03e-7f76-4b32-8f3e-657a2fa66527" name="Json" type="Data">
+    <subsheetid>53eff783-03c4-473b-b45c-53e6530bf79f</subsheetid>
+    <display x="240" y="465" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="55824246-2d6b-4390-bc5c-1287640dea18" name="Anchor30" type="Anchor">
+    <subsheetid>53eff783-03c4-473b-b45c-53e6530bf79f</subsheetid>
+    <loginhibit />
+    <display x="0" y="450" w="10" h="10" />
+    <onsuccess>bc1bc2a8-a1ea-4343-a057-61edd6f0bd02</onsuccess>
   </stage>
 </process>

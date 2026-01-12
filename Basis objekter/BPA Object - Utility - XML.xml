@@ -1,0 +1,933 @@
+﻿<process name="Utility - XML" version="1.0" bpversion="7.3.0.9110" narrative="This object handles the parsing and management of XML documents. Documents can be parsed and local values queried by xpath or a simple path" byrefcollection="true" processrunningmessage="" disableversioning="false" type="object" runmode="Exclusive" preferredid="8ffd8533-75d3-4870-ba63-499e5503a32e">
+  <appdef>
+    <element name="Application Root">
+      <id>280ee9c1-b796-4dbd-ba2d-beac05c27c3b</id>
+      <type>Application</type>
+      <basetype>Application</basetype>
+      <datatype>unknown</datatype>
+      <diagnose>False</diagnose>
+    </element>
+  </appdef>
+  <view>
+    <camerax>0</camerax>
+    <cameray>0</cameray>
+    <zoom version="2">1.25</zoom>
+  </view>
+  <preconditions />
+  <endpoint narrative="" />
+  <subsheet subsheetid="8d8ddd2c-b52d-42a3-91cd-1ed84b3de34f" type="CleanUp" published="True">
+    <name>Clean Up</name>
+    <view>
+      <camerax>0</camerax>
+      <cameray>0</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <subsheet subsheetid="22e8032d-4bde-4c6f-946d-b602fa0c70d8" type="Normal" published="True">
+    <name>Parse</name>
+    <view>
+      <camerax>10</camerax>
+      <cameray>5</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <subsheet subsheetid="0b56c388-0b70-439a-8238-98cb72fcf08f" type="Normal" published="True">
+    <name>Load</name>
+    <view>
+      <camerax>0</camerax>
+      <cameray>0</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <subsheet subsheetid="a49a45bd-d20f-4712-bb64-30ec955d4810" type="Normal" published="True">
+    <name>Close</name>
+    <view>
+      <camerax>-23</camerax>
+      <cameray>0</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <subsheet subsheetid="673fd2a6-d008-4dfc-b98e-9baea6d8c7ed" type="Normal" published="False">
+    <name>Selftest</name>
+    <view>
+      <camerax>15</camerax>
+      <cameray>-24</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <subsheet subsheetid="c3571a17-5615-4e46-ae8b-d369c48e96c7" type="Normal" published="True">
+    <name>Get value from XPath</name>
+    <view>
+      <camerax>0</camerax>
+      <cameray>0</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <subsheet subsheetid="685a7c0a-8874-47b8-9466-317dee67fd07" type="Normal" published="True">
+    <name>Get value from path</name>
+    <view>
+      <camerax>0</camerax>
+      <cameray>0</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <subsheet subsheetid="9090d9b4-2131-4bee-9d59-22b6fda5147f" type="Normal" published="True">
+    <name>Get Xml</name>
+    <view>
+      <camerax>0</camerax>
+      <cameray>63</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <stage stageid="8075125e-d359-4e1b-a59d-865f0b48946f" name="Start" type="Start">
+    <loginhibit />
+    <display x="15" y="-105" />
+    <onsuccess>b4f87370-03f6-4cb9-8422-9f6b771b7f15</onsuccess>
+  </stage>
+  <stage stageid="b4f87370-03f6-4cb9-8422-9f6b771b7f15" name="End" type="End">
+    <loginhibit />
+    <display x="15" y="90" />
+  </stage>
+  <stage stageid="bef9c6e8-739a-4985-8dbe-a0260ecb9d56" name="Stage1" type="ProcessInfo">
+    <display x="-195" y="-105" w="150" h="90" />
+    <references>
+      <reference>System.dll</reference>
+      <reference>System.Data.dll</reference>
+      <reference>System.Xml.dll</reference>
+      <reference>System.Drawing.dll</reference>
+      <reference>System.Linq.dll</reference>
+      <reference>System.Xml.Linq.dll</reference>
+      <reference>System.Core.dll</reference>
+    </references>
+    <imports>
+      <import>System</import>
+      <import>System.Drawing</import>
+      <import>System.Data</import>
+      <import>System.Xml</import>
+      <import>System.Collections.Generic</import>
+      <import>System.Linq</import>
+      <import>System.Xml.Linq</import>
+      <import>System.Xml.XPath</import>
+    </imports>
+    <language>csharp</language>
+    <globalcode><![CDATA[]]></globalcode>
+    <code><![CDATA[        public string GetXmlValue(XContainer container, string localPath)
+        {
+            var element = LocalPath(container,localPath);
+
+            if (element == null)
+                return null;
+
+            return element.Value;
+        }
+
+        public void SetXmlValue(XContainer container, string localPath, string value)
+        {
+            var element = LocalPath(container,localPath);
+
+            if (element != null)
+                element.Value = value;
+            else
+                throw new InvalidOperationException("Unknown path " + localPath);
+        }
+
+
+        public XElement LocalPath(XContainer element, string path)
+        {
+            if (element == null)
+                return null;
+
+            var pathChunks = path.Split(new char[] { '/' }, StringSplitOptions.RemoveEmptyEntries);
+
+            if (pathChunks.Count() == 0)
+                throw new InvalidOperationException("Zero length path not supported");
+
+            foreach (var p in pathChunks)
+                element = GetPathFragment(element, p);
+
+            return element as XElement;
+        }
+
+        public XElement GetPathFragment(XContainer parent, string localName)
+        {
+            if (parent == null)
+                return null;
+
+            return parent.Elements().FirstOrDefault(a => a.Name.LocalName == localName);
+        }
+
+
+Dictionary<int,XDocument> _documents = new Dictionary<int,XDocument>();
+
+int _handle = 0;]]></code>
+  </stage>
+  <stage stageid="404fbaca-8953-439b-8ad5-c55884a327e9" name="Clean Up" type="SubSheetInfo">
+    <subsheetid>8d8ddd2c-b52d-42a3-91cd-1ed84b3de34f</subsheetid>
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="13917b55-4184-42f7-a69e-6700c7b1a815" name="Start" type="Start">
+    <subsheetid>8d8ddd2c-b52d-42a3-91cd-1ed84b3de34f</subsheetid>
+    <loginhibit />
+    <display x="15" y="-105" />
+    <onsuccess>fbfde694-8f24-456b-9819-90426df5b95f</onsuccess>
+  </stage>
+  <stage stageid="fbfde694-8f24-456b-9819-90426df5b95f" name="End" type="End">
+    <subsheetid>8d8ddd2c-b52d-42a3-91cd-1ed84b3de34f</subsheetid>
+    <loginhibit />
+    <display x="15" y="90" />
+  </stage>
+  <stage stageid="2e1f3f9a-5aaf-45f3-88d9-d555e79722ad" name="Selftest" type="SubSheetInfo">
+    <subsheetid>673fd2a6-d008-4dfc-b98e-9baea6d8c7ed</subsheetid>
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="994f66f9-e09f-49b5-9e72-85ca89e69ae1" name="Start" type="Start">
+    <subsheetid>673fd2a6-d008-4dfc-b98e-9baea6d8c7ed</subsheetid>
+    <loginhibit />
+    <display x="15" y="-105" />
+    <onsuccess>31f28223-39d2-4842-9657-c21748af07e3</onsuccess>
+  </stage>
+  <stage stageid="3841ddd1-a779-44dc-b704-4a722c0c4f5a" name="End" type="End">
+    <subsheetid>673fd2a6-d008-4dfc-b98e-9baea6d8c7ed</subsheetid>
+    <loginhibit />
+    <display x="105" y="510" />
+  </stage>
+  <stage stageid="41deaadb-437a-4bdf-b94a-aefe79b5ae88" name="Note1" type="Note">
+    <subsheetid>8d8ddd2c-b52d-42a3-91cd-1ed84b3de34f</subsheetid>
+    <narrative>Clean Up Page
+
+This is an optional page where you might choose to perform some finalisation (or "cleanup") tasks as your business object is closed down.
+
+The cleanup action will be called automatically immediately after closing your business object at the end of a business process.
+
+You will not be able to call this action from a business process, nor will it be called at any other time than before the disposal of the business object.</narrative>
+    <display x="-180" y="60" w="180" h="230" />
+  </stage>
+  <stage stageid="86dbb90a-c2f5-4bfc-8927-0d80354dff4e" name="Note2" type="Note">
+    <narrative>Initialise Page
+
+This is an optional page where you might choose to perform some initialisation tasks after your business object is loaded.
+
+The initialise action will be called automatically immediately after loading your business object.
+
+You will not be able to call this action from a business process, nor will it be called at any other time than after the creation of the object.</narrative>
+    <display x="-180" y="60" w="180" h="230" />
+  </stage>
+  <stage stageid="1c296da7-3cab-483f-9640-7ea713153827" name="Parse" type="SubSheetInfo">
+    <subsheetid>22e8032d-4bde-4c6f-946d-b602fa0c70d8</subsheetid>
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="e5578aae-bc8f-47d7-bb9e-144024b319ed" name="Start" type="Start">
+    <subsheetid>22e8032d-4bde-4c6f-946d-b602fa0c70d8</subsheetid>
+    <loginhibit />
+    <display x="15" y="-105" />
+    <inputs>
+      <input type="text" name="xml" narrative="The xml document as a string" stage="xml" />
+    </inputs>
+    <onsuccess>2311a33e-5919-4fdd-bcc4-e93fa3e54cdf</onsuccess>
+  </stage>
+  <stage stageid="0cbb4ff4-5637-49a8-9b0d-e1d1ccf24fcf" name="End" type="End">
+    <subsheetid>22e8032d-4bde-4c6f-946d-b602fa0c70d8</subsheetid>
+    <loginhibit />
+    <display x="15" y="90" />
+    <outputs>
+      <output type="number" name="handle" narrative="A handle identifying the xml document that was parsed" stage="handle" />
+    </outputs>
+  </stage>
+  <stage stageid="2b439081-62ef-4750-b51c-c32069cd98cc" name="Load" type="SubSheetInfo">
+    <subsheetid>0b56c388-0b70-439a-8238-98cb72fcf08f</subsheetid>
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="85a12a77-04eb-4986-8d2e-a3d026b6c774" name="Start" type="Start">
+    <subsheetid>0b56c388-0b70-439a-8238-98cb72fcf08f</subsheetid>
+    <loginhibit />
+    <display x="15" y="-105" />
+    <inputs>
+      <input type="text" name="file" narrative="The full path of the filename to load" stage="file" />
+    </inputs>
+    <onsuccess>ca423002-8eb2-434c-a335-453462635d09</onsuccess>
+  </stage>
+  <stage stageid="2311a33e-5919-4fdd-bcc4-e93fa3e54cdf" name="Parse XML" type="Code">
+    <subsheetid>22e8032d-4bde-4c6f-946d-b602fa0c70d8</subsheetid>
+    <loginhibit />
+    <display x="15" y="-45" />
+    <inputs>
+      <input type="text" name="xml" expr="[xml]" />
+    </inputs>
+    <outputs>
+      <output type="number" name="handle" stage="handle" />
+      <output type="text" name="exception" stage="exception" />
+    </outputs>
+    <onsuccess>44a614ba-5ca4-45f7-b1f5-1d6e9227d7a4</onsuccess>
+    <code><![CDATA[try
+{
+	var document = XDocument.Parse(xml);
+	
+	_handle += 1;
+	
+	int handleTmp = _handle;
+
+	_documents[handleTmp] = document;
+	
+	handle = handleTmp;
+	exception = "";
+	
+} catch(Exception e) {
+	
+	handle = -1;
+	exception = e.ToString();
+}]]></code>
+  </stage>
+  <stage stageid="6347809e-86ec-41ab-9b66-33a2a934917a" name="xml" type="Data">
+    <subsheetid>22e8032d-4bde-4c6f-946d-b602fa0c70d8</subsheetid>
+    <display x="-210" y="-30" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="d9641aaa-f47c-4601-8ccc-eee386bbec84" name="handle" type="Data">
+    <subsheetid>22e8032d-4bde-4c6f-946d-b602fa0c70d8</subsheetid>
+    <display x="-210" y="15" w="120" h="30" />
+    <datatype>number</datatype>
+    <initialvalue>0</initialvalue>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="44a614ba-5ca4-45f7-b1f5-1d6e9227d7a4" name="Is exception?" type="Decision">
+    <subsheetid>22e8032d-4bde-4c6f-946d-b602fa0c70d8</subsheetid>
+    <loginhibit />
+    <display x="15" y="30" />
+    <decision expression="[exception] &lt;&gt; &quot;&quot;" />
+    <ontrue>5f89ff5c-4180-49f8-bf59-7d471a77e9b5</ontrue>
+    <onfalse>0cbb4ff4-5637-49a8-9b0d-e1d1ccf24fcf</onfalse>
+  </stage>
+  <stage stageid="5f89ff5c-4180-49f8-bf59-7d471a77e9b5" name="Malformed XML Exception" type="Exception">
+    <subsheetid>22e8032d-4bde-4c6f-946d-b602fa0c70d8</subsheetid>
+    <display x="120" y="30" />
+    <exception type="XML Exception" detail="[exception]" />
+  </stage>
+  <stage stageid="d18ae4a6-8106-4f10-badd-2ae85b10e9a2" name="exception" type="Data">
+    <subsheetid>22e8032d-4bde-4c6f-946d-b602fa0c70d8</subsheetid>
+    <display x="-210" y="60" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="f8b62576-9526-4711-a5e0-834eec31eb82" name="Note3" type="Note">
+    <loginhibit />
+    <narrative>Note that initialize code is in the description block</narrative>
+    <display x="120" y="-15" w="150" h="60" />
+  </stage>
+  <stage stageid="31f28223-39d2-4842-9657-c21748af07e3" name="Parse" type="SubSheet">
+    <subsheetid>673fd2a6-d008-4dfc-b98e-9baea6d8c7ed</subsheetid>
+    <loginhibit />
+    <display x="15" y="-45" />
+    <inputs>
+      <input type="text" name="xml" narrative="The xml document as a string" expr="[Test xml - faktura fra ØS Indsigt]" />
+    </inputs>
+    <outputs>
+      <output type="number" name="handle" narrative="A handle identifying the xml document that was parsed" stage="handle" />
+    </outputs>
+    <onsuccess>369740ee-0f3a-4009-91f7-a9c2f7828e63</onsuccess>
+    <processid>22e8032d-4bde-4c6f-946d-b602fa0c70d8</processid>
+  </stage>
+  <stage stageid="55bdb1ee-25f5-47d8-8de9-d06072b585f5" name="Test xml - faktura fra ØS Indsigt" type="Data">
+    <subsheetid>673fd2a6-d008-4dfc-b98e-9baea6d8c7ed</subsheetid>
+    <loginhibit />
+    <display x="-195" y="-30" w="150" h="30" />
+    <datatype>text</datatype>
+    <initialvalue xml:space="preserve">""</initialvalue>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="b4f8efe3-8848-4161-ad97-b7e3a3905be9" name="handle" type="Data">
+    <subsheetid>673fd2a6-d008-4dfc-b98e-9baea6d8c7ed</subsheetid>
+    <display x="-195" y="15" w="150" h="30" />
+    <datatype>number</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="d9a0fb59-8924-425e-bce1-37c4a32733b4" name="Parse will throw exception" type="Note">
+    <subsheetid>673fd2a6-d008-4dfc-b98e-9baea6d8c7ed</subsheetid>
+    <loginhibit />
+    <narrative>Parse will throw exception - causing self test to fail.</narrative>
+    <display x="120" y="-45" w="90" h="30" />
+  </stage>
+  <stage stageid="369740ee-0f3a-4009-91f7-a9c2f7828e63" name="Valid Handle?" type="Decision">
+    <subsheetid>673fd2a6-d008-4dfc-b98e-9baea6d8c7ed</subsheetid>
+    <loginhibit />
+    <display x="15" y="0" />
+    <decision expression="[handle] &lt;&gt; -1" />
+    <ontrue>f2612f45-08c3-4c83-9b76-089851c1657d</ontrue>
+    <onfalse>cda8add0-4b2e-45f0-8f20-5c9fca80605d</onfalse>
+  </stage>
+  <stage stageid="cda8add0-4b2e-45f0-8f20-5c9fca80605d" name="Handle not correct" type="Exception">
+    <subsheetid>673fd2a6-d008-4dfc-b98e-9baea6d8c7ed</subsheetid>
+    <display x="135" y="0" />
+    <exception type="System Exception" detail="&quot;Handle was invalid, it was &quot; &amp; [handle]" />
+  </stage>
+  <stage stageid="45b43af8-b13f-4c93-b2dd-0a94855c0d58" name="Close" type="SubSheetInfo">
+    <subsheetid>a49a45bd-d20f-4712-bb64-30ec955d4810</subsheetid>
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="b94268d8-46d5-415b-b6a9-ef4e5b30a5ee" name="Start" type="Start">
+    <subsheetid>a49a45bd-d20f-4712-bb64-30ec955d4810</subsheetid>
+    <loginhibit />
+    <display x="15" y="-105" />
+    <inputs>
+      <input type="number" name="handle" narrative="The XML handle" stage="handle" />
+    </inputs>
+    <onsuccess>179a6173-cfbf-4638-9a4d-acaa38e9842c</onsuccess>
+  </stage>
+  <stage stageid="6dab8e5c-8001-447c-b00f-a4bec3c5872e" name="End" type="End">
+    <subsheetid>a49a45bd-d20f-4712-bb64-30ec955d4810</subsheetid>
+    <loginhibit />
+    <display x="15" y="90" />
+  </stage>
+  <stage stageid="552f50b8-1a45-4e96-b0a7-5072b76224cf" name="handle" type="Data">
+    <subsheetid>a49a45bd-d20f-4712-bb64-30ec955d4810</subsheetid>
+    <display x="-210" y="-30" w="120" h="30" />
+    <datatype>number</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="179a6173-cfbf-4638-9a4d-acaa38e9842c" name="Remove handle from dictionary" type="Code">
+    <subsheetid>a49a45bd-d20f-4712-bb64-30ec955d4810</subsheetid>
+    <loginhibit />
+    <display x="15" y="-30" />
+    <inputs>
+      <input type="number" name="handle" expr="[handle]" />
+    </inputs>
+    <outputs>
+      <output type="text" name="exception" stage="exception" />
+    </outputs>
+    <onsuccess>a8cf3378-4501-46aa-86bc-ec06724075fc</onsuccess>
+    <code><![CDATA[
+
+exception = "";
+
+int handleTmp = (int)handle;
+
+if(!_documents.ContainsKey(handleTmp)) {
+	exception = "Handle does not exist";
+	return;
+}
+
+_documents.Remove(handleTmp);
+]]></code>
+  </stage>
+  <stage stageid="ddf3d38e-6997-47ff-b407-25905fcea9f3" name="exception" type="Data">
+    <subsheetid>a49a45bd-d20f-4712-bb64-30ec955d4810</subsheetid>
+    <display x="-210" y="15" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="a8cf3378-4501-46aa-86bc-ec06724075fc" name="Is exception?" type="Decision">
+    <subsheetid>a49a45bd-d20f-4712-bb64-30ec955d4810</subsheetid>
+    <loginhibit />
+    <display x="15" y="15" />
+    <decision expression="[exception] &lt;&gt; &quot;&quot;" />
+    <ontrue>164e8733-99d2-44be-b0bd-2b0efb10f272</ontrue>
+    <onfalse>6dab8e5c-8001-447c-b00f-a4bec3c5872e</onfalse>
+  </stage>
+  <stage stageid="164e8733-99d2-44be-b0bd-2b0efb10f272" name="Unknown handle" type="Exception">
+    <subsheetid>a49a45bd-d20f-4712-bb64-30ec955d4810</subsheetid>
+    <display x="150" y="15" />
+    <exception type="System Exception" detail="[exception]" />
+  </stage>
+  <stage stageid="fce73c90-6580-40df-82f6-492cc67bbba6" name="Close with valid handle" type="SubSheet">
+    <subsheetid>673fd2a6-d008-4dfc-b98e-9baea6d8c7ed</subsheetid>
+    <loginhibit />
+    <display x="15" y="300" />
+    <inputs>
+      <input type="number" name="handle" narrative="The XML handle" expr="[handle]" />
+    </inputs>
+    <onsuccess>9474cc82-e631-4b77-a176-2c7605c71775</onsuccess>
+    <processid>a49a45bd-d20f-4712-bb64-30ec955d4810</processid>
+  </stage>
+  <stage stageid="9474cc82-e631-4b77-a176-2c7605c71775" name="Close with invalid handle" type="SubSheet">
+    <subsheetid>673fd2a6-d008-4dfc-b98e-9baea6d8c7ed</subsheetid>
+    <loginhibit />
+    <display x="15" y="375" />
+    <inputs>
+      <input type="number" name="handle" narrative="The XML handle" expr="2432425" />
+    </inputs>
+    <onsuccess>fc86bdf7-da59-40db-8eae-0618261cbc2f</onsuccess>
+    <processid>a49a45bd-d20f-4712-bb64-30ec955d4810</processid>
+  </stage>
+  <stage stageid="51a796fa-ede0-44e5-8f3c-3ddd4b450724" name="Block1" type="Block">
+    <subsheetid>673fd2a6-d008-4dfc-b98e-9baea6d8c7ed</subsheetid>
+    <loginhibit />
+    <display x="-45" y="330" w="195" h="90" />
+    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
+  </stage>
+  <stage stageid="c4823d3d-e1e1-4932-995b-9e18c1cc1870" name="Recover1" type="Recover">
+    <subsheetid>673fd2a6-d008-4dfc-b98e-9baea6d8c7ed</subsheetid>
+    <loginhibit />
+    <display x="105" y="375" />
+    <onsuccess>80ebcebe-234b-4db0-8947-52b1abf297c9</onsuccess>
+  </stage>
+  <stage stageid="fc86bdf7-da59-40db-8eae-0618261cbc2f" name="Invalid handle fail" type="Exception">
+    <subsheetid>673fd2a6-d008-4dfc-b98e-9baea6d8c7ed</subsheetid>
+    <display x="-120" y="375" />
+    <exception type="System Exception" detail="&quot;Closing an invalid handle did not cause exception?&quot;" />
+  </stage>
+  <stage stageid="78de19a4-cad0-41ac-8c49-3c9d0d9d760e" name="End" type="End">
+    <subsheetid>0b56c388-0b70-439a-8238-98cb72fcf08f</subsheetid>
+    <loginhibit />
+    <display x="15" y="90" />
+    <outputs>
+      <output type="number" name="handle" narrative="A handle identifying the xml document that was parsed" stage="handle" />
+    </outputs>
+  </stage>
+  <stage stageid="ca423002-8eb2-434c-a335-453462635d09" name="Load XML" type="Code">
+    <subsheetid>0b56c388-0b70-439a-8238-98cb72fcf08f</subsheetid>
+    <loginhibit />
+    <display x="15" y="-45" />
+    <inputs>
+      <input type="text" name="file" expr="[file]" />
+    </inputs>
+    <outputs>
+      <output type="number" name="handle" stage="handle" />
+      <output type="text" name="exception" stage="exception" />
+    </outputs>
+    <onsuccess>bb5b51a6-e988-4b1b-b561-694a122545dc</onsuccess>
+    <code><![CDATA[try
+{
+	var document = XDocument.Load(file);
+	
+	_handle += 1;
+	
+	int handleTmp = _handle;
+
+	_documents[handleTmp] = document;
+	
+	handle = handleTmp;
+	exception = "";
+	
+} catch(Exception e) {
+	
+	handle = -1;
+	exception = e.ToString();
+}]]></code>
+  </stage>
+  <stage stageid="28fa74ca-2d41-40bd-9f60-6e82c752d3a8" name="handle" type="Data">
+    <subsheetid>0b56c388-0b70-439a-8238-98cb72fcf08f</subsheetid>
+    <display x="-195" y="15" w="120" h="30" />
+    <datatype>number</datatype>
+    <initialvalue>0</initialvalue>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="bb5b51a6-e988-4b1b-b561-694a122545dc" name="Is exception?" type="Decision">
+    <subsheetid>0b56c388-0b70-439a-8238-98cb72fcf08f</subsheetid>
+    <loginhibit />
+    <display x="15" y="30" />
+    <decision expression="[exception] &lt;&gt; &quot;&quot;" />
+    <ontrue>a7f8893f-c041-4e07-abd9-9a9b5b82f48d</ontrue>
+    <onfalse>78de19a4-cad0-41ac-8c49-3c9d0d9d760e</onfalse>
+  </stage>
+  <stage stageid="a7f8893f-c041-4e07-abd9-9a9b5b82f48d" name="Malformed XML Exception" type="Exception">
+    <subsheetid>0b56c388-0b70-439a-8238-98cb72fcf08f</subsheetid>
+    <display x="120" y="30" />
+    <exception type="XML Exception" detail="[exception]" />
+  </stage>
+  <stage stageid="01e69da5-e74d-468b-837e-02c039d99b71" name="exception" type="Data">
+    <subsheetid>0b56c388-0b70-439a-8238-98cb72fcf08f</subsheetid>
+    <display x="-195" y="60" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="44e3f153-3685-4583-bd88-3e8234e74ca8" name="file" type="Data">
+    <subsheetid>0b56c388-0b70-439a-8238-98cb72fcf08f</subsheetid>
+    <display x="-195" y="-30" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="491a767f-b896-4194-b440-85dd069770ef" name="Get value from XPath" type="SubSheetInfo">
+    <subsheetid>c3571a17-5615-4e46-ae8b-d369c48e96c7</subsheetid>
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="a57b0507-fee4-4065-9d8c-b4590b24c2e0" name="Start" type="Start">
+    <subsheetid>c3571a17-5615-4e46-ae8b-d369c48e96c7</subsheetid>
+    <loginhibit />
+    <display x="15" y="-105" />
+    <inputs>
+      <input type="number" name="handle" narrative="The handle returned from parse" stage="handle" />
+      <input type="text" name="xpath" narrative="The path to the XML element to read" stage="xpath" />
+    </inputs>
+    <onsuccess>981a5ef6-6bd9-4622-8c3f-d586d199b7e6</onsuccess>
+  </stage>
+  <stage stageid="46d4ba79-40ae-4f48-bc24-12fc01db8adf" name="End" type="End">
+    <subsheetid>c3571a17-5615-4e46-ae8b-d369c48e96c7</subsheetid>
+    <loginhibit />
+    <display x="15" y="90" />
+    <outputs>
+      <output type="text" name="value" narrative="The contents of the inner xml as defined by the xpath" stage="value" />
+    </outputs>
+  </stage>
+  <stage stageid="981a5ef6-6bd9-4622-8c3f-d586d199b7e6" name="Get value from XPath" type="Code">
+    <subsheetid>c3571a17-5615-4e46-ae8b-d369c48e96c7</subsheetid>
+    <loginhibit />
+    <display x="15" y="-30" />
+    <inputs>
+      <input type="number" name="handle" expr="[handle]" />
+      <input type="text" name="xpath" expr="[xpath]" />
+    </inputs>
+    <outputs>
+      <output type="text" name="value" stage="value" />
+      <output type="text" name="exception" stage="exception" />
+    </outputs>
+    <onsuccess>925f6f39-422e-47fb-ad2b-76e9af9da77f</onsuccess>
+    <code><![CDATA[exception = "";
+value = null;
+
+int handleTmp = (int)handle;
+
+if(!_documents.ContainsKey(handleTmp)) {
+	exception = "Handle does not exist";
+	return;
+}
+
+try {
+	var element = _documents[handleTmp].XPathSelectElement(xpath);
+
+	if(element==null)
+	{
+		exception = "element not found";
+		return;
+	}
+	
+	value = element.Value;
+
+} catch(Exception e) {
+	exception = e.ToString();
+	
+}
+
+
+]]></code>
+  </stage>
+  <stage stageid="68ee95e2-7f49-4f7d-8143-437faba5e079" name="handle" type="Data">
+    <subsheetid>c3571a17-5615-4e46-ae8b-d369c48e96c7</subsheetid>
+    <display x="-195" y="75" w="120" h="30" />
+    <datatype>number</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="1ab3e8e4-ef91-4dc5-a5b8-dc7b6e90a2e6" name="xpath" type="Data">
+    <subsheetid>c3571a17-5615-4e46-ae8b-d369c48e96c7</subsheetid>
+    <display x="-195" y="-15" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="3308c36b-2137-4f23-b918-370775b8960d" name="value" type="Data">
+    <subsheetid>c3571a17-5615-4e46-ae8b-d369c48e96c7</subsheetid>
+    <display x="-195" y="30" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="804c626a-26e6-40d4-b198-c4644762b5eb" name="exception" type="Data">
+    <subsheetid>c3571a17-5615-4e46-ae8b-d369c48e96c7</subsheetid>
+    <display x="-195" y="120" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="f2612f45-08c3-4c83-9b76-089851c1657d" name="Get value from XPath" type="SubSheet">
+    <subsheetid>673fd2a6-d008-4dfc-b98e-9baea6d8c7ed</subsheetid>
+    <loginhibit />
+    <display x="15" y="60" />
+    <inputs>
+      <input type="number" name="handle" narrative="The handle returned from parse" expr="[handle]" />
+      <input type="text" name="xpath" narrative="The path to the XML element to read" expr="&quot;//*[local-name()='ID']&quot;" />
+    </inputs>
+    <outputs>
+      <output type="text" name="value" narrative="The contents of the inner xml as defined by the xpath" stage="value" />
+    </outputs>
+    <onsuccess>1fed4b07-df78-4167-9ffc-c40e6981fbd3</onsuccess>
+    <processid>c3571a17-5615-4e46-ae8b-d369c48e96c7</processid>
+  </stage>
+  <stage stageid="4cf3825a-a2bd-40fb-9cbb-72ba2bcfe185" name="value" type="Data">
+    <subsheetid>673fd2a6-d008-4dfc-b98e-9baea6d8c7ed</subsheetid>
+    <display x="-195" y="75" w="150" h="30" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="925f6f39-422e-47fb-ad2b-76e9af9da77f" name="Is exception?" type="Decision">
+    <subsheetid>c3571a17-5615-4e46-ae8b-d369c48e96c7</subsheetid>
+    <loginhibit />
+    <display x="15" y="30" />
+    <decision expression="[exception]&lt;&gt;&quot;&quot;" />
+    <ontrue>60158c42-bece-400a-a7dd-1e99a1a4c7b1</ontrue>
+    <onfalse>46d4ba79-40ae-4f48-bc24-12fc01db8adf</onfalse>
+  </stage>
+  <stage stageid="60158c42-bece-400a-a7dd-1e99a1a4c7b1" name="Xml exception" type="Exception">
+    <subsheetid>c3571a17-5615-4e46-ae8b-d369c48e96c7</subsheetid>
+    <display x="150" y="30" />
+    <exception type="System Exception" detail="[exception]" />
+  </stage>
+  <stage stageid="96248a44-1f69-4ae0-9378-96cfffb4a2ec" name="Get value from XPath" type="SubSheetInfo">
+    <subsheetid>685a7c0a-8874-47b8-9466-317dee67fd07</subsheetid>
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="7997b0e5-804f-413b-a8ea-5555c59f07f1" name="Start" type="Start">
+    <subsheetid>685a7c0a-8874-47b8-9466-317dee67fd07</subsheetid>
+    <loginhibit />
+    <display x="15" y="-105" />
+    <inputs>
+      <input type="number" name="handle" narrative="The handle returned from parse" stage="handle" />
+      <input type="text" name="path" narrative="The path to the XML element to read" stage="path" />
+    </inputs>
+    <onsuccess>1b0e87a8-f33c-4cb1-aafd-e0cce2669adf</onsuccess>
+  </stage>
+  <stage stageid="9221d229-14e7-4dca-8a97-1b97c4e6a96c" name="End" type="End">
+    <subsheetid>685a7c0a-8874-47b8-9466-317dee67fd07</subsheetid>
+    <loginhibit />
+    <display x="15" y="90" />
+    <outputs>
+      <output type="text" name="value" narrative="The contents of the inner xml as defined by the xpath" stage="value" />
+    </outputs>
+  </stage>
+  <stage stageid="1b0e87a8-f33c-4cb1-aafd-e0cce2669adf" name="Get value from path" type="Code">
+    <subsheetid>685a7c0a-8874-47b8-9466-317dee67fd07</subsheetid>
+    <loginhibit />
+    <display x="15" y="-30" />
+    <inputs>
+      <input type="number" name="handle" expr="[handle]" />
+      <input type="text" name="path" expr="[path]" />
+    </inputs>
+    <outputs>
+      <output type="text" name="value" stage="value" />
+      <output type="text" name="exception" stage="exception" />
+    </outputs>
+    <onsuccess>7e4b9734-6f01-436a-b7d5-b321ee27da0c</onsuccess>
+    <code><![CDATA[exception = "";
+value = null;
+
+int handleTmp = (int)handle;
+
+if(!_documents.ContainsKey(handleTmp)) {
+	exception = "Handle does not exist";
+	return;
+}
+
+try {
+	var tmp = GetXmlValue(_documents[handleTmp],path);
+
+	if(tmp == null)
+	{
+		exception = "element not found";
+		return;
+	}
+	
+	value = tmp;
+
+} catch(Exception e) {
+	exception = e.ToString();
+	
+}
+
+
+]]></code>
+  </stage>
+  <stage stageid="e578119c-87f6-4cb8-a7bf-44706485f3b7" name="handle" type="Data">
+    <subsheetid>685a7c0a-8874-47b8-9466-317dee67fd07</subsheetid>
+    <display x="-195" y="30" w="120" h="30" />
+    <datatype>number</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="9c64c741-988f-4941-b9cf-2ad5d3bcbd40" name="value" type="Data">
+    <subsheetid>685a7c0a-8874-47b8-9466-317dee67fd07</subsheetid>
+    <display x="-195" y="240" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="52eace5a-d69f-4151-a2b4-f9f09ce5331b" name="exception" type="Data">
+    <subsheetid>685a7c0a-8874-47b8-9466-317dee67fd07</subsheetid>
+    <display x="-195" y="165" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="7e4b9734-6f01-436a-b7d5-b321ee27da0c" name="Is exception?" type="Decision">
+    <subsheetid>685a7c0a-8874-47b8-9466-317dee67fd07</subsheetid>
+    <loginhibit />
+    <display x="15" y="30" />
+    <decision expression="[exception]&lt;&gt;&quot;&quot;" />
+    <ontrue>c3cac271-077d-4e60-995e-8fd1922662f7</ontrue>
+    <onfalse>9221d229-14e7-4dca-8a97-1b97c4e6a96c</onfalse>
+  </stage>
+  <stage stageid="c3cac271-077d-4e60-995e-8fd1922662f7" name="Xml exception" type="Exception">
+    <subsheetid>685a7c0a-8874-47b8-9466-317dee67fd07</subsheetid>
+    <display x="150" y="30" />
+    <exception type="System Exception" detail="[exception]" />
+  </stage>
+  <stage stageid="cd7787b0-07ae-4b01-951d-20e283393c15" name="path" type="Data">
+    <subsheetid>685a7c0a-8874-47b8-9466-317dee67fd07</subsheetid>
+    <display x="-195" y="-15" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="1fed4b07-df78-4167-9ffc-c40e6981fbd3" name="Is value 59307" type="Decision">
+    <subsheetid>673fd2a6-d008-4dfc-b98e-9baea6d8c7ed</subsheetid>
+    <loginhibit />
+    <display x="15" y="120" />
+    <decision expression="[value] = &quot;59307&quot;" />
+    <ontrue>8b126cef-f62f-4a29-8b7a-6d7259401849</ontrue>
+    <onfalse>106861e4-1152-44ef-a3df-99cd33e126a2</onfalse>
+  </stage>
+  <stage stageid="106861e4-1152-44ef-a3df-99cd33e126a2" name="Value exception" type="Exception">
+    <subsheetid>673fd2a6-d008-4dfc-b98e-9baea6d8c7ed</subsheetid>
+    <display x="135" y="120" />
+    <exception type="System Exception" detail="&quot;Value is wrong&quot;" />
+  </stage>
+  <stage stageid="8b126cef-f62f-4a29-8b7a-6d7259401849" name="Get value from path" type="SubSheet">
+    <subsheetid>673fd2a6-d008-4dfc-b98e-9baea6d8c7ed</subsheetid>
+    <loginhibit />
+    <display x="15" y="195" />
+    <inputs>
+      <input type="number" name="handle" narrative="The handle returned from parse" expr="[handle]" />
+      <input type="text" name="path" narrative="The path to the XML element to read" expr="&quot;/Invoice/LegalMonetaryTotal/PayableAmount&quot;" />
+    </inputs>
+    <outputs>
+      <output type="text" name="value" narrative="The contents of the inner xml as defined by the xpath" stage="value" />
+    </outputs>
+    <onsuccess>91d4a3b9-f16b-4c38-9035-cb1e46ed9f24</onsuccess>
+    <processid>685a7c0a-8874-47b8-9466-317dee67fd07</processid>
+  </stage>
+  <stage stageid="91d4a3b9-f16b-4c38-9035-cb1e46ed9f24" name="Is value 1343.75?" type="Decision">
+    <subsheetid>673fd2a6-d008-4dfc-b98e-9baea6d8c7ed</subsheetid>
+    <loginhibit />
+    <display x="15" y="240" />
+    <decision expression="[value]=&quot;1343.75&quot;" />
+    <ontrue>fce73c90-6580-40df-82f6-492cc67bbba6</ontrue>
+    <onfalse>06a4398c-d8f7-4181-a47d-c82b9bf3fa9b</onfalse>
+  </stage>
+  <stage stageid="06a4398c-d8f7-4181-a47d-c82b9bf3fa9b" name="Value exception" type="Exception">
+    <subsheetid>673fd2a6-d008-4dfc-b98e-9baea6d8c7ed</subsheetid>
+    <display x="135" y="240" />
+    <exception type="System Exception" detail="&quot;Value is wrong&quot;" />
+  </stage>
+  <stage stageid="80ebcebe-234b-4db0-8947-52b1abf297c9" name="Resume1" type="Resume">
+    <subsheetid>673fd2a6-d008-4dfc-b98e-9baea6d8c7ed</subsheetid>
+    <loginhibit />
+    <display x="105" y="450" />
+    <onsuccess>3841ddd1-a779-44dc-b704-4a722c0c4f5a</onsuccess>
+  </stage>
+  <stage stageid="9a8f9e96-9870-4d9d-b1fa-7e10dadca78e" name="Input" type="Block">
+    <subsheetid>685a7c0a-8874-47b8-9466-317dee67fd07</subsheetid>
+    <display x="-270" y="-45" w="150" h="105" />
+    <font family="Segoe UI" size="10" style="Regular" color="339966" />
+  </stage>
+  <stage stageid="68602daa-7220-4c1d-a971-698673dc4ac1" name="Variabler" type="Block">
+    <subsheetid>685a7c0a-8874-47b8-9466-317dee67fd07</subsheetid>
+    <display x="-270" y="135" w="150" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="666699" />
+  </stage>
+  <stage stageid="36bc176a-7484-40db-b6de-f192d8a329d6" name="Konstanter" type="Block">
+    <subsheetid>685a7c0a-8874-47b8-9466-317dee67fd07</subsheetid>
+    <display x="-270" y="75" w="150" h="45" />
+    <font family="Segoe UI" size="10" style="Regular" color="008080" />
+  </stage>
+  <stage stageid="ecf8b9a0-77f8-47f6-9567-ff661c071312" name="Output" type="Block">
+    <subsheetid>685a7c0a-8874-47b8-9466-317dee67fd07</subsheetid>
+    <display x="-270" y="210" w="150" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="800080" />
+  </stage>
+  <stage stageid="4ccdc5ef-4b3f-4172-8454-4b62d6bf527b" name="Get Xml" type="SubSheetInfo">
+    <subsheetid>9090d9b4-2131-4bee-9d59-22b6fda5147f</subsheetid>
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="d9a88b12-3471-406e-b2e1-ad38e645b529" name="Start" type="Start">
+    <subsheetid>9090d9b4-2131-4bee-9d59-22b6fda5147f</subsheetid>
+    <loginhibit />
+    <display x="15" y="-105" />
+    <inputs>
+      <input type="number" name="Handle" stage="Handle" />
+    </inputs>
+    <onsuccess>25e493b0-8d11-4684-ae8e-bdfcca39ec14</onsuccess>
+  </stage>
+  <stage stageid="eec39837-c26d-4ffe-9fc5-1491a4887352" name="End" type="End">
+    <subsheetid>9090d9b4-2131-4bee-9d59-22b6fda5147f</subsheetid>
+    <loginhibit />
+    <display x="15" y="90" />
+    <outputs>
+      <output type="text" name="Xml" stage="Xml" />
+    </outputs>
+  </stage>
+  <stage stageid="7b562cda-a837-475b-9971-9f419a4720cb" name="Input" type="Block">
+    <subsheetid>9090d9b4-2131-4bee-9d59-22b6fda5147f</subsheetid>
+    <display x="-270" y="-45" w="150" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="339966" />
+  </stage>
+  <stage stageid="35269811-6016-4932-aa8d-d16d61f712db" name="Variabler" type="Block">
+    <subsheetid>9090d9b4-2131-4bee-9d59-22b6fda5147f</subsheetid>
+    <display x="-270" y="90" w="150" h="45" />
+    <font family="Segoe UI" size="10" style="Regular" color="666699" />
+  </stage>
+  <stage stageid="4a5c1092-5e5a-4f85-a4d4-4421b9f257ff" name="Konstanter" type="Block">
+    <subsheetid>9090d9b4-2131-4bee-9d59-22b6fda5147f</subsheetid>
+    <display x="-270" y="30" w="150" h="45" />
+    <font family="Segoe UI" size="10" style="Regular" color="008080" />
+  </stage>
+  <stage stageid="39aaf743-c1d2-4d37-8ffc-3e3f041e8679" name="Output" type="Block">
+    <subsheetid>9090d9b4-2131-4bee-9d59-22b6fda5147f</subsheetid>
+    <display x="-270" y="150" w="150" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="800080" />
+  </stage>
+  <stage stageid="7804f7cd-7a1b-4e9c-bda0-77b36121409b" name="Handle" type="Data">
+    <subsheetid>9090d9b4-2131-4bee-9d59-22b6fda5147f</subsheetid>
+    <display x="-195" y="-15" w="120" h="30" />
+    <datatype>number</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="3c9ac983-4cd4-42e9-a876-2c94baf544f9" name="Xml" type="Data">
+    <subsheetid>9090d9b4-2131-4bee-9d59-22b6fda5147f</subsheetid>
+    <loginhibit />
+    <display x="-195" y="180" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="25e493b0-8d11-4684-ae8e-bdfcca39ec14" name="Get xml" type="Code">
+    <subsheetid>9090d9b4-2131-4bee-9d59-22b6fda5147f</subsheetid>
+    <loginhibit />
+    <display x="15" y="-30" />
+    <inputs>
+      <input type="number" name="handle" expr="[Handle]" />
+    </inputs>
+    <outputs>
+      <output type="text" name="xml" stage="Xml" />
+    </outputs>
+    <onsuccess>eec39837-c26d-4ffe-9fc5-1491a4887352</onsuccess>
+    <code><![CDATA[xml = _documents[(int)handle].ToString();]]></code>
+  </stage>
+</process>

@@ -1,0 +1,1863 @@
+﻿<process name="Medcom-beskeder" version="1.0" bpversion="7.3.0.9110" narrative="Kan bruges til at arbejde med medcom beskeder i XML format" byrefcollection="true" processrunningmessage="" disableversioning="false" type="object" runmode="Exclusive" preferredid="10940567-21f1-4104-ba6f-5d3b23c5a416">
+  <appdef>
+    <element name="Application Root">
+      <id>e9ee317c-eafe-462c-9e1a-505e4d159f62</id>
+      <type>Application</type>
+      <basetype>Application</basetype>
+      <datatype>unknown</datatype>
+      <diagnose>False</diagnose>
+    </element>
+  </appdef>
+  <view>
+    <camerax>-54</camerax>
+    <cameray>0</cameray>
+    <zoom version="2">1.25</zoom>
+  </view>
+  <preconditions />
+  <endpoint narrative="" />
+  <subsheet subsheetid="887bd509-12d7-4b36-8fde-6f0d49eff47e" type="CleanUp" published="True">
+    <name>Clean Up</name>
+    <view>
+      <camerax>0</camerax>
+      <cameray>0</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <subsheet subsheetid="b5e61a57-12cb-4617-9b15-37bb6ed618d6" type="Normal" published="True">
+    <name>Indlæs medcombesked</name>
+    <view>
+      <camerax>0</camerax>
+      <cameray>129</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <subsheet subsheetid="8f082fa2-a03b-4779-9675-d77aaf05feb3" type="Normal" published="True">
+    <name>Hent afsender</name>
+    <view>
+      <camerax>-50</camerax>
+      <cameray>85</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <subsheet subsheetid="245e52b3-3b88-4abf-925b-a9b5a1f9cd95" type="Normal" published="True">
+    <name>Hent modtager</name>
+    <view>
+      <camerax>-50</camerax>
+      <cameray>85</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <subsheet subsheetid="16180a91-36a9-479e-9f1f-8943adb0421f" type="Normal" published="True">
+    <name>Hent patient</name>
+    <view>
+      <camerax>-50</camerax>
+      <cameray>85</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <subsheet subsheetid="a924166e-66b0-42c3-b655-74153e35da3c" type="Normal" published="True">
+    <name>Hent diagnoser</name>
+    <view>
+      <camerax>-50</camerax>
+      <cameray>148</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <subsheet subsheetid="4c938869-0ab6-4b58-8156-1f0e7a233082" type="Normal" published="True">
+    <name>GGOP: Hent standardfelter</name>
+    <view>
+      <camerax>0</camerax>
+      <cameray>0</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <subsheet subsheetid="e2470047-5d64-41e1-88ec-ee6573351b10" type="Normal" published="True">
+    <name>Plejeforløbsplan: Hent standardfelter</name>
+    <view>
+      <camerax>0</camerax>
+      <cameray>0</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <subsheet subsheetid="b1888578-4bde-4446-b268-def92547d7c8" type="Normal" published="True">
+    <name>ClinicalEmail: Hent standardfelter</name>
+    <view>
+      <camerax>0</camerax>
+      <cameray>0</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <subsheet subsheetid="77c50125-e64c-4552-9eb5-a9f6bde36155" type="Normal" published="False">
+    <name>Hent felter</name>
+    <view>
+      <camerax>-54</camerax>
+      <cameray>189</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <subsheet subsheetid="c64fbc9e-8094-4ea4-a888-2524183fb228" type="Normal" published="False">
+    <name>Preflight check</name>
+    <view>
+      <camerax>0</camerax>
+      <cameray>0</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <stage stageid="c7951e09-1141-453d-92de-d5786e785263" name="Start" type="Start">
+    <loginhibit />
+    <display x="15" y="-105" />
+    <onsuccess>dd8ed6e5-7234-4673-b58d-8ec84a023cd5</onsuccess>
+  </stage>
+  <stage stageid="dd8ed6e5-7234-4673-b58d-8ec84a023cd5" name="End" type="End">
+    <loginhibit />
+    <display x="15" y="90" />
+  </stage>
+  <stage stageid="50ac57a1-d973-41d1-b890-7242d108b0f0" name="Stage1" type="ProcessInfo">
+    <display x="-195" y="-105" w="150" h="90" />
+    <references>
+      <reference>System.dll</reference>
+      <reference>System.Data.dll</reference>
+      <reference>System.Xml.dll</reference>
+      <reference>System.Drawing.dll</reference>
+      <reference>System.Xml.Linq.dll</reference>
+      <reference>System.Core.dll</reference>
+    </references>
+    <imports>
+      <import>System</import>
+      <import>System.Drawing</import>
+      <import>System.Data</import>
+      <import>System.Linq</import>
+      <import>System.Xml.Linq</import>
+    </imports>
+    <language>csharp</language>
+    <globalcode><![CDATA[]]></globalcode>
+    <code><![CDATA[]]></code>
+  </stage>
+  <stage stageid="749a219f-0af3-4fa5-b6e6-8ff784888375" name="Clean Up" type="SubSheetInfo">
+    <subsheetid>887bd509-12d7-4b36-8fde-6f0d49eff47e</subsheetid>
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="6e06203f-4bfa-42fe-8e37-2c48d25990c6" name="Start" type="Start">
+    <subsheetid>887bd509-12d7-4b36-8fde-6f0d49eff47e</subsheetid>
+    <loginhibit />
+    <display x="15" y="-105" />
+    <onsuccess>ab62327a-3672-4068-8f7c-ea29a5aa7807</onsuccess>
+  </stage>
+  <stage stageid="ab62327a-3672-4068-8f7c-ea29a5aa7807" name="End" type="End">
+    <subsheetid>887bd509-12d7-4b36-8fde-6f0d49eff47e</subsheetid>
+    <loginhibit />
+    <display x="15" y="90" />
+  </stage>
+  <stage stageid="ba7dfca3-36c5-439b-b3ef-bb7709266810" name="Indlæs medcombesked" type="SubSheetInfo">
+    <subsheetid>b5e61a57-12cb-4617-9b15-37bb6ed618d6</subsheetid>
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="a17d5bb9-186e-4641-ab54-61971eda6933" name="Start" type="Start">
+    <subsheetid>b5e61a57-12cb-4617-9b15-37bb6ed618d6</subsheetid>
+    <loginhibit />
+    <display x="15" y="-135" />
+    <inputs>
+      <input type="text" name="Xml" stage="Xml" />
+    </inputs>
+    <onsuccess>59e49448-a3fb-4b2f-bcb6-143dc8d4a3e2</onsuccess>
+  </stage>
+  <stage stageid="3d16dfa7-40fb-4962-a75b-cb6b30b8b3dd" name="" type="Note">
+    <subsheetid>887bd509-12d7-4b36-8fde-6f0d49eff47e</subsheetid>
+    <narrative>Clean Up Page
+
+This is an optional page where you might choose to perform some finalisation (or "cleanup") tasks as your business object is closed down.
+
+The cleanup action will be called automatically immediately after closing your business object at the end of a business process.
+
+You will not be able to call this action from a business process, nor will it be called at any other time than before the disposal of the business object.</narrative>
+    <display x="-180" y="60" w="180" h="230" />
+  </stage>
+  <stage stageid="29238428-d079-4056-8a25-2421c7bf8504" name="Input" type="Block">
+    <display x="-270" y="-45" w="150" h="45" />
+    <font family="Segoe UI" size="10" style="Regular" color="339966" />
+  </stage>
+  <stage stageid="f5546362-4e8c-4c8c-8e59-831ab8c98e8f" name="Variabler" type="Block">
+    <display x="-270" y="75" w="150" h="45" />
+    <font family="Segoe UI" size="10" style="Regular" color="666699" />
+  </stage>
+  <stage stageid="d847043e-3455-4229-b0a8-74addafd3ecb" name="Konstanter" type="Block">
+    <display x="-270" y="15" w="150" h="45" />
+    <font family="Segoe UI" size="10" style="Regular" color="008080" />
+  </stage>
+  <stage stageid="07b64bdb-c186-4086-83ab-246846b8aad1" name="Output" type="Block">
+    <display x="-270" y="135" w="150" h="45" />
+    <font family="Segoe UI" size="10" style="Regular" color="800080" />
+  </stage>
+  <stage stageid="9dc4a49b-817a-46ee-9540-399dd022d240" name="Input" type="Block">
+    <subsheetid>b5e61a57-12cb-4617-9b15-37bb6ed618d6</subsheetid>
+    <display x="-270" y="-45" w="150" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="339966" />
+  </stage>
+  <stage stageid="0c565497-32a2-43c4-84dd-cfdc63674aed" name="Variabler" type="Block">
+    <subsheetid>b5e61a57-12cb-4617-9b15-37bb6ed618d6</subsheetid>
+    <display x="-270" y="210" w="150" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="666699" />
+  </stage>
+  <stage stageid="6c10e92c-c5c1-41f7-aca6-d46d9d544b7f" name="Konstanter" type="Block">
+    <subsheetid>b5e61a57-12cb-4617-9b15-37bb6ed618d6</subsheetid>
+    <display x="-270" y="30" w="150" h="150" />
+    <font family="Segoe UI" size="10" style="Regular" color="008080" />
+  </stage>
+  <stage stageid="9e94cb8d-5198-48d1-bf32-07723e302a15" name="Output" type="Block">
+    <subsheetid>b5e61a57-12cb-4617-9b15-37bb6ed618d6</subsheetid>
+    <display x="-270" y="285" w="150" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="800080" />
+  </stage>
+  <stage stageid="7ee36791-4180-4f7d-9200-1e7e1cfacb8a" name="Xml" type="Data">
+    <subsheetid>b5e61a57-12cb-4617-9b15-37bb6ed618d6</subsheetid>
+    <display x="-195" y="-15" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="237ea186-7f90-491d-a157-a1db224ffd4e" name="Parse Xml og gem" type="Action">
+    <subsheetid>b5e61a57-12cb-4617-9b15-37bb6ed618d6</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="15" y="60" />
+    <inputs>
+      <input type="text" name="xml" friendlyname="xml" narrative="The xml document as a string" expr="[Xml]" />
+    </inputs>
+    <outputs>
+      <output type="number" name="handle" friendlyname="handle" narrative="A handle identifying the xml document that was parsed" stage="Handle" />
+    </outputs>
+    <onsuccess>b3e2478e-6b41-47b5-be22-842c56147460</onsuccess>
+    <resource object="Utility - XML" action="Parse" />
+  </stage>
+  <stage stageid="98991aba-d930-4799-a613-de3a948036d7" name="Handle" type="Data">
+    <subsheetid>b5e61a57-12cb-4617-9b15-37bb6ed618d6</subsheetid>
+    <display x="-195" y="60" w="120" h="30" />
+    <datatype>number</datatype>
+    <initialvalue>0</initialvalue>
+  </stage>
+  <stage stageid="105e160d-a6a4-4a88-8965-1d550726ed6f" name="Har vi allerede indlæst en besked?" type="Decision">
+    <subsheetid>b5e61a57-12cb-4617-9b15-37bb6ed618d6</subsheetid>
+    <loginhibit />
+    <display x="15" y="-45" />
+    <decision expression="[Handle] &lt;&gt; 0" />
+    <ontrue>0347d8f5-a80e-4d38-aa9c-aaa1a7e382ee</ontrue>
+    <onfalse>6c96da10-e4c5-4481-a013-21b84812944f</onfalse>
+  </stage>
+  <stage stageid="0347d8f5-a80e-4d38-aa9c-aaa1a7e382ee" name="Luk nuværende" type="Action">
+    <subsheetid>b5e61a57-12cb-4617-9b15-37bb6ed618d6</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="105" y="-45" />
+    <inputs>
+      <input type="number" name="handle" friendlyname="handle" narrative="The XML handle" expr="[Handle]" />
+    </inputs>
+    <onsuccess>7823e776-2ff8-424c-990c-6766c7e982fd</onsuccess>
+    <resource object="Utility - XML" action="Close" />
+  </stage>
+  <stage stageid="7823e776-2ff8-424c-990c-6766c7e982fd" name="Anchor1" type="Anchor">
+    <subsheetid>b5e61a57-12cb-4617-9b15-37bb6ed618d6</subsheetid>
+    <loginhibit />
+    <display x="105" y="0" w="10" h="10" />
+    <onsuccess>6c96da10-e4c5-4481-a013-21b84812944f</onsuccess>
+  </stage>
+  <stage stageid="6c96da10-e4c5-4481-a013-21b84812944f" name="Anchor2" type="Anchor">
+    <subsheetid>b5e61a57-12cb-4617-9b15-37bb6ed618d6</subsheetid>
+    <loginhibit />
+    <display x="15" y="0" w="10" h="10" />
+    <onsuccess>237ea186-7f90-491d-a157-a1db224ffd4e</onsuccess>
+  </stage>
+  <stage stageid="b3e2478e-6b41-47b5-be22-842c56147460" name="Er det en emessage?" type="Action">
+    <subsheetid>b5e61a57-12cb-4617-9b15-37bb6ed618d6</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="15" y="120" />
+    <inputs>
+      <input type="number" name="handle" friendlyname="handle" narrative="The handle returned from parse" expr="[Handle]" />
+      <input type="text" name="path" friendlyname="path" narrative="The path to the XML element to read" expr="&quot;/Emessage&quot;" />
+    </inputs>
+    <outputs>
+      <output type="text" name="value" friendlyname="value" narrative="The contents of the inner xml as defined by the xpath" stage="Emessage" />
+    </outputs>
+    <onsuccess>f97bbc9a-550b-42dd-9884-90a8770f7d1a</onsuccess>
+    <resource object="Utility - XML" action="Get value from path" />
+  </stage>
+  <stage stageid="40a28084-e631-4ca6-a403-09374155596c" name="Emessage" type="Data">
+    <subsheetid>b5e61a57-12cb-4617-9b15-37bb6ed618d6</subsheetid>
+    <display x="-195" y="240" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="59e49448-a3fb-4b2f-bcb6-143dc8d4a3e2" name="Anchor3" type="Anchor">
+    <subsheetid>b5e61a57-12cb-4617-9b15-37bb6ed618d6</subsheetid>
+    <loginhibit />
+    <display x="15" y="-90" w="10" h="10" />
+    <onsuccess>105e160d-a6a4-4a88-8965-1d550726ed6f</onsuccess>
+  </stage>
+  <stage stageid="d854cbb3-8fd8-4739-86a4-5d89b94216b3" name="Anchor4" type="Anchor">
+    <subsheetid>b5e61a57-12cb-4617-9b15-37bb6ed618d6</subsheetid>
+    <loginhibit />
+    <display x="135" y="-90" w="10" h="10" />
+    <onsuccess>59e49448-a3fb-4b2f-bcb6-143dc8d4a3e2</onsuccess>
+  </stage>
+  <stage stageid="0c6280a6-e53e-4514-bb7f-7cc566397558" name="Debug" type="Block">
+    <subsheetid>b5e61a57-12cb-4617-9b15-37bb6ed618d6</subsheetid>
+    <loginhibit />
+    <display x="90" y="-180" w="255" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="FFFF99" />
+  </stage>
+  <stage stageid="b95d48e9-90ca-44c5-8ae8-3a6ed20a777a" name="Sæt GGOP" type="Calculation">
+    <subsheetid>b5e61a57-12cb-4617-9b15-37bb6ed618d6</subsheetid>
+    <loginhibit />
+    <display x="135" y="-150" />
+    <onsuccess>d854cbb3-8fd8-4739-86a4-5d89b94216b3</onsuccess>
+    <calculation expression="&quot;&quot;" stage="Xml" />
+  </stage>
+  <stage stageid="723b14cf-17ba-4198-9d1e-a4b2adb59998" name="Check emessage" type="Block">
+    <subsheetid>b5e61a57-12cb-4617-9b15-37bb6ed618d6</subsheetid>
+    <loginhibit />
+    <display x="-75" y="90" w="240" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
+  </stage>
+  <stage stageid="35d64d1f-965d-466c-9587-66e43a1b9d1f" name="Recover1" type="Recover">
+    <subsheetid>b5e61a57-12cb-4617-9b15-37bb6ed618d6</subsheetid>
+    <loginhibit />
+    <display x="120" y="120" />
+    <onsuccess>459968f2-be43-40b8-80a1-b1a55e877d67</onsuccess>
+  </stage>
+  <stage stageid="459968f2-be43-40b8-80a1-b1a55e877d67" name="Exception1" type="Exception">
+    <subsheetid>b5e61a57-12cb-4617-9b15-37bb6ed618d6</subsheetid>
+    <display x="240" y="120" />
+    <exception localized="yes" type="Invalid Input Parameter" detail="&quot;Den angivne XML er ikke en EMessage&quot;" />
+  </stage>
+  <stage stageid="91195179-8703-4ad2-905c-e95d556372a6" name="Ikke emessage" type="Calculation">
+    <subsheetid>b5e61a57-12cb-4617-9b15-37bb6ed618d6</subsheetid>
+    <loginhibit />
+    <display x="210" y="-150" />
+    <onsuccess>3aa45658-25ce-47de-bc86-b42522710115</onsuccess>
+    <calculation expression="&quot;&lt;?xml version=&quot;&quot;1.0&quot;&quot; encoding=&quot;&quot;UTF-8&quot;&quot;?&gt;&lt;root&gt;Dette er ikke gyldigt&lt;/root&gt;&quot;" stage="Xml" />
+  </stage>
+  <stage stageid="3aa45658-25ce-47de-bc86-b42522710115" name="Anchor5" type="Anchor">
+    <subsheetid>b5e61a57-12cb-4617-9b15-37bb6ed618d6</subsheetid>
+    <loginhibit />
+    <display x="210" y="-90" w="10" h="10" />
+    <onsuccess>d854cbb3-8fd8-4739-86a4-5d89b94216b3</onsuccess>
+  </stage>
+  <stage stageid="b1bb40c2-cfe2-446f-8fe4-71250ef6f66a" name="Hent afsender" type="SubSheetInfo">
+    <subsheetid>8f082fa2-a03b-4779-9675-d77aaf05feb3</subsheetid>
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="861be5d2-1b34-4fce-9e70-b4426fd2c50f" name="Start" type="Start">
+    <subsheetid>8f082fa2-a03b-4779-9675-d77aaf05feb3</subsheetid>
+    <loginhibit />
+    <display x="15" y="-90" />
+    <onsuccess>c5304abb-88b8-4fcd-8729-6741f2349d4a</onsuccess>
+  </stage>
+  <stage stageid="2052e66a-49ee-450b-9959-4e5daf5dea95" name="End" type="End">
+    <subsheetid>8f082fa2-a03b-4779-9675-d77aaf05feb3</subsheetid>
+    <loginhibit />
+    <display x="15" y="45" />
+    <outputs>
+      <output type="collection" name="Afsender" stage="Afsender" />
+    </outputs>
+  </stage>
+  <stage stageid="8dd2a28d-daf9-46b7-9326-2711bd3e0a15" name="Rodelement" type="Data">
+    <subsheetid>b5e61a57-12cb-4617-9b15-37bb6ed618d6</subsheetid>
+    <loginhibit />
+    <display x="-195" y="105" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue />
+  </stage>
+  <stage stageid="66b5adcd-d553-483a-8e2e-91c51dd456ac" name="Rodelementer" type="Collection">
+    <subsheetid>b5e61a57-12cb-4617-9b15-37bb6ed618d6</subsheetid>
+    <loginhibit />
+    <display x="-195" y="150" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+    <collectioninfo>
+      <field name="Rod" type="text" />
+    </collectioninfo>
+    <initialvalue>
+      <row>
+        <field name="Rod" type="text" value="RehabilitationPlan" />
+      </row>
+      <row>
+        <field name="Rod" type="text" value="ClinicalEmail" />
+      </row>
+      <row>
+        <field name="Rod" type="text" value="NotificationOfAdmission" />
+      </row>
+      <row>
+        <field name="Rod" type="text" value="NotificationOfDischarge" />
+      </row>
+      <row>
+        <field name="Rod" type="text" value="ProgressOfCarePlan" />
+      </row>
+      <row>
+        <field name="Rod" type="text" value="ReportOfDischarge" />
+      </row>
+      <row>
+        <field name="Rod" type="text" value="ReportOfAdmission" />
+      </row>
+    </initialvalue>
+  </stage>
+  <stage stageid="f97bbc9a-550b-42dd-9884-90a8770f7d1a" name="Loop rødder" type="LoopStart">
+    <subsheetid>b5e61a57-12cb-4617-9b15-37bb6ed618d6</subsheetid>
+    <loginhibit />
+    <display x="15" y="195" />
+    <onsuccess>2eeb1c5c-b787-4920-85ae-cb4ec111d1f8</onsuccess>
+    <groupid>0eabe6f5-339d-4d23-b735-e5b2a5d97b40</groupid>
+    <looptype>ForEach</looptype>
+    <loopdata>Rodelementer</loopdata>
+  </stage>
+  <stage stageid="3d5aad39-78b7-420b-bc71-f4571c9bc1bf" name="Loop rødder" type="LoopEnd">
+    <subsheetid>b5e61a57-12cb-4617-9b15-37bb6ed618d6</subsheetid>
+    <loginhibit />
+    <display x="15" y="405" />
+    <onsuccess>9ba7dadd-c891-43e1-b9d3-269cfb15a552</onsuccess>
+    <groupid>0eabe6f5-339d-4d23-b735-e5b2a5d97b40</groupid>
+  </stage>
+  <stage stageid="2eeb1c5c-b787-4920-85ae-cb4ec111d1f8" name="Forsøg at finde rodelement" type="Action">
+    <subsheetid>b5e61a57-12cb-4617-9b15-37bb6ed618d6</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="15" y="255" />
+    <inputs>
+      <input type="number" name="handle" friendlyname="handle" narrative="The handle returned from parse" expr="[Handle]" />
+      <input type="text" name="path" friendlyname="path" narrative="The path to the XML element to read" expr="&quot;/Emessage/&quot; &amp; [Rodelementer.Rod]" />
+    </inputs>
+    <outputs>
+      <output type="text" name="value" friendlyname="value" narrative="The contents of the inner xml as defined by the xpath" stage="" />
+    </outputs>
+    <onsuccess>7fa63814-81cd-4baa-bcbd-0acb095e9444</onsuccess>
+    <resource object="Utility - XML" action="Get value from path" />
+  </stage>
+  <stage stageid="c4b56b01-8947-4c0f-9b21-9931f5786d99" name="Rodelementer" type="Block">
+    <subsheetid>b5e61a57-12cb-4617-9b15-37bb6ed618d6</subsheetid>
+    <loginhibit />
+    <display x="-75" y="225" w="240" h="150" />
+    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
+  </stage>
+  <stage stageid="7fa63814-81cd-4baa-bcbd-0acb095e9444" name="Sæt rodelement" type="Calculation">
+    <subsheetid>b5e61a57-12cb-4617-9b15-37bb6ed618d6</subsheetid>
+    <loginhibit />
+    <display x="105" y="255" />
+    <onsuccess>12cd18cc-3a14-498b-9e7f-02926018d45e</onsuccess>
+    <calculation expression="[Rodelementer.Rod]" stage="Rodelement" />
+  </stage>
+  <stage stageid="7137b297-a338-4fd1-a462-633db1207724" name="Recover2" type="Recover">
+    <subsheetid>b5e61a57-12cb-4617-9b15-37bb6ed618d6</subsheetid>
+    <loginhibit />
+    <display x="15" y="300" />
+    <onsuccess>813b8d39-18e5-4b5b-8cf9-cf54aa73be8a</onsuccess>
+  </stage>
+  <stage stageid="813b8d39-18e5-4b5b-8cf9-cf54aa73be8a" name="Resume1" type="Resume">
+    <subsheetid>b5e61a57-12cb-4617-9b15-37bb6ed618d6</subsheetid>
+    <loginhibit />
+    <display x="15" y="345" />
+    <onsuccess>3d5aad39-78b7-420b-bc71-f4571c9bc1bf</onsuccess>
+  </stage>
+  <stage stageid="12cd18cc-3a14-498b-9e7f-02926018d45e" name="End1" type="End">
+    <subsheetid>b5e61a57-12cb-4617-9b15-37bb6ed618d6</subsheetid>
+    <loginhibit />
+    <display x="210" y="255" />
+  </stage>
+  <stage stageid="9ba7dadd-c891-43e1-b9d3-269cfb15a552" name="Exception2" type="Exception">
+    <subsheetid>b5e61a57-12cb-4617-9b15-37bb6ed618d6</subsheetid>
+    <display x="15" y="465" />
+    <exception localized="yes" type="Invalid Input Parameter" detail="&quot;XML Indeholder ikke et kendt rodelement&quot;" />
+  </stage>
+  <stage stageid="5c767c95-de01-4f06-860e-a7528531fcd1" name="Input" type="Block">
+    <subsheetid>8f082fa2-a03b-4779-9675-d77aaf05feb3</subsheetid>
+    <display x="-270" y="-45" w="150" h="45" />
+    <font family="Segoe UI" size="10" style="Regular" color="339966" />
+  </stage>
+  <stage stageid="16e01c5c-5c30-4e35-88c8-5a6eca755873" name="Variabler" type="Block">
+    <subsheetid>8f082fa2-a03b-4779-9675-d77aaf05feb3</subsheetid>
+    <display x="-270" y="75" w="150" h="45" />
+    <font family="Segoe UI" size="10" style="Regular" color="666699" />
+  </stage>
+  <stage stageid="2595185c-cfa5-4ebe-a8b5-a65b09f1ec98" name="Konstanter" type="Block">
+    <subsheetid>8f082fa2-a03b-4779-9675-d77aaf05feb3</subsheetid>
+    <display x="-270" y="15" w="150" h="45" />
+    <font family="Segoe UI" size="10" style="Regular" color="008080" />
+  </stage>
+  <stage stageid="337c581d-3e42-433a-8a9a-25cb6926fa26" name="Output" type="Block">
+    <subsheetid>8f082fa2-a03b-4779-9675-d77aaf05feb3</subsheetid>
+    <display x="-270" y="135" w="150" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="800080" />
+  </stage>
+  <stage stageid="a642517f-f358-46d0-a6a3-a07d9a889a1a" name="Input" type="Block">
+    <display x="-465" y="-105" w="150" h="45" />
+    <font family="Segoe UI" size="10" style="Regular" color="339966" />
+  </stage>
+  <stage stageid="d5dc03cb-b419-43b8-af95-01c15384219a" name="Variabler" type="Block">
+    <display x="-465" y="15" w="150" h="45" />
+    <font family="Segoe UI" size="10" style="Regular" color="666699" />
+  </stage>
+  <stage stageid="8cc58719-c11b-40e6-8f5d-0cb8827b45d1" name="Konstanter" type="Block">
+    <display x="-465" y="-45" w="150" h="45" />
+    <font family="Segoe UI" size="10" style="Regular" color="008080" />
+  </stage>
+  <stage stageid="41791109-4d2d-4b6b-9c8f-8187430e904c" name="Output" type="Block">
+    <display x="-465" y="75" w="150" h="45" />
+    <font family="Segoe UI" size="10" style="Regular" color="800080" />
+  </stage>
+  <stage stageid="db8978e4-d427-4994-95d9-80270bd8720c" name="Preflight check" type="SubSheetInfo">
+    <subsheetid>c64fbc9e-8094-4ea4-a888-2524183fb228</subsheetid>
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="8ecd4c17-4c74-4e7f-8189-9244519f1042" name="Start" type="Start">
+    <subsheetid>c64fbc9e-8094-4ea4-a888-2524183fb228</subsheetid>
+    <loginhibit />
+    <display x="15" y="-105" />
+    <onsuccess>7ab0cd56-ced9-4eb2-9274-887efe8100b8</onsuccess>
+  </stage>
+  <stage stageid="8cef9040-1c69-4859-a4f7-977749a188a9" name="End" type="End">
+    <subsheetid>c64fbc9e-8094-4ea4-a888-2524183fb228</subsheetid>
+    <loginhibit />
+    <display x="15" y="90" />
+  </stage>
+  <stage stageid="ba886b89-303b-4055-96de-5160d6b45a11" name="Input" type="Block">
+    <subsheetid>c64fbc9e-8094-4ea4-a888-2524183fb228</subsheetid>
+    <display x="-270" y="-45" w="150" h="45" />
+    <font family="Segoe UI" size="10" style="Regular" color="339966" />
+  </stage>
+  <stage stageid="0368d069-b619-4cbd-b377-b7527212fd53" name="Variabler" type="Block">
+    <subsheetid>c64fbc9e-8094-4ea4-a888-2524183fb228</subsheetid>
+    <display x="-270" y="75" w="150" h="45" />
+    <font family="Segoe UI" size="10" style="Regular" color="666699" />
+  </stage>
+  <stage stageid="3a9f6e05-80fd-4ae5-964a-d80950fc00a5" name="Konstanter" type="Block">
+    <subsheetid>c64fbc9e-8094-4ea4-a888-2524183fb228</subsheetid>
+    <display x="-270" y="15" w="150" h="45" />
+    <font family="Segoe UI" size="10" style="Regular" color="008080" />
+  </stage>
+  <stage stageid="7e16ebcf-6bed-491a-8ac2-ad9208431075" name="Output" type="Block">
+    <subsheetid>c64fbc9e-8094-4ea4-a888-2524183fb228</subsheetid>
+    <display x="-270" y="135" w="150" h="45" />
+    <font family="Segoe UI" size="10" style="Regular" color="800080" />
+  </stage>
+  <stage stageid="7ab0cd56-ced9-4eb2-9274-887efe8100b8" name="Intet handle" type="Decision">
+    <subsheetid>c64fbc9e-8094-4ea4-a888-2524183fb228</subsheetid>
+    <loginhibit />
+    <display x="15" y="-45" />
+    <decision expression="[Handle] = 0" />
+    <ontrue>e7559306-2313-47b5-ba63-47a86216a01e</ontrue>
+    <onfalse>87bac5e8-c424-4a98-87d4-eaa020e019d0</onfalse>
+  </stage>
+  <stage stageid="87bac5e8-c424-4a98-87d4-eaa020e019d0" name="Intet rodelement?" type="Decision">
+    <subsheetid>c64fbc9e-8094-4ea4-a888-2524183fb228</subsheetid>
+    <loginhibit />
+    <display x="15" y="15" />
+    <decision expression="[Rodelement] = &quot;&quot;" />
+    <ontrue>1c7b5349-2e95-489c-8a2e-cab0ff7c9764</ontrue>
+    <onfalse>8cef9040-1c69-4859-a4f7-977749a188a9</onfalse>
+  </stage>
+  <stage stageid="1c7b5349-2e95-489c-8a2e-cab0ff7c9764" name="Exception3" type="Exception">
+    <subsheetid>c64fbc9e-8094-4ea4-a888-2524183fb228</subsheetid>
+    <display x="165" y="15" />
+    <exception localized="yes" type="Business Exception" detail="&quot;Der er ikke sat noget rodelement&quot;" />
+  </stage>
+  <stage stageid="e7559306-2313-47b5-ba63-47a86216a01e" name="Ingen eMessage" type="Exception">
+    <subsheetid>c64fbc9e-8094-4ea4-a888-2524183fb228</subsheetid>
+    <display x="165" y="-45" />
+    <exception localized="yes" type="Business Exception" detail="&quot;Der er ikke indlæst en eMessage&quot;" />
+  </stage>
+  <stage stageid="c5304abb-88b8-4fcd-8729-6741f2349d4a" name="Preflight check" type="SubSheet">
+    <subsheetid>8f082fa2-a03b-4779-9675-d77aaf05feb3</subsheetid>
+    <loginhibit />
+    <display x="15" y="-45" />
+    <onsuccess>3147600b-312a-40ec-9c52-956278fa33d4</onsuccess>
+    <processid>c64fbc9e-8094-4ea4-a888-2524183fb228</processid>
+  </stage>
+  <stage stageid="2f07a381-3703-4134-8e79-a918d6aa0cbf" name="Afsender" type="Collection">
+    <subsheetid>8f082fa2-a03b-4779-9675-d77aaf05feb3</subsheetid>
+    <loginhibit />
+    <display x="-195" y="165" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+    <collectioninfo>
+      <singlerow />
+      <field name="Ean" type="text" />
+      <field name="Id" type="text" />
+      <field name="Idkode" type="text" />
+      <field name="Organisation" type="text" />
+      <field name="Afdeling" type="text" />
+      <field name="Gade" type="text" />
+      <field name="Postnummer" type="text" />
+      <field name="By" type="text" />
+      <field name="Speciale" type="text" />
+    </collectioninfo>
+    <initialvalue>
+      <singlerow />
+      <row>
+        <field name="Ean" type="text" value="" />
+        <field name="Id" type="text" value="" />
+        <field name="Idkode" type="text" value="" />
+        <field name="Organisation" type="text" value="" />
+        <field name="Afdeling" type="text" value="" />
+        <field name="Gade" type="text" value="" />
+        <field name="Postnummer" type="text" value="" />
+        <field name="By" type="text" value="" />
+        <field name="Speciale" type="text" value="" />
+      </row>
+    </initialvalue>
+  </stage>
+  <stage stageid="e3b4a210-1b28-4ca4-b093-73b9434a380b" name="Hent felter" type="SubSheetInfo">
+    <subsheetid>77c50125-e64c-4552-9eb5-a9f6bde36155</subsheetid>
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="2741369e-2070-443f-bc7f-88a76bfaff47" name="Start" type="Start">
+    <subsheetid>77c50125-e64c-4552-9eb5-a9f6bde36155</subsheetid>
+    <loginhibit />
+    <display x="15" y="-105" />
+    <inputs>
+      <input type="text" name="Path" stage="Path" />
+      <input type="collection" name="Felter" stage="Felter" />
+      <input type="flag" name="Ignorer manglende felter?" narrative="Default falsk" stage="Ignorer manglende felter?" />
+    </inputs>
+    <onsuccess>0d54bce7-f113-4bd0-9ddc-025fe849e81d</onsuccess>
+  </stage>
+  <stage stageid="6f8d122c-44ed-4868-a00a-267e92a382bf" name="End" type="End">
+    <subsheetid>77c50125-e64c-4552-9eb5-a9f6bde36155</subsheetid>
+    <loginhibit />
+    <display x="15" y="345" />
+    <outputs>
+      <output type="collection" name="Værdier" stage="Data" />
+    </outputs>
+  </stage>
+  <stage stageid="c2839eef-78fa-4e48-ab6d-2dd0b42e0d94" name="Utility - Collection Manipulation::Append Field (Text)" type="Action">
+    <subsheetid>77c50125-e64c-4552-9eb5-a9f6bde36155</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="15" y="225" />
+    <inputs>
+      <input type="collection" name="Collection" friendlyname="Collection" narrative="The collection to append a field to." expr="[Data]" />
+      <input type="text" name="Field Name" friendlyname="Field Name" narrative="The name of the new field." expr="[Felter.Feltnavn]" />
+      <input type="text" name="Value" friendlyname="Value" narrative="The value to be put in the new field." expr="[Værdi]" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="Appended Collection" friendlyname="Appended Collection" narrative="The collection with field appended." stage="Data" />
+    </outputs>
+    <onsuccess>0ca60d36-0b4d-4880-a3a5-4151e09c3c57</onsuccess>
+    <resource object="Utility - Collection Manipulation" action="Append Field (Text)" />
+  </stage>
+  <stage stageid="11ff8107-0555-48f5-93c2-d0b034f64ced" name="Input" type="Block">
+    <subsheetid>77c50125-e64c-4552-9eb5-a9f6bde36155</subsheetid>
+    <display x="-270" y="-45" w="150" h="150" />
+    <font family="Segoe UI" size="10" style="Regular" color="339966" />
+  </stage>
+  <stage stageid="d634cb70-5dd0-4845-bb6f-66df86a3c222" name="Variabler" type="Block">
+    <subsheetid>77c50125-e64c-4552-9eb5-a9f6bde36155</subsheetid>
+    <display x="-270" y="210" w="150" h="150" />
+    <font family="Segoe UI" size="10" style="Regular" color="666699" />
+  </stage>
+  <stage stageid="0c3b6d8e-d3c1-4cc9-8559-ccc2d2bc0782" name="Konstanter" type="Block">
+    <subsheetid>77c50125-e64c-4552-9eb5-a9f6bde36155</subsheetid>
+    <display x="-270" y="150" w="150" h="45" />
+    <font family="Segoe UI" size="10" style="Regular" color="008080" />
+  </stage>
+  <stage stageid="efcdab23-6116-42e2-8d73-2799bf78a3e2" name="Output" type="Block">
+    <subsheetid>77c50125-e64c-4552-9eb5-a9f6bde36155</subsheetid>
+    <display x="-270" y="375" w="150" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="800080" />
+  </stage>
+  <stage stageid="f37936a3-b376-4ba6-87af-71bfa74805c5" name="Path" type="Data">
+    <subsheetid>77c50125-e64c-4552-9eb5-a9f6bde36155</subsheetid>
+    <display x="-195" y="30" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="682dcb94-ce51-4ce2-8d99-d0ae99194696" name="Felter" type="Collection">
+    <subsheetid>77c50125-e64c-4552-9eb5-a9f6bde36155</subsheetid>
+    <display x="-195" y="-15" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+    <collectioninfo>
+      <field name="Element" type="text" />
+      <field name="Feltnavn" type="text" />
+    </collectioninfo>
+  </stage>
+  <stage stageid="695c66ea-33af-46e1-81d7-c79b286414df" name="Data" type="Collection">
+    <subsheetid>77c50125-e64c-4552-9eb5-a9f6bde36155</subsheetid>
+    <loginhibit />
+    <display x="-195" y="405" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="d714872e-edd7-46fc-8282-d054a375b9a1" name="Loop felter" type="LoopStart">
+    <subsheetid>77c50125-e64c-4552-9eb5-a9f6bde36155</subsheetid>
+    <loginhibit />
+    <display x="15" y="30" />
+    <onsuccess>b332e6be-acaf-40e6-8910-626b59290eef</onsuccess>
+    <groupid>6ca27be0-6c66-4562-ac6c-80e1a9831d41</groupid>
+    <looptype>ForEach</looptype>
+    <loopdata>Felter</loopdata>
+  </stage>
+  <stage stageid="0ca60d36-0b4d-4880-a3a5-4151e09c3c57" name="Loop felter" type="LoopEnd">
+    <subsheetid>77c50125-e64c-4552-9eb5-a9f6bde36155</subsheetid>
+    <loginhibit />
+    <display x="15" y="285" />
+    <onsuccess>6f8d122c-44ed-4868-a00a-267e92a382bf</onsuccess>
+    <groupid>6ca27be0-6c66-4562-ac6c-80e1a9831d41</groupid>
+  </stage>
+  <stage stageid="5774a987-3045-46ec-8599-2488babe295b" name="Dan endelig sti" type="Action">
+    <subsheetid>77c50125-e64c-4552-9eb5-a9f6bde36155</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="15" y="120" />
+    <inputs>
+      <input type="text" name="Format" friendlyname="Format" narrative="The string to format, see https://docs.microsoft.com/en-us/dotnet/api/system.string.format?view=netframework-4.8#System_String_Format_System_String_System_Object_ for info" expr="[Path]" />
+      <input type="collection" name="Data" friendlyname="Data" narrative="The data to be used for formatting, columns appear in order and only 1 row is supported" expr="[Format]" />
+    </inputs>
+    <outputs>
+      <output type="text" name="Result" friendlyname="Result" stage="Sti" />
+    </outputs>
+    <onsuccess>b5269b1c-aba2-487b-a72a-5759b2373301</onsuccess>
+    <resource object="Utility - Odk" action="String: Format" />
+  </stage>
+  <stage stageid="71633396-0b18-48ea-a8dc-2564944ee91f" name="Format" type="Collection">
+    <subsheetid>77c50125-e64c-4552-9eb5-a9f6bde36155</subsheetid>
+    <loginhibit />
+    <display x="-195" y="240" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+    <collectioninfo>
+      <singlerow />
+      <field name="Sti" type="text" />
+    </collectioninfo>
+    <initialvalue>
+      <singlerow />
+      <row>
+        <field name="Sti" type="text" value="" />
+      </row>
+    </initialvalue>
+  </stage>
+  <stage stageid="b332e6be-acaf-40e6-8910-626b59290eef" name="Sæt format collection" type="Calculation">
+    <subsheetid>77c50125-e64c-4552-9eb5-a9f6bde36155</subsheetid>
+    <loginhibit />
+    <display x="15" y="75" />
+    <onsuccess>5774a987-3045-46ec-8599-2488babe295b</onsuccess>
+    <calculation expression="[Felter.Element]" stage="Format.Sti" />
+  </stage>
+  <stage stageid="936d840d-12d4-44ce-b4b4-c8bf1c9e8bfc" name="Sti" type="Data">
+    <subsheetid>77c50125-e64c-4552-9eb5-a9f6bde36155</subsheetid>
+    <display x="-195" y="285" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="0d54bce7-f113-4bd0-9ddc-025fe849e81d" name="Anchor6" type="Anchor">
+    <subsheetid>77c50125-e64c-4552-9eb5-a9f6bde36155</subsheetid>
+    <loginhibit />
+    <display x="15" y="-60" w="10" h="10" />
+    <onsuccess>fb0db33c-27bd-4543-acfd-d326c9042d66</onsuccess>
+  </stage>
+  <stage stageid="bcd0a780-99ae-4405-98c8-e410f6935546" name="Debugfelter" type="Collection">
+    <subsheetid>77c50125-e64c-4552-9eb5-a9f6bde36155</subsheetid>
+    <display x="285" y="-105" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+    <collectioninfo>
+      <field name="Element" type="text" />
+      <field name="Feltnavn" type="text" />
+    </collectioninfo>
+    <initialvalue>
+      <row>
+        <field name="Element" type="text" value="EANIdentifier" />
+        <field name="Feltnavn" type="text" value="Ean" />
+      </row>
+      <row>
+        <field name="Element" type="text" value="Identifier" />
+        <field name="Feltnavn" type="text" value="Id" />
+      </row>
+    </initialvalue>
+  </stage>
+  <stage stageid="fb0db33c-27bd-4543-acfd-d326c9042d66" name="Ny række" type="Action">
+    <subsheetid>77c50125-e64c-4552-9eb5-a9f6bde36155</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="15" y="-15" />
+    <inputs>
+      <input type="text" name="Collection Name" friendlyname="Collection Name" narrative="The name of the collection to act upon" expr="&quot;Data&quot;" />
+    </inputs>
+    <onsuccess>d714872e-edd7-46fc-8282-d054a375b9a1</onsuccess>
+    <resource object="Blueprism.AutomateProcessCore.clsCollectionActions" action="Add Row" />
+  </stage>
+  <stage stageid="7ebb22d9-d289-4376-a06b-f98c989a61c7" name="Sæt debug" type="MultipleCalculation">
+    <subsheetid>77c50125-e64c-4552-9eb5-a9f6bde36155</subsheetid>
+    <loginhibit />
+    <display x="150" y="-105" />
+    <onsuccess>8ebee0cc-3a72-4dec-8ae6-1491a4897394</onsuccess>
+    <steps>
+      <calculation expression="[Debugfelter]" stage="Felter" />
+      <calculation expression="&quot;/Emessage/RehabilitationPlan/Sender/{0}&quot;" stage="Path" />
+    </steps>
+  </stage>
+  <stage stageid="8ebee0cc-3a72-4dec-8ae6-1491a4897394" name="Anchor7" type="Anchor">
+    <subsheetid>77c50125-e64c-4552-9eb5-a9f6bde36155</subsheetid>
+    <loginhibit />
+    <display x="150" y="-60" w="10" h="10" />
+    <onsuccess>0d54bce7-f113-4bd0-9ddc-025fe849e81d</onsuccess>
+  </stage>
+  <stage stageid="b5269b1c-aba2-487b-a72a-5759b2373301" name="Hent felt" type="Action">
+    <subsheetid>77c50125-e64c-4552-9eb5-a9f6bde36155</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="15" y="180" />
+    <inputs>
+      <input type="number" name="handle" friendlyname="handle" narrative="The handle returned from parse" expr="[Handle]" />
+      <input type="text" name="path" friendlyname="path" narrative="The path to the XML element to read" expr="[Sti]" />
+    </inputs>
+    <outputs>
+      <output type="text" name="value" friendlyname="value" narrative="The contents of the inner xml as defined by the xpath" stage="Værdi" />
+    </outputs>
+    <onsuccess>c2839eef-78fa-4e48-ab6d-2dd0b42e0d94</onsuccess>
+    <resource object="Utility - XML" action="Get value from path" />
+  </stage>
+  <stage stageid="9de59269-59be-4a25-a8b2-0c8afac2a809" name="Værdi" type="Data">
+    <subsheetid>77c50125-e64c-4552-9eb5-a9f6bde36155</subsheetid>
+    <display x="-195" y="330" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="0cd9903e-7750-4388-a786-1f7115aa02a0" name="Debug" type="Block">
+    <subsheetid>77c50125-e64c-4552-9eb5-a9f6bde36155</subsheetid>
+    <loginhibit />
+    <display x="75" y="-135" w="315" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="FFFF99" />
+  </stage>
+  <stage stageid="f005aeb1-918f-4d63-9a2e-c7e5c43a1a00" name="Felter" type="Collection">
+    <subsheetid>8f082fa2-a03b-4779-9675-d77aaf05feb3</subsheetid>
+    <display x="-195" y="45" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+    <collectioninfo>
+      <field name="Element" type="text" />
+      <field name="Feltnavn" type="text" />
+    </collectioninfo>
+    <initialvalue>
+      <row>
+        <field name="Element" type="text" value="EANIdentifier" />
+        <field name="Feltnavn" type="text" value="Ean" />
+      </row>
+      <row>
+        <field name="Element" type="text" value="Identifier" />
+        <field name="Feltnavn" type="text" value="Id" />
+      </row>
+      <row>
+        <field name="Element" type="text" value="IdentifierCode" />
+        <field name="Feltnavn" type="text" value="Idkode" />
+      </row>
+      <row>
+        <field name="Element" type="text" value="OrganisationName" />
+        <field name="Feltnavn" type="text" value="Organisation" />
+      </row>
+      <row>
+        <field name="Element" type="text" value="DepartmentName" />
+        <field name="Feltnavn" type="text" value="Afdeling" />
+      </row>
+      <row>
+        <field name="Element" type="text" value="StreetName" />
+        <field name="Feltnavn" type="text" value="Gade" />
+      </row>
+      <row>
+        <field name="Element" type="text" value="DistrictName" />
+        <field name="Feltnavn" type="text" value="By" />
+      </row>
+      <row>
+        <field name="Element" type="text" value="PostCodeIdentifier" />
+        <field name="Feltnavn" type="text" value="Postnummer" />
+      </row>
+      <row>
+        <field name="Element" type="text" value="MedicalSpecialityCode" />
+        <field name="Feltnavn" type="text" value="Speciale" />
+      </row>
+    </initialvalue>
+  </stage>
+  <stage stageid="3147600b-312a-40ec-9c52-956278fa33d4" name="Hent felter" type="SubSheet">
+    <subsheetid>8f082fa2-a03b-4779-9675-d77aaf05feb3</subsheetid>
+    <loginhibit />
+    <display x="15" y="0" />
+    <inputs>
+      <input type="text" name="Path" friendlyname="Path" expr="&quot;/Emessage/&quot; &amp; [Rodelement] &amp; &quot;/Sender/{0}&quot;" />
+      <input type="collection" name="Felter" friendlyname="Felter" expr="[Felter]" />
+      <input type="flag" name="Ignorer manglende felter?" friendlyname="Ignorer manglende felter?" narrative="Default falsk" expr="True" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="Værdier" friendlyname="Værdier" stage="Afsender" />
+    </outputs>
+    <onsuccess>2052e66a-49ee-450b-9959-4e5daf5dea95</onsuccess>
+    <processid>77c50125-e64c-4552-9eb5-a9f6bde36155</processid>
+  </stage>
+  <stage stageid="11e7114f-18e8-4ce0-a524-d0a61419a055" name="Hent modtager" type="SubSheetInfo">
+    <subsheetid>245e52b3-3b88-4abf-925b-a9b5a1f9cd95</subsheetid>
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="6a63b6b9-fe2a-4ace-92b6-93d70009657c" name="Start" type="Start">
+    <subsheetid>245e52b3-3b88-4abf-925b-a9b5a1f9cd95</subsheetid>
+    <loginhibit />
+    <display x="15" y="-90" />
+    <onsuccess>86d0f26d-0fba-4239-a337-e21651ce778d</onsuccess>
+  </stage>
+  <stage stageid="b4a7ab86-040b-4eb9-9730-8dca8eae33b3" name="End" type="End">
+    <subsheetid>245e52b3-3b88-4abf-925b-a9b5a1f9cd95</subsheetid>
+    <loginhibit />
+    <display x="15" y="45" />
+    <outputs>
+      <output type="collection" name="Modtager" stage="Modtager" />
+    </outputs>
+  </stage>
+  <stage stageid="27151c65-b71e-4073-a6e8-2318de533e33" name="Input" type="Block">
+    <subsheetid>245e52b3-3b88-4abf-925b-a9b5a1f9cd95</subsheetid>
+    <display x="-270" y="-45" w="150" h="45" />
+    <font family="Segoe UI" size="10" style="Regular" color="339966" />
+  </stage>
+  <stage stageid="106bf79b-c380-4cd5-93c8-947badd46463" name="Variabler" type="Block">
+    <subsheetid>245e52b3-3b88-4abf-925b-a9b5a1f9cd95</subsheetid>
+    <display x="-270" y="75" w="150" h="45" />
+    <font family="Segoe UI" size="10" style="Regular" color="666699" />
+  </stage>
+  <stage stageid="fb2bceed-5a12-48a1-acdd-fc4c85ecff7b" name="Konstanter" type="Block">
+    <subsheetid>245e52b3-3b88-4abf-925b-a9b5a1f9cd95</subsheetid>
+    <display x="-270" y="15" w="150" h="45" />
+    <font family="Segoe UI" size="10" style="Regular" color="008080" />
+  </stage>
+  <stage stageid="7755cdbf-0718-4774-a77e-9400e193bbbd" name="Output" type="Block">
+    <subsheetid>245e52b3-3b88-4abf-925b-a9b5a1f9cd95</subsheetid>
+    <display x="-270" y="135" w="150" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="800080" />
+  </stage>
+  <stage stageid="86d0f26d-0fba-4239-a337-e21651ce778d" name="Preflight check" type="SubSheet">
+    <subsheetid>245e52b3-3b88-4abf-925b-a9b5a1f9cd95</subsheetid>
+    <loginhibit />
+    <display x="15" y="-45" />
+    <onsuccess>de5129c1-110d-4dd4-956f-6f0f84ec69fe</onsuccess>
+    <processid>c64fbc9e-8094-4ea4-a888-2524183fb228</processid>
+  </stage>
+  <stage stageid="455c9a77-0a33-402c-9bd9-d384d3f2d066" name="Modtager" type="Collection">
+    <subsheetid>245e52b3-3b88-4abf-925b-a9b5a1f9cd95</subsheetid>
+    <loginhibit />
+    <display x="-195" y="165" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+    <collectioninfo>
+      <singlerow />
+      <field name="Ean" type="text" />
+      <field name="Id" type="text" />
+      <field name="Idkode" type="text" />
+      <field name="Organisation" type="text" />
+      <field name="Afdeling" type="text" />
+      <field name="Gade" type="text" />
+      <field name="Postnummer" type="text" />
+      <field name="By" type="text" />
+    </collectioninfo>
+    <initialvalue>
+      <singlerow />
+      <row>
+        <field name="Ean" type="text" value="" />
+        <field name="Id" type="text" value="" />
+        <field name="Idkode" type="text" value="" />
+        <field name="Organisation" type="text" value="" />
+        <field name="Afdeling" type="text" value="" />
+        <field name="Gade" type="text" value="" />
+        <field name="Postnummer" type="text" value="" />
+        <field name="By" type="text" value="" />
+      </row>
+    </initialvalue>
+  </stage>
+  <stage stageid="51b1c81c-7b2a-4ef0-9aed-cea86304fbb9" name="Felter" type="Collection">
+    <subsheetid>245e52b3-3b88-4abf-925b-a9b5a1f9cd95</subsheetid>
+    <display x="-195" y="45" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+    <collectioninfo>
+      <field name="Element" type="text" />
+      <field name="Feltnavn" type="text" />
+    </collectioninfo>
+    <initialvalue>
+      <row>
+        <field name="Element" type="text" value="EANIdentifier" />
+        <field name="Feltnavn" type="text" value="Ean" />
+      </row>
+      <row>
+        <field name="Element" type="text" value="Identifier" />
+        <field name="Feltnavn" type="text" value="Id" />
+      </row>
+      <row>
+        <field name="Element" type="text" value="IdentifierCode" />
+        <field name="Feltnavn" type="text" value="Idkode" />
+      </row>
+      <row>
+        <field name="Element" type="text" value="OrganisationName" />
+        <field name="Feltnavn" type="text" value="Organisation" />
+      </row>
+      <row>
+        <field name="Element" type="text" value="DepartmentName" />
+        <field name="Feltnavn" type="text" value="Afdeling" />
+      </row>
+      <row>
+        <field name="Element" type="text" value="StreetName" />
+        <field name="Feltnavn" type="text" value="Gade" />
+      </row>
+      <row>
+        <field name="Element" type="text" value="DistrictName" />
+        <field name="Feltnavn" type="text" value="By" />
+      </row>
+      <row>
+        <field name="Element" type="text" value="PostCodeIdentifier" />
+        <field name="Feltnavn" type="text" value="Postnummer" />
+      </row>
+    </initialvalue>
+  </stage>
+  <stage stageid="de5129c1-110d-4dd4-956f-6f0f84ec69fe" name="Hent felter" type="SubSheet">
+    <subsheetid>245e52b3-3b88-4abf-925b-a9b5a1f9cd95</subsheetid>
+    <loginhibit />
+    <display x="15" y="0" />
+    <inputs>
+      <input type="text" name="Path" friendlyname="Path" expr="&quot;/Emessage/&quot; &amp; [Rodelement] &amp; &quot;/Receiver/{0}&quot;" />
+      <input type="collection" name="Felter" friendlyname="Felter" expr="[Felter]" />
+      <input type="flag" name="Ignorer manglende felter?" friendlyname="Ignorer manglende felter?" narrative="Default falsk" expr="True" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="Værdier" friendlyname="Værdier" stage="Modtager" />
+    </outputs>
+    <onsuccess>b4a7ab86-040b-4eb9-9730-8dca8eae33b3</onsuccess>
+    <processid>77c50125-e64c-4552-9eb5-a9f6bde36155</processid>
+  </stage>
+  <stage stageid="ddd26124-2289-4710-8f97-0f26cead5bf4" name="Hent diagnoser" type="SubSheetInfo">
+    <subsheetid>a924166e-66b0-42c3-b655-74153e35da3c</subsheetid>
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="ed6283ed-65a3-47a6-a6c1-9aa56fe41d4a" name="Start" type="Start">
+    <subsheetid>a924166e-66b0-42c3-b655-74153e35da3c</subsheetid>
+    <loginhibit />
+    <display x="15" y="-90" />
+    <onsuccess>f8e7590d-2fd6-4a0c-ae5e-b9ed4d1b4be4</onsuccess>
+  </stage>
+  <stage stageid="292220b2-8cab-4632-ad7c-0cedfa2f9e19" name="End" type="End">
+    <subsheetid>a924166e-66b0-42c3-b655-74153e35da3c</subsheetid>
+    <loginhibit />
+    <display x="15" y="300" />
+    <outputs>
+      <output type="text" name="Diagnose" narrative="Anvendes hvis der kun er en udfyldt diagnosetekst" stage="Diagnose" />
+      <output type="collection" name="Diagnoser" narrative="De primære diagnoser for borgeren" stage="Diagnoser" />
+      <output type="number" name="Antal" stage="Antal" />
+    </outputs>
+  </stage>
+  <stage stageid="8bbbf457-b538-42b8-b78e-a3e6a01af971" name="Input" type="Block">
+    <subsheetid>a924166e-66b0-42c3-b655-74153e35da3c</subsheetid>
+    <display x="-270" y="-45" w="150" h="45" />
+    <font family="Segoe UI" size="10" style="Regular" color="339966" />
+  </stage>
+  <stage stageid="12084aa3-063d-4bb8-8872-43fa4a6d5072" name="Variabler" type="Block">
+    <subsheetid>a924166e-66b0-42c3-b655-74153e35da3c</subsheetid>
+    <display x="-270" y="75" w="150" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="666699" />
+  </stage>
+  <stage stageid="dcddbed3-1bee-418f-9e62-18d6c0c733f1" name="Konstanter" type="Block">
+    <subsheetid>a924166e-66b0-42c3-b655-74153e35da3c</subsheetid>
+    <display x="-270" y="15" w="150" h="45" />
+    <font family="Segoe UI" size="10" style="Regular" color="008080" />
+  </stage>
+  <stage stageid="fe9291be-5bd8-43a8-8134-38ad0052203d" name="Output" type="Block">
+    <subsheetid>a924166e-66b0-42c3-b655-74153e35da3c</subsheetid>
+    <display x="-270" y="150" w="150" h="150" />
+    <font family="Segoe UI" size="10" style="Regular" color="800080" />
+  </stage>
+  <stage stageid="f8e7590d-2fd6-4a0c-ae5e-b9ed4d1b4be4" name="Preflight check" type="SubSheet">
+    <subsheetid>a924166e-66b0-42c3-b655-74153e35da3c</subsheetid>
+    <loginhibit />
+    <display x="15" y="-45" />
+    <onsuccess>0b8fe386-b8d4-4430-85f2-9c4052367055</onsuccess>
+    <processid>c64fbc9e-8094-4ea4-a888-2524183fb228</processid>
+  </stage>
+  <stage stageid="0b8fe386-b8d4-4430-85f2-9c4052367055" name="Er det et dokument med diagnoser?" type="Decision">
+    <subsheetid>a924166e-66b0-42c3-b655-74153e35da3c</subsheetid>
+    <loginhibit />
+    <display x="15" y="0" />
+    <decision expression="[Rodelement] = &quot;RehabilitationPlan&quot;" />
+    <ontrue>4771e5a2-be2b-45b5-a059-2675b91cf410</ontrue>
+    <onfalse>c1f992af-556f-4a7a-9e3c-1c06f8324021</onfalse>
+  </stage>
+  <stage stageid="c1f992af-556f-4a7a-9e3c-1c06f8324021" name="Ingen diagnoser" type="Exception">
+    <subsheetid>a924166e-66b0-42c3-b655-74153e35da3c</subsheetid>
+    <display x="135" y="0" />
+    <exception localized="yes" type="Business Exception" detail="&quot;Dette dokument indeholder ikke diagnoser, eller er ikke understøttet&quot;" />
+  </stage>
+  <stage stageid="4771e5a2-be2b-45b5-a059-2675b91cf410" name="Hent diagnosen hvis den er i ren tekst" type="Action">
+    <subsheetid>a924166e-66b0-42c3-b655-74153e35da3c</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="15" y="60" />
+    <inputs>
+      <input type="number" name="handle" friendlyname="handle" narrative="The handle returned from parse" expr="[Handle]" />
+      <input type="text" name="path" friendlyname="path" narrative="The path to the XML element to read" expr="&quot;/Emessage/&quot; &amp; [Rodelement] &amp; &quot;/ICD10Diagnoses/Text&quot;" />
+    </inputs>
+    <outputs>
+      <output type="text" name="value" friendlyname="value" narrative="The contents of the inner xml as defined by the xpath" stage="Diagnose" />
+    </outputs>
+    <onsuccess>3fda6824-8810-4b24-88d2-3527436f3421</onsuccess>
+    <resource object="Utility - XML" action="Get value from path" />
+  </stage>
+  <stage stageid="b35a0417-304d-47cf-be6f-412d5b942519" name="Diagnose" type="Data">
+    <subsheetid>a924166e-66b0-42c3-b655-74153e35da3c</subsheetid>
+    <display x="-195" y="180" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="a8fd3d45-b42e-48db-ab9f-8c5d0a5bea80" name="Ren tekst" type="Block">
+    <subsheetid>a924166e-66b0-42c3-b655-74153e35da3c</subsheetid>
+    <loginhibit />
+    <display x="-60" y="30" w="315" h="120" />
+    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
+  </stage>
+  <stage stageid="7c437eee-9cb7-4120-b9cf-c543aa6c3eed" name="Recover3" type="Recover">
+    <subsheetid>a924166e-66b0-42c3-b655-74153e35da3c</subsheetid>
+    <loginhibit />
+    <display x="195" y="60" />
+    <onsuccess>eb316106-9916-46b0-9a6b-4e02ae4182f1</onsuccess>
+  </stage>
+  <stage stageid="eb316106-9916-46b0-9a6b-4e02ae4182f1" name="Resume2" type="Resume">
+    <subsheetid>a924166e-66b0-42c3-b655-74153e35da3c</subsheetid>
+    <loginhibit />
+    <display x="195" y="120" />
+    <onsuccess>7bfab063-b2ce-4247-bd90-19c2ef71d82e</onsuccess>
+  </stage>
+  <stage stageid="7bfab063-b2ce-4247-bd90-19c2ef71d82e" name="Anchor8" type="Anchor">
+    <subsheetid>a924166e-66b0-42c3-b655-74153e35da3c</subsheetid>
+    <loginhibit />
+    <display x="15" y="120" w="10" h="10" />
+    <onsuccess>ad6ff76e-8d9a-42c1-9274-4b41d756c14e</onsuccess>
+  </stage>
+  <stage stageid="3fda6824-8810-4b24-88d2-3527436f3421" name="End2" type="End">
+    <subsheetid>a924166e-66b0-42c3-b655-74153e35da3c</subsheetid>
+    <loginhibit />
+    <display x="105" y="60" />
+    <outputs>
+      <output type="text" name="Diagnose" narrative="Anvendes hvis der kun er en udfyldt diagnosetekst" stage="Diagnose" />
+      <output type="collection" name="Diagnoser" narrative="De primære diagnoser for borgeren" stage="Diagnoser" />
+      <output type="number" name="Antal" stage="Antal" />
+    </outputs>
+  </stage>
+  <stage stageid="ad6ff76e-8d9a-42c1-9274-4b41d756c14e" name="Hent rå xml" type="Action">
+    <subsheetid>a924166e-66b0-42c3-b655-74153e35da3c</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="15" y="180" />
+    <inputs>
+      <input type="number" name="Handle" friendlyname="Handle" expr="[Handle]" />
+    </inputs>
+    <outputs>
+      <output type="text" name="Xml" friendlyname="Xml" stage="Xml" />
+    </outputs>
+    <onsuccess>2424316f-3199-478f-8904-9e8eb66a3d37</onsuccess>
+    <resource object="Utility - XML" action="Get Xml" />
+  </stage>
+  <stage stageid="eb5a0ba3-4117-4754-a165-aac6e0b607bc" name="Xml" type="Data">
+    <subsheetid>a924166e-66b0-42c3-b655-74153e35da3c</subsheetid>
+    <display x="-195" y="105" w="120" h="30" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="2424316f-3199-478f-8904-9e8eb66a3d37" name="Hent diagnoser" type="Code">
+    <subsheetid>a924166e-66b0-42c3-b655-74153e35da3c</subsheetid>
+    <loginhibit />
+    <display x="15" y="225" />
+    <inputs>
+      <input type="text" name="xml" expr="[Xml]" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="diagnoser" stage="Diagnoser" />
+      <output type="number" name="antal" stage="Antal" />
+    </outputs>
+    <onsuccess>292220b2-8cab-4632-ad7c-0cedfa2f9e19</onsuccess>
+    <code><![CDATA[XDocument doc = XDocument.Parse(xml);
+
+var nodes = doc.Descendants().Where(a => a.Name.LocalName == "PrimaryDiagnosis");
+
+var primary = new DataTable();
+
+            primary.Columns.Add("Kode", typeof(string));
+            primary.Columns.Add("Type", typeof(string));
+            primary.Columns.Add("Tekst", typeof(string));
+
+            foreach (var node in nodes)
+            {
+                var row = primary.NewRow();
+
+                row["Kode"] = node.Descendants().SingleOrDefault(a => a.Name.LocalName == "Code")?.Value ?? "";
+                row["Type"] = node.Descendants().SingleOrDefault(a => a.Name.LocalName == "TypeCode")?.Value ?? "";
+                row["Tekst"] = node.Descendants().SingleOrDefault(a => a.Name.LocalName == "Text")?.Value ?? "";
+
+                primary.Rows.Add(row);
+            }
+
+diagnoser = primary;
+antal = primary.Rows.Count;
+]]></code>
+  </stage>
+  <stage stageid="4379b9ae-55e6-491b-bdb1-4e64bb408714" name="Diagnoser" type="Collection">
+    <subsheetid>a924166e-66b0-42c3-b655-74153e35da3c</subsheetid>
+    <display x="-195" y="225" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+    <collectioninfo>
+      <field name="Kode" type="text" />
+      <field name="Type" type="text" />
+      <field name="Tekst" type="text" />
+    </collectioninfo>
+  </stage>
+  <stage stageid="2952576e-4074-4973-9b27-27062101f5ab" name="Antal" type="Data">
+    <subsheetid>a924166e-66b0-42c3-b655-74153e35da3c</subsheetid>
+    <display x="-195" y="270" w="120" h="30" />
+    <datatype>number</datatype>
+    <initialvalue>0</initialvalue>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="49b8c0e5-405e-4d74-a1ec-916d96bf05bd" name="Hent patient" type="SubSheetInfo">
+    <subsheetid>16180a91-36a9-479e-9f1f-8943adb0421f</subsheetid>
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="a65ec350-8a5e-445e-8f26-f44bc36f16fb" name="Start" type="Start">
+    <subsheetid>16180a91-36a9-479e-9f1f-8943adb0421f</subsheetid>
+    <loginhibit />
+    <display x="15" y="-90" />
+    <onsuccess>ff29a5b5-5a13-47ea-ba8f-12e50e4d5cd7</onsuccess>
+  </stage>
+  <stage stageid="177c3656-41b9-4d6b-9416-574e28eed335" name="End" type="End">
+    <subsheetid>16180a91-36a9-479e-9f1f-8943adb0421f</subsheetid>
+    <loginhibit />
+    <display x="15" y="45" />
+    <outputs>
+      <output type="collection" name="Patient" stage="Patient" />
+    </outputs>
+  </stage>
+  <stage stageid="26626911-1507-4288-9ab1-63baef2eb8c2" name="Input" type="Block">
+    <subsheetid>16180a91-36a9-479e-9f1f-8943adb0421f</subsheetid>
+    <display x="-270" y="-45" w="150" h="45" />
+    <font family="Segoe UI" size="10" style="Regular" color="339966" />
+  </stage>
+  <stage stageid="90703532-560d-4b53-8f05-dcd5e5405f66" name="Variabler" type="Block">
+    <subsheetid>16180a91-36a9-479e-9f1f-8943adb0421f</subsheetid>
+    <display x="-270" y="75" w="150" h="45" />
+    <font family="Segoe UI" size="10" style="Regular" color="666699" />
+  </stage>
+  <stage stageid="9870adae-561e-4639-b6a3-38de2360005b" name="Konstanter" type="Block">
+    <subsheetid>16180a91-36a9-479e-9f1f-8943adb0421f</subsheetid>
+    <display x="-270" y="15" w="150" h="45" />
+    <font family="Segoe UI" size="10" style="Regular" color="008080" />
+  </stage>
+  <stage stageid="ff49da56-096c-4d3f-a3f7-877929449095" name="Output" type="Block">
+    <subsheetid>16180a91-36a9-479e-9f1f-8943adb0421f</subsheetid>
+    <display x="-270" y="135" w="150" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="800080" />
+  </stage>
+  <stage stageid="ff29a5b5-5a13-47ea-ba8f-12e50e4d5cd7" name="Preflight check" type="SubSheet">
+    <subsheetid>16180a91-36a9-479e-9f1f-8943adb0421f</subsheetid>
+    <loginhibit />
+    <display x="15" y="-45" />
+    <onsuccess>c7071994-c05a-4aee-94b6-129776f65167</onsuccess>
+    <processid>c64fbc9e-8094-4ea4-a888-2524183fb228</processid>
+  </stage>
+  <stage stageid="935f5c59-5a51-4c20-94e5-e9b4b1dd7104" name="Patient" type="Collection">
+    <subsheetid>16180a91-36a9-479e-9f1f-8943adb0421f</subsheetid>
+    <loginhibit />
+    <display x="-195" y="165" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+    <collectioninfo>
+      <singlerow />
+      <field name="Cpr" type="text" />
+      <field name="Fornavn" type="text" />
+      <field name="Efternavn" type="text" />
+      <field name="Adresse" type="text" />
+      <field name="Postnummer" type="text" />
+      <field name="By" type="text" />
+    </collectioninfo>
+    <initialvalue>
+      <singlerow />
+      <row>
+        <field name="Cpr" type="text" value="" />
+        <field name="Fornavn" type="text" value="" />
+        <field name="Efternavn" type="text" value="" />
+        <field name="Adresse" type="text" value="" />
+        <field name="Postnummer" type="text" value="" />
+        <field name="By" type="text" value="" />
+      </row>
+    </initialvalue>
+  </stage>
+  <stage stageid="d6b3738e-ad4a-4847-bed2-f22faa1aced8" name="Felter" type="Collection">
+    <subsheetid>16180a91-36a9-479e-9f1f-8943adb0421f</subsheetid>
+    <display x="-195" y="45" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+    <collectioninfo>
+      <field name="Element" type="text" />
+      <field name="Feltnavn" type="text" />
+    </collectioninfo>
+    <initialvalue>
+      <row>
+        <field name="Element" type="text" value="CivilRegistrationNumber" />
+        <field name="Feltnavn" type="text" value="Cpr" />
+      </row>
+      <row>
+        <field name="Element" type="text" value="PersonSurnameName" />
+        <field name="Feltnavn" type="text" value="Efternavn" />
+      </row>
+      <row>
+        <field name="Element" type="text" value="PersonGivenName" />
+        <field name="Feltnavn" type="text" value="Fornavn" />
+      </row>
+      <row>
+        <field name="Element" type="text" value="StreetName" />
+        <field name="Feltnavn" type="text" value="Adresse" />
+      </row>
+      <row>
+        <field name="Element" type="text" value="DistrictName" />
+        <field name="Feltnavn" type="text" value="By" />
+      </row>
+      <row>
+        <field name="Element" type="text" value="PostCodeIdentifier" />
+        <field name="Feltnavn" type="text" value="Postnummer" />
+      </row>
+    </initialvalue>
+  </stage>
+  <stage stageid="c7071994-c05a-4aee-94b6-129776f65167" name="Hent felter" type="SubSheet">
+    <subsheetid>16180a91-36a9-479e-9f1f-8943adb0421f</subsheetid>
+    <loginhibit />
+    <display x="15" y="0" />
+    <inputs>
+      <input type="text" name="Path" friendlyname="Path" expr="&quot;/Emessage/&quot; &amp; [Rodelement] &amp; &quot;/Patient/{0}&quot;" />
+      <input type="collection" name="Felter" friendlyname="Felter" expr="[Felter]" />
+      <input type="flag" name="Ignorer manglende felter?" friendlyname="Ignorer manglende felter?" narrative="Default falsk" expr="True" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="Værdier" friendlyname="Værdier" stage="Patient" />
+    </outputs>
+    <onsuccess>177c3656-41b9-4d6b-9416-574e28eed335</onsuccess>
+    <processid>77c50125-e64c-4552-9eb5-a9f6bde36155</processid>
+  </stage>
+  <stage stageid="6e7fca28-7c79-4c31-afc8-ca187bffed56" name="GGOP: Hent standardfelter" type="SubSheetInfo">
+    <subsheetid>4c938869-0ab6-4b58-8156-1f0e7a233082</subsheetid>
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="e850a593-7df0-42cf-bf2e-1f080b1835a5" name="Start" type="Start">
+    <subsheetid>4c938869-0ab6-4b58-8156-1f0e7a233082</subsheetid>
+    <loginhibit />
+    <narrative>Bemærk at funktionen ikke respekterer &lt;break&gt; tags i teksten</narrative>
+    <display x="15" y="-105" />
+    <onsuccess>bf2f2ec6-dd8d-46cc-9e86-701f6bd9e648</onsuccess>
+  </stage>
+  <stage stageid="0c61b9d1-2a7b-4f36-ad1c-a5d10276a0b8" name="End" type="End">
+    <subsheetid>4c938869-0ab6-4b58-8156-1f0e7a233082</subsheetid>
+    <loginhibit />
+    <display x="15" y="90" />
+    <outputs>
+      <output type="collection" name="GGOP" stage="GGOP" />
+    </outputs>
+  </stage>
+  <stage stageid="bf2f2ec6-dd8d-46cc-9e86-701f6bd9e648" name="Preflight check" type="SubSheet">
+    <subsheetid>4c938869-0ab6-4b58-8156-1f0e7a233082</subsheetid>
+    <loginhibit />
+    <display x="15" y="-60" />
+    <onsuccess>3bfafa49-495e-418d-bbcb-1a163586ca5f</onsuccess>
+    <processid>c64fbc9e-8094-4ea4-a888-2524183fb228</processid>
+  </stage>
+  <stage stageid="e7d9ae9e-d0c8-4059-9879-acbcbbd6155c" name="Input" type="Block">
+    <subsheetid>4c938869-0ab6-4b58-8156-1f0e7a233082</subsheetid>
+    <display x="-270" y="-45" w="150" h="45" />
+    <font family="Segoe UI" size="10" style="Regular" color="339966" />
+  </stage>
+  <stage stageid="11be4262-4cc2-4f4e-ae76-978c62f86413" name="Variabler" type="Block">
+    <subsheetid>4c938869-0ab6-4b58-8156-1f0e7a233082</subsheetid>
+    <display x="-270" y="90" w="150" h="45" />
+    <font family="Segoe UI" size="10" style="Regular" color="666699" />
+  </stage>
+  <stage stageid="adb3f2fe-7f25-4dc9-a8e0-735ec91c09c9" name="Konstanter" type="Block">
+    <subsheetid>4c938869-0ab6-4b58-8156-1f0e7a233082</subsheetid>
+    <display x="-270" y="15" w="150" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="008080" />
+  </stage>
+  <stage stageid="c2db2e67-27f3-4d56-8aef-d42d94403c0e" name="Output" type="Block">
+    <subsheetid>4c938869-0ab6-4b58-8156-1f0e7a233082</subsheetid>
+    <display x="-270" y="150" w="150" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="800080" />
+  </stage>
+  <stage stageid="3bfafa49-495e-418d-bbcb-1a163586ca5f" name="Er vi en GGOP?" type="Decision">
+    <subsheetid>4c938869-0ab6-4b58-8156-1f0e7a233082</subsheetid>
+    <loginhibit />
+    <display x="15" y="-15" />
+    <decision expression="[Rodelement] = &quot;RehabilitationPlan&quot;" />
+    <ontrue>927b385b-1930-43c2-9500-f5fbff77e487</ontrue>
+    <onfalse>3149b7bc-f050-4a97-b612-45541b5ae07f</onfalse>
+  </stage>
+  <stage stageid="3149b7bc-f050-4a97-b612-45541b5ae07f" name="Forkert type" type="Exception">
+    <subsheetid>4c938869-0ab6-4b58-8156-1f0e7a233082</subsheetid>
+    <display x="150" y="-15" />
+    <exception localized="yes" type="Business Exception" detail="&quot;Denne funktion virker kun på genoptræningsplaner&quot;" />
+  </stage>
+  <stage stageid="a63b7cfa-2807-44c0-b3c4-38a8ea973663" name="Ignorer manglende felter?" type="Data">
+    <subsheetid>77c50125-e64c-4552-9eb5-a9f6bde36155</subsheetid>
+    <display x="-195" y="75" w="120" h="30" />
+    <datatype>flag</datatype>
+    <initialvalue>False</initialvalue>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="f958963a-7521-4ad8-b83f-a3e67861230f" name="Block1" type="Block">
+    <subsheetid>77c50125-e64c-4552-9eb5-a9f6bde36155</subsheetid>
+    <loginhibit />
+    <display x="-75" y="150" w="360" h="105" />
+    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
+  </stage>
+  <stage stageid="5e2f233b-f6f5-4108-ab4d-4740deac7346" name="Recover4" type="Recover">
+    <subsheetid>77c50125-e64c-4552-9eb5-a9f6bde36155</subsheetid>
+    <loginhibit />
+    <display x="240" y="180" />
+    <onsuccess>e47b6592-2e75-4a67-99e1-ec2802cfa86d</onsuccess>
+  </stage>
+  <stage stageid="e47b6592-2e75-4a67-99e1-ec2802cfa86d" name="Ignorer?" type="Decision">
+    <subsheetid>77c50125-e64c-4552-9eb5-a9f6bde36155</subsheetid>
+    <loginhibit />
+    <display x="240" y="225" />
+    <decision expression="[Ignorer manglende felter?]" />
+    <ontrue>275c6bd0-1445-4df8-bdfc-1a3ea476524c</ontrue>
+    <onfalse>e919a068-aecb-4c27-80d1-eeaf947a840c</onfalse>
+  </stage>
+  <stage stageid="275c6bd0-1445-4df8-bdfc-1a3ea476524c" name="Sæt tom værdi" type="Calculation">
+    <subsheetid>77c50125-e64c-4552-9eb5-a9f6bde36155</subsheetid>
+    <loginhibit />
+    <display x="165" y="225" />
+    <onsuccess>9840b2d5-fd42-4531-9b67-64a7309a8674</onsuccess>
+    <calculation expression="&quot;&quot;" stage="Værdi" />
+  </stage>
+  <stage stageid="9840b2d5-fd42-4531-9b67-64a7309a8674" name="Resume3" type="Resume">
+    <subsheetid>77c50125-e64c-4552-9eb5-a9f6bde36155</subsheetid>
+    <loginhibit />
+    <display x="90" y="225" />
+    <onsuccess>c2839eef-78fa-4e48-ab6d-2dd0b42e0d94</onsuccess>
+  </stage>
+  <stage stageid="e919a068-aecb-4c27-80d1-eeaf947a840c" name="Exception4" type="Exception">
+    <subsheetid>77c50125-e64c-4552-9eb5-a9f6bde36155</subsheetid>
+    <display x="345" y="225" />
+    <exception localized="yes" type="Business Exception" detail="[Sti] &amp; &quot; blev ikke fundet&quot;" />
+  </stage>
+  <stage stageid="4b2c6357-8450-45f0-a38b-beb404f1d4e8" name="Felter" type="Collection">
+    <subsheetid>4c938869-0ab6-4b58-8156-1f0e7a233082</subsheetid>
+    <display x="-195" y="45" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+    <collectioninfo>
+      <field name="Element" type="text" />
+      <field name="Feltnavn" type="text" />
+    </collectioninfo>
+    <initialvalue>
+      <row>
+        <field name="Element" type="text" value="TypeOfRehabilitationPlan" />
+        <field name="Feltnavn" type="text" value="Type" />
+      </row>
+      <row>
+        <field name="Element" type="text" value="InformationForPatientAndRelatives" />
+        <field name="Feltnavn" type="text" value="Info til patient" />
+      </row>
+      <row>
+        <field name="Element" type="text" value="ConsentInformed" />
+        <field name="Feltnavn" type="text" value="Samtykke" />
+      </row>
+      <row>
+        <field name="Element" type="text" value="PracticalInformation" />
+        <field name="Feltnavn" type="text" value="Praktisk information" />
+      </row>
+      <row>
+        <field name="Element" type="text" value="PatientSafetyAspects" />
+        <field name="Feltnavn" type="text" value="Sikkerhedsmæssige forhold" />
+      </row>
+      <row>
+        <field name="Element" type="text" value="PatientHealthSummary" />
+        <field name="Feltnavn" type="text" value="Helbredsforhold" />
+      </row>
+      <row>
+        <field name="Element" type="text" value="AbilityAtDischargeSummary" />
+        <field name="Feltnavn" type="text" value="Helbredsrelateret funktionsevne ved udskrivning" />
+      </row>
+      <row>
+        <field name="Element" type="text" value="AbilityAtDischargeExtended" />
+        <field name="Feltnavn" type="text" value="Udvidet helbredsrelateret funktionsevne" />
+      </row>
+      <row>
+        <field name="Element" type="text" value="RehabilitationNeedAndPotential" />
+        <field name="Feltnavn" type="text" value="Genoptræningsbehov og potentiale" />
+      </row>
+    </initialvalue>
+  </stage>
+  <stage stageid="927b385b-1930-43c2-9500-f5fbff77e487" name="Hent felter" type="SubSheet">
+    <subsheetid>4c938869-0ab6-4b58-8156-1f0e7a233082</subsheetid>
+    <loginhibit />
+    <display x="15" y="30" />
+    <inputs>
+      <input type="text" name="Path" friendlyname="Path" expr="&quot;/Emessage/&quot; &amp; [Rodelement] &amp; &quot;/{0}&quot;" />
+      <input type="collection" name="Felter" friendlyname="Felter" expr="[Felter]" />
+      <input type="flag" name="Ignorer manglende felter?" friendlyname="Ignorer manglende felter?" narrative="Default falsk" expr="True" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="Værdier" friendlyname="Værdier" stage="GGOP" />
+    </outputs>
+    <onsuccess>0c61b9d1-2a7b-4f36-ad1c-a5d10276a0b8</onsuccess>
+    <processid>77c50125-e64c-4552-9eb5-a9f6bde36155</processid>
+  </stage>
+  <stage stageid="fb023156-4d6b-4524-9884-a998e9324b49" name="GGOP" type="Collection">
+    <subsheetid>4c938869-0ab6-4b58-8156-1f0e7a233082</subsheetid>
+    <display x="-195" y="180" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+    <collectioninfo>
+      <field name="Type" type="text" />
+      <field name="Info til patient" type="text" />
+      <field name="Samtykke" type="text" />
+      <field name="Praktisk information" type="text" />
+      <field name="Sikkerhedsmæssige forhold" type="text" />
+      <field name="Helbredsforhold" type="text" />
+      <field name="Helbredsrelateret funktionsevne ved udskrivning" type="text" />
+      <field name="Udvidet helbredsrelateret funktionsevne" type="text" />
+      <field name="Genoptræningsbehov og potentiale" type="text" />
+    </collectioninfo>
+  </stage>
+  <stage stageid="17b571ab-0354-4aa4-9162-da78d1a91dd5" name="ClinicalEmail: Hent standardfelter" type="SubSheetInfo">
+    <subsheetid>b1888578-4bde-4446-b268-def92547d7c8</subsheetid>
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="8ca46ad1-1b38-4039-af59-7c4deabc2946" name="Start" type="Start">
+    <subsheetid>b1888578-4bde-4446-b268-def92547d7c8</subsheetid>
+    <loginhibit />
+    <narrative>Bemærk at funktionen ikke respekterer &lt;break&gt; tags i teksten</narrative>
+    <display x="15" y="-150" />
+    <onsuccess>139fb13e-24fc-4c62-bfd0-4aebf515ef42</onsuccess>
+  </stage>
+  <stage stageid="430a22df-5123-4911-86c3-252d12e51b35" name="End" type="End">
+    <subsheetid>b1888578-4bde-4446-b268-def92547d7c8</subsheetid>
+    <loginhibit />
+    <display x="15" y="165" />
+    <outputs>
+      <output type="collection" name="ClinicalEmail" stage="ClinicalEmail" />
+    </outputs>
+  </stage>
+  <stage stageid="1cd957bc-2a21-4524-a074-c2571ecf4e45" name="Preflight check" type="SubSheet">
+    <subsheetid>b1888578-4bde-4446-b268-def92547d7c8</subsheetid>
+    <loginhibit />
+    <display x="15" y="-60" />
+    <onsuccess>eb25f0e5-86d3-46c9-83c9-922212bcef4f</onsuccess>
+    <processid>c64fbc9e-8094-4ea4-a888-2524183fb228</processid>
+  </stage>
+  <stage stageid="0b2efc63-7c2a-47bc-a40e-c6896bc68547" name="Input" type="Block">
+    <subsheetid>b1888578-4bde-4446-b268-def92547d7c8</subsheetid>
+    <display x="-270" y="-45" w="150" h="45" />
+    <font family="Segoe UI" size="10" style="Regular" color="339966" />
+  </stage>
+  <stage stageid="56b017c3-5b62-4852-81fb-efd8efcac2ea" name="Variabler" type="Block">
+    <subsheetid>b1888578-4bde-4446-b268-def92547d7c8</subsheetid>
+    <display x="-270" y="135" w="150" h="105" />
+    <font family="Segoe UI" size="10" style="Regular" color="666699" />
+  </stage>
+  <stage stageid="6c7faac7-2ed7-40b8-bea9-6e3de5daf6f2" name="Konstanter" type="Block">
+    <subsheetid>b1888578-4bde-4446-b268-def92547d7c8</subsheetid>
+    <display x="-270" y="15" w="150" h="105" />
+    <font family="Segoe UI" size="10" style="Regular" color="008080" />
+  </stage>
+  <stage stageid="d4157c96-971f-4992-8caa-60eeb535726b" name="Output" type="Block">
+    <subsheetid>b1888578-4bde-4446-b268-def92547d7c8</subsheetid>
+    <display x="-270" y="255" w="150" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="800080" />
+  </stage>
+  <stage stageid="eb25f0e5-86d3-46c9-83c9-922212bcef4f" name="Er vi en ClinicalEmail" type="Decision">
+    <subsheetid>b1888578-4bde-4446-b268-def92547d7c8</subsheetid>
+    <loginhibit />
+    <display x="15" y="-15" />
+    <decision expression="[Rodelement] = &quot;ClinicalEmail&quot;" />
+    <ontrue>df851527-2eac-4f13-95e6-d2032f451678</ontrue>
+    <onfalse>28d06d4c-e472-40f8-91c7-d582c8a34783</onfalse>
+  </stage>
+  <stage stageid="28d06d4c-e472-40f8-91c7-d582c8a34783" name="Forkert type" type="Exception">
+    <subsheetid>b1888578-4bde-4446-b268-def92547d7c8</subsheetid>
+    <display x="150" y="-15" />
+    <exception localized="yes" type="Business Exception" detail="&quot;Denne funktion virker kun på genoptræningsplaner&quot;" />
+  </stage>
+  <stage stageid="1b015df2-01b8-41b2-b01a-43fd67562008" name="Felter" type="Collection">
+    <subsheetid>b1888578-4bde-4446-b268-def92547d7c8</subsheetid>
+    <display x="-195" y="45" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+    <collectioninfo>
+      <field name="Element" type="text" />
+      <field name="Feltnavn" type="text" />
+    </collectioninfo>
+    <initialvalue>
+      <row>
+        <field name="Element" type="text" value="Priority" />
+        <field name="Feltnavn" type="text" value="Prioritet" />
+      </row>
+      <row>
+        <field name="Element" type="text" value="Subject" />
+        <field name="Feltnavn" type="text" value="Emne" />
+      </row>
+    </initialvalue>
+  </stage>
+  <stage stageid="df851527-2eac-4f13-95e6-d2032f451678" name="Hent felter" type="SubSheet">
+    <subsheetid>b1888578-4bde-4446-b268-def92547d7c8</subsheetid>
+    <loginhibit />
+    <display x="15" y="30" />
+    <inputs>
+      <input type="text" name="Path" friendlyname="Path" expr="&quot;/Emessage/&quot; &amp; [Rodelement] &amp; &quot;/AdditionalInformation/{0}&quot;" />
+      <input type="collection" name="Felter" friendlyname="Felter" expr="[Felter]" />
+      <input type="flag" name="Ignorer manglende felter?" friendlyname="Ignorer manglende felter?" narrative="Default falsk" expr="True" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="Værdier" friendlyname="Værdier" stage="Information" />
+    </outputs>
+    <onsuccess>b7d9c83b-d958-4870-a91d-0dad2fa17def</onsuccess>
+    <processid>77c50125-e64c-4552-9eb5-a9f6bde36155</processid>
+  </stage>
+  <stage stageid="55997657-b997-4eab-a392-921023366895" name="Information" type="Collection">
+    <subsheetid>b1888578-4bde-4446-b268-def92547d7c8</subsheetid>
+    <display x="-195" y="165" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+    <collectioninfo>
+      <field name="Prioritet" type="text" />
+      <field name="Emne" type="text" />
+    </collectioninfo>
+  </stage>
+  <stage stageid="5893d330-a2f9-4a44-af59-9546d2aba824" name="Debug" type="Block">
+    <subsheetid>b1888578-4bde-4446-b268-def92547d7c8</subsheetid>
+    <loginhibit />
+    <display x="90" y="-195" w="255" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="FFFF99" />
+  </stage>
+  <stage stageid="1b674af6-9494-4004-8556-aea2f26b1e05" name="Indlæs medcombesked" type="SubSheet">
+    <subsheetid>b1888578-4bde-4446-b268-def92547d7c8</subsheetid>
+    <loginhibit />
+    <display x="150" y="-165" />
+    <inputs>
+      <input type="text" name="Xml" friendlyname="Xml" expr="&quot;&quot;" />
+    </inputs>
+    <onsuccess>3515b5a2-4ee6-4d9a-b168-4d8bd1c8f9ad</onsuccess>
+    <processid>b5e61a57-12cb-4617-9b15-37bb6ed618d6</processid>
+  </stage>
+  <stage stageid="139fb13e-24fc-4c62-bfd0-4aebf515ef42" name="Anchor9" type="Anchor">
+    <subsheetid>b1888578-4bde-4446-b268-def92547d7c8</subsheetid>
+    <loginhibit />
+    <display x="15" y="-105" w="10" h="10" />
+    <onsuccess>1cd957bc-2a21-4524-a074-c2571ecf4e45</onsuccess>
+  </stage>
+  <stage stageid="3515b5a2-4ee6-4d9a-b168-4d8bd1c8f9ad" name="Anchor10" type="Anchor">
+    <subsheetid>b1888578-4bde-4446-b268-def92547d7c8</subsheetid>
+    <loginhibit />
+    <display x="150" y="-105" w="10" h="10" />
+    <onsuccess>139fb13e-24fc-4c62-bfd0-4aebf515ef42</onsuccess>
+  </stage>
+  <stage stageid="3885673c-47c0-4c34-9e5c-10e36215541e" name="Tekst" type="Collection">
+    <subsheetid>b1888578-4bde-4446-b268-def92547d7c8</subsheetid>
+    <loginhibit />
+    <display x="-195" y="210" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+    <collectioninfo>
+      <field name="Tekst" type="text" />
+    </collectioninfo>
+  </stage>
+  <stage stageid="567e3d74-3d5a-47d3-8d42-9eb5308a1090" name="Felter (tekst)" type="Collection">
+    <subsheetid>b1888578-4bde-4446-b268-def92547d7c8</subsheetid>
+    <display x="-195" y="90" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+    <collectioninfo>
+      <field name="Element" type="text" />
+      <field name="Feltnavn" type="text" />
+    </collectioninfo>
+    <initialvalue>
+      <row>
+        <field name="Element" type="text" value="Text01" />
+        <field name="Feltnavn" type="text" value="Tekst" />
+      </row>
+    </initialvalue>
+  </stage>
+  <stage stageid="b7d9c83b-d958-4870-a91d-0dad2fa17def" name="Hent felter" type="SubSheet">
+    <subsheetid>b1888578-4bde-4446-b268-def92547d7c8</subsheetid>
+    <loginhibit />
+    <display x="15" y="75" />
+    <inputs>
+      <input type="text" name="Path" friendlyname="Path" expr="&quot;/Emessage/&quot; &amp; [Rodelement] &amp; &quot;/ClinicalInformation/{0}&quot;" />
+      <input type="collection" name="Felter" friendlyname="Felter" expr="[Felter (tekst)]" />
+      <input type="flag" name="Ignorer manglende felter?" friendlyname="Ignorer manglende felter?" narrative="Default falsk" expr="True" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="Værdier" friendlyname="Værdier" stage="Tekst" />
+    </outputs>
+    <onsuccess>14a983b8-c596-4972-8ede-127d63b5056f</onsuccess>
+    <processid>77c50125-e64c-4552-9eb5-a9f6bde36155</processid>
+  </stage>
+  <stage stageid="8882b80c-e2ae-4245-80d5-886ef63c009f" name="ClinicalEmail" type="Collection">
+    <subsheetid>b1888578-4bde-4446-b268-def92547d7c8</subsheetid>
+    <loginhibit />
+    <display x="-195" y="285" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+    <collectioninfo>
+      <singlerow />
+      <field name="Emne" type="text" />
+      <field name="Tekst" type="text" />
+      <field name="Prioritet" type="text" />
+    </collectioninfo>
+    <initialvalue>
+      <singlerow />
+      <row>
+        <field name="Emne" type="text" value="" />
+        <field name="Tekst" type="text" value="" />
+        <field name="Prioritet" type="text" value="" />
+      </row>
+    </initialvalue>
+  </stage>
+  <stage stageid="14a983b8-c596-4972-8ede-127d63b5056f" name="Sæt data" type="MultipleCalculation">
+    <subsheetid>b1888578-4bde-4446-b268-def92547d7c8</subsheetid>
+    <loginhibit />
+    <display x="15" y="120" />
+    <onsuccess>430a22df-5123-4911-86c3-252d12e51b35</onsuccess>
+    <steps>
+      <calculation expression="[Information.Emne]" stage="ClinicalEmail.Emne" />
+      <calculation expression="[Information.Prioritet]" stage="ClinicalEmail.Prioritet" />
+      <calculation expression="Trim([Tekst.Tekst])" stage="ClinicalEmail.Tekst" />
+    </steps>
+  </stage>
+  <stage stageid="85e462f0-79fe-4ef0-805d-ecefcceaa7c5" name="Plejeforløbsplan: Hent standardfelter" type="SubSheetInfo">
+    <subsheetid>e2470047-5d64-41e1-88ec-ee6573351b10</subsheetid>
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="f89ad578-4aea-4033-8e5d-c13be9cf3e50" name="Start" type="Start">
+    <subsheetid>e2470047-5d64-41e1-88ec-ee6573351b10</subsheetid>
+    <loginhibit />
+    <display x="15" y="-105" />
+    <onsuccess>7bc9b7df-4f3e-4c4e-b3cb-3d5053ab067f</onsuccess>
+  </stage>
+  <stage stageid="376ba15c-8afe-4f60-a939-ded47558b429" name="End" type="End">
+    <subsheetid>e2470047-5d64-41e1-88ec-ee6573351b10</subsheetid>
+    <loginhibit />
+    <display x="15" y="90" />
+  </stage>
+  <stage stageid="7bc9b7df-4f3e-4c4e-b3cb-3d5053ab067f" name="Preflight check" type="SubSheet">
+    <subsheetid>e2470047-5d64-41e1-88ec-ee6573351b10</subsheetid>
+    <loginhibit />
+    <display x="15" y="-60" />
+    <onsuccess>1ae96a3e-4176-432a-b644-c1c6a9d5f3b0</onsuccess>
+    <processid>c64fbc9e-8094-4ea4-a888-2524183fb228</processid>
+  </stage>
+  <stage stageid="1ae96a3e-4176-432a-b644-c1c6a9d5f3b0" name="Er vi en Plejeforløbsplan?" type="Decision">
+    <subsheetid>e2470047-5d64-41e1-88ec-ee6573351b10</subsheetid>
+    <loginhibit />
+    <display x="15" y="-15" />
+    <decision expression="[Rodelement] = &quot;RehabilitationPlan&quot;" />
+    <ontrue>1258b105-ecf7-44c7-a449-0713e03ed7f2</ontrue>
+    <onfalse>44b9e57c-9966-4145-aab2-55740d9cf771</onfalse>
+  </stage>
+  <stage stageid="578e2fe1-e136-4144-b455-fb96bb6d79c6" name="Input" type="Block">
+    <subsheetid>e2470047-5d64-41e1-88ec-ee6573351b10</subsheetid>
+    <display x="-270" y="-45" w="150" h="45" />
+    <font family="Segoe UI" size="10" style="Regular" color="339966" />
+  </stage>
+  <stage stageid="e292db4b-2746-4f92-9bb2-522e98ad1b81" name="Variabler" type="Block">
+    <subsheetid>e2470047-5d64-41e1-88ec-ee6573351b10</subsheetid>
+    <display x="-270" y="105" w="150" h="45" />
+    <font family="Segoe UI" size="10" style="Regular" color="666699" />
+  </stage>
+  <stage stageid="ae375bcf-c16c-414b-926d-7313f2a7a51b" name="Konstanter" type="Block">
+    <subsheetid>e2470047-5d64-41e1-88ec-ee6573351b10</subsheetid>
+    <display x="-270" y="15" w="150" h="75" />
+    <font family="Segoe UI" size="10" style="Regular" color="008080" />
+  </stage>
+  <stage stageid="cd637b21-ed7c-4325-947e-71df9dd2c36f" name="Output" type="Block">
+    <subsheetid>e2470047-5d64-41e1-88ec-ee6573351b10</subsheetid>
+    <display x="-270" y="165" w="150" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="800080" />
+  </stage>
+  <stage stageid="44b9e57c-9966-4145-aab2-55740d9cf771" name="Forkert type" type="Exception">
+    <subsheetid>e2470047-5d64-41e1-88ec-ee6573351b10</subsheetid>
+    <display x="135" y="-15" />
+    <exception localized="yes" type="Business Exception" detail="&quot;Denne funktion virker kun på genoptræningsplaner&quot;" />
+  </stage>
+  <stage stageid="e605e40b-9206-4b14-8b61-8c423136bbf9" name="Felter" type="Collection">
+    <subsheetid>e2470047-5d64-41e1-88ec-ee6573351b10</subsheetid>
+    <loginhibit />
+    <display x="-195" y="60" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+    <collectioninfo>
+      <field name="Element" type="text" />
+      <field name="Feltnavn" type="text" />
+    </collectioninfo>
+    <initialvalue>
+      <row>
+        <field name="Element" type="text" value="Relatives" />
+        <field name="Feltnavn" type="text" value="Pårørende" />
+      </row>
+      <row>
+        <field name="Element" type="text" value="Sender" />
+        <field name="Feltnavn" type="text" value="Afsender" />
+      </row>
+      <row>
+        <field name="Element" type="text" value="" />
+        <field name="Feltnavn" type="text" value="" />
+      </row>
+    </initialvalue>
+  </stage>
+  <stage stageid="13cb54e5-790c-4a88-87ce-4e077793cc4b" name="Note1" type="Note">
+    <subsheetid>e2470047-5d64-41e1-88ec-ee6573351b10</subsheetid>
+    <loginhibit />
+    <narrative>Find ud af hvilke felter vi skal bruge...
+</narrative>
+    <display x="-330" y="60" w="90" h="60" />
+  </stage>
+  <stage stageid="1258b105-ecf7-44c7-a449-0713e03ed7f2" name="Hent felter" type="SubSheet">
+    <subsheetid>e2470047-5d64-41e1-88ec-ee6573351b10</subsheetid>
+    <loginhibit />
+    <display x="15" y="30" />
+    <inputs>
+      <input type="text" name="Path" friendlyname="Path" expr="&quot;/Emessage/&quot; &amp; [Rodelement] &amp; &quot;/{0}&quot;" />
+      <input type="collection" name="Felter" friendlyname="Felter" expr="[Felter]" />
+      <input type="flag" name="Ignorer manglende felter?" friendlyname="Ignorer manglende felter?" narrative="Default falsk" expr="True" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="Værdier" friendlyname="Værdier" stage="Plejeforløbsplan" />
+    </outputs>
+    <onsuccess>376ba15c-8afe-4f60-a939-ded47558b429</onsuccess>
+    <processid>77c50125-e64c-4552-9eb5-a9f6bde36155</processid>
+  </stage>
+  <stage stageid="4a3995a6-5050-4d7c-a6f8-53c94544e762" name="Plejeforløbsplan" type="Collection">
+    <subsheetid>e2470047-5d64-41e1-88ec-ee6573351b10</subsheetid>
+    <display x="-195" y="195" w="120" h="30" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+</process>
